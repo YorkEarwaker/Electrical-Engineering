@@ -13,10 +13,19 @@ DONE
 
 ## References
 
+MicroPython
+* MicroPython, RPi Pico, bootsel, [WS](https://micropython.org/download/RPI_PICO/), Flashing via UF2 bootloader, 
+* MicroPython, [WS](https://github.com/micropython/micropython), 
+* MicroPython, RP2 port, [WS](https://github.com/micropython/micropython/tree/master/ports/rp2)
+* ...
+
 Getting started Stuff
 * Raspberry Pi Pico MicroPython Learning Kit (Pico Included) [WS](https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included)
-* Micropython, [WS](https://www.waveshare.com/wiki/File:Raspberry_Pi_Pico_MicroPython_Demo_Code.7z), Waveshare, for kit
+* Micropython, 
+* Raspberry Pi Pico Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut
+[WS](https://www.waveshare.com/wiki/File:Raspberry_Pi_Pico_MicroPython_Demo_Code.7z), Waveshare, for kit, code samples, 
 
 Books
 * Get Started with MicroPython on Raspberry Pi Pico, 2nd Edition, [GH](https://github.com/raspberrypipress/gsw-micropython-on-raspberry-pi-pico-2e),
+* ...
 
