@@ -11,6 +11,19 @@ TODO
 DONE
 * <done: intent to commit>
 
+## Libraries
+
+Languages
+* C/C++/Arduino, 
+* CircuitPython, Ardfruit specific, 
+* MicroPython, microcontroller agnostic, Note_01
+
+IDE
+* Thonny [WS](https://thonny.org/), Python IDE for beginners, Note_01
+
+Note
+* Note_01, recommended by Raspberry Pi Pico, Getting Started Guide, The Pi Hut, see link below
+
 ## References
 
 MicroPython
@@ -20,8 +33,10 @@ MicroPython
 * ...
 
 Getting started Stuff
-* Raspberry Pi Pico MicroPython Learning Kit (Pico Included) [WS](https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included)
-* Raspberry Pi Pico Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut
+* Raspberry Pi Pico, MicroPython Learning Kit (Pico Included) [WS](https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included)
+* Raspberry Pi Pico, Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut
+* Raspberry Pi Pico, Pinout [PDF](https://cdn.shopify.com/s/files/1/0176/3274/files/Pico-R3-A4-Pinout_f22e6644-b3e4-4997-a192-961c55fc8cae.pdf?v=1664490511), full fat pinout
+* Raspberry Pi Pico, Pinout [WS](https://cdn.shopify.com/s/files/1/0176/3274/files/simplified_pico_pinout.jpg), simplified pico pinout
 * Micropython, [WS](https://www.waveshare.com/wiki/File:Raspberry_Pi_Pico_MicroPython_Demo_Code.7z), Waveshare, for kit, code samples, 
 
 Books
