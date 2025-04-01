@@ -2,7 +2,7 @@
 
 Electromagnetism, electricity, magnetism, eloctronics, electrical circuites, electrical components, 
 
-Digital control by microcontroller, 
+Circuit board, central processing unit cpu, digital control of electrical components via porgrammable microcontroller, 
 
 ## Status
 
@@ -25,7 +25,7 @@ Physics - electromagnetism
 * Elctromagnetic spectrum, [WP](https://en.wikipedia.org/wiki/Electromagnetic_spectrum)
 * Electromaentic radiation, 
 
-Physics - atomic, quantum mechanics, quntum chemistry
+Physics - atomic, quantum mechanics, quantum chemistry
 * Atomic orbital, electron
 * Valence electron, electron
 
