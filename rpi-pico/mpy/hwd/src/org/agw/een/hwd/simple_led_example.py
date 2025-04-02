@@ -1,4 +1,5 @@
 
+# https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide
 # Simple led example project
 # simple circuit using RPi Pico W 2 & breadbaord
 
