@@ -13,6 +13,11 @@ TODO
 DONE
 * <done: intent to commit>
 
+## Libraries
+
+Tools
+* fritzing, electronics made easy, [WS](https://fritzing.org/), open source hardware, manufacture professional PCB's
+
 ## References
 
 Terms
