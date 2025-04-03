@@ -43,7 +43,7 @@ DONE
 
 Tools
 * fritzing, electronics made easy, [WS](https://fritzing.org/), open source hardware, manufacture professional PCB's
-* Autodesk, Tinkercad, [WS](https://www.tinkercad.com/), cad, 3D design, opne source? <tood: source other 3D design tools, >
+* Autodesk, Tinkercad, [WS](https://www.tinkercad.com/), cad, 3D design, open source? <todo: source other 3D design tools, >
 
 ## References
 
