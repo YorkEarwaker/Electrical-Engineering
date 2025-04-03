@@ -7,6 +7,7 @@ Microcontroller,
 TODO
 * <todo: consider, preparetory work for Climate-Model \amn project PoC, >
 * <todo: consider, C/C++ book for raspberry pi pico , as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! >
+* <todo: consider, \cpp or \cee dirctory for c++ and standard c code, likely seperate sub projects,  >
 
 DONE
 * <done: intent to commit>
