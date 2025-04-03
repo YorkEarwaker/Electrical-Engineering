@@ -1,8 +1,30 @@
-# Electrical engineering ee
+# Electrical engineering een
 
 Electromagnetism, electricity, magnetism, eloctronics, electrical circuites, electrical components, 
 
 Circuit board, central processing unit cpu, digital control of electrical components via porgrammable microcontroller, 
+
+Part of the rationale for this repository is related to climate model repository sub project autonomous meteorological network \amn. Which is a hardware IoT weather station for the collecton of time series data to feed into numerical prediction weather/climate model software .
+
+See also, 
+* Autonomous meteorological network amn, Climate Model repository sub project, [GH](https://github.com/YorkEarwaker/Climate-Model/tree/main/amn)
+* Hybrid power hpr, top level project [GH](https://github.com/YorkEarwaker/Hybrid-Power)
+
+## Goals & Objectives
+
+* Towarad capability for realization and implementation of Autonomous Meterological Network \amn a sub project of the Climate Model repository.
+* Toward capability for realization and implementation of Hybrid Power hpr top level project for renewable energy
+* Electrical engineering circuit board design competency
+* Microcontroller circuit board control programming competency
+* IoT end to end data management
+* Wifi competency, various frequencies
+* Embedded engineering competency
+* Physics competency, practical appliations
+* Mathematics competency, practical applications
+* Climate change, global warming, mitigation and adaptation, practical
+* Development assitance, practical
+* UN SDGs
+* ...
 
 ## Status
 
