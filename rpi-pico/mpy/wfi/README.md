@@ -1,6 +1,6 @@
-# Wireless fidelity wfi
+# Wireless fidelity wfi (mpy)
 
-MicroPython WiFi, microcontroller, RPi Pico 2 W, 
+MicroPython mpy WiFi, microcontroller, RPi Pico 2 W, 
 
 ## Status
 
