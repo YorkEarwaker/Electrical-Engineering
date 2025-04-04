@@ -27,7 +27,7 @@ Build tools
 
 IDE/Code editor
 * VSCodium, [WS](https://vscodium.com/) FOSS, VSCode binaries with no telemetry to Microsoft, see Note_01, evaluation for C/C++/asm RPi Pico, wip
-* VSCode, Microsoft, see Note_01, onging RAD for Python and Java 
+* VSCode, Microsoft, see Note_01, ongoing RAD for Python and Java 
 
 Notes
 * Note_01, as recomended by, Getting started with Raspberry Pi Pico-series, datasheet, see below
