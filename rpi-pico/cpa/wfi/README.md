@@ -5,6 +5,7 @@ RPi SDk, C and C++ and assembly language, WiFi, microcontroller, RPi Pico 2 W,
 ## Status
 
 TODO
+* <todo: consider, SDK RPi Pico wikfi connetion to internet, 2.4GHz wireless (802.11n) interface, c/C++ code base >
 * <todo: consider, SDK RPi Pico wifi connection to laptop, c/c++ code base, >
 
 DONE
