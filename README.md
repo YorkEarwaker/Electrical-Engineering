@@ -12,7 +12,7 @@ See also,
 
 ## Goals & Objectives
 
-* Towarad capability for realization and implementation of Autonomous Meterological Network \amn a sub project of the Climate Model repository.
+* Toward capability for realization and implementation of Autonomous Meterological Network \amn a sub project of the Climate Model repository.
 * Toward capability for realization and implementation of Hybrid Power hpr top level project for renewable energy
 * Electrical engineering circuit board design competency
 * Microcontroller circuit board control programming competency
@@ -41,9 +41,12 @@ DONE
 
 ## Libraries
 
-Tools
+Tools - circuit boards
 * fritzing, electronics made easy, [WS](https://fritzing.org/), open source hardware, manufacture professional PCB's
+
+Tools - additive manufacturing
 * Autodesk, Tinkercad, [WS](https://www.tinkercad.com/), cad, 3D design, open source? <todo: source other 3D design tools, >
+* OctoPrint [WS](https://octoprint.org/), web interface for 3D printing, open source, 
 
 ## References
 
