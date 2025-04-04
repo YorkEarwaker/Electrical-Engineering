@@ -9,16 +9,26 @@ TODO
 * <todo: consider, C/C++ book for raspberry pi pico , as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! >
 * <todo: consider, \cpp or \cee dirctory for c++ and standard c code, likely seperate sub projects,  >
 * <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
+* <todo: oonsider, secondary languages on RPi Pico >
+* <todo: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? >
+* <todo: consider, bluetooth project, RPi Pico >
 
 DONE
 * <done: intent to commit>
 
 ## Libraries
 
-Languages
+Languages - primary
 * C/C++/Arduino, 
 * CircuitPython, Ardfruit specific, 
 * MicroPython, microcontroller agnostic, Note_01
+
+Languages - secondary 
+* Java?, pico-jvm?
+* Rust?
+* Basic?
+* Javascript? 
+* ...
 
 IDE
 * Thonny [WS](https://thonny.org/), Python IDE for beginners, Note_01
@@ -50,6 +60,7 @@ Documentation
 * Raspberry Pi, docs [WS](https://www.raspberrypi.com/documentation/)
 * Raspberry Pi, tutorials [WS](https://www.raspberrypi.com/tutorials/)
 * Raspberry Pi, datasheets [WS](https://datasheets.raspberrypi.com/)
+* Raspberry Pi, forums [WS](https://forums.raspberrypi.com/)
 
 Datasheets
 * Raspberry Pi, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
