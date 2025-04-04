@@ -19,7 +19,13 @@ Languages
 * C, 
 * Cpp, 
 
+Build tools
+* CMake, CMakeLists.txt files, 
+* Ninja
+
 ## References
 
 Documentation
 * Pico C, SDK, [WS](https://www.raspberrypi.com/documentation/pico-sdk/), C and C++, 
+* Pico C, SDK, Examples, [GH](https://github.com/raspberrypi/pico-examples), docs [WS](https://www.raspberrypi.com/documentation/pico-sdk/examples_page.html#examples_page), Raspberry Pi Pico, code samples, example code, 
+* ...
