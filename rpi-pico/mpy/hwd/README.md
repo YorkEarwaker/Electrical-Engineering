@@ -1,4 +1,4 @@
-# Hello world hwd
+# Hello world hwd (mpy)
 
 RPi Pico sandpit for first getting started code and content.
 
