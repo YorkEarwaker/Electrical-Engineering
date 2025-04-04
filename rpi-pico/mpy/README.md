@@ -6,11 +6,11 @@ RPi Pico MicroPython code electrical engineering projects. Getting started with 
 
 TODO
 * <todo: consider, is the package directory structure too deep for python? >
-* <todo: consider, next getting started kit project, >
 * <todo: consider, wifi connection micropython code >
 
 DONE
 * <done: intent to commit>
+* <done: consider, next getting started kit project, wip >
 
 ## References
 
