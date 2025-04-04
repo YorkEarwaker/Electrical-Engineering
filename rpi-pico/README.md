@@ -7,7 +7,6 @@ Microcontroller, IoT,
 TODO
 * <todo: consider, preparetory work for Climate-Model \amn project PoC, >
 * <todo: consider, C/C++ book for raspberry pi pico , as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! >
-* <todo: consider, \cpp or \cee dirctory for c++ and standard c code, likely seperate sub projects,  >
 * <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
 * <todo: oonsider, secondary languages on RPi Pico >
 * <todo: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? >
@@ -15,6 +14,7 @@ TODO
 
 DONE
 * <done: intent to commit>
+* <done: consider, \cpp or \cee dirctory for c++ and standard c code, likely seperate sub projects, C and Cpp and assembly \cpa, C and C++ and ASM \cpa >
 
 ## Libraries
 
