@@ -1,4 +1,4 @@
-# C amd Cpp and ASM cpa 
+# C and Cpp and ASM cpa 
 
 RPi Pico SDK, C and C++ and assembly language, RPi Pico 2 W 
 
