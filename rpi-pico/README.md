@@ -49,7 +49,11 @@ Books
 Documentation
 * Raspberry Pi, docs [WS](https://www.raspberrypi.com/documentation/)
 * Raspberry Pi, tutorials [WS](https://www.raspberrypi.com/tutorials/)
+* Raspberry Pi, datasheets [WS](https://datasheets.raspberrypi.com/)
+
+Datasheets
 * Raspberry Pi, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
+
 
 News Papers - wireless, wifi <todo: move to separate directory structure for sbc RPi 5/4, >
 * Host a Wi-Fi hotspot with a Raspberry Pi, [WS](https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/), 
