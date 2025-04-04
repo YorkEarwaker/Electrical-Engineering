@@ -38,8 +38,8 @@ Note
 
 ## References
 
-Getting started Stuff
-* Raspberry Pi Pico, MicroPython Learning Kit (Pico Included) [WS](https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included)
+Getting started stuff - 101
+* Raspberry Pi Pico, MicroPython Learning Kit (Pico Included) [WS](https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included), The Pi Hut, 
 * Raspberry Pi Pico, Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut
 * Raspberry Pi Pico, Pinout [PDF](https://cdn.shopify.com/s/files/1/0176/3274/files/Pico-R3-A4-Pinout_f22e6644-b3e4-4997-a192-961c55fc8cae.pdf?v=1664490511), full fat pinout
 * Raspberry Pi Pico, Pinout [WS](https://cdn.shopify.com/s/files/1/0176/3274/files/simplified_pico_pinout.jpg), simplified pico pinout
@@ -63,8 +63,9 @@ Documentation
 * Raspberry Pi, forums [WS](https://forums.raspberrypi.com/)
 
 Datasheets
-* Raspberry Pi, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
-
+* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf), Raspberry Pi Pico 2 W Datasheet
+* aspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf), RP2350 Datasheet
+* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
 
 News Papers - wireless, wifi <todo: move to separate directory structure for sbc RPi 5/4, >
 * Host a Wi-Fi hotspot with a Raspberry Pi, [WS](https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/), 
