@@ -26,6 +26,7 @@ Build tools
 * Ninja
 
 IDE/Code editor
+* Raspberry Pi Pico, extension, VSCode, VSCodium
 * VSCodium, [GH](https://github.com/VSCodium), com [WS](https://vscodium.com/) FOSS, VSCode binaries with no telemetry to Microsoft, see Note_01, evaluation for C/C++/asm RPi Pico, wip
 * VSCode, Microsoft, see Note_01, ongoing RAD for Python and Java 
 
