@@ -22,3 +22,6 @@ PCB - kinds
 * Microcontroller
 * Single computer board SCB
 
+PCM - manufacture
+* Reflow soldering, [WP](https://en.wikipedia.org/wiki/Reflow_soldering)
+
