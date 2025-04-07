@@ -75,3 +75,7 @@ Linguistics
 * Sol, Proto-Indo-European PIE, term, 
 * Sol, Latin, 
 * Sol, Star Trek 
+
+Books
+* The Art of Electronics [WS](https://artofelectronics.net/), <todo: evaluate>
+* Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics. <todo: evaluate>
