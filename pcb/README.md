@@ -5,7 +5,8 @@ Electical circuit, electronic design automation,
 ## Status
 
 TODO
-* <todo: create hello world pcb, >
+* <todo: consider, create hello world pcb, >
+* <todo: consider, circuit board repair, >
 
 DONE
 * <done: intent to commit>
@@ -24,4 +25,9 @@ PCB - kinds
 
 PCM - manufacture
 * Reflow soldering, [WP](https://en.wikipedia.org/wiki/Reflow_soldering)
+
+Diode - semiconductor device
+* Schottky diode, [WP](https://en.wikipedia.org/wiki/Schottky_diode)
+* Shockley diode, 
+* p-n diode, 
 
