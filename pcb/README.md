@@ -26,8 +26,22 @@ PCB - kinds
 PCM - manufacture
 * Reflow soldering, [WP](https://en.wikipedia.org/wiki/Reflow_soldering)
 
-Diode - semiconductor device
+Kinds - of what? semiconductor, superconductor
+* Field effect transistors FETs
+* Metal oxide semiconductor field effect transistor MOSFETs, 
+* Tunnel field effect transistors TFETs, see Silicene, 
+
+Semiconductor device - diode, transistor, ...
+* kind, diode
+* kind, transistor
 * Schottky diode, [WP](https://en.wikipedia.org/wiki/Schottky_diode)
 * Shockley diode, 
 * p-n diode, 
+
+Periodic table
+* copper
+* silicon, semiconductor, integrated circuits, solar cells, 
+* lead, soldering
+* ...
+
 
