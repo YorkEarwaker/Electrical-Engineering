@@ -6,12 +6,12 @@ Using directions in 'Getting started with Raspberry Pi Pico-series', [PDF](https
 
 Examples
 * Chapter 4. Load and debug a project
-** Blink, load project, worked as documented, 
-** Blink, debug project, not tried due to no debug connector on microcontroller board, 
+* * Blink, load project, worked as documented, 
+* * Blink, debug project, not tried due to no debug connector on microcontroller board, 
 * Chapter 5. Say "Hello World" in C
-** Hello World, Serial Monitor issue, Pico reported not connected after Run reboot, 
+* * Hello World, Serial Monitor issue, Pico reported not connected after Run reboot, 
 * ..
-** ...
+* * ...
 
 
 
