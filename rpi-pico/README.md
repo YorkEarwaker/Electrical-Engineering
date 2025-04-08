@@ -10,12 +10,15 @@ TODO
 * <todo: oonsider, secondary languages on RPi Pico >
 * <todo: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? >
 * <todo: consider, bluetooth project, RPi Pico >
-* <todo: consider, research core0 core1 RPi Pico ARM chip, >
+* <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
+* <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless >
+* <todo: consider, purchase a one or two additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, >
+* <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. >
 
 DONE
 * <done: intent to commit>
 * <done: consider, \cpp or \cee dirctory for c++ and standard c code, likely seperate sub projects, C and Cpp and assembly \cpa, C and C++ and ASM \cpa >
-* <done: consider, C/C++ book for raspberry pi pico , as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! likely both core can be used by use of threading? Also MicroPython and C/C++ SDK side by side might be possible, call C/C++ SDK from MicroPython? >
+* <done: consider, as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! likely both core can be used by use of threading? Also MicroPython and C/C++ SDK side by side might be possible, call C/C++ SDK from MicroPython? conclusion difficult to do, but not impossible, likely future versions of RPi Pico N will make this easier, There may be a CircuitPython work around but also not clear on longevity of CircuitPython fork, >
 
 ## Libraries
 
