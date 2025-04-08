@@ -13,5 +13,13 @@ Examples
 * ..
 * * ...
 
+## Status
+
+TODO
+* <todo: consider, what to do with generated code, GitHub complains too many files to upload over 100, >
+
+DONE
+* <done: consider, blink project, >
+
 
 
