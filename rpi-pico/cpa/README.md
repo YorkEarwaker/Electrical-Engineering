@@ -8,6 +8,7 @@ TODO
 * <todo: consider, hello world, attempt to replicate MicroPython \hwd examples with SDK? >
 * <todo: consider, wifi connection to internet, >
 * <todo: consider, wifi connection to laptop, >
+* <tdoo: consider, C/C++ book for raspberry pi pico , ARM chips, source, >
 
 DONE
 * <done: intent to commit>
