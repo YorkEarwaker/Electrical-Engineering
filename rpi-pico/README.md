@@ -35,7 +35,13 @@ Languages - secondary
 * ...
 
 IDE
-* Thonny [WS](https://thonny.org/), Python IDE for beginners, Note_01
+* Thonny [WS](https://thonny.org/), Python IDE for beginners, MicroPython, Note_01
+* VSCode, C/C++/asm, MicroPython, works
+* VSCodium, C/C++/asm, MicroPython, evaluating for C/C++/asm for PRi Pico 2
+* Arduino, [WS](https://www.arduino.cc/en/software), C/C++/Arduino, does not appear to support RP2030 i.e. RPi Pico 2, only RP2040 i.e. RPi Pico 1, uninstalled for now.
+
+Tools
+* PuTTY, 0rg [WS](https://www.putty.org/), download [WS](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), use as serial monitor for RPi Pico 2 device, USB COM output, 
 
 Note
 * Note_01, recommended by Raspberry Pi Pico, Getting Started Guide, The Pi Hut, see link below
