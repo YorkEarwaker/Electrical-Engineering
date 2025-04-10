@@ -1,6 +1,6 @@
 # Raspberry Pi Pico
 
-Microcontroller, IoT, 
+Microcontroller, IoT, physical computing
 
 ## Status
 
@@ -23,11 +23,12 @@ DONE
 ## Libraries
 
 Languages - primary
-* C/C++/Arduino, 
+* C/C++/asm, Note_02
 * CircuitPython, Ardfruit specific, 
 * MicroPython, microcontroller agnostic, Note_01
 
 Languages - secondary 
+* Arduino?, C like, 
 * Java?, pico-jvm?
 * Rust?
 * Basic?
@@ -37,14 +38,18 @@ Languages - secondary
 IDE
 * Thonny [WS](https://thonny.org/), Python IDE for beginners, MicroPython, Note_01
 * VSCode, C/C++/asm, MicroPython, works
-* VSCodium, C/C++/asm, MicroPython, evaluating for C/C++/asm for PRi Pico 2
+* VSCodium, C/C++/asm, MicroPython, evaluating for C/C++/asm for PRi Pico 2, Note_02
 * Arduino, [WS](https://www.arduino.cc/en/software), C/C++/Arduino, does not appear to support RP2030 i.e. RPi Pico 2, only RP2040 i.e. RPi Pico 1, uninstalled for now.
 
 Tools
 * PuTTY, 0rg [WS](https://www.putty.org/), download [WS](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), use as serial monitor for RPi Pico 2 device, USB COM output, 
 
+Libs
+* libusb, [WS](https://libusb.info/), cross-platform user library to access USB devices, C lib, Note_02
+
 Note
 * Note_01, recommended by Raspberry Pi Pico, Getting Started Guide, The Pi Hut, see link below
+* Note_02, recommended by Raspberry Pi Pico, Getting started with Raspberry Pi Pico-series C/C++ development with Raspberry Pi Pico-series and other Raspberry Pi microcontroller-based boards
 
 ## References
 
@@ -72,12 +77,13 @@ Documentation
 * Raspberry Pi, datasheets [WS](https://datasheets.raspberrypi.com/)
 * Raspberry Pi, forums [WS](https://forums.raspberrypi.com/)
 
-Datasheets - Raspberry Pi Pico
+Datasheet - Raspberry Pi Pico
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf), Raspberry Pi Pico 2 W Datasheet, schematics, power, pinout, 
-* aspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf), RP2350 Datasheet
+* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf), RP2350 Datasheet
+* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf), Getting started with Raspberry Pi Pico-series C/C++ development with Raspberry Pi Pico-series and other Raspberry Pi microcontroller-based boards
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
 
-Datasheets - Component parts of RPi Pico
+Datasheet - Component parts of RPi Pico
 * CYW43439 [WS](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw43439/), Single-band Wi-Fi 4 (802.11n) + Bluetooth® 5.4 combo
 
 News Papers - wireless, wifi <todo: move to separate directory structure for sbc RPi 5/4, >
