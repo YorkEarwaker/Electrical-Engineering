@@ -32,14 +32,19 @@ IDE/Code editor
 * VSCode, Microsoft, see Note_01, ongoing RAD for Python and Java 
 
 Notes
-* Note_01, as recomended by, Getting started with Raspberry Pi Pico-series, datasheet, see below
+* Note_01, as recomended by Raspberry Pi Pico, datasheet, Getting started with Raspberry Pi Pico-series C/C++ development with Raspberry Pi Pico-series and other Raspberry Pi microcontroller-based boards, datasheet see below
 
 ## References
 
 Documentation
-* Getting started with Raspberry Pi Pico-series, datasheet, [PDF](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf), 
 * Pico C, SDK, [WS](https://www.raspberrypi.com/documentation/pico-sdk/), C and C++, 
 * Pico C, SDK, Examples, [GH](https://github.com/raspberrypi/pico-examples), docs [WS](https://www.raspberrypi.com/documentation/pico-sdk/examples_page.html#examples_page), Raspberry Pi Pico, code samples, example code, 
+* ...
+
+Datasheet
+* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf), Getting started with Raspberry Pi Pico-series C/C++ development with Raspberry Pi Pico-series and other Raspberry Pi microcontroller-based boards
+* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf), Raspberry Pi Pico-series C/C++ SDK Libraries and tools for C/C++ development on Raspberry Pi microcontrollers. 
+* ...
 * ...
 
 News Papers - IDE/Code editor
