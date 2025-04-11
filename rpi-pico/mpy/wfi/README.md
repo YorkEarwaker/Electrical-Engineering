@@ -16,7 +16,7 @@ Terms
 * WiFi [WP](https://en.wikipedia.org/wiki/Wi-Fi)
 
 Documentation
-* MicroPython, wlan (https://docs.micropython.org/en/latest/rp2/quickref.html#wlan), wifi
+* MicroPython, wlan [WS](https://docs.micropython.org/en/latest/rp2/quickref.html#wlan), wifi
 
 Datasheet
 * Raspberry Pi, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
