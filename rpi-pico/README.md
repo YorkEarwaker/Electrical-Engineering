@@ -12,8 +12,9 @@ TODO
 * <todo: consider, bluetooth project, RPi Pico >
 * <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
 * <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless >
-* <todo: consider, purchase a one or two additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, >
+* <todo: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, >
 * <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. >
+* <todo: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, >
 
 DONE
 * <done: intent to commit>
