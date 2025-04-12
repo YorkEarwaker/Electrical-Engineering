@@ -15,6 +15,7 @@ TODO
 * <todo: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, >
 * <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. >
 * <todo: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, >
+* <todo: consider, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
 
 DONE
 * <done: intent to commit>
