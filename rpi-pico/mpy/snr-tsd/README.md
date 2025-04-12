@@ -43,7 +43,9 @@ News Papers - DHT22/DHT11 with RPi Pico
 * Interpreting response for DHT11 on PICO, [WS](https://forums.raspberrypi.com/viewtopic.php?t=339751), forums, raspberrypi, see breadboard *
 * Raspberry Pi Pico With DHT22 – MicroPython Tutorial, [WS](https://electrocredible.com/raspberry-pi-pico-dht22-micropython-tutorial/), electrocredible
 * [WS](https://randomnerdtutorials.com/raspberry-pi-pico-dht11-dht22-micropython/), ramdomnerdtutorials
-* https://github.com/JurassicPork/DHT_PyCom
+
+News Papers - DHT22/DHT11 with PyCom
+* DHT Pure Python library for Pycom board, [WS](https://github.com/JurassicPork/DHT_PyCom), dht class 
 
 News Papers - BME280 with RPi Pico
 * ...
