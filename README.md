@@ -85,3 +85,5 @@ Publishers
 * I Programmer, [WS](https://www.i-programmer.info/), programming, I/O Press online
 * IoT Programmer, [WS](https://iot-programmer.com/), internet of things, I/O Press online
 
+Forums
+* EDA Board, com, [WS](https://www.edaboard.com/)
