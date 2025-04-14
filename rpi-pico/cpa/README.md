@@ -14,7 +14,7 @@ DONE
 * <done: consider, evaluation, VSCodium extension Raspberry Pi Pico for SDK \cpa development >
 * <done: consider, hello world, attempt to replicate MicroPython \hwd examples with SDK?  success, >
 * <done: consider, C/C++ book for raspberry pi pico , ARM chips, source, see I/O Press, >
-* <done: consider, contact I/O Press for publication date, Master the Raspberry Pi Pico, Harry Fairhead, email sent 14/04/2025 >
+* <done: consider, contact I/O Press for publication date, Master the Raspberry Pi Pico, Harry Fairhead, email sent 14/04/2025, response from I/O Press, first edition in print, second edition unclear at this point but possible in 2026? >
 * <done: consider, purchase of Programming The Raspberry Pi Pico/W In C, Second Edition, find reveiws, paperback circa £36.00, I/O Press, response from I/O Press, wait till june/july 2025 when third edition is expected out. >
 
 ## Libraries
@@ -56,4 +56,4 @@ News Papers - IDE/Code editor
 
 Books
 * Programming The Raspberry Pi Pico/W In C, Second Edition, [WS](https://www.iopress.info/index.php/books/pico/programming-the-raspberry-pi-pico-w-in-c-2ed), Harry Fairhead, (Paperback), I/O Press, <todo: more research! > circa £36.00 
-* Master the Raspberry Pi Pico in C: WiFi with lwIP & mbedtls [WS](https://www.iopress.info/index.php/books/pico/master-the-raspberry-pi-pico-in-c-wifi-with-lwip-mbedtls), Harry Fairhead, in print, I/O Press, 
+* Master the Raspberry Pi Pico in C: WiFi with lwIP & mbedtls [WS](https://www.iopress.info/index.php/books/pico/master-the-raspberry-pi-pico-in-c-wifi-with-lwip-mbedtls), Harry Fairhead, in print, I/O Press, circa £30.00
