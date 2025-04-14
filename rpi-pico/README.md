@@ -7,8 +7,6 @@ Microcontroller, IoT, physical computing
 TODO
 * <todo: consider, preparetory work for Climate-Model \amn project PoC, >
 * <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
-* <todo: oonsider, secondary languages on RPi Pico >
-* <todo: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? >
 * <todo: consider, bluetooth project, RPi Pico >
 * <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
 * <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless >
@@ -17,10 +15,13 @@ TODO
 * <todo: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, >
 * <todo: consider, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
 
+
 DONE
 * <done: intent to commit>
 * <done: consider, \cpp or \cee dirctory for c++ and standard c code, likely seperate sub projects, C and Cpp and assembly \cpa, C and C++ and ASM \cpa >
 * <done: consider, as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! likely both core can be used by use of threading? Also MicroPython and C/C++ SDK side by side might be possible, call C/C++ SDK from MicroPython? conclusion difficult to do, but not impossible, likely future versions of RPi Pico N will make this easier, There may be a CircuitPython work around but also not clear on longevity of CircuitPython fork, >
+* <done: consider, secondary languages on RPi Pico, two core languages MicroPython for DEV/QA and RAD and PoC, C/C++/asm for PROD and MVP, secondary languages only for specific use case where mpy and cpa won't work, concentrate on RPi and Ubuntu ecosystem,  >
+* <done: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? probably not worth the effort at this point, wait for market to mature further, Oracle or Eclipse Foundation focus on IoT and embedded systems, RPi ecosystem, Ubuntu ecosystem, >
 
 ## Libraries
 
@@ -71,7 +72,7 @@ MicroPython
 
 Books
 * Get Started with MicroPython on Raspberry Pi Pico, 2nd Edition, [GH](https://github.com/raspberrypipress/gsw-micropython-on-raspberry-pi-pico-2e),
-* ...
+* See also, C and Cpp and ASM cpa, in RPi Pico directory structure, for books C/C++/asm books, 
 
 Documentation
 * Raspberry Pi, docs [WS](https://www.raspberrypi.com/documentation/)
