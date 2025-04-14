@@ -79,3 +79,9 @@ Linguistics
 Books
 * The Art of Electronics [WS](https://artofelectronics.net/), <todo: evaluate>
 * Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics. <todo: evaluate>
+
+Publishers
+* I/O Press, [](https://www.iopress.info/index.php) IoT, physical computing, embeded systems, C/C++, CPython, MicroPython, Linux, Raspberry Pi, Raspberry Pico, ...
+* I Programmer, [WS](https://www.i-programmer.info/), programming, I/O Press online
+* IoT Programmer, [WS](https://iot-programmer.com/), internet of things, I/O Press online
+
