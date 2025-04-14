@@ -11,11 +11,31 @@ For consumption by climate models for example,
 ## Status
 
 TODO
-* <todo: consider, temperature humidity readings, DHT22 PoC >
 * <todo: consider, temperature humidity air pressure readings, BME280 PoC >
 
 DONE
 * <done: intent to commit>
+* <done: consider, temperature humidity readings, DHT22 PoC >
+
+## Readings
+
+### DHT22
+
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+Temperature: 18.8 °C
+Temperature: 65.84 °F
+Humidity: 41.4 %RH
+Temperature: 18.8 °C
+Temperature: 65.84 °F
+Humidity: 41.5 %RH
+Temperature: 18.8 °C
+Temperature: 65.84 °F
+Humidity: 41.5 %RH
+Temperature: 18.8 °C
+Temperature: 65.84 °F
+Humidity: 41.6 %RH
 
 ## References
 

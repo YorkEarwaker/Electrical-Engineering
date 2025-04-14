@@ -48,7 +48,7 @@
 # | DHT pin | Function                                                     | RPi Pico pin | Wire   |
 # | ------- | ------------------------------------------------------------ | ------------ | ------ |
 # | 1       | VDD, power supply, 3.3V - 5.5V                               | 3V3,  pin 36 | Red    |
-# | 2       | SDA, DATA, signal, any GPIO, with a 10k Ohm pull up resistor | GP4,  pin 06 | Yellow |
+# | 2       | SDA, DATA, signal, any GPIO, with a 10k Ohm pull up resistor | GP2,  pin 04 | Yellow |
 # | 3       | NULL, NC, Empty, Don't connect                               |              |        |
 # | 4       | GND, Ground                                                  | GND,  pin 28 | Black  |
 # | ---------------------------------------------------------------------- | ------------ | ------ |    
@@ -58,35 +58,46 @@
 
 from machine import Pin
 from time import sleep
-import dht # esp32 driver/module
+from dht import DHT22 # DHT11, # esp32 driver/module
 
-#pin = Pin(4, Pin.IN)
-pin = Pin(4)
+pin = Pin(2, Pin.IN) # GP2
 
 # sensor
-snr_tsd = dht.DHT22(pin)
-#result = snr_tsd.read()
-
-print('snr_tsd {}'.format(snr_tsd))
+snr_tsd = DHT22(pin)
+# print('snr_tsd {}'.format(snr_tsd)) # debug
 
 while True:
-    print('while True: in')
+    #print('while True: in') # debug
     try:
-        print('try: in')
+        #print('try: in') # debug
+        
+        # #
+        # wait for five seconds before next reading
         sleep(5) # five seconds
-        print('sleep(5): done')
+        #print('sleep(5): done') # debug
+        
+        # #
+        # Read the sensor values
         snr_tsd.measure()
-        print('snr_tsd.measure(): done')
+        #print('snr_tsd.measure(): done') # debug
         snr_tsd_tmp = snr_tsd.temperature() # # e.g. 23.6 (°C) celsius
-        print('snr_tsd.temperature(): done'.format(snr_tsd_tmp))
+        #print('snr_tsd.temperature(): done'.format(snr_tsd_tmp)) # debug
         snr_tsd_hmd = snr_tsd.humidity() # e.g. 41.3 (% RH) relative humidity
-        print('snr_tsd.humidity(): done'.format(snr_tsd_hmd))
+        #print('snr_tsd.humidity(): done'.format(snr_tsd_hmd)) # debug
+        
+        # #
+        # Convert values for output
         tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0 # convert celsius to fahrenheit
-        print('tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0: done'.format(tmp_frh))
-        # do print readings
-        print('Temperature: {} °C'.format(snr_tsd_tmp) )
-        print('Temperature: {} °F'.format(tmp_frh) )
-        print('Humidity: {} '.format(snr_tsd_hmd) )
+        #print('tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0: done'.format(tmp_frh)) # debug
+        
+        # #
+        # Print the meteorological variables
+        print('Temperature: {} °C'.format(snr_tsd_tmp) ) # cesius
+        print('Temperature: {} °F'.format(tmp_frh) )     # fahrenheit
+        print('Humidity: {} %RH'.format(snr_tsd_hmd) )   # relative humidity
+        
+        # #
+        # catch error
     except OSError as e:
         print('OSError. Sensor reading failed. {} '.format(e) )
         
