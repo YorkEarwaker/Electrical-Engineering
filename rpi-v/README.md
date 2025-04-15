@@ -5,7 +5,7 @@ Single board computer,
 ## Status
 
 TODO
-* <todo: consider, purchase of RPi 5 Starter Kit from The Pi Hut circa £85 >
+* <todo: consider, purchase of RPi 5 Starter Kit from The Pi Hut, circa £85 2GB Memory, circa £150 16GB Memory, is it possible to buy 2GB then upgrade to 16GB at a later date? likely yes, >
 * <todo: consider, purchase of RPi SBC screen circa £85 >
 * <todo: consider, RPi 5 as low end desktop >
 * <todo: consider, as main interface for RPi Pico programming, >
