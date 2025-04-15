@@ -56,6 +56,13 @@ Terms
 * Electricity
 * Magnetism
 
+Terms - 
+* Wire guage [WP](https://en.wikipedia.org/wiki/Wire_gauge), cross-section area, wire diameter, wire measurement, IEC 60228
+
+Terms - buildings
+* Electrical wiring [WP](https://en.wikipedia.org/wiki/Electrical_wiring)
+* Electrical cagle [WP](https://en.wikipedia.org/wiki/Electrical_cable)
+
 Physics - electromagnetism
 * Elctromagnetic spectrum, [WP](https://en.wikipedia.org/wiki/Electromagnetic_spectrum)
 * Electromaentic radiation, 
