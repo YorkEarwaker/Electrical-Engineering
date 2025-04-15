@@ -92,7 +92,7 @@ while True:
         
         # #
         # Print the meteorological variables
-        print('Temperature: {} °C'.format(snr_tsd_tmp) ) # cesius
+        print('Temperature: {} °C'.format(snr_tsd_tmp) ) # celsius
         print('Temperature: {} °F'.format(tmp_frh) )     # fahrenheit
         print('Humidity: {} %RH'.format(snr_tsd_hmd) )   # relative humidity
         
