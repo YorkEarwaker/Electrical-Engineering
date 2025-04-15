@@ -69,7 +69,7 @@ Physics - particle physics, standard model of particle physics
 * Photon, force carring particle, boson, guage boson/vector boson,
 
 Astronomy
-* The Sun,[WP](https://en.wikipedia.org/wiki/Sun), G-type main sequence star, G2V, yellow dwarf, 
+* The Sun, [WP](https://en.wikipedia.org/wiki/Sun), G-type main sequence star, G2V, yellow dwarf, 
 
 Linguistics
 * Sol, Proto-Indo-European PIE, term, 
@@ -77,8 +77,9 @@ Linguistics
 * Sol, Star Trek 
 
 Books
-* The Art of Electronics [WS](https://artofelectronics.net/), <todo: evaluate>
-* Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics. <todo: evaluate>
+* The Art of Electronics [WS](https://artofelectronics.net/), <todo: evaluate, old text, is there a current state alternative? >
+* Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics. <todo: evaluate, old text, is there a current state alternative? >
+* ...
 
 Publishers
 * I/O Press, [WS](https://www.iopress.info/index.php) IoT, physical computing, embeded systems, C/C++, CPython, MicroPython, Linux, Raspberry Pi, Raspberry Pico, ...
