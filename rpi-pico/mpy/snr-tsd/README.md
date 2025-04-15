@@ -24,6 +24,7 @@ DONE
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
+
 Temperature: 18.8 °C
 Temperature: 65.84 °F
 Humidity: 41.4 %RH
