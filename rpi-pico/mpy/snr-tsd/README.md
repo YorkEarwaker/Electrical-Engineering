@@ -38,6 +38,10 @@ Temperature: 18.8 °C
 Temperature: 65.84 °F
 Humidity: 41.6 %RH
 
+### BME280
+
+... to be completed
+
 ## References
 
 Terms
