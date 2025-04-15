@@ -61,7 +61,7 @@ Terms -
 
 Terms - buildings
 * Electrical wiring [WP](https://en.wikipedia.org/wiki/Electrical_wiring)
-* Electrical cagle [WP](https://en.wikipedia.org/wiki/Electrical_cable)
+* Electrical cable [WP](https://en.wikipedia.org/wiki/Electrical_cable)
 
 Physics - electromagnetism
 * Elctromagnetic spectrum, [WP](https://en.wikipedia.org/wiki/Electromagnetic_spectrum)
