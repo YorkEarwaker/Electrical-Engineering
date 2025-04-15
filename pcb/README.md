@@ -36,6 +36,7 @@ PCB - prototyping
 * Perf board, [WP](https://en.wikipedia.org/wiki/Perfboard), 
 * Stripboard, [WP](https://en.wikipedia.org/wiki/Stripboard), veroboard, DIP IC's, solder
 * Breadboard, no solder
+* Terminal strip, barrier strip, terminal block, no solder
 * component kind, resistor
 * component kind, capacitor
 * component kind, integrated circuit
@@ -61,6 +62,10 @@ Periodic table
 * ...
 
 News Papers - soldering
-* Introduction to Soldering Wires on Circuit Boards, [WP](https://morepcb.com/how-to-solder-wire-on-circuit-board/), MorePCB, 
+* Introduction to Soldering Wires on Circuit Boards, [WS](https://morepcb.com/how-to-solder-wire-on-circuit-board/), MorePCB, 
 * ...
 * ...
+
+News Papers - prototyping
+* Building Resistor Circuits Using Breadboards, Perfboards, and Terminal Strips, [WS](https://www.allaboutcircuits.com/textbook/direct-current/chpt-5/building-simple-resistor-circuits/), All About Electrontics, 
+
