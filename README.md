@@ -56,6 +56,18 @@ Terms
 * Electricity
 * Magnetism
 
+Materials - electrical engineering tools, 
+* Multimeter
+* Pliers, long nose,
+* Cutters, side? wire cutters, 
+* Tweezers? 
+* anti static mat? solder mat?
+* Soldering iron
+* Desoldering wick
+* Desoldering pump
+* Solder
+* Solder tip cleaner
+
 Physics - electromagnetism
 * Elctromagnetic spectrum, [WP](https://en.wikipedia.org/wiki/Electromagnetic_spectrum)
 * Electromaentic radiation, 
