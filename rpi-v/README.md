@@ -15,5 +15,19 @@ TODO
 DONE
 * <done: intent to commit >
 
-# References
+## References
 
+RPi 5, screens/display/HDMI
+* EDID data
+* KMS driver
+* HDMI adaptors, can cause issues? get proper cable, 
+* ...
+
+News Papers - RPi 5 screen/display, HDMI, resolution, aspect ratio, 
+* Pi 5 HDMI display [WS](https://forums.raspberrypi.com/viewtopic.php?t=359198), 8 November 2003, RPi Forums, 
+* Raspberry Pi 5 HDMI, [WS](https://forums.raspberrypi.com/viewtopic.php?t=367012), 7 May 2024, RPi Forums, Bookworm, /boot/firmware/cmdline.txt, video=HDMI-A-1:1024x768@60D
+* ...
+
+News Papers - 
+* ...
+* ...
