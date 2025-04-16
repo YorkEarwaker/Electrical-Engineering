@@ -6,6 +6,7 @@ Electical circuit, electronic design automation,
 
 TODO
 * <todo: consider, create hello world pcb, >
+* <todo: consider, prerequisit investment in tools start listing as BoM for MVP, source actual items and actual material costs, find supplier('s), wip >
 * <todo: consider, circuit board repair, >
 
 DONE
@@ -28,15 +29,19 @@ PCB - manufacture
 * Surface mount technology smt, planar mounting
 * Surface mount device, integrated circuit
 * Printed circuit board milling, isolation milling, from layout file
+* Production PCB, pre engineered copper connection pathways acting as wires in circuit, copper laid down in phenolic or fiberglass substrate material, likely from layout file
 * via, 
 * through hole technology, through hole plating
 * ...
 
 PCB - prototyping
-* Perf board, [WP](https://en.wikipedia.org/wiki/Perfboard), 
+* Perf board, [WP](https://en.wikipedia.org/wiki/Perfboard), hobbiest PCB, RAD, PoC, prototyping component connection pathways with wire
 * Stripboard, [WP](https://en.wikipedia.org/wiki/Stripboard), veroboard, DIP IC's, solder
 * Breadboard, no solder
 * Terminal strip, barrier strip, terminal block, no solder
+* Wire wrapping, no solder, light guage tightly wound for mechancial end electrical bonding, 
+
+PCB - component kinds, materials
 * component kind, resistor
 * component kind, capacitor
 * component kind, integrated circuit
@@ -53,7 +58,7 @@ Kind - of what? semiconductor, superconductor
 * Metal oxide semiconductor field effect transistor MOSFETs, 
 * Tunnel field effect transistors TFETs, see Silicene, 
 
-Semiconductor device - diode, transistor, ...
+Kind? - semiconductor device - diode, transistor, ...
 * kind, diode
 * kind, transistor
 * Schottky diode, [WP](https://en.wikipedia.org/wiki/Schottky_diode)
