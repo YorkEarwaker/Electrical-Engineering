@@ -41,9 +41,14 @@ PCB - prototyping
 * component kind, capacitor
 * component kind, integrated circuit
 * component kind, wire
+* component kind, electrical connector, [WP](https://en.wikipedia.org/wiki/Electrical_connector)
 * ...
 
-Kinds - of what? semiconductor, superconductor
+Kind - electrical connector
+* JST connector, [WP](https://en.wikipedia.org/wiki/JST_connector), com [WS](https://www.jst-mfg.com/product/)
+* ...
+
+Kind - of what? semiconductor, superconductor
 * Field effect transistors FETs
 * Metal oxide semiconductor field effect transistor MOSFETs, 
 * Tunnel field effect transistors TFETs, see Silicene, 
@@ -68,4 +73,8 @@ News Papers - soldering
 
 News Papers - prototyping
 * Building Resistor Circuits Using Breadboards, Perfboards, and Terminal Strips, [WS](https://www.allaboutcircuits.com/textbook/direct-current/chpt-5/building-simple-resistor-circuits/), All About Electrontics, 
+
+News Paper - cables, beadboard power supply, 
+* USB Cable to Breadboard Power Supply Using a Power Bank, [WS](https://www.instructables.com/USB-Cable-to-Breadboard-Power-Supply-Using-a-Power/), TheLeftyMaker, Instructables, 
+* Power Your Breadboard With USB, [WS](https://www.instructables.com/Power-your-breadboard-with-USB/), janw, Instructables
 
