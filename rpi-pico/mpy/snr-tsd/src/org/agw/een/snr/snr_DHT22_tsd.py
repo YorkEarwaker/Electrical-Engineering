@@ -43,17 +43,26 @@
 #    1=VDD, 2=Data, 3=NC, 4=GND
 #
 # Pin numbers, left to right, 1 2 3 4, with DHT sensor forward facing
-# Pin sequence number: 1 2 3 4 (from left to right direction)
-# | ------------------------------------------------------------------------------------- | ------ |
+# Pin sequence number: 1 2 3 4 (from left to right direction
+#    _____
+#   /_____\  Simplified
+#  |       | Front of
+#  |       | DHT22
+#  |_______| sensor
+#  |_______|
+#   | | | |
+#   1 2 3 4
+#
+# | ------- | ------------------------------------------------------------ | ------------ | ------ |
 # | DHT pin | Function                                                     | RPi Pico pin | Wire   |
 # | ------- | ------------------------------------------------------------ | ------------ | ------ |
 # | 1       | VDD, power supply, 3.3V - 5.5V                               | 3V3,  pin 36 | Red    |
 # | 2       | SDA, DATA, signal, any GPIO, with a 10k Ohm pull up resistor | GP2,  pin 04 | Yellow |
 # | 3       | NULL, NC, Empty, Don't connect                               |              |        |
 # | 4       | GND, Ground                                                  | GND,  pin 28 | Black  |
-# | ---------------------------------------------------------------------- | ------------ | ------ |    
+# | ------- | ------------------------------------------------------------ | ------------ | ------ |    
 #
-# SDA = Serical data, bidirectional port,  
+# SDA = Serial data, bidirectional port,  
 
 # #
 # import libraries to use in this programme
