@@ -55,14 +55,18 @@
 #
 # SDA = Serical data, bidirectional port,  
 
-
+# #
+# import libraries to use in this programme
 from machine import Pin
 from time import sleep
 from dht import DHT22 # DHT11, # esp32 driver/module
 
+# #
+# The GPIO pin number to read in the sensor measurement readings into the microcontroller
 pin = Pin(2, Pin.IN) # GP2
 
-# sensor
+# #
+# The sensor takes the GPIO number to recieve commands to execute and return data back to
 snr_tsd = DHT22(pin)
 # print('snr_tsd {}'.format(snr_tsd)) # debug
 
