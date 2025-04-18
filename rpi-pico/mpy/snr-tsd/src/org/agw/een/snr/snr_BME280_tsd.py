@@ -19,6 +19,7 @@
 # BME280 datasheet, Waveshare, CN, 
 # https://www.waveshare.com/wiki/BME280_Environmental_Sensor
 # https://www.waveshare.net/wiki/Pioneer600_Datasheets
+# https://www.waveshare.net/wiki/RPi_LCD_Datasheets
 # Schematic
 # https://files.waveshare.com/upload/4/42/BME280-Environmental-Sensor-Schematic.pdf
 # Manual, Bosch file?, on Waveshare CN web site,
@@ -48,45 +49,45 @@
 # | 5       | ADDR/MISO | ADDR |              |        | MISO |              |        | 
 # | 6       | CS        | CS   |              |        | CS   |              |        | 
 # | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
-# SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor?
+# SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor? Or resistor's onboard sensor? 
 #
 # I2C and SPI connection models, I2C preferred?/default?
 # 
-# | -------------------------------------------------------------------
-# | I2C interface
-# | --- | --------- | ---------- | ---------- | ---------- | -----------
-# | BME | Function  | Arduino    | STM32      | Raspberry  | Describe
-# | pin | pin       | interface  | interface  |            |
-# | --- | --------- | ---------- | ---------- | ---------- | -----------
-# | 1   | VCC       | 3.3V/5V    | 3.3V /5V   | 3.3V /5V   | Power input
-# | 2   | GND       | GND        | GND        | GND        | Ground
-# | 3   | SDA       | A4         | PB7        | SDA        | I2C data line
-# | 4   | SCL       | A5         | PB6        | SCL        | I2C clock line
-# | 5   | ADDR      | NC/GND     | NC/GND     | NC/GND     | Address chip select (default is high):
-# |     |           |            |            |            | When the voltage is high, the address is 0 x 77
-# |     |           |            |            |            | When the voltage is low, the address is: 0 x 76
-# | 6   | CS        | NC         | NC         | NC         | NC
-# | --- | --------- | ---------- | ---------- | ---------- | -----------
+# | -------------------------------------------------------------------------------------------------------- |
+# | I2C interface                                                                                            |
+# | --- | --------- | ---------- | ---------- | ---------- | ----------------------------------------------- |
+# | BME | Function  | Arduino    | STM32      | Raspberry  | Description                                     |
+# | pin | pin       | interface  | interface  |            |                                                 |
+# | --- | --------- | ---------- | ---------- | ---------- | ----------------------------------------------- |
+# | 1   | VCC       | 3.3V/5V    | 3.3V /5V   | 3.3V /5V   | Power input                                     |
+# | 2   | GND       | GND        | GND        | GND        | Ground                                          |
+# | 3   | SDA       | A4         | PB7        | SDA        | I2C data line                                   |
+# | 4   | SCL       | A5         | PB6        | SCL        | I2C clock line                                  |
+# | 5   | ADDR      | NC/GND     | NC/GND     | NC/GND     | Address chip select (default is high):          |
+# |     |           |            |            |            | When the voltage is high, the address is 0 x 77 |
+# |     |           |            |            |            | When the voltage is low, the address is: 0 x 76 |
+# | 6   | CS        | NC         | NC         | NC         | NC                                              |
+# | --- | --------- | ---------- | ---------- | ---------- | ----------------------------------------------- |
 # 
-# | -------------------------------------------------------------------
-# | SPI interface
-# | --- | --------- | ---------- | ---------- | ---------- | -----------
-# | BME | Function  | Arduino    | STM32      | Raspberry  | Describe
-# | pin | pin       | interface  | interface  |            |
-# | --- | --------- | ---------- | ---------- | ---------- | -----------
-# | 1   | VCC       | 3.3V /5V   | 3.3V /5V   | 3.3V /5V   | 3.3VPower input
-# | 2   | GND       | GND        | GND        | GND        | Ground
-# | 3   | MOSI      | D11        | PA7        | MOSI       | SPI data input
-# | 4   | SCK       | D13        | PA5        | SCK        | SPI clock input
-# | 5   | MISO      | D12        | PA6        | MISO       | SPI data output
-# | 6   | CS        | D10        | PB6        | 27         | SPI Chip select, active when voltage is low
-# | --- | --------- | ---------- | ---------- | ---------- | -----------
+# | ---------------------------------------------------------------------------------------------------- |
+# | SPI interface                                                                                        |
+# | --- | --------- | ---------- | ---------- | ---------- | ------------------------------------------- |
+# | BME | Function  | Arduino    | STM32      | Raspberry  | Description                                 |
+# | pin | pin       | interface  | interface  |            |                                             |
+# | --- | --------- | ---------- | ---------- | ---------- | ------------------------------------------- | 
+# | 1   | VCC       | 3.3V /5V   | 3.3V /5V   | 3.3V /5V   | 3.3VPower input                             |
+# | 2   | GND       | GND        | GND        | GND        | Ground                                      |
+# | 3   | MOSI      | D11        | PA7        | MOSI       | SPI data input                              |
+# | 4   | SCK       | D13        | PA5        | SCK        | SPI clock input                             |
+# | 5   | MISO      | D12        | PA6        | MISO       | SPI data output                             |
+# | 6   | CS        | D10        | PB6        | 27         | SPI Chip select, active when voltage is low |
+# | --- | --------- | ---------- | ---------- | ---------- | ------------------------------------------- |
 # 
 #
 
 # #
 # import libraries to use in this programme
-from bschsnrtc import BME280 # sensor driver, this to source or more likely have to create code for
+from bme import BME280 # sensor driver, this to source or more likely have to create code for
 
 
 
