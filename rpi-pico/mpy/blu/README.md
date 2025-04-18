@@ -1,6 +1,6 @@
 # Bluetooth blu (mpy)
 
-MicroPython mpy Bluetooth, personal area network, 
+MicroPython mpy Bluetooth, personal area network, Pico onboard Bluetooth 5.2, 
 
 ## Status
 
