@@ -6,13 +6,12 @@ Microcontroller, IoT, physical computing
 
 TODO
 * <todo: consider, preparetory work for Climate-Model \amn project PoC, >
-* <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
+* <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, >
 * <todo: consider, bluetooth project, RPi Pico >
+* <todo: try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
 * <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
-* <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless >
-* <todo: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, >
-* <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. >
-* <todo: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, >
+* <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless, manufactured in CN, part of Waveshare Micropython Learning Kit, >
+* <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. 18/04/2025 difficulty sourcing Pico with onbaord debug connector,>
 * <todo: consider, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
 
 
@@ -22,6 +21,8 @@ DONE
 * <done: consider, as it appears Micropython only allows access to a single core of RPi Pico Arm chip, C/C++ allows access to both cores of RPi Pico Arm chip, confirm this is the case! likely both core can be used by use of threading? Also MicroPython and C/C++ SDK side by side might be possible, call C/C++ SDK from MicroPython? conclusion difficult to do, but not impossible, likely future versions of RPi Pico N will make this easier, There may be a CircuitPython work around but also not clear on longevity of CircuitPython fork, >
 * <done: consider, secondary languages on RPi Pico, two core languages MicroPython for DEV/QA and RAD and PoC, C/C++/asm for PROD and MVP, secondary languages only for specific use case where mpy and cpa won't work, concentrate on RPi and Ubuntu ecosystem,  >
 * <done: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? probably not worth the effort at this point, wait for market to mature further, Oracle or Eclipse Foundation focus on IoT and embedded systems, RPi ecosystem, Ubuntu ecosystem, >
+* <done: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, purchased 17/04/2025 1xfull size 1xhalf size bradboard, >
+* <done: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, 1xRPi Pico 2 W, battery holder, >
 
 ## Libraries
 
@@ -101,3 +102,9 @@ News Papers - antenna, wireless, wifi, bluetooth,
 
 News Papers - MicroPython and C/C++ SDK side by side on RPi Pico 
 * Possible to run MicroPython on one core and C SDK code on the other?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=325167), Raspberry Pi, forums, yes?
+
+New Papers - daisy chain breadboards, power supply, 
+* Voltage is reduced across chained breadboards, [WS](https://electronics.stackexchange.com/questions/85599/voltage-is-reduced-across-chained-breadboards), 
+
+News Papers - power pico
+* How to Power the Raspberry Pi Pico? 6 Different ways, [WS](https://randomnerdtutorials.com/power-raspberry-pi-pico-6-different-ways/), Random Tutorials, 
