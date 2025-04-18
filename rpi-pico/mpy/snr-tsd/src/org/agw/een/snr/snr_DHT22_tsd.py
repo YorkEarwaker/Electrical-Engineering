@@ -42,8 +42,7 @@
 #
 #    1=VDD, 2=Data, 3=NC, 4=GND
 #
-# Pin numbers, left to right, 1 2 3 4, with DHT sensor forward facing
-# Pin sequence number: 1 2 3 4 (from left to right direction
+# Pin sequence numbers, left to right, 1 2 3 4, with DHT sensor forward facing
 #    _____
 #   /_____\  Simplified
 #  |       | Front of

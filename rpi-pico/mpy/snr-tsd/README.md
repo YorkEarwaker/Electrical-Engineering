@@ -11,7 +11,7 @@ For consumption by climate models for example,
 ## Status
 
 TODO
-* <todo: consider, temperature humidity air pressure readings, BME280 PoC >
+* <todo: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC,  >
 
 DONE
 * <done: intent to commit>
@@ -59,9 +59,14 @@ Documentation
 Datasheet
 * ...
 
-Hardware
-* DHT22 sensor, Aosong (AM2302), (temperature, humidity), [WS](https://thepihut.com/products/dht22-temperature-humidity-sensor-extras), The Pi Hut
-* BME280 sensor, , (temperature, humidity, air pressure), [WS](https://thepihut.com/products/bme280-environmental-sensor), The Pi Hut
+Hardware - Bosch 
+* BME280 sensor, Waveshare, CN, (temperature, humidity, air pressure), [WS](https://thepihut.com/products/bme280-environmental-sensor), The Pi Hut, appears as though the BME280 chip is a clone manufactured in CN, under licence from Bosch, any delta from Bosch? 
+* Bosch Sensortec [WS](https://www.bosch-sensortec.com/), BME280, many others, DE, 
+* BME280 driver, [GH](https://github.com/boschsensortec/BME280_SensorAPI), C/C++
+
+Hardware - Aosong
+* DHT22 sensor, Aosong (AM2302), CN, (temperature, humidity), [WS](https://thepihut.com/products/dht22-temperature-humidity-sensor-extras), The Pi Hut
+
 
 News Papers - DHT22/DHT11 with RPi Pico 
 * DHT11 sensor with Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=372629), forums, raspberrypi
@@ -72,5 +77,21 @@ News Papers - DHT22/DHT11 with RPi Pico
 News Papers - DHT22/DHT11 with PyCom
 * DHT Pure Python library for Pycom board, [WS](https://github.com/JurassicPork/DHT_PyCom), dht class 
 
-News Papers - BME280 with RPi Pico
+News Papers - BME280, Waveshare, RPi
+* bme280 sensor not being picked up, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2280887&hilit=bme280+waveshare#p2280887), Forums, Raspberry Pi, 
+* ...
+
+News Papers - BME280 with RPi Pico, various BME280 vendors & products, 
+* Raspberry Pi Pico: BME280 Get Temperature, Humidity, and Pressure (MicroPython), [WS](https://randomnerdtutorials.com/raspberry-pi-pico-bme280-micropython/), Randomtutorials, 
+* BME280 with Raspberry Pi Pico using MicroPython, [WS](https://microcontrollerslab.com/bme280-raspberry-pi-pico-micropython-tutorial/), Microcontrollerslab 
+* Make Simple Raspberry Pi Pico W Weather Station With BME280 [WS](https://www.electromaker.io/project/view/make-simple-raspberry-pi-pico-w-weather-station-with-bme280), electromaker
+* Ardfruit, CircuitPython, BME280, [WS](https://docs.circuitpython.org/projects/bme280/en/latest/)
+
+News Papers - BME280 with Raspberry Pi, various BME280 vendors & products, 
+* Pico with BME280 breakout (via Explorer Base and MicroPython) [WS](https://forums.pimoroni.com/t/pico-with-bme280-breakout-via-explorer-base-and-micropython/16055)
+* ...
+
+News Papers - BME280 with ESP32
+* MicroPython: BME280 with ESP32 and ESP8266 (Pressure, Temperature, Humidity), [WS](https://randomnerdtutorials.com/micropython-bme280-esp32-esp8266/), Randomtutorials, 
+* ...
 * ...
