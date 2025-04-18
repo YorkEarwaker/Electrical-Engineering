@@ -8,12 +8,11 @@ TODO
 * <todo: consider, preparetory work for Climate-Model \amn project PoC, >
 * <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, >
 * <todo: consider, bluetooth project, RPi Pico >
-* <todo: try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
+* <todo: consider, try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
 * <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
 * <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless, manufactured in CN, part of Waveshare Micropython Learning Kit, >
 * <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. 18/04/2025 difficulty sourcing Pico with onbaord debug connector,>
 * <todo: consider, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
-
 
 DONE
 * <done: intent to commit>
