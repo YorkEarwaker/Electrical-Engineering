@@ -2,6 +2,8 @@
 #
 # BME280 driver
 # Will likely have to write own driver from other examples for the Waveshare BME280 sensor
+# 
+# https://pypi.org/project/RPi.bme280/ # !2C four pin device only, not six pin I2C/ISP Waveshare 
 #
 # BME280 sensor, Waveshare, environmental sensor
 # https://thepihut.com/products/bme280-environmental-sensor
@@ -16,7 +18,7 @@
 # RPi Pico 2 W pinout diagram
 # https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf
 #
-# BME280 datasheet, Waveshare, CN, 
+# BME280 datasheet, Waveshare, CN,
 # https://www.waveshare.com/wiki/BME280_Environmental_Sensor
 # https://www.waveshare.net/wiki/Pioneer600_Datasheets
 # https://www.waveshare.net/wiki/RPi_LCD_Datasheets
@@ -27,6 +29,8 @@
 # Related, Bosch datasheet
 # https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 # https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
+# Related, PyPi driver project
+# https://raw.githubusercontent.com/rm-hull/bme280/master/doc/tech-spec/BME280.pdf
 #
 # Pin sequence numbers, left to right, 1 2 3 4, with BME sensor forward facing
 #
@@ -42,12 +46,12 @@
 # | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
 # | BME pin | Function  | I2C  | RPi Pico pin | Wire   | SPI  | RPi Pico pin | Wire   |
 # | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
-# | 1       | VCC       | VCC  | 3V3,  pin 36 | Red    | VCC  |              |        | 
-# | 2       | GND       | GND  | GND,  pin 28 | Black  | GND  |              |        | 
+# | 1       | VCC       | VCC  | 3V3,  pin 36 | Red    | VCC  | 3V3,  pin 36 |        | 
+# | 2       | GND       | GND  | GND,  pin 28 | Black  | GND  | GND,  pin 28 |        | 
 # | 3       | SDA/MOSI  | SDA  | GP?,  pin ?? | Yellow | MOSI |              |        | 
-# | 4       | SCL/SCK   | SCL  |              |        | SCK  |              |        | 
+# | 4       | SCL/SCK   | SCL  | GP?,  pin ?? |        | SCK  |              |        | 
 # | 5       | ADDR/MISO | ADDR |              |        | MISO |              |        | 
-# | 6       | CS        | CS   |              |        | CS   |              |        | 
+# | 6       | CS        | CS   |              |        | CS   | 27           |        | 
 # | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
 # SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor? Or resistor's onboard sensor? 
 #
