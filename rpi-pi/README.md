@@ -80,8 +80,11 @@ Documentation
 * Raspberry Pi, datasheets [WS](https://datasheets.raspberrypi.com/)
 * Raspberry Pi, forums [WS](https://forums.raspberrypi.com/)
 
+Documentation - RPi Pico pinout
+* Rasberry Pi Pico, pinout, [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf), Raspberry Pi Pico, datasheet 
+* Interactive, Rasberry Pi Pico, pinout, [WS](https://pico.pinout.xyz/), pinout . xyz
+
 Datasheet - Raspberry Pi Pico
-* Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf), Raspberry Pi Pico 2 W Datasheet, schematics, power, pinout, 
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf), RP2350 Datasheet
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf), Getting started with Raspberry Pi Pico-series C/C++ development with Raspberry Pi Pico-series and other Raspberry Pi microcontroller-based boards
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
