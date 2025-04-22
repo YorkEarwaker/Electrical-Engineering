@@ -18,7 +18,7 @@ DONE
 ## References
 
 Documentation
-* Raspberry Pi (RPi) pinout diagram, com, WS](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio), documentation, Raspberry Pi, 
+* Raspberry Pi (RPi) pinout diagram, com, [WS](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio), documentation, Raspberry Pi, 
 * Interactive RPi pinout diagram, [WS](https://pinout.xyz/), pinout . xyz, 
 * RPi pinout, org, [WS](https://projects.raspberrypi.org/en/projects/physical-computing/1), Physical Computing with Python, projects, Raspberry Pi
 
