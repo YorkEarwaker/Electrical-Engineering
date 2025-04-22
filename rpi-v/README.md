@@ -1,4 +1,4 @@
-# Raspberry Pi 5
+# Raspberry Pi 5 rpi-v
 
 Single board computer, 
 
@@ -16,6 +16,14 @@ DONE
 * <done: intent to commit >
 
 ## References
+
+Documentation
+* Raspberry Pi (RPi) pinout diagram, com, WS](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio), documentation, Raspberry Pi, 
+* Interactive RPi pinout diagram, [WS](https://pinout.xyz/), pinout . xyz, 
+* RPi pinout, org, [WS](https://projects.raspberrypi.org/en/projects/physical-computing/1), Physical Computing with Python, projects, Raspberry Pi
+
+Books
+* Programming the Raspberry Pi, Getting Started with Python, Simon Monk, 
 
 RPi 5, screens/display/HDMI
 * EDID data
