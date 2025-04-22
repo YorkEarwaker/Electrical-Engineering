@@ -32,6 +32,7 @@
 #
 # RPi Pico 2 W pinout diagram
 # https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf
+# https://pico.pinout.xyz/
 #
 # DHT22 sensor, Aosong (AM2302), datasheet
 # https://cdn.sparkfun.com/assets/f/7/d/9/c/DHT22.pdf
@@ -52,11 +53,13 @@
 #   | | | |
 #   1 2 3 4
 #
+# | ---------------------------------------------------------------------------------------------- |
+# | Raspberry Pi Pico, DHT22, pin map                                                              |
 # | ------- | ------------------------------------------------------------ | ------------ | ------ |
 # | DHT pin | Function                                                     | RPi Pico pin | Wire   |
 # | ------- | ------------------------------------------------------------ | ------------ | ------ |
 # | 1       | VDD, power supply, 3.3V - 5.5V                               | 3V3,  pin 36 | Red    |
-# | 2       | SDA, DATA, signal, any GPIO, with a 10k Ohm pull up resistor | GP2,  pin 04 | Yellow |
+# | 2       | SDA, DATA, signal, any GPIO, with a 10k Ohm pull up resistor | G02,  pin 04 | Yellow |
 # | 3       | NULL, NC, Empty, Don't connect                               |              |        |
 # | 4       | GND, Ground                                                  | GND,  pin 28 | Black  |
 # | ------- | ------------------------------------------------------------ | ------------ | ------ |    
