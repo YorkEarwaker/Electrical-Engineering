@@ -14,10 +14,13 @@ TODO
 * <todo: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC,  >
 * <todo: consider, Bosch BME180 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
+* <todo: consider, RPi PIco, I2C preferred?/default? over SPI, BM280 PoC, >
+* <todo: consider, can wiring be completed such that a switch / toggle can be made between I2C1 and SPI1? , can this be achieve with Pico? look to pinout, >
 
 DONE
 * <done: intent to commit>
 * <done: consider, temperature humidity readings, DHT22 PoC >
+* <done: consider, RPi Pico, 12C1 bus is prefered over I2C0 internal bus. BME280 PoC, >
 
 ## Readings
 
@@ -100,4 +103,10 @@ News Papers - BME280 with Raspberry Pi, various BME280 vendors & products,
 News Papers - BME280 with ESP32
 * MicroPython: BME280 with ESP32 and ESP8266 (Pressure, Temperature, Humidity), [WS](https://randomnerdtutorials.com/micropython-bme280-esp32-esp8266/), Randomtutorials, 
 * ...
+* ...
+
+News Papers - RPi Pico pinout, SPI, I2C, ...
+* SPI pins on pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=301247), Forums, Raspberry Pi, 
+* How to use both SPI0 and SPI1? [WS](https://forums.raspberrypi.com/viewtopic.php?t=341966), Forums, Raspberry Pi, C/C++ 
+* Pi pico default pi pico pins? [WS](https://forums.raspberrypi.com/viewtopic.php?t=352871), Forums, Raspberry Pi, 
 * ...
