@@ -110,3 +110,14 @@ New Papers - daisy chain breadboards, power supply,
 
 News Papers - power pico
 * How to Power the Raspberry Pi Pico? 6 Different ways, [WS](https://randomnerdtutorials.com/power-raspberry-pi-pico-6-different-ways/), Random Tutorials, 
+
+News Papers - standard wire colors, SPI, I2C, others
+* Is there any standard for colors of Serial Peripheral Interface wires? [WS](https://arduino.stackexchange.com/questions/88886/is-there-any-standard-for-colors-of-serial-peripheral-interface-wires), StackExchange, Arduino, 
+
+News Paper - Pico pinout
+* Understanding GPIO using the Raspberry Pi Pico, [WS](https://www.alexdwilson.dev/learning-in-public/gpio-on-the-raspberry-pi-pico), Jan 2019?, Alex Wilson
+* Raspberry Pi Pico and Pico W Pinout Guide: GPIOs Explained, [WS](https://randomnerdtutorials.com/raspberry-pi-pico-w-pinout-gpios/#spi), Random Tutorials, 
+
+
+
+
