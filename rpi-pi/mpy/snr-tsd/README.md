@@ -12,7 +12,7 @@ For consumption by climate models for example,
 
 TODO
 * <todo: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC,  >
-* <todo: consider, Bosch BME180 and other environmental sensors from Bosch for Climate Model \amn sub project >
+* <todo: consider, Bosch BME180 and BMP085 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
 
 DONE
