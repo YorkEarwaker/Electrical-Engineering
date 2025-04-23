@@ -1,5 +1,11 @@
 # Code sources
 #
+# Machine module
+# https://docs.micropython.org/en/latest/library/machine.html # module
+# https://docs.micropython.org/en/latest/library/machine.Pin.html # class
+# https://docs.micropython.org/en/latest/library/machine.SPI.html # class
+# https://docs.micropython.org/en/latest/library/machine.I2C.html # class
+#
 # BME280 driver
 # Will likely have to write own driver from other examples for the Waveshare BME280 sensor
 #
@@ -77,9 +83,13 @@
 # For SPI; BME pin 3 is SPI MOSI maps to GP19 SPI0 TX pin 25
 #
 # SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor? Or resistor's onboard sensor?
-# <todo: confirm resistor's onboard Waveshare BME280> 
+# <todo: confirm resistor's onboard Waveshare BME280>
+# Other realted terms on other manufacturer's sensors, 
+# MOSI/SDI Serial Data In
+# MISO/SDO Serial Data Out
 #
-# I2C and SPI connection models, 
+# I2C and SPI connection models,
+# CS = Logic HIGH for I2C (default), logic LOW for SPI
 # 
 # | -------------------------------------------------------------------------------------------------------- |
 # | I2C interface                                                                                            |
