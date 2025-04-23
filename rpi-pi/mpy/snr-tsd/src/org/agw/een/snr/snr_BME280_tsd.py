@@ -27,6 +27,10 @@
 # https://pinout.xyz/
 # https://projects.raspberrypi.org/en/projects/physical-computing/1
 #
+# Raspberry Pi kernal overlays, to modify kernal without module changes, <todo: does this also apply to Pico?>
+# Configuration file '/boot/config.txt', enable use of SPI1 by line; dtoverlay=spi1-3cs 
+# https://raw.githubusercontent.com/raspberrypi/firmware/master/boot/overlays/README
+#
 # BME280 datasheet, Waveshare, CN,
 # https://www.waveshare.com/wiki/BME280_Environmental_Sensor
 # https://www.waveshare.net/wiki/Pioneer600_Datasheets
@@ -52,19 +56,28 @@
 #   | | | | | |
 #   1 2 3 4 5 6
 # 
-# | --------------------------------------------------------------------------------- |
-# | Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0                                 |
-# | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
-# | BME pin | Function  | I2C  | RPi Pico pin | Wire   | SPI  | RPi Pico pin | Wire   |
-# | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
-# | 1       | VCC       | VCC  | 3V3,  pin 36 | Red    | VCC  | 3V3,  pin 36 |        | 
-# | 2       | GND       | GND  | GND,  pin 28 | Black  | GND  | GND,  pin 28 |        | 
-# | 3       | SDA/MOSI  | SDA  | G19,  pin 25 | Yellow | MOSI | G19,  pin 25 |        | 
-# | 4       | SCL/SCK   | SCL  | G18,  pin 24 | Yellow | SCK  | G18,  pin 24 |        | 
-# | 5       | ADDR/MISO | ADDR |              |        | MISO | G16,  pin 22 |        | 
-# | 6       | CS        | CS   |              |        | CS   | G17   pin 21 |        | 
-# | ------- | --------- | ---- | ------------ | ------ | ---- | ------------ | ------ |
-# SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor? Or resistor's onboard sensor? 
+# | --------------------------------------------------------------------------------------------- |
+# | Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0                                             |
+# | ------- | --------- | ---- | ------------------ | ------ | ---- | --------_--------- | ------ |
+# | BME pin | Function  | I2C  | RPi Pico           | Wire   | SPI  | RPi Pico           | Wire   |
+# |         |           |      | Use,  I2C1, pin NN |        |      | Use,  SPI0, pin NN |        |  
+# | ------- | --------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
+# | 1       | VCC       | VCC  | 3V3,        pin 36 | Red    | VCC  | 3V3,        pin 36 | Red    | 
+# | 2       | GND       | GND  | GND,        pin 28 | Black  | GND  | GND,        pin 28 | Black  | 
+# | 3       | SDA/MOSI  | SDA  | GP18, SDA,  pin 24 | Yellow | MOSI | GP19, TX,   pin 25 |        | 
+# | 4       | SCL/SCK   | SCL  | GP19, SCL,  pin 25 | Blue?  | SCK  | GP18, SCK,  pin 24 |        | 
+# | 5       | ADDR/MISO | ADDR |                    |        | MISO | GP16, RX,   pin 21 |        | 
+# | 6       | CS        | CS   |                    |        | CS   | GP17, CSn   pin 22 |        | 
+# | ------- | --------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
+# Candidate wiring and pin allocation, ensure programatically enable pins, don't rely on Pico 'defaults'
+# This wiring for programatic switch between I2C and SPI may not be possible
+# if I2C requires BME pin 5 and 6 to be NC not connected.
+# Also as can be seen from the mapping above mapping issues for BME pin 3 and BME pin 4. For example;
+# For I2C; BME pin 3 is I2C SDA maps to GP18 I2C1 SDA pin 24
+# For SPI; BME pin 3 is SPI MOSI maps to GP19 SPI0 TX pin 25
+#
+# SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor? Or resistor's onboard sensor?
+# <todo: confirm resistor's onboard Waveshare BME280> 
 #
 # I2C and SPI connection models, 
 # 
@@ -95,41 +108,74 @@
 # | 3   | MOSI      | D11        | PA7        | MOSI       | SPI data input                                  |
 # | 4   | SCK       | D13        | PA5        | SCK        | SPI clock input                                 |
 # | 5   | MISO      | D12        | PA6        | MISO       | SPI data output                                 |
-# | 6   | CS        | D10        | PB6        | G27        | SPI Chip select, active when voltage is low     |
+# | 6   | CS        | D10        | PB6        | GP27?      | SPI Chip select, active when voltage is low     |
 # | --- | --------- | ---------- | ---------- | ---------- | ----------------------------------------------- |
-# 
-# Pico pinout, two I2C controllers, I2C0 and I2C1. <todo: confirm this is true for Pico>
+# 27, GP27 seem's incorrect from Waveshare docs re Rasberry Pi, <todo: validate this >
+#
+# Inter Intergerated Circuit I2C
+# Pico pinout, two I2C controllers, I2C0 and I2C1. Preferred use I2C1.
 # Each with several GPIO pins for SDA (Serial Data) and SCL (Serial Clock) signals.
 # I2C0 internal I2C bus reserved for GPU, but can be used for general communcation
 # if CSI1 and DSI1 interfaces are not used or are controlled by firmware. 
 # I2C1 external I2C bus better for connecting sensors or peripherals.
 # Not used for internal functions and can be used freely for general communications.
+# Raspberry Pi Pico default I2C interface I2C1
+# Raspberry Pi Pico default I2C1 pins, GP2 (SDA), GP3 (SCL),
 # 
-# I2C0 Pinout
-# SDA (Serial Data) Pins: GP0, GP4, GP8, GP12, GP16, GP20
-# SCL (Serial Clock) Pins: GP1, GP5, GP9, GP13, GP17, GP21
-# I2C1 Pinout
-# SDA (Serial Data) Pins: GP2, GP6, GP10, GP14, GP18, GP26
-# SCL (Serial Clock) Pins: GP3, GP7, GP11, GP15, GP19, GP27
-# Default I2C Pins
-# Default I2C0 Pins: GP4 (SDA) and GP5 (SCL)
-# Default I2C1 Pins: GP2 (SDA) and GP3 (SCL)
+# | ---------------------------------------------------------------------- |
+# | RPi Pico, I2C0 Pinout,                                                 |
+# | Default I2C0 Pins: GP4 (SDA), GP5 (SCL)                                |
+# | --------- | -------------------------------------- | ----------------- |
+# | Function  | RPi Pico GPIO                          | Description       |
+# | pin       | <todo: Board pin NN line below GPIO?>  |                   |
+# | --------- | -------------------------------------- | ----------------- |
+# | SDA       | GP0, GP4, GP8, GP12, GP16, GP20,       | Serial Data       |
+# | SCL       | GP1, GP5, GP9, GP13, GP17, GP21,       | Serial Clock      |
+# | ---------------------------------------------------------------------- |
 #
+# | ---------------------------------------------------------------------- |
+# | RPi Pico, I2C1 Pinout, default preferred 12C interface                 |
+# | Default I2C1 Pins: GP2 (SDA), GP3 (SCL)                                |
+# | --------- | -------------------------------------- | ----------------- |
+# | Function  | RPi Pico GPIO                          | Description       |
+# | pin       |                                        |                   |
+# | --------- | -------------------------------------- | ----------------- |
+# | SDA       | GP2, GP6, GP10, GP14, GP18, GP26,      | Serial Data       |
+# | SCL       | GP3, GP7, GP11, GP15, GP19, GP27,      | Serial Clock      |
+# | ---------------------------------------------------------------------- |
+#
+# Serial Peripheral Interface SPI
 # RPi Pico, two SPI controllers, SPI0 and SPI1. 
 # Raspberry Pi Pico SPI0 default pins,
-# GPIO19 (MOSI/TX), GPIO18 (SCK), GPIO17 (CS) and GPIO 16 (MISO/RX)
-# Using SPI1 may require additional manural configuration of onboard files. <todo: check this is the case>
+# GP19 (MOSI/TX), GP18 (SCK), GP17 (CS) and GP16 (MISO/RX)
+# Using SPI1 may require additional manural configuration of onboard files for Raspberry Pi. <todo: check this is the case for Pico too?>
+# Raspberry Pi, configure dtoverlay in'/boot/config.txt' to enable SPI1, e.g. dtoverlay=spi1-3cs . 
 # 
-# SPI0 Pinout
-# CLK (Clock): GPIO2, GPIO6, GPIO18
-# MOSI (Master Out Slave In): GPIO3, GPIO7, GPIO19
-# MISO (Master In Slave In): GPIO0, GPIO4, GPIO16
-# CS (Chip Select): GPIO1, GPIO5, GPIO17
-# SPI1 Pinout
-# CLK (Clock): GPIO10, GPIO14
-# MOSI (Master Out Slave In): GPIO11, GPIO15
-# MISO (Master In Slave In): GPIO8, GPIO12
-# CS (Chip Select): GPIO9, GPIO13
+# | ---------------------------------------------------------------------------- |
+# | RPi Pico, SPI0 Pinout, default preferred SPI interface                       |
+# | Default SPI0 Pins: GP19 (MOSI/TX), GP18 (SCK), GP17 (CS), GP16 (MISO/RX)     |
+# | --------- | -------------------------------------- | ----------------------- |
+# | Function  | RPi Pico GPIO                          | Description             |
+# | pin       |                                        |                         |
+# | --------- | -------------------------------------- | ----------------------- |
+# | CLK       | GP2, GP6, GP18,                        | Clock                   |
+# | MOSI      | GP3, GP7, GP19,                        | Master Out Slave In     |
+# | MISO      | GP0, GP4, GP16,                        | Master In  Slave Out    |
+# | CS        | GP1, GP5, GP17,                        | Chip Select             |
+# | ---------------------------------------------------------------------------- |
+#
+# | ---------------------------------------------------------------------------- |
+# | RPi Pico, SPI1 Pinout,                                                       |
+# | Default SPI1 Pins: ?                                                         |
+# | --------- | -------------------------------------- | ----------------------- |
+# | Function  | RPi Pico GPIO                          | Description             |
+# | pin       |                                        |                         |
+# | --------- | -------------------------------------- | ----------------------- |
+# | CLK       | GP10, GP14,                            | Clock                   |
+# | MOSI      | GP11, GP15,                            | Master Out Slave In     |
+# | MISO      | GP8,  GP12,                            | Master In  Slave Out    |
+# | CS        | GP9,  GP13,                            | Chip Select             |
+# | ---------------------------------------------------------------------------- |
 # 
 
 # #
