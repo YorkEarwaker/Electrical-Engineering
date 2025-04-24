@@ -115,9 +115,10 @@ News Papers - standard wire colors, SPI, I2C, others
 * Is there any standard for colors of Serial Peripheral Interface wires? [WS](https://arduino.stackexchange.com/questions/88886/is-there-any-standard-for-colors-of-serial-peripheral-interface-wires), StackExchange, Arduino, 
 
 News Paper - Pico pinout
-* Understanding GPIO using the Raspberry Pi Pico, [WS](https://www.alexdwilson.dev/learning-in-public/gpio-on-the-raspberry-pi-pico), Jan 2019?, Alex Wilson
+* Understanding GPIO using the Raspberry Pi Pico, [WS](https://www.alexdwilson.dev/learning-in-public/gpio-on-the-raspberry-pi-pico), 19 Jan 2025?, Alex Wilson
 * Raspberry Pi Pico and Pico W Pinout Guide: GPIOs Explained, [WS](https://randomnerdtutorials.com/raspberry-pi-pico-w-pinout-gpios/#spi), Random Tutorials, 
 
-
+News Papers - ARM Cortex-M, RPi Pico, processor unit, processor registry
+* Single Cycle, [WS](https://www.scaprile.com/tag/single-cycle/), scaprile, ARM Cortex-M, 
 
 
