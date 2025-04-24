@@ -12,7 +12,7 @@ For consumption by climate models for example,
 
 TODO
 * <todo: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC,  >
-* <todo: consider, Bosch BME180 and BMP085 and other environmental sensors from Bosch for Climate Model \amn sub project >
+* <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
 
 DONE
@@ -93,11 +93,13 @@ News Papers - BME280, Waveshare, RPi
 News Papers - BME280 with RPi Pico, various BME280 vendors & products, 
 * Raspberry Pi Pico: BME280 Get Temperature, Humidity, and Pressure (MicroPython), [WS](https://randomnerdtutorials.com/raspberry-pi-pico-bme280-micropython/), Randomtutorials, 
 * BME280 with Raspberry Pi Pico using MicroPython, [WS](https://microcontrollerslab.com/bme280-raspberry-pi-pico-micropython-tutorial/), Microcontrollerslab 
+* Raspberry Pi Pico W Wireless BME280 Web Server, [WS](https://microcontrollerslab.com/raspberry-pi-pico-w-wireless-bme280-web-server/), Microcontrollerslab 
 * Make Simple Raspberry Pi Pico W Weather Station With BME280 [WS](https://www.electromaker.io/project/view/make-simple-raspberry-pi-pico-w-weather-station-with-bme280), electromaker
 * Ardfruit, CircuitPython, BME280, [WS](https://docs.circuitpython.org/projects/bme280/en/latest/)
+* Using the BME280 I2C Temperature and Pressure Sensor in Python, [WS](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/), Raspberry Pi Spy, 
 
 News Papers - BME280 with Raspberry Pi, various BME280 vendors & products, 
-* Pico with BME280 breakout (via Explorer Base and MicroPython) [WS](https://forums.pimoroni.com/t/pico-with-bme280-breakout-via-explorer-base-and-micropython/16055)
+* Pico with BME280 breakout (via Explorer Base and MicroPython) [WS](https://forums.pimoroni.com/t/pico-with-bme280-breakout-via-explorer-base-and-micropython/16055), pimoroni
 * ...
 
 News Papers - BME280 with ESP32

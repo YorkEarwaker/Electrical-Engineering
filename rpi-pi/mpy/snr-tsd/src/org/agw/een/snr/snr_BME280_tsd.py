@@ -1,9 +1,19 @@
 # Code sources
 #
-# Machine module
+# MicroPython,
+# RP2 module, quick reference
+# https://docs.micropython.org/en/latest/rp2/quickref.html # module
+#
+# machine module
 # https://docs.micropython.org/en/latest/library/machine.html # module
+
+# machine module, Pin class
 # https://docs.micropython.org/en/latest/library/machine.Pin.html # class
+
+# machine module SPI class
 # https://docs.micropython.org/en/latest/library/machine.SPI.html # class
+
+# machine module I2C class, i2c.scan(), 
 # https://docs.micropython.org/en/latest/library/machine.I2C.html # class
 #
 # BME280 driver
@@ -13,7 +23,10 @@
 # R Hull, I2C four pin device only, not six pin I2C/ISP Waveshare
 # see RPi pinout below
 # Assess R Hull driver for I2C , 
-# https://pypi.org/project/RPi.bme280/  
+# https://pypi.org/project/RPi.bme280/
+#
+# RPi Spy, Matt Hawkins, Raspberry Pi, also Pico?
+# https://bitbucket.org/MattHawkinsUK/rpispy-misc/raw/master/python/bme280.py
 #
 # BME280 sensor, Waveshare, environmental sensor
 # https://thepihut.com/products/bme280-environmental-sensor
@@ -32,11 +45,20 @@
 # https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio
 # https://pinout.xyz/
 # https://projects.raspberrypi.org/en/projects/physical-computing/1
-#
+# 
 # Raspberry Pi kernal overlays, to modify kernal without module changes, <todo: does this also apply to Pico?>
 # Configuration file '/boot/config.txt', enable use of SPI1 by line; dtoverlay=spi1-3cs 
 # https://raw.githubusercontent.com/raspberrypi/firmware/master/boot/overlays/README
 #
+# I2C  
+# Resistors between, host controller e.g. microcontroller like RPi Pico, target device e.g. sensor like BME280
+# Example sensors with no onboard resistors; DHT22, AM2320
+# <todo: confirm resistor's onboard Waveshare BME280, >
+# https://learn.adafruit.com/working-with-i2c-devices/pull-up-resistors
+# 
+# How to Scan and Detect I2C Addresses, RPi Pico, Ardfruit lib i2cdetect?
+# https://learn.adafruit.com/scanning-i2c-addresses/raspberry-pi
+# 
 # BME280 datasheet, Waveshare, CN,
 # https://www.waveshare.com/wiki/BME280_Environmental_Sensor
 # https://www.waveshare.net/wiki/Pioneer600_Datasheets
@@ -82,8 +104,6 @@
 # For I2C; BME pin 3 is I2C SDA maps to GP18 I2C1 SDA pin 24
 # For SPI; BME pin 3 is SPI MOSI maps to GP19 SPI0 TX pin 25
 #
-# SDA/MOSI? = DATA, signal, any GPIO, with a 10k Ohm pull up resistor? Or resistor's onboard sensor?
-# <todo: confirm resistor's onboard Waveshare BME280>
 # Other realted terms on other manufacturer's sensors, 
 # MOSI/SDI Serial Data In
 # MISO/SDO Serial Data Out
@@ -123,6 +143,7 @@
 # 27, GP27 seem's incorrect from Waveshare docs re Rasberry Pi, <todo: validate this >
 #
 # Inter Intergerated Circuit I2C
+# a two-wire serial protocol
 # Pico pinout, two I2C controllers, I2C0 and I2C1. Preferred use I2C1.
 # Each with several GPIO pins for SDA (Serial Data) and SCL (Serial Clock) signals.
 # I2C0 internal I2C bus reserved for GPU, but can be used for general communcation
@@ -131,6 +152,13 @@
 # Not used for internal functions and can be used freely for general communications.
 # Raspberry Pi Pico default I2C interface I2C1
 # Raspberry Pi Pico default I2C1 pins, GP2 (SDA), GP3 (SCL),
+#
+# Two pull up resistor required for I2C electrical interface,
+# One resistor between SDA and VCC
+# One resistor between SCL and VCC
+# SDA = DATA, signal, a GPIO I2C SDA, with a 10k Ohm pull up resistor? 
+# SCL = Clock, a GPIO I2C SCL, with a 10k Ohm pull up resistor?
+# Or resistor's onboard sensor, i.e. BME280,? <todo: confirm resistor's onboard Waveshare BME280>
 # 
 # | ---------------------------------------------------------------------- |
 # | RPi Pico, I2C0 Pinout,                                                 |
@@ -190,7 +218,11 @@
 
 # #
 # import libraries to use in this programme
-from bme import BME280 # sensor driver, this to source or more likely have to create code for
+#from bme import BME280 # sensor driver, this to source or more likely have to create code for
+from machine import RTC
+
+rtc = RTC()
+rtc.datetime() # get the date and time
 
 
 
