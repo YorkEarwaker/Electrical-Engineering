@@ -64,6 +64,7 @@ Getting started stuff - 101
 * Micropython, [WS](https://www.waveshare.com/wiki/File:Raspberry_Pi_Pico_MicroPython_Demo_Code.7z), Waveshare, for kit, code samples, 
 
 MicroPython
+* Quick reference for the RP2,[WS](https://docs.micropython.org/en/latest/rp2/quickref.html), RP2 module, general usage
 * MicroPython, RPi Pico, bootsel, docs [WS](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html#drag-and-drop-micropython), Drag-and-Drop MicroPython
 * MicroPython, RPi Pico, bootsel, [WS](https://micropython.org/download/RPI_PICO/), Flashing via UF2 bootloader, 
 * MicroPython, [WS](https://github.com/micropython/micropython), 
@@ -121,4 +122,7 @@ News Paper - Pico pinout
 News Papers - ARM Cortex-M, RPi Pico, processor unit, processor registry
 * Single Cycle, [WS](https://www.scaprile.com/tag/single-cycle/), scaprile, ARM Cortex-M, 
 
+News Papers - I2C Devices, 
+* Working with I2C Devices, Pull Up Resistors, [WS](https://learn.adafruit.com/working-with-i2c-devices/pull-up-resistors), Carter Nelson, published March 09, 2022, last edited April 01, 2024, Ardfruit, Sensors Raspberry Pi Arduino Compatibles Programming STEMMA
+* How to Scan and Detect I2C Addresses, [WS](https://learn.adafruit.com/scanning-i2c-addresses/raspberry-pi), 
 
