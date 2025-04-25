@@ -1,3 +1,11 @@
+#        _ _   _ _ _       _     
+#       /   | / _ _ )   _ \ )    
+#      / (| |/ /   _ _ \ ) \ \   
+#     /  _    (  (_   ) \ \ \ \  
+#    / /  | |\ \ _ / \ \_\ \_\ \ 
+#   (_/   |_| \ _ _ / \ _ _ _ _ )
+#   Anthropogneic Global Warming
+#  
 # Code sources
 #
 # machine module, 
@@ -69,7 +77,7 @@
 
 # #
 # import libraries to use in this programme
-from machine import Pin
+from machine import Pin, RTC
 from time import sleep
 from dht import DHT22 # DHT11, # esp32 driver/module
 
@@ -82,6 +90,10 @@ pin = Pin(2, Pin.IN) # GP2
 snr_tsd = DHT22(pin)
 # print('snr_tsd {}'.format(snr_tsd)) # debug
 
+# #
+# create a Real Time Clock instance, to use to get the current date and time
+rtc = RTC()
+
 while True:
     #print('while True: in') # debug
     try:
@@ -91,6 +103,11 @@ while True:
         # wait for five seconds before next reading
         sleep(5) # five seconds
         #print('sleep(5): done') # debug
+        
+        # #
+        # get the date and time, from the Real Time Clock instance
+        dt_tm = rtc.datetime() # get the current date and time
+        print('current date & time: {}'.format(dt_tm)) # debug, date and time
         
         # #
         # Read the sensor values

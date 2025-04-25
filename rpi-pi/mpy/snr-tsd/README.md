@@ -30,18 +30,22 @@ DONE
 
 MPY: soft reboot
 
-Temperature: 18.8 °C
-Temperature: 65.84 °F
-Humidity: 41.4 %RH
-Temperature: 18.8 °C
-Temperature: 65.84 °F
-Humidity: 41.5 %RH
-Temperature: 18.8 °C
-Temperature: 65.84 °F
-Humidity: 41.5 %RH
-Temperature: 18.8 °C
-Temperature: 65.84 °F
-Humidity: 41.6 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 25, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.5 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 30, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.6 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 35, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.6 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 41, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.5 %RH
 
 ### BME280
 

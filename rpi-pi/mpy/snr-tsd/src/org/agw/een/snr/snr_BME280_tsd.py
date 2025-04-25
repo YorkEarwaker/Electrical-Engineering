@@ -1,3 +1,11 @@
+#        _ _   _ _ _       _     
+#       /   | / _ _ )   _ \ )    
+#      / (| |/ /   _ _ \ ) \ \   
+#     /  _    (  (_   ) \ \ \ \  
+#    / /  | |\ \ _ / \ \_\ \_\ \ 
+#   (_/   |_| \ _ _ / \ _ _ _ _ )
+#   Anthropogneic Global Warming
+#  
 # Code sources
 #
 # MicroPython,
@@ -219,10 +227,29 @@
 # #
 # import libraries to use in this programme
 #from bme import BME280 # sensor driver, this to source or more likely have to create code for
-from machine import RTC
+from machine import RTC, Pin, I2C
 
+# #
+# get the current date and time
 rtc = RTC()
-rtc.datetime() # get the date and time
+dt_tm = rtc.datetime() # get the date and time
+print('current date & time {}'.format(dt_tm)) # debug, date and time
+
+i2c = I2C(0) # default assignment; scl=Pin(9), sda=Pin(8)
+dvcs = i2c.scan() # scan for devices
+print('devices {}'.format(dvcs)) # debug, I2C devices found
+
+# ###############
+# Work in progress wip
+# ###############
+
+#i2c = I2C()
+
+
+
+
+
+
 
 
 
