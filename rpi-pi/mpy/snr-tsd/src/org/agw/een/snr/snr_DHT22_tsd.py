@@ -1,13 +1,14 @@
-#        _ _   _ _ _       _     
-#       /   | / _ _ )   _ \ )    
-#      / (| |/ /   _ _ \ ) \ \   
-#     /  _    (  (_   ) \ \ \ \  
-#    / /  | |\ \ _ / \ \_\ \_\ \ 
+#        _ _   _ _ _       _
+#       /   ) / _ _ )   _ \ )
+#      / (| |/ /   _ _ \ ) \ \
+#     /  _    (  (_   ) \ \ \ \
+#    / /  | |\ \ _ ) \ \_) \_) \
 #   (_/   |_| \ _ _ / \ _ _ _ _ )
 #   Anthropogneic Global Warming
-#  
+#  -------------------------------
+# 
 # Code sources
-#
+# 
 # machine module, 
 # https://docs.micropython.org/en/latest/library/machine.html
 #
