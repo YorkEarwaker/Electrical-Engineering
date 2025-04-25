@@ -5,7 +5,7 @@
 #    / /  | |\ \ _ )  \_) \_) \
 #   (_/   |_| \ _ _ /\ _ _ _ _ )
 #  Anthropogeneic Global Warming
-#  -------------------------------
+# --------------------------------
 # 
 # Code sources
 #
@@ -15,13 +15,13 @@
 #
 # machine module
 # https://docs.micropython.org/en/latest/library/machine.html # module
-
+#
 # machine module, Pin class
 # https://docs.micropython.org/en/latest/library/machine.Pin.html # class
-
+#
 # machine module SPI class
 # https://docs.micropython.org/en/latest/library/machine.SPI.html # class
-
+#
 # machine module I2C class, i2c.scan(), 
 # https://docs.micropython.org/en/latest/library/machine.I2C.html # class
 #
@@ -82,16 +82,17 @@
 # Related, PyPi driver project
 # https://raw.githubusercontent.com/rm-hull/bme280/master/doc/tech-spec/BME280.pdf
 #
-# Pin sequence numbers, left to right, 1 2 3 4, with BME sensor forward facing
+# Pin sequence numbers, left to right, 1 2 3 4 5 6, with BME sensor forward facing
 #
 #   ___________ 
-#  |           | Simplified
-#  |           | Front of
-#  |           | BME280
-#  |___________| sensor
-#  |___________| Waveshare, CN
-#   | | | | | |
-#   1 2 3 4 5 6
+#  |           | Simplified       | --- | --------- |
+#  |           | Front of         | 1   | VCC       |
+#  |           | BME280           | 2   | GND       |
+#  |___________| sensor           | 3   | SDA/MOSI  |
+#  |___________| Waveshare, CN    | 4   | SCL/SCK   |
+#   | | | | | |                   | 5   | ADDR/MISO |     
+#   1 2 3 4 5 6                   | 6   | CS        |
+#                                 | --- | --------- | 
 # 
 # | --------------------------------------------------------------------------------------------- |
 # | Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0                                             |

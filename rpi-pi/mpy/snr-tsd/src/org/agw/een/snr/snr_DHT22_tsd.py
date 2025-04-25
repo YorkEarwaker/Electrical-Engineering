@@ -5,10 +5,11 @@
 #    / /  | |\ \ _ )  \_) \_) \
 #   (_/   |_| \ _ _ /\ _ _ _ _ )
 #  Anthropogeneic Global Warming
-#  -------------------------------
+# --------------------------------
 # 
 # Code sources
-# 
+#
+# MicroPython,
 # machine module, 
 # https://docs.micropython.org/en/latest/library/machine.html
 #
