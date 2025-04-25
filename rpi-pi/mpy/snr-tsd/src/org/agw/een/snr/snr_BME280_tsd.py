@@ -1,12 +1,12 @@
-#        _ _   _ _ _       _
-#       /   ) / _ _ )   _ \ )
-#      / (| |/ /   _ _ \ ) \ \
-#     /  _    (  (_   ) \ \ \ \
-#    / /  | |\ \ _ ) \ \_) \_) \
-#   (_/   |_| \ _ _ / \ _ _ _ _ )
-#   Anthropogneic Global Warming
+#        _ _   _ _ _      _
+#       /   ) / _ _ )  _ \ )
+#      / (| |/ /  _ _ \ ) \ \
+#     /  _    (  (_  ) \ \ \ \
+#    / /  | |\ \ _ )  \_) \_) \
+#   (_/   |_| \ _ _ /\ _ _ _ _ )
+#  Anthropogeneic Global Warming
 #  -------------------------------
-#  
+# 
 # Code sources
 #
 # MicroPython,
@@ -270,4 +270,6 @@ print('devices: {}'.format(dvcs)) # debug, I2C devices found
 buf = bytearray(10)
 buf = i2c.readfrom(119, 10) # read ten (10) from address 119
 print('bytes read from device at address on i2c: {}'.format(buf)) # debug, I2C configuration values
+
+
 
