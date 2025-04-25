@@ -56,6 +56,11 @@ Note
 
 ## References
 
+Terms
+* inter intergrated circuit I2C, [WP](https://en.wikipedia.org/wiki/I%C2%B2C)
+* SPI 
+* ...
+
 Getting started stuff - 101
 * Raspberry Pi Pico, MicroPython Learning Kit (Pico Included) [WS](https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included), The Pi Hut, 
 * Raspberry Pi Pico, Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut
