@@ -4,7 +4,7 @@
 #     /  _    (  (_  ) \ \ \ \
 #    / /  | |\ \ _ )  \_) \_) \
 #   (_/   |_| \ _ _ /\ _ _ _ _ )
-#  Anthropogeneic Global Warming
+#   Anthropogenic Global Warming
 # --------------------------------
 # 
 # Code Sources
