@@ -87,8 +87,11 @@ Documentation
 * Raspberry Pi, forums [WS](https://forums.raspberrypi.com/)
 
 Documentation - RPi Pico pinout
-* Rasberry Pi Pico, pinout, [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf), Raspberry Pi Pico, datasheet 
-* Interactive, Rasberry Pi Pico, pinout, [WS](https://pico.pinout.xyz/), pinout . xyz
+* Rasberry Pi Pico W, pinout, [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf), Raspberry Pi Pico W, datasheet 
+* Rasberry Pi Pico, pinout, [PDF](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf), Raspberry Pi Pico, datasheet 
+* Interactive, Raspberry Pi Pico W, pinout [WS](https://picow.pinout.xyz/), pico w pinout . xyz
+* Interactive, Raspberry Pi Pico, pinout, [WS](https://pico.pinout.xyz/), pico pinout . xyz
+
 
 Datasheet - Raspberry Pi Pico
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf), RP2350 Datasheet
@@ -131,3 +134,6 @@ News Papers - I2C Devices,
 * Working with I2C Devices, Pull Up Resistors, [WS](https://learn.adafruit.com/working-with-i2c-devices/pull-up-resistors), Carter Nelson, published March 09, 2022, last edited April 01, 2024, Ardfruit, Sensors Raspberry Pi Arduino Compatibles Programming STEMMA
 * How to Scan and Detect I2C Addresses, [WS](https://learn.adafruit.com/scanning-i2c-addresses/raspberry-pi), 
 
+News Papers - RPi Pico power circuitry
+* A rant about power circuitry on the Pico, [WS](https://www.reddit.com/r/raspberrypipico/comments/n8af5b/a_rant_about_power_circuitry_on_the_pico/?rdt=33871), 
+* ...
