@@ -82,15 +82,16 @@
 # Related, PyPi driver project
 # https://raw.githubusercontent.com/rm-hull/bme280/master/doc/tech-spec/BME280.pdf
 #
-# Pin sequence numbers, left to right, 1 2 3 4 5 6, with BME sensor forward facing
+# Pin sequence numbers, left to right, 1 2 3 4 5 6, with circuit board and BME sensor forward facing
 #
+#       [.] BME280 sensor device, circa factor larger than actual size
 #   ___________ 
-#  |           | Simplified       | --- | --------- |
-#  |           | Front of         | 1   | VCC       |
+#  |    [.]    | Simplified       | --- | --------- | Circuit board 
+#  |           | Front of         | 1   | VCC       | pins functions
 #  |           | BME280           | 2   | GND       |
 #  |___________| sensor           | 3   | SDA/MOSI  |
 #  |___________| Waveshare, CN    | 4   | SCL/SCK   |
-#   | | | | | |                   | 5   | ADDR/MISO |     
+#   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
 #   1 2 3 4 5 6                   | 6   | CS        |
 #                                 | --- | --------- | 
 # 

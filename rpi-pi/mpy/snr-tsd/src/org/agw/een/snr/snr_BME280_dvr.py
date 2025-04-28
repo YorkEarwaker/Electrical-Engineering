@@ -28,18 +28,19 @@
 # https://github.com/RuiSantosdotme/ESP-MicroPython/blob/master/code/WiFi/HTTP_Client_IFTTT_BME280/BME280.py
 # https://microcontrollerslab.com/raspberry-pi-pico-w-wireless-bme280-web-server/
 #
-# Pin sequence numbers, left to right, 1 2 3 4 5 6, with BME sensor forward facing
-# 
+# Pin sequence numbers, left to right, 1 2 3 4 5 6, with circuit board and BME sensor forward facing
+#
+#       [.] BME280 sensor device, circa factor larger than actual size
 #   ___________ 
-#  |           | Simplified       | --- | --------- |
-#  |           | Front of         | 1   | VCC       |
+#  |    [.]    | Simplified       | --- | --------- | Circuit board 
+#  |           | Front of         | 1   | VCC       | pins functions
 #  |           | BME280           | 2   | GND       |
 #  |___________| sensor           | 3   | SDA/MOSI  |
 #  |___________| Waveshare, CN    | 4   | SCL/SCK   |
-#   | | | | | |                   | 5   | ADDR/MISO |     
+#   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
 #   1 2 3 4 5 6                   | 6   | CS        |
 #                                 | --- | --------- | 
-# 
+#
 # 4.2.2 Trimming parameter readout,
 # Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
 # | ------------------------------------------------------------ |
@@ -132,7 +133,54 @@
 # 40 Implausible temperature (default limits: 0…40°C)
 # 41 Implausible pressure (default limits: 900…1100 hPa)
 # 42 Implausible humidity (default limits: 20...80 %rH
-# 
+#
+# 7. Pin-out and connection diagram
+# Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
+#
+# [.] BME280 sensor device, circa factor larger than actual size
+#
+# BME280 sensor device, enlarged with pads
+# Botton view with pads visible.
+# Note the vent hole is visible only in Top view.
+#  ______________________________________
+# |   _______                  _______   |                
+# |  |   1   |                |   8   |  |
+# |  |  GND  |                |  VDD  |  |
+# |  |_______|                |_______|  |
+# |                                      |
+# |   _______                  _______   |                
+# |  |   2   |                |   7   |  |
+# |  |  CSB  |     Bottom     |  GND  |  |
+# |  |_______|      View      |_______|  |
+# |            (pads visible)            |
+# |   _______                  _______   |                
+# |  |   3   |                |   6   |  |
+# |  |  SDI  |                | VDDIO |  |
+# |  |_______|                |_______|  |
+# |                 Vent                 |
+# |   _______       hole       _______   |  The vent hole is shown to indicate its          
+# |  |   4   |       ◯       |   5   |  |  ralative position on the top view.
+# |  |  SCK  |      (not      |  SDO  |  |  The vent hole would not be visible in
+# |  |_______|    visible)    |_______|  |  the bottom view when the device pads are visible.
+# |______________________________________|  The device pads are integrated into the circuit board.
+#
+# |
+# Table 35: Pin description
+# Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
+# Pin Name I/O Type Description Connect to
+# SPI 4W SPI 3W I²C
+# 1 GND Supply Ground GND
+# 2 CSB In Chip select CSB CSB VDDIO
+# 3 SDI In/Out Serial data input SDI SDI/SDO SDA
+# 4 SCK In Serial clock input SCK SCK SCL
+# 5 SDO In/Out Serial data output SDO DNC GND for
+# default
+# address
+# 6 VDDIO Supply Digital / Interface
+# supply
+# VDDIO
+# 7 GND Supply Ground GND
+# 8 VDD Supply Analog supply VDD
 ## 
 
 # #
@@ -162,12 +210,16 @@ oversampling_mode_05 = 16
 # compensation code is provided by Bosch in the BME280 datasheet
 # compensation code logic equations use the trimming paramters stored in NVM. 
 
-# Trimming parameter readout, Temperature
+# Temperature
+# Compensating parameter, registry address
+# Trimming parameter readout 
 compensating_reg_addr_dig_t1 = 0x88 
 compensating_reg_addr_dig_t2 = 0x8A
 compensating_reg_addr_dig_t3 = 0x8C
 
-# Trimming parameter readout, Pressure
+# Pressure
+# Compensating parameter, registry address
+# Trimming parameter readout
 compensating_reg_addr_dig_p1 = 0x8E
 compensating_reg_addr_dig_p2 = 0x90
 compensating_reg_addr_dig_p3 = 0x92
@@ -178,7 +230,9 @@ compensating_reg_addr_dig_p7 = 0x9A
 compensating_reg_addr_dig_p8 = 0x9C
 compensating_reg_addr_dig_p9 = 0x9E
 
-# Trimming parameter readout, Humidity
+# Humidity
+# Compensating parameter, registry address
+# Trimming parameter readout
 compensating_reg_addr_dig_h1 = 0xA1
 compensating_reg_addr_dig_h2 = 0xE1
 compensating_reg_addr_dig_h3 = 0xE3
@@ -186,8 +240,23 @@ compensating_reg_addr_dig_h4 = 0xE4
 compensating_reg_addr_dig_h5 = 0xE5
 compensating_reg_addr_dig_h6 = 0xE7
 
-# Memory map, 
+# Memory map, sensor identifiction
+chip_id = 0xD0 # 
+version = 0xD1 # verify this is true, can't seem to find it in the BME280 datasheet
 
+# Memory map, sensor administration
+config = 0xF5 # 
+reset = 0xE0 # readout value always 0x00
+status =  0xF3 # measuring, im_update
+
+# Memory map, sensor device data acquisition options
+ctrl_hum = 0xF2 # humidity data aquisition options for device, depencency on ctrl_meas wirte for changes to take effect
+ctrl_meas = 0xF4 # temperature and pressure data acquisition options for device
+
+# Memory map, raw sensor data
+temperature_data = #  0xFA…0xFC “temp” (_msb, _lsb, _xlsb)
+pressure_data = #  0xF7…0xF9 “press” (_msb, _lsb, _xlsb)
+humidity_data = #  0xFD…0xFE “hum” (_msb, _lsb)
 
 # RPi Pico does not have a floating point unit hardware
 # so all floating piont calculations must be carried out in software
