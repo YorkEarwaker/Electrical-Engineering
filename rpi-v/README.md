@@ -24,6 +24,7 @@ Documentation
 
 Books
 * Programming the Raspberry Pi, Getting Started with Python, Simon Monk, 
+* Raspberry Pi Pico Tips and Tricks, Malcolm Maclean, Leanpub, [WS](https://leanpub.com/rpitandt/read), 
 
 RPi 5, screens/display/HDMI
 * EDID data
@@ -36,6 +37,6 @@ News Papers - RPi 5 screen/display, HDMI, resolution, aspect ratio,
 * Raspberry Pi 5 HDMI, [WS](https://forums.raspberrypi.com/viewtopic.php?t=367012), 7 May 2024, RPi Forums, Bookworm, /boot/firmware/cmdline.txt, video=HDMI-A-1:1024x768@60D
 * ...
 
-News Papers - 
-* ...
+News Papers - gpio pins
+* Power on state of gpio pins, [WS](https://forums.raspberrypi.com/viewtopic.php?f=44&t=23168), forums, Raspberry Pi, 
 * ...
