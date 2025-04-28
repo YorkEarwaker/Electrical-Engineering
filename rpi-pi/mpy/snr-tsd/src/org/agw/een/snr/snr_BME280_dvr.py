@@ -112,13 +112,13 @@
 # |----------------- | --------- | --------------------------------------------------------------------- | ------------|
 #
 # | ----------- | --------- | ----------- | --------- |  -------- | --------- | ---- | ------ |
-# | Registers   | Reserved  | Calibration | Control   | Data      | Status    | Chip | ReseT  |
+# | Registers   | Reserved  | Calibration | Control   | Data      | Status    | Chip | ReSet  |
 # |             | Registers | Data        | Registers | Registers | Registers | ID   | (Soft) |
 # | ----------- | --------- | ----------- | --------- |  -------- | --------- | ---- | ------ |
 # | Type        | do not    | read        | read /    | read      | read      | read | write  | 
 # |             | change    | only        | write     | only      | only      | only | only   |
 # | ----------- | --------- | ----------- | --------- |  -------- | --------- | ---- | ------ |
-# | Abreviation | RR        | CD          | CR        | DR        | SR        | ID   | RT     |
+# | Abreviation | RR        | CD          | CR        | DR        | SR        | ID   | RS     |
 # | ----------- | --------- | ----------- | --------- |  -------- | --------- | ---- | ------ |
 #
 # 10.2 Function return codes
