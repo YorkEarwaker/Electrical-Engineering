@@ -88,7 +88,9 @@ from dht import DHT22 # DHT11, # esp32 driver/module
 pin = Pin(2, Pin.IN) # GP2
 
 # #
-# The sensor takes the GPIO number to recieve commands to execute and return data back to
+# The sensor driver takes the GPIO number of the RPi GPIO pin connected to the sensor device SDA pin
+# to send commands to the sensor to execute
+# and retrieve data measurements back read from the sensor's memory
 snr_tsd = DHT22(pin)
 # print('snr_tsd {}'.format(snr_tsd)) # debug
 
