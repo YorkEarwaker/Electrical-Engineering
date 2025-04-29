@@ -197,8 +197,12 @@
 from machine import I2C
 import time
 
-# I2C registry address default for BME280
-default_bme280_I2C_reg_addr = 0x78
+# I2C registry address default for BME280 is 0 x 77
+# if ADDR is grounded the registry address is 0 x 76
+reg_addr_i2c_bme280_prime = 0x77 # default
+reg_addr_i2c_bme280_secondary = 0x76 # 
+
+reg_addr_i2c_bme280 = reg_addr_i2c_bme280_prime
 
 # #
 # oversampling modes
@@ -206,11 +210,11 @@ default_bme280_I2C_reg_addr = 0x78
 # data rates
 
 # Sensor oversampling mode settings for BME280
-oversampling_mode_01 = 1 # 1
-oversampling_mode_02 = 2 # 2
-oversampling_mode_03 = 4 # 4
-oversampling_mode_04 = 8 # 8
-oversampling_mode_05 = 16 # 16
+oversampling_mode_one = 1 # 1
+oversampling_mode_two = 2 # 2
+oversampling_mode_four = 3 # 4
+oversampling_mode_eight = 4 # 8
+oversampling_mode_sixteen = 5 # 16
 
 # compensation parameter register address
 # each is stored in 16 bit word signed or unsigned integer stored in two' complement
@@ -275,15 +279,106 @@ reg_addr_temperature_data = 0xFA #  0xFA…0xFC “temp” (_msb, _lsb, _xlsb)
 reg_addr_pressure_data = 0xF7 #  0xF7…0xF9 “press” (_msb, _lsb, _xlsb)
 reg_addr_humidity_data = 0xFD #  0xFD…0xFE “hum” (_msb, _lsb)
 
+# I2C device comms
+# 8bit, 16bit, byte array, read write
+# to registers of a I2C device
+class Device:
+    
+    # Create an instance of an I2C device
+    # using the provided address and I2C interface object 
+    def __init__(self, address, i2c):
+        self._address = address
+        self._i2c = i2c
+    
+    # Write an 8bit value on the bus (without register)
+    def write_raw_eight_bit(self, bits_val):
+        value = bits_val & 0xFF
+        self.i2c.writeto(self._address, bits_val)
+        
+    # Write 8bit value to provided register
+    def write_eight_bit(self, register, bits_val):
+        b=bytearray(1)
+        b[0] = bits_val & 0xFF
+        self._i2c.writeto_mem(self._address, register, b)
+        
+    # Write 16bit value to provided register
+    def write_sixteen_bit(self, register, bits_val):
+        bits_val = bits_val & 0xFFF
+        b=bytearray(2)
+        b[0] = bits_val & 0xFF
+        b[1] = (bits_val>>8) & 0xFF
+        self._i2c.writeto_mem(self._address, register, bits_val)
+    
+    # Read 8bit value on the but (without register)
+    def read_raw_eight_bit(self):
+        return int.from_bytes(self._i2c.readfrom(self._address, 1), 'little') & 0xFF
+    
+    # Read unsigned byte from provided register
+    def read_unsigned_eight(self, register):
+        return int.from_bytes(self._i2c.readfrom_mem(self._address, register, 1), 'little') & 0xFF
+    
+    # Read signed byte from provided register
+    def read_signed_eight(self, register):
+        reg_rtn_val = self.read_unsigned_eight(register)
+        if reg_rtn_val > 127:
+            reg_rtn_val -= 256
+        return reg_rtn_val
+    
+    # Read unsigned 16bit value from the provided register
+    # with provided endian, default little endian,
+    # or least significant byte first
+    def read_unsigned_sixteen(self, register, little_endian = True):
+        reg_rtn_val = int.from_bytes(self._i2c.readfrom_mem(self._address, register, 2), 'little') & 0xFFFF
+        
+        if not little_endian: 
+            reg_rtn_val = ((reg_rtn_val << 8) & 0xFF00) + (reg_rtn_val >> 8)
+        return reg_rtn_val
+    
+    # Read signed 16bit value from the provided register
+    # with provided endian, default little endian
+    # or least significant byte
+    def read_signed_sixteen(self, register, little_endian =  True):
+        reg_rtn_val = self.read_unsigned_sixteen(register, little_endian)
+        
+        if reg_rtn_val > 32767:
+            reg_rtn_val -= 65536
+        return reg_rtn_val
+    
+    # Read unsigned 16bit value from the provided register,
+    # in little endian byte order
+    def read_unsigned_sixteen_little_endian(self, register):
+        return self.read_unsigned_sixteen(register, little_endian = True)
+       
+    # Read unsigned 16bit value from provided register
+    # in big endian byte order
+    def read_unsigned_sixteen_big_endian(self, register):
+        return self.read_unsigned_sixteen(register, little_endian = False)
+    
+    # Read signed 16bit value from provided register
+    # in little endian bytes order
+    def read_signed_sixteen_little_endian(self, register):
+        return self.read_signed_sixteen(register, little_endian = True)
+    
+    # Read signed 16bit value from provided register,
+    # in big endian byte order
+    def read_signed_sixteen_big_endian(self, register):
+        return self.read_signed_sixteen(register, little_endian =  False)
+
+# The BME280 sensor device,
+# BMP280 and other Bosche sensors could be added in a similar way
+# 
 # RPi Pico does not have a floating point unit hardware
 # so all floating piont calculations must be carried out in software
 # floating point calculation are emulated in software
-# 
-
-
-
-
-
-
-
-
+class BME280:
+    
+    # initialize the class instance
+    def __init__(self, mode=oversampling_mode_one, address=reg_addr_i2c_bme280, i2c=None, **kwargs):
+        
+        # check the mode is valid
+        if mode not in [oversampling_mode_one, oversampling_mode_two,
+                        oversampling_mode_four, oversampling_mode_eight,
+                        oversampling_mode_sixteen]:
+            raise ValueError()
+        
+        
