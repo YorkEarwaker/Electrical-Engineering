@@ -68,7 +68,7 @@
 # | 18 | 0xE7             | dig_H6              | signed char    |
 # | -- | ---------------- | ------------------- | -------------- |
 #
-# Compensation words
+# Compensation words, words are 16 bit signed or unsigned integer stored in two's complement, 
 # dig_T* = temperature compensation related values
 # dig_P* = pressure related values
 # dig_H* = humidity related values
@@ -125,14 +125,19 @@
 # 10.2 Function return codes
 # Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
 # A list of the possible function return codes can be found below.
-# 0 Sensor OK
-# 10 Communication error or wrong device found
-# 20 Trimming data out of bound
-# 30 Temperature bond wire failure or MEMS defect
-# 31 Pressure bond wire failure or MEMS defect
-# 40 Implausible temperature (default limits: 0…40°C)
-# 41 Implausible pressure (default limits: 900…1100 hPa)
-# 42 Implausible humidity (default limits: 20...80 %rH
+# | ------ | ---------------------------------------------------- |
+# | Return | Function return code, meaning description,           |        
+# | code   | state of sensor, error, exception, message           |
+# | ------ | ---------------------------------------------------- |
+# |  0     | Sensor OK                                            |
+# | 10     | Communication error or wrong device found            |
+# | 20     | Trimming data out of bound                           |
+# | 30     | Temperature bond wire failure or MEMS defect         |
+# | 31     | Pressure bond wire failure or MEMS defect            |
+# | 40     | Implausible temperature (default limits: 0…40°C)     |
+# | 41     | Implausible pressure (default limits: 900…1100 hPa)  |
+# | 42     | Implausible humidity (default limits: 20...80 %rH    |
+# | ------ | ---------------------------------------------------- |
 #
 # 7. Pin-out and connection diagram
 # Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
@@ -164,24 +169,28 @@
 # |  |_______|    visible)    |_______|  |  the bottom view when the device pads are visible.
 # |______________________________________|  The device pads are integrated into the circuit board.
 #
-# |
+# 
 # Table 35: Pin description
 # Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
-# Pin Name I/O Type Description Connect to
-# SPI 4W SPI 3W I²C
-# 1 GND Supply Ground GND
-# 2 CSB In Chip select CSB CSB VDDIO
-# 3 SDI In/Out Serial data input SDI SDI/SDO SDA
-# 4 SCK In Serial clock input SCK SCK SCL
-# 5 SDO In/Out Serial data output SDO DNC GND for
-# default
-# address
-# 6 VDDIO Supply Digital / Interface
-# supply
-# VDDIO
-# 7 GND Supply Ground GND
-# 8 VDD Supply Analog supply VDD
-## 
+# | --- | ----- | -------- | ------------------- | -------------------------- |
+# | Pin | Name  | I/O Type | Description         |        Connect to          |
+# |     |       |          |                     | SPI 4W | SPI 3W  | I²C     |
+# | --- | ----- | -------- | ------------------- | ------ | ------- | ------- |
+# | 1   | GND   | Supply   | Ground              |            GND             |
+# | 2   | CSB   | In       | Chip select         | CSB    | CSB     | VDDIO   |
+# | 3   | SDI   | In/Out   | Serial data input   | SDI    | SDI/SDO | SDA     |
+# | 4   | SCK   | In       | Serial clock input  | SCK    | SCK     | SCL     |
+# | 5   | SDO   | In/Out   | Serial data output  | SDO    | DNC     | GND for |
+# |     |       |          |                     |        |         | default |
+# |     |       |          |                     |        |         | address |
+# | 6   | VDDIO | Supply   | Digital / Interface |           VDDIO            |
+# |     |       |          |      supply         |                            |
+# | 7   | GND   | Supply   | Ground              |            GND             |
+# | 8   | VDD   | Supply   | Analog supply       |            VDD             |
+# | --- | ----- | -------- | ------------------- | -------------------------- |
+# 
+#
+# 
 
 # #
 # import libraries to use in this programme
@@ -197,11 +206,11 @@ default_bme280_I2C_reg_addr = 0x78
 # data rates
 
 # Sensor oversampling mode settings for BME280
-oversampling_mode_01 = 1
-oversampling_mode_02 = 2
-oversampling_mode_03 = 4
-oversampling_mode_04 = 8
-oversampling_mode_05 = 16
+oversampling_mode_01 = 1 # 1
+oversampling_mode_02 = 2 # 2
+oversampling_mode_03 = 4 # 4
+oversampling_mode_04 = 8 # 8
+oversampling_mode_05 = 16 # 16
 
 # compensation parameter register address
 # each is stored in 16 bit word signed or unsigned integer stored in two' complement

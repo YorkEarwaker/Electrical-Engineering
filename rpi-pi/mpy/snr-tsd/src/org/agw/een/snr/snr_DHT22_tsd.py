@@ -55,12 +55,12 @@
 #
 # Pin sequence numbers, left to right, 1 2 3 4, with DHT sensor forward facing
 #    _____
-#   /_____\  Simplified       | --- | --------- |
-#  |       | Front of         | 1   | VDD       |
+#   /_____\  Simplified       | --- | --------- | Device 
+#  |       | Front of         | 1   | VDD       | pins functions
 #  |       | DHT22            | 2   | SDA       |
 #  |_______| sensor           | 3   | NULL      |
 #  |_______| Aosong, CN       | 4   | GND       |
-#   | | | |                   | --- | --------- |
+#   | | | |  Device           | --- | --------- |
 #   1 2 3 4
 #
 # | --------------------------------------------------------------------------------------------------------- |
