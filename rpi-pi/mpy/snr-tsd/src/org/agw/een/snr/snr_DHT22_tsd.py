@@ -75,7 +75,48 @@
 # | 4       | GND       | GND,   pin 28 | Black  | Ground                                                     |
 # | ------- | --------- | ------------- | ------ | ---------------------------------------------------------- |   
 #
-# SDA = Serial data, bidirectional port,  
+# SDA = Serial data, bidirectional port,
+#
+# Simplified view of Rpi Pico microntroller and DHT22 device circuit
+#    _____
+#   /_____\  Simplified       | --- | --------- | Device 
+#  |       | Front of         | 1   | VDD       | pins functions
+#  |       | DHT22            | 2   | SDA       |
+#  |_______| sensor           | 3   | NULL      |
+#  |_______| Aosong, CN       | 4   | GND       |
+#   | | | |  Device           | --- | --------- |
+#   1 2 3 4
+#   | |   |
+#   |-)---)-----------------------------------------------------------|
+#     |   |                                                           | 
+#     |   |---------------------------------------------------------| |
+#     |                                                             | |
+#     |                            RPi Pico 2 pinout                | |
+#     |                                  _____                      | | 
+#     |                            -----| USB |-----                | |
+#     |                         1-| o   |_____|   o |-40            | | 
+#     |                         2-| o             o |-39            | |
+#     |                         3-| o             o |-38-----GND----| |
+#     |---I2C1 SDA------GP2-----4-| o             o |-37              |
+#                               5-| o             o |-36---3V3(OUT)---|     
+#                               6-| o             o |-35
+#                               7-| o             o |-34
+#                               8-| o   _______   o |-33
+#                               9-| o  | ARM   |  o |-32
+#                              10-| o  | 2035  |  o |-31
+#                              11-| o  |_______|  o |-30
+#                              12-| o             o |-29
+#                              13-| o             o |-28
+#                              14-| o             o |-27
+#                              15-| o             o |-26
+#                              16-| o             o |-25
+#                              17-| o             o |-24
+#                              18-| o             o |-23
+#                              19-| o             o |-22
+#                              20-| o             o |-21
+#                                  -----------------
+#
+#
 
 # #
 # import libraries to use in this programme
