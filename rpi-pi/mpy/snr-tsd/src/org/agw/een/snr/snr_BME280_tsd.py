@@ -229,6 +229,7 @@
 # Circuit diagram
 # <todo: consider, might need two of these, one for I2C interface and another for SPI interface >
 # Simplified view of Rpi Pico microntroller and Waveshare PCB BME280 sensor device circuit
+# <todo: complete diagram, wip, >
 #   ___________ 
 #  |    [.]    | Simplified       | --- | --------- | Circuit board 
 #  |           | Front of         | 1   | VCC       | pins functions
@@ -238,7 +239,7 @@
 #   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
 #   1 2 3 4 5 6                   | 6   | CS        |
 #   | |                           | --- | --------- |
-#   |-)---------------------------------------------------------------|
+#   |-)---------------------------------------------------------------| 
 #     |                                                               | 
 #     |-------------------------------------------------------------| |
 #                                                                   | |
