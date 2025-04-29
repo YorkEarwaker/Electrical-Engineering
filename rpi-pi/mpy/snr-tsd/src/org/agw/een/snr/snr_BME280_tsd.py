@@ -225,7 +225,49 @@
 # | MISO      | GP8,  GP12,                            | Master In  Slave Out    |
 # | CS        | GP9,  GP13,                            | Chip Select             |
 # | ---------------------------------------------------------------------------- |
-# 
+#
+# Circuit diagram
+# <todo: consider, might need two of these, one for I2C interface and another for SPI interface >
+# Simplified view of Rpi Pico microntroller and Waveshare PCB BME280 sensor device circuit
+#   ___________ 
+#  |    [.]    | Simplified       | --- | --------- | Circuit board 
+#  |           | Front of         | 1   | VCC       | pins functions
+#  |           | BME280           | 2   | GND       |
+#  |___________| sensor           | 3   | SDA/MOSI  |
+#  |___________| Waveshare, CN    | 4   | SCL/SCK   |
+#   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
+#   1 2 3 4 5 6                   | 6   | CS        |
+#   | |                           | --- | --------- |
+#   |-)---------------------------------------------------------------|
+#     |                                                               | 
+#     |-------------------------------------------------------------| |
+#                                                                   | |
+#                                  RPi Pico 2 pinout                | |
+#                                        _____                      | | 
+#                                  -----| USB |-----                | |
+#                               1-| o   |_____|   o |-40            | | 
+#                               2-| o             o |-39            | |
+#                               3-| o             o |-38-----GND----| |
+#                               4-| o             o |-37              |
+#                               5-| o             o |-36---3V3(OUT)---|     
+#                               6-| o             o |-35
+#                               7-| o             o |-34
+#                               8-| o   _______   o |-33
+#                               9-| o  | ARM   |  o |-32
+#                              10-| o  | 2035  |  o |-31
+#                              11-| o  |_______|  o |-30
+#                              12-| o             o |-29
+#                              13-| o             o |-28
+#                              14-| o             o |-27
+#                              15-| o             o |-26
+#                              16-| o             o |-25
+#                              17-| o             o |-24
+#                              18-| o             o |-23
+#                              19-| o             o |-22
+#                              20-| o             o |-21
+#                                  -----------------
+#
+#
 
 # #
 # import libraries to use in this programme

@@ -77,6 +77,7 @@
 #
 # SDA = Serial data, bidirectional port,
 #
+# Circuit diagram
 # Simplified view of Rpi Pico microntroller and DHT22 device circuit
 #    _____
 #   /_____\  Simplified       | --- | --------- | Device 

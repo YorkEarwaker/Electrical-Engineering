@@ -220,52 +220,60 @@ oversampling_mode_05 = 16 # 16
 # compensation code logic equations use the trimming paramters stored in NVM. 
 
 # Temperature
-# Compensating parameter, registry address
-# Trimming parameter readout 
-compensating_reg_addr_dig_t1 = 0x88 
-compensating_reg_addr_dig_t2 = 0x8A
-compensating_reg_addr_dig_t3 = 0x8C
+# Compensating parameter, register address
+# Trimming parameter readout
+# Calibration data, register
+reg_addr_compensation_trim_param_dig_t1 = 0x88 
+reg_addr_compensation_trim_param_dig_t2 = 0x8A
+reg_addr_compensation_trim_param_dig_t3 = 0x8C
 
 # Pressure
-# Compensating parameter, registry address
+# Compensating parameter, register address
 # Trimming parameter readout
-compensating_reg_addr_dig_p1 = 0x8E
-compensating_reg_addr_dig_p2 = 0x90
-compensating_reg_addr_dig_p3 = 0x92
-compensating_reg_addr_dig_p4 = 0x94
-compensating_reg_addr_dig_p5 = 0x96
-compensating_reg_addr_dig_p6 = 0x98
-compensating_reg_addr_dig_p7 = 0x9A
-compensating_reg_addr_dig_p8 = 0x9C
-compensating_reg_addr_dig_p9 = 0x9E
+# Calibration data, register
+reg_addr_compensation_trim_param_dig_p1 = 0x8E
+reg_addr_compensation_trim_param_dig_p2 = 0x90
+reg_addr_compensation_trim_param_dig_p3 = 0x92
+reg_addr_compensation_trim_param_dig_p4 = 0x94
+reg_addr_compensation_trim_param_dig_p5 = 0x96
+reg_addr_compensation_trim_param_dig_p6 = 0x98
+reg_addr_compensation_trim_param_dig_p7 = 0x9A
+reg_addr_compensation_trim_param_dig_p8 = 0x9C
+reg_addr_compensation_trim_param_dig_p9 = 0x9E
 
 # Humidity
-# Compensating parameter, registry address
+# Compensating parameter, register address
 # Trimming parameter readout
-compensating_reg_addr_dig_h1 = 0xA1
-compensating_reg_addr_dig_h2 = 0xE1
-compensating_reg_addr_dig_h3 = 0xE3
-compensating_reg_addr_dig_h4 = 0xE4
-compensating_reg_addr_dig_h5 = 0xE5
-compensating_reg_addr_dig_h6 = 0xE7
+# Calibration data, register
+reg_addr_compensation_trim_param_dig_h1 = 0xA1
+reg_addr_compensation_trim_param_dig_h2 = 0xE1
+reg_addr_compensation_trim_param_dig_h3 = 0xE3
+reg_addr_compensation_trim_param_dig_h4 = 0xE4
+reg_addr_compensation_trim_param_dig_h5 = 0xE5
+reg_addr_compensation_trim_param_dig_h6 = 0xE7
 
 # Memory map, sensor identifiction
-chip_id = 0xD0 # 
-version = 0xD1 # verify this is true, can't seem to find it in the BME280 datasheet
+# ID, register
+reg_addr_chip_id = 0xD0 # 
+reg_addr_version = 0xD1 # verify this is true, can't seem to find it in the BME280 datasheet
 
 # Memory map, sensor administration
-config = 0xF5 # 
-reset = 0xE0 # readout value always 0x00
-status =  0xF3 # measuring, im_update
+# Reset, register
+reg_addr_reset = 0xE0 # readout value always 0x00
+# Status, register
+reg_addr_status = 0xF3 # measuring, im_update
 
-# Memory map, sensor device data acquisition options
-ctrl_hum = 0xF2 # humidity data aquisition options for device, depencency on ctrl_meas wirte for changes to take effect
-ctrl_meas = 0xF4 # temperature and pressure data acquisition options for device
+# Memory map, sensor operations, device data acquisition options
+# Control, register('s)
+reg_addr_config = 0xF5 # time? other two? to list
+reg_addr_ctrl_hum = 0xF2 # humidity data aquisition options for device, depencency on ctrl_meas wirte for changes to take effect
+reg_addr_ctrl_meas = 0xF4 # temperature and pressure data acquisition options for device
 
 # Memory map, raw sensor data
-temperature_data = #  0xFA…0xFC “temp” (_msb, _lsb, _xlsb)
-pressure_data = #  0xF7…0xF9 “press” (_msb, _lsb, _xlsb)
-humidity_data = #  0xFD…0xFE “hum” (_msb, _lsb)
+# Data, register('s)
+reg_addr_temperature_data = 0xFA #  0xFA…0xFC “temp” (_msb, _lsb, _xlsb)
+reg_addr_pressure_data = 0xF7 #  0xF7…0xF9 “press” (_msb, _lsb, _xlsb)
+reg_addr_humidity_data = 0xFD #  0xFD…0xFE “hum” (_msb, _lsb)
 
 # RPi Pico does not have a floating point unit hardware
 # so all floating piont calculations must be carried out in software
