@@ -379,6 +379,152 @@ class BME280:
         if mode not in [oversampling_mode_one, oversampling_mode_two,
                         oversampling_mode_four, oversampling_mode_eight,
                         oversampling_mode_sixteen]:
-            raise ValueError()
+            raise ValueError('Unexpected mode value {0}. Set mode to one of'
+                             'BME280_ULTRALOWPOWER, BME280_STNADARD, BME280_HIGHRES, or'
+                             'BME280_ULTRAHIGHRES'.format(mode))
+        self._mode = mode
+        # create ic2 device
+        if i2c is None:
+            raise ValueError('An I2C object is required.')
+        self._device = Device(address, i2c)
+        # load calibrated values.
+        self._load_calibration()
+        self._device.write_eight_bit(reg_addr_ctrl_meas, 0x3F)
+        self.t_fine = 0
+    
+    # 
+    def _load_calibration(self):
         
+        # temperature, compensation
+        self.dig_T1 = self._device.read_unsigned_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_t1)
+        self.dig_T2 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_t2)
+        self.dig_T3 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_t3)
+        
+        # pressure, compensation
+        self.dig_P1 = self._device.read_unsigned_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p1)
+        self.dig_P2 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p2)
+        self.dig_P3 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p3)
+        self.dig_P4 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p4)
+        self.dig_P5 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p5)
+        self.dig_P6 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p6)
+        self.dig_P7 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p7)
+        self.dig_P8 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p8)
+        self.dig_P9 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_p9)
+        
+        # humidity, compensation
+        self.dig_H1 = self._device.read_unsigned_eight(
+            reg_addr_compensation_trim_param_dig_h1)
+        self.dig_H2 = self._device.read_signed_sixteen_little_endian(
+            reg_addr_compensation_trim_param_dig_h2)
+        self.dig_H3 = self._device.read_unsigned_eight(
+            reg_addr_compensation_trim_param_dig_h3)
+        self.dig_H6 = self._device.read_signed_eight(
+            reg_addr_compensation_trim_param_dig_h7)
+        
+        h4 = self._device.read_signed_eight(
+            reg_addr_compensation_trim_param_dig_h4)
+        h4 = (h4 << 24) >> 20
+        self.dig_H4 = h4 | (
+            self._device.read_unsigned_eight(
+                reg_addr_compensation_trim_param_dig_h5) & 0x0F)
+        
+        h5 = self._device.read_signed_eight(
+            reg_addr_compensation_trim_param_dig_h6)
+        h5 = (h5 << 24) >> 20
+        self._H5 = h5 | (
+            self._device.read_unsigned_eight(
+                reg_addr_compensation_trim_param_dig_h5) >> 4 & 0x0F)
+        
+    # Temperature
+    # Read the raw, uncompensated, temperature from the sensor
+    def read_raw_temp(self):
+        meas = self._mode
+        self._device.write_eight_bit(reg_addr_ctrl_hum, meas)
+        meas = self._mode << 5 | self._mode << 2 | 1
+        self._device.write_eight_bit(reg_addr_ctrl_meas, meas)
+        sleep_time = 1250 + 2300 * (1 << self._mode)
+        
+        # allow suffient elapsed time before other readings
+        # pressure level and humidity
+        sleep_time = sleep_time + 2300 * (1 << self._mode) + 575
+        sleep_time = sleep_time + 2300 * (1 << self._mode) + 575 # why twice
+        time.sleep_us(sleep_time) # Pause for sufficient time
+        msb = self._device.read_unsigned_eight(reg_addr_temperature_data)
+        lsb = self._device.read_unsigned_eight(reg_addr_temperature_data + 1)
+        xlsb = self._device.read_unsigned_eight(reg_addr_temperature_data + 2)
+        raw = ((msb << 16) | (lsb << 8) | xlsb) >> 4
+        return raw
+        
+    # Pressure
+    # Read the raw, uncompensated, pressure level from the sensor
+    # Assume the temperature has been read beforehand
+    # That is, sufficient time has elapsed, delay provided
+    def read_raw_pressure(self):
+        
+        msb = self._device.read_unsigned_eight(reg_addr_pressure_data)
+        lsb = self._device.read_unsigned_eight(reg_addr_pressure_data + 1)
+        xlsb = self._device.read_unsigned_eight(reg_addr_pressure_data + 2)
+        raw = ((msb << 16) | (lsb << 8) | xlsb) >> 4
+        return raw
+    
+    # Humidity
+    # Read the raw, uncompensated, temperature from the sensor
+    # Assume the temperature has been read beforehand
+    # That is, sufficient time has elapsed, delay provided
+    def read_raw_humidity(self):
+        
+        msb = self._device.read_unsigned_eight(reg_addr_humidity_data)
+        lsb = self._device.read_unsigned_eight(reg_addr_humidity_data + 1)
+        raw = (msb << 8) | lsb
+        return raw
+    
+    # Temperature
+    # Calculate the compensated temperature in celsius
+    # with presision 0.01 of a degree celsius
+    def read_temperature(self):
+        adc = self.read_raw_temp()
+        var1 = ((adc >> 3) - (self.dig_T1 << 1)) * (self.dig_T2 >> 11)
+        var2 == ((
+            (((adc >> 4) - self.deg_T1) * ((adc >> 4) - self.dig_T1)) >> 12)
+            self.dig_T3) >> 14
+        self.t_fine = var1 + var2
+        return (self.t_fine * 5 + 128) >> 8
+    
+    # Pressure
+    # Calculate the compensated pressure in Pascals
+    def read_pressure(self):
+        adc = self.read_raw_pressure()
+        var1 = self.t_fine - 128000
+        var2 = var1 * var1 * self.dig_P6
+        var2 = var2 + ((var1 * self.dig_P5) << 17)
+        var2 = var2 + (self.dig_P4 << 35)
+        var1 = (((var1 * var1 * self.dig_P3) >> 8) +
+                ((var1 * self.dig_P2) >> 12))
+        var1 = (((1 << 47) + var1) * self.dig_P1) >> 33
+        if var1 == 0:
+            return 0
+        p = 1048576 - adc
+        p = (((p << 31) - var2) * 3125) // var1
+        var1 = (self.dig_P9 * (p >> 13) * (p >> 13)) >> 25
+        var2 = (self.dig_P8 * p) >> 19
+        return ((p + var1 + var2) >> 8) + (self.dig_P7 << 4)
+    
+    # Humidity
+    def read_humidity(self):
+        adc = self.read_raw_humidity()
+        # print 'Raw humidity = {0:d}'.format (adc) # debug?
+        h = self.t_fine - 76800
+        h = ((() - () - ())) + 
         
