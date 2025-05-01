@@ -21,6 +21,8 @@ DONE
 * <done: consider, RPi Pico, 12C1 bus is prefered over I2C0 internal bus. BME280 PoC, >
 * <done: consider, RPi PIco, I2C preferred?/default? over SPI, BM280 PoC, it is easier so most common approach taken >
 * <done: consider, can wiring be completed such that a switch / toggle can be made between I2C1 and SPI1? , can this be achieve with Pico? look to pinout,. Likely yes using the default SPI0 GPIO pins G16 G17 G18 G19 physical pins 21 22 24 25, 24 & 25 also acting as SDA and SCL for I2C1 >
+* <done: consider, complete diagram, for BME280, but likely won't work for both SPI and I2C >
+* ...
 
 ## Readings
 

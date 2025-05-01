@@ -80,7 +80,7 @@
 # Another thing, hardware or software, might issue commands to the microcontroller to do something
 # and get information from the microcontroller memory bank. The internet of things is out of scope
 # in this context. But this electrical engineering context A might be used in as part of a larger
-# systme of systems IoT context B.
+# system of systems IoT context B.
 # <todo: context text work in progress, last reviewed 01/05/2025, wip>
 # 
 # Sensor

@@ -83,7 +83,7 @@
 # https://raw.githubusercontent.com/rm-hull/bme280/master/doc/tech-spec/BME280.pdf
 #
 # Context diagram
-# Assuming only the microcontroller interacts with the device.
+# Assuming only the microcontroller interacts with the device. 
 #  ____________________________________________  ____________________________________
 # |            Electrical Engineering          ||        Internet of Things          | 
 #                   In Scope                               Out of Scope
@@ -113,7 +113,7 @@
 # Another thing, hardware or software, might issue commands to the microcontroller to do something
 # and get information from the microcontroller memory bank. The internet of things is out of scope
 # in this context. But this electrical engineering context A might be used in as part of a larger
-# systme of systems IoT context B.
+# system of systems IoT context B.
 # <todo: context text work in progress, last reviewed 01/05/2025, wip>
 # 
 # Sensor
@@ -232,7 +232,7 @@
 # RPi Pico, two SPI controllers, SPI0 and SPI1. 
 # Raspberry Pi Pico SPI0 default pins,
 # GP19 (MOSI/TX), GP18 (SCK), GP17 (CS) and GP16 (MISO/RX)
-# Using SPI1 may require additional manural configuration of onboard files for Raspberry Pi. <todo: check this is the case for Pico too?>
+# Using SPI1 may require additional manual configuration of onboard files for Raspberry Pi. <todo: check this is the case for Pico too?>
 # Raspberry Pi, configure dtoverlay in'/boot/config.txt' to enable SPI1, e.g. dtoverlay=spi1-3cs . 
 # 
 # | ---------------------------------------------------------------------------- |
@@ -262,9 +262,10 @@
 # | ---------------------------------------------------------------------------- |
 #
 # Circuit diagram
-# <todo: consider, might need two of these, one for I2C interface and another for SPI interface >
 # Simplified view of Rpi Pico microntroller and Waveshare PCB BME280 sensor device circuit
-# <todo: complete diagram, wip, >
+# <todo: consider, might need two of these, one for I2C interface and another for SPI interface >
+# <todo: consider, this wiring diagram probably won't work due to conflicts identified above
+#        in table 'Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0' current state of breadboard>
 #   ___________ 
 #  |    [.]    | Simplified       | --- | --------- | Circuit board 
 #  |           | Front of         | 1   | VCC       | pins functions
@@ -273,36 +274,39 @@
 #  |___________| Waveshare, CN    | 4   | SCL/SCK   |
 #   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
 #   1 2 3 4 5 6                   | 6   | CS        |
-#   | |                           | --- | --------- |
-#   |-)---------------------------------------------------------------| 
-#     |                                                               | 
-#     |-------------------------------------------------------------| |
-#                                                                   | |
-#                                  RPi Pico 2 W pinout              | |
-#                                        _____                      | | 
-#                                  -----|     |-----                | |
-#                               1-| o ◯|_____|◯ o |-40            | | 
-#                               2-| o     USB     o |-39            | |
-#                               3-| o             o |-38-----GND----| |
-#                               4-| o             o |-37              |
-#                               5-| o             o |-36---3V3(OUT)---|     
-#                               6-| o  __         o |-35
-#                               7-| o |__| Flash  o |-34
-#                               8-| o   _______   o |-33
-#                               9-| o  | ARM   |  o |-32
-#                              10-| o  | 2035  |  o |-31
-#                              11-| o  |_______|  o |-30
-#                              12-| o             o |-29
-#                              13-| o             o |-28
-#                              14-| o             o |-27
-#                              15-| o             o |-26
-#                              16-| o             o |-25
-#                              17-| o             o |-24
-#                              18-| o             o |-23
-#                              19-| o             o |-22
-#                              20-| o ◯       ◯ o |-21
-#                                  -----------------
-#
+#   | | | | | |                   | --- | --------- |
+#   |-)-)-)-)-)-------------------------------------------------------| 
+#     | | | | |                                                       | 
+#     |-)-)-)-)-----------------------------------------------------| |
+#       | | | |                                                     | |
+#       | | | |                    RPi Pico 2 W pinout              | |
+#       | | | |                          _____                      | | 
+#       | | | |                    -----|     |-----                | |
+#       | | | |                 1-| o ◯|_____|◯ o |-40            | | 
+#       | | | |                 2-| o     USB     o |-39            | |
+#       | | | |                 3-| o             o |-38-----GND----| |
+#       | | | |                 4-| o             o |-37              |
+#       | | | |                 5-| o             o |-36---3V3(OUT)---|     
+#       | | | |                 6-| o  __         o |-35
+#       | | | |                 7-| o |__| Flash  o |-34
+#       | | | |                 8-| o   _______   o |-33
+#       | | | |                 9-| o  | ARM   |  o |-32
+#       | | | |                10-| o  | 2035  |  o |-31
+#       | | | |                11-| o  |_______|  o |-30
+#       | | | |                12-| o             o |-29
+#       | | | |                13-| o             o |-28
+#       | | | |                14-| o             o |-27
+#       | | | |                15-| o             o |-26
+#       | | | |                16-| o             o |-25----GP19-----ISP0 TX----I2C1 SCL-------------------|
+#       | | | |                17-| o             o |-24----GP18-----ISP0 SCK---I2C1 SDA-------------------)-|
+#       | | | |                18-| o             o |-23                                                   | |
+#       | | | |                19-| o             o |-22----GP17-----ISP0 CSn---I2C1 SCL---UART0 RX----|   | |
+#       | | | |                20-| o ◯       ◯ o |-21----GP16-----ISP0 RX----I2C1 SDA---UART0 TX----)-| | |
+#       | | | |                    -----------------                                                   | | | |
+#       | | | |----------------------------------------------------------------------------------------| | | |
+#       | | |--------------------------------------------------------------------------------------------| | |
+#       | |------------------------------------------------------------------------------------------------| |
+#       |----------------------------------------------------------------------------------------------------|
 #
 
 # #
@@ -311,10 +315,14 @@ from time import sleep
 import BME280
 
 # Initialise !2C communication
-i2C = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=1000)
+#i2C = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=1000)
+i2C = I2C(id=0, scl=Pin(19), sda=Pin(18), freq=1000) #GPIO: GP19, GP18, 
 
 while True:
     try:
+        # wait five seconds between readings
+        sleep(5)
+        
         # Initialise BME280 sensor
         bme = BME280.BME280(i2c=i2c)
         
@@ -336,8 +344,6 @@ while True:
     except Exception as e:
         # Handle any exceptions during sensor reading
         print('Ooops. Code boo-boo. Time for cinnamon bun and a nice cupa cha. An error occurred: ', e)
-    
-    sleep(5)
         
 
 # # # Old code put this somewhere else
