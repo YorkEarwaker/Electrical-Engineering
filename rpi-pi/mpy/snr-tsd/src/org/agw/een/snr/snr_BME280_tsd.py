@@ -302,50 +302,85 @@
 #
 
 # #
-# import libraries to use in this programme
-#from bme import BME280 # sensor driver, this to source or more likely have to create code for
-from machine import RTC, Pin, I2C
+# Import libraries to use in this programme
+from time import sleep
+import BME280
 
-# #
-# get the current date and time
-rtc = RTC()
-dt_tm = rtc.datetime() # get the date and time
-print('current date & time: {}'.format(dt_tm)) # debug, date and time
+# Initialise !2C communication
+i2C = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=1000)
 
+while True:
+    try:
+        # Initialise BME280 sensor
+        bme = BME280.BME280(i2c=i2c)
+        
+        # Read sensor data
+        tempC = bme.temperature
+        hum = bme.humidity
+        pres = bme.pressure
+        
+        # Convert temperature to fahrenheit
+        tempF = (bme.read_temperature()/100) * (9/5) + 32
+        tempF = str(round(tempF, 2)) + 'F'
+        
+        # Print sensor readings
+        print('Temperature: ', tempC)
+        print('Temperature: ', tempF)
+        print('Humidity: ', hum)
+        print('Pressure: ', pres)
+    
+    except Exception as e:
+        # Handle any exceptions during sensor reading
+        print('Ooops. Code boo-boo. Time for cinnamon bun and a nice cupa cha. An error occurred: ', e)
+        
+        
 
-# ###############
-# Work in progress wip
-# ###############
-
-# #
-# initialize the I2C class, scan for attachded devices
-# in wiring for candiate circuit this should return empty []
-# see table; Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0 
-i2c = I2C(0) # default assignment; scl=Pin(5), sda=Pin(4)
-print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
-
-# scan for devices at the default pin values
-dvcs = i2c.scan() # scan for devices
-print('devices: {}'.format(dvcs)) # debug, I2C devices found
-
-# #
-# define values; clock pin, serial data pin, clock frequency
-scl_pin = Pin(19) # GP19, I2C1 scl
-sda_pin = Pin(18) # GP18, I2C1 sda
-clock_freq = 400_000 # 400kHz
-
-# #
-# assign values; to I2C1 hardware bus . 
-i2c = I2C(1, scl=scl_pin, sda=sda_pin, freq=clock_freq) # hardware bus, I2C1,
-print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
-
-# scan for devices at the RPi pins on the I2C hardware bus, should return [119]
-dvcs = i2c.scan() # scan for devices
-print('devices: {}'.format(dvcs)) # debug, I2C devices found
-
-buf = bytearray(10)
-buf = i2c.readfrom(119, 10) # read ten (10) from address 119
-print('bytes read from device at address on i2c: {}'.format(buf)) # debug, I2C configuration values
-
-
-
+# # # Old code put this somewhere else
+#
+# # import libraries to use in this programme
+# #from bme import BME280 # sensor driver, this to source or more likely have to create code for
+# from machine import RTC, Pin, I2C
+# 
+# # #
+# # get the current date and time
+# rtc = RTC()
+# dt_tm = rtc.datetime() # get the date and time
+# print('current date & time: {}'.format(dt_tm)) # debug, date and time
+# 
+# 
+# # ###############
+# # Work in progress wip
+# # ###############
+# 
+# # #
+# # initialize the I2C class, scan for attachded devices
+# # in wiring for candiate circuit this should return empty []
+# # see table; Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0 
+# i2c = I2C(0) # default assignment; scl=Pin(5), sda=Pin(4)
+# print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
+# 
+# # scan for devices at the default pin values
+# dvcs = i2c.scan() # scan for devices
+# print('devices: {}'.format(dvcs)) # debug, I2C devices found
+# 
+# # #
+# # define values; clock pin, serial data pin, clock frequency
+# scl_pin = Pin(19) # GP19, I2C1 scl
+# sda_pin = Pin(18) # GP18, I2C1 sda
+# clock_freq = 400_000 # 400kHz
+# 
+# # #
+# # assign values; to I2C1 hardware bus . 
+# i2c = I2C(1, scl=scl_pin, sda=sda_pin, freq=clock_freq) # hardware bus, I2C1,
+# print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
+# 
+# # scan for devices at the RPi pins on the I2C hardware bus, should return [119]
+# dvcs = i2c.scan() # scan for devices
+# print('devices: {}'.format(dvcs)) # debug, I2C devices found
+# 
+# buf = bytearray(10)
+# buf = i2c.readfrom(119, 10) # read ten (10) from address 119
+# print('bytes read from device at address on i2c: {}'.format(buf)) # debug, I2C configuration values
+# 
+# 
+# 
