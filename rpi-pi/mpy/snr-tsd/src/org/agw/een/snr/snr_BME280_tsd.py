@@ -84,16 +84,20 @@
 #
 # Context diagram
 # Assuming only the microcontroller interacts with the device.
-#  ___________________________________________  ____________________________________
-# |            Electrical Engineering         ||        Internet of Things          | 
+#  ____________________________________________  ____________________________________
+# |            Electrical Engineering          ||        Internet of Things          | 
 #                   In Scope                               Out of Scope
-#  ___________________________________________  _________________  _________________
-# |                                           ||                 ||                 |
+#  ____________________________________________  _________________  _________________
+# |                                            ||                 ||                 |
 #  Device                  Microcontroller          SomeThing-M^J     SomeThing′-N^K 
-#  ______   do x      ________________________    do p     ______    do p′    ______ 
-# |      |<----------| CPU  Mpy  Drvr Prog    |<----------|      |<----------|      |
-# |      |  get y    | |_|<-|_|<-|_|<-|_|     |   get q   |      |   get q′  |      |
-# |______|<----------|________________________|<----------|______|<----------|______|
+#  ______   do x      _________________________    do p     ______    do p′    ______ 
+# |      |<----------|      __________Flash__  |<----------|      |<----------|      |
+# |      |  get y    |     |    Micro        | |   get q   |      |   get q′  |      |
+# |      |<----------|     |  _ Python_____  | |<----------|      |<----------|      |
+# |      |  do w     | CPU | |  Drvr Prog  | | |   do r    |      |   do r′   |      |
+# |      |<----------| |_|<--|<-|_|<-|_|   | | |---------->|      |---------->|      |
+# |      |  get z    |     |_|_____________|_| |   get s   |      |   get s′  |      |
+# |______|<----------|_________________________|---------->|______|---------->|______|
 #
 # A device is any external hardware component wired (integrated) to and programatically controlled by
 # the hardware microcontroller. The microcontroller executes programme software which use driver software,
