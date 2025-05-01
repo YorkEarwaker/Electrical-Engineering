@@ -98,7 +98,7 @@
 # A device is any external hardware component wired (integrated) to and programatically controlled by
 # the hardware microcontroller. The microcontroller executes programme software which use driver software,
 # both of which might be installed on the microcontroller, to issue commands to the device to do something
-# or retrieve information the device has saved in the device memory banks. The device driver software is specialist
+# or get information the device has saved in the device memory banks. The device driver software is specialist
 # software that has been written to communicate specifically with a particular external device.
 # The device might do some activity, as a result of a command received from a programme using the device driver
 # running on the microcontroller, and save information about the activity to specific address locations

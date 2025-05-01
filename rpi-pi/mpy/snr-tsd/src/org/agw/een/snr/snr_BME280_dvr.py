@@ -28,6 +28,37 @@
 # https://github.com/RuiSantosdotme/ESP-MicroPython/blob/master/code/WiFi/HTTP_Client_IFTTT_BME280/BME280.py
 # https://microcontrollerslab.com/raspberry-pi-pico-w-wireless-bme280-web-server/
 #
+# Context diagram
+# Assuming only the microcontroller interacts with the device.
+#  ___________________________________________  ____________________________________
+# |            Electrical Engineering         ||        Internet of Things          | 
+#                   In Scope                               Out of Scope
+#  ___________________________________________  _________________  _________________
+# |                                           ||                 ||                 |
+#  Device                  Microcontroller          SomeThing-M^J     SomeThing′-N^K 
+#  ______   do x      ________________________    do p     ______    do p′    ______ 
+# |      |<----------| CPU  Mpy  Drvr Prog    |<----------|      |<----------|      |
+# |      |  get y    | |_|<-|_|<-|_|<-|_|     |   get q   |      |   get q′  |      |
+# |______|<----------|________________________|<----------|______|<----------|______|
+#
+# A device is any external hardware component wired (integrated) to and programatically controlled by
+# the hardware microcontroller. The microcontroller executes programme software which use driver software,
+# both of which might be installed on the microcontroller, to issue commands to the device to do something
+# or get information the device has saved in the device memory banks. The device driver software is specialist
+# software that has been written to communicate specifically with a particular external device.
+# The device might do some activity, as a result of a command received from a programme using the device driver
+# running on the microcontroller, and save information about the activity to specific address locations
+# in the device memory bank registers. The first programme that issued the do activity command, or second programme,
+# might then get the information from the memory bank registers of the device and return the information to the
+# microcontroller.
+# 
+# Another thing, hardware or software, might issue commands to the microcontroller to do something
+# and get information from the microcontroller memory bank. The internet of things is out of scope
+# in this context. But this electrical engineering context A might be used in as part of a larger
+# systme of systems IoT context B.
+# <todo: context text work in progress, last reviewed 01/05/2025, wip>
+#
+# Sensor
 # Pin sequence numbers, left to right, 1 2 3 4 5 6, with circuit board and BME sensor forward facing
 #
 #       [.] BME280 sensor device, circa factor larger than actual size
@@ -67,13 +98,12 @@
 # | 17 | 0xE5[7:4] / 0xE6 | dig_H5 [3:0]/[11:4] | signed short   |
 # | 18 | 0xE7             | dig_H6              | signed char    |
 # | -- | ---------------- | ------------------- | -------------- |
-#
+# 
 # Compensation words, words are 16 bit signed or unsigned integer stored in two's complement, 
 # dig_T* = temperature compensation related values
 # dig_P* = pressure related values
 # dig_H* = humidity related values
-#
-#
+# 
 # Table 18: Memory map
 # Bosch Sensortec,  BME280 Data sheet, BST-BME280-DS001-23 Revision_1.23_012022
 # |----------------- | --------- | --------------------------------------------------------------------- | ------------|
@@ -526,5 +556,38 @@ class BME280:
         adc = self.read_raw_humidity()
         # print 'Raw humidity = {0:d}'.format (adc) # debug?
         h = self.t_fine - 76800
-        h = ((() - () - ())) + 
+        h = (((((adc << 14) - (self.dig_H4 << 20) - (self.dig_H5 * h)) +
+               16384) >> 15) * (((((((h * self.dig_H6) >> 10) * (((h *
+                                self.dig_H3) >> 11) + 32768)) >> 10) + 2097152) *
+                                self.dig_H2 + 8192) >> 14))
+        h = h - (((((h >> 15) * (h >> 15)) >> 7) * self.dig_H1) >> 4)
+        h = 0 if h < 0 else h
+        h = 419430400 if h > 419430400 else h
+        return h >> 12
+    
+    # Return the temperature in degress
+    @property
+    def temperature(self):
+        t = self.read_temperature()
+        ti = t // 100
+        td = t - ti * 100
+        return "{}.{:02d}C".format(ti, td)
+    
+    
+    # Return pressure in hPa
+    @property
+    def pressure(self):
+        p = self.read_pressure() // 256
+        pi = p // 100
+        pd = p - pi * 100
+        return "{}.{:02d}hPa".format(pi, pd)
         
+    # Return the humidity in percent
+    @property
+    def humidity(self):
+        h = self.read_humidity()
+        hi = h // 1024
+        hd = h * 100 // 1024 - h * 100
+        return "{}.{:02d}%".format(hi, hd)
+    
+    
