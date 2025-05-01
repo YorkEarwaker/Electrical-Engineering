@@ -82,6 +82,37 @@
 # Related, PyPi driver project
 # https://raw.githubusercontent.com/rm-hull/bme280/master/doc/tech-spec/BME280.pdf
 #
+# Context diagram
+# Assuming only the microcontroller interacts with the device.
+#  ___________________________________________  ____________________________________
+# |            Electrical Engineering         ||        Internet of Things          | 
+#                   In Scope                               Out of Scope
+#  ___________________________________________  _________________  _________________
+# |                                           ||                 ||                 |
+#  Device                  Microcontroller          SomeThing-M^J     SomeThing′-N^K 
+#  ______   do x      ________________________    do p     ______    do p′    ______ 
+# |      |<----------| CPU  Mpy  Drvr Prog    |<----------|      |<----------|      |
+# |      |  get y    | |_|<-|_|<-|_|<-|_|     |   get q   |      |   get q′  |      |
+# |______|<----------|________________________|<----------|______|<----------|______|
+#
+# A device is any external hardware component wired (integrated) to and programatically controlled by
+# the hardware microcontroller. The microcontroller executes programme software which use driver software,
+# both of which might be installed on the microcontroller, to issue commands to the device to do something
+# or retrieve information the device has saved in the device memory banks. The device driver software is specialist
+# software that has been written to communicate specifically with a particular external device.
+# The device might do some activity, as a result of a command received from a programme using the device driver
+# running on the microcontroller, and save information about the activity to specific address locations
+# in the device memory bank registers. The first programme that issued the do activity command, or second programme,
+# might then get the information from the memory bank registers of the device and return the information to the
+# microcontroller.
+# 
+# Another thing, hardware or software, might issue commands to the microcontroller to do something
+# and get information from the microcontroller memory bank. The internet of things is out of scope
+# in this context. But this electrical engineering context A might be used in as part of a larger
+# systme of systems IoT context B.
+# <todo: context text work in progress, last reviewed 01/05/2025, wip>
+# 
+# Sensor
 # Pin sequence numbers, left to right, 1 2 3 4 5 6, with circuit board and BME sensor forward facing
 #
 #       [.] BME280 sensor device, circa factor larger than actual size
