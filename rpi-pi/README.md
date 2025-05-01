@@ -12,7 +12,9 @@ TODO
 * <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
 * <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless, manufactured in CN, part of Waveshare Micropython Learning Kit, >
 * <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. 18/04/2025 difficulty sourcing Pico with onbaord debug connector,>
-* <todo: consider, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
+* <todo: consider, cicuit diagram, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
+* <todo: consider, data logger project CSV file for data storage to RPi Pico flash storage, likely not a good idea due to limitations of flash lifetime circa ~20k write/delete cycles, CSV storage better considered on addition of external SD Card storage component, Rpi Pico 2 W 32MBit (4MiB) Flash W25Q32RVXHJQ, see Pico 2 W schematic below. >
+* <todo: consider, SD Card storage project to increase total storage above onboard 2MB RPi Pico flash storage, MicroPython taking up to 600kB storage and available storage reduced to 1448kB, limiting ~20k flash writes/delete cycles lifetime, falsh is not replacable, SD Card extension is replaceable component, Weather station project \amn might benefit from this solution central data storage hub 'mother' Pico and spoke 'children' Pico's sensor control data logging to data hub 'mother' SD Card, good use of componentisation, loose coupling, high cohesion, . spoke 'child' low spec Pico or even lower spec MCU?  >
 
 DONE
 * <done: intent to commit>
@@ -22,6 +24,7 @@ DONE
 * <done: consider, source pico-jvm for java project on RPi Pico, does on exist? would it be worth the effort? probably not worth the effort at this point, wait for market to mature further, Oracle or Eclipse Foundation focus on IoT and embedded systems, RPi ecosystem, Ubuntu ecosystem, >
 * <done: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, purchased 17/04/2025 1xfull size 1xhalf size bradboard, >
 * <done: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, 1xRPi Pico 2 W, battery holder, >
+* <done: consider, circuit diagram, RPi Pico pinout in code comments, see snr_BME280_tsd.py, snr_DHT22_tsd.py,  >
 
 ## Libraries
 
@@ -94,12 +97,15 @@ Documentation - RPi Pico pinout
 
 
 Datasheet - Raspberry Pi Pico
+* Raspberry Pi Pico, datasheet, [PDF](https://datasheets.raspberrypi.com/picow/pico-2-w-schematic.pdf), Raspberry Pi, RPi Pico 2 W schematic
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf), RP2350 Datasheet
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf), Getting started with Raspberry Pi Pico-series C/C++ development with Raspberry Pi Pico-series and other Raspberry Pi microcontroller-based boards
 * Raspberry Pi Pico, datasheet [PDF](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf), Connecting to the Internet with Raspberry Pi Pico W-series. Getting online with C/C++ or MicroPython on W-series devices.
 
-Datasheet - Component parts of RPi Pico
-* CYW43439 [WS](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw43439/), Single-band Wi-Fi 4 (802.11n) + Bluetooth® 5.4 combo
+Datasheet - Component parts of RPi Pico 2 W
+* CYW43439 [WS](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw43439/), Infineon, Single-band Wi-Fi 4 (802.11n) + Bluetooth® 5.4 combo
+* W25Q32RVXHJQ  [WS](https://www.winbond.com/hq/support/documentation/downloadV2022.jsp?__locale=en&xmlPath=/support/resources/.content/item/DA00-W25Q32RV_1.html&level=1), Winbond Electronics, FLASH - NOR Memory IC 32Mbit SPI - Quad I/O 133 MHz 8-XSON (2x3)
+* ARM 2035, 
 
 News Papers - wireless, wifi <todo: move to separate directory structure for sbc RPi 5/4, >
 * Host a Wi-Fi hotspot with a Raspberry Pi, [WS](https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/), 
@@ -137,3 +143,15 @@ News Papers - I2C Devices,
 News Papers - RPi Pico power circuitry
 * A rant about power circuitry on the Pico, [WS](https://www.reddit.com/r/raspberrypipico/comments/n8af5b/a_rant_about_power_circuitry_on_the_pico/?rdt=33871), 
 * ...
+
+News Papers - Flash storage, limiting ~20k flash writes, data logger CSV to onboard
+* Understanding the Raspberry Pi Pico’s Memory Layout, [WS](https://petewarden.com/2024/01/16/understanding-the-raspberry-pi-picos-memory-layout/), Pete Warden, 
+* Raspberry Pi Pico File System Selection Guide [GH](https://gist.github.com/oyama/4596eca4c4e63aeb667a6fd1e55e94ca)
+* Data Logging With Raspberry Pi Pico, [WS](https://www.instructables.com/Data-Logging-With-Raspberry-Pi-Pico/), Autodesk, Instructables
+* Can the Pico write to the flash to store program values across reboots? [WS](https://forums.raspberrypi.com/viewtopic.php?t=305570), forums, Raspberry Pi
+* Read and write data with the Pi Pico onboard flash, [WS](https://www.makermatrix.com/blog/read-and-write-data-with-the-pi-pico-onboard-flash/), April 13, 2023, MCU, Programming, maker matrix, 
+
+News Papers - External storage, i.e. SD Card memmory extension to RPi Pico 
+* SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
+* Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
+
