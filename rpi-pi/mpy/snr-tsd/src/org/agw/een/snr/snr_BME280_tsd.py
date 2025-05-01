@@ -332,7 +332,8 @@ while True:
     except Exception as e:
         # Handle any exceptions during sensor reading
         print('Ooops. Code boo-boo. Time for cinnamon bun and a nice cupa cha. An error occurred: ', e)
-        
+    
+    sleep(5)
         
 
 # # # Old code put this somewhere else
