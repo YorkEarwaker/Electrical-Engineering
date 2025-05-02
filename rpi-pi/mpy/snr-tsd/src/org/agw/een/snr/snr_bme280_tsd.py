@@ -262,7 +262,9 @@
 # | ---------------------------------------------------------------------------- |
 #
 # Circuit diagram
-# Simplified view of Rpi Pico microntroller and Waveshare PCB BME280 sensor device circuit
+# Simplified view of Rpi Pico microntroller and Waveshare PCB BME280 sensor device circuit.
+# The I2C interface works with current circuit design. 02/05/2025
+#
 # <todo: consider, might need two of these, one for I2C interface and another for SPI interface >
 # <todo: consider, this wiring diagram probably won't work due to conflicts identified above
 #        in table 'Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0' current state of breadboard>
@@ -311,31 +313,68 @@
 
 # #
 # Import libraries to use in this programme
-from machine import Pin, I2C
+from machine import Pin, I2C, RTC
 from time import sleep
 import snr_bme280_dvr as BME280
 
+# #
+# define values; clock pin, serial data pin, clock frequency
+scl_pin = Pin(19) # GP19, I2C1 scl
+sda_pin = Pin(18) # GP18, I2C1 sda
+#clock_freq = 400_000 # 400kHz
+clock_freq = 1000 # 1kHz
+
+# #
 # Initialise I2C communication
 #i2C = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=1000)
-i2C = I2C(id=0, scl=Pin(19), sda=Pin(18), freq=1000) #GPIO: GP19, GP18, 
+i2c = I2C(1, scl=scl_pin, sda=sda_pin, freq=clock_freq) # 
+#print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
+
+# # Debug only
+# scan for devices at the RPi pins on the I2C hardware bus, should return [119]
+#dvcs = i2c.scan() # scan for devices
+#print('devices: {}'.format(dvcs)) # debug, I2C devices found
+
+# #
+# create a Real Time Clock instance, to use to get the current date and time
+rtc = RTC()
 
 while True:
+    #print('while True: in') # debug
     try:
-        # wait five seconds between readings
-        sleep(5)
+        #print('try: in') # debug
         
+        # #
+        # wait for five seconds before next reading
+        sleep(5) # five seconds
+        #print('sleep(5): done') # debug
+        
+        # #
+        # get the date and time, from the Real Time Clock instance
+        dt_tm = rtc.datetime() # get the current date and time
+        print('current date & time: {}'.format(dt_tm)) # debug, date and time
+        
+        # #
         # Initialise BME280 sensor
         bme = BME280.BME280(i2c=i2c)
+        #print('bme initialised: {}'.format(bme)) # debug
         
+        # #
         # Read sensor data
         tempC = bme.temperature
+        #print('bme.temperature(): {}'.format(tempC)) # debug
         hum = bme.humidity
+        #print('bme.humidity(): {}'.format(hum)) # debug
         pres = bme.pressure
+        #print('bme.humidity(): {}'.format(pres)) # debug
         
+        # #
         # Convert temperature to fahrenheit
         tempF = (bme.read_temperature()/100) * (9/5) + 32
         tempF = str(round(tempF, 2)) + 'F'
+        #print('tempF: {}'.format(tempF)) # debug
         
+        # #
         # Print sensor readings
         print('Temperature: ', tempC)
         print('Temperature: ', tempF)

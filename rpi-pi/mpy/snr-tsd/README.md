@@ -11,7 +11,8 @@ For consumption by climate models for example,
 ## Status
 
 TODO
-* <todo: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC,  >
+* <todo: consider, SPI interface, mpy code for BME280 , >
+* <todo: consider, __init__.py not curretly used, is it necessary for the current state? >
 * <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
 
@@ -22,6 +23,8 @@ DONE
 * <done: consider, RPi PIco, I2C preferred?/default? over SPI, BM280 PoC, it is easier so most common approach taken >
 * <done: consider, can wiring be completed such that a switch / toggle can be made between I2C1 and SPI1? , can this be achieve with Pico? look to pinout,. Likely yes using the default SPI0 GPIO pins G16 G17 G18 G19 physical pins 21 22 24 25, 24 & 25 also acting as SDA and SCL for I2C1 >
 * <done: consider, complete diagram, for BME280, but likely won't work for both SPI and I2C >
+* <done: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC, success with I2C interface,  >
+
 * ...
 
 ## Readings
@@ -51,7 +54,31 @@ Humidity: 52.5 %RH
 
 ### BME280
 
-... to be completed
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+
+current date & time: (2025, 5, 2, 4, 14, 3, 49, 0)
+Temperature:  21.29C
+Temperature:  70.29F
+Humidity:  50.-5196821%
+Pressure:  1016.33hPa
+current date & time: (2025, 5, 2, 4, 14, 3, 55, 0)
+Temperature:  21.29C
+Temperature:  70.3F
+Humidity:  50.-5198019%
+Pressure:  1016.30hPa
+current date & time: (2025, 5, 2, 4, 14, 4, 0, 0)
+Temperature:  21.29C
+Temperature:  70.3F
+Humidity:  50.-5196821%
+Pressure:  1016.30hPa
+current date & time: (2025, 5, 2, 4, 14, 4, 6, 0)
+Temperature:  21.29C
+Temperature:  70.3F
+Humidity:  50.-5196821%
+Pressure:  1016.36hPa
+
 
 ## References
 

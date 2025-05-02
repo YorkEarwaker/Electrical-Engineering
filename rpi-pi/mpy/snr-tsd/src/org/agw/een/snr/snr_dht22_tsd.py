@@ -188,7 +188,7 @@ while True:
         # #
         # get the date and time, from the Real Time Clock instance
         dt_tm = rtc.datetime() # get the current date and time
-        print('current date & time: {}'.format(dt_tm)) # debug, date and time
+        # print('current date & time: {}'.format(dt_tm)) # debug, date and time
         
         # #
         # Read the sensor values

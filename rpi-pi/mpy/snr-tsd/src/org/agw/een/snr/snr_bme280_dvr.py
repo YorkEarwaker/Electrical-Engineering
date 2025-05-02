@@ -288,7 +288,8 @@ reg_addr_compensation_trim_param_dig_h2 = 0xE1
 reg_addr_compensation_trim_param_dig_h3 = 0xE3
 reg_addr_compensation_trim_param_dig_h4 = 0xE4
 reg_addr_compensation_trim_param_dig_h5 = 0xE5
-reg_addr_compensation_trim_param_dig_h6 = 0xE7
+reg_addr_compensation_trim_param_dig_h6 = 0xE6
+reg_addr_compensation_trim_param_dig_h7 = 0xE7
 
 # Memory map, sensor identifiction
 # ID, register
@@ -477,7 +478,7 @@ class BME280:
         h5 = self._device.read_signed_eight(
             reg_addr_compensation_trim_param_dig_h6)
         h5 = (h5 << 24) >> 20
-        self._H5 = h5 | (
+        self.dig_H5 = h5 | (
             self._device.read_unsigned_eight(
                 reg_addr_compensation_trim_param_dig_h5) >> 4 & 0x0F)
         
@@ -530,8 +531,8 @@ class BME280:
     def read_temperature(self):
         adc = self.read_raw_temp()
         var1 = ((adc >> 3) - (self.dig_T1 << 1)) * (self.dig_T2 >> 11)
-        var2 == ((
-            (((adc >> 4) - self.deg_T1) * ((adc >> 4) - self.dig_T1)) >> 12)
+        var2 = ((
+            (((adc >> 4) - self.dig_T1) * ((adc >> 4) - self.dig_T1)) >> 12) *
             self.dig_T3) >> 14
         self.t_fine = var1 + var2
         return (self.t_fine * 5 + 128) >> 8
