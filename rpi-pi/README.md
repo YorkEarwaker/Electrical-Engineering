@@ -14,7 +14,6 @@ TODO
 * <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. 18/04/2025 difficulty sourcing Pico with onbaord debug connector,>
 * <todo: consider, cicuit diagram, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
 * <todo: consider, data logger project CSV file for data storage to RPi Pico flash storage, likely not a good idea due to limitations of flash lifetime circa ~20k write/delete cycles, CSV storage better considered on addition of external SD Card storage component, Rpi Pico 2 W 32MBit (4MiB) Flash W25Q32RVXHJQ, see Pico 2 W schematic below. >
-* <todo: consider, SD Card storage project to increase total storage above onboard 2MB RPi Pico flash storage, MicroPython taking up to 600kB storage and available storage reduced to 1448kB, limiting ~20k flash writes/delete cycles lifetime, falsh is not replacable, SD Card extension is replaceable component, Weather station project \amn might benefit from this solution central data storage hub 'mother' Pico and spoke 'children' Pico's sensor control data logging to data hub 'mother' SD Card, good use of componentisation, loose coupling, high cohesion, . spoke 'child' low spec Pico or even lower spec MCU?  >
 
 DONE
 * <done: intent to commit>
@@ -152,11 +151,3 @@ News Papers - Flash storage, limiting ~20k flash writes, data logger CSV to onbo
 * Can the Pico write to the flash to store program values across reboots? [WS](https://forums.raspberrypi.com/viewtopic.php?t=305570), forums, Raspberry Pi
 * Read and write data with the Pi Pico onboard flash, [WS](https://www.makermatrix.com/blog/read-and-write-data-with-the-pi-pico-onboard-flash/), April 13, 2023, MCU, Programming, maker matrix, 
 
-News Papers - External storage, i.e. SD Card memmory extension to RPi Pico 
-* SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
-* Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
-
-News Papers - SD Cards, 
-* SD card with a pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=344610), forums, Raspberry Pi, 
-* Use SDCard with MicroPython on Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=307275), forums, Raspberry Pi, 
-* ...
