@@ -25,18 +25,19 @@ DONE
 * <done: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, purchased 17/04/2025 1xfull size 1xhalf size bradboard, >
 * <done: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, 1xRPi Pico 2 W, battery holder, >
 * <done: consider, circuit diagram, RPi Pico pinout in code comments, see snr_BME280_tsd.py, snr_DHT22_tsd.py,  >
+* <done: consider, create SD Card project \sdc sub project, PoC SD Card for \amn climate model project, >
 
 ## Libraries
 
 Languages - primary
 * C/C++/asm, Note_02
-* CircuitPython, Ardfruit specific, 
 * MicroPython, microcontroller agnostic, Note_01
+* Rust?, embeded part of raodmap, <todo: look at ecosystem, >
 
 Languages - secondary 
+* CircuitPython, Ardfruit specific, 
 * Arduino?, C like, 
 * Java?, pico-jvm?
-* Rust?
 * Basic?
 * Javascript? 
 * ...
@@ -155,3 +156,7 @@ News Papers - External storage, i.e. SD Card memmory extension to RPi Pico
 * SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
 * Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
 
+News Papers - SD Cards, 
+* SD card with a pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=344610), forums, Raspberry Pi, 
+* Use SDCard with MicroPython on Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=307275), forums, Raspberry Pi, 
+* ...
