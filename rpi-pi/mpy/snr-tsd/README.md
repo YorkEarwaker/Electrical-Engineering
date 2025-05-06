@@ -12,6 +12,7 @@ For consumption by climate models for example,
 
 TODO
 * <todo: consider, SPI interface, mpy code for BME280 , >
+* <todo: consider, DS18B20 Temperature Sensor,  >
 * <todo: consider, __init__.py not curretly used, is it necessary for the current state? >
 * <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
@@ -113,7 +114,7 @@ News Papers - DHT22/DHT11 with RPi Pico
 * DHT11 sensor with Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=372629), forums, raspberrypi
 * Interpreting response for DHT11 on PICO, [WS](https://forums.raspberrypi.com/viewtopic.php?t=339751), forums, raspberrypi, see breadboard *
 * Raspberry Pi Pico With DHT22 – MicroPython Tutorial, [WS](https://electrocredible.com/raspberry-pi-pico-dht22-micropython-tutorial/), electrocredible
-* [WS](https://randomnerdtutorials.com/raspberry-pi-pico-dht11-dht22-micropython/), ramdomnerdtutorials
+* [WS](https://randomnerdtutorials.com/raspberry-pi-pico-dht11-dht22-micropython/), randomnerdtutorials
 
 News Papers - DHT22/DHT11 with PyCom
 * DHT Pure Python library for Pycom board, [WS](https://github.com/JurassicPork/DHT_PyCom), dht class 
@@ -137,7 +138,9 @@ News Papers - BME280 with Raspberry Pi, various BME280 vendors & products,
 News Papers - BME280 with ESP32
 * MicroPython: BME280 with ESP32 and ESP8266 (Pressure, Temperature, Humidity), [WS](https://randomnerdtutorials.com/micropython-bme280-esp32-esp8266/), Randomtutorials, 
 * ...
-* ...
+
+News Papers - DS18B20 temp sensor
+* Raspberry Pi Pico: DS18B20 Temperature Sensor (MicroPython) – Single and Multiple, [WS](https://randomnerdtutorials.com/raspberry-pi-pico-ds18b20-micropython/), randomnerdtutorials 
 
 News Papers - RPi Pico pinout, SPI, I2C, ...
 * SPI pins on pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=301247), Forums, Raspberry Pi, 
