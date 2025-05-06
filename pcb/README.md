@@ -12,6 +12,12 @@ TODO
 DONE
 * <done: intent to commit>
 
+## Libraries
+
+Desgin
+* EagleCAD
+* Fritzing
+
 ## References
 
 Terms
