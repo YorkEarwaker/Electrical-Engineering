@@ -1,4 +1,4 @@
-## SD Card sdc
+## Secure Digital Card sdc
 
 RPi Pico SD Card SPI interface, memory extension for RPi Pico to extend life of Pico flash memory, eMMC and SD
 
@@ -16,7 +16,13 @@ DONE
 ## Libraries
 
 Standards
-* SD Specifications, Part 1, Physical Layer, Simplified Specification, Version 2.00, 25 September 2006 , [PDF](https://users.ece.utexas.edu/~valvano/EE345M/SD_Physical_Layer_Spec.pdf)
+* SD Association SDA, org [WS](https://www.sdcard.org/), SD Card org
+* SD Standard Overview, [WS](https://www.sdcard.org/developers/sd-standard-overview/), SD Card org, 
+* Simplified Specifications, [WS](https://www.sdcard.org/downloads/pls/), SD Card org
+* Secure Digital Card upto 2GB, SD Specifications, Part 1, Physical Layer, Simplified Specification, Version 2.00, 25 September 2006, [PDF](https://users.ece.utexas.edu/~valvano/EE345M/SD_Physical_Layer_Spec.pdf)
+* SDHC Secure Digital High Capacity upto 32GB
+* SDXC Secure Digital eXtended Capacity upto 2TB
+* SDUC Secure Digial Ultra Capacity upto 128TB
 
 Libs
 * SD, [WS](https://docs.arduino.cc/libraries/sd/), Arduino SD library, 
@@ -26,12 +32,13 @@ Libs
 * SD, [GH](https://github.com/raspberrypi/pico-extras/tree/master/src/rp2_common/pico_sd_card), Raspbery Pi, C/C++. pico_sd_card
 * (e)MMC/SD card driver, 
 * SDIO, driver, 
+* FreeRTOS +FAT, the SD card driver, [GH](https://github.com/carlk3/FreeRTOS-FAT-CLI-for-RPi-Pico)
 
 ## References
 
 Terms
-* SD Card
-* eMMC Card
+* SD Card, [WP](https://en.wikipedia.org/wiki/SD_card)
+* eMMC , MultiMediaCard
 
 News Papers - External storage, i.e. SD Card memmory extension to RPi Pico 
 * SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
