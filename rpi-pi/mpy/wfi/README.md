@@ -6,6 +6,7 @@ MicroPython mpy WiFi, microcontroller, RPi Pico 2 W, Pico onboard WiFi 4, IEEE 8
 
 TODO
 * <todo: consider, MicroPython RPi Pico wifi connection to laptop, >
+* <todo: consider, MicroPython RPi Pico wifi connection to mobile phone, >
 
 DONE
 * <done: intent to commit>
