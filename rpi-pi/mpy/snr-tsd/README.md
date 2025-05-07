@@ -11,9 +11,9 @@ For consumption by climate models for example,
 ## Status
 
 TODO
+* <todo: consider, __init__ , best practice for BME280 dirver module, put drivers in a spearate package? >
 * <todo: consider, SPI interface, mpy code for BME280 , >
 * <todo: consider, DS18B20 Temperature Sensor,  >
-* <todo: consider, __init__.py not curretly used, is it necessary for the current state? >
 * <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
 
@@ -25,6 +25,7 @@ DONE
 * <done: consider, can wiring be completed such that a switch / toggle can be made between I2C1 and SPI1? , can this be achieve with Pico? look to pinout,. Likely yes using the default SPI0 GPIO pins G16 G17 G18 G19 physical pins 21 22 24 25, 24 & 25 also acting as SDA and SCL for I2C1 >
 * <done: consider, complete circuit diagram, for BME280, but likely won't work for both SPI and I2C >
 * <done: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC, success with I2C interface,  >
+* <todo: consider, __init__.py not curretly used, is it necessary for the current state? yes it must be fixed to allow BME280 driver module be imported, goes to current ignorance of best use for __init__ and what code must be downloaded to RPi Pico and what can remain remote, so MicroPython and RPi Pico ecosystem knowledge gap, >
 * ...
 
 ## Readings
