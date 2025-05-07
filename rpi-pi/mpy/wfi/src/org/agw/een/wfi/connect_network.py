@@ -21,6 +21,7 @@
 #
 # Context diagram -- work in progress
 # Assuming only the microcontroller interacts with only local Wifi network of things.
+# <todo: consider, mpy likely connects direct to wifi via driver not cpu. confirm on way or the other. >
 #  __________________________  _______________________________________________________________________  _____________________________________
 # |  Electrical Engineering  ||                      Local Internet of Things                         ||             Global  IoT             |
 #        Out of Scope                                         In Scope                                               Out of Scope
@@ -48,7 +49,8 @@
 #                                                             |         |        |<--------------------------------|      |
 #                                                             |         |        |               get q′            |      |
 #                                                             |________ |________|<--------------------------------|______|
-
+#
+# Local device with wifi radio might be a computer like a laptop of a mobile phone or another microcontroller on the same wifi network.
 
 # #
 # import libraries to use in this programme
