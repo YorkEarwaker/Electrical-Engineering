@@ -39,119 +39,57 @@ Waiting for Wi-Fi connection ...
 Waiting for Wi-Fi connection ...
 Connected to Wi-Fi network True. 
 Network: RPi Pico IP, Subnet, Gateway, DNS, ('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8'). 
-b'<!DOCTYPE html>'
-b'<html lang="en">'
-b'<head>'
-b'    <title>NPR : National Public Radio</title>'
-b'    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">'
-b'    <meta name="viewport" content="width=device-width">'
-b'    <link id="favicon" rel="shortcut icon" type="image/png" href="">'
-b'    <style>'
-b'        body {'
-b'    display: block;'
-b'    padding: 0px 20px;'
-b'    max-width: 550px;'
-b'    margin: 0 auto;'
-b'    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'
-b'}'
 b''
-b'.full-version-link {'
-b'    margin-left: 15px;'
-b'}'
 b''
-b'.slug-line {'
-b'    font-size: 1.1rem;'
-b'    margin-bottom: 15px;'
-b'}'
+b'VVVVVVV, VVVVVVVV   .VVV.    ,VVVVVV, VVVVVVVV    ,VVVVVV, VV.   VV'
+b"VV   .VV VV        .VV VV.   VV    '' VV          VV'  'VV VVV.  VV"
+b"VVVVVVV' VVVVVV    VVVVVVV   VV       VVVVVV      VV    VV VVVV. VV"
+b'VV       VV      .VV     VV  VV    ,, VV          VV.  .VV VV  VVVV'
+b"VV       VVVVVVV.VV       VV.'VVVVVV' VVVVVVVV    'VVVVVV' VV   VVV"
 b''
-b'.hr-line {'
-b'    position: relative;'
-b'    height: 4px;'
-b'}'
+b'           VVVVVVVV    .VVV.    VVVVVVV, VVVVVVVV VV    VV'
+b'           VV         .VV VV.   VV    VV    VV    VV    VV'
+b"           VVVVVV    .VVVVVVV.  VVVVVVV'    VV    VVVVVVVV"
+b'           VV       .VV     VV. VV  VV.     VV    VV    VV'
+b'           VVVVVVVV.VV       VV.VV   VV.    VV    VV    VV'
 b''
-b'.hr-line:after {'
-b'    background: linear-gradient(to right, #e60000 0%, #e60000 33.33%, #000000 33.33%, #000000 66.66%, #3366CC 66.66%);'
-b'    position: absolute;'
-b"    content: '';"
-b'    height: 4px;'
-b'    right: 0;'
-b'    left: 0;'
-b'    top: 0;'
-b'}'
 b''
-b'hr.gray {'
-b'    border: .5px solid gray;'
-b'}'
 b''
-b'.story-title {'
-b'    line-height: 2rem;'
-b'    font-size: 1.5rem;'
-b'    margin: 0;'
-b'}'
-b''
-b'.topic-heading {'
-b'    line-height: 2rem;'
-b'    font-size: 1.5rem;'
-b'}'
-b''
-b'.topic-container>ul {'
-b'    padding: 0;'
-b'    line-height: 1.4rem;'
-b'}'
-b''
-b'.topic-container li {'
-b'    display: block;'
-b'    padding-bottom: 15px;'
-b'}'
-b''
-b'.topic-container {'
-b'    margin-top: 20px;'
-b'}'
-b''
-b'.topic-date {'
-b'    margin: 20px 0;'
-b'    font-style: italic;'
-b'}'
-b''
-b'.paragraphs-container {'
-b'    line-height: 1.5rem;'
-b'}'
-b''
-b'.button:link,'
-b'.button:visited {'
-b'    background-color: white;'
-b'    color: black;'
-b'    border: 2px solid black;'
-b'    padding: 4px 8px;'
-b'    text-align: center;'
-b'    text-decoration: none;'
-b'    display: inline-block;'
-b'}'
-b''
-b'.button:hover,'
-b'.button:active {'
-b'    background-color: black;'
-b'    color: white;'
-b'}'
-b''
-b'.lower-nav-container {'
-b'    margin-top: 40px;'
-b'}'
-b''
-b'.lower-nav-container li {'
-b'    margin-left: 0;'
-b'    display: inline;'
-b'    padding-right: 20px;'
-b'}'
-b''
-b'h6 {'
-b'  text-transform: uppercase;'
-b'}'
-b''
-b'    </style>'
-b'</head>'
+b'                     /:'
+b'                    ///:,'
+b'                   //////:,'
+b'      .W.          ////////:,.'
+b'     .WWW,         ///////////::,.'
+b'    .WWWWWW,       ////////////////::,,.'
+b'   .WWWWWWWWW,.     ////////////////////::,,.'
+b'  .WWWWWWWWWWWWW,.  ///////////////////////////:,.              ()'
+b'  WWWWWWWWWWWWWWWWW,.//////////////////////////////.            /'
+b'  WWWWWWWWWWWWWWWWWWWWW:,.//////////////////////////.        Y  :'
+b'  WWWWWWWWWWWWWWWWWWWWWWWWWWW:,,.///////////////////.        : /  ()'
+b'  WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,,.///////////.,,.      Y  /'
+b'   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,///.:WWWWWW,    :----'
+b'   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW,//,WWWWWWWWW:  /'
+b'    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW///:WWWWWWWWWW./'
+b"     WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'///:WWWWWWWWVVV."
+b"      'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'/////WWWWWWW//''V."
+b"       'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,./.,WWWWWW//"
+b"         'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//W,"
+b"            'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//WWW,"
+b"                 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//WWWWW:"
+b"                   '''WWWWWWWWWWW/''WWWWWWWWWWWWWWWWWWWW:"
+b"                        '''''''  ,WWWWWWWWWWWWWWWWWWWWWW'"
+b"                            .,,::WWWWWWWWWWWWWWWWWWWWWW'"
+b"                      .,,:WWWWWWWWWWWWWWWWWWWWWWWWWWW:'"
+b"            ..,,,,,:WWWWWWWWWWWWWWWWWWWWWWWWWWWW::''"
+b"       'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:'''"
+b"        ''WWWWWWWWWWWWWWWWWWWWWWWWWW'"
+b"          '''WWWWWWWWWWWWWWWWWWWWW'"
+b"             '''WWWWWWWWWWWWWWWW'"
+b"                 '''WWWWWWWWW'"
+b"                       '''"
+b'\x1a\x00\x00\x00\x00\x00\x00\x00'
 
-Portion of the text html above brought back from NPR .
+Ascii text above brought back from; artscene textfiles com asciiart peace.art .
 
 ## References
 
