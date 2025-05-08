@@ -35,7 +35,7 @@
 # confirm one way or the other. code has to execute in cpu, so assume okay, >
 #  __________________________  _______________________________________________________________________  _____________________________________
 # |  Electrical Engineering  ||                      Local Internet of Things                         ||             Global  IoT             |
-#        Out of Scope                                         In Scope                                               Out of Scope
+#        Out of Scope                                         In Scope                                               In Scope
 #  __________________________  _______________________________________________________________________  _____________________________________
 # |                          ||                                           Wifi                 local  ||                                     |
 #  Device                           Microcontroller                       Router               Device      Regional Telco    SomeThing′-N^K 
@@ -47,19 +47,19 @@
 # |      |<-------------------| |_|<--|_|<--|<--|_|   |   | |---------->|        |---------->|  CPU   |            |      |---------->|      |
 # |      |  get z             |           |_|_________|___| |   get s   |        |   get s   |  |_|   |            |      |  get s′   |      |
 # |______|<-------------------|_____________________________|---------->|        |---------->|  Prog  |            |      |---------->|______|
-#                                                              ________ |        |           |  |_|   |            |      |
-#                                                             |         |        |   do r′   |        |            |      |
-#                                                             |         |        |<----------|        |            |      |
-#                                                             |         |        |   get s′  |        |            |      |
-#                                                             |         |        |<----------|________|            |      |
-#                                                             |  Out    |  RJ45  |               do r'             |      |
-#                                                             |  of     |  Telco |-------------------------------->|      |
-#                                                             |  Scope  |  In/Out|               get s′            |      |
-#                                                             |         |  |_|   |-------------------------------->|      |
-#                                                             |         |        |               do p′             |      |
-#                                                             |         |        |<--------------------------------|      |
-#                                                             |         |        |               get q′            |      |
-#                                                             |________ |________|<--------------------------------|______|
+#                                                                       |        |           |  |_|   |            |      |
+#                                                                       |        |   do r′   |        |            |      |
+#                                                                       |        |<----------|        |            |      |
+#                                                                       |        |   get s′  |        |            |      |
+#                                                                       |        |<----------|________|            |      |
+#                                                                       |  RJ45  |               do r'             |      |
+#                                                                       |  Telco |-------------------------------->|      |
+#                                                                       |  In/Out|               get s′            |      |
+#                                                                       |  |_|   |-------------------------------->|      |
+#                                                                       |        |               do p′             |      |
+#                                                                       |        |<--------------------------------|      |
+#                                                                       |        |               get q′            |      |
+#                                                                       |________|<--------------------------------|______|
 #
 # Local device with wifi radio might be a computer like a laptop of a mobile phone or another microcontroller on the same wifi network.
 # 
@@ -70,6 +70,7 @@
 import time # to initiate delays
 import network # to interact with RPi Pico W/2 W radio
 import rp2 # to interact with RP2040 and RP2035 microcontroller, RPi Pico 1 and RPi Pico 2 .
+import requests # 
 
 # #
 # Radio communication regulation requirements differ by jurisdiction
@@ -89,6 +90,9 @@ rp2.country("GB") # ISO 3166 Alpha-2 format
 wifi_network_name_ssid = "Your-Wi-Fi-Network-Name" # SSID
 # Pre-Shared Key PSK
 wifi_network_password_psk = "Your-Wi-Fi-Network-Password" # PSK
+
+wifi_network_name_ssid = "BT-2QAFZ5" # delete before repository upload
+wifi_network_password_psk = "V7bHmDnA7E7bm7" # delete before repository upload
 
 # #
 # Connect to local Wi-Fi network
@@ -124,4 +128,6 @@ else: # status is three (3) means sucessful connection to the wifi network
     print("Connected to Wi-Fi network {}. ".format(wlan.isconnected()) ) # boolean, True if connected
     print("Network: RPi Pico IP, Subnet, Gateway, DNS, {}. ".format(wlan.ifconfig()) ) # IP-level network interface parameters: IP address, subnet mask, gateway and DNS server .
 
-
+response = requests.get("http://text.npr.org/")
+print(response.content)
+response.close()
