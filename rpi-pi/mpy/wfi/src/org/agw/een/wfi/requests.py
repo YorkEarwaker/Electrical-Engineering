@@ -127,7 +127,15 @@ if wlan.status() != 3: # not equals three (3) means there was some network or pr
 else: # status is three (3) means sucessful connection to the wifi network 
     print("Connected to Wi-Fi network {}. ".format(wlan.isconnected()) ) # boolean, True if connected
     print("Network: RPi Pico IP, Subnet, Gateway, DNS, {}. ".format(wlan.ifconfig()) ) # IP-level network interface parameters: IP address, subnet mask, gateway and DNS server .
-
-response = requests.get("http://text.npr.org/")
-print(response.content)
+# #
+# make an http request to simple site at NPR
+# and other internet content
+#
+# response = requests.get("http://text.npr.org/")
+# response = requests.get("http://ipecho.net/plain")
+# response = requests.get("http://earthquake.usgs.gov/fdsnws/event/"
+#                        "1/query?format=text&limit=10")
+response = requests.get("http://artscene.textfiles.com/"
+                        "asciiart/peace.art")
+[print(x) for x in response.content.splitlines()]
 response.close()
