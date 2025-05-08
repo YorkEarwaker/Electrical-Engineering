@@ -40,55 +40,55 @@ Waiting for Wi-Fi connection ...
 Connected to Wi-Fi network True. 
 Network: RPi Pico IP, Subnet, Gateway, DNS, ('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8'). 
 ```ascii
->	b''
->	b''
->	b'VVVVVVV, VVVVVVVV   .VVV.    ,VVVVVV, VVVVVVVV    ,VVVVVV, VV.   VV'
->	b"VV   .VV VV        .VV VV.   VV    '' VV          VV'  'VV VVV.  VV"
->	b"VVVVVVV' VVVVVV    VVVVVVV   VV       VVVVVV      VV    VV VVVV. VV"
->	b'VV       VV      .VV     VV  VV    ,, VV          VV.  .VV VV  VVVV'
->	b"VV       VVVVVVV.VV       VV.'VVVVVV' VVVVVVVV    'VVVVVV' VV   VVV"
->	b''
->	b'           VVVVVVVV    .VVV.    VVVVVVV, VVVVVVVV VV    VV'
->	b'           VV         .VV VV.   VV    VV    VV    VV    VV'
->	b"           VVVVVV    .VVVVVVV.  VVVVVVV'    VV    VVVVVVVV"
->	b'           VV       .VV     VV. VV  VV.     VV    VV    VV'
->	b'           VVVVVVVV.VV       VV.VV   VV.    VV    VV    VV'
->	b''
->	b''
->	b''
->	b'                     /:'
->	b'                    ///:,'
->	b'                   //////:,'
->	b'      .W.          ////////:,.'
->	b'     .WWW,         ///////////::,.'
->	b'    .WWWWWW,       ////////////////::,,.'
->	b'   .WWWWWWWWW,.     ////////////////////::,,.'
->	b'  .WWWWWWWWWWWWW,.  ///////////////////////////:,.              ()'
->	b'  WWWWWWWWWWWWWWWWW,.//////////////////////////////.            /'
->	b'  WWWWWWWWWWWWWWWWWWWWW:,.//////////////////////////.        Y  :'
->	b'  WWWWWWWWWWWWWWWWWWWWWWWWWWW:,,.///////////////////.        : /  ()'
->	b'  WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,,.///////////.,,.      Y  /'
->	b'   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,///.:WWWWWW,    :----'
->	b'   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW,//,WWWWWWWWW:  /'
->	b'    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW///:WWWWWWWWWW./'
->	b"     WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'///:WWWWWWWWVVV."
->	b"      'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'/////WWWWWWW//''V."
->	b"       'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,./.,WWWWWW//"
->	b"         'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//W,"
->	b"            'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//WWW,"
->	b"                 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//WWWWW:"
->	b"                   '''WWWWWWWWWWW/''WWWWWWWWWWWWWWWWWWWW:"
->	b"                        '''''''  ,WWWWWWWWWWWWWWWWWWWWWW'"
->	b"                            .,,::WWWWWWWWWWWWWWWWWWWWWW'"
->	b"                      .,,:WWWWWWWWWWWWWWWWWWWWWWWWWWW:'"
->	b"            ..,,,,,:WWWWWWWWWWWWWWWWWWWWWWWWWWWW::''"
->	b"       'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:'''"
->	b"        ''WWWWWWWWWWWWWWWWWWWWWWWWWW'"
->	b"          '''WWWWWWWWWWWWWWWWWWWWW'"
->	b"             '''WWWWWWWWWWWWWWWW'"
->	b"                 '''WWWWWWWWW'"
->	b"                       '''"
->	b'\x1a\x00\x00\x00\x00\x00\x00\x00'
+	b''
+	b''
+	b'VVVVVVV, VVVVVVVV   .VVV.    ,VVVVVV, VVVVVVVV    ,VVVVVV, VV.   VV'
+	b"VV   .VV VV        .VV VV.   VV    '' VV          VV'  'VV VVV.  VV"
+	b"VVVVVVV' VVVVVV    VVVVVVV   VV       VVVVVV      VV    VV VVVV. VV"
+	b'VV       VV      .VV     VV  VV    ,, VV          VV.  .VV VV  VVVV'
+	b"VV       VVVVVVV.VV       VV.'VVVVVV' VVVVVVVV    'VVVVVV' VV   VVV"
+	b''
+	b'           VVVVVVVV    .VVV.    VVVVVVV, VVVVVVVV VV    VV'
+	b'           VV         .VV VV.   VV    VV    VV    VV    VV'
+	b"           VVVVVV    .VVVVVVV.  VVVVVVV'    VV    VVVVVVVV"
+	b'           VV       .VV     VV. VV  VV.     VV    VV    VV'
+	b'           VVVVVVVV.VV       VV.VV   VV.    VV    VV    VV'
+	b''
+	b''
+	b''
+	b'                     /:'
+	b'                    ///:,'
+	b'                   //////:,'
+	b'      .W.          ////////:,.'
+	b'     .WWW,         ///////////::,.'
+	b'    .WWWWWW,       ////////////////::,,.'
+	b'   .WWWWWWWWW,.     ////////////////////::,,.'
+	b'  .WWWWWWWWWWWWW,.  ///////////////////////////:,.              ()'
+	b'  WWWWWWWWWWWWWWWWW,.//////////////////////////////.            /'
+	b'  WWWWWWWWWWWWWWWWWWWWW:,.//////////////////////////.        Y  :'
+	b'  WWWWWWWWWWWWWWWWWWWWWWWWWWW:,,.///////////////////.        : /  ()'
+	b'  WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,,.///////////.,,.      Y  /'
+	b'   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,///.:WWWWWW,    :----'
+	b'   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW,//,WWWWWWWWW:  /'
+	b'    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW///:WWWWWWWWWW./'
+	b"     WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'///:WWWWWWWWVVV."
+	b"      'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'/////WWWWWWW//''V."
+	b"       'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:,./.,WWWWWW//"
+	b"         'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//W,"
+	b"            'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//WWW,"
+	b"                 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW//WWWWW:"
+	b"                   '''WWWWWWWWWWW/''WWWWWWWWWWWWWWWWWWWW:"
+	b"                        '''''''  ,WWWWWWWWWWWWWWWWWWWWWW'"
+	b"                            .,,::WWWWWWWWWWWWWWWWWWWWWW'"
+	b"                      .,,:WWWWWWWWWWWWWWWWWWWWWWWWWWW:'"
+	b"            ..,,,,,:WWWWWWWWWWWWWWWWWWWWWWWWWWWW::''"
+	b"       'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW:'''"
+	b"        ''WWWWWWWWWWWWWWWWWWWWWWWWWW'"
+	b"          '''WWWWWWWWWWWWWWWWWWWWW'"
+	b"             '''WWWWWWWWWWWWWWWW'"
+	b"                 '''WWWWWWWWW'"
+	b"                       '''"
+	b'\x1a\x00\x00\x00\x00\x00\x00\x00'
 ```
 
 Ascii text above brought back from; artscene textfiles com asciiart peace.art . 
