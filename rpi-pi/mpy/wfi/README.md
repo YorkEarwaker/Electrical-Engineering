@@ -39,7 +39,7 @@ Waiting for Wi-Fi connection ...
 Waiting for Wi-Fi connection ...
 Connected to Wi-Fi network True. 
 Network: RPi Pico IP, Subnet, Gateway, DNS, ('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8'). 
-
+```ascii
 >	b''
 
 >	b''
@@ -137,6 +137,7 @@ Network: RPi Pico IP, Subnet, Gateway, DNS, ('192.168.0.4', '255.255.255.0', '19
 >	b"                       '''"
 
 >	b'\x1a\x00\x00\x00\x00\x00\x00\x00'
+```
 
 Ascii text above brought back from; artscene textfiles com asciiart peace.art . Formated in markdown blockqoute and newline
 
