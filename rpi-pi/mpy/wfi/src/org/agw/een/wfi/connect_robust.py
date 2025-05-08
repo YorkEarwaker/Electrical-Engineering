@@ -101,9 +101,18 @@ wlan.connect(wifi_network_name_ssid, wifi_network_password_psk) # connect to the
 
 # #
 # Check for connection, debug
-while not wlan.isconnected() and wlan.status() >= 0:
+max_wait = 30
+while max_wait > 0:
+    if wlan.status() < 0 or wlan.status() >= 3:
+        break
+    max_wait -= 1 # subtract one from max_wait
     print('Waiting for Wi-Fi connection ...')
     time.sleep(1) # wait for one second
-print(wlan.ifconfig()) # IP-level network interface parameters: IP address, subnet mask, gateway and DNS server .
-print(wlan.isconnected()) # boolean, True
+
+if wlan.status() != 3:
+    raise RuntimeError("Network connection failed")
+else:
+    print("Connected to Wi-Fi network {}".format(wlan.isconnected()) ) # boolean, True if connected
+    print("Network: RPi Pico IP, Subnet, Gateway, DNS, {}".format(wlan.ifconfig()) ) # IP-level network interface parameters: IP address, subnet mask, gateway and DNS server .
+
 
