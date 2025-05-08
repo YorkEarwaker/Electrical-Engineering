@@ -20,11 +20,13 @@ Note the network IP level information has been changed to values in MicroPython 
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
+
 Waiting for Wi-Fi connection ...
 Waiting for Wi-Fi connection ...
 Waiting for Wi-Fi connection ...
-Connected to Wi-Fi network True
-Network: RPi Pico IP, Subnet, Gateway, DNS, ('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8')
+Waiting for Wi-Fi connection ...
+Connected to Wi-Fi network True. 
+Network: RPi Pico IP, Subnet, Gateway, DNS, ('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8'). 
 
 ### Connect to internet
 

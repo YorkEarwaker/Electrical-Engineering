@@ -112,7 +112,7 @@ while max_wait > 0:
 if wlan.status() != 3:
     raise RuntimeError("Network connection failed")
 else:
-    print("Connected to Wi-Fi network {}".format(wlan.isconnected()) ) # boolean, True if connected
-    print("Network: RPi Pico IP, Subnet, Gateway, DNS, {}".format(wlan.ifconfig()) ) # IP-level network interface parameters: IP address, subnet mask, gateway and DNS server .
+    print("Connected to Wi-Fi network {}. ".format(wlan.isconnected()) ) # boolean, True if connected
+    print("Network: RPi Pico IP, Subnet, Gateway, DNS, {}. ".format(wlan.ifconfig()) ) # IP-level network interface parameters: IP address, subnet mask, gateway and DNS server .
 
 
