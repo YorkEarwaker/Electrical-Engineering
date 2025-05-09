@@ -18,6 +18,13 @@ Desgin
 * EagleCAD
 * Fritzing
 
+## Hardware
+
+Solderless, no solder
+* Pogo Pin Probe Clip, connect to breakout board header pins, e.g. Pogo Pin Probe Clip - 6 Pins with 2.54mm/0.1" Pitch, 
+* Pogo Pin Probe Clip SWD, connect to a PCB with classic 'SWD' pad holes, debug, programming
+* Pogo Pins,  
+
 ## References
 
 Terms
@@ -46,6 +53,8 @@ PCB - prototyping
 * Breadboard, no solder
 * Terminal strip, barrier strip, terminal block, no solder
 * Wire wrapping, no solder, light guage tightly wound for mechancial end electrical bonding, 
+* Pogo-pin clamps, no solder, 
+* Programming test clip, no solder, 
 
 PCB - component kinds, materials
 * component kind, resistor
@@ -81,6 +90,12 @@ News Papers - soldering
 * Introduction to Soldering Wires on Circuit Boards, [WS](https://morepcb.com/how-to-solder-wire-on-circuit-board/), MorePCB, 
 * ...
 * ...
+
+News Papers - solderless, no solder
+* Who Needs Pin Headers?, [WS](https://hackaday.com/2021/08/12/who-needs-pin-headers/), Hackaday, chris lott, 2021
+* Review: Hammer-Installed Solderless Raspberry Pi Pin Headers, [WS](https://hackaday.com/2017/01/16/review-hammer-installed-solderless-raspberry-pi-pin-headers/), Hackaday, Jenny List, 2017
+* Is there such a thing as a pin (or pogo pin) clamp for testing?, [WS](https://electronics.stackexchange.com/questions/163550/is-there-such-a-thing-as-a-pin-or-pogo-pin-clamp-for-testing), StackExchange, Electrical Engineering
+* Identification of SWD header for footprint, [WS](https://electronics.stackexchange.com/questions/491487/identification-of-swd-header-for-footprint), StackExchange, Electrical Engineering, 2020?
 
 News Papers - prototyping
 * Building Resistor Circuits Using Breadboards, Perfboards, and Terminal Strips, [WS](https://www.allaboutcircuits.com/textbook/direct-current/chpt-5/building-simple-resistor-circuits/), All About Electrontics, 
