@@ -5,7 +5,7 @@ RPi Pico SD Card SPI interface, memory extension for RPi Pico to extend life of 
 ## Status
 
 TODO
-* <todo: SD Card extension for RPi Pico, breakout board/ >
+* <todo: SD Card extension for RPi Pico, breakout board/shield/hat ,  >
 * <todo: consider, SDIO support rpi pico, not yet part of official SDK as of 06/05/2025? investigate prototype library that includes 1 and 4 bit SDIO support using PIO, up to 4 data pins at once,  SD Card use case, other use cases?, >
 
 DONE
@@ -34,6 +34,13 @@ Libs
 * SDIO, driver, 
 * FreeRTOS +FAT, the SD card driver, [GH](https://github.com/carlk3/FreeRTOS-FAT-CLI-for-RPi-Pico)
 
+## Hardware
+
+SD Card Boards - assessment, evaluation, 
+* Adafruit Micro SD SPI or SDIO Card Breakout Board, 
+* Pololu Breakout Board for MicroSD Cards, 
+* <todo: others to assess>
+
 ## References
 
 Terms
@@ -44,6 +51,7 @@ News Papers - External storage, i.e. SD Card memmory extension to RPi Pico
 * SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
 * Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
 * Initializing an SD Card, [WS](http://www.rjhcoding.com/avrc-sd-interface-1.php), RJH coding . com
+* Raspberry Pi Pico (RP2040) SD Card Example with MicroPython and C/C++, [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), 2021-07-26, ShawnHymel, 
 
 News Papers - SD Cards, forum, Raspberry Pi, 
 * SD card with a pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=344610), forums, Raspberry Pi, 
