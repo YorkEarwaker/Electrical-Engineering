@@ -6,6 +6,7 @@ Display things on a screen, wired to RPi Pico using I2C and SPI interfaces,
 
 TODO
 * <todo: consider, oled display, wired on breadboard to RPi Pico, >
+* <todo: consider, lcd dispaly, wired on breadboard to RPi Pico, >
 
 DONE
 * <done: intent to commit>
