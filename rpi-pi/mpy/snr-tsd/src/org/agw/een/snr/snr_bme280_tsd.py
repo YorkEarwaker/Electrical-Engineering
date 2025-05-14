@@ -132,12 +132,12 @@
 # 
 # | --------------------------------------------------------------------------------------------- |
 # | Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0                                             |
-# | ------- | --------- | ---- | ------------------ | ------ | ---- | --------_--------- | ------ |
+# | ------- | --------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
 # | BME pin | Function  | I2C  | RPi Pico           | Wire   | SPI  | RPi Pico           | Wire   |
 # |         |           |      | Use,  I2C1, pin NN |        |      | Use,  SPI0, pin NN |        |  
 # | ------- | --------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
 # | 1       | VCC       | VCC  | 3V3,        pin 36 | Red    | VCC  | 3V3,        pin 36 | Red    | 
-# | 2       | GND       | GND  | GND,        pin 28 | Black  | GND  | GND,        pin 28 | Black  | 
+# | 2       | GND       | GND  | GND,        pin 38 | Black  | GND  | GND,        pin 38 | Black  | 
 # | 3       | SDA/MOSI  | SDA  | GP18, SDA,  pin 24 | Yellow | MOSI | GP19, TX,   pin 25 |        | 
 # | 4       | SCL/SCK   | SCL  | GP19, SCL,  pin 25 | Blue?  | SCK  | GP18, SCK,  pin 24 |        | 
 # | 5       | ADDR/MISO | ADDR |                    |        | MISO | GP16, RX,   pin 21 |        | 

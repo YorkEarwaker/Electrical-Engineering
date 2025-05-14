@@ -107,7 +107,7 @@
 # | 1       | VDD       | 3V3,   pin 36 | Red    | power supply, 3.3V - 5.5V                                  |
 # | 2       | SDA       | GP2,   pin 04 | Yellow | DATA, signal, any GPIO, with a 10k Ohm pull up resistor    |
 # | 3       | NULL      |               |        | NC, Empty, Don't connect                                   |
-# | 4       | GND       | GND,   pin 28 | Black  | Ground                                                     |
+# | 4       | GND       | GND,   pin 38 | Black  | Ground                                                     |
 # | ------- | --------- | ------------- | ------ | ---------------------------------------------------------- |   
 #
 # SDA = Serial data, bidirectional port,
