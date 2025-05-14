@@ -60,7 +60,7 @@
 # <todo: context text work in progress, last reviewed 01/05/2025, wip>
 #
 # Display
-# Pin sequence numbers, left to right, 1 2 3 4, with circuit board abd display circuit board and BME sensor forward facing
+# Pin sequence numbers, left to right, 1 2 3 4, with circuit board and LCD display forward facing
 #
 #   _________________________________________
 #  |◯   _________________________________ ◯| Simplified       | --- | --------- | Device 
