@@ -78,7 +78,7 @@
 # system of systems IoT context B.
 # <todo: context text work in progress, last reviewed 01/05/2025, wip>
 #
-# Micro SD Card circuit board
+# Micro SD Card 'reader' circuit board
 # Pin sequence numbers, left to right, 1 2 3 4 5 6 7 8 9 10 11, with circuit board and SD Card holder (SPI 'CRUD') forward facing
 #            ________ 
 #           |        |  Micro SD Card
@@ -91,7 +91,7 @@
 #   1-|o|---__________--|o|-5  Simplified       | --- | ----------- | Device            | --- | ----------- | Device                                                                   
 #   2-|o|| |  ________  |o|-6  Front of         | 1   | GND (VSS)   | pins functions    | 5   | GND (VSS)   | pins functions    
 #   3-|o|| | |___||___| |o|-7  Micro SD Card    | 2   | VDD         |                   | 6   | VDD         |                   
-#   4-|o||_|            |o|-8  Holder           | 3   | DAT2        |                   | 7   | DI          |                   
+#   4-|o||_|            |o|-8  Reader           | 3   | DAT2        |                   | 7   | DI          |                   
 #     | |    | |    | | |o|-9  SPI 'CRUD'       | 4   | IRQ/DAT1    |                   | 8   | DO          |                   
 #     | |    | |    | | |o|-10 Pololu, ??       | --- | ----------- |                   | 9   | SCLK        |                   
 #     | |____|_|____|_|_|o|-11 Board                                                    | 10  | CS (Chip S) |
@@ -99,9 +99,9 @@
 #                                                                                       | --- | ----------- |
 # 
 # | ----------------------------------------------------------------------------------------------- |
-# | Raspberry Pi Pico, Pololu (POL), pin map, ISP and SDIO - wip                                    |
+# | Raspberry Pi Pico, Pololu (POL), pin map, ISP and SDI - wip                                    |
 # | ------- | ----------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
-# | POL pin | Function    | SPI  | RPi Pico           | Wire   | SDIO | RPi Pico           | Wire   |
+# | POL pin | Function    | SPI  | RPi Pico           | Wire   | SDI  | RPi Pico           | Wire   |
 # |         |             |      | Use,  SPI1, pin NN |        |      | Use,  SD,   pin NN |        |  
 # | ------- | ----------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
 # | 1       | GND (VSS)   | —    | Null?              | NC?    | GND  | GND,        pin 38 |        | 
