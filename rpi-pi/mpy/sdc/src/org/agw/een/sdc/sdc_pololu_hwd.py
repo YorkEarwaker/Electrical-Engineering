@@ -99,7 +99,7 @@
 #                                                                                       | --- | ----------- |
 # 
 # | ----------------------------------------------------------------------------------------------- |
-# | Raspberry Pi Pico, Pololu (POL), pin map, ISP and SDI - wip                                    |
+# | Raspberry Pi Pico, Pololu (POL), pin map, SPI and SDI - wip                                     |
 # | ------- | ----------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
 # | POL pin | Function    | SPI  | RPi Pico           | Wire   | SDI  | RPi Pico           | Wire   |
 # |         |             |      | Use,  SPI1, pin NN |        |      | Use,  SD,   pin NN |        |  
@@ -137,10 +137,10 @@
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- | 
 #
 # | -------------------------------------------------------------------------------------------------------------- |
-# | SD interface - wip                                                                                             |
+# | SD Interface - wip                                                                                             |
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- |
 # | POL pin | Function  | RPi Pico           | Wire   | Description                                                |
-# |         |           | Use,  SDIO, pin NN |        |                                                            |
+# |         |           | Use,  SDI,  pin NN |        |                                                            |
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- |
 # | 1       | VSS?      | GP??, ????, pin ?? |        |                                                            |
 # | 2       | VDD       | GP??, ????, pin ?? |        |                                                            |
@@ -186,11 +186,9 @@
 #           are required when connecting one to a 5 V system.
 # 
 # SD Card nine (9) pin pinout, micro sd card eight (8) pin pinout - wip
-# <todo: micro SD card 'pin out' map to SPI>
-# <todo: micro SD card 'pin out' map to SD interface >
 # <todo: micro SD card 'pin out' map to Pololu SD Card 'reader' board device >
 #
-# SD Card pinout
+# SD Card pinout - elaborate
 #
 #     9  1  2  3  4  5  6 7 8
 #     ________________________
@@ -207,8 +205,8 @@
 #   |                _/
 #    ^-^-^-^-^-^-^-^
 #
-#  Micro SD Card pinout
-#
+#  Micro SD Card pinout - elaborate
+# 
 #    1 2 3 4 5 6 7 8
 #    ________________
 #   |[][][][][][][][]|        Pin  SD      SPI
