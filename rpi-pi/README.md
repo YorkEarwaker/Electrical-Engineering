@@ -1,6 +1,6 @@
 # Raspberry Pi Pico rpi-pi
 
-Microcontroller, IoT, physical computing
+Microcontroller, IoT, physical computing, PICO peripheral and controller, 
 
 ## Status
 
