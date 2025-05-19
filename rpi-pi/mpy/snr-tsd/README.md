@@ -16,6 +16,9 @@ TODO
 * <todo: consider, DS18B20 Temperature Sensor,  >
 * <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
 * <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
+* <todo: consider, gas sensors, sampling of atmospheric gases, outside in 'nature' and inside in confied spaces, differenct use cases, which is frist case CO2? others? 
+* <todo: consider, indoor, room ventilation, BME688 air quality sensor, volatile organic compounds (VOCs), volatile sulfur compounds (VSCs), presence of carbon monoxide and hydrogen, in addition to temperature, pressure and humidity, >
+* <todo: consider, Nondispersive infrared sensor, H2), C02, SO2, NO2, expensive, a useful prospective project too for RYO PCB? >
 
 DONE
 * <done: intent to commit>
@@ -86,6 +89,7 @@ Pressure:  1016.36hPa
 Terms
 * Sensor [WP](https://en.wikipedia.org/wiki/Sensor), device for detecting change in environment, 
 * Conversion of scales of temperature, [WP](https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature)
+* Nondispersive infrared sensor [WP](https://en.wikipedia.org/wiki/Nondispersive_infrared_sensor), H20, CO2, SO2, NO2, 
 
 Documentation
 * MicroPython, docs [WS](https://docs.micropython.org/en/latest/index.html#), micropython org
