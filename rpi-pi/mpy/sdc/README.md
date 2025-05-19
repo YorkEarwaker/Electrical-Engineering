@@ -18,8 +18,9 @@ DONE
 * <done: consider, SD Card storage project to increase total storage above onboard 2MB RPi Pico flash storage, MicroPython taking up to 600kB storage and available storage reduced to 1448kB, limiting ~20k flash writes/delete cycles lifetime, falsh is not replacable, SD Card extension is replaceable component, Weather station project \amn might benefit from this solution central data storage hub 'mother' Pico and spoke 'children' Pico's sensor control data logging to data hub 'mother' SD Card, good use of componentisation, loose coupling, high cohesion, . spoke 'child' low spec Pico or even lower spec MCU?  >
 * <done: consider, MicroPython library support for, SD Cards, eMMC cards, SD vs eMMC,  sdcard.py mpy driver for SD Cards, FAT32 formatted best option for pico? >
 * <done: consider, extension cable, for micro SD Card, improve life of sd card, ability to move sd card between sd card breakout boaords, ability to use sd card in RPi 5 or laptop, >
-* <done: micro SD card 'pin out' map to SPI>
-* <done: micro SD card 'pin out' map to SD interface >
+* <done: consider, micro SD card 'pin out' map to SPI>
+* <done: consider, micro SD card 'pin out' map to SD interface >
+* <done: consider, candidate wiring for breadboard for Pololu SD Card reader, breadboard wired using Pojo>
 
 ## Libraries
 
