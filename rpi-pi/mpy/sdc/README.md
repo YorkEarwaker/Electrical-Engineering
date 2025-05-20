@@ -11,7 +11,6 @@ TODO
 * <todo: consider, SDIO support rpi pico, not yet part of official SDK as of 06/05/2025? investigate prototype library that includes 1 and 4 bit SDIO support using PIO, up to 4 data pins at once,  SD Card use case, other use cases?, >
 * <todo: consider, I2C support RPi Pico, libraries to source, 3rd party projects to identify, >
 * <todo: consider, determine if Pololu device can be wired to Pico for dual use, SPI and SDIO, using same pinout but different mpy code pin allocation? Pololu device has eleven (11) pins >
-* <todo: consider, determine if Pololu device can be wired to Pico for dual use, SPI and SDIO, using same pinout but different mpy code pin allocation?
 * <todo: consider, level shifters and voltage dividers, for devices/system integration with logic level signals above V3.3, further research required, components tobe identified, this should probably be part of a seperate PoC of mixed voltage systems integration, >
 
 DONE
