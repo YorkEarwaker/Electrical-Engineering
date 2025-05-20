@@ -79,7 +79,7 @@
 # <todo: context text work in progress, last reviewed 01/05/2025, wip>
 #
 # Micro SD Card 'reader' circuit board
-# Pin sequence numbers, left to right, 1 2 3 4 5 6 7 8 9 10 11, with circuit board and SD Card holder (SPI 'CRUD') forward facing
+# Pin sequence numbers, left to right, 1 2 3 4 5 6 7 8 9 10 11, with circuit board and SD Card 'reader' (SPI 'CRUD') forward facing
 #            ________ 
 #           |        |  Micro SD Card
 #           |        |  Storage
@@ -129,10 +129,10 @@
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- |
 # | 5       | GND (VSS) | GND,        pin 38 | Black  | Ground                                                     |
 # | 6       | VDD       | 3V3,        pin 36 | Red    | 3.3V power input                                           |
-# | 7       | DI        | GP11, TX,   pin 15 |        | Data in, MOSI, Host transmist TX, serial data from RPi Pi  |
-# | 8       | DO        | GP12, RX,   pin 16 |        | Data out, MISO, Host recieve RX, serial data from device   |
-# | 9       | SCLK      | GP10, SCK,  pin 14 |        | Clock, clock signal from RPi Pi                            |
-# | 10      | CS        | GP13, CSn,  pin 17 |        | Chip select (active low)                                   |
+# | 7       | DI        | GP11, TX,   pin 15 | Orange | Data in, MOSI, Host transmist TX, serial data from RPi Pi  |
+# | 8       | DO        | GP12, RX,   pin 16 | Yellow | Data out, MISO, Host recieve RX, serial data from device   |
+# | 9       | SCLK      | GP10, SCK,  pin 14 | Blue   | Clock, clock signal from RPi Pi                            |
+# | 10      | CS        | GP13, CSn,  pin 17 | Green  | Chip select (active low)                                   |
 # | 11      | CD        | NULL?              | NC?    | Card detect <todo: remove this line?                       |
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- | 
 #
@@ -178,7 +178,7 @@
 # | 9       | SCLK      | Clock                            | 9       | CLK       | Clock                           |
 # | 10      | CS        | Chip select (active low)         | 10      | DAT3      | Data (bit 3)                    |
 # | 4       | —         | Reserved                         | 4       | DAT1      | Data (bit 1)                    |
-# | 4       | IRQ       | Interrupt (active low;           | 4       | IRQ       | Interrupt (active low; SDIO     |
+# | 4       | IRQ       | Interrupt (active low;           | 4       | IRQ       | Interrupt (active low;          |
 # |         |           |            SDIO devices only)    |         |           |            SDIO devices only)   |
 # | 3       | —         | Reserved                         | 3       | DAT2      | Data (bit 2)                    |
 # | ------- | --------- | -------------------------------- | ------- | --------- | ------------------------------- |
@@ -241,7 +241,7 @@
 #     | |____|_|____|_|_|o|-11 Board                                                    | 10  | CS (Chip S) |
 #      -------------------                                                              | 11  | CD (Card D) |
 #                                                                                       | --- | ----------- |
-#   | | | |                     | | | | |  |  |                                                             
+#   | | | |                     | | | | |  |  |  <todo: finish wiring diagram, >                                                           
 #   1 2 3 4                     5 6 7 8 9 10 11
 #                               | |                           
 #                               | |---------------------------------------|
@@ -264,13 +264,15 @@
 #                                  11-| o  |_______|  o |-30
 #                                  12-| o             o |-29
 #                                  13-| o             o |-28
-#                                  14-| o             o |-27
-#                                  15-| o             o |-26
-#                                  16-| o             o |-25
-#                                  17-| o             o |-24
+#             -ISP1 SCK----GP10----14-| o             o |-27
+#             -ISP1 TX-----GP11----15-| o             o |-26
+#             -ISP1 RX-----GP12----16-| o             o |-25
+#             -ISP0 CSn----GP13----17-| o             o |-24
 #                                  18-| o             o |-23
 #                                  19-| o             o |-22
 #                                  20-| o ◯       ◯ o |-21
 #                                      -----------------
-#
+# additional suplimental pinout information for GP10, GP11, GP12, GP13, is elieded from now to simplify diagram
+# therefore UART and I2C interface information is not shown. This may change in later itterations of the diagram
+# as requirements change.
 

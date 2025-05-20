@@ -12,6 +12,7 @@ TODO
 * <todo: consider, I2C support RPi Pico, libraries to source, 3rd party projects to identify, >
 * <todo: consider, determine if Pololu device can be wired to Pico for dual use, SPI and SDIO, using same pinout but different mpy code pin allocation? Pololu device has eleven (11) pins >
 * <todo: consider, level shifters and voltage dividers, for devices/system integration with logic level signals above V3.3, further research required, components tobe identified, this should probably be part of a seperate PoC of mixed voltage systems integration, >
+* <todo: consider, moving adc_thing.py files to a different sub project? or keep here due to ADC.CORE_TEMP datalogging example? perhaps seperate analogue to digital converter ADC direcory, >
 
 DONE
 * <done: consider, SD Card storage project to increase total storage above onboard 2MB RPi Pico flash storage, MicroPython taking up to 600kB storage and available storage reduced to 1448kB, limiting ~20k flash writes/delete cycles lifetime, falsh is not replacable, SD Card extension is replaceable component, Weather station project \amn might benefit from this solution central data storage hub 'mother' Pico and spoke 'children' Pico's sensor control data logging to data hub 'mother' SD Card, good use of componentisation, loose coupling, high cohesion, . spoke 'child' low spec Pico or even lower spec MCU?  >
