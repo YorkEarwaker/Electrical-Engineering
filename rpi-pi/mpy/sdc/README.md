@@ -22,6 +22,34 @@ DONE
 * <done: consider, micro SD card 'pin out' map to SD interface >
 * <done: consider, candidate wiring for breadboard for Pololu SD Card reader, breadboard wired using Pojo>
 
+## Readings
+
+### Rotating Potentiometer, voltage divider, 0V to 3.3V
+Potential data to log, in datalogger
+
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+
+ voltage: 3.3, raw 65535
+ voltage: 3.3, raw 65535
+ voltage: 3.042133, raw 60414
+ voltage: 3.071137, raw 60990
+ voltage: 2.571517, raw 51068
+ voltage: 2.248341, raw 44650
+ voltage: 2.11057, raw 41914
+ voltage: 1.671376, raw 33192
+ voltage: 1.543223, raw 30647
+ voltage: 1.191041, raw 23653
+ voltage: 1.144312, raw 22725
+ voltage: 0.4730327, raw 9394
+ voltage: 0.4730327, raw 9394
+ voltage: 0.004834058, raw 96
+ voltage: 0.004834058, raw 96
+ voltage: 0.004834058, raw 96
+ voltage: 0.002417029, raw 48
+ voltage: 0.004834058, raw 96
+
 ## Libraries
 
 Standards
