@@ -25,30 +25,31 @@ DONE
 ## Readings
 
 ### Rotating Potentiometer, voltage divider, 0V to 3.3V
-Potential data to log, in datalogger
+Potential sample test data to log, in datalogger
 
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
 
- voltage: 3.3, raw 65535
- voltage: 3.3, raw 65535
- voltage: 3.042133, raw 60414
- voltage: 3.071137, raw 60990
- voltage: 2.571517, raw 51068
- voltage: 2.248341, raw 44650
- voltage: 2.11057, raw 41914
- voltage: 1.671376, raw 33192
- voltage: 1.543223, raw 30647
- voltage: 1.191041, raw 23653
- voltage: 1.144312, raw 22725
- voltage: 0.4730327, raw 9394
- voltage: 0.4730327, raw 9394
- voltage: 0.004834058, raw 96
- voltage: 0.004834058, raw 96
- voltage: 0.004834058, raw 96
- voltage: 0.002417029, raw 48
- voltage: 0.004834058, raw 96
+ voltage: 3.3, raw: 65535 . 
+ voltage: 3.3, raw: 65535 . 
+ voltage: 2.881753, raw: 57229 . 
+ voltage: 2.524788, raw: 50140 . 
+ voltage: 2.03398, raw: 40393 . 
+ voltage: 1.512607, raw: 30039 . 
+ voltage: 0.9146441, raw: 18164 . 
+ voltage: 0.5205676, raw: 10338 . 
+ voltage: 0.02658732, raw: 528 . 
+ voltage: 0.004028382, raw: 80 . 
+ voltage: 0.004834058, raw: 96 . 
+ voltage: 0.004834058, raw: 96 . 
+ voltage: 0.004028382, raw: 80 . 
+ voltage: 0.004834058, raw: 96 . 
+
+### RPi Pico internal core temperature
+Potential sample test data to log, in datalogger
+
+<todo: work in progress, >
 
 ## Libraries
 
