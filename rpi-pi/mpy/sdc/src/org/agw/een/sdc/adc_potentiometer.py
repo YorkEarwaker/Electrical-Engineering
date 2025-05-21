@@ -13,6 +13,8 @@
 #
 # machine module
 # https://docs.micropython.org/en/latest/library/machine.html # module
+# 
+# https://docs.micropython.org/en/latest/library/machine.Pin.html # class
 #
 # time module
 # https://docs.micropython.org/en/latest/library/time.html # module, MicroPython subset of CPython
@@ -143,16 +145,16 @@
 
 # #
 # import libraries for use in this programme
-import machine
+from machine import ADC, Pin
 import time
 
 # #
 # GPIO, analogue to digital conversion ADC pin
-adc_pin = Pin(26) # GPIO, GP26
+adc_pin = Pin(26) # GPIO, GP26, ADC0
 
 # #
-# device
-potentiometer = machine.ADC(adc_pin)
+# device, resistor, rotating potentiometer
+potentiometer = ADC(adc_pin)
 
 # #
 # conversion parameter
@@ -174,7 +176,7 @@ while True:
     
     # print the reading to shell
     # turning the rotating potentiometer will cause the value to change
-    print(f" voltage: {voltage}, raw {raw_reading}".format(voltage, raw_reading))
+    print(f" voltage: {voltage}, raw: {raw_reading} . ".format(voltage, raw_reading))
     
     
     
