@@ -14,7 +14,9 @@
 # machine module
 # https://docs.micropython.org/en/latest/library/machine.html # module
 #
-# time
+# time module
+# https://docs.micropython.org/en/latest/library/time.html # module, MicroPython subset of CPython
+# https://docs.python.org/3.5/library/time.html#module-time # module CPython, additional information
 #
 # Context diagram
 # Assuming only the microcontroller interacts with the device.
@@ -66,6 +68,7 @@
 # Potentiometer
 # Single-joint potentiometer, Adjustable potentiometer, 0~10K range, used for ADC test, volume/brightness adjustment, etc.
 # Waveshare, MicroPython learning kit
+# https://thepihut.com/products/raspberry-pi-pico-micropython-learning-kit-pico-included
 # https://www.waveshare.com/raspberry-pi-pico-basic-kit.htm
 # https://www.waveshare.com/wiki/Raspberry_Pi_Pico # Potentiometer Experiment
 # https://www.passive-electroniccomponents.com/quality-11049880-16mm-carbon-potentiometer-wh148
@@ -138,14 +141,40 @@
 #                                      -----------------
 #
 
-
+# #
+# import libraries for use in this programme
 import machine
 import time
 
-potentiometer = machine.ADC(26)
+# #
+# GPIO, analogue to digital conversion ADC pin
+adc_pin = Pin(26) # GPIO, GP26
 
+# #
+# device
+potentiometer = machine.ADC(adc_pin)
+
+# #
+# conversion parameter
+conversion_factor = 3.3 / (65535)
+
+# #
+# loop
 while True:
-    print(potentiometer.read_u16())
-    time.sleep(2)
+    
+    # sleep for a number of seconds between readings
+    seconds_to_slumber = 2
+    time.sleep(seconds_to_slumber)
+    
+    # read data as raw value from potentiometer
+    raw_reading = potentiometer.read_u16()
+    
+    # convert raw reading to valtage value
+    voltage = raw_reading * conversion_factor
+    
+    # print the reading to shell
+    # turning the rotating potentiometer will cause the value to change
+    print(f" voltage: {voltage}, raw {raw_reading}".format(voltage, raw_reading))
+    
     
     
