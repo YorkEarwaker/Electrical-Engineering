@@ -6,12 +6,10 @@ Microcontroller, IoT, physical computing, PICO peripheral and controller,
 
 TODO
 * <todo: consider, preparetory work for Climate-Model \amn project PoC, >
-* <todo: consider, wifi connection to RPi Pico 2 W , see datasheet below, >
 * <todo: consider, bluetooth project, RPi Pico >
 * <todo: consider, try both MicroPython and C/C++ versions, can a Pico flashed with MPY execute c/c++ code too? >
 * <todo: consider, research Core 0 core0 Core 1 core1 RPi Pico ARM chip, threading, asysnc, two executables running at the same time one on each core, one executable accessing both cores, >
 * <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless, manufactured in CN, part of Waveshare Micropython Learning Kit, >
-* <todo: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. 18/04/2025 difficulty sourcing Pico with onbaord debug connector,>
 * <todo: consider, cicuit diagram, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
 * <todo: consider, data logger project CSV file for data storage to RPi Pico flash storage, likely not a good idea due to limitations of flash lifetime circa ~20k write/delete cycles, CSV storage better considered on addition of external SD Card storage component, Rpi Pico 2 W 32MBit (4MiB) Flash W25Q32RVXHJQ, see Pico 2 W schematic below. >
 
@@ -24,7 +22,9 @@ DONE
 * <done: consider, purchase a few more, one or two or three, additional RPi Pico breadboards, Allows for multiple cicuit design and testing with different versions of the RPi Pico microcontrollers, purchased 17/04/2025 1xfull size 1xhalf size bradboard, >
 * <done: consider, purchase one or two more RPi Pico 2 W to run parallel projects with different tool sets mpy and cpa in parallel; wifi, bluethooth, assorted sensors, . To allow for incremental change to circuit design, to allow for identical circuit design in mpy and cpa, ... dev, qa, prod, 1xRPi Pico 2 W, battery holder, >
 * <done: consider, circuit diagram, RPi Pico pinout in code comments, see snr_BME280_tsd.py, snr_DHT22_tsd.py,  >
-* <done: consider, create SD Card project \sdc sub project, PoC SD Card for \amn climate model project, >
+* <done: consider, create SD Card project \sdc sub project, PoC SD Card for \amn climate model project, wip>
+* <done: consider, wifi connection to RPi Pico 2 W , see datasheet below, \wfi >
+* <done: consider, purchase one RPi Pico with debug connector already onboard the microcontroller, so as not to have to solder one on. 18/04/2025 difficulty sourcing Pico H with onbaord debug connector, Pico 2 W seems to come with debug socket attached as default,  >
 
 ## Libraries
 
