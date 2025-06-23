@@ -14,7 +14,9 @@
 # machine module
 # https://docs.micropython.org/en/latest/library/machine.html # module
 #
-# time
+# time module
+# https://docs.micropython.org/en/latest/library/time.html # module, MicroPython subset of CPython
+# https://docs.python.org/3.5/library/time.html#module-time # module CPython, additional information
 #
 # Context diagram
 # Assuming only the microcontroller interacts with the device.
@@ -49,6 +51,12 @@
 # in this context. But this electrical engineering context A might be used in as part of a larger
 # system of systems IoT context B.
 # <todo: context text work in progress, last reviewed 01/05/2025, wip>
+# 
+# Books
+# Getting started with, MicroPython on Raspberry Pi Pico, The Official Raspberry Pi Pico Guide
+# Chapter 8, Temperature Guage
+# Use your Raspberry Pi Pico's built in ADC to convert analogue
+# inputs, and also to read its internal temperature sensor
 #
 # Analogue to digital converter ADC
 # Is an internal part of the RPi Pico microcontroller RP2040 CPU and RP2035 CPU.
@@ -94,3 +102,43 @@
 #                                  20-| o ◯       ◯ o |-21
 #                                      -----------------
 #
+
+# #
+# import libraries for use in this programme
+import machine
+import time
+
+# #
+# device, PICO internal temperature sensor
+sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
+
+# #
+# conversion parameter, max voltage (3.3) times (*) the max value analogue input reading can be (65535)
+conversion_factor =  3.3 / (65535)
+
+while True:
+    
+    # sleep for five seconds
+    time.sleep(5)
+    
+    # read data as raw value from temperature sensor
+    raw_reading = sensor_temp.read_u16()
+    
+    # convert raw reading from alanog to digital value, also decimal value 
+    converted_raw_reading = raw_reading * conversion_factor
+    
+    # temperature as centigrade
+    temperature = 27 - (converted_raw_reading - 0.706) / 0.001721
+    
+    # print the values to the console / shell
+    print(f"PICO CPU temperature: {temperature}, converted raw reading: {converted_raw_reading}, raw reading: {raw_reading} . "
+       .format(temperature, converted_raw_reading, raw_reading))
+    
+    # write the temperature value to file
+    # <todo: write to file, but only to sdc not to PICO flash, so dependency of sdc code, noted 23/06/2025 >
+
+
+
+
+
+
