@@ -71,7 +71,8 @@
 #
 # 
 # <todo: finish wiring diagram, >
-# <todo: consider removing 12C interface pin information from diagram, distracting? not necessary? > 
+# <todo: consider removing 12C interface pin information from diagram, distracting? not necessary? >
+# <todo: consider removing GND and 3V3(OUT) no external device access PICO power out for interanl analogue temp reading >
 #                               | |                           
 #                               | |---------------------------------------|
 #                               |                                         |
