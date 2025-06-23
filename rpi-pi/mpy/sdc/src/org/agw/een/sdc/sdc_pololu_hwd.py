@@ -89,7 +89,7 @@
 #                     
 #      -------------------
 #   1-|o|---__________--|o|-5  Simplified       | --- | ----------- | Device            | --- | ----------- | Device                                                                   
-#   2-|o|| |  ________  |o|-6  Front of         | 1   | GND (VSS)   | pins functions    | 5   | GND (VSS)   | pins functions    
+#   2-|o|| |  ________  |o|-6  Front of         | 1   | GND (VSS)   | pin function      | 5   | GND (VSS)   | pin function    
 #   3-|o|| | |___||___| |o|-7  Micro SD Card    | 2   | VDD         |                   | 6   | VDD         |                   
 #   4-|o||_|            |o|-8  Reader           | 3   | DAT2        |                   | 7   | DI          |                   
 #     | |    | |    | | |o|-9  SPI 'CRUD'       | 4   | IRQ/DAT1    |                   | 8   | DO          |                   
@@ -224,50 +224,55 @@
 # Simplified view of Rpi Pico microntroller and micro SD Card breakout board (device) circuit
 # Pin sequence numbers, left to right, 1 2 3 4 5 6 7 8 9 10 11, with circuit board and SD Card 'reader' (SPI 'CRUD') forward facing
 # <todo: determine if Pololu device can be wired to Pico for dual use, SPI and SDIO, using same pinout but different mpy code pin allocation?>
-#            ________ 
-#           |        |  Micro SD Card
-#           |        |  Storage
-#           <        |  e.g. 32GB
-#            |       |  SD Card's use V3.3
-#            |_______|
-#                     
+#           _________
+#          |         |  Micro SD Card                                                                | --- | ----------- | Device            
+#          |         |  Storage                                                                      | 1   | _           | pin function    
+#          <         |  e.g. 32GB                                                                    | 2   | CS          | in SPI mode 
+#           |        |  SD Card's use V3.3                                                           | 3   | DI          |       
+#           |________|                                                                               | 4   | VDD         | 
+#            ||||||||                                                                                | 5   | SCLK        | 
+#            12345678                                                                                | 6   | VSS         | 
+#                                                                                                    | 7   | DO          | 
+#                                                                                                    | 8   | _           | 
+#                                                                                                    | --- | ----------- | 
 #      -------------------
-#   1-|o|---__________--|o|-5  Simplified       | --- | ----------- | Device            | --- | ----------- | Device                                                                   
-#   2-|o|| |  ________  |o|-6  Front of         | 1   | GND (VSS)   | pins functions    | 5   | GND (VSS)   | pins functions    
-#   3-|o|| | |___||___| |o|-7  Micro SD Card    | 2   | VDD         |                   | 6   | VDD         |                   
-#   4-|o||_|            |o|-8  Reader           | 3   | DAT2        |                   | 7   | DI          |                   
-#     | |    | |    | | |o|-9  SPI 'CRUD'       | 4   | IRQ/DAT1    |                   | 8   | DO          |                   
-#     | |    | |    | | |o|-10 Pololu, ??       | --- | ----------- |                   | 9   | SCLK        |                   
-#     | |____|_|____|_|_|o|-11 Board                                                    | 10  | CS (Chip S) |
-#      -------------------                                                              | 11  | CD (Card D) |
-#                                                                                       | --- | ----------- |
-#   | | | |                     | | | | |  |  |  <todo: finish wiring diagram, >                                                           
-#   1 2 3 4                     5 6 7 8 9 10 11
-#                               | |                           
-#                               | |---------------------------------------|
-#                               |                                         |
-#                               |---------------------------------------| |
-#                                                                       | |
-#                                      RPi Pico 2 W pinout              | |
-#                                            _____                      | |
-#                                      -----|     |-----                | |
-#                                   1-| o ◯|_____|◯ o |-40            | |
-#                                   2-| o     USB     o |-39            | |
-#                                   3-| o             o |-38-----GND----| |
-#                                   4-| o             o |-37              |
-#                                   5-| o             o |-36---3V3(OUT)---|    
-#                                   6-| o  __         o |-35
-#                                   7-| o |__| Flash  o |-34
-#                                   8-| o   _______   o |-33
-#                                   9-| o  | ARM   |  o |-32
-#                                  10-| o  | 2035  |  o |-31
-#                                  11-| o  |_______|  o |-30
-#                                  12-| o             o |-29
-#                                  13-| o             o |-28
-#             -ISP1 SCK----GP10----14-| o             o |-27
-#             -ISP1 TX-----GP11----15-| o             o |-26
-#             -ISP1 RX-----GP12----16-| o             o |-25
-#             -ISP0 CSn----GP13----17-| o             o |-24
+#   1-|o|---__________--|o|-5 -----------------| Simplified       | --- | ----------- | Device       | --- | ----------- | Device                                                                   
+#   2-|o|| |  ________  |o|-6 ---------------| | Front of         | 1   | GND (VSS)   | pin function | 5   | GND (VSS)   | pin function    
+#   3-|o|| | |___||___| |o|-7 -------------| | | Micro SD Card    | 2   | VDD         | no pins      | 6   | VDD         | all pins                  
+#   4-|o||_|            |o|-8 -----------| | | | Reader           | 3   | DAT2        | used in      | 7   | DI          | but not 11          
+#     | |    | |    | | |o|-9 ---------| | | | | SPI 'CRUD'       | 4   | IRQ/DAT1    | SPI mode     | 8   | DO          | used in        
+#     | |    | |    | | |o|-10-------| | | | | | Pololu, ??       | --- | ----------- |              | 9   | SCLK        | SPI mode           
+#     | |____|_|____|_|_|o|-11       | | | | | | Board                                               | 10  | CS (Chip S) |
+#      -------------------           | | | | | |                                                     | 11  | CD (Card D) |
+#                                    | | | | | |                                                     | --- | ----------- |
+#   | | | |                          | | | | | |                                                           
+#   1 2 3 4                      11 10 9 8 7 6 5
+#                                    | | | | | |
+#      |-----------------------------| | | | | |                           
+#      |     |-------------------------| | | |-(--------------------------|
+#      | |---(---------------------------| |   |                          |
+#      | | |-(-----------------------------|   |------------------------| |
+#      | | | |                                                          | |
+#      | | | |                         RPi Pico 2 W pinout              | |
+#      | | | |                               _____                      | |
+#      | | | |                         -----|     |-----                | |
+#      | | | |                      1-| o ◯|_____|◯ o |-40            | |
+#      | | | |                      2-| o     USB     o |-39            | |
+#      | | | |                      3-| o             o |-38-----GND----| |
+#      | | | |                      4-| o             o |-37              |
+#      | | | |                      5-| o             o |-36---3V3(OUT)---|    
+#      | | | |                      6-| o  __         o |-35
+#      | | | |                      7-| o |__| Flash  o |-34
+#      | | | |                      8-| o   _______   o |-33
+#      | | | |                      9-| o  | ARM   |  o |-32
+#      | | | |                     10-| o  | 2035  |  o |-31
+#      | | | |                     11-| o  |_______|  o |-30
+#      | | | |                     12-| o             o |-29
+#      | | | |                     13-| o             o |-28
+#      | | | |-SPI1 SCK----GP10----14-| o             o |-27
+#      | | |---SPI1 TX-----GP11----15-| o             o |-26
+#      | |-----SPI1 RX-----GP12----16-| o             o |-25
+#      |-------SPI1 CSn----GP13----17-| o             o |-24
 #                                  18-| o             o |-23
 #                                  19-| o             o |-22
 #                                  20-| o ◯       ◯ o |-21
@@ -275,4 +280,12 @@
 # additional suplimental pinout information for GP10, GP11, GP12, GP13, is elieded from now to simplify diagram
 # therefore UART and I2C interface information is not shown. This may change in later itterations of the diagram
 # as requirements change.
+
+# #
+# import libraries for use in this programme
+
+
+
+
+
 
