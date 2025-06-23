@@ -46,10 +46,43 @@ MPY: soft reboot
  voltage: 0.004028382, raw: 80 . 
  voltage: 0.004834058, raw: 96 . 
 
-### RPi Pico internal core temperature
+### RPi Pico internal core temperature - no heat added to CPU
 Potential sample test data to log, in datalogger
 
-<todo: work in progress, >
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+
+PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
+PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
+PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
+PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
+PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
+PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
+PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+
+### RPi Pico internal core temperature - heat added to CPU, tip of finger placed on top of CPU
+Potential sample test data to log, in datalogger
+
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+
+PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
+PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
+PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
+PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
+PICO CPU temperature: 24.23554, converted raw reading: 0.7107576, raw reading: 14115 . 
+PICO CPU temperature: 27.0444, converted raw reading: 0.7059236, raw reading: 14019 . 
+PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
+PICO CPU temperature: 24.23554, converted raw reading: 0.7107576, raw reading: 14115 . 
+PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
+PICO CPU temperature: 26.57626, converted raw reading: 0.7067292, raw reading: 14035 .
 
 ## Libraries
 
