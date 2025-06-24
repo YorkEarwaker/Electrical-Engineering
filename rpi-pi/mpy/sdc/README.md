@@ -122,7 +122,8 @@ SD Card 'reader' boards - assessment, evaluation, , for use with system/device v
 
 Terms
 * SD Card, [WP](https://en.wikipedia.org/wiki/SD_card)
-* eMMC , MultiMediaCard, precursor standard to SD Card, slower, less data, 
+* MMC , MultiMediaCard, precursor standard to SD Card, slower, less data,
+* eMMC, embedded?
 * Serial Periferal Interface SPI [WP](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
 * Secure Digital Input Output SDIO, [WP](https://en.wikipedia.org/wiki/SD_card#SDIO_cards)
 
