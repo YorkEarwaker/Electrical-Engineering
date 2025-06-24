@@ -128,17 +128,35 @@ Terms
 * Secure Digital Input Output SDIO, [WP](https://en.wikipedia.org/wiki/SD_card#SDIO_cards)
 
 MicroPython
-Machine, SD Card class, [WS](https://docs.micropython.org/en/latest/library/machine.SDCard.html), 
+* Machine, SD Card class, docs, [WS](https://docs.micropython.org/en/latest/library/machine.SDCard.html), 
+* sdcard, code, [GH](https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/storage/sdcard/sdcard.py), driver
+
+MicroPython Forum
+* Pico Mounting SD Card, [WS](https://forum.micropython.org/viewtopic.php?t=9700&start=20), MicroPython Forum (Archive), 
+* SD card file write, [WS](https://forum.micropython.org/viewtopic.php?t=3100), MicroPython Forum (Archive), 
+
+Raspberry Pi - github, error
+* Raspberry Pi Pico SD Card Errors #11483, [GH](https://github.com/micropython/micropython/issues/11483)
+* no SD card #627, [GH](https://github.com/micropython/micropython-lib/issues/627)
+* Raspberry Pi Pico SD Card Errors #656, [GH](https://github.com/micropython/micropython-lib/issues/656)
+* OSError: no SD card #871 [GH](https://github.com/micropython/micropython-lib/issues/871)
+
+Pimoroni
+* Pico Wireless - how to access SD card?, [WS](https://forums.pimoroni.com/t/pico-wireless-how-to-access-sd-card/17751/1)
 
 News Papers - External storage, i.e. SD Card memmory extension to RPi Pico 
-* SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
 * Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
 * Initializing an SD Card, [WS](http://www.rjhcoding.com/avrc-sd-interface-1.php), RJH coding . com
-* Raspberry Pi Pico (RP2040) SD Card Example with MicroPython and C/C++, [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), 2021-07-26, ShawnHymel, 
-* Pico Mounting SD Card, [WS](https://forum.micropython.org/viewtopic.php?t=9700&start=20), MicroPython Forum (Archive), 
+* Raspberry Pi Pico (RP2040) SD Card Example with MicroPython and C/C++, [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), 2021-07-26, ShawnHymel, Maker . io,  
+* Connecting an SD Card to a Raspberry Pi Pico [WS](http://www.d3noob.org/2022/10/connecting-sd-card-to-raspberry-pi-pico.html), 30 October 2022
 
 News Papers - SD Cards, forum, Raspberry Pi, 
 * SD card with a pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=344610), forums, Raspberry Pi, 
 * Use SDCard with MicroPython on Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=307275), forums, Raspberry Pi, 
 * Pico w/4-bit SDIO interface example?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=337143), forums, Raspberry Pi, 
 * ...
+
+News Papers - os, path, file
+* How to Check if a File Exists in Python with isFile() and exists(), [WS](https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-python/), January 5, 2023, Dionysia Lemonaki
+
+

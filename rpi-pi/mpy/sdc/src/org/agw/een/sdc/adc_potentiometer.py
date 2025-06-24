@@ -171,7 +171,7 @@ while True:
     # read data as raw value from potentiometer
     raw_reading = potentiometer.read_u16()
     
-    # convert raw reading to valtage value
+    # convert raw reading to voltage value
     voltage = raw_reading * conversion_factor
     
     # print the reading to shell

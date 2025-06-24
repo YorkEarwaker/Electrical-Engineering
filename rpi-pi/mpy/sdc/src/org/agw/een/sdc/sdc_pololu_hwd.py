@@ -22,6 +22,16 @@
 # machine module SDCard class – secure digital memory card
 # https://docs.micropython.org/en/latest/library/machine.SDCard.html
 #
+# vfs – virtual filesystem control
+# https://docs.micropython.org/en/latest/library/vfs.html
+#
+# os/uos
+# https://docs.micropython.org/en/latest/library/os.html
+# https://docs.micropython.org/en/v1.15/library/uos.html
+# https://docs.python.org/3/library/os.html
+# https://docs.python.org/3/library/functions.html#open # modes,
+# https://docs.python.org/3/tutorial/inputoutput.html#tut-files
+#
 # RPi, Quick reference for the RP2
 # https://docs.micropython.org/en/latest/rp2/quickref.html
 #
@@ -88,12 +98,12 @@
 #
 # Micro SD Card 'reader' circuit board
 # Pin sequence numbers, left to right, 1 2 3 4 5 6 7 8 9 10 11, with circuit board and SD Card 'reader' (SPI 'CRUD') forward facing
-#            ________ 
-#           |        |  Micro SD Card
-#           |        |  Storage
-#           <        |  e.g. 32GB
-#            |       |  SD Card's use V3.3
-#            |_______|
+#            _________
+#           |         |  Micro SD Card
+#           |         |  Storage
+#           <         |  e.g. 32GB
+#            |        |  SD Card's use V3.3
+#            |________|
 #                     
 #      -------------------
 #   1-|o|---__________--|o|-5  Simplified       | --- | ----------- | Device            | --- | ----------- | Device                                                                   
@@ -292,7 +302,10 @@
 # #
 # import libraries for use in this programme
 # small form factor removable storage media, for SD Card, and also for MMC and eMMC
-from machine import SDCard, Pin # machine.SDCard,
+from machine import Pin, SPI
+#import sdcard
+from sdcard import SDCard # sdcard.SDCard,
+import uos
 
 # #
 # Parameters common to all ports
@@ -311,15 +324,82 @@ from machine import SDCard, Pin # machine.SDCard,
 # freq, selects the SD/MMC interface frequencey in HZ.
 # 
 # SDCard(slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, cmd=None, data=None, freq=20000000)
+# https://docs.micropython.org/en/latest/library/machine.SDCard.html
 
-sck_pin  = Pin(14) # GP10, SCK,  pin 14 | POL 9, SCLK, SCLK
-miso_pin = Pin(16) # GP12, RX,   pin 16 | POL 8, DO, MISO 
-mosi_pin = Pin(15) # GP11, TX,   pin 15 | POL 7, DI, MOSI 
-cs_pin   = Pin(17) # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS
+spi_bus = 1
+sck_pin = Pin(10)          # GP10, SCK,  pin 14 | POL 9, SCLK, SCLK
+miso_pin = Pin(12)          # GP12, RX,   pin 16 | POL 8, DO, MISO 
+mosi_pin = Pin(11)          # GP11, TX,   pin 15 | POL 7, DI, MOSI
 
-micro_sd_card = SDCard(slot=1, width=1, cd=None, wp=None, sck=sck_pin, miso=miso_pin, mosi=mosi_pin, cs=cs_pin)
+# start pin high, 
+cs_pin = Pin(13, Pin.OUT) # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS
+sd_mount_path = '/sd'
 
-# vfs.mount(machine.SDCard(), "/sd")
+# initialize spi
+sd_card_spi = SPI(spi_bus,
+                  baudrate = 1000000,
+                  polarity = 0,
+                  phase = 0,
+                  bits = 8,
+                  firstbit = SPI.MSB,
+                  sck = sck_pin,
+                  mosi = mosi_pin,
+                  miso = miso_pin )
+
+# initialise the sd card reader for interaction
+#micro_sd_card = SDCard(spi = sd_card_spi, cs = cs_pin)
+micro_sd_card = SDCard(sd_card_spi, cs_pin) # fails here with;
+
+# MPY: soft reboot
+# Traceback (most recent call last):
+#   File "<stdin>", line 351, in <module>
+#   File "/lib/sdcard.py", line 54, in __init__
+#   File "/lib/sdcard.py", line 82, in init_card
+# OSError: no SD card
+
+# <todo: check sd card is formatted FAT32. >
+
+# initialise the sd card file system for interaction
+vfs = uos.VfsFat(micro_sd_card)
+
+# mount the sd card file system
+uos.mount(vfs, sd_mount_path)
+
+# CRUD operation in the sd card file system
+file_name = 'log-file-test.txt'
+file_path = sd_mount_path + '/' + file_name
+
+# Crud
+# 'r' open for reading (default)
+# 'w' open for writing, truncating the file first
+# 'x' open for exclusive creation, failing if the file already exists
+# 'a' open for writing, appending to the end of file if it exists
+# 'b' binary mode
+# 't' text mode (default)
+# '+' open for updating (reading and writing)
+
+# Crud
+# create a new file on the sd card, create a new file only if it does not already exist
+file_check = os.path.exists()
+
+if (not file_check):
+    with open(file_path, 'x') as log_file:
+        read_data = log_file.read()
+    
+print(f'file data: {}'.format(read_data))
+print(f'file closed: {}'.format(log_file.closed))
+
+# crUd
+# update/write to the new file on the sd card, write turncates the file
+#log_file
+
+# crUd
+# update/write to the new file on the sd card, append does not truncate the file
+
+# cRud
+# read from the new file on the sd card
+
+
 
 
 
