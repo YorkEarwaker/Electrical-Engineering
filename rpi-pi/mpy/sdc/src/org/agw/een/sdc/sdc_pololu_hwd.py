@@ -19,6 +19,11 @@
 # machine module SPI class
 # https://docs.micropython.org/en/latest/library/machine.SPI.html # class
 #
+# machine module SDCard class – secure digital memory card
+# https://docs.micropython.org/en/latest/library/machine.SDCard.html
+#
+# RPi, Quick reference for the RP2
+# https://docs.micropython.org/en/latest/rp2/quickref.html
 #
 # Raspberry Pi Pico 2 W, pin out
 # https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf
@@ -43,6 +48,9 @@
 # https://pinoutguide.com/Memory/sdcard_pinout.shtml
 # https://allpinouts.org/pinouts/connectors/memory/secure-digital-sd-card/
 # https://www.electroniccircuitsdesign.com/pinout/sd-microsd-card-pinout.html
+#
+# SD Card specifications
+# SD Simplified Specifications, https://www.sdcard.org/downloads/pls/
 #
 # Context diagram
 # Assuming only the microcontroller interacts with the device.
@@ -283,6 +291,41 @@
 
 # #
 # import libraries for use in this programme
+# small form factor removable storage media, for SD Card, and also for MMC and eMMC
+from machine import SDCard, Pin # machine.SDCard,
+
+# #
+# Parameters common to all ports
+# slot, selects which of the available interfaces to use. Leaving this unset will select the default interface.
+# width, selects the bus width for the SD/MMC interface. This many data pins must be connected to the SD card.
+# cd, can be used to specify a card-detect pin.
+# wp, can be used to specify a write-protect pin.
+# sck, can be used to specify an SPI clock pin.
+# miso, can be used to specify an SPI miso pin.
+# mosi, can be used to specify an SPI mosi pin.
+# cs, can be used to specify an SPI chip select pin.
+#
+# Parameters only on ESP port
+# cmd, can be used to specify the SD CMD pin (ESP32-S£ only)
+# data, can be used to specify a list or tuple of SD data bus pins (ESP32-S3 only)
+# freq, selects the SD/MMC interface frequencey in HZ.
+# 
+# SDCard(slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, cmd=None, data=None, freq=20000000)
+
+sck_pin  = Pin(14) # GP10, SCK,  pin 14 | POL 9, SCLK, SCLK
+miso_pin = Pin(16) # GP12, RX,   pin 16 | POL 8, DO, MISO 
+mosi_pin = Pin(15) # GP11, TX,   pin 15 | POL 7, DI, MOSI 
+cs_pin   = Pin(17) # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS
+
+micro_sd_card = SDCard(slot=1, width=1, cd=None, wp=None, sck=sck_pin, miso=miso_pin, mosi=mosi_pin, cs=cs_pin)
+
+# vfs.mount(machine.SDCard(), "/sd")
+
+
+
+
+
+
 
 
 
