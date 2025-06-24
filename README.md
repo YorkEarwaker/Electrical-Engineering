@@ -56,6 +56,17 @@ Terms
 * Electricity
 * Magnetism
 
+Symbols - differ between engineering diciplines, architecture electrical vs electronics vs control systems vs manufacturing engineering and so on, differ between juresdiction, 
+* Symbols, Electronic [WP](https://en.wikipedia.org/wiki/Electronic_symbol)
+* Symbols, ANSI, the Unitead States standard
+* Sysbols, BS, the British standard
+* Symbols, IEC, the international standard <todo; source standard>
+* Symbols, IET 2016, Units & Symbols for Electrical & Electronic Engineering, [PDF](https://www.theiet.org/media/4173/units-and-symbols.pdf), UK
+* Symbols, ISO, [WS](https://www.iso.org/ics/01.080/x/), under development, see 01.080.30, also ISO 14617, others? retrieved last 2025-06-24 10:49 UK
+
+Standards
+* List, UK Electrical Industry British Standards (BS), [WP](https://electrical-engineering-portal.com/uk-electrical-industry-british-standards-bs), Electrical Engineering Portal EEP
+
 Terms - 
 * Wire guage [WP](https://en.wikipedia.org/wiki/Wire_gauge), cross-section area, wire diameter, wire measurement, IEC 60228
 
