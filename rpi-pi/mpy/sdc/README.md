@@ -126,11 +126,15 @@ Terms
 * Serial Periferal Interface SPI [WP](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
 * Secure Digital Input Output SDIO, [WP](https://en.wikipedia.org/wiki/SD_card#SDIO_cards)
 
+MicroPython
+Machine, SD Card class, [WS](https://docs.micropython.org/en/latest/library/machine.SDCard.html), 
+
 News Papers - External storage, i.e. SD Card memmory extension to RPi Pico 
 * SD Card Read Write,  [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), Maker . io,  
 * Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
 * Initializing an SD Card, [WS](http://www.rjhcoding.com/avrc-sd-interface-1.php), RJH coding . com
 * Raspberry Pi Pico (RP2040) SD Card Example with MicroPython and C/C++, [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), 2021-07-26, ShawnHymel, 
+* Pico Mounting SD Card, [WS](https://forum.micropython.org/viewtopic.php?t=9700&start=20), MicroPython Forum (Archive), 
 
 News Papers - SD Cards, forum, Raspberry Pi, 
 * SD card with a pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=344610), forums, Raspberry Pi, 
