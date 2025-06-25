@@ -102,6 +102,17 @@ PICO CPU temperature: 24.23554, converted raw reading: 0.7107576, raw reading: 1
 PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
 PICO CPU temperature: 26.57626, converted raw reading: 0.7067292, raw reading: 14035 .
 
+### RPi Pico recognises SD Card
+'''
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20010940>
+os mount point: None
+sys vol info: ['System Volume Information']
+'''
 ## Libraries
 
 Standards
