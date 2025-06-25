@@ -356,26 +356,83 @@ try:
     micro_sd_card = SDCard(sd_card_spi, cs_pin) # 
     print(f'micro sd card: {micro_sd_card}'.format(micro_sd_card) ) # debug
     
-    os_mount_point = os.mount(micro_sd_card, sd_mount_path) # consider, remove return value 'os_mount_point = ' as os.mount appears to return None
+    os_mount_point = os.mount(micro_sd_card, sd_mount_path)
     print(f'os mount point: {os_mount_point}'.format(os_mount_point) ) # debug
     
-    sys_vol_info = os.listdir(sd_mount_path) 
+    sys_vol_info = os.listdir(sd_mount_path)
     print(f'sys vol info: {sys_vol_info}'.format(sys_vol_info) ) # debug
     
 except Exception as e:
     print(f'Ooops, code foo bha: {e}'.format(e) )
 
-
-# #
-# Debug successful run
-#
-# %Run -c $EDITOR_CONTENT
+# # initialize spi
+# sd_card_spi = SPI(spi_bus,
+#                   baudrate = 1000000,
+#                   polarity = 0,
+#                   phase = 0,
+#                   bits = 8,
+#                   firstbit = SPI.MSB,
+#                   sck = sck_pin,
+#                   mosi = mosi_pin,
+#                   miso = miso_pin )
 # 
-# MPY: soft reboot
-# sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
-# micro sd card: <SDCard object at 20010940>
-# os mount point: None
-# sys vol info: ['System Volume Information']
+# # initialise the sd card reader for interaction
+# #micro_sd_card = SDCard(spi = sd_card_spi, cs = cs_pin)
+# micro_sd_card = SDCard(sd_card_spi, cs_pin) # fails here with;
+# 
+# # MPY: soft reboot
+# # Traceback (most recent call last):
+# #   File "<stdin>", line 351, in <module>
+# #   File "/lib/sdcard.py", line 54, in __init__
+# #   File "/lib/sdcard.py", line 82, in init_card
+# # OSError: no SD card
+# 
+# # <todo: check sd card is formatted FAT32. >
+# # <todo: consider, micro sd card direct into reader, is sd card extension the issue? >
+# 
+# # initialise the sd card file system for interaction
+# vfs = uos.VfsFat(micro_sd_card)
+# 
+# # mount the sd card file system
+# uos.mount(vfs, sd_mount_path)
+# 
+# # CRUD operation in the sd card file system
+# file_name = 'log-file-test.txt'
+# file_path = sd_mount_path + '/' + file_name
+# 
+# # Crud
+# # 'r' open for reading (default)
+# # 'w' open for writing, truncating the file first
+# # 'x' open for exclusive creation, failing if the file already exists
+# # 'a' open for writing, appending to the end of file if it exists
+# # 'b' binary mode
+# # 't' text mode (default)
+# # '+' open for updating (reading and writing)
+# 
+# # Crud
+# # create a new file on the sd card, create a new file only if it does not already exist
+# file_check = os.path.exists()
+# 
+# if (not file_check):
+#     with open(file_path, 'x') as log_file:
+#         read_data = log_file.read()
+#     
+# print(f'file data: {}'.format(read_data))
+# print(f'file closed: {}'.format(log_file.closed))
+# 
+# # crUd
+# # update/write to the new file on the sd card, write turncates the file
+# #log_file
+# 
+# # crUd
+# # update/write to the new file on the sd card, append does not truncate the file
+# 
+# # cRud
+# # read from the new file on the sd card
+# 
+
+
+
 
 
 
