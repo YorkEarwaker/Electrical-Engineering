@@ -354,6 +354,10 @@ spi_cs_pin = Pin(13, Pin.OUT)   # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS  
 sd_os_path = '/sd'
 #print(f'sd_mount_path: {sd_mount_path}'.format(sd_mount_path) ) # debug
 
+file_name = 'log-file-test.txt'
+file_path = sd_os_path + '/' + file_name
+#print(f'file path: {file_path}'.format(file_path)) # debug
+
 # #
 # initialize spi instance for use by SDCard driver
 # 
@@ -435,46 +439,110 @@ def list_directory_structure(path):
 
 list_directory_structure(sd_os_path)
 
-# # CRUD operation in the sd card file system
-# file_name = 'log-file-test.txt'
-# file_path = sd_mount_path + '/' + file_name
+# #
+# File io operations
+# CRUD operation in the sd card file system
 # 
-# # Crud
-# # 'r' open for reading (default)
-# # 'w' open for writing, truncating the file first
-# # 'x' open for exclusive creation, failing if the file already exists
-# # 'a' open for writing, appending to the end of file if it exists
-# # 'b' binary mode
-# # 't' text mode (default)
-# # '+' open for updating (reading and writing)
-# 
-# # Crud
-# # create a new file on the sd card, create a new file only if it does not already exist
-# file_check = os.path.exists()
-# 
-# if (not file_check):
-#     with open(file_path, 'x') as log_file:
-#         read_data = log_file.read()
-#     
-# print(f'file data: {}'.format(read_data))
-# print(f'file closed: {}'.format(log_file.closed))
-# 
-# # crUd
-# # update/write to the new file on the sd card, write turncates the file
-# #log_file
-# 
-# # crUd
-# # update/write to the new file on the sd card, append does not truncate the file
-# 
-# # cRud
-# # read from the new file on the sd card
-# 
+# CPython docs
+# 'r' open for reading (default)
+# 'w' open for writing, truncating the file first
+# 'x' open for exclusive creation, failing if the file already exists
+# 'a' open for writing, appending to the end of file if it exists
+# 'b' binary mode
+# 't' text mode (default)
+# '+' open for updating (reading and writing)
+#
+def file_io_operations(path):
+    
+    file_found = check_file_exists(path)
+    #print(f'file exists: {file_found}'.format(file_found) )
+    
+    try:
+        
+        # create a new file on the sd card, create a new file only if it does not already exist
+        if (not file_found):
+            with open(path, 'x') as log_file:
+                pass
+                #read_data = log_file.read()
+        file_found = check_file_exists(path)
+        
+        # crUd
+        # update/write to the new file on the sd card, write turncates the file
+        with open (path, 'w') as log_file:
+            log_file.write('first line\n')
+            log_file.write('second line\n')
 
+        # cRud
+        # read from the new file on the sd card
+        with open (path, 'r') as log_file:
+            all_content = log_file.read()
+            print(f'file content: {all_content}'.format(all_content))
 
+        # crUd
+        # update/write to the new file on the sd card, append does not truncate the file
+        with open (path, 'a') as log_file:
+            log_file.write('third line\n')
+            
+        # cRud
+        # read from the appended file on the sd card
+        with open (path, 'r') as log_file:
+            all_content = log_file.read()
+            print(f'file content: {all_content}'.format(all_content))
+            
+        # crUd
+        # update/write to the new file on the sd card, write turncates the file
+        with open (path, 'w') as log_file:
+            log_file.write('1st line\n')
+            log_file.write('2nd line\n')
+            log_file.write('3rd line\n')
+            
+        # cRud
+        # read from the truncated file on the sd card
+        with open (path, 'r') as log_file:
+            all_content = log_file.read()
+            print(f'file content: {all_content}'.format(all_content))
 
+    except Exception as e:
+        print(f'file io, exception: {e}'.format(e) )
+                
+    check_file_exists(path)
 
+# #
+# check if the file exisists, has already been created
+# 
+def check_file_exists(path):
+    
+        
+        #file_check = os.path.exists(path) # does not seem to be available in MicroPython
+        #file_check = os.stat(path) # need to better understand how to use this for file exists function
+        #print(f'os, path exsist to file: {file_check}'.format(file_check) )
+        
+        try:
+            with open (path, 'r') as f:
+                pass
+            file_found = True
+            #os.stat(path)
+            #return True
+        except Exception as e:
+            file_found = False
+            print(f'file access, exception: {e}'.format(e) )
+        
+        print(f'file exists: {file_found}'.format(file_found) )
+        return file_found
 
+# do some crud operations with file in sd card
+file_io_operations(file_path)
 
+# list the contents of the directory in which the file is located
+list_directory_structure(sd_os_path)
+
+# delete the file,
+# <todo: consider breaking this into a seperate def function >
+os.remove(file_path)
+
+# show the file has been deleted by listing the contents of the directory in which the file was located,
+# the file name can no longer be seen
+list_directory_structure(sd_os_path)
 
 
 
