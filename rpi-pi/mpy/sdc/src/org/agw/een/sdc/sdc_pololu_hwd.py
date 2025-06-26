@@ -140,7 +140,7 @@
 #        are wired in SD mode to RPi Pico GND pin 38 and 3V3 pin 36 respectively? >
 # 
 # | -------------------------------------------------------------------------------------------------------------- |
-# | SPI interface - wip                                                                                            |
+# | SPI interface - Pololu breakout board micro SD Card module, map                                                |
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- |
 # | POL pin | Function  | RPi Pico           | Wire   | Description                                                |
 # |         |           | Use,  SPI1, pin NN |        |                                                            |
@@ -151,7 +151,7 @@
 # | 8       | DO        | GP12, RX,   pin 16 | Yellow | Data out, MISO, Host recieve RX, serial data from device   |
 # | 9       | SCLK      | GP10, SCK,  pin 14 | Blue   | Clock, clock signal from RPi Pi                            |
 # | 10      | CS        | GP13, CSn,  pin 17 | Green  | Chip select (active low)                                   |
-# | 11      | CD        | NULL?              | NC?    | Card detect <todo: remove this line?                       |
+# | 11      | CD        | NULL, --,   --- -- | NC     | Card detect, not used in SPI mode                          |
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- | 
 #
 # | -------------------------------------------------------------------------------------------------------------- |
@@ -324,7 +324,11 @@ import os # <todo: use 'os' instead of 'uos'? documentation for MicroPython is n
 # freq, selects the SD/MMC interface frequencey in HZ.
 # 
 # SDCard(slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, cmd=None, data=None, freq=20000000)
-# https://docs.micropython.org/en/latest/library/machine.SDCard.html
+# https://docs.micropython.org/en/latest/library/machine.SDCard.html, from MicroPython docs
+#
+# Important! This is not how the sdcard.py RPi implementation works.
+# RPi sdcard.py takes an SPI object instantiated with necessary values for an SPI connection,
+# instead of individual values for an SPI connection as above.
 
 spi_bus = 1                 # valid values; 1 xor 0, SPI1 = 1 and SPI0 = 0
 
@@ -336,36 +340,39 @@ mosi_pin = Pin(11)          # GP11, TX,   pin 15 | POL  7, DI,          MOSI | O
 cs_pin = Pin(13, Pin.OUT)   # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS   | Green
 #print(f'cs_pin: {cs_pin}'.format(cs_pin) ) # debug
 
-sd_mount_path = '/sd'
+# the volume lable to use for the sd card to be accessed by Rpi Pico
+sd_os_path = '/sd'
 #print(f'sd_mount_path: {sd_mount_path}'.format(sd_mount_path) ) # debug
 
 # test sd card reader
 try:
-    # sd_card_spi = (spi_bus, sck = sck_pin, mosi = mosi_pin, miso = miso_pin ) # this example does not work, returns SyntaxError: invalid syntax
+    # sd_card_spi, set values for SPI instance connection to sd card reader module
     sd_card_spi = SPI(spi_bus,
-                  baudrate = 1000000,
-                  polarity = 0,
-                  phase = 0,
-                  bits = 8,
-                  firstbit = SPI.MSB,
-                  sck = sck_pin,
-                  mosi = mosi_pin,
-                  miso = miso_pin )
+                      baudrate = 1000000,
+                      polarity = 0,
+                      phase = 0,
+                      bits = 8,
+                      firstbit = SPI.MSB,
+                      sck = sck_pin,
+                      mosi = mosi_pin,
+                      miso = miso_pin )
     print(f'sd_card_spi: {sd_card_spi}'.format(sd_card_spi) ) # debug
     
+    # initialise the sd card driver, for Rpi Pico to access sd card over SPI
     micro_sd_card = SDCard(sd_card_spi, cs_pin) # 
     print(f'micro sd card: {micro_sd_card}'.format(micro_sd_card) ) # debug
     
-    os_mount_point = os.mount(micro_sd_card, sd_mount_path) # consider, remove return value 'os_mount_point = ' as os.mount appears to return None
+    # the the operating system os to mount the sd card at the path name provided
+    os_mount_point = os.mount(micro_sd_card, sd_os_path) # consider, remove return value 'os_mount_point = ' as os.mount appears to return None
     print(f'os mount point: {os_mount_point}'.format(os_mount_point) ) # debug
     
-    sys_vol_info = os.listdir(sd_mount_path) 
+    # list the current directory structure at the path name provided
+    sys_vol_info = os.listdir(sd_os_path) 
     print(f'sys vol info: {sys_vol_info}'.format(sys_vol_info) ) # debug
     
 except Exception as e:
     print(f'Ooops, code foo bha: {e}'.format(e) )
-
-
+    
 # #
 # Debug successful run
 #
@@ -377,9 +384,22 @@ except Exception as e:
 # os mount point: None
 # sys vol info: ['System Volume Information']
 
-
-
-
+# #
+# Debug unsucessful run
+#
+# MPY: soft reboot
+# Traceback (most recent call last):
+#   File "<stdin>", line 351, in <module>
+#   File "/lib/sdcard.py", line 54, in __init__
+#   File "/lib/sdcard.py", line 82, in init_card
+# OSError: no SD card
+#
+# Bug (defect) fixes
+# 
+# <done: consider, check sd card is formatted FAT32. Believe FAT32 required for sdcard.py and MicroPython. This may have been an issue. fix; SD Card formatted FAT32. >
+# <done: consider, check breadboard wiring is correct. This was one issue. fix; correct circuit wiring. >
+# 
+# <todo: consider, simplify circuit, micro sd card direct into reader, is sd card extension cable the issue? This was not an issue.>
 
 
 
