@@ -67,6 +67,7 @@ MPY: soft reboot
 ### RPi Pico internal core temperature - no heat added to CPU
 Potential sample test data to log, in datalogger
 
+```
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
@@ -82,10 +83,12 @@ PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 1
 PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
 PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
 PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
+```
 
 ### RPi Pico internal core temperature - heat added to CPU, tip of finger placed on top of CPU
 Potential sample test data to log, in datalogger
 
+(~~~
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
@@ -101,17 +104,47 @@ PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 1
 PICO CPU temperature: 24.23554, converted raw reading: 0.7107576, raw reading: 14115 . 
 PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
 PICO CPU temperature: 26.57626, converted raw reading: 0.7067292, raw reading: 14035 .
+(~~~
 
 ### RPi Pico recognises SD Card
+<todo: consider adding more verbose explanitory output, >
 
+(~~~
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
 
 sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
 micro sd card: <SDCard object at 20010940>
-os mount point: None
+os mount point: None>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20010c20>
 sys vol info: ['System Volume Information']
+file access, exception: [Errno 2] ENOENT
+file exists: False
+file exists: True
+file content: first line
+second line
+
+file content: first line
+second line
+third line
+
+file content: 1st line
+2nd line
+3rd line
+
+file exists: True
+sys vol info: ['System Volume Information', 'log-file-test.txt']
+sys vol info: ['System Volume Information']
+sys vol info: ['System Volume Information']
+(~~~
+
+### 
+
+
 
 ## Libraries
 
@@ -128,7 +161,7 @@ Libs
 * SD, [WS](https://docs.arduino.cc/libraries/sd/), Arduino SD library, 
 * SD, CircuitPython
 * SD, [WS](https://os.mbed.com/cookbook/SD-Card-File-System), ARM, mbed, 
-* SD, [GH](https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/storage/sdcard), MicroPython, sdcard.py
+* SD, [GH](https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/storage/sdcard), MicroPython, sdcard.py - evaluating this driver, 2025/06/25
 * SD, [GH](https://github.com/raspberrypi/pico-extras/tree/master/src/rp2_common/pico_sd_card), Raspbery Pi, C/C++. pico_sd_card
 * (e)MMC/SD card driver, 
 * SDIO, driver, 
@@ -199,8 +232,9 @@ News Papers - SD Cards, forum, Raspberry Pi,
 * Pico w/4-bit SDIO interface example?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=337143), forums, Raspberry Pi, 
 * ...
 
-News Papers - os, path, file
+News Papers - os, path, file, micropython
 * How to Check if a File Exists in Python with isFile() and exists(), [WS](https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-python/), January 5, 2023, Dionysia Lemonaki
+* Implementing 'os.path.isfile()', [WS](https://forums.raspberrypi.com/viewtopic.php?t=321965), Raspberry Pi Forum, 
 
 News Papers - sdc format FAT32
 * Difference between quick format and slow format?, [WS](https://www.reddit.com/r/DataHoarder/comments/y58k35/difference_between_quick_format_and_slow_format/), Reddit, 
@@ -211,5 +245,7 @@ News Papers - sdc format FAT32
 * fat32 sd card, [WS](https://forums.raspberrypi.com/viewtopic.php?t=261901), Raspberry Pi Forum, 
 * Which Allocation Unit Size do I have to choose for my SDHC card?, [WS](https://superuser.com/questions/455098/which-allocation-unit-size-do-i-have-to-choose-for-my-sdhc-card), StackExchange, SuperUser
 * Block size & lots of small files, [WS](https://forums.raspberrypi.com/viewtopic.php?t=133349), Raspberry Pi Forum, 
+
+
 
 
