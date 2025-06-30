@@ -26,6 +26,7 @@ TODO
 * <todo: consider, for data logging on SD Card with Raspberry Pi Pico SD Card cannot be larger than 32Gig due to FAT32 or other SD Card formatting restrictions? >
 * <todo: consider, allocation unit size aka cluster size for MVP data logger, which unit size/cluster size would be best? how large will data logs get for time series data between transfer eleswhere via wifi or other network option, will other file tpyes be used in in mixed use case for data logger sd card, or should it only be restricted to data logging use case, >
 * <todo: cconsider, can a database to be used by RPi Pico be installed on and run from SD Carad? SQLlite or similar? >
+* <todo: consider, retrieve file from sd card, file transfer via wifi, push and pull varients>
 
 DONE
 * <done: consider, SD Card extension for RPi Pico, breakout board/shield/hat, candidate for first project roll your own PCB? perf board? intial two cadidates; Pololu Breakout Board for MicroSD Cards, Adafruit Micro SD SPI or SDIO Card Breakout Board, >
@@ -133,7 +134,8 @@ micro sd card: <SDCard object at 20010c20>
 sys vol info: ['System Volume Information']
 file access, exception: [Errno 2] ENOENT
 file exists: False
-file exists: True
+file: new created, <io.TextIOWrapper 20011800>
+file size: 0 unicode chars
 file content: first line
 second line
 
@@ -146,8 +148,49 @@ file content: 1st line
 3rd line
 
 file exists: True
-sys vol info: ['System Volume Information', 'log-file-test.txt']
+file size: 27 unicode chars
+file access, exception: [Errno 2] ENOENT
+file exists: False
+file deleted os.remove: True
 sys vol info: ['System Volume Information']
+```
+
+### Rpi Pico CPU internal temperature reading to file io to SD Card
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20010cd0>
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt']
+file exists: True
+temperature: 29.85327, at date & time: (2025, 6, 30, 0, 10, 10, 34, 0)
+
+file exists: True
+file size: 818 unicode chars
+file content: 30.32141, (2025, 6, 27, 4, 17, 43, 21, 0), 
+29.85327, (2025, 6, 27, 4, 17, 47, 46, 0), 
+30.32141, (2025, 6, 27, 4, 17, 48, 1, 0), 
+26.10811, (2025, 6, 30, 0, 9, 10, 14, 0), 
+27.51254, (2025, 6, 30, 0, 9, 19, 39, 0), 
+28.91698, (2025, 6, 30, 0, 9, 25, 33, 0), 
+30.32141, (2025, 6, 30, 0, 9, 25, 48, 0), 
+29.38512, (2025, 6, 30, 0, 9, 26, 3, 0), 
+30.32141, (2025, 6, 30, 0, 9, 26, 18, 0), 
+29.85327, (2025, 6, 30, 0, 9, 26, 33, 0), 
+30.32141, (2025, 6, 30, 0, 9, 26, 48, 0), 
+29.85327, (2025, 6, 30, 0, 9, 27, 3, 0), 
+29.85327, (2025, 6, 30, 0, 9, 27, 18, 0), 
+29.85327, (2025, 6, 30, 0, 9, 27, 21, 0), 
+29.85327, (2025, 6, 30, 0, 9, 27, 36, 0), 
+27.98069, (2025, 6, 30, 0, 9, 53, 55, 0), 
+30.78955, (2025, 6, 30, 0, 9, 55, 17, 0), 
+28.44883, (2025, 6, 30, 0, 10, 4, 57, 0), 
+29.85327, (2025, 6, 30, 0, 10, 10, 34, 0), 
+
+Logging interupt; keyboard
+>>> 
 ```
 
 ## Libraries
@@ -250,6 +293,12 @@ News Papers - sdc format FAT32
 * Which Allocation Unit Size do I have to choose for my SDHC card?, [WS](https://superuser.com/questions/455098/which-allocation-unit-size-do-i-have-to-choose-for-my-sdhc-card), StackExchange, SuperUser
 * Block size & lots of small files, [WS](https://forums.raspberrypi.com/viewtopic.php?t=133349), Raspberry Pi Forum, 
 
+News Papers - sd card drivers, read/write, blockwrite, sdcard.py 
+* drivers: sdcard.py should support multiple block read/write #1801, [WS](https://github.com/micropython/micropython/issues/1801)
 
+News Papers - machine.Timer, python, micropython
+* callback from a timer ?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=363587), Raspberry Pi Forums, 
 
+News Papers - markup, code block
+*  Fenced Code Blocks [WS]{https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
 
