@@ -138,10 +138,10 @@
 # | ------- | --------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
 # | 1       | VCC       | VCC  | 3V3,        pin 36 | Red    | VCC  | 3V3,        pin 36 | Red    | 
 # | 2       | GND       | GND  | GND,        pin 38 | Black  | GND  | GND,        pin 38 | Black  | 
-# | 3       | SDA/MOSI  | SDA  | GP18, SDA,  pin 24 | Yellow | MOSI | GP19, TX,   pin 25 |        | 
-# | 4       | SCL/SCK   | SCL  | GP19, SCL,  pin 25 | Blue?  | SCK  | GP18, SCK,  pin 24 |        | 
-# | 5       | ADDR/MISO | ADDR |                    |        | MISO | GP16, RX,   pin 21 |        | 
-# | 6       | CS        | CS   |                    |        | CS   | GP17, CSn   pin 22 |        | 
+# | 3       | SDA/MOSI  | SDA  | GP18, SDA,  pin 24 | Blue   | MOSI | GP19, TX,   pin 25 |        | 
+# | 4       | SCL/SCK   | SCL  | GP19, SCL,  pin 25 | Yellow | SCK  | GP18, SCK,  pin 24 |        | 
+# | 5       | ADDR/MISO | ADDR |                    | Orange | MISO | GP16, RX,   pin 21 |        | 
+# | 6       | CS        | CS   |                    | Green  | CS   | GP17, CSn   pin 22 |        | 
 # | ------- | --------- | ---- | ------------------ | ------ | ---- | ------------------ | ------ |
 # Candidate wiring and pin allocation, ensure programatically enable pins, don't rely on Pico 'defaults'
 # This wiring for programatic switch between I2C and SPI may not be possible
