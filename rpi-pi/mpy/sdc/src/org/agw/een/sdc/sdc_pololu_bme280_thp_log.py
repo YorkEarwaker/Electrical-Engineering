@@ -306,13 +306,63 @@
 # additional suplimental pinout information for GP10, GP11, GP12, GP13, is elieded from now to simplify diagram
 # therefore UART and I2C interface information is not shown. This may change in later itterations of the diagram
 # as requirements change.
+#
+#
+# BME280 circuit design
+# Complete design discussion can be found at URL below, although this link will become stale at some point, 
+# https://github.com/YorkEarwaker/Electrical-Engineering/blob/main/rpi-pi/mpy/snr-tsd/src/org/agw/een/snr/snr_bme280_tsd.py # retrieved, 2025-06-30 14:44,
+# 
+#   ___________ 
+#  |    [.]    | Simplified       | --- | --------- | Circuit board 
+#  |           | Front of         | 1   | VCC       | pins functions
+#  |           | BME280           | 2   | GND       |
+#  |___________| sensor           | 3   | SDA/MOSI  |
+#  |___________| Waveshare, CN    | 4   | SCL/SCK   |
+#   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
+#   1 2 3 4 5 6                   | 6   | CS        |
+#   | | | | | |                   | --- | --------- |
+#   |-)-)-)-)-)-------------------------------------------------------| 
+#     | | | | |                                                       | 
+#     |-)-)-)-)-----------------------------------------------------| |
+#       | | | |                                                     | |
+#       | | | |                    RPi Pico 2 W pinout              | |
+#       | | | |                          _____                      | | 
+#       | | | |                    -----|     |-----                | |
+#       | | | |                 1-| o ◯|_____|◯ o |-40            | | 
+#       | | | |                 2-| o     USB     o |-39            | |
+#       | | | |                 3-| o             o |-38-----GND----| |
+#       | | | |                 4-| o             o |-37              |
+#       | | | |                 5-| o             o |-36---3V3(OUT)---|     
+#       | | | |                 6-| o  __         o |-35
+#       | | | |                 7-| o |__| Flash  o |-34
+#       | | | |                 8-| o   _______   o |-33
+#       | | | |                 9-| o  | ARM   |  o |-32
+#       | | | |                10-| o  | 2035  |  o |-31
+#       | | | |                11-| o  |_______|  o |-30
+#       | | | |                12-| o             o |-29
+#       | | | |                13-| o             o |-28
+#       | | | |                14-| o             o |-27
+#       | | | |                15-| o             o |-26
+#       | | | |                16-| o             o |-25----GP19-----ISP0 TX----I2C1 SCL-------------------|
+#       | | | |                17-| o             o |-24----GP18-----ISP0 SCK---I2C1 SDA-------------------)-|
+#       | | | |                18-| o             o |-23                                                   | |
+#       | | | |                19-| o             o |-22----GP17-----ISP0 CSn---I2C0 SCL---UART0 RX----|   | |
+#       | | | |                20-| o ◯       ◯ o |-21----GP16-----ISP0 RX----I2C0 SDA---UART0 TX----)-| | |
+#       | | | |                    -----------------                                                   | | | |
+#       | | | |----------------------------------------------------------------------------------------| | | |
+#       | | |--------------------------------------------------------------------------------------------| | |
+#       | |------------------------------------------------------------------------------------------------| |
+#       |----------------------------------------------------------------------------------------------------|
+#
 
 # #
 # import libraries for use in this programme
 # small form factor removable storage media, for SD Card, and also for MMC and eMMC
-from machine import Pin, RTC, SPI, Timer
-#import sdcard
-from sdcard import SDCard # sdcard.SDCard,
+from machine import I2C, Pin, RTC, SPI, Timer
+#import device
+from sdcard import SDCard # sdcard.SDCard, device
+import snr_bme280_dvr as BME280 # Sensor temperature/humidity/pressure, device,
+# import helpers
 from time import sleep
 import os # <todo: use 'os' instead of 'uos'? documentation for MicroPython is not clear, >
 import gc # garbage collection, to free up RAM space
@@ -364,6 +414,15 @@ spi_cs_pin = Pin(13, Pin.OUT)   # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS  
 #print(f'cs_pin: {cs_pin}'.format(cs_pin) ) # debug
 
 # #
+# I2C bus
+# define values; clock pin, serial data pin, clock frequency
+i2c_bus = 1
+i2c_scl_pin = Pin(19) # GP19, I2C1 scl
+i2c_sda_pin = Pin(18) # GP18, I2C1 sda
+#clock_freq = 400_000 # 400kHz
+i2c_clock_freq = 1000 # 1kHz
+
+# #
 # SD Card file 
 # 
 # create a path for os.mount to use
@@ -371,17 +430,9 @@ spi_cs_pin = Pin(13, Pin.OUT)   # GP13, CSn,  pin 17 | POL 10, CS (Chip S), SS  
 sd_os_path = '/sd'
 #print(f'sd_mount_path: {sd_mount_path}'.format(sd_mount_path) ) # debug
 
-file_name = 'pico-cpu-temp-log.txt'
+file_name = 'bme280-thp-log.txt'
 file_path = sd_os_path + '/' + file_name
 #print(f'file path: {file_path}'.format(file_path)) # debug
-
-# #
-# device, PICO internal temperature sensor
-#
-pico_core_temp = machine.ADC(machine.ADC.CORE_TEMP)
-
-# conversion parameter, max voltage (3.3) times (*) the max value analogue input reading can be (65535)
-conversion_factor =  3.3 / (65535)
 
 # #
 # create a Real Time Clock instance, to use to get the current date and time
@@ -455,6 +506,27 @@ def os_mount_sd_card(sdc, path):
 os_mount_sd_card(micro_sd_card, sd_os_path)
 
 # #
+# Initialise I2C communication
+# <todo: consider, return None at except, also for spi, >
+def i2c_inst(bus, scl, sda, freq):
+
+    try:
+        # 
+        sensor_i2c = I2C(1, scl=i2c_scl_pin, sda=sda_pin, freq=clock_freq) # 
+        print(f'sd_card_spi: {sensor_i2c}'.format(sensor_i2c) ) # debug
+        return sensor_i2c
+        
+    except Exception as e:
+        print(f'SPI, initialisation exception: {e}'.format(e) )
+
+# create an I2C instance to communicate with the sensor
+sensor_i2c = i2c_inst(i2c_bus,
+                      i2c_scl_pin,
+                      i2c_sda_pin,
+                      i2c_clock_freq)
+#print(f'sd_card_spi: {sensor_i2c}'.format(sensor_i2c) ) # debug
+
+# #
 # list the current directory structure at the path name provided
 #
 def list_directory_structure(path):
@@ -506,31 +578,45 @@ def log_pico_cpu_temp(timer):
         
         # check_file_size(path) # debug
         
-        # read data as raw value from temperature sensor
-        raw_reading = pico_core_temp.read_u16()
-        
         # #
         # get the date and time, from the Real Time Clock instance
         dt_tm = rtc.datetime() # get the current date and time
         
-        # convert raw reading from alanog to digital value, also decimal value
-        converted_raw_reading = raw_reading * conversion_factor
+        # #
+        # Initialise BME280 sensor
+        bme = BME280.BME280(i2c=sensor_i2c)
+        #print('bme initialised: {}'.format(bme)) # debug
         
-        # temperature as centigrade
-        temperature = 27 - (converted_raw_reading - 0.706) / 0.001721
+        # #
+        # Read sensor data
+        tempC = bme.temperature
+        #print('bme.temperature(): {}'.format(tempC)) # debug
+        hum = bme.humidity
+        #print('bme.humidity(): {}'.format(hum)) # debug
+        pres = bme.pressure
+        #print('bme.humidity(): {}'.format(pres)) # debug
+        
+        # #
+        # Convert temperature to fahrenheit
+        tempF = (bme.read_temperature()/100) * (9/5) + 32
+        tempF = str(round(tempF, 2)) + 'F'
+        #print('tempF: {}'.format(tempF)) # debug
+        
+        # #
+        # Print sensor readings to consol/shell
+        #print('Temperature: ', tempC) # debug
+        #print('Temperature: ', tempF) # debug
+        #print('Humidity: ', hum) # debug
+        #print('Pressure: ', pres) # debug
         
         # write the temperature value to file
         # <todo: write to file, but only to sdc not to PICO flash, so dependency of sdc code, noted 23/06/2025 >
         # crUd
         # update/write to the new file on the sd card, append does not truncate the file
         with open (path, 'a') as log_file:
-            log_file.write(str(temperature) + ', ' + str(dt_tm) + ', ' + '\n')
-            print(f'temperature: {str(temperature)}, at date & time: {str(dt_tm)}'.format(temperature, dt_tm)) # debug, temperature, date and time
+            log_file.write(str(tempC) + ', ' + str(tempF) + ', ' + str(hum) + ', ' + str(pres) + ', ' + str(dt_tm) + ', ' + '\n')
+            print(f'temperature C: {str(tempC)}, temperature F: {str(tempF)}, humidity: {str(hum)}, pressure: {str(pres)}, at date & time: {str(dt_tm)}'.format(tempC, tempF, hum, pres, dt_tm)) # debug, temperature, date and time
             
-            # print('PICO CPU temperature: sucessfully logged.') # debug, info
-            # print the values to the console / shell
-            # print(f"PICO CPU temperature: {temperature}, converted raw reading: {converted_raw_reading}, raw reading: {raw_reading} . "
-            #      .format(temperature, converted_raw_reading, raw_reading)) # debug
     
     except Exception as e:
         print(f'file io, exception: {e}'.format(e) )
