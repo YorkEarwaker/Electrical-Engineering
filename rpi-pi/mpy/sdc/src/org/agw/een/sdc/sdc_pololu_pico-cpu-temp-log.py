@@ -20,10 +20,14 @@
 # https://docs.micropython.org/en/latest/library/machine.SPI.html # class
 #
 # machine module SDCard class – secure digital memory card
-# https://docs.micropython.org/en/latest/library/machine.SDCard.html
+# https://docs.micropython.org/en/latest/library/machine.SDCard.html #class
 #
-# machine module Timer
-# https://docs.micropython.org/en/latest/library/machine.Timer.html
+# machine module Timer class 
+# https://docs.micropython.org/en/latest/library/machine.Timer.html #class
+# https://docs.micropython.org/en/latest/rp2/quickref.html#timers # RP2, 
+#
+# Garbage Collection gc.
+# https://docs.micropython.org/en/latest/library/gc.html#gc.threshold
 #
 # vfs – virtual filesystem control
 # https://docs.micropython.org/en/latest/library/vfs.html
@@ -311,6 +315,11 @@ from machine import Pin, RTC, SPI, Timer
 from sdcard import SDCard # sdcard.SDCard,
 from time import sleep
 import os # <todo: use 'os' instead of 'uos'? documentation for MicroPython is not clear, >
+import gc # garbage collection, to free up RAM space
+
+# #
+# Enable automatic garbage collection
+gc.enable()
 
 # #
 # Parameters common to all ports
@@ -479,7 +488,7 @@ list_directory_structure(sd_os_path) # debug
 def log_pico_cpu_temp(timer):
     
     # don't like using global variables but for this case of machine.Timer have no other choice for now.
-    # <todo: consider, other options for time delayed operations, class callback as option, threading.Timer as option, others? >
+    # <todo: consider, other options for time delayed operations, class callback as option, threading.Timer as option,  micropython.schedule, others? >
     path = file_path 
     
     file_found = check_file_exists(path) 
@@ -516,7 +525,7 @@ def log_pico_cpu_temp(timer):
         # update/write to the new file on the sd card, append does not truncate the file
         with open (path, 'a') as log_file:
             log_file.write(str(temperature) + ', ' + str(dt_tm) + ', ' + '\n')
-            print(f'temperature: {str(temperature)}, at date & time: {str(dt_tm)}'.format(str(temperature), str(dt_tm)) # debug, temperature, date and time
+            print(f'temperature: {str(temperature)}, at date & time: {str(dt_tm)}'.format(temperature, dt_tm)) # debug, temperature, date and time
             
             # print('PICO CPU temperature: sucessfully logged.') # debug, info
             # print the values to the console / shell
@@ -525,11 +534,15 @@ def log_pico_cpu_temp(timer):
     
     except Exception as e:
         print(f'file io, exception: {e}'.format(e) )
-            
-    # check_file_exists(path) # debug, returns True
-    # check_file_size(path) # debug, 
-    # delete_file(path)
     
+    # memory allocated, RAM, 
+    # print(f'before memeory collect,  {gc.mem_alloc()} ' ) # debug
+    gc.collect()
+    # memory allocated, RAM, 
+    # print(f'after memeory collect,  {gc.mem_alloc()} ' ) # debug
+    # check_file_exists(path) # debug, returns True
+    # check_file_size(path) # debug,
+
 # #
 # Delete a file 
 # 
@@ -540,7 +553,7 @@ def delete_file(path):
         os.remove(path)
         file_found = check_file_exists(path) # debug
         if (not file_found): # debug
-            print(f'file deleted os.remove: {not file_found}'.format(not file_found) ) # debug
+            print(f'file deleted os.remove: not {file_found}'.format(file_found) ) # debug
         
     except Exception as e:
         print(f'file delete os.remove, exception: {e}'.format(e) )
@@ -607,11 +620,20 @@ def read_file(path):
 # log the rpi pico internal cpu temperature
 log_pico_cpu_temp(None)
 
+# create a timer which is called every period=<some-integer-as-millisconds/microseconds>
+# for example period=15000 is every fifteen seconds.
+# global microsecond timebase,
+# 15000 = 15 seconds
+# 60000 = 1 minute
+# 3600000 = 1 hour
+# 10800000 = 3 hours
 # <todo: consider, refactor this or call from elewhere, >
-timer_pico_cpu_temp_log = Timer(period=15000, mode=Timer.PERIODIC, callback=log_pico_cpu_temp)
+timer_pico_cpu_temp_log = Timer(period=60000, mode=Timer.PERIODIC, callback=log_pico_cpu_temp)
 
 # Idle programe between readings
+# In REPL mode keyboard interupt is always set to Ctrl-C. confrim appears to be the case.
 # <todo: consider, refactor this into a def function, >
+# <todo: consider, micropython.kbd_intr() as specific key 'q', any key as keyboard interupt does not seem to work well in RPi >
 try:
     
     while True:
@@ -619,7 +641,8 @@ try:
         sleep(0.1)
     
 except KeyboardInterrupt:
-    timer_pico_cpu_temp_log.deinit() # garbage collection
+    timer_pico_cpu_temp_log.deinit() # Timer.deinit(), garbage collection
+    sd_card_spi.deinit() # SPI.deinit(), garbage collection
     check_file_exists(file_path) # debug, returns True
     check_file_size(file_path) # debug,
     read_file(file_path) # debug
