@@ -27,7 +27,7 @@ TODO
 * <todo: consider, allocation unit size aka cluster size for MVP data logger, which unit size/cluster size would be best? how large will data logs get for time series data between transfer eleswhere via wifi or other network option, will other file tpyes be used in in mixed use case for data logger sd card, or should it only be restricted to data logging use case, >
 * <todo: cconsider, can a database to be used by RPi Pico be installed on and run from SD Carad? SQLlite or similar? >
 * <todo: consider, retrieve file from sd card, file transfer via wifi, push and pull varients>
-*<todo: consider, Thonny, Tools, Manage packages, Manage packages for Raspberry Pi Pico @ COMS, create a package for BME280 driver, Install from local file Click here to locate and install the package file (usually with .whl, .tar.gz or .zip extension). Under the hood This dialog uses `pipkin`, a new command line tool for managing MicroPython and CircuitPython packages. See https://pypi.org/project/pipkin/ for more info. Note this Tools menu item is only available after running a python script, >
+*<todo: consider, Thonny, Tools, Manage packages, Manage packages for Raspberry Pi Pico @ COMS, create a package for BME280 driver, Install from local file Click here to locate and install the package file (usually with .whl, .tar.gz or .zip extension). Under the hood This dialog uses `pipkin`, a new command line tool for managing MicroPython and CircuitPython packages. See https://pypi.org/project/pipkin/ for more info. Note! this Tools menu item is only available after running a python script, >
 
 DONE
 * <done: consider, SD Card extension for RPi Pico, breakout board/shield/hat, candidate for first project roll your own PCB? perf board? intial two cadidates; Pololu Breakout Board for MicroSD Cards, Adafruit Micro SD SPI or SDIO Card Breakout Board, >
@@ -231,7 +231,11 @@ SD Card 'reader' boards - assessment, evaluation, , for use with system/device v
 ## Disk Management
 SD Card formatting and partitioning
 
-Raspberry Pi Imager ? <todo: consider, investigate further>
+mS Windows FAT formatting
+* <todo: sources> This is the option used for the micro SD Card in this project
+
+Raspberry Pi Imager ? 
+* <todo: consider, investigate further, only for RPi SBC not microbontrollers? Rasbian dependency? >
 
 SD Association - sdc format FAT32 and other file system kinds, what are the downsides using the SD Association 'official' formatter? - software product
 * SD Card Formatter, FAQs [WS](https://www.sdcard.org/downloads/formatter/faq/), SD Association, 
@@ -299,10 +303,4 @@ News Papers - sd card drivers, read/write, blockwrite, sdcard.py
 
 News Papers - machine.Timer, python, micropython
 * callback from a timer ?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=363587), Raspberry Pi Forums, 
-
-News Papers - 
-* Run Script From Another Directory in Python, [WS](https://codeigo.com/python/run-script-from-another-directory/), Codegio, 
-
-News Papers - markup, code block
-*  Fenced Code Blocks [WS]{https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
 
