@@ -557,7 +557,7 @@ list_directory_structure(sd_os_path) # debug
 #
 # is used with machine.Timer can only use one argument which must be the timer.
 # 
-def log_pico_cpu_temp(timer):
+def log_bme280_thp_readings(timer):
     
     # don't like using global variables but for this case of machine.Timer have no other choice for now.
     # <todo: consider, other options for time delayed operations, class callback as option, threading.Timer as option,  micropython.schedule, others? >
@@ -665,7 +665,7 @@ def check_file_exists(path):
         file_found = False
         print(f'file access, exception: {e}'.format(e) )
 
-    print(f'file exists: {file_found}'.format(file_found) )
+    print(f'file exists: {file_found}'.format(file_found) ) # debug
     return file_found
 
 # #
@@ -704,7 +704,7 @@ def read_file(path):
 
 # log initial first reading
 # log the rpi pico internal cpu temperature
-log_pico_cpu_temp(None)
+log_bme280_thp_readings(None)
 
 # create a timer which is called every period=<some-integer-as-millisconds/microseconds>
 # for example period=15000 is every fifteen seconds.
@@ -714,7 +714,7 @@ log_pico_cpu_temp(None)
 # 3600000 = 1 hour
 # 10800000 = 3 hours
 # <todo: consider, refactor this or call from elewhere, >
-timer_bme280_thp_log = Timer(period=60000, mode=Timer.PERIODIC, callback=log_pico_cpu_temp)
+timer_bme280_thp_log = Timer(period=60000, mode=Timer.PERIODIC, callback=log_bme280_thp_readings)
 
 # Idle programe between readings
 # In REPL mode keyboard interupt is always set to Ctrl-C. confrim appears to be the case.
@@ -727,7 +727,7 @@ try:
         sleep(0.1)
     
 except KeyboardInterrupt:
-    timer_pico_cpu_temp_log.deinit() # Timer.deinit(), garbage collection
+    timer_bme280_thp_log.deinit() # Timer.deinit(), garbage collection
     sd_card_spi.deinit() # SPI.deinit(), garbage collection
     check_file_exists(file_path) # debug, returns True
     check_file_size(file_path) # debug,
@@ -739,6 +739,7 @@ except KeyboardInterrupt:
 # #
 # sucsess
 #
+# Not run, untested, 
 
 
 
