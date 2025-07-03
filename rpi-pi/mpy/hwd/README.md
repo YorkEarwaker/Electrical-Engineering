@@ -8,19 +8,41 @@ First steps in electeical engineering. First steps in MicroPython.
 
 TODO
 * <todo: consider, basic programming techniques in MicroPython, loops, text, numbers, >
-* <todo: consider, standard python distribution format, package, use with pipkin for Thonny IDE, from local host, >
+* <todo: consider, create distribution package and use with pipkin for Thonny IDE, from local host, >
 
 DONE
 * <done: consider, flash RPi Pico with MicroPython>
 * <done: consider, write MicroPython code to execute on RPi Pico >
 * <done: consider, first circuit in boradboard with RPi Pico >
+* <done: consider, standard python distribution format, create example package, >
+
+## Output
+
+### Make a distribution package for a python project
+At the end of the process some of the output to shell
+
+```
+<comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
+
+adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/licenses/LICENSE'
+adding 'org/agw/een/hwd/__init__.py'
+adding 'org/agw/een/hwd/hello_world.py'
+adding 'org/agw/een/hwd/light_pico_onboard_led.py'
+adding 'org/agw/een/hwd/simple_led_example.py'
+adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/METADATA'
+adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/WHEEL'
+adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/top_level.txt'
+adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built hwd_example_package_citizen_developer-0.0.1.tar.gz and hwd_example_package_citizen_developer-0.0.1-py3-none-any.whl
+```
 
 ## Lib
 
 ### Build Frontend
 Package Manager - python package manager, not linux system package manager
 
-* Build, [WS](https://packaging.python.org/en/latest/key_projects/#build), 
+* Build, [WS](https://packaging.python.org/en/latest/key_projects/#build), not a package manager a build system, <todo: to be recategorized >
 * Pip, 
 * Pipkin, [WS](https://pypi.org/project/pipkin/), Thonny IDE uses this under the hood, to create local packages for RPi Pico MicroPython env, e.g. BYO drivers for periferal devices, sensors, screens,  
 * Python Packaging User Guide, [WS](https://packaging.python.org/en/latest/), 
