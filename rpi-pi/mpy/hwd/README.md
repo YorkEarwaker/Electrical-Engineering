@@ -20,7 +20,7 @@ DONE
 ### Build Frontend
 Package Manager - python package manager, not linux system package manager
 
-* Build, 
+* Build, [WS](https://packaging.python.org/en/latest/key_projects/#build), 
 * Pip, 
 * Pipkin, [WS](https://pypi.org/project/pipkin/), Thonny IDE uses this under the hood, to create local packages for RPi Pico MicroPython env, e.g. BYO drivers for periferal devices, sensors, screens,  
 * Python Packaging User Guide, [WS](https://packaging.python.org/en/latest/), 
@@ -38,15 +38,22 @@ Package Manager - python package manager, not linux system package manager
 
 ## Notes
 
-Create a project specific Python environment instance
+### Make a distribution package for a python project
+
+Create a project specific Python environment instance - to contain for example project dependencies and build specific requirements
 * python -m venv venv , Windows
 * venv\Scripts\activate , Windows
 * source venv/bin/activate , Unix/MacOS
-* 
+* ...<do some stuff in the new python project env, >
+* deactivate
 
 Get the latest version of pip
-* python3 -m pip install --upgrade build , Unix/MacOS
+* python3 -m pip install --upgrade pip , Unix/MacOS
 * py -m pip install --upgrade pip , Windows
+
+Get the latest verion of build
+* python3 -m pip install --upgrade build , Unix/macOS
+* py -m pip install --upgrade build , Windows
 
 Commnad line to generate build - from dircectory that contains the pyproject.toml file
 * python3 -m build , Unix/MacOS
