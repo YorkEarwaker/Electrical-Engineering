@@ -1,0 +1,42 @@
+[project]
+name = "hwd_example_package_Citizen_Developer"
+version = "0.0.1"
+authors = [
+	{ name="Citizen Developoer", email="citizen-developer@agw.org" },
+]
+description = "A small hello world example package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operation system :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/agw/sampleproject"
+Issues = "https://github.com/agw/sampleproject/issues"
+
+# #
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata
+# 
+#[project]
+#name = "example_package_YOUR_USERNAME_HERE"
+#version = "0.0.1"
+#authors = [
+#	{ name="Example Author", email="author@example.com" },
+#]
+#description = "A small example package"
+#readme = "README.md"
+#requires-python = ">=3.9"
+#classifiers = [
+#	"Programming Language :: Python :: 3",
+#	"Operation system :: OS Independent",
+#]
+#license = "MIT"
+#license-files = ["LICEN[CS]E*"]
+#
+#[project.urls]
+#Homepage = "https://github.com/pypa/sampleproject"
+#Issues = "https://github.com/pypa/sampleproject/issues"
