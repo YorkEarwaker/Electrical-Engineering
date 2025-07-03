@@ -87,7 +87,7 @@ News Papers - execution of code from another package, path, directory
 * How to execute a python script in a different directory?, [WS](https://stackoverflow.com/questions/45384429/how-to-execute-a-python-script-in-a-different-directory), StackOverflow, 
 
 News Papers - markup, code block
-*  Fenced Code Blocks [WS]{https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
+*  Fenced Code Blocks [WS](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
 
 
 
