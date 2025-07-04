@@ -1,315 +1,180 @@
-## Secure Digital Card sdc (mpy)
+# Time series data tsd (mpy)
 
-RPi Pico SD Card SPI interface, memory extension for RPi Pico to extend life of Pico flash memory. Memory extention kinds inclusive of but not limited to; SD, MMC, eMMC . Other projects to deal with concern of memory extention via usb stick a similar use case, and vau external harddisk module, cloud, and so on. 
+MicroPython for sensor snr for time series data tsd for numerical weather prediction nwp, 
 
-Format as FAT32 for SPI and MicroPython. 
+For consumption by climate models for example,
 
-Use Cases
-* Primary use case 
-	* for data logging time series data. in relation to Climate Model \amn project 
-* Secondary use cases include;
-	* to hold configuration files so as not to have to change code excuting on Rpi Pico
-	* to hold static file like html files ...
+## Goals & Objectives
+
+* Complete sensor reading PoC for open source weather station OSWS project, time series data collection, part of autonomous meteorological network \amn subproject in Climate Model repository
 
 ## Status
 
 TODO
-* <todo: consider, SDIO support rpi pico, not yet part of official SDK as of 06/05/2025? investigate prototype library that includes 1 and 4 bit SDIO support using PIO, up to 4 data pins at once,  SD Card use case, other use cases?, >
-* <todo: consider, I2C support RPi Pico, libraries to source, 3rd party projects to identify, >
-* <todo: consider, determine if Pololu device can be wired to Pico for dual use, SPI and SDIO, using same pinout but different mpy code pin allocation? Pololu device has eleven (11) pins >
-* <todo: consider, level shifters and voltage dividers, for devices/system integration with logic level signals above V3.3, further research required, components tobe identified, this should probably be part of a seperate PoC of mixed voltage systems integration, >
-* <todo: consider, moving adc_thing.py files to a different sub project? or keep here due to ADC.CORE_TEMP datalogging example? perhaps seperate analogue to digital converter ADC direcory, >
-* <todo: consider, bottom out licencing requirement for SDIO interface - dito for SDMMC protocols are they the same thing as SDIO - for SD Card modules, is there a fair use dev free to use licence opt out? >
-* <todo: consider, is it possible to boot from an SD Card with Raspberry Pi Pico? >
-* <todo: consider, differences of SD Card formatting for use cases;  SD Card for Raspbian OS (FAT32 and EXT4?) for RPi IV/V/B/Zero/..., SD Card for data logger (FAT32) for RPi Pico, other use case? >
-* <todo: consider, is the SD Card required to be a formatted as a single partition for SD Card logging and Raspberry Pi Pico? >
-* <todo: consider, for data logging on SD Card with Raspberry Pi Pico SD Card cannot be larger than 32Gig due to FAT32 or other SD Card formatting restrictions? >
-* <todo: consider, allocation unit size aka cluster size for MVP data logger, which unit size/cluster size would be best? how large will data logs get for time series data between transfer eleswhere via wifi or other network option, will other file tpyes be used in in mixed use case for data logger sd card, or should it only be restricted to data logging use case, >
-* <todo: cconsider, can a database to be used by RPi Pico be installed on and run from SD Carad? SQLlite or similar? >
-* <todo: consider, retrieve file from sd card, file transfer via wifi, push and pull varients>
+* <todo: consider, __init__ , best practice for BME280 dirver module, put drivers in a spearate package? >
+* <todo: consider, SPI interface, mpy code for BME280 , >
+* <todo: consider, DS18B20 Temperature Sensor,  >
+* <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
+* <todo: consider, Bosch sensor catalogue for concerns things other than environmental, >
+* <todo: consider, gas sensors, sampling of atmospheric gases, outside in 'nature' and inside in confied spaces, differenct use cases, which is frist case CO2? others? 
+* <todo: consider, indoor, room ventilation, BME688 air quality sensor, volatile organic compounds (VOCs), volatile sulfur compounds (VSCs), presence of carbon monoxide and hydrogen, in addition to temperature, pressure and humidity, >
+* <todo: consider, Nondispersive infrared sensor, H2), C02, SO2, NO2, expensive, a useful prospective project too for RYO PCB? >
+* <todo: consider, issue with build, snr_bme280_dvr not working in /sdc project, Exists when called with error reported as '[Errno 5] EIO' , not an SPI nicro SD Card issue as tested with other code, >
 
 DONE
-* <done: consider, SD Card extension for RPi Pico, breakout board/shield/hat, candidate for first project roll your own PCB? perf board? intial two cadidates; Pololu Breakout Board for MicroSD Cards, Adafruit Micro SD SPI or SDIO Card Breakout Board, >
-* <done: consider, SD Card storage project to increase total storage above onboard 2MB RPi Pico flash storage, MicroPython taking up to 600kB storage and available storage reduced to 1448kB, limiting ~20k flash writes/delete cycles lifetime, falsh is not replacable, SD Card extension is replaceable component, Weather station project \amn might benefit from this solution central data storage hub 'mother' Pico and spoke 'children' Pico's sensor control data logging to data hub 'mother' SD Card, good use of componentisation, loose coupling, high cohesion, . spoke 'child' low spec Pico or even lower spec MCU?  >
-* <done: consider, MicroPython library support for, SD Cards, eMMC cards, SD vs eMMC,  sdcard.py mpy driver for SD Cards, FAT32 formatted best option for pico? >
-* <done: consider, extension cable, for micro SD Card, improve life of sd card, ability to move sd card between sd card breakout boaords, ability to use sd card in RPi 5 or laptop, >
-* <done: consider, micro SD card 'pin out' map to SPI>
-* <done: consider, micro SD card 'pin out' map to SD interface >
-* <done: consider, candidate wiring for breadboard for Pololu SD Card reader, breadboard wired using Pojo>
-* <done: consider, does SPI require FAT32, SPI used for SD Card interface with Raspberry Pi Pico, Pico does not support SDMMC natively so SPI id only option as of 25/06/2025, third party SDMMC drivers are avialble, MicroPython supports FAT32, SPI with MicroPython, yes FAT32 required for this used case >
-* <done: consider, quick format FAT32, volume lable 'Pico_Data', 32k allocation unit size, windows 10 mounts card and formats it, Rpi Pico & Thonny IDE  & sdcard.py still exception thrown 'no SD card'.  >
-* <done: consider, full format FAT32, volume lable 'Pico_Data', 32k allocation unit size, windows 10 mounts card and formats it, Rpi Pico & Thonny IDE  & sdcard.py still exception thrown 'no SD card'.  >
-* <done: consider, wiring on breadboard, success! There was a wiring issue, now resolved, proves Pongo pin clamp works, implies must test current setup without first formating SD Card to FAT32, >
-* <done: consider, Thonny, Tools, Manage packages, Manage packages for Raspberry Pi Pico @ COMS, create a package for BME280 driver, Install from local file Click here to locate and install the package file (usually with .whl, .tar.gz or .zip extension). Under the hood This dialog uses `pipkin`, a new command line tool for managing MicroPython and CircuitPython packages. See https://pypi.org/project/pipkin/ for more info. Note! this Tools menu item is only available after Stop/Restart (RPi Pico) backend, done for /snr-tsd project for import of bme280 driver into this project, how to do so steps in /hwd project, >
+* <done: intent to commit>
+* <done: consider, temperature humidity readings, DHT22 PoC >
+* <done: consider, RPi Pico, 12C1 bus is prefered over I2C0 internal bus. BME280 PoC, >
+* <done: consider, RPi PIco, I2C preferred?/default? over SPI, BM280 PoC, it is easier so most common approach taken >
+* <done: consider, can wiring be completed such that a switch / toggle can be made between I2C1 and SPI1? , can this be achieve with Pico? look to pinout,. Likely yes using the default SPI0 GPIO pins G16 G17 G18 G19 physical pins 21 22 24 25, 24 & 25 also acting as SDA and SCL for I2C1 >
+* <done: consider, complete circuit diagram, for BME280, but likely won't work for both SPI and I2C >
+* <done: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC, success with I2C interface,  >
+* <done: consider, ```__init__.py``` not curretly used, is it necessary for the current state? yes it must be fixed to allow BME280 driver module be imported, goes to current ignorance of best use for ```__init__.py``` and what code must be downloaded to RPi Pico and what can remain remote, so MicroPython and RPi Pico ecosystem knowledge gap, may require revisiting, currently used empty, >
+* ...
 
 ## Readings
 
-### Rotating Potentiometer, voltage divider, 0V to 3.3V
-Potential sample test data to log, in datalogger
-
+### DHT22
 ```
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
 
- voltage: 3.3, raw: 65535 . 
- voltage: 3.3, raw: 65535 . 
- voltage: 2.881753, raw: 57229 . 
- voltage: 2.524788, raw: 50140 . 
- voltage: 2.03398, raw: 40393 . 
- voltage: 1.512607, raw: 30039 . 
- voltage: 0.9146441, raw: 18164 . 
- voltage: 0.5205676, raw: 10338 . 
- voltage: 0.02658732, raw: 528 . 
- voltage: 0.004028382, raw: 80 . 
- voltage: 0.004834058, raw: 96 . 
- voltage: 0.004834058, raw: 96 . 
- voltage: 0.004028382, raw: 80 . 
- voltage: 0.004834058, raw: 96 . 
+current date & time: (2025, 4, 25, 4, 12, 7, 25, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.5 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 30, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.6 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 35, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.6 %RH
+current date & time: (2025, 4, 25, 4, 12, 7, 41, 0)
+Temperature: 19.3 °C
+Temperature: 66.74001 °F
+Humidity: 52.5 %RH
 ```
 
-### RPi Pico internal core temperature - no heat added to CPU
-Potential sample test data to log, in datalogger
-
-```
->>> %Run -c $EDITOR_CONTENT
-
-MPY: soft reboot
-
-PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
-PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
-PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
-PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
-PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
-PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
-PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
-PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
-PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
-PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
-PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
-```
-
-### RPi Pico internal core temperature - heat added to CPU, tip of finger placed on top of CPU
-Potential sample test data to log, in datalogger
-
+### BME280
 ```
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
 
-PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
-PICO CPU temperature: 23.76739, converted raw reading: 0.7115633, raw reading: 14131 . 
-PICO CPU temperature: 23.29925, converted raw reading: 0.712369, raw reading: 14147 . 
-PICO CPU temperature: 22.8311, converted raw reading: 0.7131746, raw reading: 14163 . 
-PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
-PICO CPU temperature: 24.23554, converted raw reading: 0.7107576, raw reading: 14115 . 
-PICO CPU temperature: 27.0444, converted raw reading: 0.7059236, raw reading: 14019 . 
-PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
-PICO CPU temperature: 24.23554, converted raw reading: 0.7107576, raw reading: 14115 . 
-PICO CPU temperature: 24.70368, converted raw reading: 0.7099519, raw reading: 14099 . 
-PICO CPU temperature: 26.57626, converted raw reading: 0.7067292, raw reading: 14035 .
+current date & time: (2025, 5, 2, 4, 14, 3, 49, 0)
+Temperature:  21.29C
+Temperature:  70.29F
+Humidity:  50.-5196821%
+Pressure:  1016.33hPa
+current date & time: (2025, 5, 2, 4, 14, 3, 55, 0)
+Temperature:  21.29C
+Temperature:  70.3F
+Humidity:  50.-5198019%
+Pressure:  1016.30hPa
+current date & time: (2025, 5, 2, 4, 14, 4, 0, 0)
+Temperature:  21.29C
+Temperature:  70.3F
+Humidity:  50.-5196821%
+Pressure:  1016.30hPa
+current date & time: (2025, 5, 2, 4, 14, 4, 6, 0)
+Temperature:  21.29C
+Temperature:  70.3F
+Humidity:  50.-5196821%
+Pressure:  1016.36hPa
 ```
 
-### RPi Pico recognises SD Card
+## Output
 
-
+### Make a distribution package for a python project
+At the end of the process some of the output to shell
+<todo; defect fix, generates an ImportError: no module named >
 ```
->>> %Run -c $EDITOR_CONTENT
+<comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
 
-MPY: soft reboot
-
-sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
-micro sd card: <SDCard object at 20010940>
-os mount point: None>>> %Run -c $EDITOR_CONTENT
+adding 'org/__init__.py'
+adding 'org/agw/__init__.py'
+adding 'org/agw/een/__init__.py'
+adding 'org/agw/een/snr/__init__.py'
+adding 'org/agw/een/snr/snr_bme280_dvr.py'
+adding 'org/agw/een/snr/snr_bme280_tsd.py'
+adding 'org/agw/een/snr/snr_dht22_tsd.py'
+adding 'time_series_data_org_agw_snr-0.0.1.dist-info/licenses/LICENSE'
+adding 'time_series_data_org_agw_snr-0.0.1.dist-info/METADATA'
+adding 'time_series_data_org_agw_snr-0.0.1.dist-info/WHEEL'
+adding 'time_series_data_org_agw_snr-0.0.1.dist-info/top_level.txt'
+adding 'time_series_data_org_agw_snr-0.0.1.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built time_series_data_org_agw_snr-0.0.1.tar.gz and time_series_data_org_agw_snr-0.0.1-py3-none-any.whl
 ```
-
-### Rpi Pico file io to SD Card
-<todo: consider adding more verbose explanitory output, >
-
-```
->>> %Run -c $EDITOR_CONTENT
-
-MPY: soft reboot
-sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
-micro sd card: <SDCard object at 20010c20>
-sys vol info: ['System Volume Information']
-file access, exception: [Errno 2] ENOENT
-file exists: False
-file: new created, <io.TextIOWrapper 20011800>
-file size: 0 unicode chars
-file content: first line
-second line
-
-file content: first line
-second line
-third line
-
-file content: 1st line
-2nd line
-3rd line
-
-file exists: True
-file size: 27 unicode chars
-file access, exception: [Errno 2] ENOENT
-file exists: False
-file deleted os.remove: True
-sys vol info: ['System Volume Information']
-```
-
-### Rpi Pico CPU internal temperature reading to file io to SD Card
-
-```
->>> %Run -c $EDITOR_CONTENT
-
-MPY: soft reboot
-sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
-micro sd card: <SDCard object at 20010cd0>
-sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt']
-file exists: True
-temperature: 29.85327, at date & time: (2025, 6, 30, 0, 10, 10, 34, 0)
-
-file exists: True
-file size: 818 unicode chars
-file content: 30.32141, (2025, 6, 27, 4, 17, 43, 21, 0), 
-29.85327, (2025, 6, 27, 4, 17, 47, 46, 0), 
-30.32141, (2025, 6, 27, 4, 17, 48, 1, 0), 
-26.10811, (2025, 6, 30, 0, 9, 10, 14, 0), 
-27.51254, (2025, 6, 30, 0, 9, 19, 39, 0), 
-28.91698, (2025, 6, 30, 0, 9, 25, 33, 0), 
-30.32141, (2025, 6, 30, 0, 9, 25, 48, 0), 
-29.38512, (2025, 6, 30, 0, 9, 26, 3, 0), 
-30.32141, (2025, 6, 30, 0, 9, 26, 18, 0), 
-29.85327, (2025, 6, 30, 0, 9, 26, 33, 0), 
-30.32141, (2025, 6, 30, 0, 9, 26, 48, 0), 
-29.85327, (2025, 6, 30, 0, 9, 27, 3, 0), 
-29.85327, (2025, 6, 30, 0, 9, 27, 18, 0), 
-29.85327, (2025, 6, 30, 0, 9, 27, 21, 0), 
-29.85327, (2025, 6, 30, 0, 9, 27, 36, 0), 
-27.98069, (2025, 6, 30, 0, 9, 53, 55, 0), 
-30.78955, (2025, 6, 30, 0, 9, 55, 17, 0), 
-28.44883, (2025, 6, 30, 0, 10, 4, 57, 0), 
-29.85327, (2025, 6, 30, 0, 10, 10, 34, 0), 
-
-Logging interupt; keyboard
->>> 
-```
-
-## Libraries
-
-Standards
-* SD Association SDA, org [WS](https://www.sdcard.org/), SD Card org
-* SD Standard Overview, [WS](https://www.sdcard.org/developers/sd-standard-overview/), SD Card org, 
-* Simplified Specifications, [WS](https://www.sdcard.org/downloads/pls/), SD Card org
-* Secure Digital Card upto 2GB, SD Specifications, Part 1, Physical Layer, Simplified Specification, Version 2.00, 25 September 2006, [PDF](https://users.ece.utexas.edu/~valvano/EE345M/SD_Physical_Layer_Spec.pdf)
-* SDHC Secure Digital High Capacity upto 32GB
-* SDXC Secure Digital eXtended Capacity upto 2TB
-* SDUC Secure Digial Ultra Capacity upto 128TB
-
-Libs
-* SD, [WS](https://docs.arduino.cc/libraries/sd/), Arduino SD library, 
-* SD, CircuitPython
-* SD, [WS](https://os.mbed.com/cookbook/SD-Card-File-System), ARM, mbed, 
-* SD, [GH](https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/storage/sdcard), MicroPython, sdcard.py - evaluating this driver, 2025/06/25
-* SD, [GH](https://github.com/raspberrypi/pico-extras/tree/master/src/rp2_common/pico_sd_card), Raspbery Pi, C/C++. pico_sd_card
-* (e)MMC/SD card driver, 
-* SDIO, driver, 
-* FreeRTOS +FAT, the SD card driver, [GH](https://github.com/carlk3/FreeRTOS-FAT-CLI-for-RPi-Pico)
-
-## Hardware
-
-SD Card 'reader' boards - assessment, evaluation, RPi Pico 2 W, system/device voltage v3.3 
-* Adafruit Micro SD SPI or SDIO Card Breakout Board, The Pi Hut suppler [WS](https://thepihut.com/products/adafruit-micro-sd-spi-or-sdio-card-breakout-board-3v-only)
-* Pololu Breakout Board for MicroSD Cards, The Pi Hut suppler [WS](https://thepihut.com/products/pololu-breakout-board-for-microsd-cards), product [WS](https://www.pololu.com/product/2597), schematic [PDF](https://www.pololu.com/file/0J808/breakout-board-for-microsd-card-schematic.pdf), Not v3.3 shifted for use in v5 systems integration, 
-* <todo: others to assess>
-
-Level shifters, voltage dividers  - assessment, evaluation, , system/device voltage greater than V3.3, RPi Pico (also RPi 5?) operates at V3.3, SD Cards operate between V2.7 V3.6 ? 
-* Pololu Logic Level Shifter, 4-Channel, Bidirectional, product [WS](https://www.pololu.com/product/2595), schematic [PDF](https://www.pololu.com/file/0J752/ls01a-logic-level-shifter-schematic.pdf), This logic level converter requires two supply voltages: the lower-voltage logic supply (1.5 V to 7 V) connects to the LV pin and the higher-voltage supply (LV to 18 V) connects to the HV pin. The HV supply must be higher than the LV supply for proper operation. Is this required for use with RPi Pico? probably not but an interesting solution for other dibirectional voltage high/low low/high. If RPi Pico has to integrate with higher voltage device/systems
-
-SD Card 'reader' boards - assessment, evaluation, , for use with system/device voltage v5 +
-* Pololu Breakout Board for microSD Card with 3.3V Regulator and Level Shifters, product [WS](https://www.pololu.com/product/2587), schematic [PDF](https://www.pololu.com/file/0J873/breakout-board-for-micro-sd-card-with-regulator-and-level-shifters-schematic.pdf), direct integrated into 5 V systems
-
-## Disk Management
-SD Card formatting and partitioning
-
-mS Windows FAT formatting
-* <todo: sources> This is the option used for the micro SD Card in this project
-
-Raspberry Pi Imager ? 
-* <todo: consider, investigate further, only for RPi SBC not microbontrollers? Rasbian dependency? >
-
-SD Association - sdc format FAT32 and other file system kinds, what are the downsides using the SD Association 'official' formatter? - software product
-* SD Card Formatter, FAQs [WS](https://www.sdcard.org/downloads/formatter/faq/), SD Association, 
-* SD Card Formatter 5.0.3 for Windows/Mac User’s Manual, Version 1.11, December 13, 2024, [PDF](https://www.sdcard.org/pdf/SD_CardFormatterUserManualEN.pdf), SD Association, 
-
-DiskGenius - sdc format FAT32, might offer misleading advice re Raspberry Pi and Raspberry Pi Pico - software product
-* The 6 Best SD Card Format Tools to Format SD Cards in Windows 11/10, [WS](https://www.diskgenius.com/resource/sd-card-format-tools.html), Anne, 18 July 2020 last updated
-* How to Format EXT4/3/2 in Windows 10/8/7/XP?, [WS](https://www.diskgenius.com/how-to/format-ext4-windows.php) ???? does RPi Pico require Ext4? for micro SD Card useage?
 
 ## References
 
 Terms
-* SD Card, [WP](https://en.wikipedia.org/wiki/SD_card)
-* MMC , MultiMediaCard, precursor standard to SD Card, slower, less data,
-* eMMC, embedded?
-* Serial Periferal Interface SPI [WP](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
-* Secure Digital Input Output SDIO, [WP](https://en.wikipedia.org/wiki/SD_card#SDIO_cards)
+* Sensor [WP](https://en.wikipedia.org/wiki/Sensor), device for detecting change in environment, 
+* Conversion of scales of temperature, [WP](https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature)
+* Nondispersive infrared sensor [WP](https://en.wikipedia.org/wiki/Nondispersive_infrared_sensor), H20, CO2, SO2, NO2, 
 
-MicroPython
-* Machine, SD Card class, docs, [WS](https://docs.micropython.org/en/latest/library/machine.SDCard.html), 
-* sdcard, code, [GH](https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/storage/sdcard/sdcard.py), driver
-
-MicroPython Forum
-* Pico Mounting SD Card, [WS](https://forum.micropython.org/viewtopic.php?t=9700&start=20), MicroPython Forum (Archive), 
-* SD card file write, [WS](https://forum.micropython.org/viewtopic.php?t=3100), MicroPython Forum (Archive), 
-
-Raspberry Pi - github, error
-* Raspberry Pi Pico SD Card Errors #11483, [GH](https://github.com/micropython/micropython/issues/11483)
-* no SD card #627, [GH](https://github.com/micropython/micropython-lib/issues/627)
-* Raspberry Pi Pico SD Card Errors #656, [GH](https://github.com/micropython/micropython-lib/issues/656)
-* OSError: no SD card #871 [GH](https://github.com/micropython/micropython-lib/issues/871)
-
-Pimoroni
-* Pico Wireless - how to access SD card?, [WS](https://forums.pimoroni.com/t/pico-wireless-how-to-access-sd-card/17751/1)
-
-News Papers - External storage, i.e. SD Card memmory extension to RPi Pico 
-* Raspberry Pi Pico -- Micro SD Card Interface, [WS](https://www.instructables.com/Raspberry-Pi-Pico-Micro-SD-Card-Interface/), Autodesk, Instructables, 
-* Initializing an SD Card, [WS](http://www.rjhcoding.com/avrc-sd-interface-1.php), RJH coding . com
-* Raspberry Pi Pico (RP2040) SD Card Example with MicroPython and C/C++, [WS](https://www.digikey.com/en/maker/projects/raspberry-pi-pico-rp2040-sd-card-example-with-micropython-and-cc/e472c7f578734bfd96d437e68e670050), 2021-07-26, ShawnHymel, Maker . io,  
-* Connecting an SD Card to a Raspberry Pi Pico [WS](http://www.d3noob.org/2022/10/connecting-sd-card-to-raspberry-pi-pico.html), 30 October 2022
-* Raspberry Pi Pico: MicroSD Card Guide with Datalogging Example (MicroPython) [WS](https://randomnerdtutorials.com/raspberry-pi-pico-microsd-card-micropython/), random tutorials, 
-
-News Papers - SD Cards, forum, Raspberry Pi, 
-* SD card with a pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=344610), forums, Raspberry Pi, 
-* Use SDCard with MicroPython on Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=307275), forums, Raspberry Pi, 
-* Pico w/4-bit SDIO interface example?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=337143), forums, Raspberry Pi, 
+Documentation
+* MicroPython, docs [WS](https://docs.micropython.org/en/latest/index.html#), micropython org
+* MicroPython, docs, RP2, [WS](https://docs.micropython.org/en/latest/rp2/quickref.html), micropython org
+* MicroPython, docs, ESP32, dht, driver, [WS](https://docs.micropython.org/en/latest/esp32/quickref.html#dht-driver), micropython org
+* MicroPython, docs, ESP32, Temperature and humidity, [WS](https://docs.micropython.org/en/latest/esp8266/tutorial/dht.html), micropython org
+* MicroPython, ESP32, dht, driver, [WS](https://mpython.readthedocs.io/en/v2.2.1/library/micropython/dht.html), class library, readthedocs io, 
 * ...
 
-News Papers - os, path, file, micropython
-* How to Check if a File Exists in Python with isFile() and exists(), [WS](https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-python/), January 5, 2023, Dionysia Lemonaki
-* Implementing 'os.path.isfile()', [WS](https://forums.raspberrypi.com/viewtopic.php?t=321965), Raspberry Pi Forum, 
-
-News Papers - sdc format FAT32
-* Difference between quick format and slow format?, [WS](https://www.reddit.com/r/DataHoarder/comments/y58k35/difference_between_quick_format_and_slow_format/), Reddit, 
-* The SD Association has an official SD card formatter (sdcard .org), [WS](https://news.ycombinator.com/item?id=41445898), Hacker News, 
-* What is the standard file system that a SD card have to use before write Raspbian using dd command?, [WS](https://raspberrypi.stackexchange.com/questions/17110/what-is-the-standard-file-system-that-a-sd-card-have-to-use-before-write-raspbia), StackExchange, Raspberry Pi
-* What format should my SD card be? [duplicate], [WS](https://raspberrypi.stackexchange.com/questions/23281/what-format-should-my-sd-card-be), StackExchange, Raspberry Pi
-* Format SD Card from Console, [WS](https://forums.raspberrypi.com/viewtopic.php?t=329474), Raspberry Pi Forum, 
-* fat32 sd card, [WS](https://forums.raspberrypi.com/viewtopic.php?t=261901), Raspberry Pi Forum, 
-* Which Allocation Unit Size do I have to choose for my SDHC card?, [WS](https://superuser.com/questions/455098/which-allocation-unit-size-do-i-have-to-choose-for-my-sdhc-card), StackExchange, SuperUser
-* Block size & lots of small files, [WS](https://forums.raspberrypi.com/viewtopic.php?t=133349), Raspberry Pi Forum, 
-
-News Papers - sd card drivers, read/write, blockwrite, sdcard.py 
-* drivers: sdcard.py should support multiple block read/write #1801, [WS](https://github.com/micropython/micropython/issues/1801)
-
-News Papers - machine.Timer, python, micropython
-* callback from a timer ?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=363587), Raspberry Pi Forums, 
-
-News Papers - error codes
-* my raspberry pi pico oled display code is returning 'OSError: [Errno 5] EIO', [WS](https://raspberrypi.stackexchange.com/questions/140130/my-raspberry-pi-pico-oled-display-code-is-returning-oserror-errno-5-eio), StackExchange, Raspberry Pi,  
-* I2C, OSError: [Errno 5] EIO, [WS](https://forums.raspberrypi.com/viewtopic.php?t=318848&sid=fa43e17e60a704520b003d3947ed6da7), Raspberry Pi Forums, 
+Datasheet
+* BME280 sensor, datasheet, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf), from Bosch web server, Document revision 1.24, Document release date February 2024, Document number BST-BME280-DS001-24, Sales Part Number (SPN) 0 273 141 185, Bosch Sensortech [WS](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)
+* BME280 sensor, datasheet, [PDF](https://files.waveshare.com/upload/9/91/BME280_datasheet.pdf), from Waveshare file server, Document revision 1.0 Document release date November 11th, 2014 Document number BST-BME280-DS001-09 Technical reference code(s) 0 273 141 185, BME280 sensor, Waveshare, [WS](https://www.waveshare.com/wiki/BME280_Environmental_Sensor), wiki, with some spec stuff of interest and coding help
+* BME280 sensor, datasheet, [PDF](https://raw.githubusercontent.com/rm-hull/bme280/master/doc/tech-spec/BME280.pdf), from GitHub web server, Document revision 1.1 Document release date May 07th, 2015 Document number BST-BME280-DS001-10 Technical reference code(s) 0 273 141 185,, PyPi project [WS](https://pypi.org/project/RPi.bme280/) 
 
 
+Hardware - Bosch 
+* BME280 sensor, Waveshare, CN, (temperature, humidity, air pressure), [WS](https://thepihut.com/products/bme280-environmental-sensor), The Pi Hut, appears as though the BME280 chip is a clone manufactured in CN, under licence from Bosch, any delta from Bosch? 
+* Bosch Sensortec [WS](https://www.bosch-sensortec.com/), BME280, many others, DE, 
+* BME280 driver, Bosch [GH](https://github.com/boschsensortec/BME280_SensorAPI), C/C++
+* BME280 driver, PyPi [WS](https://pypi.org/project/RPi.bme280/), home [GH](https://github.com/rm-hull/bme280), Python, RPi.bme280 0.2.4, Richard Hull, linked Bosch datasheet similar to Waveshare, Document revision 1.1 Document release date May 07th, 2015 Document number BST-BME280-DS001-10 Technical reference code(s) 0 273 141 185, 12C four pin only, not Waveshare, 
+
+Hardware - Aosong
+* DHT22 sensor, Aosong (AM2302), CN, (temperature, humidity), [WS](https://thepihut.com/products/dht22-temperature-humidity-sensor-extras), The Pi Hut
 
 
+News Papers - DHT22/DHT11 with RPi Pico 
+* DHT11 sensor with Raspberry Pi Pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=372629), forums, raspberrypi
+* Interpreting response for DHT11 on PICO, [WS](https://forums.raspberrypi.com/viewtopic.php?t=339751), forums, raspberrypi, see breadboard *
+* Raspberry Pi Pico With DHT22 – MicroPython Tutorial, [WS](https://electrocredible.com/raspberry-pi-pico-dht22-micropython-tutorial/), electrocredible
+* [WS](https://randomnerdtutorials.com/raspberry-pi-pico-dht11-dht22-micropython/), randomnerdtutorials
 
+News Papers - DHT22/DHT11 with PyCom
+* DHT Pure Python library for Pycom board, [WS](https://github.com/JurassicPork/DHT_PyCom), dht class 
 
+News Papers - BME280, Waveshare, RPi
+* bme280 sensor not being picked up, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2280887&hilit=bme280+waveshare#p2280887), Forums, Raspberry Pi, 
+* bme280 remote i/o error, [WS](https://forums.raspberrypi.com/viewtopic.php?t=348060), Forums, Raspberry Pi, 
+
+News Papers - BME280 with RPi Pico, various BME280 vendors & products, 
+* Raspberry Pi Pico: BME280 Get Temperature, Humidity, and Pressure (MicroPython), [WS](https://randomnerdtutorials.com/raspberry-pi-pico-bme280-micropython/), Randomtutorials, 
+* BME280 with Raspberry Pi Pico using MicroPython, [WS](https://microcontrollerslab.com/bme280-raspberry-pi-pico-micropython-tutorial/), Microcontrollerslab 
+* Raspberry Pi Pico W Wireless BME280 Web Server, [WS](https://microcontrollerslab.com/raspberry-pi-pico-w-wireless-bme280-web-server/), Microcontrollerslab 
+* Make Simple Raspberry Pi Pico W Weather Station With BME280 [WS](https://www.electromaker.io/project/view/make-simple-raspberry-pi-pico-w-weather-station-with-bme280), electromaker
+* Ardfruit, CircuitPython, BME280, [WS](https://docs.circuitpython.org/projects/bme280/en/latest/)
+* Using the BME280 I2C Temperature and Pressure Sensor in Python, [WS](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/), Raspberry Pi Spy, 
+
+News Papers - BME280 with Raspberry Pi, various BME280 vendors & products, 
+* Pico with BME280 breakout (via Explorer Base and MicroPython) [WS](https://forums.pimoroni.com/t/pico-with-bme280-breakout-via-explorer-base-and-micropython/16055), pimoroni
+* ...
+
+News Papers - BME280 with ESP32
+* MicroPython: BME280 with ESP32 and ESP8266 (Pressure, Temperature, Humidity), [WS](https://randomnerdtutorials.com/micropython-bme280-esp32-esp8266/), Randomtutorials, 
+* ...
+
+News Papers - DS18B20 temp sensor
+* Raspberry Pi Pico: DS18B20 Temperature Sensor (MicroPython) – Single and Multiple, [WS](https://randomnerdtutorials.com/raspberry-pi-pico-ds18b20-micropython/), randomnerdtutorials 
+
+News Papers - RPi Pico pinout, SPI, I2C, ...
+* SPI pins on pico, [WS](https://forums.raspberrypi.com/viewtopic.php?t=301247), Forums, Raspberry Pi, 
+* How to use both SPI0 and SPI1? [WS](https://forums.raspberrypi.com/viewtopic.php?t=341966), Forums, Raspberry Pi, C/C++ 
+* Pi pico default pi pico pins? [WS](https://forums.raspberrypi.com/viewtopic.php?t=352871), Forums, Raspberry Pi, 
+* ...
