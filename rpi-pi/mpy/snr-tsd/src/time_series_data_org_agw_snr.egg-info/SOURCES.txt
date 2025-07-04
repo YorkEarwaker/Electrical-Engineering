@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/org/__init__.py
+src/org/agw/__init__.py
+src/org/agw/een/__init__.py
+src/org/agw/een/snr/__init__.py
+src/org/agw/een/snr/snr_bme280_dvr.py
+src/org/agw/een/snr/snr_bme280_tsd.py
+src/org/agw/een/snr/snr_dht22_tsd.py
+src/time_series_data_org_agw_snr.egg-info/PKG-INFO
+src/time_series_data_org_agw_snr.egg-info/SOURCES.txt
+src/time_series_data_org_agw_snr.egg-info/dependency_links.txt
+src/time_series_data_org_agw_snr.egg-info/top_level.txt

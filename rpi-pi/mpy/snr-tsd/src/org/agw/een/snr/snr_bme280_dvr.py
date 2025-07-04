@@ -14,7 +14,7 @@
 # https://docs.micropython.org/en/latest/rp2/quickref.html # module
 # 
 # machine module
-# https://docs.micropython.org/en/latest/library/machine.html # modul# machine module I2C class, i2c.scan(), 
+# https://docs.micropython.org/en/latest/library/machine.html # module# machine module I2C class, i2c.scan(), 
 # https://docs.micropython.org/en/latest/library/machine.I2C.html # class
 #
 # Waveshare CN web site,

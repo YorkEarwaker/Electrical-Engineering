@@ -315,7 +315,8 @@
 # Import libraries to use in this programme
 from machine import Pin, I2C, RTC
 from time import sleep
-import snr_bme280_dvr as BME280
+#import snr_bme280_dvr as BME280 # snr_bme280_dvr, must be present on Rpi Pico as file download
+import org.agw.een.snr.snr_bme280_dvr as BME280 # driver installed in RPi Pico micropython
 
 # #
 # define values; clock pin, serial data pin, clock frequency
