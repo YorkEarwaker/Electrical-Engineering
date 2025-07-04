@@ -102,7 +102,7 @@ Terms
 * binary distributions (wheels), binary distribution wheels,
 * file, ```__init__.py```, add to every code package directory before build, otherwise will generate an ImportError: no module named
 * file, setup.py, 
-* file, pyproject.toml, standard source distribution, [WS](Writing your pyproject.toml)
+* file, pyproject.toml, standard source distribution, Writing your pyproject.toml, [WS](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#writing-pyproject-toml)
 * file, PKG-INFO, metadata file, core metadata, [WS](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata)
 * file, name, sdist, .tar.gz or .zip file extension, example; pip-23.3.1.tar.gz , {name}-{version}.tar.gz, posix tarball, POSIX.1-2001 pax tar format, utf8 file name,
 * file, name, bdist, .whl file extension, example; pip-23.3.1-py3-none-any.whl , 
