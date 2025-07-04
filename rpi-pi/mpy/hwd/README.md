@@ -9,7 +9,7 @@ First steps in electeical engineering. First steps in MicroPython.
 TODO
 * <todo: consider, basic programming techniques in MicroPython, loops, text, numbers, >
 * <todo: consider, create distribution package and use with pipkin for Thonny IDE, from local host, >
-* <todo: consider, disable egg creation in build process, egg and egg.info are depricated and have no official standards specification, wheels in place of eggs, wheels have spce PEP 427 2012, >
+* <todo: consider, disable egg creation in build process, egg and egg.info are depricated and have no official standards specification, wheels in place of eggs, wheels have spec PEP 427 2012, >
 * <todo: consider, delete egg zip directory in Github repo under /src >
 
 DONE
@@ -97,7 +97,7 @@ Terms
 * Build Backend, Python org [WS](https://packaging.python.org/en/latest/glossary/#term-Build-Backend), 
 * Build Frontend, Python org [WS](https://packaging.python.org/en/latest/glossary/#term-Build-Frontend), 
 * Classifiers, [WS](https://pypi.org/classifiers/), list of classifers, for pyproject.toml files, python package metadata, 
-* Modules, [WS](https://docs.python.org/3/tutorial/modules.html#}, 
+* Modules, [WS](https://docs.python.org/3/tutorial/modules.html#), 
 * Python Package, formats [WS](https://packaging.python.org/en/latest/discussions/package-formats/#package-formats), not Linux Distribution package, not distro package, 
 * Python Package, Python Import Format, import package, 
 * Python Package, Python Distribution Format, distribution package, 
