@@ -27,7 +27,6 @@ TODO
 * <todo: consider, allocation unit size aka cluster size for MVP data logger, which unit size/cluster size would be best? how large will data logs get for time series data between transfer eleswhere via wifi or other network option, will other file tpyes be used in in mixed use case for data logger sd card, or should it only be restricted to data logging use case, >
 * <todo: cconsider, can a database to be used by RPi Pico be installed on and run from SD Carad? SQLlite or similar? >
 * <todo: consider, retrieve file from sd card, file transfer via wifi, push and pull varients>
-*<todo: consider, Thonny, Tools, Manage packages, Manage packages for Raspberry Pi Pico @ COMS, create a package for BME280 driver, Install from local file Click here to locate and install the package file (usually with .whl, .tar.gz or .zip extension). Under the hood This dialog uses `pipkin`, a new command line tool for managing MicroPython and CircuitPython packages. See https://pypi.org/project/pipkin/ for more info. Note! this Tools menu item is only available after running a python script, >
 
 DONE
 * <done: consider, SD Card extension for RPi Pico, breakout board/shield/hat, candidate for first project roll your own PCB? perf board? intial two cadidates; Pololu Breakout Board for MicroSD Cards, Adafruit Micro SD SPI or SDIO Card Breakout Board, >
@@ -41,6 +40,7 @@ DONE
 * <done: consider, quick format FAT32, volume lable 'Pico_Data', 32k allocation unit size, windows 10 mounts card and formats it, Rpi Pico & Thonny IDE  & sdcard.py still exception thrown 'no SD card'.  >
 * <done: consider, full format FAT32, volume lable 'Pico_Data', 32k allocation unit size, windows 10 mounts card and formats it, Rpi Pico & Thonny IDE  & sdcard.py still exception thrown 'no SD card'.  >
 * <done: consider, wiring on breadboard, success! There was a wiring issue, now resolved, proves Pongo pin clamp works, implies must test current setup without first formating SD Card to FAT32, >
+* <done: consider, Thonny, Tools, Manage packages, Manage packages for Raspberry Pi Pico @ COMS, create a package for BME280 driver, Install from local file Click here to locate and install the package file (usually with .whl, .tar.gz or .zip extension). Under the hood This dialog uses `pipkin`, a new command line tool for managing MicroPython and CircuitPython packages. See https://pypi.org/project/pipkin/ for more info. Note! this Tools menu item is only available after Stop/Restart (RPi Pico) backend, done for /snr-tsd project for import of bme280 driver into this project, how to do so steps in /hwd project, >
 
 ## Readings
 
@@ -303,4 +303,13 @@ News Papers - sd card drivers, read/write, blockwrite, sdcard.py
 
 News Papers - machine.Timer, python, micropython
 * callback from a timer ?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=363587), Raspberry Pi Forums, 
+
+News Papers - error codes
+* my raspberry pi pico oled display code is returning 'OSError: [Errno 5] EIO', [WS](https://raspberrypi.stackexchange.com/questions/140130/my-raspberry-pi-pico-oled-display-code-is-returning-oserror-errno-5-eio), StackExchange, Raspberry Pi,  
+* I2C, OSError: [Errno 5] EIO, [WS](https://forums.raspberrypi.com/viewtopic.php?t=318848&sid=fa43e17e60a704520b003d3947ed6da7), Raspberry Pi Forums, 
+
+
+
+
+
 
