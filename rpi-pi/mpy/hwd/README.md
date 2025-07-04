@@ -100,7 +100,7 @@ Terms
 * Modules, [WS](https://docs.python.org/3/tutorial/modules.html#), 
 * Python Package, formats [WS](https://packaging.python.org/en/latest/discussions/package-formats/#package-formats), not Linux Distribution package, not distro package, 
 * Python Package, Python Import Format, import package, 
-* Python Package, Python Distribution Format, distribution package, 
+* Python Package, Python Distribution Format, [WS](https://packaging.python.org/en/latest/specifications/binary-distribution-format/), distribution package, 
 * source distributions (sdists), source distribution compressed archive, 
 * binary distributions (wheels), binary distribution wheels,
 * file, ```__init__.py```, add to every code package directory before build, otherwise will generate an ImportError: no module named
