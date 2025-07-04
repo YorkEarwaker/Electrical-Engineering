@@ -19,7 +19,7 @@ TODO
 * <todo: consider, gas sensors, sampling of atmospheric gases, outside in 'nature' and inside in confied spaces, differenct use cases, which is frist case CO2? others? 
 * <todo: consider, indoor, room ventilation, BME688 air quality sensor, volatile organic compounds (VOCs), volatile sulfur compounds (VSCs), presence of carbon monoxide and hydrogen, in addition to temperature, pressure and humidity, >
 * <todo: consider, Nondispersive infrared sensor, H2), C02, SO2, NO2, expensive, a useful prospective project too for RYO PCB? >
-* <todo: consider, issue with build, sne_bme280_dvr not working in /sdc project, Exists when called with error reported as '[Errno 5] EIO' , not an SPI nicro SD Card issue as tested with other code, >
+* <todo: consider, issue with build, snr_bme280_dvr not working in /sdc project, Exists when called with error reported as '[Errno 5] EIO' , not an SPI nicro SD Card issue as tested with other code, >
 
 DONE
 * <done: intent to commit>
@@ -29,7 +29,7 @@ DONE
 * <done: consider, can wiring be completed such that a switch / toggle can be made between I2C1 and SPI1? , can this be achieve with Pico? look to pinout,. Likely yes using the default SPI0 GPIO pins G16 G17 G18 G19 physical pins 21 22 24 25, 24 & 25 also acting as SDA and SCL for I2C1 >
 * <done: consider, complete circuit diagram, for BME280, but likely won't work for both SPI and I2C >
 * <done: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC, success with I2C interface,  >
-* <todo: consider, ```__init__.py``` not curretly used, is it necessary for the current state? yes it must be fixed to allow BME280 driver module be imported, goes to current ignorance of best use for ```__init__.py``` and what code must be downloaded to RPi Pico and what can remain remote, so MicroPython and RPi Pico ecosystem knowledge gap, >
+* <done: consider, ```__init__.py``` not curretly used, is it necessary for the current state? yes it must be fixed to allow BME280 driver module be imported, goes to current ignorance of best use for ```__init__.py``` and what code must be downloaded to RPi Pico and what can remain remote, so MicroPython and RPi Pico ecosystem knowledge gap, may require revisiting, currently used empty, >
 * ...
 
 ## Readings
