@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: hwd_example_package_Citizen_Developer
+Version: 0.0.1
+Summary: A small hello world example package
+Author-email: Citizen Developoer <citizen-developer@agw.org>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/agw/sampleproject
+Project-URL: Issues, https://github.com/agw/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operation system :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # Hello world hwd (mpy)
 
 RPi Pico sandpit for first getting started code and content.
@@ -20,14 +35,11 @@ DONE
 
 ### Make a distribution package for a python project
 At the end of the process some of the output to shell
-
+<todo: add __init__.py to every directory and re build, otherwise will generate an ImportError: no module named >
 ```
 <comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
 
 adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/licenses/LICENSE'
-adding 'org/__init__.py'
-adding 'org/agw/__init__.py'
-adding 'org/agw/een/__init__.py'
 adding 'org/agw/een/hwd/__init__.py'
 adding 'org/agw/een/hwd/hello_world.py'
 adding 'org/agw/een/hwd/light_pico_onboard_led.py'
@@ -38,7 +50,6 @@ adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/top_level.txt'
 adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/RECORD'
 removing build\bdist.win-amd64\wheel
 Successfully built hwd_example_package_citizen_developer-0.0.1.tar.gz and hwd_example_package_citizen_developer-0.0.1-py3-none-any.whl
-
 ```
 
 ## Lib
@@ -68,11 +79,11 @@ Package Manager - python package manager, not linux system package manager
 
 Open a command prompt - e.g. Thonny IDE>Tools>Open system shell ...
 * navigate to the project directory of interest
-* the project directory contains the; /src directory, README.md  file, pyproject.toml file, and so on ...
+* the project directory contains a /src directory and/or contains the pyproject.toml
 
 Create a project specific Python environment instance - to contain for example project dependencies and build specific requirements
 * python -m venv venv , Windows - this only has to be done once
-* venv\Scripts\activate , Windows - do this for every new cmd shell
+* venv\Scripts\activate , Windows
 * source venv/bin/activate , Unix/MacOS
 * ...<do some stuff in the new python project env, >
 * deactivate
@@ -100,7 +111,6 @@ Terms
 * Python Package, Python Distribution Format, distribution package, 
 * source distributions (sdists), source distribution compressed archive, 
 * binary distributions (wheels), binary distribution wheels,
-* file, __init__.py, add to every code package directory before build, otherwise will generate an ImportError: no module named
 * file, setup.py, 
 * file, pyproject.toml, standard source distribution, [WS](Writing your pyproject.toml)
 * file, PKG-INFO, metadata file, core metadata, [WS](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata)

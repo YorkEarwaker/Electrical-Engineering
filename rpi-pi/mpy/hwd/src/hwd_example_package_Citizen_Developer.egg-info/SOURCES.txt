@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/hwd_example_package_Citizen_Developer.egg-info/PKG-INFO
+src/hwd_example_package_Citizen_Developer.egg-info/SOURCES.txt
+src/hwd_example_package_Citizen_Developer.egg-info/dependency_links.txt
+src/hwd_example_package_Citizen_Developer.egg-info/top_level.txt
+src/org/__init__.py
+src/org/agw/__init__.py
+src/org/agw/een/__init__.py
+src/org/agw/een/hwd/__init__.py
+src/org/agw/een/hwd/hello_world.py
+src/org/agw/een/hwd/light_pico_onboard_led.py
+src/org/agw/een/hwd/simple_led_example.py
