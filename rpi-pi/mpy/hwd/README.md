@@ -110,7 +110,7 @@ Terms
 * file, name, bdist, .whl file extension, example; pip-23.3.1-py3-none-any.whl , 
 * file, depricated, setup.py, [WS](https://packaging.python.org/en/latest/discussions/setup-py-deprecated/), depricate as python command use, not depricated for use with Setuptools, 
 * file, depricated, <some-compressed-file-name>.egg-info, [WS](https://packaging.python.org/en/latest/discussions/package-formats/#what-about-eggs), Setuptools, no official standard specification PEP
-* variable, PYTHONPATH, environment var* iable
+* variable, PYTHONPATH, environment variable
 
 News Papers - getting started
 * Raspberry Pi Pico Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut,
