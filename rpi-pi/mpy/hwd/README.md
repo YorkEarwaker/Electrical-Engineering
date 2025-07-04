@@ -9,6 +9,8 @@ First steps in electeical engineering. First steps in MicroPython.
 TODO
 * <todo: consider, basic programming techniques in MicroPython, loops, text, numbers, >
 * <todo: consider, create distribution package and use with pipkin for Thonny IDE, from local host, >
+* <todo: consider, disable egg creation in build process, egg and egg.info are depricated and have no official standards specification, wheels in place of eggs, wheels have spce PEP 427 2012, >
+* <todo: consider, delete egg zip directory in Github repo under /src >
 
 DONE
 * <done: consider, flash RPi Pico with MicroPython>
@@ -95,18 +97,20 @@ Terms
 * Build Backend, Python org [WS](https://packaging.python.org/en/latest/glossary/#term-Build-Backend), 
 * Build Frontend, Python org [WS](https://packaging.python.org/en/latest/glossary/#term-Build-Frontend), 
 * Classifiers, [WS](https://pypi.org/classifiers/), list of classifers, for pyproject.toml files, python package metadata, 
-* Python Package, not Linux Distribution package, not distro package, 
+* Modules, [WS](https://docs.python.org/3/tutorial/modules.html#}, 
+* Python Package, formats [WS](https://packaging.python.org/en/latest/discussions/package-formats/#package-formats), not Linux Distribution package, not distro package, 
 * Python Package, Python Import Format, import package, 
 * Python Package, Python Distribution Format, distribution package, 
 * source distributions (sdists), source distribution compressed archive, 
 * binary distributions (wheels), binary distribution wheels,
 * file, ```__init__.py```, add to every code package directory before build, otherwise will generate an ImportError: no module named
-* file, setup.py, 
 * file, pyproject.toml, standard source distribution, Writing your pyproject.toml, [WS](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#writing-pyproject-toml)
 * file, PKG-INFO, metadata file, core metadata, [WS](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata)
 * file, name, sdist, .tar.gz or .zip file extension, example; pip-23.3.1.tar.gz , {name}-{version}.tar.gz, posix tarball, POSIX.1-2001 pax tar format, utf8 file name,
 * file, name, bdist, .whl file extension, example; pip-23.3.1-py3-none-any.whl , 
-* variable, PYTHONPATH, environment variable
+* file, depricated, setup.py, [WS](https://packaging.python.org/en/latest/discussions/setup-py-deprecated/), depricate as python command use, not depricated for use with Setuptools, 
+* file, depricated, <some-compressed-file-name>.egg-info, [WS](https://packaging.python.org/en/latest/discussions/package-formats/#what-about-eggs), Setuptools, no official standard specification PEP
+* variable, PYTHONPATH, environment var* iable
 
 News Papers - getting started
 * Raspberry Pi Pico Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut,
