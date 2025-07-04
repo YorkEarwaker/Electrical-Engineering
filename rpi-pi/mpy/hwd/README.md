@@ -100,7 +100,7 @@ Terms
 * Python Package, Python Distribution Format, distribution package, 
 * source distributions (sdists), source distribution compressed archive, 
 * binary distributions (wheels), binary distribution wheels,
-* file, __init__.py, add to every code package directory before build, otherwise will generate an ImportError: no module named
+* file, ```__init__.py```, add to every code package directory before build, otherwise will generate an ImportError: no module named
 * file, setup.py, 
 * file, pyproject.toml, standard source distribution, [WS](Writing your pyproject.toml)
 * file, PKG-INFO, metadata file, core metadata, [WS](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata)
