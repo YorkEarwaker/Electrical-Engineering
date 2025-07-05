@@ -10,7 +10,7 @@ Ponder more on exact function of this capability
 * Should this be only a server side interaction layer or integration layer used by etl, likely just integration layer, interaction /act or integration /grt ?
 * Keep focus on this project as only integration with periferals and controllers IOT IIOT .
 * Keep focus on microcontroller integration in the first instance
-* Keep focus on single computer board integration in the scecond instance
+* Will project actually requrie any electrical enginnering? 
 
 ## Status
 
