@@ -91,7 +91,6 @@ Pressure:  1016.36hPa
 ### Make a distribution package for a python project
 Build Success reported, but issues using in code in Thonny IDE, 
 * <info: had not build-system section in pyproject.toml, appeared to default to setuptools as build system, .egg-info file created in package /src/org >
-* <todo; defect fix, generates an ImportError: no module named >
 
 ```
 <comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
