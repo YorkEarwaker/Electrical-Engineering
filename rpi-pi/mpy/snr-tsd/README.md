@@ -89,8 +89,10 @@ Pressure:  1016.36hPa
 ## Output
 
 ### Make a distribution package for a python project
-At the end of the process some of the output to shell
-<todo; defect fix, generates an ImportError: no module named >
+Build Success reported, but issues using in code in Thonny IDE, 
+* <info: had not build-system section in pyproject.toml, appeared to default to setuptools as build system, .egg-info file created in package /src/org >
+* <todo; defect fix, generates an ImportError: no module named >
+
 ```
 <comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
 
@@ -107,6 +109,83 @@ adding 'time_series_data_org_agw_snr-0.0.1.dist-info/WHEEL'
 adding 'time_series_data_org_agw_snr-0.0.1.dist-info/top_level.txt'
 adding 'time_series_data_org_agw_snr-0.0.1.dist-info/RECORD'
 removing build\bdist.win-amd64\wheel
+Successfully built time_series_data_org_agw_snr-0.0.1.tar.gz and time_series_data_org_agw_snr-0.0.1-py3-none-any.whl
+```
+
+Build Failer reported with Hatch
+* <info: pip install hatchling >
+* <info: ERROR Backend subprocess exited when trying to invoke build_sdist, >
+* <todo: investigate why failure to build, same issue reported several times by others after internet search, some using hatchling, correlation or causation? >
+
+```
+py -m build
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - hatchling >= 1.26
+* Getting build dependencies for sdist...
+* Building sdist...
+Traceback (most recent call last):
+  File "...\snr-tsd\venv\lib\site-packages\pyproject_hooks\_in_process\_in_process.py", line 389, in <module>
+    main()
+  File "...\snr-tsd\venv\lib\site-packages\pyproject_hooks\_in_process\_in_process.py", line 373, in main
+    json_out["return_val"] = hook(**hook_input["kwargs"])
+  File "...\snr-tsd\venv\lib\site-packages\pyproject_hooks\_in_process\_in_process.py", line 335, in build_sdist
+    return backend.build_sdist(sdist_directory, config_settings)
+  File "...\AppData\Local\Temp\build-env-gocriymi\lib\site-packages\hatchling\build.py", line 34, in build_sdist
+    return os.path.basename(next(builder.build(directory=sdist_directory, versions=['standard'])))
+  File "...\AppData\Local\Temp\build-env-gocriymi\lib\site-packages\hatchling\builders\plugin\interface.py", line 90, in build
+    self.metadata.validate_fields()
+  File "...\AppData\Local\Temp\build-env-gocriymi\lib\site-packages\hatchling\metadata\core.py", line 266, in validate_fields
+    self.core.validate_fields()
+  File "...\AppData\Local\Temp\build-env-gocriymi\lib\site-packages\hatchling\metadata\core.py", line 1366, in validate_fields
+    getattr(self, attribute)
+  File "...\AppData\Local\Temp\build-env-gocriymi\lib\site-packages\hatchling\metadata\core.py", line 991, in classifiers
+    raise ValueError(message)
+ValueError: Unknown classifier in field `project.classifiers`: Operation system :: OS Independent
+
+ERROR Backend subprocess exited when trying to invoke build_sdist
+```
+
+Build Success reported with PDM, 
+* <info: pip install pdm >
+* <info: had build-system section in pyproject.toml, set to PDM, >
+
+```
+py -m build
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - pdm-backend >= 2.4.0
+* Getting build dependencies for sdist...
+* Building sdist...
+ - Adding LICENSE -> LICENSE
+ - Adding README.md -> README.md
+ - Adding .pdm-build\pyproject.toml -> pyproject.toml
+ - Adding src\org\__init__.py -> src/org/__init__.py
+ - Adding src\org\agw\__init__.py -> src/org/agw/__init__.py
+ - Adding src\org\agw\een\__init__.py -> src/org/agw/een/__init__.py
+ - Adding src\org\agw\een\snr\__init__.py -> src/org/agw/een/snr/__init__.py
+ - Adding src\org\agw\een\snr\snr_bme280_dvr.py -> src/org/agw/een/snr/snr_bme280_dvr.py
+ - Adding src\org\agw\een\snr\snr_bme280_tsd.py -> src/org/agw/een/snr/snr_bme280_tsd.py
+ - Adding src\org\agw\een\snr\snr_dht22_tsd.py -> src/org/agw/een/snr/snr_dht22_tsd.py
+ - Adding PKG-INFO -> PKG-INFO
+* Building wheel from sdist
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - pdm-backend >= 2.4.0
+* Getting build dependencies for wheel...
+* Building wheel...
+ - Adding src\org\__init__.py -> org/__init__.py
+ - Adding src\org\agw\__init__.py -> org/agw/__init__.py
+ - Adding src\org\agw\een\__init__.py -> org/agw/een/__init__.py
+ - Adding src\org\agw\een\snr\__init__.py -> org/agw/een/snr/__init__.py
+ - Adding src\org\agw\een\snr\snr_bme280_dvr.py -> org/agw/een/snr/snr_bme280_dvr.py
+ - Adding src\org\agw\een\snr\snr_bme280_tsd.py -> org/agw/een/snr/snr_bme280_tsd.py
+ - Adding src\org\agw\een\snr\snr_dht22_tsd.py -> org/agw/een/snr/snr_dht22_tsd.py
+ - Adding .pdm-build\time_series_data_org_agw_snr-0.0.1.dist-info\METADATA -> time_series_data_org_agw_snr-0.0.1.dist-info/METADATA
+ - Adding .pdm-build\time_series_data_org_agw_snr-0.0.1.dist-info\WHEEL -> time_series_data_org_agw_snr-0.0.1.dist-info/WHEEL
+ - Adding .pdm-build\time_series_data_org_agw_snr-0.0.1.dist-info\entry_points.txt -> time_series_data_org_agw_snr-0.0.1.dist-info/entry_points.txt
+ - Adding .pdm-build\time_series_data_org_agw_snr-0.0.1.dist-info\licenses\LICENSE -> time_series_data_org_agw_snr-0.0.1.dist-info/licenses/LICENSE
+ - Adding time_series_data_org_agw_snr-0.0.1.dist-info\RECORD -> time_series_data_org_agw_snr-0.0.1.dist-info/RECORD
 Successfully built time_series_data_org_agw_snr-0.0.1.tar.gz and time_series_data_org_agw_snr-0.0.1-py3-none-any.whl
 ```
 
