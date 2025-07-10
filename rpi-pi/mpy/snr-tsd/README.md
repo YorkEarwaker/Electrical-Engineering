@@ -89,7 +89,7 @@ Pressure:  1016.36hPa
 ## Output
 
 ### Make a distribution package for a python project
-Build Success reported, but issues using in code in Thonny IDE, 
+Build Success reported, but issues using in code in Thonny IDE, see .../snr-tsd project README.md, may not be buld related.
 * <info: had not build-system section in pyproject.toml, appeared to default to setuptools as build system, .egg-info file created in package /src/org >
 
 ```
@@ -145,7 +145,7 @@ ValueError: Unknown classifier in field `project.classifiers`: Operation system 
 ERROR Backend subprocess exited when trying to invoke build_sdist
 ```
 
-Build Success reported with PDM, 
+Build Success reported with PDM, but issues using in code in Thonny IDE, see .../snr-tsd project README.md, may not be buld related.
 * <info: pip install pdm >
 * <info: had build-system section in pyproject.toml, set to PDM, >
 
