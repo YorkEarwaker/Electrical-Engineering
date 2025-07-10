@@ -194,6 +194,36 @@ Logging interupt; keyboard
 >>> 
 ```
 
+### BME280 temperature humdity air pressure reading to file io to SD Card
+Exits with error with package imported to Thonny IDE, 
+* <info: see also build output in .../Snr-tsd, >
+* <info: with package build with no build-system section in pyproject.toml , defualt to setuptools, .egg-info, >
+* <info: with package build with PDM, >
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20012380>
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+file io, exception: [Errno 5] EIO
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+file exists: True
+file size: 0 unicode chars
+file content: 
+Logging interupt; keyboard
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico 2 W with RP2350
+
+Type "help()" for more information.
+```
+
 ## Libraries
 
 Standards
