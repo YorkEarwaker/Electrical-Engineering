@@ -21,7 +21,8 @@ DONE
 ## Output
 
 ### Make a distribution package for a python project
-At the end of the process some of the output to shell
+Build Success reported, but issues using in code in Thonny IDE, 
+* <info: had not build-system section in pyproject.toml, appeared to default to setuptools as build system, .egg-info file created in package /src/org >
 
 ```
 <comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
@@ -58,10 +59,10 @@ Package Manager - python package manager, not linux system package manager
 ### Build Backend
 
 * Flit core, 
-* Hatchling,
+* Hatchling, [WS](https://pypi.org/project/hatchling/), pypi
 * meson-python
-* PDM
-* scikit-build-core
+* PDM, [WS](https://pypi.org/project/pdm/), pypi
+* scikit-build-core, 
 * Setuptools
 
 ## Notes
@@ -115,8 +116,11 @@ Terms
 News Papers - getting started
 * Raspberry Pi Pico Getting Started Guide, [WS](https://thepihut.com/blogs/raspberry-pi-tutorials/raspberry-pi-pico-getting-started-guide), 19 Dec 2022, The Pi Hut,
 
- Standard Python distribution format
-* 
+ Standard Python distribution format - build issues
+* ERROR Backend subproccess exited when trying to invoke get_requires_for_build_sdist, [WS](https://stackoverflow.com/questions/72072319/error-backend-subproccess-exited-when-trying-to-invoke-get-requires-for-build-sd), StackOverflow, 
+* ERROR Backend subprocess exited when trying to invoke get_requires_for_build_sdist #572, [WS](https://github.com/pypa/build/issues/572), GitHub, pypa, 
+* ERROR Backend subprocess exited when trying to invoke get_requires_for_build_sdist, [WS](https://stackoverflow.com/questions/75312569/error-backend-subprocess-exited-when-trying-to-invoke-get-requires-for-build-sdi), StackOverflow, 
+* ...
 
 News Papers - execution of code from another package, path, directory
 * Run Script From Another Directory in Python, [WS](https://codeigo.com/python/run-script-from-another-directory/), Codegio, 
