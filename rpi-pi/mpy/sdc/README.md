@@ -195,33 +195,128 @@ Logging interupt; keyboard
 ```
 
 ### BME280 temperature humdity air pressure reading to file io to SD Card
-Exits with error with package imported to Thonny IDE, 
+Exits with success with package imported to Thonny IDE, 
 * <info: see also build output in .../Snr-tsd, >
-* <info: with package build with no build-system section in pyproject.toml , defualt to setuptools, .egg-info, >
-* <info: with package build with PDM, >
+* <info: with package build with build-system section in pyproject.toml , >
+* <info: with package build-system with PDM, >
+* <info: circuit simplified, removal of rotating potentiometer, voltage divider, >
+* <info: circuit simplified, removal of flat jumper wire bare ends, to jumper wire cable pin ends,  >
+* <info: circuit defect fix, one of the errors was a wiring issue, scl and sda wires from sensor were set to wrong GPIO pins>
 
 ```
 >>> %Run -c $EDITOR_CONTENT
 
 MPY: soft reboot
 sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
-micro sd card: <SDCard object at 20012380>
+micro sd card: <SDCard object at 20012b80>
 sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
 sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+i2c.scan() address list: [119]
+bme initialised: <BME280 object at 20013e30>
 file exists: True
 sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
-file io, exception: [Errno 5] EIO
+bme.temperature(): 25.92C
+bme.humidity(): 40.-4146847%
+bme.humidity(): 1006.12hPa
+Temperature:  25.92C
+Temperature:  78.62F
+Humidity:  40.-4146847%
+Pressure:  1006.12hPa
+temperature C: 25.92C, temperature F: 78.62F, humidity: 40.-4146847%, pressure: 1006.12hPa, at date & time: (2025, 7, 11, 4, 10, 20, 48, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 25.82C
+bme.humidity(): 40.-4133360%
+bme.humidity(): 1006.20hPa
+Temperature:  25.82C
+Temperature:  78.49F
+Humidity:  40.-4133360%
+Pressure:  1006.20hPa
+temperature C: 25.82C, temperature F: 78.49F, humidity: 40.-4133360%, pressure: 1006.20hPa, at date & time: (2025, 7, 11, 4, 10, 21, 48, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 25.77C
+bme.humidity(): 40.-4123670%
+bme.humidity(): 1006.33hPa
+Temperature:  25.77C
+Temperature:  78.39F
+Humidity:  40.-4123670%
+Pressure:  1006.33hPa
+temperature C: 25.77C, temperature F: 78.39F, humidity: 40.-4123670%, pressure: 1006.33hPa, at date & time: (2025, 7, 11, 4, 10, 22, 48, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 25.72C
+bme.humidity(): 40.-4120872%
+bme.humidity(): 1006.39hPa
+Temperature:  25.72C
+Temperature:  78.3F
+Humidity:  40.-4120872%
+Pressure:  1006.39hPa
+temperature C: 25.72C, temperature F: 78.3F, humidity: 40.-4120872%, pressure: 1006.39hPa, at date & time: (2025, 7, 11, 4, 10, 23, 48, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 25.65C
+bme.humidity(): 40.-4119174%
+bme.humidity(): 1006.52hPa
+Temperature:  25.65C
+Temperature:  78.17F
+Humidity:  40.-4119174%
+Pressure:  1006.52hPa
+temperature C: 25.65C, temperature F: 78.17F, humidity: 40.-4119174%, pressure: 1006.52hPa, at date & time: (2025, 7, 11, 4, 10, 24, 48, 0)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 file exists: True
-file size: 0 unicode chars
-file content: 
+file size: 379 unicode chars
+file content: 25.92C, 78.62F, 40.-4146847%, 1006.12hPa, (2025, 7, 11, 4, 10, 20, 48, 0), 
+25.82C, 78.49F, 40.-4133360%, 1006.20hPa, (2025, 7, 11, 4, 10, 21, 48, 0), 
+25.77C, 78.39F, 40.-4123670%, 1006.33hPa, (2025, 7, 11, 4, 10, 22, 48, 0), 
+25.72C, 78.3F, 40.-4120872%, 1006.39hPa, (2025, 7, 11, 4, 10, 23, 48, 0), 
+25.65C, 78.17F, 40.-4119174%, 1006.52hPa, (2025, 7, 11, 4, 10, 24, 48, 0), 
+
 Logging interupt; keyboard
 
 MPY: soft reboot
 MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico 2 W with RP2350
 
 Type "help()" for more information.
+
+>>> 
+```
+
+Exits with error with package imported to Thonny IDE, Subsequent to first successful run.
+* <info: possibly a lose wire issue,  >
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20012b80>
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+i2c.scan() address list: []
+sensor creation, exception: [Errno 110] ETIMEDOUT
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+file io, exception: 'NoneType' object has no attribute 'temperature'
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+file exists: True
+file size: 379 unicode chars
+file content: 25.92C, 78.62F, 40.-4146847%, 1006.12hPa, (2025, 7, 11, 4, 10, 20, 48, 0), 
+25.82C, 78.49F, 40.-4133360%, 1006.20hPa, (2025, 7, 11, 4, 10, 21, 48, 0), 
+25.77C, 78.39F, 40.-4123670%, 1006.33hPa, (2025, 7, 11, 4, 10, 22, 48, 0), 
+25.72C, 78.3F, 40.-4120872%, 1006.39hPa, (2025, 7, 11, 4, 10, 23, 48, 0), 
+25.65C, 78.17F, 40.-4119174%, 1006.52hPa, (2025, 7, 11, 4, 10, 24, 48, 0), 
+
+Logging interupt; keyboard
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico 2 W with RP2350
+
+Type "help()" for more information.
+
+>>> 
 ```
 
 ## Libraries
@@ -337,6 +432,7 @@ News Papers - machine.Timer, python, micropython
 News Papers - error codes
 * my raspberry pi pico oled display code is returning 'OSError: [Errno 5] EIO', [WS](https://raspberrypi.stackexchange.com/questions/140130/my-raspberry-pi-pico-oled-display-code-is-returning-oserror-errno-5-eio), StackExchange, Raspberry Pi,  
 * I2C, OSError: [Errno 5] EIO, [WS](https://forums.raspberrypi.com/viewtopic.php?t=318848&sid=fa43e17e60a704520b003d3947ed6da7), Raspberry Pi Forums, 
+* OSError: [Errno 5] EIO when accessing sensor data #9201, [GH](https://github.com/orgs/micropython/discussions/9201), MicroPython, GitHub
 
 
 
