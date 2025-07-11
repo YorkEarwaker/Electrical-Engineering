@@ -202,6 +202,7 @@ Exits with success with package imported to Thonny IDE,
 * <info: circuit simplified, removal of rotating potentiometer, voltage divider, >
 * <info: circuit simplified, removal of flat jumper wire bare ends, to jumper wire cable pin ends,  >
 * <info: circuit defect fix, one of the errors was a wiring issue, scl and sda wires from sensor were set to wrong GPIO pins>
+* <info: end run, 'stop/restart backend' >
 
 ```
 >>> %Run -c $EDITOR_CONTENT
@@ -284,7 +285,9 @@ Type "help()" for more information.
 ```
 
 Exits with error with package imported to Thonny IDE, Subsequent to first successful run.
-* <info: possibly a lose wire issue,  >
+* <info: start run, after 'stop/restart backend', likely correlation >
+* <info: possibly a lose wire issue,  likely causation, >
+* <info: end run, 'stop/restart backend' >
 
 ```
 >>> %Run -c $EDITOR_CONTENT
@@ -317,6 +320,203 @@ MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico 2 W with RP2350
 Type "help()" for more information.
 
 >>> 
+```
+
+Exits with success with package imported to Thonny IDE, 
+* <info: wire check, to ensure all were securly connected, likely causation, >
+* <info: the sd card was ejected and then reinserted into the sc card reader, tlikely corrolation, >
+* <info: start run, after 'stop/restart backend', >
+* <info: end run, 'stop/restart backend' >
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20012b80>
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+i2c.scan() address list: [119]
+bme initialised: <BME280 object at 20013e30>
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.88C
+bme.humidity(): 38.-3930159%
+bme.humidity(): 1004.02hPa
+Temperature:  26.88C
+Temperature:  80.33F
+Humidity:  38.-3930159%
+Pressure:  1004.02hPa
+temperature C: 26.88C, temperature F: 80.33F, humidity: 38.-3930159%, pressure: 1004.02hPa, at date & time: (2025, 7, 11, 4, 11, 32, 10, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.79C
+bme.humidity(): 38.-3946543%
+bme.humidity(): 1004.24hPa
+Temperature:  26.79C
+Temperature:  80.22F
+Humidity:  38.-3946543%
+Pressure:  1004.24hPa
+temperature C: 26.79C, temperature F: 80.22F, humidity: 38.-3946543%, pressure: 1004.24hPa, at date & time: (2025, 7, 11, 4, 11, 33, 11, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.73C
+bme.humidity(): 38.-3927661%
+bme.humidity(): 1004.35hPa
+Temperature:  26.73C
+Temperature:  80.11F
+Humidity:  38.-3927661%
+Pressure:  1004.35hPa
+temperature C: 26.73C, temperature F: 80.11F, humidity: 38.-3927661%, pressure: 1004.35hPa, at date & time: (2025, 7, 11, 4, 11, 34, 11, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.66C
+bme.humidity(): 38.-3912176%
+bme.humidity(): 1004.43hPa
+Temperature:  26.66C
+Temperature:  79.99F
+Humidity:  38.-3912176%
+Pressure:  1004.43hPa
+temperature C: 26.66C, temperature F: 79.99F, humidity: 38.-3912176%, pressure: 1004.43hPa, at date & time: (2025, 7, 11, 4, 11, 35, 11, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.60C
+bme.humidity(): 38.-3904684%
+bme.humidity(): 1004.51hPa
+Temperature:  26.60C
+Temperature:  79.88F
+Humidity:  38.-3904684%
+Pressure:  1004.51hPa
+temperature C: 26.60C, temperature F: 79.88F, humidity: 38.-3904684%, pressure: 1004.51hPa, at date & time: (2025, 7, 11, 4, 11, 36, 11, 0)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+file exists: True
+file size: 759 unicode chars
+file content: 25.92C, 78.62F, 40.-4146847%, 1006.12hPa, (2025, 7, 11, 4, 10, 20, 48, 0), 
+25.82C, 78.49F, 40.-4133360%, 1006.20hPa, (2025, 7, 11, 4, 10, 21, 48, 0), 
+25.77C, 78.39F, 40.-4123670%, 1006.33hPa, (2025, 7, 11, 4, 10, 22, 48, 0), 
+25.72C, 78.3F, 40.-4120872%, 1006.39hPa, (2025, 7, 11, 4, 10, 23, 48, 0), 
+25.65C, 78.17F, 40.-4119174%, 1006.52hPa, (2025, 7, 11, 4, 10, 24, 48, 0), 
+26.88C, 80.33F, 38.-3930159%, 1004.02hPa, (2025, 7, 11, 4, 11, 32, 10, 0), 
+26.79C, 80.22F, 38.-3946543%, 1004.24hPa, (2025, 7, 11, 4, 11, 33, 11, 0), 
+26.73C, 80.11F, 38.-3927661%, 1004.35hPa, (2025, 7, 11, 4, 11, 34, 11, 0), 
+26.66C, 79.99F, 38.-3912176%, 1004.43hPa, (2025, 7, 11, 4, 11, 35, 11, 0), 
+26.60C, 79.88F, 38.-3904684%, 1004.51hPa, (2025, 7, 11, 4, 11, 36, 11, 0), 
+
+Logging interupt; keyboard
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico 2 W with RP2350
+
+Type "help()" for more information.
+
+>>> 
+```
+
+Exits with success with package imported to Thonny IDE, 
+* <info: start run, after 'stop/restart backend' >
+* <info: end run, 'interupt execution Ctrl C' >
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20012b80>
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+i2c.scan() address list: [119]
+bme initialised: <BME280 object at 20013c70>
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.46C
+bme.humidity(): 38.-3906981%
+bme.humidity(): 1004.78hPa
+Temperature:  26.46C
+Temperature:  79.59F
+Humidity:  38.-3906981%
+Pressure:  1004.78hPa
+temperature C: 26.46C, temperature F: 79.59F, humidity: 38.-3906981%, pressure: 1004.78hPa, at date & time: (2025, 7, 11, 4, 11, 39, 35, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.39C
+bme.humidity(): 38.-3910878%
+bme.humidity(): 1004.89hPa
+Temperature:  26.39C
+Temperature:  79.48F
+Humidity:  38.-3910878%
+Pressure:  1004.89hPa
+temperature C: 26.39C, temperature F: 79.48F, humidity: 38.-3910878%, pressure: 1004.89hPa, at date & time: (2025, 7, 11, 4, 11, 40, 35, 0)
+file exists: True
+file size: 911 unicode chars
+file content: 25.92C, 78.62F, 40.-4146847%, 1006.12hPa, (2025, 7, 11, 4, 10, 20, 48, 0), 
+25.82C, 78.49F, 40.-4133360%, 1006.20hPa, (2025, 7, 11, 4, 10, 21, 48, 0), 
+25.77C, 78.39F, 40.-4123670%, 1006.33hPa, (2025, 7, 11, 4, 10, 22, 48, 0), 
+25.72C, 78.3F, 40.-4120872%, 1006.39hPa, (2025, 7, 11, 4, 10, 23, 48, 0), 
+25.65C, 78.17F, 40.-4119174%, 1006.52hPa, (2025, 7, 11, 4, 10, 24, 48, 0), 
+26.88C, 80.33F, 38.-3930159%, 1004.02hPa, (2025, 7, 11, 4, 11, 32, 10, 0), 
+26.79C, 80.22F, 38.-3946543%, 1004.24hPa, (2025, 7, 11, 4, 11, 33, 11, 0), 
+26.73C, 80.11F, 38.-3927661%, 1004.35hPa, (2025, 7, 11, 4, 11, 34, 11, 0), 
+26.66C, 79.99F, 38.-3912176%, 1004.43hPa, (2025, 7, 11, 4, 11, 35, 11, 0), 
+26.60C, 79.88F, 38.-3904684%, 1004.51hPa, (2025, 7, 11, 4, 11, 36, 11, 0), 
+26.46C, 79.59F, 38.-3906981%, 1004.78hPa, (2025, 7, 11, 4, 11, 39, 35, 0), 
+26.39C, 79.48F, 38.-3910878%, 1004.89hPa, (2025, 7, 11, 4, 11, 40, 35, 0), 
+
+Logging interupt; keyboard
+>>> 
+```
+
+Exits with success with package imported to Thonny IDE, 
+* <info: start run, after 'interupt execution Ctrl C' >
+* <info: end run, 'stop/restart backend' >
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20012b80>
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+i2c.scan() address list: [119]
+bme initialised: <BME280 object at 20013c70>
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+bme.temperature(): 26.30C
+bme.humidity(): 38.-3925064%
+bme.humidity(): 1005.00hPa
+Temperature:  26.30C
+Temperature:  79.3F
+Humidity:  38.-3925064%
+Pressure:  1005.00hPa
+temperature C: 26.30C, temperature F: 79.3F, humidity: 38.-3925064%, pressure: 1005.00hPa, at date & time: (2025, 7, 11, 4, 11, 44, 9, 0)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+file exists: True
+file size: 1060 unicode chars
+file content: 25.92C, 78.62F, 40.-4146847%, 1006.12hPa, (2025, 7, 11, 4, 10, 20, 48, 0), 
+25.82C, 78.49F, 40.-4133360%, 1006.20hPa, (2025, 7, 11, 4, 10, 21, 48, 0), 
+25.77C, 78.39F, 40.-4123670%, 1006.33hPa, (2025, 7, 11, 4, 10, 22, 48, 0), 
+25.72C, 78.3F, 40.-4120872%, 1006.39hPa, (2025, 7, 11, 4, 10, 23, 48, 0), 
+25.65C, 78.17F, 40.-4119174%, 1006.52hPa, (2025, 7, 11, 4, 10, 24, 48, 0), 
+26.88C, 80.33F, 38.-3930159%, 1004.02hPa, (2025, 7, 11, 4, 11, 32, 10, 0), 
+26.79C, 80.22F, 38.-3946543%, 1004.24hPa, (2025, 7, 11, 4, 11, 33, 11, 0), 
+26.73C, 80.11F, 38.-3927661%, 1004.35hPa, (2025, 7, 11, 4, 11, 34, 11, 0), 
+26.66C, 79.99F, 38.-3912176%, 1004.43hPa, (2025, 7, 11, 4, 11, 35, 11, 0), 
+26.60C, 79.88F, 38.-3904684%, 1004.51hPa, (2025, 7, 11, 4, 11, 36, 11, 0), 
+26.46C, 79.59F, 38.-3906981%, 1004.78hPa, (2025, 7, 11, 4, 11, 39, 35, 0), 
+26.39C, 79.48F, 38.-3910878%, 1004.89hPa, (2025, 7, 11, 4, 11, 40, 35, 0), 
+26.29C, 79.3F, 38.-3923865%, 1005.00hPa, (2025, 7, 11, 4, 11, 43, 58, 0), 
+26.30C, 79.3F, 38.-3925064%, 1005.00hPa, (2025, 7, 11, 4, 11, 44, 9, 0), 
+
+Logging interupt; keyboard
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico 2 W with RP2350
+
+Type "help()" for more information.
+
+>>>
 ```
 
 ## Libraries
