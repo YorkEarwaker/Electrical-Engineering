@@ -22,6 +22,9 @@
 # machine module SDCard class – secure digital memory card
 # https://docs.micropython.org/en/latest/library/machine.SDCard.html #class
 #
+# machine module I2C class – a two-wire serial protocol
+# https://docs.micropython.org/en/v1.15/library/machine.I2C.html
+#
 # machine module Timer class 
 # https://docs.micropython.org/en/latest/library/machine.Timer.html #class
 # https://docs.micropython.org/en/latest/rp2/quickref.html#timers # RP2, 
@@ -361,7 +364,8 @@
 from machine import I2C, Pin, RTC, SPI, Timer
 #import device
 from sdcard import SDCard # sdcard.SDCard, device
-import snr_bme280_dvr as BME280 # Sensor temperature/humidity/pressure, device,
+#from time_series_data_org_agw_snr import org.agw.een.snr.snr_bme280_dvr as BME280 # Sensor temperature/humidity/pressure, device,
+from org.agw.een.snr import snr_bme280_dvr as BME280 # Sensor temperature/humidity/pressure, device,
 # import helpers
 from time import sleep
 import os # <todo: use 'os' instead of 'uos'? documentation for MicroPython is not clear, >
@@ -512,8 +516,11 @@ def i2c_inst(bus, scl, sda, freq):
 
     try:
         # 
-        sensor_i2c = I2C(1, scl=i2c_scl_pin, sda=sda_pin, freq=clock_freq) # 
-        print(f'sd_card_spi: {sensor_i2c}'.format(sensor_i2c) ) # debug
+        sensor_i2c = I2C(bus,
+                         scl=scl,
+                         sda=sda,
+                         freq=freq) # 
+        print(f'sensor_i2c: {sensor_i2c}'.format(sensor_i2c) ) # debug
         return sensor_i2c
         
     except Exception as e:
@@ -561,7 +568,8 @@ def log_bme280_thp_readings(timer):
     
     # don't like using global variables but for this case of machine.Timer have no other choice for now.
     # <todo: consider, other options for time delayed operations, class callback as option, threading.Timer as option,  micropython.schedule, others? >
-    path = file_path 
+    path = file_path # global
+    bme = bme_sensor # global
     
     file_found = check_file_exists(path) 
     #print(f'file exists: {file_found}'.format(file_found) )
@@ -581,20 +589,17 @@ def log_bme280_thp_readings(timer):
         # #
         # get the date and time, from the Real Time Clock instance
         dt_tm = rtc.datetime() # get the current date and time
-        
-        # #
-        # Initialise BME280 sensor
-        bme = BME280.BME280(i2c=sensor_i2c)
-        #print('bme initialised: {}'.format(bme)) # debug
+        # print(f'date time: {str(dt_tm)}'.format(dt_tm)) # debug
+        print(f'sensor_i2c: {sensor_i2c}'.format(sensor_i2c) )
         
         # #
         # Read sensor data
         tempC = bme.temperature
-        #print('bme.temperature(): {}'.format(tempC)) # debug
+        print(f'bme.temperature(): {tempC}'.format(tempC)) # debug
         hum = bme.humidity
-        #print('bme.humidity(): {}'.format(hum)) # debug
+        print(f'bme.humidity(): {hum}'.format(hum)) # debug
         pres = bme.pressure
-        #print('bme.humidity(): {}'.format(pres)) # debug
+        print(f'bme.humidity(): {pres}'.format(pres)) # debug
         
         # #
         # Convert temperature to fahrenheit
@@ -604,10 +609,10 @@ def log_bme280_thp_readings(timer):
         
         # #
         # Print sensor readings to consol/shell
-        #print('Temperature: ', tempC) # debug
-        #print('Temperature: ', tempF) # debug
-        #print('Humidity: ', hum) # debug
-        #print('Pressure: ', pres) # debug
+        print('Temperature: ', tempC) # debug
+        print('Temperature: ', tempF) # debug
+        print('Humidity: ', hum) # debug
+        print('Pressure: ', pres) # debug
         
         # write the temperature value to file
         # <todo: write to file, but only to sdc not to PICO flash, so dependency of sdc code, noted 23/06/2025 >
@@ -623,7 +628,7 @@ def log_bme280_thp_readings(timer):
     
     # memory allocated, RAM, 
     # print(f'before memeory collect,  {gc.mem_alloc()} ' ) # debug
-    gc.collect()
+    gc.collect() # is this a problem with i2C and bme280 sensor reading
     # memory allocated, RAM, 
     # print(f'after memeory collect,  {gc.mem_alloc()} ' ) # debug
     # check_file_exists(path) # debug, returns True
@@ -702,6 +707,37 @@ def read_file(path):
         print(f'file read, exception: {e}'.format(e) )
 
 
+# #
+# initialise driver for an instance of the bme280 sensor on i2c bus
+def initialise_sensor_inst(i2c):
+    
+    # #
+    # Is the bme280 sensor detected on the bus
+    # <todo: consider, put this in a fuction def fro reuse, >
+    list_of_valid_i2c_addresses = i2c.scan() # debug
+    print(f'i2c.scan() address list: {list_of_valid_i2c_addresses}'.format(list_of_valid_i2c_addresses)) # debug
+
+    # if condition here
+    # ensure this is not the empty list, list_of_valid_i2c_addresses
+    
+    try:
+        
+        # #
+        # Initialise BME280 sensor
+        bme = BME280.BME280(i2c=i2c)
+        #bme = BME280.BME280(sensor_i2c) # file io, exception: Unexpected mode value I2C(1, freq=1000, scl=19, sda=18, timeout=50000). Set mode to one ofBME280_ULTRALOWPOWER, BME280_STNADARD, BME280_HIGHRES, orBME280_ULTRAHIGHRES
+        print(f'bme initialised: {str(bme)}'.format(bme)) # debug
+        return bme
+        
+    except Exception as e:
+        print(f'sensor creation, exception: {e}'.format(e) )
+        
+# #
+#
+bme_sensor = initialise_sensor_inst(sensor_i2c)
+#print(f'bme initialised: {str(bme)}'.format(bme)) # debug
+
+# #
 # log initial first reading
 # log the rpi pico internal cpu temperature
 log_bme280_thp_readings(None)
@@ -729,12 +765,20 @@ try:
 except KeyboardInterrupt:
     timer_bme280_thp_log.deinit() # Timer.deinit(), garbage collection
     sd_card_spi.deinit() # SPI.deinit(), garbage collection
+    #sensor_12c.deinit() # I2C.deinit(), garbage collection, Availability: WiPy, only WiPY? not RPi Pico?
     check_file_exists(file_path) # debug, returns True
     check_file_size(file_path) # debug,
     read_file(file_path) # debug
     # delete_file(file_path)
     print('Logging interupt; keyboard')
 
+
+# Todo: experiment with this
+#
+# https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts
+#if __name__ == "__main__":
+#    import sys
+#    <some-function-name>(int(sys.argv[1]))
 
 # #
 # sucsess
