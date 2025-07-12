@@ -47,8 +47,14 @@ Successfully built hwd_example_package_citizen_developer-0.0.1.tar.gz and hwd_ex
 ## Lib
 
 ### Build Frontend
-Package Manager - python package manager, not linux system package manager
+Package Manager - python package manager, not linux system package manager,
+Finding it difficult to distinguish between frontend and backend, build ecosystem
 
+Lists - info 
+* list of packaging managers, python org [WS](https://packaging.python.org/en/latest/key_projects/), 
+* Python Package Guide, pyOpenSci [WS](https://www.pyopensci.org/python-package-guide/index.html), Investigate more, very interesting! 
+
+Products
 * Build, [WS](https://packaging.python.org/en/latest/key_projects/#build), not a package manager a build system, <todo: to be recategorized >
 * Pip, 
 * Pipkin, [WS](https://pypi.org/project/pipkin/), Thonny IDE uses this under the hood, to create local packages for RPi Pico MicroPython env, e.g. BYO drivers for periferal devices, sensors, screens,  
@@ -59,9 +65,9 @@ Package Manager - python package manager, not linux system package manager
 ### Build Backend
 
 * Flit core, 
-* Hatchling, [WS](https://pypi.org/project/hatchling/), pypi
+* Hatchling, pypi [WS](https://pypi.org/project/hatchling/), 
 * meson-python
-* PDM, [WS](https://pypi.org/project/pdm/), pypi
+* PDM, pypi [WS](https://pypi.org/project/pdm/), org [WS](https://pdm-project.org/en/latest/), [GH](https://github.com/pdm-project/pdm), 
 * scikit-build-core, 
 * Setuptools
 
