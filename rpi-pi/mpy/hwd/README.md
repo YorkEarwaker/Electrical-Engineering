@@ -10,13 +10,14 @@ TODO
 * <todo: consider, basic programming techniques in MicroPython, loops, text, numbers, >
 * <todo: consider, create distribution package and use with pipkin for Thonny IDE, from local host, >
 * <todo: consider, disable egg creation in build process, egg and egg.info are depricated and have no official standards specification, wheels in place of eggs, wheels have spec PEP 427 2012, >
-* <todo: consider, delete egg zip directory in Github repo under /src >
+* <todo: consider, iterate build section, packaging and so on, needs much more work, look at pyOpenSci in first instance for more info, seek other similar sources, >
 
 DONE
 * <done: consider, flash RPi Pico with MicroPython>
 * <done: consider, write MicroPython code to execute on RPi Pico >
 * <done: consider, first circuit in boradboard with RPi Pico >
 * <done: consider, standard python distribution format, create example package, >
+* <done: consider, delete egg zip directory in Github repo under /src >
 
 ## Output
 
