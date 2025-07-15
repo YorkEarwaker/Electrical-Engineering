@@ -11,6 +11,8 @@ TODO
 * <todo: consider, create distribution package and use with pipkin for Thonny IDE, from local host, >
 * <todo: consider, disable egg creation in build process, egg and egg.info are depricated and have no official standards specification, wheels in place of eggs, wheels have spec PEP 427 2012, >
 * <todo: consider, iterate build section, packaging and so on, needs much more work, look at pyOpenSci in first instance for more info, seek other similar sources, >
+* <todo: consider, different build tools for different use case, map use case to build tool, at this point have no idea as to criteria for evaluaiton, pyOpenSci may point to a way ahead, need one Micropython build with C/C++ and Rust and likely other languages, >
+* <todo: consider, rebuild distribution without .egg-info, try something other than PDM or Hatchling in first instance, >
 
 DONE
 * <done: consider, flash RPi Pico with MicroPython>
