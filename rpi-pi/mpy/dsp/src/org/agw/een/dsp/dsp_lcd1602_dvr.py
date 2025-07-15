@@ -175,3 +175,72 @@
 # Note. This code is based on the code provided by the Waveshare demo code.
 #
 
+# #
+# import other libraries or classes from libs that will be used in this code
+import time
+from machine import Pin, I2C
+
+# Device I2C Address
+# page 6, https://www.waveshare.com/w/upload/2/2e/LCD1602_RGB_Module.pdf
+addr_i2c_lcd   =  (0x7c>>1) # AiP31068L (LCD) Slave Address : 0X7C
+addr_i2c_rgb   =  (0xc0>>1) # PCA9633DP2 (RGB) Slave Address: 0XC0
+
+# #
+# I2C bus
+# define values; clock pin, serial data pin, clock frequency
+i2c_bus = 1
+i2c_scl_pin = Pin(7) # GP7, I2C1 scl
+i2c_sda_pin = Pin(6) # GP6, I2C1 sda
+#clock_freq = 400_000 # 400kHz
+i2c_clock_freq = 400000 # 400kHz, 1000 = 1KHz
+
+# #
+# create an i2c instance of the display
+def i2c_inst(bus, scl, sda, freq):
+    
+    try:
+        
+        display_i2c = I2C(bus,
+                          scl = scl,
+                          sda = sda,
+                          freq = freq)
+        print(f'display_i2c: {display_i2c}'.format(display_i2c) ) # debug
+        return display_i2c
+        
+    except Exception as e:
+        print(f'I2C, initialisation exception: {e}'.format(e) )
+
+# create an I2C instance to communicate with the display
+display_i2c = i2c_inst(i2c_bus,
+                       i2c_scl_pin,
+                       i2c_sda_pin,
+                       i2c_clock_freq)
+# print(f'display_i2c: {display_i2c}'.format(display_i2c) ) # debug
+
+# #
+# Register addresses
+
+# colour
+reg_addr_red    = 0x04
+reg_addr_green  = 0x03
+reg_addr_blue   = 0x02
+reg_addr_mode1  = 0x00
+reg_addr_mode2  = 0x01
+reg_addr_output = 0x08
+
+#color define
+
+REG_RED    =     0x04
+REG_GREEN  =     0x03
+REG_BLUE   =     0x02
+REG_MODE1  =     0x00
+REG_MODE2  =     0x01
+REG_OUTPUT =     0x08
+LCD_CLEARDISPLAY = 0x01
+LCD_RETURNHOME = 0x02
+LCD_ENTRYMODESET = 0x04
+LCD_DISPLAYCONTROL = 0x08
+LCD_CURSORSHIFT = 0x10
+LCD_FUNCTIONSET = 0x20
+LCD_SETCGRAMADDR = 0x40
+LCD_SETDDRAMADDR = 0x80
