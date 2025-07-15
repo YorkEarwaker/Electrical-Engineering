@@ -219,6 +219,7 @@ display_i2c = i2c_inst(i2c_bus,
 
 # #
 # Register addresses
+# <todo: locate correct referrences to registry tables, likely in datasheets for; HD44780, AIP31068L, PCA9633DP2>
 
 # colour
 reg_addr_red    = 0x04
@@ -228,19 +229,4 @@ reg_addr_mode1  = 0x00
 reg_addr_mode2  = 0x01
 reg_addr_output = 0x08
 
-#color define
 
-REG_RED    =     0x04
-REG_GREEN  =     0x03
-REG_BLUE   =     0x02
-REG_MODE1  =     0x00
-REG_MODE2  =     0x01
-REG_OUTPUT =     0x08
-LCD_CLEARDISPLAY = 0x01
-LCD_RETURNHOME = 0x02
-LCD_ENTRYMODESET = 0x04
-LCD_DISPLAYCONTROL = 0x08
-LCD_CURSORSHIFT = 0x10
-LCD_FUNCTIONSET = 0x20
-LCD_SETCGRAMADDR = 0x40
-LCD_SETDDRAMADDR = 0x80
