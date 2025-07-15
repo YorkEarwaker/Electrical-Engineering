@@ -14,7 +14,7 @@ DONE
 ## Hardware
 
 LCD
-* LCD1602 RGB backlight character LCD, Waveshare, [WS](https://www.waveshare.com/LCD1602-RGB-Module.htm), Waveshare wiki [WS](https://www.waveshare.com/wiki/LCD1602_RGB_Module), 16x2 characters LCD, RGB Backlight, 3.3V/5V, I2C bususing I2C bus to display text or adjust RGB backlight, (Raspberry Pi/Jetson Nano/Arduino examples)
+* LCD1602 RGB backlight character LCD, Waveshare, [WS](https://www.waveshare.com/LCD1602-RGB-Module.htm), Waveshare wiki [WS](https://www.waveshare.com/wiki/LCD1602_RGB_Module), datasheet [PDF](https://www.waveshare.com/w/upload/2/2e/LCD1602_RGB_Module.pdf), 16x2 characters LCD, RGB Backlight, 3.3V/5V, I2C bususing I2C bus to display text or adjust RGB backlight, (Raspberry Pi/Jetson Nano/Arduino examples)
 * 1.3" IPS LCD Display Module (240x240), The Pi Hut [WS](https://thepihut.com/products/1-3-ips-lcd-display-module-240x240), Waveshare wiki, [WS](https://www.waveshare.com/wiki/1.3inch_LCD_Module), 
 * <todo: other tbd evaluation, >
 
@@ -24,7 +24,7 @@ OLED
 ## References
 
 Terms
-* I2C
+* I2C, I2C Bus org [WS](https://www.i2c-bus.org/), 
 * SPI
 
 Books
