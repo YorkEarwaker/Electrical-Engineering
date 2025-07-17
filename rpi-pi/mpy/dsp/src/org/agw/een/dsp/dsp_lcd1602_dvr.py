@@ -48,6 +48,7 @@
 # https://en.wikipedia.org/wiki/Assembly_language
 # https://en.wikipedia.org/wiki/Bit_numbering
 # https://en.wikipedia.org/wiki/Bitwise_operation
+# https://en.wikipedia.org/wiki/Bit_field
 # 
 # Hitachi HD44780 controller, is used as basis for operation for LCD1602
 # MIT, https://academy.cba.mit.edu/classes/output_devices/44780.pdf # ** seems useful, full datasheet
@@ -211,6 +212,18 @@
 #[2] When writing to the Control register, bit 4 must be programmed with logic 0 for proper device operation.
 #
 #
+# PCA9633, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+# <todo: prityfy in a with some table structure, virtical bar and underscore, >
+#Table 9. PWM0 to PWM3 - PWM registers 0 to 3 (address 02h to 05h) bit description
+# Address Register Bit Symbol Access Value Description
+# 02h PWM0 7:0 IDC0[7:0] R/W 0000 0000* PWM0 Individual Duty Cycle
+# 03h PWM1 7:0 IDC1[7:0] R/W 0000 0000* PWM1 Individual Duty Cycle
+# 04h PWM2 7:0 IDC2[7:0] R/W 0000 0000* PWM2 Individual Duty Cycle
+# 05h PWM3 7:0 IDC3[7:0] R/W 0000 0000* PWM3 Individual Duty Cycle
+# A 97 kHz fixed frequency signal is used for each output. Duty cycle is controlled through
+# 256 linear steps from 00h (0 % duty cycle = LED output off) to FFh (99.6 % duty cycle =
+# LED output at maximum brightness). Applicable to LED outputs programmed with LDRx
+# = 10 or 11 (LEDOUT register).
 #
 # Note. This code is based on the code provided by the Waveshare demo code.
 #
@@ -236,7 +249,7 @@ from machine import Pin, I2C
 # concern? 0xc0 = 11000000, 0x60 = 01100000, 0xc0>>1 = 0x60 = 01100000
 # https://i2cdevices.org/addresses/0x60
 # https://i2cdevices.org/devices/pca9685
-# datasheet? https://www.nxp.com/docs/en/data-sheet/MAG3110.pdf , probably this component
+# datasheet? https://www.nxp.com/docs/en/data-sheet/MAG3110.pdf , probably not this component
 #
 # page 6, https://www.waveshare.com/w/upload/2/2e/LCD1602_RGB_Module.pdf
 addr_i2c_lcd   =  (0x7c>>1) # AiP31068L (LCD) Slave Address : 0X7C,
@@ -280,33 +293,47 @@ display_i2c = i2c_inst(i2c_bus,
 #  in datasheets; HD44780, AIP31068L, PCA9633DP2>
 
 # #
+# PCA9633DP2 RGB I2C controller
+# 
 # Colour definition registers, red, green, blue, amber?
+# Every screen grid postion has four (4) light emmiting diodes LEDs <todo: is this true?>
+# one of each of amber, red, green, blue
 #
-# PCA9633, , MODE1, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+# PCA9633, , , https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
 # 05h 0 1 0 1 PWM3 read/write brightness control LED3
-# ? amber
-# PCA9633, , MODE1, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+# ? amber <todo: confirm use of amber diode in this lCD screen>
+
+# PCA9633, , , https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
 # 04h 0 1 0 0 PWM2 read/write brightness control LED2
 reg_addr_red    = 0x04
-# PCA9633, , MODE1, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+
+# PCA9633, , , https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
 # 03h 0 0 1 1 PWM1 read/write brightness control LED1
 reg_addr_green  = 0x03
-# PCA9633, , MODE1, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+
+# PCA9633, , , https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
 # 02h 0 0 1 0 PWM0 read/write brightness control LED0
 reg_addr_blue   = 0x02
 
 # #
 # PCA9633, 7.3.1 Mode register 1, MODE1, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+# Table 7. MODE1 -  Mode register 1 (address 00h)
 # 00h 0 0 0 0 MODE1 read/write Mode register 1
-reg_addr_mode1  = 0x00 # Table 7. MODE1 -  Mode register 1 (address 00h)
+reg_addr_mode1  = 0x00 # 
+
 # PCA9633, 7.3.2 Mode register 2, MODE2, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+# Table 8. MODE2 - Mode register 2 (address 01h)
 # 01h 0 0 0 1 MODE2 read/write Mode register 2
-reg_addr_mode2  = 0x01 # Table 8. MODE2 - Mode register 2 (address 01h)
+reg_addr_mode2  = 0x01 # 
+
 # PCA9633, 7.3.6 LED driver output state, LEDOUT, https://www.nxp.com/docs/en/data-sheet/PCA9633.pdf
+# Table 12. LEDOUT - LED driver output state register (address 08h)
 # 08h 1 0 0 0 LEDOUT read/write LED output state
-reg_addr_output = 0x08 # Table 12. LEDOUT - LED driver output state register (address 08h)
+reg_addr_output = 0x08 #
 
 # #
+# AIP31068L LCD I2C controller, (historic HD44780) 
+# 
 # AIP31068L, 4.2、INSTRUCTION DESCRIPTION, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
 # AIP31068L, Table 3. Instruction Table, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
 # see also
@@ -314,14 +341,73 @@ reg_addr_output = 0x08 # Table 12. LEDOUT - LED driver output state register (ad
 # HD44780U, Instructions, Table 6 Instructions, https://academy.cba.mit.edu/classes/output_devices/44780.pdf#%5B%7B%22num%22%3A106%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C-6%2C848%2C0.88%5D
 # HD44780U, Instruction Description, https://academy.cba.mit.edu/classes/output_devices/44780.pdf#%5B%7B%22num%22%3A121%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C-6%2C848%2C0.88%5D
 # HD44780U, Figure 11 Instruction (1)
-reg_addr_clear_display = 0x01 # 
-reg_addr_return_home = 0x02 # 
-reg_addr_entry_mode_set = 0x04 # 
-reg_addr_display_control = 0x08 # 
-reg_addr_cursor_shift = 0x10 # 
-reg_addr_function_set = 0x20 # 
-reg_addr_set_cgram_address = 0x40 # 
-reg_addr_set_ddram_address = 0x80 # 
+# 1) Clear Display, Clear all the display data. Return cursor to the original status,
+#    namely, bring the cursor to the left edge on the first line of the display.
+# bitmask 0x01 hexadecimal = register bit position, if value is set to 1 = binary 00000001 = decimal   1
+reg_addr_clear_display     = 0x01 # bit 1,
 
+# 2) Return Home, Return cursor to its original site and return display to its original status, if shifted.
+# bitmask 0x02 hexadecimal = register bit position, if value is set to 1 = binary 00000010 = decimal   2
+reg_addr_return_home       = 0x02 # bit 2,
 
+# 3) Entry Mode Set, Set the moving direction of cursor and display.
+# bitmask 0x04 hexadecimal = register bit position, if value is set to 1 = binary 00000100 = decimal   4
+reg_addr_entry_mode_set    = 0x04 # bit 3,
 
+# 4) Display ON/OFF Control, Control display/cursor/blink ON/OFF 1 bit register.
+# bitmask 0x08 hexadecimal = register bit position, if value is set to 1 = binary 00001000 = decimal   8
+reg_addr_display_control   = 0x08 # bit 4,
+
+# 5) Cursor or Display Shift, Shifting of right/left cursor position or display without writing or reading
+#    of display data. This instruction is used to correct or search display data.
+# bitmask 0x10 hexadecimal = register bit position, if value is set to 1 = binary 00010000 = decimal  16
+reg_addr_cursor_shift      = 0x10 # bit 5,
+
+# 6) Function Set, data (8 bit or 4 bit), line, font
+# bitmask 0x20 hexadecimal = register bit position, if value is set to 1 = binary 00100000 = decimal  32
+reg_addr_function_set      = 0x20 # bit 6,
+
+# 7) Set CGRAM Address, Set CGRAM address to AC. This instruction makes CGRAM data available from MPU.
+# bitmask 0x40 hexadecimal = register bit position, if value is set to 1 = binary 01000000 = decimal  64
+reg_addr_set_cgram_address = 0x40 # bit 7,
+
+# 8) Set DDRAM Address, Set DDRAM address to AC. This instruction makes DDRAM data available from MPU.
+# bitmask 0x80 hexadecimal = register bit position, if value is set to 1 = binary 10000000 = decimal 128
+reg_addr_set_ddram_address = 0x80 # bit 8, 
+
+# #
+# AIP31068L LCD I2C controller, (historic HD44780)
+# 
+# AIP31068L, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
+# HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
+# Values for entry mode set
+# 3) Entry Mode Set, Set the moving direction of cursor and display.
+reg_addr_entry_mode_set_right = 0x00 # 
+reg_addr_entry_mode_set_left = 0x02 # 
+reg_addr_entry_mode_set_shift_increment = 0x01 # 
+reg_addr_entry_mode_set_shift_decrement = 0x00 # 
+
+# #
+# AIP31068L LCD I2C controller, (historic HD44780)
+# 
+# AIP31068L, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
+# HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
+# Values for control
+# 4) Display ON/OFF Control, Control display/cursor/blink ON/OFF 1 bit register.
+
+# #
+# AIP31068L LCD I2C controller, (historic HD44780)
+# 
+# AIP31068L, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
+# HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
+# Values for cursor position
+# 5) Cursor or Display Shift, Shifting of right/left cursor position or display without writing or reading
+#    of display data. This instruction is used to correct or search display data.
+
+# #
+# AIP31068L LCD I2C controller, (historic HD44780)
+# 
+# AIP31068L, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
+# HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
+# Values for text
+# 6) Function Set, data (8 bit or 4 bit), line, font
