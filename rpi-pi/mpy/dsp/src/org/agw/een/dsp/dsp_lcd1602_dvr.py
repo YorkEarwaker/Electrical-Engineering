@@ -382,8 +382,8 @@ reg_addr_set_ddram_address = 0x80 # bit 8,
 # HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
 # Values for entry mode set
 # 3) Entry Mode Set, Set the moving direction of cursor and display.
-reg_addr_entry_mode_set_right = 0x00 # 
-reg_addr_entry_mode_set_left = 0x02 # 
+reg_addr_entry_mode_set_right           = 0x00 # 
+reg_addr_entry_mode_set_left            = 0x02 # 
 reg_addr_entry_mode_set_shift_increment = 0x01 # 
 reg_addr_entry_mode_set_shift_decrement = 0x00 # 
 
@@ -392,8 +392,14 @@ reg_addr_entry_mode_set_shift_decrement = 0x00 #
 # 
 # AIP31068L, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
 # HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
-# Values for control
-# 4) Display ON/OFF Control, Control display/cursor/blink ON/OFF 1 bit register.
+# Values for display control
+# 4) Display ON/OFF Control, Control display/cursor/blink ON/OFF 1 bit register. 
+reg_addr_display_control_display_on  = 0x04 # 
+reg_addr_display_control_display_off = 0x00 # 
+reg_addr_display_control_cursor_on   = 0x02 # 
+reg_addr_display_control_cursor_off  = 0x00 # 
+reg_addr_display_control_blink_on    = 0x01 # 
+reg_addr_display_control_blink_off   = 0x00 # 
 
 # #
 # AIP31068L LCD I2C controller, (historic HD44780)
@@ -403,6 +409,10 @@ reg_addr_entry_mode_set_shift_decrement = 0x00 #
 # Values for cursor position
 # 5) Cursor or Display Shift, Shifting of right/left cursor position or display without writing or reading
 #    of display data. This instruction is used to correct or search display data.
+reg_addr_cursor_shift_display_move = 0x08 # 
+reg_addr_cursor_shift_cursor_move  = 0x00 # 
+reg_addr_cursor_shift_move_right   = 0x04 # 
+reg_addr_cursor_shift_move_left    = 0x00 # 
 
 # #
 # AIP31068L LCD I2C controller, (historic HD44780)
@@ -410,4 +420,19 @@ reg_addr_entry_mode_set_shift_decrement = 0x00 #
 # AIP31068L, https://www.orientdisplay.com/wp-content/uploads/2022/08/AIP31068L.pdf
 # HD44780U, https://academy.cba.mit.edu/classes/output_devices/44780.pdf
 # Values for text
-# 6) Function Set, data (8 bit or 4 bit), line, font
+# 6) Function Set, data (8 bit or 4 bit), (2 or 1) line, (dot matrix) font
+reg_addr_function_set_eight_bit_mode     = 0x10 # 
+reg_addr_function_set_four_bit_mode      = 0x00 # 
+reg_addr_function_set_two_line           = 0x08 # 
+reg_addr_function_set_one_line           = 0x00 # 
+reg_addr_function_set_five_by_eight_dots = 0x00 # 
+
+
+# #
+# 
+#
+class LCD1602:
+    
+    
+    
+    
