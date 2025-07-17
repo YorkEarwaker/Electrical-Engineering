@@ -433,6 +433,108 @@ reg_addr_function_set_five_by_eight_dots = 0x00 #
 #
 class LCD1602:
     
+    #
+    def __init__(self, col, row):
+        self._col = col,
+        self._row = row,
+        
+        self._showfunction = reg_addr_function_set_four_bit_mode | reg_addr_function_set_one_line | reg_addr_function_set_five_by_eight_dots;
+        self.begin(self._row, self._col)
     
+    # <todo: determine 0x80 meaning, find source reference, likely the registry to write to>
+    def command(self, cmd):
+        display_i2c.writeto_mem(addr_i2c_lcd, 0x80, char(cmd))
     
+    # <todo: determine 0x80 meaning, find source reference, likely the registry to write to>
+    def write(self, data):
+        display_i2c.writeto_mem(addr_i2c_lcd, 0x40, char(data))
+        
+    def setReg(self, reg, data):
+        display_i2c.writeto_mem(addr_i2C_rgb, reg, char(data))
+        
+    # <todo: consider, if amber a legal value, consider another similar function def with additional argument amber a>
+    def setRGB(self, r, g, b):
+        self.setReg(reg_addr_red, r)
+        self.setReg(reg_addr_gree, g)
+        self.setReg(reg_addr_blue, b)
     
+    #
+    def setCursor(self, col, row):
+        if(row=0):
+            col|=0x80 # find source for this value, 
+        else:
+            col|=0xc0 # find source for this value, 
+        display_i2c.writeto(addr_i2c_lcd, bytearray([0x80,col])) # should this be writeto_mem? probably not?
+    
+    #
+    def clear(self):
+        self.command(reg_addr_clear_display)
+        time.sleep(0.002) # make this a variable,
+    
+    #   
+    def printout(self, arg):
+        if(isinstance(arg, int)):
+            arg=str(arg)
+            
+        for x in bytearray(arg, 'utf-8'):
+            self.write(x)
+    
+    #
+    def display(self):
+        self._showcontrol|=reg_addr_display_control_display_on
+        self.command(reg_addr_display_control | self._showcontrol)
+    
+    #
+    def begin(self, cols, lines):
+        if (lines > 1):
+            self._showfunction |= reg_addr_function_set_two_line
+        
+        self._numlines = lines
+        self._currline = 0
+        
+        # delay some microseconds, , find ratonale
+        # why this dalay, 
+        time.sleep(0.05) # set as variable, why this number?
+        
+        # send function set command sequence
+        self.command(reg_addr_function_set | self._showfunction)
+        # delay some microseconds, , find ratonale
+        # delayMicroseconds(4500); what code base was this taken from
+        # 4500, wait more than 4.1 ms, why? from original code 
+        time.sleep(0.005)
+        # send function set command sequence
+        # again, why twice?
+        self.command(reg_addr_function_set | self._showfunction)
+        # delay some microseconds, , find ratonale
+        #delayMicroseconds(150); what code base was this taken from
+        time.sleep(0.005)
+        # third go
+        self.command(reg_addr_function_set | self._showfunction)
+        # finally set, lines, font size etc
+        self.command(reg_addr_function_set | self._showfunction)
+        # turn the display on with no cursor of blinking default
+        self._showcontrol = reg_addr_display_control_display_on | reg_addr_display_control_cursor_off | reg_addr_display_control_blink_off
+        # 
+        self.display()
+        # clear is off
+        self.clear()
+        # initialize to default text direction (for romance languages)
+        self._showmode = reg_addr_entry_mode_set_left | reg_addr_entry_mode_set_shift_decrement
+        # set the entry mode
+        self.command(reg_addr_entry_mode_set | self._showmode)
+        # backlight init
+        self.setReg(reg_addr_mode1, 0)
+        # set LEDs controllable by both PWM and GRPWM registers
+        self.setReg(reg_addr_output, 0xFF)
+        # set Mode2 values
+        # 0010 0000 -> 0x20  (DMBLNK to 1, ie blinky mode)
+        self.setReg(reg_addr_mode2, 0x20)
+        self.setColourWhite()
+        
+    #
+    def setColourWhite(self):
+        self.setRGB(255, 255, 255)
+
+
+        
+        
