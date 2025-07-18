@@ -435,32 +435,38 @@ class LCD1602:
     
     #
     def __init__(self, col, row):
-        self._col = col,
-        self._row = row,
+        self._col = col
+        self._row = row
         
         self._showfunction = reg_addr_function_set_four_bit_mode | reg_addr_function_set_one_line | reg_addr_function_set_five_by_eight_dots;
         self.begin(self._row, self._col)
     
+    # debug
+    # <todo: iterate to return False is the empty list [] is returned. >
+    def check_i2c_on_bus(self):
+        list_of_valid_i2c_addresses = display_i2c.scan() # debug
+        print(f'display_i2c.scan() address list: {list_of_valid_i2c_addresses}'.format(list_of_valid_i2c_addresses)) # debug
+    
     # <todo: determine 0x80 meaning, find source reference, likely the registry to write to>
     def command(self, cmd):
-        display_i2c.writeto_mem(addr_i2c_lcd, 0x80, char(cmd))
+        display_i2c.writeto_mem(addr_i2c_lcd, 0x80, chr(cmd))
     
     # <todo: determine 0x80 meaning, find source reference, likely the registry to write to>
     def write(self, data):
-        display_i2c.writeto_mem(addr_i2c_lcd, 0x40, char(data))
+        display_i2c.writeto_mem(addr_i2c_lcd, 0x40, chr(data))
         
     def setReg(self, reg, data):
-        display_i2c.writeto_mem(addr_i2C_rgb, reg, char(data))
+        display_i2c.writeto_mem(addr_i2c_rgb, reg, chr(data))
         
     # <todo: consider, if amber a legal value, consider another similar function def with additional argument amber a>
     def setRGB(self, r, g, b):
         self.setReg(reg_addr_red, r)
-        self.setReg(reg_addr_gree, g)
+        self.setReg(reg_addr_green, g)
         self.setReg(reg_addr_blue, b)
     
     #
     def setCursor(self, col, row):
-        if(row=0):
+        if(row == 0):
             col|=0x80 # find source for this value, 
         else:
             col|=0xc0 # find source for this value, 
@@ -486,6 +492,9 @@ class LCD1602:
     
     #
     def begin(self, cols, lines):
+        
+        self.check_i2c_on_bus() # debug
+        
         if (lines > 1):
             self._showfunction |= reg_addr_function_set_two_line
         

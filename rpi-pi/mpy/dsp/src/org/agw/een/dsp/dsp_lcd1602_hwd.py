@@ -180,7 +180,7 @@
 # libraries and classes to use in this program
 import dsp_lcd1602_dvr as LCD1602
 #import LCD1602
-#import time
+import time
 #import math
 
 # #
@@ -193,10 +193,20 @@ green_amount = 128
 blue_amount  = 64
 
 # create and instance of an lcd display
-lcd_display = LCD1602.LCD1602(16, 2)
+# <todo: make these arguments variables with meaningful names>
+lcd_display = LCD1602.LCD1602(16, 2) 
 
 # set background colour        
 lcd_display.setRGB(red_amount, green_amount, blue_amount)
+
+#
+lcd_display.setCursor(0, 0)
+
+#
+lcd_display.printout('You Beauty!')
+
+# time to absorb first message
+time.sleep(1.5)
 
 #
 lcd_display.setCursor(0, 0)
