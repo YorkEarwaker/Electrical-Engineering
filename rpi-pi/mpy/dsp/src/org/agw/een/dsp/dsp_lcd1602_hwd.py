@@ -175,3 +175,37 @@
 # Note. This code is based on the code provided by the Waveshare demo code.
 #
 
+
+# #
+# libraries and classes to use in this program
+import dsp_lcd1602_dvr as LCD1602
+#import LCD1602
+#import time
+#import math
+
+# #
+# Colour values to set the background
+# an positive integer number between 0 and 255,
+# 0 is no colour i.e. black, 255 is full colour i.e. white,
+# when all colour amounts are set to 0 or 255
+red_amount   = 64
+green_amount = 128
+blue_amount  = 64
+
+# create and instance of an lcd display
+lcd_display = LCD1602.LCD1602(16, 2)
+
+# set background colour        
+lcd_display.setRGB(red_amount, green_amount, blue_amount)
+
+#
+lcd_display.setCursor(0, 0)
+
+#
+lcd_display.printout('Hello, World!')
+        
+
+
+
+
+

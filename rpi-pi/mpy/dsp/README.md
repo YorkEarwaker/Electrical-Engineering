@@ -6,12 +6,12 @@ Display things on a screen, wired to RPi Pico using I2C and SPI interfaces,
 
 TODO
 * <todo: consider, oled display, wired on breadboard to RPi Pico, discovery, understaing ecosystm, >
-* <done: consider, lcd dispaly, wired on breadboard to RPi Pico, discovery , understaing ecosystm, initial user testing to be code as use case, >
 * <todo: consider, build distribution archive for use in Thonny IDE, as step toward use case tests, >
 
 DONE
 * <done: intent to commit>
 * <done: consider, lcd dispaly, wired on breadboard to RPi Pico, discovery , understaing ecosystm, driver and code as use cases, driver completed needs testing, >
+* <done: consider, lcd dispaly, wired on breadboard to RPi Pico, discovery , understaing ecosystm, initial user testing to be code as use case, 'Hello, World!' to screen, success, >
 
 ## Hardware
 
