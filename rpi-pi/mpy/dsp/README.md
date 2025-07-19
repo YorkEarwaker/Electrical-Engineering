@@ -6,7 +6,8 @@ Display things on a screen, wired to RPi Pico using I2C and SPI interfaces,
 
 TODO
 * <todo: consider, oled display, wired on breadboard to RPi Pico, discovery, understaing ecosystm, >
-* <todo: consider, build distribution archive for use in Thonny IDE, as step toward use case tests, >
+* <todo: consider, build distribution archive for use in Thonny IDE, as step toward systems testing in QA environment QA1, which build tool use? >
+* <todo: consider, DHT22 temperature readings to screen in development environment DE1, >
 
 DONE
 * <done: intent to commit>
