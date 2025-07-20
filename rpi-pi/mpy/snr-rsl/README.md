@@ -7,6 +7,10 @@ Good luck with that. So we need sensors to measure the aerosol things to at leas
 ## Status
 TODO
 * <todo: consider, LEW-TOPS-19, NASA, Multi-Parameter Aerosol Scattering Sensor MPASS, nanometer particle scale detection, >
+* <todo: consider, other sensors, light based nanometer scale measurements, >
+* <todo: consider, ocean system corollery to atmopherice aerosol measurements in water column and interaction with atmosphere and mixing >
+* <todo: consider, find EU Copernicus studies on atmospheric chemisty effects on human health, longevity of substances, >
+* <todo: consider, find JP KR IN AU NZ and so on studies on atmospheric chemisty effects on human health, longevity of substances, >
 
 DONE
 * <done: intent to commit>
