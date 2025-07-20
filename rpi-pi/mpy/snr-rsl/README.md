@@ -20,5 +20,8 @@ Terms
 Journals
 * Aerosol and Air Quality Research AAQR org [WS](https://aaqr.org/categories/low-cost-sensors), 
 
+Information packs - fact sheets
+* The Impact of Wildfires on Climate and Air Quality, An emerging focus of the, [WS](https://csl.noaa.gov/factsheets/csdWildfiresFIREX.pdf), NOAA, ESRL Chemical Sciences Division,
+
 Sensors - Instrumentation
 * Multi-Parameter Aerosol Scattering Sensor (LEW-TOPS-19) [WS](https://technology.nasa.gov/patent/LEW-TOPS-19), NASA, Instrumentation, A highly accurate, lightweight, low-cost miniaturized environmental monitoring sensor system
