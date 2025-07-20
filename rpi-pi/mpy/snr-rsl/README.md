@@ -4,6 +4,8 @@ Aerosol, molecules, particulate matter, air quality control, . The consequence o
 
 Good luck with that. So we need sensors to measure the aerosol things to at least know what is out there and where an in what concentrations nd for how long and with what other things to be able to start to think of how to mitigate the possible consequences. CFC's and the hole in the ozone as one example.
 
+Global health consequences. Not least with the possibility of novel microorganisms and the possiblity of global pandemics. Notwithstanding all of the other geospheric and biospheric consequences.
+
 ## Status
 TODO
 * <todo: consider, LEW-TOPS-19, NASA, Multi-Parameter Aerosol Scattering Sensor MPASS, nanometer particle scale detection, >
