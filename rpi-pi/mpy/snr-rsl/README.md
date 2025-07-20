@@ -23,6 +23,10 @@ Terms
 * Aerosol
 * Particulate
 
+Particles
+* Primary particle
+* Secondary particle
+
 Journals
 * Aerosol and Air Quality Research AAQR org [WS](https://aaqr.org/categories/low-cost-sensors), 
 
