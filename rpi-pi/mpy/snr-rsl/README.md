@@ -1,6 +1,6 @@
 # Aerosol sensor rsl (mpy)
 
-Aerosol, molecules, particulate matter, air quality control, . 
+Aerosol, molecules, particulate matter, air quality control, . The likelyhood of wetbulb events increases. In a warming planet more seven percent more water vapor be held in the atmosphere for each degree of warming. In a warming planet more volatile substance will evaporate. In a warming planet more fires wild and urban will occure and so more particulate matter. The water vapor will compbine with other volative vapor and particulate matter and gases. In one giant chemical experiment in the sky. 
 
 ## Status
 TODO
