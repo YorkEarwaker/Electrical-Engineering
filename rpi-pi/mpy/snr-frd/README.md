@@ -25,7 +25,7 @@ Drivers?
 * SparkFun MLX90640 Arduino Example [GH](https://github.com/sparkfun/SparkFun_MLX90640_Arduino_Example), 
 
 VNC - mobile phone integration
-* 
+* see RPi V for VNC capability to mobile
 
 ## Hardware
 
