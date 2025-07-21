@@ -46,18 +46,10 @@ Boards - which of these could be used with MCU like Pico?
 
 Terms
 * Thermal Imaging, 
-* Infrared long wavelenth, IR lW
+* Infrared long Wavelenth, IR lW
 * microbolometer pixels
 * thermopile pixels
 
-VNC - mobile control, <todo: consider break this into a separate project, >
-* RealVNC,
-* TigerVNC,
-* WayVNC, 
-
 News Papers - nhw to
 * Building a Raspberry Pi Thermal Imaging Camera - MLX90640 guide, [WS](https://everythingsmarthome.co.uk/building-a-raspberry-pi-thermal-imaging-camera-mlx90640-guide/), Lewis Barclay, 
-
-News Papers - VNC 
-* VNC on the RaspberryPi 5 with PiOS Bookworm, [WS](https://www.raspberryconnect.com/projects/41-tutorials-and-guides-1/201-vnc-on-the-raspberrypi-5-with-pios-bookworm), Raspberry Connect, 
 
