@@ -14,7 +14,7 @@ TODO
 * <todo: consider, field of view, standard 45°, 55°, wide angle 90°, enumerate use cases for each, >
 * <todo: consider, does this require purchase of RPi 5 SBC, likely MCU like pico under speced for processig and display, >
 * <todo: consider, could Pico MCU be used to capture and transfer stream circa 250fps? probs not, >
-* <todo: consider, temperature? heat? measurement ranage, cold to hot, >
+* <todo: consider, temperature? heat? measurement range, cold to hot, >
 
 DONE
 * <done: intent to commit>
