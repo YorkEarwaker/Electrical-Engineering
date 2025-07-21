@@ -1,8 +1,11 @@
 # Global navigation sattelite system gns (mpy)
 
+GPS, 
+
 ## Status
 TODO
-* <todo: identify breakout board, >
+* <todo: consider, identify breakout board, >
+* <todo: consider, this likely sits with RPi V >
 
 DONE
 * <done: intent to commit>
