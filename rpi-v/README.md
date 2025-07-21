@@ -11,6 +11,7 @@ TODO
 * <todo: consider, as main interface for RPi Pico programming, >
 * <todo: consider, as evaluation for Climate Model \amn project low cost commodity hardware for cluster and cloud, >
 * <todo: consider, to better understnd printed circuit boards toward design of a pcb? >
+* <todo: consider renaming to Rpi sbc, to better include Zero and other SBC's , maybe not due to spec use case differences, maybe for generic sbc suff, ponder more, >
 
 DONE
 * <done: intent to commit >
