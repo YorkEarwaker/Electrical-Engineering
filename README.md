@@ -39,6 +39,11 @@ TODO
 DONE
 * <done: intent to commit>
 
+## Funding
+
+Crowd funding?
+* Crowd Supply, [WS](https://www.crowdsupply.com/), 56 countries, 
+
 ## Libraries
 
 Tools - circuit boards
