@@ -19,11 +19,46 @@ TODO
 DONE
 * <done: intent to commit>
 
+## Libs
+
+* <todo: identify generic sensor libs, wrappers, standard like interoperabiity, api, ontology, message data formats, JSON, and so on, >
+
+## Hardware
+
+Sensor component part - the sensor, alone, environmeental sensors, particulate sensors, aerosl sensors, 
+* BMV080
+* BME690
+* BME688
+* <todo: others to identify, particulate matter detection specifically, gas specifically, >
+
+Independent component (stand alone device) - lose coupling, high cohesion, if limited to single device, i.e. a single sensor, better componentisation, better NFR's ilities, the sensor on a circuit board no resistors etc, likely supplied pinned 0.1 , 
+* <todo: identify ones other than DHT22/DHT11 >
+
+Breakout boards - lose coupling, high cohesion, if limited to single device, i.e. a single sensor, better componentisation, better NFR's ilities, the sensor on a circuit board likely resistors etc. may or may not be pinned 0.1, 
+* SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic), sparkfun com [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), Pi Hut []() 
+* Particulate Matter Sensor - SPS30, sparkfun com [WS](https://www.sparkfun.com/particulate-matter-sensor-sps30.html), Pi Hut 
+* <todo: others to identify, see papers below, review of particulate sensors, >
+
+Microcontroller board integrated solutions - tight coupling of sensor device to microcontroller, low cohesion, useful for end user product development with no electrical engineering, 
+* <todo: consider moving this section elsewhere?, or leave here as imformative, >
+* Polverine, Cutting-edge environmental sensing in a compact form factor, [WS](https://www.crowdsupply.com/blackiot/polverine), BlackIoT, ESP32-S3-MINI-1 Microcontroller, 2.4GHz WiFi, Bluetooth 5, BMV080, BME690, cost circa: $79, International Shipping $18.00 GB VAT 20.00% $19.40 Order Total (USD) $116.40
+* Martinica, A powerful Bosch sensor development board with Wi-Fi and enhanced security in an Arduino MKR form factor, [WS](https://www.crowdsupply.com/blackiot/martinica), BlackIoT, WIP, <retrieved: 2025, 07, 21>
+
+Manufacturers
+* MCU, BlackIoT, Crowd Supply [WS](https://www.crowdsupply.com/blackiot), com [WS](https://www.blackiot.swiss/), multiple integrated devices, 
+* Board, SparkFun, 
+* Seosor, Bosch, 
+
 ## References
 
 Terms
 * Aerosol
 * Particulate
+
+Technology
+* Compact lasers
+* Integrated photodiods
+* 
 
 Particles
 * Primary particle
@@ -31,11 +66,16 @@ Particles
 
 Journals
 * Aerosol and Air Quality Research AAQR org [WS](https://aaqr.org/categories/low-cost-sensors), 
+* Sensors com [WS](https://www.mdpi.com/journal/sensors), open access, 
 
 Information packs - fact sheets
 * The Impact of Wildfires on Climate and Air Quality, An emerging focus of the CSD, [WS](https://csl.noaa.gov/factsheets/csdWildfiresFIREX.pdf), NOAA, ESRL Chemical Sciences Division,
 
+Papers
+* A Review of Low-Cost Particulate Matter Sensors from the Developers’ Perspectives, PMC [WS](https://pmc.ncbi.nlm.nih.gov/articles/PMC7730878/), Sensors [DOI](https://www.mdpi.com/1424-8220/20/23/6819), 
+
 Sensors - Instrumentation
 * Multi-Parameter Aerosol Scattering Sensor (LEW-TOPS-19) [WS](https://technology.nasa.gov/patent/LEW-TOPS-19), NASA, Instrumentation, A highly accurate, lightweight, low-cost miniaturized environmental monitoring sensor system
 * Particulate Matter Sensor, BMV080 [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
+* BMV080 Ultra-mini Particulate Matter Sensor – Integration Guideline, [PDF](file:///C:/Users/yorke/Downloads/bst-bmv080-hs000.pdf), Bosch, Document revision 1.3, Document release date May 2025, Document number BST-BMV080-AN000-03, Sales part number 0273.017.054-1NV
 
