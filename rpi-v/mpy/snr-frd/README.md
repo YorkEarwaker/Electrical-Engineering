@@ -33,7 +33,8 @@ Sensor - infrared basic
 
 
 Sensor - thermal imaging - not MCU Pico compatible due to processing requirements
-* MLX90640
+* AMG8833,  8x8@10fps,
+* MLX90640, 32x24@32fps, 
 * MLX90641
 * FLIR Lepton
 * InfiRay P2
