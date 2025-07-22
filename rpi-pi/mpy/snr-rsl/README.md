@@ -1,8 +1,8 @@
 # Aerosol sensor rsl (mpy)
 
-Aerosol, molecules, particulate matter, air quality control, . The consequence of phase change. The likelyhood of wetbulb events increases. In a warming planet more seven percent more water vapor will   be held in the atmosphere for each degree of warming. In a warming planet more volatile substance will evaporate. In a warming planet more fires wild and urban will occure and so more particulate matter. Area burned will at least double for every degree of warming. The water vapor will compbine with other volative vapor and particulate matter and gases. Each water droplet a miniature testtube in the sky heated by the Earths radiative energy and catalysed by the Suns radiative energery. In one giant chemical experiment in the sky. Each water droplet in the atmosphere also a miniature petri dish in the sky. The chemistry will interact with microorganisms in one giant biological experiment in the sky. Which will interact with the chemistry and biology in oceans and on land and cryosphere. So the atmopheric water droplets as micro testtube and micro petri dish interacting with the macro testtube and macro petri dish of the oceans. And so on with meso ecosystem niches and on. And the increased heat will speed chemical and biochemical molecular interactive process. In one giant biospheric and geospheric experment in Earths global systems of systems.
+Aerosol, molecules, particulate matter, air quality control, . The consequence of phase change. The likelyhood of wetbulb events increases. In a warming planet more seven percent more water vapor will be held in the atmosphere for each degree of warming. In a warming planet more volatile substance will evaporate. In a warming planet more fires wild and urban will occure and so more particulate matter. Area burned will at least double for every degree of warming. The water vapor will compbine with other volative vapor and particulate matter and gases. Each water droplet a miniature testtube in the sky heated by the Earths radiative energy and catalysed by the Suns radiative energy. In one giant chemical experiment in the sky. Each water droplet in the atmosphere also a miniature petri dish in the sky. The chemistry will interact with microorganisms in one giant biological experiment in the sky. Which will interact with the chemistry and biology in oceans and on land and cryosphere. So the atmopheric water droplets as micro testtube and micro petri dish interacting with the macro testtube and macro petri dish of the oceans. And so on with meso ecosystem niches and on. And the increased heat will speed chemical and biochemical molecular interactive process. In one giant biospheric and geospheric experment in Earths global systems of systems.
 
-So sensors are needed to measure the aerosol things to at least know what is out there and where an in what concentrations nd for how long and with what other things to be able to start to think of how to mitigate the possible consequences. CFC's and the hole in the ozone as one example.
+So sensors are needed to measure the aerosol things to at least know what is out there and where an in what concentrations and for how long and with what other things to be able to start to think of how to mitigate the possible consequences. CFC's and the hole in the ozone as one example.
 
 Global health consequences. Not least with the possibility of novel microorganisms and the possiblity of global pandemics. Notwithstanding all of the other geospheric and biospheric consequences.
 
@@ -26,16 +26,17 @@ DONE
 ## Hardware
 
 Sensor component part - the sensor, alone, environmeental sensors, particulate sensors, aerosl sensors, 
-* BMV080
-* BME690
-* BME688
+* BMV080, Bosch
+* BME690, Bosch
+* BME688, Bosch
+* SPS30 [WS](https://sensirion.com/products/catalog/SPS30), Sensirion
 * <todo: others to identify, particulate matter detection specifically, gas specifically, >
 
 Independent component (stand alone device) - lose coupling, high cohesion, if limited to single device, i.e. a single sensor, better componentisation, better NFR's ilities, the sensor on a circuit board no resistors etc, likely supplied pinned 0.1 , 
-* <todo: identify ones other than DHT22/DHT11 >
+* <todo: identify ones other than DHT22/DHT11 not a particle sensor, temperature only,  >
 
 Breakout boards - lose coupling, high cohesion, if limited to single device, i.e. a single sensor, better componentisation, better NFR's ilities, the sensor on a circuit board likely resistors etc. may or may not be pinned 0.1, 
-* SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic), sparkfun com [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), Pi Hut []() 
+* SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic), sparkfun com [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), Pi Hut [WS](https://thepihut.com/products/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic) 
 * Particulate Matter Sensor - SPS30, sparkfun com [WS](https://www.sparkfun.com/particulate-matter-sensor-sps30.html), Pi Hut 
 * <todo: others to identify, see papers below, review of particulate sensors, >
 
