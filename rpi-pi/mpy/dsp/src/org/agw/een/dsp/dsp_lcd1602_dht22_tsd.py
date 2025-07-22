@@ -172,8 +172,6 @@
 #                                  20-| o ◯       ◯ o |-21
 #                                      -----------------
 #
-# Note. This code is based in part on the code provided by the Waveshare demo code.
-#
 #
 # Circuit diagram
 # Simplified view of Rpi Pico microntroller and DHT22 device circuit
@@ -298,7 +296,6 @@ while True:
                 
         #
         lcd_display.printout('{} %RH'.format(snr_tsd_hmd))
-        
         
         # #
         # Print the meteorological variables
