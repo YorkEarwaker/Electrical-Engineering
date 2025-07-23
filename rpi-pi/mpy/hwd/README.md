@@ -24,26 +24,18 @@ DONE
 ## Output
 
 ### Make a distribution package for a python project
-Build Success reported, but issues using in code in Thonny IDE, 
-* <info: had not build-system section in pyproject.toml, appeared to default to setuptools as build system, .egg-info file created in package /src/org >
+Build Success reported, using Hatch, following instructions in the pyOpenSci site, see link below
+* <info: for first begginer build ensure, confib.toml has tests=false . ensure pyproject.toml has sections; [build-system] requires = ["hatchling"] build-backend = "hatchling.build" ,  [tool.hatch.build.targets.wheel] packages = ["src"] .>
+* <todo: recreate venv for /hwd and build using hatch, include success below, >
 
 ```
-<comment; lots-of-other-output-before-hand-then-something-like-this-follows-at-the-end ...>
+<comment; lost of output on failure, on success only the following>
 
-adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/licenses/LICENSE'
-adding 'org/__init__.py'
-adding 'org/agw/__init__.py'
-adding 'org/agw/een/__init__.py'
-adding 'org/agw/een/hwd/__init__.py'
-adding 'org/agw/een/hwd/hello_world.py'
-adding 'org/agw/een/hwd/light_pico_onboard_led.py'
-adding 'org/agw/een/hwd/simple_led_example.py'
-adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/METADATA'
-adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/WHEEL'
-adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/top_level.txt'
-adding 'hwd_example_package_citizen_developer-0.0.1.dist-info/RECORD'
-removing build\bdist.win-amd64\wheel
-Successfully built hwd_example_package_citizen_developer-0.0.1.tar.gz and hwd_example_package_citizen_developer-0.0.1-py3-none-any.whl
+(venv) C:\path\to\your\dev\project\electrical-engineering\rpi-pi\mpy\dsp>hatch build
+──────────────────────────────────────────────────────── sdist ────────────────────────────────────────────────────────
+dist\display_org_agw_een_dsp-0.0.1.tar.gz
+──────────────────────────────────────────────────────── wheel ────────────────────────────────────────────────────────
+dist\display_org_agw_een_dsp-0.0.1-py3-none-any.whl
 
 ```
 
