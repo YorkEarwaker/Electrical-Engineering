@@ -41,8 +41,9 @@ dist\display_org_agw_een_dsp-0.0.1-py3-none-any.whl
 ```
 
 ## Lib
+<todo: still confussed by Frontend and Backend tool differences, this section needs reworking >
 
-### Build Frontend
+### Build Frontend 
 Package Manager - python package manager, not linux system package manager,
 Finding it difficult to distinguish between frontend and backend, build ecosystem
 
