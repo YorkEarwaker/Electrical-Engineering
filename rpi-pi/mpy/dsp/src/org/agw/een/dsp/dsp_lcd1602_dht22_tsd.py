@@ -212,11 +212,15 @@
 #                              19-| o             o |-22
 #                              20-| o ◯       ◯ o |-21
 #                                  -----------------
-#
+# 
+# For a fuller discussion of DHT22 sensor see the following link which will likely at some point get stale, 
+# https://github.com/YorkEarwaker/Electrical-Engineering/blob/main/rpi-pi/mpy/snr-tsd/src/org/agw/een/snr/snr_dht22_tsd.py , retrieved: 2025-07-23
+# See also related projects README.md 
 
 
 # #
 # libraries and classes to use in this program
+# <todo: put in org.agw..... package structure for import statement and comment out the dev env import statement>
 import dsp_lcd1602_dvr as LCD1602
 from machine import Pin, RTC
 from time import sleep
@@ -282,19 +286,19 @@ while True:
         tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0 # convert celsius to fahrenheit
         #print('tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0: done'.format(tmp_frh)) # debug
         
-        #
+        # Each cycle wipe the screen clear of any previous text
         lcd_display.clear()
         
-        #
+        # Place the cursor to the top left hand side of the screen to start writting the first line
         lcd_display.setCursor(0, 0)
 
-        #
+        # Write temperature in Celsius and Fahrenheit
         lcd_display.printout('{} C, {} F'.format(snr_tsd_tmp, tmp_frh))
         
-        #
+        # Plase the cursor to the bottom left hand side of the screen to start writting the second line
         lcd_display.setCursor(0, 1)
-                
-        #
+        
+        # Write the relative humidity as percentage
         lcd_display.printout('{} %RH'.format(snr_tsd_hmd))
         
         # #
