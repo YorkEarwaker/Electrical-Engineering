@@ -27,6 +27,7 @@ DONE
 Build Success reported, using Hatch, following instructions in the pyOpenSci site, see link below
 * <info: for first begginer build ensure, confib.toml has tests=false . ensure pyproject.toml has sections; [build-system] requires = ["hatchling"] build-backend = "hatchling.build" ,  [tool.hatch.build.targets.wheel] packages = ["src"] .>
 * <todo: recreate venv for /hwd and build using hatch, include success below, >
+* <todo: update /hwd pyproject.toml, to be hatch compliant, >
 
 ```
 <comment; lost of output on failure, on success only the following>
