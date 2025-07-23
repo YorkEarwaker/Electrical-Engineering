@@ -68,7 +68,8 @@ Products
 ### Build Backend
 
 * Flit core, 
-* Hatchling, pypi [WS](https://pypi.org/project/hatchling/), 
+* Hatch, pypi [WS](https://pypi.org/project/hatch/), pypa [WS](https://hatch.pypa.io/latest/), pyOpenSci get to know hatch [WS](https://www.pyopensci.org/python-package-guide/tutorials/get-to-know-hatch.html), pip install hatch
+* Hatchling, pypi [WS](https://pypi.org/project/hatchling/), Note this did not work <todo: consider, deleting this listing entry>
 * meson-python
 * PDM, pypi [WS](https://pypi.org/project/pdm/), org [WS](https://pdm-project.org/en/latest/), [GH](https://github.com/pdm-project/pdm), 
 * scikit-build-core, 
