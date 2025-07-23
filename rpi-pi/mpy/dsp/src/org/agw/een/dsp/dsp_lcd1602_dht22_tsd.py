@@ -286,6 +286,9 @@ while True:
         tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0 # convert celsius to fahrenheit
         #print('tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0: done'.format(tmp_frh)) # debug
         
+        # #
+        # Display values on an screen
+        
         # Each cycle wipe the screen clear of any previous text
         lcd_display.clear()
         
@@ -302,7 +305,7 @@ while True:
         lcd_display.printout('{} %RH'.format(snr_tsd_hmd))
         
         # #
-        # Print the meteorological variables
+        # Print the meteorological variables to shell 
         print('Temperature: {} °C'.format(snr_tsd_tmp) ) # celsius
         print('Temperature: {} °F'.format(tmp_frh) )     # fahrenheit
         print('Humidity: {} %RH'.format(snr_tsd_hmd) )   # relative humidity
