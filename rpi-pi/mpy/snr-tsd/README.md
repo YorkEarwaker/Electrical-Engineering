@@ -11,7 +11,6 @@ For consumption by climate models for example,
 ## Status
 
 TODO
-* <todo: consider, __init__ , best practice for BME280 dirver module, put drivers in a spearate package? >
 * <todo: consider, SPI interface, mpy code for BME280 , >
 * <todo: consider, DS18B20 Temperature Sensor,  >
 * <todo: consider, Bosch BME180 and BMP085 and BME680 and other environmental sensors from Bosch for Climate Model \amn sub project >
@@ -19,7 +18,7 @@ TODO
 * <todo: consider, gas sensors, sampling of atmospheric gases, outside in 'nature' and inside in confied spaces, differenct use cases, which is frist case CO2? others? 
 * <todo: consider, indoor, room ventilation, BME688 air quality sensor, volatile organic compounds (VOCs), volatile sulfur compounds (VSCs), presence of carbon monoxide and hydrogen, in addition to temperature, pressure and humidity, >
 * <todo: consider, Nondispersive infrared sensor, H2), C02, SO2, NO2, expensive, a useful prospective project too for RYO PCB? >
-* <todo: consider, issue with build, snr_bme280_dvr not working in /sdc project, Exists when called with error reported as '[Errno 5] EIO' , not an SPI nicro SD Card issue as tested with other code, >
+* <todo: consider, rebuild package distribution with Hatch, update pyproject.toml file accordingly>
 
 DONE
 * <done: intent to commit>
@@ -30,7 +29,9 @@ DONE
 * <done: consider, complete circuit diagram, for BME280, but likely won't work for both SPI and I2C >
 * <done: consider, temperature humidity air pressure readings, BME280 PoC, wip, much more complex than the DHT22 PoC, success with I2C interface,  >
 * <done: consider, ```__init__.py``` not curretly used, is it necessary for the current state? yes it must be fixed to allow BME280 driver module be imported, goes to current ignorance of best use for ```__init__.py``` and what code must be downloaded to RPi Pico and what can remain remote, so MicroPython and RPi Pico ecosystem knowledge gap, may require revisiting, currently used empty, >
-* ...
+* <done: consider, __init__ , best practice for BME280 dirver module, put drivers in a spearate package? >
+* <done: consider, issue with build, snr_bme280_dvr not working in /sdc project, Exists when called with error reported as '[Errno 5] EIO' , not an SPI nicro SD Card issue as tested with other code, resolved, rebuild distribution package so tht src was not included as part of package name dir struct, refactored import statement full package name, >
+* <done: consider, particulate aerosol sensor, BMV080 see /snr-rsl project wip>
 
 ## Readings
 
