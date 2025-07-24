@@ -178,8 +178,8 @@
 
 # #
 # libraries and classes to use in this program
-import dsp_lcd1602_dvr as LCD1602
-#import LCD1602
+#import dsp_lcd1602_dvr as LCD1602 # dev env, driver .py file saved to rpi-pico flash in Thonny IDE
+from org.agw.een.dsp import dsp_lcd1602_dvr as LCD1602 # qa env, driver installed as distribution package in Thonny IDE
 import time
 #import math
 

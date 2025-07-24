@@ -6,13 +6,38 @@ Display things on a screen, wired to RPi Pico using I2C and SPI interfaces,
 
 TODO
 * <todo: consider, oled display, wired on breadboard to RPi Pico, discovery, understaing ecosystm, >
-* <todo: consider, build distribution archive for use in Thonny IDE, as step toward systems testing in QA environment QA1, which build tool use? >
-* <todo: consider, DHT22 temperature readings to screen in development environment DE1, >
+* <todo: consider, BME280 temperature readings to screen in QA environment QA1, >
 
 DONE
 * <done: intent to commit>
 * <done: consider, lcd dispaly, wired on breadboard to RPi Pico, discovery , understaing ecosystm, driver and code as use cases, driver completed needs testing, >
 * <done: consider, lcd dispaly, wired on breadboard to RPi Pico, discovery , understaing ecosystm, initial user testing to be code as use case, 'Hello, World!' to screen, success, >
+* <done: consider, DHT22 temperature readings to screen in development environment DE1, >
+* <done: consider, build distribution archive for use in Thonny IDE, as step toward systems testing in QA environment QA1, which build tool used: Hatch, >
+
+## Output
+
+<info: successful build distribtuion package with Hatch for to import driver 'dsp_lcd1602_dvr.py' into QA1 env. >
+```
+(venv) C:\Users\yorke\Documents\dev\repo\electrical-engineering\rpi-pi\mpy\dsp>hatch build
+──────────────────────────────────────────────────────── sdist ────────────────────────────────────────────────────────
+dist\display_org_agw_een_dsp-0.0.1.tar.gz
+──────────────────────────────────────────────────────── wheel ────────────────────────────────────────────────────────
+dist\display_org_agw_een_dsp-0.0.1-py3-none-any.whl
+
+(venv) C:\Users\yorke\Documents\dev\repo\electrical-engineering\rpi-pi\mpy\dsp>
+```
+
+<info: successful run of script 'dsp_lcd1602_hwd.py' to display Hello World on LCD screen in QA1 env after importing 
+       display_org_agw_een_dsp-0.0.1-py3-none-any.whl in Thonny IDE.  >
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+display_i2c: I2C(1, freq=400000, scl=7, sda=6, timeout=50000)
+display_i2c.scan() address list: [62, 96, 112]
+>>> 
+```
 
 ## Hardware
 

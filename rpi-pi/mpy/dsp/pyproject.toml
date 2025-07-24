@@ -1,0 +1,70 @@
+#[build-system]
+#requires = ["hatchling >= 1.26"]
+#build-backend = "hatchling.build"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# does not seem to work
+#[build-system]
+#requires = ["hatch >= 1.14.1"]
+#build-backend = "hatch.build"
+
+[project]
+name = "display_org_agw_een_dsp"
+version = "0.0.1"
+authors = [
+	{ name="Citizen Developoer", email="citizen-developer@agw.org" },
+]
+description = "A small hello world example package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    # How mature is this project? Common values are
+    "Development Status :: 4 - Beta",
+	
+	# Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    #"Topic :: Software Development :: IoT, global warming, time series data, nwp/cwp, ", # get list of legal classifiers, hatch complained
+	"Programming Language :: Python :: 3",
+	#"Operation system :: OS Independent", # get list of legal values, hatch complained
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/agw/display"
+Issues = "https://github.com/agw/display/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+
+#[tools.setuptools]
+#packages = ["src"]
+
+# #
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata
+# 
+#[project]
+#name = "example_package_YOUR_USERNAME_HERE"
+#version = "0.0.1"
+#authors = [
+#	{ name="Example Author", email="author@example.com" },
+#]
+#description = "A small example package"
+#readme = "README.md"
+#requires-python = ">=3.9"
+#classifiers = [
+#	"Programming Language :: Python :: 3",
+#	"Operation system :: OS Independent",
+#]
+#license = "MIT"
+#license-files = ["LICEN[CS]E*"]
+#
+#[project.urls]
+#Homepage = "https://github.com/pypa/sampleproject"
+#Issues = "https://github.com/pypa/sampleproject/issues"
