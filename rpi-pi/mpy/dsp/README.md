@@ -7,6 +7,7 @@ Display things on a screen, wired to RPi Pico using I2C and SPI interfaces,
 TODO
 * <todo: consider, oled display, wired on breadboard to RPi Pico, discovery, understaing ecosystm, >
 * <todo: consider, BME280 temperature readings to screen in QA environment QA1, >
+* <todo: consider, there are still issues to fully understand with Hatch build options in pyproject.toml, further research necessary, >
 
 DONE
 * <done: intent to commit>

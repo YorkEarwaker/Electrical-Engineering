@@ -42,13 +42,13 @@ exclude = ["venv", "lib"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
-only-include = ["src"] # more research needed, read the docs
-only-packages = true # more research needed, read the docs
+#only-include = ["src"] # more research needed, read the docs
+#only-packages = true # more research needed, read the docs
 exclude = ["venv", "lib"] # more research needed, read the docs
 
 
-#[tool.hatch.build.targets.wheel.sources]
-#"src" = "" # more research needed, read the docs
+[tool.hatch.build.targets.wheel.sources]
+"src" = "" # more research needed, read the docs
 
 #[tools.setuptools]
 #packages = ["src"]
