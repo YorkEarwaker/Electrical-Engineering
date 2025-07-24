@@ -18,6 +18,7 @@ DONE
 
 ## Output
 
+### build package distribution
 <info: successful build distribtuion package with Hatch for to import driver 'dsp_lcd1602_dvr.py' into QA1 env. >
 ```
 (venv) C:\Users\yorke\Documents\dev\repo\electrical-engineering\rpi-pi\mpy\dsp>hatch build
@@ -29,6 +30,7 @@ dist\display_org_agw_een_dsp-0.0.1-py3-none-any.whl
 (venv) C:\Users\yorke\Documents\dev\repo\electrical-engineering\rpi-pi\mpy\dsp>
 ```
 
+### test package distribution
 <info: successful run of script 'dsp_lcd1602_hwd.py' to display Hello World on LCD screen in QA1 env after importing 
        display_org_agw_een_dsp-0.0.1-py3-none-any.whl in Thonny IDE.  >
 ```
@@ -39,6 +41,18 @@ display_i2c: I2C(1, freq=400000, scl=7, sda=6, timeout=50000)
 display_i2c.scan() address list: [62, 96, 112]
 >>> 
 ```
+
+### integrate LCD and DHT22 readings
+
+Success in DE1 dev env. Only LCD screen device on I2C bus 1. Successully display temperature and humidity and air pressure readings from DHT22 on LCD screen.
+
+### integrate LCD and BME280 readings
+
+Failure in QA1 env. Two devices on I2C bus 1; LCD screen and BME280 sensor. Both work independently but require disconnect of USB cable power down of RPi Pico for respective successful run.
+* <todo: consider, troubleshoot two devices on same I2C bus, likely an I2C conflict issue. >
+* <todo: consider, addressing issue on I2C, >
+* <todo: consider, rebuild bme280 package distribution in Hatch, current versoin is pd was built in PMD, likely correlation not causation, >
+
 
 ## Hardware
 
