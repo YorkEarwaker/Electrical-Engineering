@@ -11,8 +11,7 @@ TODO
 * <todo: consider, create distribution package and use with pipkin for Thonny IDE, from local host, >
 * <todo: consider, disable egg creation in build process, egg and egg.info are depricated and have no official standards specification, wheels in place of eggs, wheels have spec PEP 427 2012, >
 * <todo: consider, iterate build section, packaging and so on, needs much more work, look at pyOpenSci in first instance for more info, seek other similar sources, >
-* <todo: consider, different build tools for different use case, map use case to build tool, at this point have no idea as to criteria for evaluaiton, pyOpenSci may point to a way ahead, need one Micropython build with C/C++ and Rust and likely other languages, >
-* <todo: consider, rebuild distribution without .egg-info, try something other than PDM or Hatchling in first instance, >
+* <todo: consider, rebuild distribution without .egg-info, try something other than PDM , try Hatch as recomended by pyOpenSci, >
 
 DONE
 * <done: consider, flash RPi Pico with MicroPython>
@@ -20,17 +19,18 @@ DONE
 * <done: consider, first circuit in boradboard with RPi Pico >
 * <done: consider, standard python distribution format, create example package, >
 * <done: consider, delete egg zip directory in Github repo under /src >
+* <done: consider, different build tools for different use case, map use case to build tool, at this point have no idea as to criteria for evaluaiton, pyOpenSci may point to a way ahead, need one Micropython build with C/C++ and Rust and likely other languages, wip, continued research required, pyOpenSci recommend Hatch, >
 
 ## Output
 
 ### Make a distribution package for a python project
 Build Success reported, using Hatch, following instructions in the pyOpenSci site, see link below
-* <info: for first begginer build ensure, confib.toml has tests=false . ensure pyproject.toml has sections; [build-system] requires = ["hatchling"] build-backend = "hatchling.build" ,  [tool.hatch.build.targets.wheel] packages = ["src"] .>
+* <info: for first begginer build ensure, confib.toml has tests=false . ensure pyproject.toml has sections; [build-system] requires = ["hatchling"] build-backend = "hatchling.build" ,  [tool.hatch.build.targets.wheel] packages = ["src/org"] .>
 * <todo: recreate venv for /hwd and build using hatch, include success below, >
 * <todo: update /hwd pyproject.toml, to be hatch compliant, >
 
 ```
-<comment; lost of output on failure, on success only the following>
+<comment; lots of output on failure, on success only the following>
 
 (venv) C:\path\to\your\dev\project\electrical-engineering\rpi-pi\mpy\dsp>hatch build
 ──────────────────────────────────────────────────────── sdist ────────────────────────────────────────────────────────
