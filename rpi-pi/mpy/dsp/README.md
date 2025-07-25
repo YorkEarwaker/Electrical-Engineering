@@ -123,6 +123,8 @@ Use Stop/Restart to reconnect.
 
 Process ended with exit code 1.
 ```
+### integrate LCD and BME280 readings and sd card
+BME280 temperature humdity air pressure reading to file io to SD Card and to LCD screen, in rpi-pi/sdc (mpy) project [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/sdc#bme280-temperature-humdity-air-pressure-reading-to-file-io-to-sd-card-and-to-lcd-screen)
 
 ## Hardware
 
