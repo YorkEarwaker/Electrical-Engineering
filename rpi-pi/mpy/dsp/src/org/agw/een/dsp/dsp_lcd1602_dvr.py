@@ -35,8 +35,9 @@
 # https://www.i2c-bus.org/addressing/
 #
 # 
-# I2C-bus specification and user manual, NXP Semiconductors,
-# https://www.nxp.com/docs/en/user-guide/UM10204.pdf
+# I2C-bus
+# Raspberry Pi Pico Tips and Tricks, Inter-Integrated Circuit I2C, https://leanpub.com/rpitandt/read#leanpub-auto-inter-integrated-circuit-i2c, Last updated on 2024-03-02, Malcolm Maclean, Learnpub, retrieved 2025-07-25, 
+# specification and user manual, NXP Semiconductors, https://www.nxp.com/docs/en/user-guide/UM10204.pdf
 #
 # Bit Numbering
 # https://en.wikipedia.org/wiki/Bit_numbering
@@ -135,8 +136,8 @@
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- |
 # | 1       | VCC       | 3V3,        pin 36 | Red    | 3.3V ~ 5V power input                                      |
 # | 2       | GND       | GND,        pin 38 | Black  | Ground                                                     |
-# | 3       | SCL       | GP07, SCL , pin 10 | Blue   | I2C clock pin                                              |
-# | 4       | SDA       | GP06, SDA , pin 09 | Yellow | I2C data pin                                               |
+# | 3       | SCL       | GP09, SCL , pin 12 | Blue   | I2C clock pin                                              |
+# | 4       | SDA       | GP08, SDA , pin 11 | Yellow | I2C data pin                                               |
 # | ------- | --------- | ------------------ | ------ | ---------------------------------------------------------- | 
 # 
 # I2C control interface
@@ -173,10 +174,10 @@
 #       | |                         6-| o  __         o |-35
 #       | |                         7-| o |__| Flash  o |-34
 #       | |                         8-| o   _______   o |-33
-#       | |---I2C1 SDA------GP6-----9-| o  | ARM   |  o |-32
-#       |-----I2C1 SCL------GP7----10-| o  | 2035  |  o |-31
-#                                  11-| o  |_______|  o |-30
-#                                  12-| o             o |-29
+#       | |                         9-| o  | ARM   |  o |-32
+#       | |                        10-| o  | 2035  |  o |-31
+#       | |---I2C0 SDA------GP8----11-| o  |_______|  o |-30
+#       |-----I2C0 SCL------GP9----12-| o             o |-29
 #                                  13-| o             o |-28
 #                                  14-| o             o |-27
 #                                  15-| o             o |-26
@@ -258,11 +259,16 @@ addr_i2c_rgb   =  (0xc0>>1) # PCA9633DP2 (RGB) Slave Address: 0XC0,
 # #
 # I2C bus
 # define values; clock pin, serial data pin, clock frequency
-i2c_bus = 1
-i2c_scl_pin = Pin(7) # GP7, I2C1 scl
-i2c_sda_pin = Pin(6) # GP6, I2C1 sda
+# One device or string of devices per controller only,
+# So only two strings of devices active at any one time one for one set for bus 0 one set for bus 1
+# One device or string of devices on i2c 0, One device or string of devices on i2c 1
+# Limit 127 devices in total, limit one (1) i2c 'hub' and six (6) devices per daisy chain,
+# Limits are set by the USB specification, and power consumption and bandwidth considerations
+i2c_bus_dsp = 0
+i2c_scl_pin_dsp = Pin(9) # GP9, I2C0 scl
+i2c_sda_pin_dsp = Pin(8) # GP8, I2C0 sda
 #clock_freq = 400_000 # 400kHz
-i2c_clock_freq = 400000 # 400kHz, 1000 = 1KHz
+i2c_clock_freq_dsp = 400000 # 400kHz, 1000 = 1KHz
 
 # #
 # create an i2c instance of the display
@@ -281,10 +287,10 @@ def i2c_inst(bus, scl, sda, freq):
         print(f'I2C, initialisation exception: {e}'.format(e) )
 
 # create an I2C instance to communicate with the display
-display_i2c = i2c_inst(i2c_bus,
-                       i2c_scl_pin,
-                       i2c_sda_pin,
-                       i2c_clock_freq)
+display_i2c = i2c_inst(i2c_bus_dsp,
+                       i2c_scl_pin_dsp,
+                       i2c_sda_pin_dsp,
+                       i2c_clock_freq_dsp)
 # print(f'display_i2c: {display_i2c}'.format(display_i2c) ) # debug
 
 # #

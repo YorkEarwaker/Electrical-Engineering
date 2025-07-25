@@ -174,68 +174,92 @@
 #
 #
 # Circuit diagram
-# Simplified view of Rpi Pico microntroller and DHT22 device circuit
-#    _____
-#   /_____\  Simplified       | --- | --------- | Device 
-#  |       | Front of         | 1   | VDD       | pins functions
-#  |       | DHT22            | 2   | SDA       |
-#  |_______| sensor           | 3   | NULL      |
-#  |_______| Aosong, CN       | 4   | GND       |
-#   | | | |  Device           | --- | --------- |       
-#   1 2 3 4
-#   | |   |                                                _____ R1 10kΩ (10kOhm) pull up resistor
-#   |-)---)-----------------------------------------------|_____|-----|
-#     |   |                                                           |
-#     |   |---------------------------------------------------------| |
-#     |                                                             | |
-#     |                            RPi Pico 2 W pinout              | |
-#     |                                  _____                      | |
-#     |                            -----|     |-----                | |
-#     |                         1-| o ◯|_____|◯ o |-40            | |
-#     |                         2-| o     USB     o |-39            | |
-#     |                         3-| o             o |-38-----GND----| |
-#     |---I2C1 SDA------GP2-----4-| o             o |-37              |
-#                               5-| o             o |-36---3V3(OUT)---|    
-#                               6-| o  __         o |-35
-#                               7-| o |__| Flash  o |-34
-#                               8-| o   _______   o |-33
-#                               9-| o  | ARM   |  o |-32
-#                              10-| o  | 2035  |  o |-31
-#                              11-| o  |_______|  o |-30
-#                              12-| o             o |-29
-#                              13-| o             o |-28
-#                              14-| o             o |-27
-#                              15-| o             o |-26
-#                              16-| o             o |-25
-#                              17-| o             o |-24
-#                              18-| o             o |-23
-#                              19-| o             o |-22
-#                              20-| o ◯       ◯ o |-21
-#                                  -----------------
+# Simplified view of Rpi Pico microntroller and Waveshare PCB BME280 sensor device circuit.
+# The I2C interface works with current circuit design. 02/05/2025
+#
+# <todo: consider, might need two of these, one for I2C interface and another for SPI interface >
+# <todo: consider, this wiring diagram probably won't work due to conflicts identified above
+#        in table 'Raspberry Pi Pico, BME280, pin map, I2C1 and SPI0' current state of breadboard>
+#   ___________ 
+#  |    [.]    | Simplified       | --- | --------- | Circuit board 
+#  |           | Front of         | 1   | VCC       | pins functions
+#  |           | BME280           | 2   | GND       |
+#  |___________| sensor           | 3   | SDA/MOSI  |
+#  |___________| Waveshare, CN    | 4   | SCL/SCK   |
+#   | | | | | |  Circuit board    | 5   | ADDR/MISO |     
+#   1 2 3 4 5 6                   | 6   | CS        |
+#   | | | | | |                   | --- | --------- |
+#   |-)-)-)-)-)-------------------------------------------------------| 
+#     | | | | |                                                       | 
+#     |-)-)-)-)-----------------------------------------------------| |
+#       | | | |                                                     | |
+#       | | | |                    RPi Pico 2 W pinout              | |
+#       | | | |                          _____                      | | 
+#       | | | |                    -----|     |-----                | |
+#       | | | |                 1-| o ◯|_____|◯ o |-40            | | 
+#       | | | |                 2-| o     USB     o |-39            | |
+#       | | | |                 3-| o             o |-38-----GND----| |
+#       | | | |                 4-| o             o |-37              |
+#       | | | |                 5-| o             o |-36---3V3(OUT)---|     
+#       | | | |                 6-| o  __         o |-35
+#       | | | |                 7-| o |__| Flash  o |-34
+#       | | | |                 8-| o   _______   o |-33
+#       | | | |                 9-| o  | ARM   |  o |-32
+#       | | | |                10-| o  | 2035  |  o |-31
+#       | | | |                11-| o  |_______|  o |-30
+#       | | | |                12-| o             o |-29
+#       | | | |                13-| o             o |-28
+#       | | | |                14-| o             o |-27
+#       | | | |                15-| o             o |-26
+#       | | | |                16-| o             o |-25----GP19-----ISP0 TX----I2C1 SCL-------------------|
+#       | | | |                17-| o             o |-24----GP18-----ISP0 SCK---I2C1 SDA-------------------)-|
+#       | | | |                18-| o             o |-23                                                   | |
+#       | | | |                19-| o             o |-22----GP17-----ISP0 CSn---I2C0 SCL---UART0 RX----|   | |
+#       | | | |                20-| o ◯       ◯ o |-21----GP16-----ISP0 RX----I2C0 SDA---UART0 TX----)-| | |
+#       | | | |                    -----------------                                                   | | | |
+#       | | | |----------------------------------------------------------------------------------------| | | |
+#       | | |--------------------------------------------------------------------------------------------| | |
+#       | |------------------------------------------------------------------------------------------------| |
+#       |----------------------------------------------------------------------------------------------------|
 # 
-# For a fuller discussion of DHT22 sensor see the following link which will likely at some point get stale, 
-# https://github.com/YorkEarwaker/Electrical-Engineering/blob/main/rpi-pi/mpy/snr-tsd/src/org/agw/een/snr/snr_dht22_tsd.py , retrieved: 2025-07-23
+# For a fuller discussion of BME280 sensor see the following link which will likely at some point get stale, 
+# https://github.com/YorkEarwaker/Electrical-Engineering/blob/main/rpi-pi/mpy/snr-tsd/src/org/agw/een/snr/snr_bme280_tsd.py , retrieved: 2025-07-24
 # See also related projects README.md 
 
 
 # #
 # libraries and classes to use in this program
-import dsp_lcd1602_dvr as LCD1602 # dev env, driver .py file saved to rpi-pico flash in Thonny IDE
-#from org.agw.een.dsp import dsp_lcd1602_dvr as LCD1602 # qa env, driver installed as distribution package in Thonny IDE
-from machine import Pin, RTC
+# <todo: put in org.agw..... package structure for import statement and comment out the dev env import statement>
+#import dsp_lcd1602_dvr as LCD1602 # dev env, driver .py file saved to rpi-pico flash in Thonny IDE
+from org.agw.een.dsp import dsp_lcd1602_dvr as LCD1602 # qa env, driver installed as distribution package in Thonny IDE
+from machine import Pin, I2C, RTC
 from time import sleep
-from dht import DHT22 # DHT22 not migrated to QA1 env, remains, 2025-07-24, in DE1 dev env
+#import snr_bme280_dvr as BME280 # snr_bme280_dvr, must be present on Rpi Pico as file download
+import org.agw.een.snr.snr_bme280_dvr as BME280 # driver installed in RPi Pico micropython
 
 # #
-# The GPIO pin number to read in the sensor measurement readings into the microcontroller
-pin = Pin(2, Pin.IN) # GP2
+# define values; clock pin, serial data pin, clock frequency
+i2c_bus_snr = 1 # 0 or 1
+i2c_scl_pin_snr = Pin(19) # GP19, I2C1 scl
+i2c_sda_pin_snr = Pin(18) # GP18, I2C1 sda
+#clock_freq = 400_000 # 400kHz
+i2c_clock_freq_snr = 1000 # 1kHz
 
 # #
-# The sensor driver takes the GPIO number of the RPi GPIO pin connected to the sensor device SDA pin
-# to send commands to the sensor to execute
-# and retrieve data measurements back read from the sensor's memory
-snr_tsd = DHT22(pin)
-# print('snr_tsd {}'.format(snr_tsd)) # debug
+# Initialise I2C communication
+#i2C = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=1000)
+sensor_i2c = I2C(i2c_bus_snr, scl=i2c_scl_pin_snr, sda=i2c_sda_pin_snr, freq=i2c_clock_freq_snr) # 
+#print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
+
+# # Debug only
+# scan for devices at the RPi pins on the I2C hardware bus, should return [119]
+dvcs = sensor_i2c.scan() # scan for devices
+print('devices: {}'.format(dvcs)) # debug, I2C devices found
+
+# #
+# Initialise BME280 sensor
+bme = BME280.BME280(i2c=sensor_i2c)
+#print('bme initialised: {}'.format(bme)) # debug
 
 # #
 # create a Real Time Clock instance, to use to get the current date and time
@@ -257,6 +281,7 @@ lcd_display = LCD1602.LCD1602(16, 2)
 # set background colour        
 lcd_display.setRGB(red_amount, green_amount, blue_amount)
 
+
 while True:
     #print('while True: in') # debug
     try:
@@ -270,22 +295,31 @@ while True:
         # #
         # get the date and time, from the Real Time Clock instance
         dt_tm = rtc.datetime() # get the current date and time
-        # print('current date & time: {}'.format(dt_tm)) # debug, date and time
+        print('current date & time: {}'.format(dt_tm)) # debug, date and time
         
         # #
-        # Read the sensor values
-        snr_tsd.measure()
-        #print('snr_tsd.measure(): done') # debug
-        snr_tsd_tmp = snr_tsd.temperature() # # e.g. 23.6 (°C) celsius
-        #print('snr_tsd.temperature(): done'.format(snr_tsd_tmp)) # debug
-        snr_tsd_hmd = snr_tsd.humidity() # e.g. 41.3 (% RH) relative humidity
-        #print('snr_tsd.humidity(): done'.format(snr_tsd_hmd)) # debug
+        # Read sensor data
+        tempC = bme.temperature
+        #print('bme.temperature(): {}'.format(tempC)) # debug
+        hum = bme.humidity
+        #hum2 = bme.read_humidity()
+        #hum = round(hum, 2)
+        #print('bme.humidity(): {}'.format(hum2)) # debug
+        # hectopascal (1 hPa = 100 Pa), which is equal to one millibar,
+        # and the kilopascal (1 kPa = 1000 Pa),
+        # which is equal to one centibar.
+        pres = bme.pressure # hPa/mbar
+        #pres2 = bme.read_pressure()
+        #pres = str(round(pres, 2))
+        #print('bme.pressure(): {}'.format(pres2)) # debug
         
         # #
-        # Convert values for output
-        tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0 # convert celsius to fahrenheit
-        #print('tmp_frh = (snr_tsd_tmp * (9/5)) + 32.0: done'.format(tmp_frh)) # debug
-        
+        # Convert temperature to fahrenheit
+        tempF = (bme.read_temperature()/100) * (9/5) + 32
+        tempF = str(round(tempF, 2)) + 'F'
+        #tempF = str(round(tempF, 2))
+        #print('tempF: {}'.format(tempF)) # debug
+             
         # #
         # Display values on an screen
         
@@ -296,23 +330,24 @@ while True:
         lcd_display.setCursor(0, 0)
 
         # Write temperature in Celsius and Fahrenheit
-        lcd_display.printout('{} C, {} F'.format(snr_tsd_tmp, tmp_frh))
+        lcd_display.printout('{}, {}'.format(tempC, tempF))
         
         # Plase the cursor to the bottom left hand side of the screen to start writting the second line
         lcd_display.setCursor(0, 1)
         
         # Write the relative humidity as percentage
-        lcd_display.printout('{} %RH'.format(snr_tsd_hmd))
+        lcd_display.printout('{}, {}'.format(hum, pres))
         
         # #
-        # Print the meteorological variables to shell 
-        print('Temperature: {} °C'.format(snr_tsd_tmp) ) # celsius
-        print('Temperature: {} °F'.format(tmp_frh) )     # fahrenheit
-        print('Humidity: {} %RH'.format(snr_tsd_hmd) )   # relative humidity
-        
-        # #
-        # catch error
-    except OSError as e:
+        # Print sensor readings to shell
+        print('Temperature: ', tempC)
+        print('Temperature: ', tempF)
+        print('Humidity: ', hum)
+        print('Pressure: ', pres)
+    
+    except Exception as e:
+        # Handle any exceptions during sensor reading
+        #print('Ooops. Code boo-boo. Time for cinnamon bun and a nice cupa cha. An error occurred: ', e)   
         print('OSError. Sensor reading failed. {} '.format(e) )
 
         
