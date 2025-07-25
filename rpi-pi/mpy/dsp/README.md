@@ -6,8 +6,10 @@ Display things on a screen, wired to RPi Pico using I2C and SPI interfaces,
 
 TODO
 * <todo: consider, oled display, wired on breadboard to RPi Pico, discovery, understaing ecosystm, >
-* <todo: consider, BME280 temperature readings to screen in QA environment QA1, >
+* <todo: consider, BME280 temperature readings to screen in QA environment QA1, both LCD screen and BME sensor are use I2C work around is have each be on seperate bus, BME280 on bus 1 and LCD on bus 0, LCD bus 0 probably simplest work around for now,  >
 * <todo: consider, there are still issues to fully understand with Hatch build options in pyproject.toml, further research necessary, >
+* <todo: consider, refactor LCD1602 dirver so that it is passed an I2C object as argument, currently the driver has a hard coded option internal, allow bus variability 0 or 1 allow GPIO pin variability allow frequence variablity, instead of all being hard coded values, allow daisy chaining of LCD driver with other I2C devices on same contraller with same GPIO pins>
+* <todo: consider, after LCD1602 driver refatord to take an i2c controller as argument daisy chain BME280 and LCD screen, as test, >
 
 DONE
 * <done: intent to commit>
@@ -72,10 +74,14 @@ Terms
 
 Books
 * Get Started with MicroPython on Raspberry Pi Pico, The Official Raspberry Pi Pico Guide, Gareth Halfacree, Ben Everard, 2nd Edition, Chapter 10 Digital Communication Protocols: I2C and SPI
+* Raspberry Pi Pico Tips and Tricks, Inter-Integrated Circuit I2C, [WS](https://leanpub.com/rpitandt/read#leanpub-auto-inter-integrated-circuit-i2c), Last updated on 2024-03-02, Malcolm Maclean, Learnpub, retrieved 2025-07-25, 
 
 Datasheets
 * ...
 
 News Papers - LCD dispaly
 * Raspberry Pi Pico with I2C LCD Display (MicroPython), [WS](https://randomnerdtutorials.com/raspberry-pi-pico-i2c-lcd-display-micropython/), Randomtutorials, 
-* ...
+
+News Papers - I2C
+* Using I2C devices with Raspberry PI Pico and MicroPython, [WS](https://peppe8o.com/using-i2c-devices-with-raspberry-pi-pico-and-micropython/), Last Updated on 19th April 2024, peppe8o
+
