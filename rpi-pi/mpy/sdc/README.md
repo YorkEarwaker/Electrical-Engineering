@@ -519,6 +519,67 @@ Type "help()" for more information.
 >>>
 ```
 
+### BME280 temperature humdity air pressure reading to file io to SD Card and to LCD screen
+Successful run in QA1 env. sensor readings, the same in log file see end of output below, and LCD screen display images not included. Logging and dispaly of sensor readings interupt execution with Ctrl C.
+* <todo: reconfirms requirement to troubleshoot BME280 sensor humidity readings, is BME280 properly calibrated, damaged, driver defective? >
+
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+display_i2c: I2C(0, freq=400000, scl=9, sda=8, timeout=50000)
+display_i2c.scan() address list: [62, 96, 112]
+sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+micro sd card: <SDCard object at 20013e50>
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+sys vol info: ['System Volume Information', 'pico-cpu-temp-log.txt', 'bme280-thp-log.txt']
+i2c.scan() address list: [119]
+bme initialised: <BME280 object at 200170a0>
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+Temperature:  23.56C
+Temperature:  74.37F
+Humidity:  49.-5023890%
+Pressure:  1007.15hPa
+temperature C: 23.56C, temperature F: 74.37F, humidity: 49.-5023890%, pressure: 1007.15hPa, at date & time: (2025, 7, 25, 4, 15, 57, 53, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+Temperature:  23.56C
+Temperature:  74.41F
+Humidity:  49.-5013700%
+Pressure:  1007.12hPa
+temperature C: 23.56C, temperature F: 74.41F, humidity: 49.-5013700%, pressure: 1007.12hPa, at date & time: (2025, 7, 25, 4, 15, 58, 53, 0)
+file exists: True
+sensor_i2c: I2C(1, freq=1000, scl=19, sda=18, timeout=50000)
+Temperature:  23.60C
+Temperature:  74.46F
+Humidity:  48.-4998115%
+Pressure:  1007.04hPa
+temperature C: 23.60C, temperature F: 74.46F, humidity: 48.-4998115%, pressure: 1007.04hPa, at date & time: (2025, 7, 25, 4, 15, 59, 53, 0)
+file exists: True
+file size: 1288 unicode chars
+file content: 25.92C, 78.62F, 40.-4146847%, 1006.12hPa, (2025, 7, 11, 4, 10, 20, 48, 0), 
+25.82C, 78.49F, 40.-4133360%, 1006.20hPa, (2025, 7, 11, 4, 10, 21, 48, 0), 
+25.77C, 78.39F, 40.-4123670%, 1006.33hPa, (2025, 7, 11, 4, 10, 22, 48, 0), 
+25.72C, 78.3F, 40.-4120872%, 1006.39hPa, (2025, 7, 11, 4, 10, 23, 48, 0), 
+25.65C, 78.17F, 40.-4119174%, 1006.52hPa, (2025, 7, 11, 4, 10, 24, 48, 0), 
+26.88C, 80.33F, 38.-3930159%, 1004.02hPa, (2025, 7, 11, 4, 11, 32, 10, 0), 
+26.79C, 80.22F, 38.-3946543%, 1004.24hPa, (2025, 7, 11, 4, 11, 33, 11, 0), 
+26.73C, 80.11F, 38.-3927661%, 1004.35hPa, (2025, 7, 11, 4, 11, 34, 11, 0), 
+26.66C, 79.99F, 38.-3912176%, 1004.43hPa, (2025, 7, 11, 4, 11, 35, 11, 0), 
+26.60C, 79.88F, 38.-3904684%, 1004.51hPa, (2025, 7, 11, 4, 11, 36, 11, 0), 
+26.46C, 79.59F, 38.-3906981%, 1004.78hPa, (2025, 7, 11, 4, 11, 39, 35, 0), 
+26.39C, 79.48F, 38.-3910878%, 1004.89hPa, (2025, 7, 11, 4, 11, 40, 35, 0), 
+26.29C, 79.3F, 38.-3923865%, 1005.00hPa, (2025, 7, 11, 4, 11, 43, 58, 0), 
+26.30C, 79.3F, 38.-3925064%, 1005.00hPa, (2025, 7, 11, 4, 11, 44, 9, 0), 
+23.56C, 74.37F, 49.-5023890%, 1007.15hPa, (2025, 7, 25, 4, 15, 57, 53, 0), 
+23.56C, 74.41F, 49.-5013700%, 1007.12hPa, (2025, 7, 25, 4, 15, 58, 53, 0), 
+23.60C, 74.46F, 48.-4998115%, 1007.04hPa, (2025, 7, 25, 4, 15, 59, 53, 0), 
+
+Logging interupt; keyboard
+>>> 
+```
+
 ## Libraries
 
 Standards
