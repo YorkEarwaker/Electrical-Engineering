@@ -10,6 +10,7 @@ TODO
 * <todo: consider, refactor LCD1602 dirver so that it is passed an I2C object as argument, currently the driver has a hard coded option internal, allow bus variability 0 or 1 allow GPIO pin variability allow frequence variablity, instead of all being hard coded values, allow daisy chaining of LCD driver with other I2C devices on same contraller with same GPIO pins>
 * <todo: consider, after LCD1602 driver refatord to take an i2c controller as argument daisy chain BME280 and LCD screen, as test, >
 * <todo: consider, rebuild bme280 package distribution in Hatch, current versoin is pd was built in PMD, likely correlation not causation, >
+* <todo: consider, move dispaly code to seperate function in multi device code, >
 
 DONE
 * <done: intent to commit>
