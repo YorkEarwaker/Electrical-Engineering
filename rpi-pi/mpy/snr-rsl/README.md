@@ -9,15 +9,17 @@ Global health consequences. Not least with the possibility of novel microorganis
 ## Status
 TODO
 * <todo: consider, LEW-TOPS-19, NASA, Multi-Parameter Aerosol Scattering Sensor MPASS, nanometer particle scale detection, >
-* <todo: consider, Bosch, BMV080, Air Quality, sensor, looks like a good candidate, cost circa: bare sensor £43, brakout board £63? >
 * <todo: consider, Bosch, BME688?, Gas + thp, sensor, cost circa: bare sensor £?, brakout board £20?>
 * <todo: consider, other sensors, light based nanometer scale measurements, >
 * <todo: consider, ocean system corollery to atmopherice aerosol measurements in water column and interaction with atmosphere and mixing >
 * <todo: consider, find EU Copernicus studies on atmospheric chemisty effects on human health, longevity of substances, >
 * <todo: consider, find JP KR IN AU NZ and so on studies on atmospheric chemisty effects on human health, longevity of substances, >
+* <todo: consider, package nameing org.agw.een.rsl or org.agw.een.snr.rsl or org.agw.een.snr ?  >
+* <todo: consider, creating a (cpa) project directory structure for C/C++ code as Sparkfund and Bosch examples are in C/C++, create a seperate docs folder for BMV080 and sparkfun board info, >
 
 DONE
 * <done: intent to commit>
+* <done: consider, Bosch, BMV080, Air Quality, sensor, looks like a good candidate, cost circa: bare sensor £43, brakout board £63?, acquired, >
 
 ## Libs
 
@@ -36,7 +38,7 @@ Independent component (stand alone device) - lose coupling, high cohesion, if li
 * <todo: identify ones other than DHT22/DHT11 not a particle sensor, temperature only,  >
 
 Breakout boards - lose coupling, high cohesion, if limited to single device, i.e. a single sensor, better componentisation, better NFR's ilities, the sensor on a circuit board likely resistors etc. may or may not be pinned 0.1, 
-* SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic), sparkfun com [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), Pi Hut [WS](https://thepihut.com/products/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic) 
+* SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic), sparkfun com [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), Pi Hut [WS](https://thepihut.com/products/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic) , I2C default, SPI available, 
 * Particulate Matter Sensor - SPS30, sparkfun com [WS](https://www.sparkfun.com/particulate-matter-sensor-sps30.html), Pi Hut 
 * <todo: others to identify, see papers below, review of particulate sensors, >
 
@@ -53,17 +55,72 @@ Manufacturers
 ## References
 
 Terms
-* Aerosol
-* Particulate
+* Aerosol, a mixture of particles in the air, solid particle, liquid droplet, 
+* Particle, matter in solid phase or liquid phase, 
+* Particulate Matter, [WP](https://en.wikipedia.org/wiki/Particulate_matter) PM, PM1=1μm, PM2.5=2.5μm, PM10=10μm, ...
 
 Technology
 * Compact lasers
 * Integrated photodiods
-* 
+* ...
 
 Particles
-* Primary particle
-* Secondary particle
+* Primary particle, precursor of secondary particle, 
+* Secondary particle, oxidation of primary particles, sulfuric acid (liquid), nitric acid (gaseous), salts dry (solid) aqueous solution (liquid); amonimum sulfate, amonium nitrate, 
+
+Meteorology
+* climate
+* precipitation
+
+Health
+* Stroke
+* Heart disease
+* Lung disease
+* Preterm birth
+* ...
+
+Scale
+* micormetre, micron, μm, μ symbol, [WP](https://en.wikipedia.org/wiki/Micrometre)
+* Mu, Μμ, [WP](https://en.wikipedia.org/wiki/Mu_(letter)), Greek letter
+* 90μ, fine beach sand
+* 70μ-180μ, paper thickness, 
+* 17μ-181μ, circa 50μ-70μ, human hair diameter, 
+* 10μ, fungal hyphae,
+* 10μ, fog, mist, cloud, water droplet
+* 10μ, dust, pollen, mould
+* 6μ-8μ, red blood cell
+* 6μ, carbon fiber, 
+* 3μ-8μ, spider silk
+* 1μ-10μ, bacterium
+* 2.5μ, combustion particles, organic compounds, metals, 
+
+Types, and size distribution in micrometres (μm), of atmospheric particulate matter [WP](https://en.wikipedia.org/wiki/Particulate_matter#/media/File:Airborne-particulate-size-chart.svg)
+
+Biological Contaminants
+* Pollen, 10μm-100μm
+* Mould Spores, 2-90
+* House Dust Mite Allergens, 0.2-12
+* Bacteria, 0.4-10
+* Cat Allergens, 0.1-3.5
+* Viruses, 0.005-0.08
+
+Types of Dust
+* Heavy Dust, 95-995
+* Settling Dust, 0.95-95
+* Suspended Atmospheric Dust, 0.0025-0.95
+
+Particlate Contaminants
+* Cement Dust, 4.5-100
+* Fly Ash, 0.9-100
+* Oil Smoke, 0.5-7.5
+* Smog, 0.085-2
+* Tobacco Smoke, 0.085-1.25
+* Soot, 0.085-0.45
+
+Gas Molecules - Gaseous Contaminants
+* 0.085
+* ...
+* 0.0045
 
 Journals
 * Aerosol and Air Quality Research AAQR org [WS](https://aaqr.org/categories/low-cost-sensors), 
