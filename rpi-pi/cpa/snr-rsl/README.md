@@ -1,6 +1,6 @@
 # Aerosol sensor rsl (cpa)
 
-See also Aerosol sensor rsl mpy [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), fist cut research, 
+See also Aerosol sensor rsl mpy [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, 
 
 ## Status
 TODO
