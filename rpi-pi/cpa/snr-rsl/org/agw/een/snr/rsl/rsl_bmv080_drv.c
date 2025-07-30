@@ -1,4 +1,4 @@
-/#
+/*
 
 #        _ _   _ _ _      _
 #       /   ) / _ _ )  _ \ )
@@ -77,6 +77,11 @@
 # Sensor
 # 
 # 
+# I2C Addresses
+# https://docs.sparkfun.com/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080/assets/board_files/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080_v10_Schematic.pdf
+#
+# 
+#
 # 
 # Sunspark BMV080 breakout board
 # 
@@ -116,4 +121,4 @@
 #
 
 # For I2C, the recommended baudrate is 400kHz, for BMV080 sensor over I2C, 
-#/
+*/
