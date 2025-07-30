@@ -52,6 +52,19 @@ Manufacturers
 * Board, SparkFun, 
 * Seosor, Bosch, 
 
+## Readings
+
+### Recognise BMV080 Sunspark breakout board on I2C bus
+<info: successfully scan for BMV080 Sunspark breakout board on I2C bus in DE1 dev env. >
+```
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+pm_sensor_i2c: I2C(0, freq=400000, scl=9, sda=8, timeout=50000)
+pm_sensor_i2c.scan() address list: [87]
+>>> 
+```
+
 ## References
 
 Terms
