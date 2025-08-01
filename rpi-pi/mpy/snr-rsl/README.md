@@ -76,6 +76,7 @@ pm_sensor_i2c.scan() address list: [87]
 ## References
 
 Terms
+* AQS/AQI, Air Quality Standard, Air Quality Indices, 
 * Aerosol, a mixture of particles in the air, solid particle, liquid droplet, 
 * Particle, matter in solid phase or liquid phase, 
 * Particulate Matter, [WP](https://en.wikipedia.org/wiki/Particulate_matter) PM, PM1=1μm, PM2.5=2.5μm, PM10=10μm, ...
@@ -85,18 +86,25 @@ Technology
 * Integrated photodiods
 * ...
 
-Particles
+Particles - chemical process
 * Primary particle, precursor of secondary particle, 
 * Secondary particle, oxidation of primary particles, sulfuric acid (liquid), nitric acid (gaseous), salts dry (solid) aqueous solution (liquid); amonimum sulfate, amonium nitrate, 
+
+Particle - kinds
+* BC/EC, black carbon/elemental carbon, 
+* SDS, sand and dust storms, 
+* UFP, ultra fine particle,
 
 Meteorology
 * climate
 * precipitation
 
-Health
+Health - NCDs caused by air pollution
+* NCDs, non comunicable diseases, 
+* disease kind, cardiovascular, Heart
+* disease kind, respiratory, Lung
+* disease kind, neurological, CNS, PNS, ENS, ...
 * Stroke
-* Heart disease
-* Lung disease
 * Preterm birth
 * ...
 
@@ -126,12 +134,12 @@ Biological Contaminants
 * Viruses, 0.005-0.08
 
 Types of Dust
-* Heavy Dust, 95-995
+* Heavy Dust, 95μm-995μm
 * Settling Dust, 0.95-95
 * Suspended Atmospheric Dust, 0.0025-0.95
 
 Particlate Contaminants
-* Cement Dust, 4.5-100
+* Cement Dust, 4.5μm-100μm
 * Fly Ash, 0.9-100
 * Oil Smoke, 0.5-7.5
 * Smog, 0.085-2
@@ -139,19 +147,17 @@ Particlate Contaminants
 * Soot, 0.085-0.45
 
 Gas Molecules - Gaseous Contaminants
-* 0.085
+* 0.085μm
 * ...
-* 0.0045
+* 0.0045μm
 
 Journals
 * Aerosol and Air Quality Research AAQR org [WS](https://aaqr.org/categories/low-cost-sensors), 
 * Sensors com [WS](https://www.mdpi.com/journal/sensors), open access, 
 
 Information packs - fact sheets
-* The Impact of Wildfires on Climate and Air Quality, An emerging focus of the CSD, [WS](https://csl.noaa.gov/factsheets/csdWildfiresFIREX.pdf), NOAA, ESRL Chemical Sciences Division,
-
-Reports
-* WHO global air quality guidelines Executive summary, [PDF](https://iris.who.int/bitstream/handle/10665/345334/9789240034433-eng.pdf),  World Health Organization 2021, WHO European Centre for Environment and Health
+* The Impact of Wildfires on Climate and Air Quality, An emerging focus of the CSD, [PDF](https://csl.noaa.gov/factsheets/csdWildfiresFIREX.pdf), NOAA, ESRL Chemical Sciences Division,
+* WHO global air quality guidelines Executive summary, [PDF](https://iris.who.int/bitstream/handle/10665/345334/9789240034433-eng.pdf), World Health Organization 2021, WHO European Centre for Environment and Health, accessed 2025-08-01
 
 Papers
 * A Review of Low-Cost Particulate Matter Sensors from the Developers’ Perspectives, PMC [WS](https://pmc.ncbi.nlm.nih.gov/articles/PMC7730878/), Sensors [DOI](https://www.mdpi.com/1424-8220/20/23/6819), 
