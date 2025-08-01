@@ -1,5 +1,4 @@
 /*
-
 #        _ _   _ _ _      _
 #       /   ) / _ _ )  _ \ )
 #      / (| |/ /  _ _ \ ) \ \
@@ -12,6 +11,8 @@
 # Code sources
 #
 # C/C++
+# C reference, https://en.cppreference.com/w/c.html
+# Cpp reference, https://en.cppreference.com/index.html
 # 
 # 
 # Raspberry Pi Pico, pinout
@@ -71,17 +72,74 @@
 # |______|<----------|_________________________|---------->|______|---------->|______|
 #
 
+# Bosch Sensortec | BMV080 Ultra-mini Particulate Matter Sensor – Datasheet 3 | 53, : revision 1.3, BST-BMV080-DS000-11, accessed 2025-08-01
+# Table 1: PM2.5 specific AQI and cautionary statements defined by the EPA
+# | ----------------- | ------------------ | -------------------------------------------------------------------------------- |
+# | PM2.5             | Air quality index  | Air quality index description                                                    |
+# | breakpoints       | (AQI) category     |                                                                                  |
+# | (μg/m³, 24-hour   |                    |                                                                                  |
+# | average)          |                    |                                                                                  |
+# | ----------------- | ------------------ | -------------------------------------------------------------------------------- |
+# | 0.0 – 12.0        | Good               | Air quality is satisfactory, and air pollution poses little or no risk.          |
+# | 12.1 – 35.4       | Moderate           | Air quality is acceptable. However, there may be a risk for some pople,          |
+# |                   |                    | particularly those who are unusually sensitive to air pollution.                 |
+# | 35.5 – 55.4       | Unhealthy for      | Members of sensitive groups may experience health effects. The general           |
+# |                   | sensitive groups   | public is less likely to be affected.                                            |
+# | 55.5 – 150.4      | Unhealthy          | Some members of the general public may experience health effects;                |
+# |                   |                    | members of sensitive groups may experience more serious health effects.          |
+# | 150.5 – 250.4     | Very unhealthy     | Health alert: the risk of health effects is increased for everyone.              |
+# | > 250.4           | Hazardous          | Health warnings of emergency conditions: everyone is more likely to be affected. |
+# | ----------------- | ------------------ | -------------------------------------------------------------------------------- |
 
 
 # 
-# Sensor
+# Sensor - simplified diagram
+# BMV080 laser based optical technology
+# Measure particulate matter mass concentration based on particle counts and relative partical velocity in space.
+# Natural ambient air flow in the proximity of the sensor is used for measurement. So device funtions fan free.
+# Simplified top view of BMV080; ZIF, PCB, Passives, Lens & laser
+#      
+#       ZIF                 Flex              Passives    Lens &
+#                           PCB                           laser
+#   ____||_____--------------------------------------------------
+#  |                |    |--------| (___)   |      , ,   |     | |    
+#  |                |    |        |         | =#-  # #   |-----| |
+#  |                |    |        |         | =#- ,","   | (@)-| |
+#  |                |    |        |         |     # #    |-----| |
+#  |___________     |(_) |--------|         |     " "    |     | |
+#       ||     --------------------------------------------------
 # 
 # 
+# Sensor - pinout
+# <todo: complete simplified ZIF pinout for sensor, here?>
+#
+#    | 
+#    \____________________
+#     |  [] [] [] []
+#     |  [] [] [] []
+#  ___|  [] /\ [] /\
+# |      []|  |[]|  |
+# |___   []|  |[]|  |
+#     |  /\ \//  \\/
+#     | |  |[]|  |[]
+#     | |  |[]|  |[]
+#     |  \/ [] \/ []
+#     \---------------
+#        |  |
+#       13  |
+#          12
+#
 # I2C Addresses
 # https://docs.sparkfun.com/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080/assets/board_files/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080_v10_Schematic.pdf
-#
-# 
-#
+# Takes the form of a material conditional truth table, logic gate, binary algebra, 
+#  ____________________________________
+# | AB1 | AB0 | I2C Address            |
+# |------------------------------------|
+# |  0  |  0  | 0x54                   |
+# |  0  |  1  | 0x55                   |
+# |  1  |  0  | 0x56                   |
+# |  1  |  1  | 0x57 (default)         |
+# |------------------------------------|
 # 
 # Sunspark BMV080 breakout board
 # 
@@ -122,3 +180,4 @@
 
 # For I2C, the recommended baudrate is 400kHz, for BMV080 sensor over I2C, 
 */
+
