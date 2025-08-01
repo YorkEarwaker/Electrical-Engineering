@@ -13,6 +13,8 @@ Global health consequences. Not least with the possibility of novel microorganis
 	other major global health risks such as unhealthy diet and tobacco smoking,
 	and air pollution is now recognized as the single biggest environmental threat to
 	human health." - WHO 2021
+	
+See also Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut analysis and design, 
 
 ## Status
 TODO
@@ -22,12 +24,13 @@ TODO
 * <todo: consider, ocean system corollery to atmopherice aerosol measurements in water column and interaction with atmosphere and mixing >
 * <todo: consider, find EU Copernicus studies on atmospheric chemisty effects on human health, longevity of substances, >
 * <todo: consider, find JP KR IN AU NZ and so on studies on atmospheric chemisty effects on human health, longevity of substances, >
-* <todo: consider, package nameing org.agw.een.rsl or org.agw.een.snr.rsl or org.agw.een.snr ?  >
-* <todo: consider, creating a (cpa) project directory structure for C/C++ code as Sparkfund and Bosch examples are in C/C++, create a seperate docs folder for BMV080 and sparkfun board info, >
+* <todo: consider, create a seperate docs folder for BMV080 and sparkfun board info, >
 
 DONE
 * <done: intent to commit>
 * <done: consider, Bosch, BMV080, Air Quality, sensor, looks like a good candidate, cost circa: bare sensor £43, brakout board £63?, acquired, >
+* <done: consider, creating a (cpa) project directory structure for C/C++ code as Sparkfund and Bosch examples are in C/C++, >
+* <done: consider, package nameing org.agw.een.rsl or org.agw.een.snr.rsl or org.agw.een.snr ? settled on org.agw.een.snr.rsl for now, but this may change in future >
 
 ## Libs
 
