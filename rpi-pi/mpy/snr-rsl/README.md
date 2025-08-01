@@ -6,6 +6,14 @@ So sensors are needed to measure the aerosol things to at least know what is out
 
 Global health consequences. Not least with the possibility of novel microorganisms and the possiblity of global pandemics. Notwithstanding all of the other geospheric and biospheric consequences.
 
+	"The global burden of disease associated with air pollution exposure exacts
+	a massive toll on human health worldwide: exposure to air pollution is estimated
+	to cause millions of deaths and lost years of healthy life annually. The burden
+	of disease attributable to air pollution is now estimated to be on a par with
+	other major global health risks such as unhealthy diet and tobacco smoking,
+	and air pollution is now recognized as the single biggest environmental threat to
+	human health." - WHO 2021
+
 ## Status
 TODO
 * <todo: consider, LEW-TOPS-19, NASA, Multi-Parameter Aerosol Scattering Sensor MPASS, nanometer particle scale detection, >
@@ -55,7 +63,7 @@ Manufacturers
 ## Readings
 
 ### Recognise BMV080 Sunspark breakout board on I2C bus
-<info: successfully scan for BMV080 Sunspark breakout board on I2C bus in DE1 dev env. >
+<info: successfully scan for BMV080 Sunspark breakout board on I2C bus in DE1 dev env. default address 0x57 hex = 87 decimal>
 ```
 >>> %Run -c $EDITOR_CONTENT
 
@@ -141,6 +149,9 @@ Journals
 
 Information packs - fact sheets
 * The Impact of Wildfires on Climate and Air Quality, An emerging focus of the CSD, [WS](https://csl.noaa.gov/factsheets/csdWildfiresFIREX.pdf), NOAA, ESRL Chemical Sciences Division,
+
+Reports
+* WHO global air quality guidelines Executive summary, [PDF](https://iris.who.int/bitstream/handle/10665/345334/9789240034433-eng.pdf),  World Health Organization 2021, WHO European Centre for Environment and Health
 
 Papers
 * A Review of Low-Cost Particulate Matter Sensors from the Developers’ Perspectives, PMC [WS](https://pmc.ncbi.nlm.nih.gov/articles/PMC7730878/), Sensors [DOI](https://www.mdpi.com/1424-8220/20/23/6819), 
