@@ -6,10 +6,12 @@ Is this a good idea? Doin' stuff with RPi Pico in the Rust programming language.
 ## Status
 
 TODO
-* <todo: a first simple project to understand this space better, evaluate need, tools, ecosystem, >
-* <todo: What does rust have to offer that cannot be done with MicroPython or C/C++/asm ? >
-* <todo: That is what is the value proposition? MVP but not PoC? >
-* <todo: What are the down sides? >
+* <todo: consider, a first simple project to understand this space better, evaluate need, tools, ecosystem, >
+* <todo: consider, What does rust have to offer that cannot be done with MicroPython or C/C++/asm ? >
+* <todo: consider, That is what is the value proposition? MVP but not PoC? >
+* <todo: consider, what are the down sides? >
+* <todo: consider, does the particulat matter aerosol /snr-rsl project offer a good opportunity to create first Rust project, or would it be too complex, or is Rust for RPi and Pico not yet mature/rich enough? >
+* <todo: consider, hello world /hwd project for Rust on RPi Pico, >
 
 DONE
 * <done: intent to commit,>
