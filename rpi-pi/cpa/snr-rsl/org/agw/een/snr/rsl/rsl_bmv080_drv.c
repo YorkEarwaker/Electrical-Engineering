@@ -111,9 +111,22 @@
 # 
 # 
 # Sensor - pinout
-# <todo: complete simplified ZIF pinout for sensor, here?>
+# <done: consider, front of ZIP pinout, complete simplified ZIF pinout for sensor, here?>
+# <todo: consider, back of ZIF pinout, i.e. no pins, aka the back of the BMV080 sensor, >
+# <todo: consider, table of ZIP pin functions below this diagram >
 #
 #
+#       |                                          |
+#       |     ___                                  |
+#       |    /   \                                 |
+#       |    \___/                                 |
+#       |                                          |
+#       |__________________________________________|
+#       |                                          |
+#       |                                          |
+#       |                                          |
+#       |                                          |
+#       |                                          |
 #       |                                          |
 #       \                                          /
 #        |                                        |
