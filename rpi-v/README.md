@@ -11,10 +11,11 @@ TODO
 * <todo: consider, as main interface for RPi Pico programming, >
 * <todo: consider, as evaluation for Climate Model \amn project low cost commodity hardware for cluster and cloud, >
 * <todo: consider, to better understnd printed circuit boards toward design of a pcb? >
-* <todo: consider renaming to Rpi sbc, to better include Zero and other SBC's , maybe not due to spec use case differences, maybe for generic sbc suff, ponder more, >
+* <todo: consider, as deployment option for BMV080 particulate matter sensor Sunspark breakout board, >
 
 DONE
 * <done: intent to commit >
+* <done: consider, renaming to Rpi sbc, to better include Zero and other SBC's , maybe not due to spec use case differences, maybe for generic sbc suff, ponder more, conslusion for now; the name remaians the same, >
 
 ## References
 
@@ -41,3 +42,8 @@ News Papers - RPi 5 screen/display, HDMI, resolution, aspect ratio,
 News Papers - gpio pins
 * Power on state of gpio pins, [WS](https://forums.raspberrypi.com/viewtopic.php?f=44&t=23168), forums, Raspberry Pi, 
 * ...
+
+News Papers - Storage <move to RPi V>
+* Raspberry Pi SSDs and SSD Kits on sale now, [WS](https://www.raspberrypi.com/news/raspberry-pi-ssds-and-ssd-kits/), Raspberry Pi, 23rd Oct 2024, Eben Upton
+* Raspberry Pi SSD, [WS](https://www.raspberrypi.com/products/ssd/), Raspberry Pi, 
+* Raspberry Pi 5 - SSD SATA or SSD NVMe ? [WS](https://forums.raspberrypi.com/viewtopic.php?t=364440), Raspberry Pi Forums, 
