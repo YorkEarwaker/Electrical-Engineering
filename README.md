@@ -53,6 +53,9 @@ Tools - additive manufacturing
 * Autodesk, Tinkercad, [WS](https://www.tinkercad.com/), cad, 3D design, open source? <todo: source other 3D design tools, >
 * OctoPrint [WS](https://octoprint.org/), web interface for 3D printing, open source, 
 
+Tools - breadbords
+* Virtial Breadboard, [WS](https://www.virtualbreadboard.com/), Bread2Board, 
+
 ## References
 
 Terms
