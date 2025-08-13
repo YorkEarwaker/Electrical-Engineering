@@ -8,14 +8,15 @@ TODO
 * <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Bosch BMV080 SDK, modification of hello world project?, >
 * <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Sunspark breakout board BMV080 SDK, modification of hello world project?, >
 * <todo: consider, what is the bare minimum that must run on Pico MCU and what could be run from another host like an SCB, >
-* <todo: consider, build for MS Windows 10, how to connect to laptop? Qwiik to USB? >
+* <todo: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiik to USB? >
 * <todo: consider, VS Code with Arduino CLI, two seperate installs?,  map Arduino CLI path to VS Code C/CMakelist project? is Arduino IDE extension depricated?  >
 * <todo: consider, read Sunspark documentation for GitHub project code, for code BMV080 sensor and code generic SPI I2C connection, >
 * <todo: consider, - ```api_examples\raspberry_pi\*```	Example application project for Raspberry Pi platform as a CMake project. Bosch SDK README.md>
 * <todo: consider, - ```api_examples\x86_x64\*```	Example application for x86 / x64 platform with Windows OS as a CMake project. Bosch SDK README.md>
 * <todo: consider, - ```api_examples\arm_cortex_m33f\*```	Example application project for ARM Cortex-M33F platform as a PlatformIO project. Bosch SDK README.md>
 * <todo: consider, - ```api\lib\arm_cortex_m33f\arm_none_eabi_gcc\release\*``` Library files of BMV080 sensor driver for ARM Cortex-M33F architecture with full hardware floating-point support, using the ARM GCC compiler Bosch SDK README.md>
-* <todo: consider, formulate question re ARM Cortex M33, for Bosch Sensortec Community, re compile and deployment to Pico 2 W, >
+* <todo: consider, formulate question re ARM Cortex M33, for Bosch Sensortec Community, re compile and deployment to RPi Pico 2 W, >
+* <todo: consider, sepearation of concern, purchase RPi Zero for BMV080 PoC not RPi V, for RPi Zero Bosch informs there is a compile and deployment option, Bosch SDK README.md>
 
 DONE
 * <done: intent to commit>
