@@ -46,15 +46,13 @@ Crowd funding?
 
 ## Libraries
 
-Tools - circuit boards
+Tools - circuit boards, breadbords, pcb design
 * fritzing, electronics made easy, [WS](https://fritzing.org/), open source hardware, manufacture professional PCB's
+* Virtial Breadboard, [WS](https://www.virtualbreadboard.com/), Bread2Board, 
 
 Tools - additive manufacturing
 * Autodesk, Tinkercad, [WS](https://www.tinkercad.com/), cad, 3D design, open source? <todo: source other 3D design tools, >
 * OctoPrint [WS](https://octoprint.org/), web interface for 3D printing, open source, 
-
-Tools - breadbords
-* Virtial Breadboard, [WS](https://www.virtualbreadboard.com/), Bread2Board, 
 
 ## References
 
@@ -114,3 +112,6 @@ Publishers
 
 Forums
 * EDA Board, com, [WS](https://www.edaboard.com/)
+
+News Papers - breadboard
+* How to Use a Breadboard for Electronics and Circuits, [WS](https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#kinds-breadboard), Reference Materials, Science Buddies, 
