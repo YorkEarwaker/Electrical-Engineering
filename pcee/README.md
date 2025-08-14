@@ -31,7 +31,7 @@ DONE
 ## Hardware
 
 To consider using
-* ...
+* Micro-USB Breakout - Horizontal, [WS](https://thepihut.com/products/micro-usb-breakout-horizontal), The Pi Hut, use with Pogo clip?
 * ...
 
 ## References
