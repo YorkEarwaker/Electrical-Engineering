@@ -28,6 +28,11 @@ TODO
 DONE
 * <done: intent to commit>
 
+## Libs
+
+MS Win 10/11
+* ... <todo: find the magic code base, >
+
 ## Hardware
 
 To consider using
@@ -62,13 +67,32 @@ News Papers - create a pc on a breadboard
 * 8-bit Breadboard Computer [WS](https://www.instructables.com/8-bit-Breadboard-Computer/), instructables, GilDev in CircuitsElectronics
 * ... several others to consider, 
 
+News Pappers - I2C
+* https://electronics.stackexchange.com/questions/39244/what-is-the-simplest-way-to-interact-with-an-i2c-peripheral
+* Bus Pirate I2C http://dangerousprototypes.com/docs/I2C
+* https://superuser.com/questions/1578355/how-to-communicate-over-i2c-in-windows
+
 Hardware - examples, retail COTS connector 
 * Breadboard Prototype Adapters, [WS](https://www.winford.com/products/cat_pbc.php), 
 * SparkFun FTDI Basic Breakout - 5V, [WS](https://www.sparkfun.com/sparkfun-ftdi-basic-breakout-5v.html), see similar items on page, 
 * FTDI VCP drivers, [WS](https://ftdichip.com/drivers/vcp-drivers/), ...
 * SUB-20 Multi Interface USB Adapter [WS](http://www.xdimax.com/sub20/sub20.html), USB-I2C, USB-SPI, USB-GPIO, RS232, RS485, MDIO, Ir, LCD, PWM
-* ... 
+* UMFT201XA-02, Development Module, FT201XQ, USB to I2C, Interface [WS](https://uk.farnell.com/ftdi/umft201xa-02/development-module-usb-to-i2c/dp/4048086)
+* Mouser, list of, Interface development tools, USB to I2C, [WS](https://www.mouser.co.uk/c/embedded-solutions/engineering-tools/analog-digital-ic-development-tools/interface-development-tools/?type=USB%20to%20I2C)
+* FT201XQ, USB Full Speed to I2C IC with USB Charger Detection, QFN-16 [WS](https://ftdichip.com/products/ft201xq/)
+* USB I2C Click, [WS](https://www.mikroe.com/usb-i2c-click), USB to I2C/UART
+
+Hardware - pcb design
+* https://github.com/harbaum/I2C-Tiny-USB
 
 Hardware - example, DIP, 
 * SOIC-To-DIP Breadboard Adapters, 
+
+Software - MS, discovery, move to libs when solid solution found? 
+* An overview of Windows for IoT, [WS](https://learn.microsoft.com/en-gb/windows/iot/product-family/windows-iot)
+* Inter-Integrated Circuit (I2C) sample, [WS](https://learn.microsoft.com/en-us/samples/microsoft/windows-universal-samples/iot-i2c/), 06/21/2023
+* Human Interface Devices HID, over I2C, [WS](https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/hid-over-i2c-guide)
+* Skeleton I2C Sample Driver, [WS](https://learn.microsoft.com/en-us/samples/microsoft/windows-driver-samples/skeleton-i2c-sample-driver/), 07/02/2024
+* Windows-universal-samples/Samples/IoT-I2C/ [GH](https://github.com/microsoft/Windows-universal-samples/blob/main/Samples/IoT-I2C/)
+
 
