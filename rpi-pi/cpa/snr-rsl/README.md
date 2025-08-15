@@ -2,20 +2,23 @@
 
 See also Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, 
 
+## Notes
+
+Bosch Sensortec Community BSC
+* Posted on Bosch Sensortec Community regarding full integration of BMV080 with RPi universe. [WS](https://community.bosch-sensortec.com/mems-sensors-forum-jrmujtaw/post/bmv080---raspberry-pi-what-are-the-issues-that-prevent-full-integration-dHQvd8Fa2dvcmKb)
+
+Raspberry Pi Forum
+* <todo: await response from BSC before posting on RPi Forum re same. >
+
 ## Status
 TODO
-* <todo: consider, /doc BMV080 specific information, BMV080 Sparkfun breakout board information>
 * <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Bosch BMV080 SDK, modification of hello world project?, >
 * <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Sunspark breakout board BMV080 SDK, modification of hello world project?, >
 * <todo: consider, what is the bare minimum that must run on Pico MCU and what could be run from another host like an SCB, >
-* <todo: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiic to USB? >
 * <todo: consider, VS Code with Arduino CLI, two seperate installs?,  map Arduino CLI path to VS Code C/CMakelist project? is Arduino IDE extension depricated?  >
 * <todo: consider, read Sunspark documentation for GitHub project code, for code BMV080 sensor and code generic SPI I2C connection, >
 * <todo: consider, - ```api_examples\raspberry_pi\*```	Example application project for Raspberry Pi platform as a CMake project. Bosch SDK README.md>
 * <todo: consider, - ```api_examples\x86_x64\*```	Example application for x86 / x64 platform with Windows OS as a CMake project. Bosch SDK README.md>
-* <todo: consider, - ```api_examples\arm_cortex_m33f\*```	Example application project for ARM Cortex-M33F platform as a PlatformIO project. Bosch SDK README.md>
-* <todo: consider, - ```api\lib\arm_cortex_m33f\arm_none_eabi_gcc\release\*``` Library files of BMV080 sensor driver for ARM Cortex-M33F architecture with full hardware floating-point support, using the ARM GCC compiler Bosch SDK README.md>
-* <todo: consider, formulate question re ARM Cortex M33, for Bosch Sensortec Community, re compile and deployment to RPi Pico 2 W, >
 * <todo: consider, sepearation of concern, purchase RPi Zero for BMV080 PoC not RPi V, for RPi Zero Bosch informs there is a compile and deployment option, Bosch SDK README.md>
 
 DONE
@@ -24,6 +27,11 @@ DONE
 * <done: consider, does the Sunspark breakout board BMV080 SDK have any dependencies on the Bosch BMV080 SDK, Yes it does!, requires download of MBV080 SDK and copy of some files to 'SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic)' code base, >
 * <done: consider, support for RP2350 for RPi Pico? Unclear! the Bosch SDK v11.2.0 on July 12th, 2025 added support for the RP2350 processor (m33), But the BMV080 SDK README.md state no Pico compile option, and references Cortex-M33F not M33 so does that mean SDK requries hareware floating point support in the cores? >
 * <done: consider, read Sunspark BMV080 code and connection code Arduino microcontroller specific?, If so how simple/complex to modify for RPi Pi 2350 W, . Yes need for refactoring, Sunspark RP2350 code is tailored to Sunspark RP2350 boards, there is a RP2350 example  for 'SparkFun IoT RedBoard - RP2350' on 'SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic)' >
+* <done: consider, formulate question re Bosch BMV080 concerns with RPi universe, e.g. limitations of ARM Cortex M33, for Bosch Sensortec Community, re compile and deployment to RPi Pico 2 W, see Notes above,  >
+* <done: consider, /doc BMV080 specific information, BMV080 Sparkfun breakout board information, not at this time, >
+* <done: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiic to USB via breadboard? not acomplished but spawned another project PCEE /pcee under electrical engineering repsitory >
+* <done: consider, - ```api\lib\arm_cortex_m33f\arm_none_eabi_gcc\release\*``` Library files of BMV080 sensor driver for ARM Cortex-M33F architecture with full hardware floating-point support, using the ARM GCC compiler Bosch SDK README.md, resolved? no point? Pico on Cortex-M33 not Cortex-M33F, 3.2.3 Using External Interrupt vs Polling>
+* <done: consider, - ```api_examples\arm_cortex_m33f\*```	Example application project for ARM Cortex-M33F platform as a PlatformIO project. Bosch SDK README.md, resolved?  no point? Pico on Cortex-M33 not Cortex-M33F, 3.2.3 Using External Interrupt vs Polling>
 
 ## Libs
 
@@ -33,8 +41,6 @@ Bosch
 * Supported platforms, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/software_tools/software/bmv080_1/supported_platforms/bmv080_binary_size_information.pdf)
 
 Raspberry Pi
-* raspberry-gcc10.2.1-r2, SYS GCC for Windows x32 bit Platforms,[WS](https://sysprogs.com/getfile/2076/raspberry-gcc10.2.1-r2.exe/)
-* raspberry64-gcc10.2.1, SYS GCC for Windows x64 bit Platforms, [WS](https://sysprogs.com/getfile/1804/raspberry64-gcc10.2.1.exe)
 * Raspberry Pi Pico-series C/C++ SDK Libraries and tools for C/C++ development on Raspberry Pi microcontrollers. [PDF](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf), RPi Pico 2, C/C++ sdk-v11-2 , 2 0 2 5 - 0 7 - 3 0 : 3 0 0 3 1 8 4 - c l e a
 
 Sparkfun
