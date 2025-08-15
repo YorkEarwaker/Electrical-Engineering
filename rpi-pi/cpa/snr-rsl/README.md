@@ -8,7 +8,7 @@ TODO
 * <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Bosch BMV080 SDK, modification of hello world project?, >
 * <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Sunspark breakout board BMV080 SDK, modification of hello world project?, >
 * <todo: consider, what is the bare minimum that must run on Pico MCU and what could be run from another host like an SCB, >
-* <todo: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiik to USB? >
+* <todo: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiic to USB? >
 * <todo: consider, VS Code with Arduino CLI, two seperate installs?,  map Arduino CLI path to VS Code C/CMakelist project? is Arduino IDE extension depricated?  >
 * <todo: consider, read Sunspark documentation for GitHub project code, for code BMV080 sensor and code generic SPI I2C connection, >
 * <todo: consider, - ```api_examples\raspberry_pi\*```	Example application project for Raspberry Pi platform as a CMake project. Bosch SDK README.md>
@@ -33,6 +33,8 @@ Bosch
 * Supported platforms, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/software_tools/software/bmv080_1/supported_platforms/bmv080_binary_size_information.pdf)
 
 Raspberry Pi
+* raspberry-gcc10.2.1-r2, SYS GCC for Windows x32 bit Platforms,[WS](https://sysprogs.com/getfile/2076/raspberry-gcc10.2.1-r2.exe/)
+* raspberry64-gcc10.2.1, SYS GCC for Windows x64 bit Platforms, [WS](https://sysprogs.com/getfile/1804/raspberry64-gcc10.2.1.exe)
 * Raspberry Pi Pico-series C/C++ SDK Libraries and tools for C/C++ development on Raspberry Pi microcontrollers. [PDF](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf), RPi Pico 2, C/C++ sdk-v11-2 , 2 0 2 5 - 0 7 - 3 0 : 3 0 0 3 1 8 4 - c l e a
 
 Sparkfun
@@ -44,7 +46,7 @@ IDE
 * VS Code with Arduino CLI, 
 
 Build
-* Make, Bosche code, Raspbery Pi
+* CMake, Windows x64 [GH](https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1-windows-x86_64.msi/), Bosche code, Raspbery Pi
 * PlatformIO, Bosch code, everything else not Raspberry Pi, 
 
 Language 
