@@ -12,6 +12,12 @@ DONE
 * <done: consider, as deployment option for Bosch BMV080 particulate matter sensor, >
 * <done: consider, bill of materials for RPi Zero, compelted offline BoM in spreadsheet circa £64 inclusive 'useful' extras, >
 
+## Libs
+
+Raspberry Pi
+* raspberry-gcc10.2.1-r2, SYS GCC for Windows x32 bit Platforms,[WS](https://sysprogs.com/getfile/2076/raspberry-gcc10.2.1-r2.exe/)
+* raspberry64-gcc10.2.1, SYS GCC for Windows x64 bit Platforms, [WS](https://sysprogs.com/getfile/1804/raspberry64-gcc10.2.1.exe)
+
 ## Hardware
 
 Bill of materials
