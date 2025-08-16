@@ -20,6 +20,7 @@ TODO
 * <todo: consider, - ```api_examples\raspberry_pi\*```	Example application project for Raspberry Pi platform as a CMake project. Bosch SDK README.md>
 * <todo: consider, - ```api_examples\x86_x64\*```	Example application for x86 / x64 platform with Windows OS as a CMake project. Bosch SDK README.md>
 * <todo: consider, sepearation of concern, purchase RPi Zero for BMV080 PoC not RPi V, for RPi Zero Bosch informs there is a compile and deployment option, Bosch SDK README.md>
+* <todo: consider, raise question on Bosch Sensortec Community forum about any known limiting RPi integration concerns with Bosch Gas sensors, go ahead and purchase one in anycase while waiting for answers about BMV080 RPi compatibility? >
 
 DONE
 * <done: intent to commit>
