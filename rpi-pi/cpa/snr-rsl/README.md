@@ -5,10 +5,10 @@ See also Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrica
 ## Notes
 
 Bosch Sensortec Community BSC
-* Posted on Bosch Sensortec Community regarding full integration of BMV080 with RPi universe. [WS](https://community.bosch-sensortec.com/mems-sensors-forum-jrmujtaw/post/bmv080---raspberry-pi-what-are-the-issues-that-prevent-full-integration-dHQvd8Fa2dvcmKb)
+* Posted on BSC regarding full integration of BMV080 with RPi universe, [WS](https://community.bosch-sensortec.com/mems-sensors-forum-jrmujtaw/post/bmv080---raspberry-pi-what-are-the-issues-that-prevent-full-integration-dHQvd8Fa2dvcmKb)
 
-Raspberry Pi Forum
-* <todo: await response from BSC before posting on RPi Forum re same. >
+Raspberry Pi Forum RPF
+* Posted on RPF regarding Rapberry Pi SDK capability maturity gap, [WS](https://forums.raspberrypi.com/viewtopic.php?t=391035)
 
 ## Status
 TODO
@@ -33,6 +33,7 @@ DONE
 * <done: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiic to USB via breadboard? not acomplished but spawned another project PCEE /pcee under electrical engineering repsitory >
 * <done: consider, - ```api\lib\arm_cortex_m33f\arm_none_eabi_gcc\release\*``` Library files of BMV080 sensor driver for ARM Cortex-M33F architecture with full hardware floating-point support, using the ARM GCC compiler Bosch SDK README.md, resolved? no point? Pico on Cortex-M33 not Cortex-M33F, 3.2.3 Using External Interrupt vs Polling>
 * <done: consider, - ```api_examples\arm_cortex_m33f\*```	Example application project for ARM Cortex-M33F platform as a PlatformIO project. Bosch SDK README.md, resolved?  no point? Pico on Cortex-M33 not Cortex-M33F, 3.2.3 Using External Interrupt vs Polling>
+* <done: consider, await response from BSC before posting on RPi Forum re same. RPi SDK capability maturity gap, >
 
 ## Libs
 
