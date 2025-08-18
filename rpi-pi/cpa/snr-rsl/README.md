@@ -5,22 +5,18 @@ See also Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrica
 ## Notes
 
 Bosch Sensortec Community BSC
-* Posted on BSC regarding full integration of BMV080 with RPi universe, [WS](https://community.bosch-sensortec.com/mems-sensors-forum-jrmujtaw/post/bmv080---raspberry-pi-what-are-the-issues-that-prevent-full-integration-dHQvd8Fa2dvcmKb)
+* Post on BSC regarding full integration of BMV080 with RPi universe, [WS](https://community.bosch-sensortec.com/mems-sensors-forum-jrmujtaw/post/bmv080---raspberry-pi-what-are-the-issues-that-prevent-full-integration-dHQvd8Fa2dvcmKb)
 
 Raspberry Pi Forum RPF
-* Posted on RPF regarding Rapberry Pi SDK capability maturity gap, [WS](https://forums.raspberrypi.com/viewtopic.php?t=391035)
+* Post on RPF regarding Rapberry Pi SDK capability maturity gap, [WS](https://forums.raspberrypi.com/viewtopic.php?t=391035)
 
 ## Status
 TODO
-* <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Bosch BMV080 SDK, modification of hello world project?, >
-* <todo: consider, VSCodium and VSCode with Pico extension for build for Pico of Sunspark breakout board BMV080 SDK, modification of hello world project?, >
 * <todo: consider, what is the bare minimum that must run on Pico MCU and what could be run from another host like an SCB, >
 * <todo: consider, VS Code with Arduino CLI, two seperate installs?,  map Arduino CLI path to VS Code C/CMakelist project? is Arduino IDE extension depricated?  >
 * <todo: consider, read Sunspark documentation for GitHub project code, for code BMV080 sensor and code generic SPI I2C connection, >
 * <todo: consider, - ```api_examples\raspberry_pi\*```	Example application project for Raspberry Pi platform as a CMake project. Bosch SDK README.md>
 * <todo: consider, - ```api_examples\x86_x64\*```	Example application for x86 / x64 platform with Windows OS as a CMake project. Bosch SDK README.md>
-* <todo: consider, sepearation of concern, purchase RPi Zero for BMV080 PoC not RPi V, for RPi Zero Bosch informs there is a compile and deployment option, Bosch SDK README.md>
-* <todo: consider, raise question on Bosch Sensortec Community forum about any known limiting RPi integration concerns with Bosch Gas sensors, go ahead and purchase one in anycase while waiting for answers about BMV080 RPi compatibility? >
 
 DONE
 * <done: intent to commit>
@@ -33,7 +29,12 @@ DONE
 * <done: consider, build for MS Windows 10, how to connect to Sparkfun BMV080 breakout to laptop? Qwiic to USB via breadboard? not acomplished but spawned another project PCEE /pcee under electrical engineering repsitory >
 * <done: consider, - ```api\lib\arm_cortex_m33f\arm_none_eabi_gcc\release\*``` Library files of BMV080 sensor driver for ARM Cortex-M33F architecture with full hardware floating-point support, using the ARM GCC compiler Bosch SDK README.md, resolved? no point? Pico on Cortex-M33 not Cortex-M33F, 3.2.3 Using External Interrupt vs Polling>
 * <done: consider, - ```api_examples\arm_cortex_m33f\*```	Example application project for ARM Cortex-M33F platform as a PlatformIO project. Bosch SDK README.md, resolved?  no point? Pico on Cortex-M33 not Cortex-M33F, 3.2.3 Using External Interrupt vs Polling>
-* <done: consider, await response from BSC before posting on RPi Forum re same. RPi SDK capability maturity gap, >
+* <done: consider, await response from BSC before posting on RPi Forum re same. response was; RPi SDK capability maturity gap, >
+* <done: consider, sepearation of concern, purchase RPi Zero for BMV080 PoC not RPi V, for RPi Zero Bosch informs there is a compile and deployment option, Bosch SDK README.md, conclusion RPi might be out entirely for Bosch Sensortec due to RPi SDK issues see post in Notes above, >
+* <done: consider, raise question on Bosch Sensortec Community forum about any known limiting RPi integration concerns with Bosch Gas sensors, go ahead and purchase one in anycase while waiting for answers about BMV080 RPi compatibility? conclusion Bosch Sensortec RPi SDK concerns for all Bosch sensors see post in Notes above,>
+* <done: consider, VSCodium and VSCode with Pico extension for build for Pico of Bosch BMV080 SDK, modification of hello world project?, initial attempts failed, further investigation might be warrented but Bosch suggest CMake for RPi>
+* <done: consider, VSCodium and VSCode with Pico extension for build for Pico of Sunspark breakout board BMV080 SDK, modification of hello world project?, initial attempts failed, further investigation might be warrented but Bosch suggest CMake for RPi>
+
 
 ## Libs
 
