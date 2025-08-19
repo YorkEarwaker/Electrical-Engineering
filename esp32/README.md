@@ -5,7 +5,7 @@ Recommended by Bosch Sensortec as preferred integration platform for Bosch Senso
 ## Notes
 
 Manufacturng lineage concerns for some with use in some other jurisdictions.
-* See post in Bosch Sensortec forum and Raspberry Pi Forum in Aerosol project for RPi Pico rpi-pi>cpa>snr-rsl [WS](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl)
+* See post in Bosch Sensortec forum and Raspberry Pi Forum in Aerosol project for RPi Pico rpi-pi>cpa>snr-rsl [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl)
 
 
 ## Status
