@@ -9,6 +9,7 @@ Part of the rationale for this repository is related to climate model repository
 See also, 
 * Autonomous meteorological network amn, Climate Model repository sub project, [GH](https://github.com/YorkEarwaker/Climate-Model/tree/main/amn)
 * Hybrid power hpr, top level project [GH](https://github.com/YorkEarwaker/Hybrid-Power)
+* Operating System, top level project [GH](https://github.com/YorkEarwaker/Operating-System)
 
 ## Goals & Objectives
 
