@@ -1,15 +1,12 @@
 # Solid State Drive SSD (cpa)
 
-RPi Zero, as test bed.
+RPi Zero, as test bed. Likely have to be RPi V. 
+
+As candidate for datalogger large data sets.
 
 # Notes
 
-The following are not recomendations. The following are information gathering on SSD NVMe PCIe M.2 topic of conern.
-
-SSD Manufacturers - in no order of preference, many other available, 
-* Crucial
-* Samsung 
-* Western Digital
+Form factor for RPi 2230, 2280, depending on HAT
 
 Compatibility, host, operating system, - discovery for laptop ssd replacement/upgrade
 * SSD M.2 2280 NVMe drive for Ubuntu 24.04, [WS](https://discourse.ubuntu.com/t/ssd-m-2-2280-nvme-drive-for-ubuntu-24-04/68002/1), Ubuntu Community
@@ -22,6 +19,21 @@ TODO
 
 DONE
 * <done: consider, intent to commit, >
+
+# Hardware
+
+Random set of candidates. The following are not recomendations. The following are information gathering on SSD NVMe PCIe M.2 topic of conern.
+
+SSD, NVMe, PCIe 0.4 x 4, M.2 form factor 2280
+* Crucial P310 1TB PCIe Gen4 NVMe 2280 M.2 SSD, [WS](https://uk.crucial.com/ssd/p310/CT1000P310SSD8), 
+* Samsung - 990 PRO 1TB Internal SSD PCle Gen 4x4 NVMe, [WS](https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/), better for AI development
+* WD_BLACK SN850X NVMe™ SSD - 1 TB, [WS](https://shop.sandisk.com/en-gb/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0), gaming
+
+SSD Manufacturers - in no order of preference, many other available, 
+* Crucial
+* Samsung 
+* Western Digital
+* ...
 
 # References
 
@@ -39,6 +51,8 @@ Datasheets
 
 News Papers - RPi
 * Raspberry Pi M.2 HAT+ Ribbon Cable, [WS](https://forums.raspberrypi.com/viewtopic.php?t=372574&sid=8d5e9bd306227c84372bb0f70582d533)
+* Raspberry Pi SSD Kit and Class A2 microSD cards review with Raspberry Pi 5, [WS](https://www.cnx-software.com/2024/11/19/raspberry-pi-ssd-kit-and-class-a2-microsd-cards-review-with-raspberry-pi-5/), 19 November 2024, Jean-Luc Aufranc, CNXSoft
+* Testing Cytron MAKERDISK M.2 NVMe SSDs on Raspberry Pi 5 with GEEKWORM X1001 and Waveshare M.2 PCIe HAT+ [WS](https://www.cnx-software.com/2024/04/07/review-cytron-makerdisk-nvme-ssd-raspberry-pi-5-geekworm-x1001-waveshare-m2-pcie-hat/), 7 April 2024, Jean-Luc Aufranc, CNXSoft,
 
 News Papers - microSD connector
 * Adapter allows users to connect an M.2 NVMe SSD to a microSD Express card slot, [WS](https://www.cnx-software.com/2025/06/10/adapter-allows-users-to-connect-an-m-2-nvme-ssd-to-a-microsd-express-card-slot/), 10 June 2025, Jean-Luc Aufranc, CNXSoft, 
