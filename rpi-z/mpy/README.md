@@ -1,4 +1,4 @@
-# MicroPython (mpy)
+# MicroPython mpy
 
 MicroPython for the RPi Zero, 
 
