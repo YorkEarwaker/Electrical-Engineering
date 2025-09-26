@@ -27,10 +27,10 @@ DONE
 
 Random set of candidates. The following are not recomendations. The following are information gathering on SSD NVMe PCIe M.2 topic of conern.
 
-SSD, NVMe, PCIe 0.4 x 4, M.2 form factor 2280
-* Crucial P310 1TB PCIe Gen4 NVMe 2280 M.2 SSD, [WS](https://uk.crucial.com/ssd/p310/CT1000P310SSD8), 
-* Samsung - 990 PRO 1TB Internal SSD PCle Gen 4x4 NVMe, [WS](https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/), better for AI development
-* WD_BLACK SN850X NVMe™ SSD - 1 TB, [WS](https://shop.sandisk.com/en-gb/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0), gaming
+SSD, NVMe, PCIe 0.4 x 4, M.2 form factor 2280, 
+* Crucial P310 1TB PCIe Gen4 NVMe 2280 M.2 SSD, [WS](https://uk.crucial.com/ssd/p310/CT1000P310SSD8), TBW 220 TB, general purpose
+* Samsung - 990 PRO 1TB Internal SSD PCle Gen 4x4 NVMe, [WS](https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/), TBW 600 TB, better for AI development
+* WD_BLACK SN850X NVMe™ SSD - 1 TB, [WS](https://shop.sandisk.com/en-gb/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0), TBW 600 TB, gaming
 
 SSD Manufacturers - in no order of preference, many other available, 
 * Crucial
@@ -51,7 +51,7 @@ Terms
 * NVMe
 * Form factor
 * ribbon cable, PCIe NVMe compatible, 
-* Total Bytes Written, TBW life expectancy, writes before failure, e.g. 600 TB,
+* Total Bytes Written, TBW life expectancy, writes before failure, e.g. 600 TB, 220 TB, 
 
 Datasheets
 * Raspberry Pi Connector for PCIe, A 16-way PCIe FFC Connector Specification, [PDF](https://datasheets.raspberrypi.com/pcie/pcie-connector-standard.pdf), Raspberry Pi, 
