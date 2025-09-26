@@ -11,6 +11,7 @@ DONE
 * <done: consider, intent to commit>
 * <done: consider, as deployment option for Bosch BMV080 particulate matter sensor, >
 * <done: consider, bill of materials for RPi Zero, compelted offline BoM in spreadsheet circa £64 inclusive 'useful' extras, >
+* <done: consider, purchase of RPi Zero 2 W, and other items, completed, >
 
 ## Libs
 
