@@ -4,23 +4,26 @@ RPi Zero, as test bed. Likely have to be RPi V.
 
 As candidate for datalogger large data sets.
 
-# Notes
+## Notes
 
 Form factor for RPi 2230, 2280, depending on HAT
 
-Compatibility, host, operating system, - discovery for laptop ssd replacement/upgrade
+As a consequence of compatibility, host, operating system, - discovery for laptop ssd replacement/upgrade
 * SSD M.2 2280 NVMe drive for Ubuntu 24.04, [WS](https://discourse.ubuntu.com/t/ssd-m-2-2280-nvme-drive-for-ubuntu-24-04/68002/1), Ubuntu Community
 * replace hard drive on XPS 15 9560 with installed Windows 10 Pro, [WS](https://www.dell.com/community/en/conversations/xps/replace-hard-drive-on-xps-15-9560-with-installed-windows-10-pro/68d2de3f8ca2284a249873ae?page=1), Dell Community
 
-# Status
+## Status
 TODO
 * <todo: consider, SSD NVMe PCIe M.2 slot to microSD to microSD cable to RPi Zero >
 * <todo: consider, find M.2 slot cable like microSD cable , flex connector, ribbon cable, important! >
+* <todo: consider, moving this project to rpi V >
 
 DONE
 * <done: consider, intent to commit, >
 
-# Hardware
+## Hardware
+
+### Laptop
 
 Random set of candidates. The following are not recomendations. The following are information gathering on SSD NVMe PCIe M.2 topic of conern.
 
@@ -35,7 +38,11 @@ SSD Manufacturers - in no order of preference, many other available,
 * Western Digital
 * ...
 
-# References
+### RPi 
+
+TBD ...
+
+## References
 
 Terms
 * SSD
