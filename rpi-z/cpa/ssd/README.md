@@ -28,9 +28,10 @@ DONE
 Random set of candidates. The following are not recomendations. The following are information gathering on SSD NVMe PCIe M.2 topic of conern.
 
 SSD, NVMe, PCIe 0.4 x 4, M.2 form factor 2280, 
-* Crucial P310 1TB PCIe Gen4 NVMe 2280 M.2 SSD, [WS](https://uk.crucial.com/ssd/p310/CT1000P310SSD8), TBW 220 TB, general purpose
-* Samsung - 990 PRO 1TB Internal SSD PCle Gen 4x4 NVMe, [WS](https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/), TBW 600 TB, better for AI development
-* WD_BLACK SN850X NVMe™ SSD - 1 TB, [WS](https://shop.sandisk.com/en-gb/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0), TBW 600 TB, gaming
+* Crucial P310 1TB PCIe Gen4 NVMe 2280 M.2 SSD, [WS](https://uk.crucial.com/ssd/p310/CT1000P310SSD8), TBW 220 TB, general purpose, circa £65.00 2025/09/26
+* Samsung - 990 PRO 1TB Internal SSD PCle Gen 4x4 NVMe, [WS](https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/), TBW 600 TB, better for AI development?, circa £80.00 2025/09/26
+* WD_BLACK SN850X NVMe™ SSD - 1 TB, [WS](https://shop.sandisk.com/en-gb/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0), TBW 600 TB, gaming, circa £80.00+vat 2025/09/26
+* WD Blue SN5000 NVMe™ SSD - 1 TB, [WS](https://shop.sandisk.com/en-gb/products/ssd/internal-ssd/wd-blue-sn5000-nvme-ssd?sku=WDS100T4B0E-00CNZ0), TBW ?, better for AI development?, circa £60.00 2025/09/26
 
 SSD Manufacturers - in no order of preference, many other available, 
 * Crucial
@@ -52,6 +53,7 @@ Terms
 * Form factor
 * ribbon cable, PCIe NVMe compatible, 
 * Total Bytes Written, TBW life expectancy, writes before failure, e.g. 600 TB, 220 TB, 
+* thermal pad, soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
 
 Datasheets
 * Raspberry Pi Connector for PCIe, A 16-way PCIe FFC Connector Specification, [PDF](https://datasheets.raspberrypi.com/pcie/pcie-connector-standard.pdf), Raspberry Pi, 
@@ -60,6 +62,12 @@ News Papers - RPi
 * Raspberry Pi M.2 HAT+ Ribbon Cable, [WS](https://forums.raspberrypi.com/viewtopic.php?t=372574&sid=8d5e9bd306227c84372bb0f70582d533)
 * Raspberry Pi SSD Kit and Class A2 microSD cards review with Raspberry Pi 5, [WS](https://www.cnx-software.com/2024/11/19/raspberry-pi-ssd-kit-and-class-a2-microsd-cards-review-with-raspberry-pi-5/), 19 November 2024, Jean-Luc Aufranc, CNXSoft
 * Testing Cytron MAKERDISK M.2 NVMe SSDs on Raspberry Pi 5 with GEEKWORM X1001 and Waveshare M.2 PCIe HAT+ [WS](https://www.cnx-software.com/2024/04/07/review-cytron-makerdisk-nvme-ssd-raspberry-pi-5-geekworm-x1001-waveshare-m2-pcie-hat/), 7 April 2024, Jean-Luc Aufranc, CNXSoft,
+
+News Papers - M.2 naming, standards,
+* Differences Between M2 Cards M2 Slots Keys Sizes and Types, and types. [WS](https://www.dell.com/support/kbdoc/en-us/000144170/how-to-distinguish-the-differences-between-m-2-cards), Summary: Learn to distinguish M.2 cards, including slots, keys, sizes, Understand M.2 slot functionality, M.2 and PCIe interfaces, and the M.2 platform's versatility.
+
+News Papers - thermal pad
+* Dell, M.2 2280 ssd form factor, other form factors, 
 
 News Papers - microSD connector
 * Adapter allows users to connect an M.2 NVMe SSD to a microSD Express card slot, [WS](https://www.cnx-software.com/2025/06/10/adapter-allows-users-to-connect-an-m-2-nvme-ssd-to-a-microsd-express-card-slot/), 10 June 2025, Jean-Luc Aufranc, CNXSoft, 
