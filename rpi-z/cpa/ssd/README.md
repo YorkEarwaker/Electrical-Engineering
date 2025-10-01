@@ -53,7 +53,7 @@ Terms
 * Form factor
 * ribbon cable, PCIe NVMe compatible, 
 * Total Bytes Written, TBW life expectancy, writes before failure, e.g. 600 TB, 220 TB, 
-* thermal pad, soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
+* thermal pad, silicone? strips of soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
 
 Datasheets
 * Raspberry Pi Connector for PCIe, A 16-way PCIe FFC Connector Specification, [PDF](https://datasheets.raspberrypi.com/pcie/pcie-connector-standard.pdf), Raspberry Pi, 
@@ -67,7 +67,7 @@ News Papers - M.2 naming, standards,
 * Differences Between M2 Cards M2 Slots Keys Sizes and Types, and types. [WS](https://www.dell.com/support/kbdoc/en-us/000144170/how-to-distinguish-the-differences-between-m-2-cards), Summary: Learn to distinguish M.2 cards, including slots, keys, sizes, Understand M.2 slot functionality, M.2 and PCIe interfaces, and the M.2 platform's versatility.
 
 News Papers - thermal pad
-* Dell, M.2 2280 ssd form factor, other form factors, 
+* Dell laptop, M.2 2280 ssd form factor, other form factors, hard to find merchants for generic thermal pads for M.2 2280 ssd, also can't find with ease on Dell website, 
 
 News Papers - microSD connector
 * Adapter allows users to connect an M.2 NVMe SSD to a microSD Express card slot, [WS](https://www.cnx-software.com/2025/06/10/adapter-allows-users-to-connect-an-m-2-nvme-ssd-to-a-microsd-express-card-slot/), 10 June 2025, Jean-Luc Aufranc, CNXSoft, 
