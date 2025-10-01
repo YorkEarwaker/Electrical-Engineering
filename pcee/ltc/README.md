@@ -7,9 +7,10 @@ See also
 
 ## Notes
 
-Requirements - cooling mechanism casing
-* Use case for additive manufacturing, 3d printing
-* Use case for recycled plastic, Precious Plastic, com [WS](https://www.preciousplastic.com/)
+Requirements - cooling mechanism, casing/frame, fan, 
+* Use case, additive manufacturing, 3d printing
+* Use case, recycled plastic, Precious Plastic, com [WS](https://www.preciousplastic.com/)
+* Use case, tower case fan
 
 ## Status
 TODO
@@ -25,9 +26,16 @@ DONE
 * fan, one or more coputer fans, >
 
 ### liquid cooling
-* 
+* ...
 
 ## References
 
+Terms
+* fan, air flow
+* fan, noise, important due to distraction and disruption to concentration, noise pollution, 
+* fan, static pressure, air
+
 News Papers - air cooling, fans
 * Why quiet operation matters most when choosing PC fans, [WS](https://www.xda-developers.com/my-sanity-requires-silent-fans/), 13 August 2025, Joe Rice-Jones, Iceberg Thermal IceFLOE Oasis 360 with the RGB on 4?
+* 6 mistakes you're making when buying new case fans for your PC, [WS](https://www.xda-developers.com/mistakes-to-avoid-when-buying-pc-case-fans/), 19 April 2025, Tanveer Singh, NZXT H7 Flow (2024) 4?
+
