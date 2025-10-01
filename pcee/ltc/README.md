@@ -32,10 +32,14 @@ DONE
 
 Terms
 * fan, air flow
+* fan, fluid dynamic bearings, fdb, reduced noise
 * fan, noise, important due to distraction and disruption to concentration, noise pollution, 
 * fan, static pressure, air
 
+News Papers - PC cooling, opinions
+* 5 cooling myths that actually tank PC performance, [WS](https://www.xda-developers.com/5-cooling-myths-that-actually-tank-pc-performance/), 01 October 2025, Ty Sherback
+
 News Papers - air cooling, fans
-* Why quiet operation matters most when choosing PC fans, [WS](https://www.xda-developers.com/my-sanity-requires-silent-fans/), 13 August 2025, Joe Rice-Jones, Iceberg Thermal IceFLOE Oasis 360 with the RGB on 4?
-* 6 mistakes you're making when buying new case fans for your PC, [WS](https://www.xda-developers.com/mistakes-to-avoid-when-buying-pc-case-fans/), 19 April 2025, Tanveer Singh, NZXT H7 Flow (2024) 4?
+* Why quiet operation matters most when choosing PC fans, [WS](https://www.xda-developers.com/my-sanity-requires-silent-fans/), 13 August 2025, Joe Rice-Jones, 
+* 6 mistakes you're making when buying new case fans for your PC, [WS](https://www.xda-developers.com/mistakes-to-avoid-when-buying-pc-case-fans/), 19 April 2025, Tanveer Singh,
 
