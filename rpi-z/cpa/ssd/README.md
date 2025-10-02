@@ -53,7 +53,14 @@ Terms
 * Form factor
 * ribbon cable, PCIe NVMe compatible, 
 * Total Bytes Written, TBW life expectancy, writes before failure, e.g. 600 TB, 220 TB, 
-* thermal pad, silicone? strips of soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
+
+Heat, temperature
+* Gap pad, 
+* Heatsink, designed for desktop systems not laptop systems, 
+* Thermal tape?, 
+* Thermal pad, silicone? strips of soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
+* Thermal throtelling, heat outside operating limits causes degradation of function
+* Thermal throtelling, self, device self throtels to reduce heat and avoid harms to hardware through heat outside safe operating limits
 
 Datasheets
 * Raspberry Pi Connector for PCIe, A 16-way PCIe FFC Connector Specification, [PDF](https://datasheets.raspberrypi.com/pcie/pcie-connector-standard.pdf), Raspberry Pi, 
@@ -66,8 +73,15 @@ News Papers - RPi
 News Papers - M.2 naming, standards,
 * Differences Between M2 Cards M2 Slots Keys Sizes and Types, and types. [WS](https://www.dell.com/support/kbdoc/en-us/000144170/how-to-distinguish-the-differences-between-m-2-cards), Summary: Learn to distinguish M.2 cards, including slots, keys, sizes, Understand M.2 slot functionality, M.2 and PCIe interfaces, and the M.2 platform's versatility.
 
-News Papers - thermal pad
+News Papers - Dell, 
 * Dell laptop, M.2 2280 ssd form factor, other form factors, hard to find merchants for generic thermal pads for M.2 2280 ssd, also can't find with ease on Dell website, 
+* Will a SAMSUNG 980 PRO SSD with Heatsink 2TB PCIe Gen 4 NVMe M.2 fit in my XPS 15 9560 [WS](https://www.dell.com/community/en/conversations/xps/will-a-samsung-980-pro-ssd-with-heatsink-2tb-pcie-gen-4-nvme-m2-fit-in-my-xps-15-9560/647fa1c5f4ccf8a8de7135e2), 10 January 2023
+
+News Papers - thermal pad, heatsinks, examples, 
+* Thermal pad for M.2 SSD 2280, [WS](https://www.microconnectors.com/m-2-ssd-thermal-pad/), Micro Connectors, one yay! but depth too great? 
+* Hard Drive & Solid State Drive Coolers, com [WS](https://www.scan.co.uk/shop/computer-hardware/hard-drives-internal/hard-drive-and-solid-state-drive-coolers), Scan, heatsinks only?
+* Thammal Pads, Farnell, com [WS](https://uk.farnell.com/c/cooling-thermal-management/thermal-interface-materials/thermal-pads), lots, yay!, 
+* 
 
 News Papers - microSD connector
 * Adapter allows users to connect an M.2 NVMe SSD to a microSD Express card slot, [WS](https://www.cnx-software.com/2025/06/10/adapter-allows-users-to-connect-an-m-2-nvme-ssd-to-a-microsd-express-card-slot/), 10 June 2025, Jean-Luc Aufranc, CNXSoft, 
