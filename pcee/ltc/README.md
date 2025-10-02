@@ -3,6 +3,7 @@
 Heat management, heat disipation, temperature, laptop case cooling, 
 
 See also
+* SSD, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z/cpa/ssd), thermal pad, internal, 
 * Hybrid power, [GH](https://github.com/YorkEarwaker/Hybrid-Power), combined power? 
 
 ## Notes
@@ -41,6 +42,10 @@ DONE
 ## References
 
 Terms
+* heat transfer, 
+* thermal drain, 
+
+Air cooled
 * fan, air flow
 * fan, fluid dynamic bearings, fdb, reduced noise
 * fan, noise, important due to distraction and disruption to concentration, noise pollution, 
