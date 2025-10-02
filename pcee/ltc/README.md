@@ -9,8 +9,12 @@ See also
 
 Requirements - cooling mechanism, casing/frame, fan, 
 * Use case, additive manufacturing, 3d printing
-* Use case, recycled plastic, Precious Plastic, com [WS](https://www.preciousplastic.com/)
+* Use case, recycled plastic, Precious Plastic, com [WS](https://www.preciousplastic.com/), deep concern here with plastics pollution but this technology solution might help to aggregate plastics in bulk for destruction by enzymes, advanced platics degrading enzymes, 
 * Use case, tower case fan
+
+Assumptions
+* external cooling mechanism
+* not internal cooling mechanisms
 
 ## Status
 TODO
@@ -27,6 +31,12 @@ DONE
 
 ### liquid cooling
 * ...
+
+### merchants, cooling products, internal/external mechanisms
+* Hard Drive & Solid State Drive Coolers, com [WS](https://www.scan.co.uk/shop/computer-hardware/hard-drives-internal/hard-drive-and-solid-state-drive-coolers), Scan, heatsinks only?
+* Thammal Pads, com [WS](https://uk.farnell.com/c/cooling-thermal-management/thermal-interface-materials/thermal-pads), Farnell, lots, yay!, 
+* Watercooling UK, [WS](https://www.watercoolinguk.co.uk/)
+
 
 ## References
 
