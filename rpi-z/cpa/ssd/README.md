@@ -42,6 +42,15 @@ SSD Manufacturers - in no order of preference, many other available,
 ### RPi 
 
 TBD ...
+* RPi compatible SSD's, hats, etc, 
+
+### Thermal interface materials - merchants, products, - gap pad, thermal pad, heatsink, 
+* Thermal pad for M.2 SSD 2280, [WS](https://www.microconnectors.com/m-2-ssd-thermal-pad/), Micro Connectors, one yay! but depth too great? 
+* Hard Drive & Solid State Drive Coolers, com [WS](https://www.scan.co.uk/shop/computer-hardware/hard-drives-internal/hard-drive-and-solid-state-drive-coolers), Scan, heatsinks only?
+* Thermal Pads, com [WS](https://www.scan.co.uk/shop/computer-hardware/cooling-air/thermal-pads), Scan, some yay! many appear to be from Watercooling site, 
+* Thermal Pads, com [WS](https://uk.farnell.com/c/cooling-thermal-management/thermal-interface-materials/thermal-pads), Farnell, lots, yay!, 
+* Thermal Pads, com [WS](https://www.overclockers.co.uk/air-cooling/cooler-accessories/thermal-pads), Overclockers UK, lots yay! many appear to be from Watercooler site, 
+* Thermal Pads, com [WS](https://www.watercoolinguk.co.uk/cat/Thermal-Pads_642.html), Watercooling UK, lots yay!
 
 ## References
 
@@ -54,13 +63,18 @@ Terms
 * ribbon cable, PCIe NVMe compatible, 
 * Total Bytes Written, TBW life expectancy, writes before failure, e.g. 600 TB, 220 TB, 
 
-Heat, temperature
-* Gap pad, 
+Thermal interface material  - SSD's, and motherboard component things, heat transfer, 
+* Gap pad, specific type of thermal pad, bespoke use, bespoke area coverage, where precision in gap filling and depth/thickness are critical concerns, 
 * Heatsink, designed for desktop systems not laptop systems, 
-* Thermal tape?, 
-* Thermal pad, silicone? strips of soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
-* Thermal throtelling, heat outside operating limits causes degradation of function
+* Thermal conductive paste, not good? gets - leaks - on to other components
+* Thermal tape, 
+* Thermal pad, silicone base compounds like ceramic filled silicone, strips of soft plyable material, not hard heatsink, circa 0.5mm 1.0mm 1.5mm depth, for example for form factor M.2 2280 nvme ssd
+* ...
+
+Heat, temperature,
+* Thermal throtelling, heat outside operating limits causes degradation of function and may harm device
 * Thermal throtelling, self, device self throtels to reduce heat and avoid harms to hardware through heat outside safe operating limits
+* W/m-K units, heat transfer effectivness of thermal transfer substrate - paste, pad, tape, other, ? 
 
 Datasheets
 * Raspberry Pi Connector for PCIe, A 16-way PCIe FFC Connector Specification, [PDF](https://datasheets.raspberrypi.com/pcie/pcie-connector-standard.pdf), Raspberry Pi, 
@@ -77,11 +91,8 @@ News Papers - Dell,
 * Dell laptop, M.2 2280 ssd form factor, other form factors, hard to find merchants for generic thermal pads for M.2 2280 ssd, also can't find with ease on Dell website, 
 * Will a SAMSUNG 980 PRO SSD with Heatsink 2TB PCIe Gen 4 NVMe M.2 fit in my XPS 15 9560 [WS](https://www.dell.com/community/en/conversations/xps/will-a-samsung-980-pro-ssd-with-heatsink-2tb-pcie-gen-4-nvme-m2-fit-in-my-xps-15-9560/647fa1c5f4ccf8a8de7135e2), 10 January 2023
 
-News Papers - thermal pad, heatsinks, examples, 
-* Thermal pad for M.2 SSD 2280, [WS](https://www.microconnectors.com/m-2-ssd-thermal-pad/), Micro Connectors, one yay! but depth too great? 
-* Hard Drive & Solid State Drive Coolers, com [WS](https://www.scan.co.uk/shop/computer-hardware/hard-drives-internal/hard-drive-and-solid-state-drive-coolers), Scan, heatsinks only?
-* Thammal Pads, Farnell, com [WS](https://uk.farnell.com/c/cooling-thermal-management/thermal-interface-materials/thermal-pads), lots, yay!, 
-* 
+News Papers - thermal interface materials
+* How to choose a Gap Filler or thermal pad, [WS](https://www.compelma.com/en/how-to-choose-a-gap-filler/), Oct 23, 2023, Clement, Thermal Management
 
 News Papers - microSD connector
 * Adapter allows users to connect an M.2 NVMe SSD to a microSD Express card slot, [WS](https://www.cnx-software.com/2025/06/10/adapter-allows-users-to-connect-an-m-2-nvme-ssd-to-a-microsd-express-card-slot/), 10 June 2025, Jean-Luc Aufranc, CNXSoft, 
