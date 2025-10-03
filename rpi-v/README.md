@@ -12,6 +12,7 @@ TODO
 * <todo: consider, as evaluation for Climate Model \amn project low cost commodity hardware for cluster and cloud, >
 * <todo: consider, to better understnd printed circuit boards toward design of a pcb? >
 * <todo: consider, as deployment option for BMV080 particulate matter sensor Sunspark breakout board, >
+* <todo: consider, home assitant project, open source, sensor monitoring, energy consumption monitoring, https://www.home-assistant.io/ >
 
 DONE
 * <done: intent to commit >
