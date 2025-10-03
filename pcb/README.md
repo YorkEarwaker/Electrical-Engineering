@@ -18,6 +18,16 @@ Desgin
 * EagleCAD
 * Fritzing
 
+## Standards
+
+Flamability - electrical devices, ...
+* IEC 60695-11-10 
+* IEC 60695-11-20 
+* ISO 9772 
+* ISO 9773
+* UL 94, [WS](https://en.wikipedia.org/wiki/UL_94), flamability standard, platics and other products, e.g. UL 94 V-0 highest rating
+* UL 1581, electrical; wires, cables, chords, 
+
 ## Hardware
 
 ### Tools
@@ -43,6 +53,11 @@ Terms
 * Printed Circuit Board [WP](https://en.wikipedia.org/wiki/Printed_circuit_board), aka printed wire board PWB, 
 * Electronic design automation, EDA, ECAD, produce layout file
 * Printed electrionics, related
+
+PCB - Flamability, see standards above
+* Flamability
+* Flamability diagram
+* Fire test
 
 PCB - kinds
 * Mother board
