@@ -20,10 +20,22 @@ Desgin
 
 ## Hardware
 
+### Tools
+
 Solderless, no solder
 * Pogo Pin Probe Clip, connect to breakout board header pins, e.g. Pogo Pin Probe Clip - 6 Pins with 2.54mm/0.1" Pitch, 
 * Pogo Pin Probe Clip SWD, connect to a PCB with classic 'SWD' pad holes, debug, programming
 * Pogo Pins,  
+
+Working surfaces, workbench
+* anti static mat, antistat seems to be main UK merchant in non exhuastive search
+* magnetic mat, many retailers, Maplins low cost option
+* soldering mat, many retailers, Maplins low cost option
+
+Merchants - 
+* <todo: find other merchants sources, >
+* Antistat, co.uk [WS](https://www.antistat.co.uk/), 
+* Magnosphere, co.uk [WS](https://www.magnosphere.co.uk/), 
 
 ## References
 
