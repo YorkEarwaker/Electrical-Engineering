@@ -44,8 +44,9 @@ Working surfaces, workbench
 
 Merchants - 
 * <todo: find other merchants sources, >
-* Antistat, co.uk [WS](https://www.antistat.co.uk/), 
-* Magnosphere, co.uk [WS](https://www.magnosphere.co.uk/), 
+* Antistat, co.uk, UK [WS](https://www.antistat.co.uk/), anti static mats, ...
+* Complema, com, FR [WS](https://www.compelma.com/en/emi-shielding-thermal-dissipation/), emi shielding, thermal disipation
+* Magnosphere, co.uk, UK [WS](https://www.magnosphere.co.uk/), magnetic mat, magenets, ...
 
 ## References
 
@@ -58,6 +59,11 @@ PCB - Flamability, see standards above
 * Flamability
 * Flamability diagram
 * Fire test
+
+PCB - protection, longer life, critical failure mitigation, risk mitigation, 
+* thermal disipation, 
+* emi shielding, 
+* ...
 
 PCB - kinds
 * Mother board
