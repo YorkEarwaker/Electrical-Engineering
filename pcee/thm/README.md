@@ -16,7 +16,8 @@ Requirements - cooling mechanism, casing/frame, fan,
 
 Assumptions
 * external cooling mechanism
-* not internal cooling mechanisms
+* internal cooling mechanisms
+* in a world of global warming thermal management of IT systems increases in importance
 
 ## Status
 TODO
