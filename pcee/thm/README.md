@@ -1,6 +1,6 @@
 # Thermal management thm
 
-Heat management, heat disipation, temperature, laptop case cooling, 
+Heat management, heat disipation, temperature, device component cooling, whole systems thermal managment, 
 
 See also
 * SSD, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z/cpa/ssd), thermal pad, internal, 
@@ -38,12 +38,13 @@ DONE
 * ...
 
 ### solid cooling - heat transfer, physics; atomic bonding?
-* thermal pad, flexible plyable, micro particle filled silicone or polymer, ceramic filled silicone/polymer, metallic filled silicone/polymer, . micro particles; aluminium oxide, aluminium nitride, boron nitride, magnesium oxide, graphite?
-* heatsink, inflexible firm, extruded or machined, metal fins/lattice?
+* thermal pad, softer, flexible plyable, micro particle 'putty' filler, micro particle filled silicone or polymer, ceramic filled silicone/polymer, metallic filled silicone/polymer, . micro particles; aluminium oxide, aluminium nitride, boron nitride, magnesium oxide, graphite?
+* heatsink, harder, inflexible firm, extruded or machined, metal fins/lattice?
 
 ### merchants, cooling products, internal/external mechanisms
 * Complema, com, FR [WS](https://www.compelma.com/), manufacturer, thermal disipation products, 
 * Farnell, com, UK [WS](https://uk.farnell.com/c/cooling-thermal-management/thermal-interface-materials/thermal-pads), reseller, thermal pads, 
+* Laird, com, ? [WS](https://www.laird.com/products/thermal-interface-materials), ?, thermal interface materials, many types, inclusive gap fillers, 
 * Watercooling co.uk, UK, [WS](https://www.watercoolinguk.co.uk/), reseller, 
 
 
@@ -65,4 +66,7 @@ News Papers - PC cooling, opinions
 News Papers - air cooling, fans
 * Why quiet operation matters most when choosing PC fans, [WS](https://www.xda-developers.com/my-sanity-requires-silent-fans/), 13 August 2025, Joe Rice-Jones, 
 * 6 mistakes you're making when buying new case fans for your PC, [WS](https://www.xda-developers.com/mistakes-to-avoid-when-buying-pc-case-fans/), 19 April 2025, Tanveer Singh,
+
+News Papers - plastic pollution
+* Alarm As Study Shows How Microplactics Are Blow Accross The World, https://www.theguardian.com/environment/2019/apr/15/winds-can-carry-microplastics-anywhere-and-everywhere
 
