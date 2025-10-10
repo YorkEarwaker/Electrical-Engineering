@@ -116,3 +116,8 @@ News Papers - Enclosures for external SSD's, USB
 News Papers - External SSD's, USB
 * Crucial X10 2TB Portable SSD Review Compact and Neat, [WS](https://www.servethehome.com/crucial-x10-2tb-portable-ssd-review-compact-and-neat/), Serve The Home, 
 
+News Papers - Windows 10 Pro move to external enclosure
+* HELP Can I move SSD to external USB C (3.1) enclosure and boot windows 10 from it? [WS](https://egpu.io/forums/laptop-computing/help-can-i-move-ssd-to-external-usb-c-3-1-enclosure-and-boot-windows-10-from-it/)
+* If I remove SSD from laptop and put it in external enclosure, can I boot same laptop from it and access files? [WS](https://superuser.com/questions/1804449/if-i-remove-ssd-from-laptop-and-put-it-in-external-enclosure-can-i-boot-same-la)
+* Can I boot and run Windows 10 from SSD connected to USB port that was internally connected before? [WS](https://learn.microsoft.com/en-us/answers/questions/4017235/can-i-boot-and-run-windows-10-from-ssd-connected-t?forum=windows-all)
+* Boot from an external ssd with widows 10 already installed [WS](https://learn.microsoft.com/en-au/answers/questions/5510218/boot-from-an-external-ssd-with-widows-10-already-i), 31 July 2025, Jeffery Gross
