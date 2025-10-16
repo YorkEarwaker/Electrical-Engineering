@@ -2,6 +2,8 @@
 
 Create a bootable USB stick, create a bootable sd card, 
 
+See also
+* Bootable USB stick create failure - balenaEtcher 2.1.4, Ubuntu 24.04.3 LTS iso, Win 10 [WS](https://discourse.ubuntu.com/t/bootable-usb-stick-create-failure-balenaetcher-2-1-4-ubuntu-24-04-3-lts-iso-win-10/69728/1), Ubuntu Community hub,
 
 ## Software
 
