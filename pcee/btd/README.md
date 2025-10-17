@@ -23,6 +23,19 @@ ISV's
 Disk managment - MS Win
 * diskpart [WS](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart), cli
 
+## Hardware
+
+Hardware for firmware, flashable chip things, 
+
+USB - stick, pen, drive, 
+* SanDisk
+* ...
+
+SD Card - 
+* Raspberry Pi, 
+* SanDisk, 
+* ...
+
 ## References
 
 News Papers - Balena
