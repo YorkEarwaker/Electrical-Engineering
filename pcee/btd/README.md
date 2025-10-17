@@ -7,7 +7,7 @@ See also
 
 ## Software
 
-Bootable USB stick flashware
+Bootable USB device flashware
 * <todo: due dilligence in each entry>
 * balenaEtcher, io [WS](https://etcher.balena.io/), linux, macos, win, limited use of this, Ubuntu iso, Raspberry Pi tbd, others, 
 * Ventoy, net [WS](https://www.ventoy.net/en/index.html)
@@ -27,11 +27,11 @@ Disk managment - MS Win
 
 Hardware for firmware, flashable chip things, 
 
-USB - stick, pen, drive, 
+USB - device, stick, pen, drive, 
 * SanDisk
 * ...
 
-SD Card - 
+SD Card - device, card, chip, 
 * Raspberry Pi, 
 * SanDisk, 
 * ...
