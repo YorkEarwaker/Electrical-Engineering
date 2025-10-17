@@ -19,7 +19,7 @@ SMV's
 * belena, blog [WS](https://blog.balena.io/), 
 
 Disk managment - MS Win
-* diskpart [WS](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart, cli
+* diskpart [WS](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart), cli
 
 ## References
 
