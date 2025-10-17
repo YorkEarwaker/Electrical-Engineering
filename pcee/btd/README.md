@@ -9,14 +9,16 @@ See also
 
 Bootable USB stick flashware
 * <todo: due dilligence in each entry>
-* BalenaEtcher, io [WS](https://etcher.balena.io/), linux, macos, win, limited use of this, Ubuntu iso, Raspberry Pi tbd, others, 
+* balenaEtcher, io [WS](https://etcher.balena.io/), linux, macos, win, limited use of this, Ubuntu iso, Raspberry Pi tbd, others, 
 * Ventoy, net [WS](https://www.ventoy.net/en/index.html)
 * Gnome Disk Utility?, linux only?
 * Rufus, ie [WS](https://rufus.ie/en/)
 * mkusb, linux only?
 
-SMV's 
-* belena, blog [WS](https://blog.balena.io/), 
+ISV's  
+* <todo: due dilligence on balena as part of climate model ( climate change/global warming ) project, and associated weather station project /amn, see climate model repository, also hybrid-power project, and so on >
+* balena, io [WS](https://www.balena.io/), blog [WS](https://blog.balena.io/), IoT, 
+* ...
 
 Disk managment - MS Win
 * diskpart [WS](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart), cli
