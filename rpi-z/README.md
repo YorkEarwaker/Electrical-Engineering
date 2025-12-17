@@ -6,6 +6,8 @@ Single board computer,
 
 TODO
 * <todo: consider, hello world project>
+* <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? >
+* <todo: consider, use as platform for Bosch Paticlate Sensor for C code application sensor particulate value readings, >
 
 DONE
 * <done: consider, intent to commit>
@@ -31,4 +33,4 @@ Bill of materials
 
 Raspberry Pi Zero - datasheets, user guides
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi
-* 
+* Raspberry Pi Zero 2 W Product Brief, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi
