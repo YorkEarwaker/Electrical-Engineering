@@ -87,9 +87,10 @@ Success!
 * Can't access RPi OS file system, so can't shut it down powering off,
 * Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
 * Option 2. unplug RPi Zero from mains will likely also harm SD card file system, 
-* Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
-* Option 4. explore Dell to do on Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli
-* Option 5. keep RPi Zero powered on and purchase keyboard and display
+* Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? But dangerous to do while the RPi Zero is powered on and might lead to worse damage to actual RPI Zero. Investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
+* Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be to do to make contact
+* Option 5. keep RPi Zero powered on and purchase keyboard and display. Investigate if RPi Zero needs to have these plugged in before booting to have these devices recognized, probably not.
+* Option 6. short GPIO pins, which ones? Also will likely cause damage to SD card file system and likely damage RPi Zero too.
 
 Dell Ubuntu does not seem to see RPi Zero 2 W. 
 ```
@@ -101,6 +102,9 @@ Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
 Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
+
+### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
+<todo: try this, but will likely require changes to RPi OS config files, >
 
 ### 
 
