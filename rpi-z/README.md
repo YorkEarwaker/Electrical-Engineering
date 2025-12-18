@@ -24,11 +24,15 @@ Raspberry Pi
 
 ## Hardware
 
-Bill of materials
-* Raspberry Pi Zero, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi
-* Power Supply, 12.75 Raspberry Pi
-* Micro SD Card, with RPi OS preinstalled, Raspberry Pi
-* 
+Bill of materials, BoM
+* Raspberry Pi Zero, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi, acquired
+* Power Supply, 12.75 Raspberry Pi, acquired
+* Micro SD Card, with RPi OS preinstalled, Raspberry Pi, acquired
+
+BoM, To be considered ---
+* HDMI cable, with Mini HDMI plug to display (screen) socket plug, to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
+* Display (screen), to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
+* Keyboard, to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
 
 Diagram of the eight main components on board the RPi Zero single board computer SBC. Larger than actual physical form factor.
 ```
@@ -49,11 +53,13 @@ Diagram of the eight main components on board the RPi Zero single board computer
        ------/____________\------------------------/_________\---/_________\--------
 ```
 
+Warning! Will require to shift voltage down to 3V with 'bridge' device if connection via breadboard to RPi Pico MCU, and RPi Zero SBC provides 5V power to breadboard via its GPIO pins, 
+
 ## Output
 
 ### Create SSH file on SD Card
 Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi, docs
-* placed RPi micro SD Card in SD Card holder, 
+* placed RPi micro SD Card with preinstalled RPi OS in SD Card holder, 
 * put RPi SD Card holder into laptop
 * created ssh file as per instructions in link above.
 ```
@@ -70,8 +76,8 @@ total 0
 
 ### Headless, power on RPi Zero
 Success! 
-* Put SD Card into RPi Zero, using an extension cable for easier access and to improve life of micro SD Card
-* Put power micro USB into PWR IN USB slot
+* Put SD Card into RPi Zero, using an extension cable for easier access and to improve life of micro SD Card and RPi Zero
+* Put power adaptor micro USB into PWR IN USB slot
 * Plugged in 12.75 Raspberry Pi Power adapter into mains
 * Led, green light flashed on and off for a while, assuming during RPi OS boot sequence,
 * Led, green light is permanently on after a while
@@ -83,8 +89,8 @@ Success!
 * RPi Zero on, green Led solid green, 
 * Plug in USB cable (data and power), Dell A standard type USB port, RPi Zero micro USB port, Pi Hut website reports cable compatible with Zero and carries data, 
 * RPi Zero powered from mains with micro USB PWR IN port
-* Retarted Dell laptop with USB cable attached to 
-* Can't access RPi OS file system, so can't shut it down powering off,
+* Restarted Dell laptop with USB cable attached to 
+* Can't access RPi OS file system, so can't shut it down gracefully, powering off,
 * Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
 * Option 2. unplug RPi Zero from mains will likely also harm SD card file system, 
 * Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? But dangerous to do while the RPi Zero is powered on and might lead to worse damage to actual RPI Zero. Investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
