@@ -8,6 +8,7 @@ TODO
 * <todo: consider, hello world project>
 * <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? >
 * <todo: consider, use as platform for Bosch Paticlate Sensor for C code application sensor particulate value readings, >
+* <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 
 DONE
 * <done: consider, intent to commit>
@@ -29,6 +30,7 @@ Bill of materials
 * Micro SD Card, 
 * 
 
+Diagram of the eight main components on board the RPi Zero single board computer SBC. Larger than actual physical form factor.
 ```
         ---------------------------------------------------------------------------
       |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
