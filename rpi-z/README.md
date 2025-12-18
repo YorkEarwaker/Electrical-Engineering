@@ -28,6 +28,8 @@ Bill of materials, BoM
 * Raspberry Pi Zero, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi, acquired
 * Power Supply, 12.75 Raspberry Pi, acquired
 * Micro SD Card, with RPi OS preinstalled, Raspberry Pi, acquired
+* Micro SD Card adapter, Raspberry Pi, acquired
+* SD Card cable, acquired
 
 BoM, To be considered ---
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
