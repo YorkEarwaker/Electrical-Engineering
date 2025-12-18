@@ -26,11 +26,42 @@ Raspberry Pi
 Bill of materials
 * Raspberry Pi Zero, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi
 * Power Supply, 
-* Micro SD, 
+* Micro SD Card, 
 * 
+
+```
+        ---------------------------------------------------------------------------
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O       ___|_
+      |  ____________                              GPIO                         |   | |
+      |  \           |        _________________                                =| C |C|
+      |  >   Micro   |       |       SOC       |    _____________              =| a |S|
+      |  >    SD     |       |    BCM2710A1    |   |             |             =| m |I|
+      |  >   Card    |       |                 |   |    WIFI     |             =| e |-|
+      |  |           |       |     RP3A0-AU    |   |  Bluetooth  |             =| r |2|
+      |  ------------        |       2041      |   |             |              | a | |
+      |       ____________   |      200826     |    -------------               |   | |
+      |      |   MTCONN   |   -----------------     _________     _________     -------
+      |      |    Mini    |                        |  Data   |   | PWR IN  |        |
+      |      |    HDMI    |                        | USB 2.0 |   | USB 5V  |        |
+       ------/____________\------------------------/_________\---/_________\--------
+```
 
 ## References
 
 Raspberry Pi Zero - datasheets, user guides
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi
 * Raspberry Pi Zero 2 W Product Brief, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi
+* Raspberry Pi Zero Pinout, [WS](https://forums.raspberrypi.com/viewtopic.php?t=378242), Raspberry Pi
+* Raspberry Pi Zero Pinout, [WS](https://pinout.xyz/), xyz
+* Raspberry Pi Zero Schematic, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-reduced-schematics.pdf), Raspberry Pi
+* Raspberry Pi Zero Test Pads [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-test-pads.pdf), Raspberry Pi
+* Raspberry Pi Zero Mechanical Drawing [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi
+* ...
+
+Pi0 - examples
+* https://raspberrypi.stackexchange.com/questions/84349/how-to-boot-up-start-using-raspberry-pi-using-laptop-as-a-monitor
+
+
+
+
