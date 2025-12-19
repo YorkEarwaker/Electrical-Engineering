@@ -9,6 +9,7 @@ TODO
 * <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? >
 * <todo: consider, use as platform for Bosch Paticlate Sensor for C code application sensor particulate value readings, >
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
+* <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet , Bluetooth, other, and so on, >
 
 DONE
 * <done: consider, intent to commit>
@@ -98,9 +99,11 @@ Success!
 ``` 
 $ ssh pi@raspberrypi.local
 $ ssh pi@raspberrypi 
+$ ssh pi@raspberrypi raspberry
 ```
 * Restarted Dell laptop with USB cable attached
 * Attempted terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
+* Attempted terminal cli $ nm-connection-editor instruction but Network Connection window did not list RPi Zero, likely as necessary Ethernet config had not been done on RPi Zero beforehand, did list local WiFi router, and Bluetooth mobile phone, 
 * Can't access RPi OS file system, so can't shut it down gracefully, powering off,
 * Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
 * Option 2. unplug RPi Zero from mains will likely also harm SD card file system, 
