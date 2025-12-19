@@ -97,9 +97,10 @@ Success!
 * RPi Zero powered from mains with micro USB PWR IN port
 * Attempted terminal cli; , but no contact
 ``` 
-$ ssh pi@raspberrypi.local
 $ ssh pi@raspberrypi 
 $ ssh pi@raspberrypi raspberry
+$ ssh pi@raspberrypi.local
+$ ssh pi@raspberrypi.local raspberry
 ```
 * Restarted Dell laptop with USB cable attached
 * Attempted terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
