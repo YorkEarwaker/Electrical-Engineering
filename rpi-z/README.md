@@ -58,7 +58,7 @@ Diagram of the eight main components on board the RPi Zero single board computer
       |  ------------        |       2041      |   |             |              | a | |
       |       ____________   |      200826     |    -------------               |   | |
       |      |   MTCONN   |   -----------------     _________     _________     -------
-      |      |    Mini    |                        |  Data   |   | PWR IN  |        |
+      |      |    Mini    |                        |   OTG   |   | PWR IN  |        |
       |      |    HDMI    |                        | USB 2.0 |   | USB 5V  |        |
        ------/____________\------------------------/_________\---/_________\--------
 ```
