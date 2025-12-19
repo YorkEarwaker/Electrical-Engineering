@@ -115,12 +115,12 @@ $ ssh pi@raspberrypi.local raspberry
 * Attempted terminal cli $ nm-connection-editor instruction but Network Connection window did not list RPi Zero, likely as necessary Ethernet config had not been done on RPi Zero beforehand, did list local WiFi router, and Bluetooth mobile phone, 
 * Can't access RPi OS file system, so can't shut it down gracefully, powering off,
 * Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
-* Option 2. unplug RPi Zero from mains will likely also harm SD card file system, 
+* Option 2. unplug RPi Zero from mains will likely also harm SD card file system, mitigate buy new micro SD Card
 * Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? But dangerous to do while the RPi Zero is powered on and might lead to worse damage to actual RPI Zero. Investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
 * Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be done to make contact with RPi OS on RPi Zero, 
 * Option 5. keep RPi Zero powered on and purchase keyboard and display. Investigate if RPi Zero needs to have these plugged in before booting to have these devices recognized, probably not.
 * Option 6. short GPIO pins, which ones? Also will likely cause damage to SD card file system and likely damage RPi Zero too.
-* Option 7. USB On-The-Go adapter, 
+* Option 7. USB On-The-Go adapter, already used micro USB B from peripheral RPi Zero to standard USB A host Dell, so addition of an adapter only overhead, micro USB B to peripheral to standard USB A host is another approach
 
 Dell Ubuntu does not seem to see RPi Zero 2 W. 
 ```
