@@ -98,6 +98,7 @@ Success!
 * probably a mistake without having made necessary changes to SD card RPi OS changes first, unlikely ssh file creation was not sufficient see above, 
 
 ### Headless, connect to RPi Zero from Dell laptop, USB cable
+Attempt 1
 * <todo: trying this, but encountering difficulties, no first contact yet,  >
 * probably not set up the RPi Zero correctly beforehand
 * RPi Zero on, Led solid green great, no flashing good as flashing Led can indicate issues, 
@@ -133,6 +134,11 @@ Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
+Attempt 2
+* Shut down RPi Zero. Ensure ACT Led is not flashing, pull out USB B power plug, Option 2 above, 
+* Retrieve SD Card from RPi Zero. In this instance eject the MicroSD Card Adapter it from the reader slot at the end of MicroSD Card cable.
+* <todo: edit config files for ssh access over Ethernet USB OTG connection, >
+
 ### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
 <todo: try this, but will likely require changes to RPi OS config files, >
 
@@ -153,7 +159,7 @@ Raspberry Pi Zero - datasheets, user guides
 * Raspberry Pi Zero Mechanical Drawing [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi
 * ...
 
-SSH
+SSH - RPi Zero OTG USB Ethernet, 
 * How do I turn off the green LED on my RPI Zero 2 W? [WS](https://forums.raspberrypi.com/viewtopic.php?t=328550), Raspberry Pi Forums, 
 * How to boot up & start using raspberry pi using laptop as a monitor, [WS](https://raspberrypi.stackexchange.com/questions/84349/how-to-boot-up-start-using-raspberry-pi-using-laptop-as-a-monitor), StackExchange, Raspberry Pi, 
 * Add ssh and wpa_supplicant.conf Files, [WS](https://seengreat.com/wiki/123/raspberry-pi-zero-2-w?#toc6), SeenGreat, 
@@ -162,6 +168,13 @@ SSH
 * Setting up Pi Zero OTG - The quick way (No USB keyboard, mouse, HDMI monitor needed), [WS](https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a), gbaman, github
 * How to Setup a Raspberry Pi Without a Monitor or Keyboard (Video Tutorial), [WS](https://www.reddit.com/r/raspberry_pi/comments/dzgke0/how_to_setup_a_raspberry_pi_without_a_monitor_or/), Reddit, 
 * How To Set Up Raspberry Pi Zero 2 W - Headless Mode, [WS](https://albert-fit.com/how-to-set-up-raspberry-pi-zero-2-w-headless-mode/), 12/01/2024, Albert Fit 
+* RPi Zero USB OTG (usb-ethernet device), [WS](https://forums.raspberrypi.com/viewtopic.php?t=221259), Raspberry Pi Forums, 
+
+SSH - RPi Zero soft shut down
+* How to do a soft shutdown on headless Pi? [WS](https://forums.raspberrypi.com/viewtopic.php?t=306320), Raspberry Pi Forums, 
+
+Headless - RPi Zero hard shut down
+* Shutting down the Pi safely without SSH or a monitor?, [WS](https://raspberrypi.stackexchange.com/questions/59529/shutting-down-the-pi-safely-without-ssh-or-a-monitor), StackExchange, Raspberry Pi, 
 
 Ethernet, connect via USB, ... 
 * ... to source
