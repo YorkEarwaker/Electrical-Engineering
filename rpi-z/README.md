@@ -7,7 +7,7 @@ Single board computer,
 TODO
 * <todo: consider, hello world project>
 * <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? >
-* <todo: consider, use as platform for Bosch Paticlate Sensor for C code application sensor particulate value readings, >
+* <todo: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, >
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet , Bluetooth, other, and so on, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, >
@@ -153,11 +153,14 @@ SSH
 * Connect to a Raspberry Pi Zero over USB on Ubuntu, [WS](https://johnnymatthews.dev/blog/2021-02-06-connect-to-raspberry-pi-zero-over-usb-on-ubuntu/), Johnny Matthews
 * Setting up Pi Zero OTG - The quick way (No USB keyboard, mouse, HDMI monitor needed), [WS](https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a), gbaman, github
 
-Debian 
+WiFi - Debian, RPi OS, Ubuntu
 * WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
 
-Power down
-* Turning off power on a PI Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=215796), 
+Power down, power off, 
+* Turning off power on a PI Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=215796), Forums, Raspberry Pi, 
+
+SD Card, MicroSD card removal
+* Can I temporarily remove the SD card while my device is turned on?, [WS](https://raspberrypi.stackexchange.com/questions/3759/can-i-temporarily-remove-the-sd-card-while-my-device-is-turned-on), StackExchange, Raspberry Pi, 
 
 
 
