@@ -10,7 +10,8 @@ TODO
 * <todo: consider, use as platform for Bosch Paticlate Sensor for C code application sensor particulate value readings, >
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet , Bluetooth, other, and so on, >
-* <todo: consider, ROY voltage down shift device, resistors? research and test, >
+* <todo: consider, RYO voltage down shift device, resistors? research and test, >
+* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, >
 
 DONE
 * <done: consider, intent to commit>
@@ -61,7 +62,7 @@ Diagram of the eight main components on board the RPi Zero single board computer
 Warning! Will require to shift voltage down to 3V with 'bridge' device if 
 * RPi Zero SBC provides 5V power to breadboard power rail 1 via its GPIO pins,
 * RPi Pico MCU requires 3V power, if powered by connection via breadboard to power rails,
-* Voltage shift device takes 5V power from power rail 1 charge passes through shift device down shifted to 3V to power rail 2. Use resistors to ROY down shift power instead of COTS device?
+* Voltage shift device takes 5V power from power rail 1 charge passes through shift device down shifted to 3V to power rail 2. Use resistors to RYO down shift power instead of COTS device?
 * RPi Pico MCU and other 3V devices take power for breadboard power rail 2.
 
 ## Output
