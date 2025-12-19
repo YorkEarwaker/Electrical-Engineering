@@ -15,6 +15,7 @@ DONE
 * <done: consider, as deployment option for Bosch BMV080 particulate matter sensor, >
 * <done: consider, bill of materials for RPi Zero, compelted offline BoM in spreadsheet circa £64 inclusive 'useful' extras, >
 * <done: consider, purchase of RPi Zero 2 W, and other items, completed, >
+* <done: consider, for future use, first pass at wpa_supplicat.conf file, a Debian configuration file for WiFi, see referrences below,  >
 
 ## Libs
 
@@ -31,10 +32,10 @@ Bill of materials, BoM
 * Micro SD Card adapter, Raspberry Pi, acquired
 * SD Card cable, acquired
 
-BoM, To be considered ---
-* HDMI cable, with Mini HDMI plug to display (screen) socket plug, to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
-* Display (screen), to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
-* Keyboard, to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
+BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
+* HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
+* Display (screen), 
+* Keyboard, 
 
 Diagram of the eight main components on board the RPi Zero single board computer SBC. Larger than actual physical form factor.
 ```
@@ -55,7 +56,9 @@ Diagram of the eight main components on board the RPi Zero single board computer
        ------/____________\------------------------/_________\---/_________\--------
 ```
 
-Warning! Will require to shift voltage down to 3V with 'bridge' device if connection via breadboard to RPi Pico MCU, and RPi Zero SBC provides 5V power to breadboard via its GPIO pins, 
+Warning! Will require to shift voltage down to 3V with 'bridge' device if 
+* RPi Zero SBC provides 5V power to breadboard via its GPIO pins,
+* RPi Pico MCU requires 3V power, if powered by connection via breadboard to power rails,
 
 ## Output
 
@@ -83,20 +86,26 @@ Success!
 * Plugged in 12.75 Raspberry Pi Power adapter into mains
 * Led, green light flashed on and off for a while, assuming during RPi OS boot sequence,
 * Led, green light is permanently on after a while
-* probably a mistake without having made necessary changes to SD card RPi OS changes first, unlikely ssh file creation was sufficient see above, 
+* probably a mistake without having made necessary changes to SD card RPi OS changes first, unlikely ssh file creation was not sufficient see above, 
 
 ### Headless, connect to RPi Zero from Dell laptop, USB cable
 * <todo: trying this, but encountering difficulties, no first contact yet,  >
 * probably not set up the RPi Zero correctly beforehand
-* RPi Zero on, green Led solid green, 
+* RPi Zero on, Led solid green great, no flashing good as flashing Led can indicate issues, 
 * Plug in USB cable (data and power), Dell A standard type USB port, RPi Zero micro USB port, Pi Hut website reports cable compatible with Zero and carries data, 
 * RPi Zero powered from mains with micro USB PWR IN port
-* Restarted Dell laptop with USB cable attached to 
+* Attempted terminal cli; , but no contact
+``` 
+$ ssh pi@raspberrypi.local
+$ ssh pi@raspberrypi 
+```
+* Restarted Dell laptop with USB cable attached
+* Attempted terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
 * Can't access RPi OS file system, so can't shut it down gracefully, powering off,
 * Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
 * Option 2. unplug RPi Zero from mains will likely also harm SD card file system, 
 * Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? But dangerous to do while the RPi Zero is powered on and might lead to worse damage to actual RPI Zero. Investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
-* Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be to do to make contact
+* Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be done to make contact with RPi OS on RPi Zero, 
 * Option 5. keep RPi Zero powered on and purchase keyboard and display. Investigate if RPi Zero needs to have these plugged in before booting to have these devices recognized, probably not.
 * Option 6. short GPIO pins, which ones? Also will likely cause damage to SD card file system and likely damage RPi Zero too.
 
