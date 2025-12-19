@@ -11,8 +11,11 @@ TODO
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, >
-* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, >
-* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cavle RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
+* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt >
+* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cable RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
+* <todo: consider, RPi Zero as mountable flash device, see RPi Magaizine article in references below, >
+* <todo: consider, reuse old laptop screen as second dispaly for Dell and/or display for RPi Zero SBC, see references below for example, >
+* <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
 
 DONE
 * <done: consider, intent to commit>
@@ -158,8 +161,9 @@ SSH
 * Connect to a Raspberry Pi Zero over USB on Ubuntu, [WS](https://johnnymatthews.dev/blog/2021-02-06-connect-to-raspberry-pi-zero-over-usb-on-ubuntu/), Johnny Matthews
 * Setting up Pi Zero OTG - The quick way (No USB keyboard, mouse, HDMI monitor needed), [WS](https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a), gbaman, github
 * How to Setup a Raspberry Pi Without a Monitor or Keyboard (Video Tutorial), [WS](https://www.reddit.com/r/raspberry_pi/comments/dzgke0/how_to_setup_a_raspberry_pi_without_a_monitor_or/), Reddit, 
+* How To Set Up Raspberry Pi Zero 2 W - Headless Mode, [WS](https://albert-fit.com/how-to-set-up-raspberry-pi-zero-2-w-headless-mode/), 12/01/2024, Albert Fit 
 
-Ethernet, connect via USB, ...
+Ethernet, connect via USB, ... 
 * ... to source
 
 WiFi - Debian, RPi OS, Ubuntu
@@ -167,6 +171,17 @@ WiFi - Debian, RPi OS, Ubuntu
 
 BlueTooth
 * ... to source
+
+Flash
+* Make a Pi Zero W Smart USB flash drive , [WS](https://magazine.raspberrypi.com/articles/pi-zero-w-smart-usb-flash-drive), Russell Barnes. 
+
+Screen
+* Re-purposed Laptop Screen for Raspberry Pi, [WS](https://www.instructables.com/Re-purposed-Laptop-Screen-for-Raspberry-Pi/), AutoDesk Instructables, lerigsby12 in Circuits, Raspberry Pi
+* Home Raspberry Pi Desktop With Old Laptop Screen, [WS](https://www.instructables.com/Home-Raspberry-Pi-Desktop-With-Old-Laptop-Screen/), AutoDesk Instructables, Ashu_d in Circuits, Raspberry Pi
+* Connect Pi to an old laptop screen, [WS](https://raspberrypi.stackexchange.com/questions/848/connect-pi-to-an-old-laptop-screen), StackExchange, Raspberry Pi, 
+* Old laptop display (40pins)how to use as a raspberry pi 4 B display(15pins), [WS](https://forums.raspberrypi.com/viewtopic.php?t=277682), Forums, Raspberry Pi, 
+* Re-purposing old laptop LCD via Raspberry Pi, [WS](https://forums.raspberrypi.com/viewtopic.php?t=255727), Forums, Raspberry Pi, 
+* Using laptop screen with RPI, [WS](https://forums.raspberrypi.com/viewtopic.php?t=234270), Forums, Raspberry Pi, 
 
 Power down, power off, 
 * Turning off power on a PI Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=215796), Forums, Raspberry Pi, 
