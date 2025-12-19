@@ -9,9 +9,10 @@ TODO
 * <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? >
 * <todo: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, >
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
-* <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet , Bluetooth, other, and so on, >
+* <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, >
-* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, >
+* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, >
+* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cavle RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
 
 DONE
 * <done: consider, intent to commit>
@@ -116,6 +117,7 @@ $ ssh pi@raspberrypi.local raspberry
 * Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be done to make contact with RPi OS on RPi Zero, 
 * Option 5. keep RPi Zero powered on and purchase keyboard and display. Investigate if RPi Zero needs to have these plugged in before booting to have these devices recognized, probably not.
 * Option 6. short GPIO pins, which ones? Also will likely cause damage to SD card file system and likely damage RPi Zero too.
+* Option 7. USB On-The-Go adapter, 
 
 Dell Ubuntu does not seem to see RPi Zero 2 W. 
 ```
@@ -135,6 +137,9 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
 ## References
 
+Terms
+* USB On-The-Go, [WP](https://en.wikipedia.org/wiki/USB_On-The-Go), 
+
 Raspberry Pi Zero - datasheets, user guides
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi
 * Raspberry Pi Zero 2 W Product Brief, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi
@@ -152,6 +157,7 @@ SSH
 * Raspberry Pi Zero W headless using wpa_supplicant.conf not working, [WS](https://raspberrypi.stackexchange.com/questions/67649/raspberry-pi-zero-w-headless-using-wpa-supplicant-conf-not-working), StackExchange, Raspberry Pi, 
 * Connect to a Raspberry Pi Zero over USB on Ubuntu, [WS](https://johnnymatthews.dev/blog/2021-02-06-connect-to-raspberry-pi-zero-over-usb-on-ubuntu/), Johnny Matthews
 * Setting up Pi Zero OTG - The quick way (No USB keyboard, mouse, HDMI monitor needed), [WS](https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a), gbaman, github
+* How to Setup a Raspberry Pi Without a Monitor or Keyboard (Video Tutorial), [WS](https://www.reddit.com/r/raspberry_pi/comments/dzgke0/how_to_setup_a_raspberry_pi_without_a_monitor_or/), Reddit, 
 
 Ethernet, connect via USB, ...
 * ... to source
