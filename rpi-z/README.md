@@ -16,6 +16,7 @@ TODO
 * <todo: consider, RPi Zero as mountable flash device, see RPi Magaizine article in references below, >
 * <todo: consider, reuse old laptop screen as second dispaly for Dell and/or display for RPi Zero SBC, see references below for example, >
 * <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
+* <todo: consider, to setup RPi Zero correctly will have to purchase secondary BoM items, screen display, keyboard, and so on, >
 
 DONE
 * <done: consider, intent to commit>
@@ -216,7 +217,18 @@ BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0
 lo                  04b471a3-29bf-4d19-8fc8-1e0190e7cd60  loopback   lo     
 Galaxy A14 Network  7d0e2e6d-34a0-41a7-b58f-5e18c49cc177  bluetooth  --  
 ```
-
+*
+```
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+```
 
 ### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
 <todo: try this, but will likely require changes to RPi OS config files, >
