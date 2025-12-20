@@ -201,13 +201,86 @@ dtoverlay=dwc2,dr_mode=host
 dtoverlay=dwc2
 ```
 * Plug in USB B OTG plug for power and data
-* Attempt ssh in host terminal cli
+* Attempt ssh in host terminal cli $ ssh pi@raspberrypi raspberry and combinations but no luck
 
 Attempt 3
-* created ssh in /media/york-earwaker/bootfs host terminal cli $ touch ssh
+* Failed so far :(
+* Created ssh file in /media/york-earwaker/bootfs host terminal cli $ touch ssh
+* Plug in USB A to Dell laptop for power and data to RPi Zero Micro USB B OTG port, wait a few minutes but can't ssh
+* There appears there might be an Ethernet problem with Ubuntu LTS 24.04.3 . Have seen various Ethernet issues reported online with 24.04.1 . Unclear if these apply to 24.04.3 . 
+* Can't see USB Ethernet/Netchip Ethernet in Setting>Networks panel.
+```
+$ nmcli connection show
+NAME                UUID                                  TYPE       DEVICE 
+BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
+lo                  04b471a3-29bf-4d19-8fc8-1e0190e7cd60  loopback   lo     
+Galaxy A14 Network  7d0e2e6d-34a0-41a7-b58f-5e18c49cc177  bluetooth  --  
+```
+
 
 ### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
 <todo: try this, but will likely require changes to RPi OS config files, >
+* MicroSD Card Adapter in laptop
+* Navigate to rootfs/etc/wpa_supplicant found there an admin rights protected file wpa_supplicant.conf 
+* Opened as Administrator edited with with following with local respective values for country=, ssid=, psk=, 
+```
+country=your_country_code
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="Your_Wi-Fi_SSID"
+    psk="Your_Wi-Fi_Password"
+    key_mgmt=WPA-PSK
+    priority=1
+}
+```
+* Can't see RPi Zero in WiFi Router Hub control panel, 
+* Can't see RPi Zero with nmcli connection show
+```
+$ nmcli connection show
+NAME                UUID                                  TYPE       DEVICE 
+BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
+lo                  9500dc08-d067-48d8-899f-ca89bbfa4cde  loopback   lo     
+Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --
+```
+* Can't see RPi Zero with lsusb
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+* Can't see RPi Zero with ping
+```
+$ ping raspberrypi.local
+ping: raspberrypi.local: Name or service not known
+```
+* Load Ethernet driver? $ sudo modprobe r8152 , don't think it did any thing, probs needs installing?
+* Can't see RPi Zero with $ usbip list -l, list only usual Dell laptop component parts on bus 001 
+```
+$ sudo modprobe r8152
+$ usbip list -l
+ - busid 1-12 (0c45:6713)
+   Microdia : unknown product (0c45:6713)
+
+ - busid 1-4 (0cf3:e300)
+   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
+
+ - busid 1-7 (138a:0091)
+   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
+
+ - busid 1-9 (04f3:24a1)
+   Elan Microelectronics Corp. : unknown product (04f3:24a1)
+```
+* Install latest Ubuntu updates
+* $ sudo apt update 
+* $ sudo apt full-upgrade
+* rebooted, not seemingly able to connect to RPi Zero, 
+* Quite possibly RPi Zero requires other things to setup, likely also Ubuntu, but what?
 
 ### 
 
@@ -276,6 +349,16 @@ SSH file location
 * Placing SSH File on New SDCard, [WS](https://forums.raspberrypi.com/viewtopic.php?t=314900), Forums, Raspberry Pi, 
 * "Put an empty 'ssh' file in /boot/" trick not working anymore [WS](https://raspberrypi.stackexchange.com/questions/98719/put-an-empty-ssh-file-in-boot-trick-not-working-anymore), StackExchange, Raspberry Pi, 
 * Enabling SSH by default on Raspbian Stretch [WS](https://raspberrypi.stackexchange.com/questions/73119/enabling-ssh-by-default-on-raspbian-stretch), StackExchange, Raspberry Pi, 
+
+USB Ethernet - Ubuntu, RPi OS, debian, linux, 
+* How to set up an usb/ethernet interface in Linux? [WS](https://unix.stackexchange.com/questions/386162/how-to-set-up-an-usb-ethernet-interface-in-linux), StackExchange, Unix Linux
+* How to Share your USB Device in Ubuntu 24.04 over LAN, [WS](https://ubuntuhandbook.org/index.php/2024/09/share-usb-ubuntu-lan/), Ubuntu Handbook, **** Looks important generally, not sure it is relevant with USB RPi Zero connection to Dell laptop.
+* RTL8125 2.5GbE Ethernet port not working in Ubuntu 24.04, [WS](https://discourse.ubuntu.com/t/rtl8125-2-5gbe-ethernet-port-not-working-in-ubuntu-24-04/55551/1), Discourse, Ubuntu, 
+* No Network Connection with 24.04 and r8125 Ethernet, [WS](https://discourse.ubuntu.com/t/no-network-connection-with-24-04-and-r8125-ethernet/58589), Discourse, Ubuntu, 
+* ...
+
+USB OTG - Raspberry Pi 
+* STICKY: USB device not working on Raspberry Pi Zero, 1, 2, 3? Click here!, [WS](https://forums.raspberrypi.com/viewtopic.php?t=53832&sid=e1f95c7352ca64da9a75c5c7d0b71f87), Forums, Raspberry Pi, 
 
 
 
