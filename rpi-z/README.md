@@ -11,7 +11,7 @@ TODO
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, >
-* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt >
+* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt, from tutorial, source offical Raspberry Pi docs, >
 * <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cable RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
 * <todo: consider, RPi Zero as mountable flash device, see RPi Magaizine article in references below, >
 * <todo: consider, reuse old laptop screen as second dispaly for Dell and/or display for RPi Zero SBC, see references below for example, >
@@ -73,9 +73,9 @@ Warning! Will require to shift voltage down to 3V with 'bridge' device if
 
 ### Create SSH file on SD Card
 Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi, docs
-* placed RPi micro SD Card with preinstalled RPi OS in SD Card holder, 
-* put RPi SD Card holder into laptop
-* created ssh file as per instructions in link above.
+* Place RPi MicroSD Card with preinstalled RPi OS in MicroSD Card Adapter, 
+* Put MicroSD Card Adapter into laptop
+* Create ssh file as per instructions in link above.
 ```
 york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo touch ssh
 [sudo] password for york-earwaker: 
@@ -91,20 +91,22 @@ total 0
 ### Headless, power on RPi Zero
 Success! 
 * Put SD Card into RPi Zero, using an extension cable for easier access and to improve life of micro SD Card and RPi Zero
-* Put power adaptor micro USB into PWR IN USB slot
+* Put power adapter micro USB into PWR IN USB slot
 * Plugged in 12.75 Raspberry Pi Power adapter into mains
-* Led, green light flashed on and off for a while, assuming during RPi OS boot sequence,
-* Led, green light is permanently on after a while
+* ACT Led, green light flashed on and off for a while, assuming during RPi OS boot sequence,
+* ACT Led, green light is permanently on after a while
 * probably a mistake without having made necessary changes to SD card RPi OS changes first, unlikely ssh file creation was not sufficient see above, 
 
 ### Headless, connect to RPi Zero from Dell laptop, USB cable
 Attempt 1
-* <todo: trying this, but encountering difficulties, no first contact yet,  >
-* probably not set up the RPi Zero correctly beforehand
-* RPi Zero on, Led solid green great, no flashing good as flashing Led can indicate issues, 
+* Failed :(
+* <todo: tried this, but encountering difficulties, no first contact yet,  >
+* <issue; had not set up the RPi Zero correctly beforehand, so failure >
+* <issue; bad to use both usb OTG to host usb A and usb pwr in, so might have fired RPi Zero, oh dear, >
+* RPi Zero powered from mains with micro USB PWR IN port, see previous heading Headless, power on RPi Zero .
+* RPi Zero on, ACT Led solid green great, no flashing good as flashing Led can indicate issues, 
 * Plug in USB cable (data and power), Dell A standard type USB port, RPi Zero micro USB port, Pi Hut website reports cable compatible with Zero and carries data, 
-* RPi Zero powered from mains with micro USB PWR IN port
-* Attempted terminal cli; , but no contact
+* On Dell host, attempted ssh connection via terminal cli; , but no contact
 ``` 
 $ ssh pi@raspberrypi 
 $ ssh pi@raspberrypi raspberry
@@ -112,8 +114,8 @@ $ ssh pi@raspberrypi.local
 $ ssh pi@raspberrypi.local raspberry
 ```
 * Restarted Dell laptop with USB cable attached
-* Attempted terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
-* Attempted terminal cli $ nm-connection-editor instruction but Network Connection window did not list RPi Zero, likely as necessary Ethernet config had not been done on RPi Zero beforehand, did list local WiFi router, and Bluetooth mobile phone, 
+* On Dell host, attempted ssh connection via terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
+* On Dell host, attempted via terminal cli $ nm-connection-editor instruction but Network Connection window did not list RPi Zero, likely as necessary Ethernet config had not been done on RPi Zero beforehand, did list local WiFi router, and Bluetooth mobile phone, 
 * Can't access RPi OS file system, so can't shut it down gracefully, powering off,
 * Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
 * Option 2. unplug RPi Zero from mains will likely also harm SD card file system, mitigate buy new micro SD Card
@@ -135,9 +137,74 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
 Attempt 2
-* Shut down RPi Zero. Ensure ACT Led is not flashing, pull out USB B power plug, Option 2 above, 
-* Retrieve SD Card from RPi Zero. In this instance eject the MicroSD Card Adapter it from the reader slot at the end of MicroSD Card cable.
-* <todo: edit config files for ssh access over Ethernet USB OTG connection, >
+* <note: ssh file had already been created see heading >
+* Unplugged Micro USB B OTG data from RPi Zero, it was also supplying power from Dell laptop, had naively assumed only data
+* Shut down RPi Zero. Ensure ACT Led is not flashing, pull out Micro USB B power adapter plug to mains, Option 2 above, 
+* <issue: may have broken RPi Zero due to power from both Micro USB B OTG from Dell and Micro USB B power adapter to mains, >
+* Retrieve MicroSD Card from RPi Zero. In this instance eject the MicroSD Card Adapter it from the reader slot at the end of MicroSD Card cable ribbon.
+* Put MicroSD Card Adapter containing MicroSD Card into Dell laptop, two file system partitions are mounted; bootfs, rootfs
+* Open bootfs partition
+* Open cmdline.txt enter modules-load=dwc2,g_ether after rootwait, save cmdline.txt
+```
+console=serial0,115200 console=tty1 root=PARTUUID=f35edfdd-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_ether quiet splash plymouth.ignore-serial-consoles
+```
+* Open config.txt enter under heading \[all\] dtoverlay=dwc2 , save config.txt
+```
+# For more options and information see
+# http://rptl.io/configtxt
+# Some settings may impact device functionality. See link above for details
+
+# Uncomment some or all of these to enable the optional hardware interfaces
+#dtparam=i2c_arm=on
+#dtparam=i2s=on
+#dtparam=spi=on
+
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+
+# Additional overlays and parameters are documented
+# /boot/firmware/overlays/README
+
+# Automatically load overlays for detected cameras
+camera_auto_detect=1
+
+# Automatically load overlays for detected DSI displays
+display_auto_detect=1
+
+# Automatically load initramfs files, if found
+auto_initramfs=1
+
+# Enable DRM VC4 V3D driver
+dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+
+# Don't have the firmware create an initial video= setting in cmdline.txt.
+# Use the kernel's default instead.
+disable_fw_kms_setup=1
+
+# Disable compensation for displays with overscan
+disable_overscan=1
+
+# Run as fast as firmware / board allows
+arm_boost=1
+
+[cm4]
+# Enable host mode on the 2711 built-in XHCI USB controller.
+# This line should be removed if the legacy DWC2 controller is required
+# (e.g. for USB device mode) or if USB support is not required.
+otg_mode=1
+
+[cm5]
+dtoverlay=dwc2,dr_mode=host
+
+[all]
+dtoverlay=dwc2
+```
+* Plug in USB B OTG plug for power and data
+* Attempt ssh in host terminal cli
+
+Attempt 3
+* created ssh in /media/york-earwaker/bootfs host terminal cli $ touch ssh
 
 ### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
 <todo: try this, but will likely require changes to RPi OS config files, >
@@ -176,6 +243,9 @@ SSH - RPi Zero soft shut down
 Headless - RPi Zero hard shut down
 * Shutting down the Pi safely without SSH or a monitor?, [WS](https://raspberrypi.stackexchange.com/questions/59529/shutting-down-the-pi-safely-without-ssh-or-a-monitor), StackExchange, Raspberry Pi, 
 
+Headless - RPi Zero power on
+* Using Both PWR and USB in OTG Mode on the Pi Zero [WS](https://forums.raspberrypi.com/viewtopic.php?t=223891)
+
 Ethernet, connect via USB, ... 
 * ... to source
 
@@ -202,8 +272,10 @@ Power down, power off,
 SD Card, MicroSD card removal
 * Can I temporarily remove the SD card while my device is turned on?, [WS](https://raspberrypi.stackexchange.com/questions/3759/can-i-temporarily-remove-the-sd-card-while-my-device-is-turned-on), StackExchange, Raspberry Pi, 
 
-
-
+SSH file location
+* Placing SSH File on New SDCard, [WS](https://forums.raspberrypi.com/viewtopic.php?t=314900), Forums, Raspberry Pi, 
+* "Put an empty 'ssh' file in /boot/" trick not working anymore [WS](https://raspberrypi.stackexchange.com/questions/98719/put-an-empty-ssh-file-in-boot-trick-not-working-anymore), StackExchange, Raspberry Pi, 
+* Enabling SSH by default on Raspbian Stretch [WS](https://raspberrypi.stackexchange.com/questions/73119/enabling-ssh-by-default-on-raspbian-stretch), StackExchange, Raspberry Pi, 
 
 
 
