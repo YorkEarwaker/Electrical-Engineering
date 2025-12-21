@@ -294,7 +294,54 @@ $ usbip list -l
 * rebooted, not seemingly able to connect to RPi Zero, 
 * Quite possibly RPi Zero requires other things to setup, likely also Ubuntu, but what?
 
-### 
+## Environment Tests
+
+### Test USB cable for data and power
+Success! :)
+* cable 3 should work with RPi Zero 2 W SBC in the OTG Micro USB B socket, data and power
+
+Cable addition
+* cable 1; USB A (male) to USB A (male) , 1.5 m
+* cable 2; USB A (female) to Micro USB B (male), 10? cm
+* cable 3 = cable 1 + cable 2; USB A (male) to Micro USB B (male)
+
+Test 
+* Plug cable 1 and cable 2 together; cable 3 = cable 1 USB A (male) to cable 2 USB A (female) 
+* Plug cable 3 Micro USB B (male) to RPi Pico 2 W
+* Plug cable 3 USB A (male) to Dell Laptop Ubuntu LTS 24.04.3, The laptop is powered on
+* Note. the LED had previously been turned off on the RPi Pico 2 W, 
+* So the LED is does not light up when the Micro USB B end of cable 3 is plugged into the Pico MCU Micro USB B socket.
+* Open Thonny IDE, Thonny recognizes RPi Pico 2 W MCU, 
+```
+MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
+Type "help()" for more information.
+>>> 
+MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
+Type "help()" for more information.
+>>>
+```
+* Write MicroPython code in Thonny Shell window to execute in RPi Pico 2 W MCU environment. 
+* Mpy code is shown below to; turn Pico LED light on. 
+```
+>>> from machine import Pin
+>>> led = Pin("LED", Pin.OUT)
+>>> led.on()
+>>> 
+```
+* RPi Pico 2 W LED is turned on solid green
+* Note. code is shown with developer input errors for completeness
+```
+>>> from machine import Pin
+>>> led = Pin("LED", Pin.Out)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: type object 'Pin' has no attribute 'Out'
+>>> led = Pin("LED", Pin.OUT)
+>>> led.on
+<bound_method>
+>>> led.on()
+>>> 
+```
 
 ## References
 
@@ -321,6 +368,8 @@ SSH - RPi Zero OTG USB Ethernet,
 * How to Setup a Raspberry Pi Without a Monitor or Keyboard (Video Tutorial), [WS](https://www.reddit.com/r/raspberry_pi/comments/dzgke0/how_to_setup_a_raspberry_pi_without_a_monitor_or/), Reddit, 
 * How To Set Up Raspberry Pi Zero 2 W - Headless Mode, [WS](https://albert-fit.com/how-to-set-up-raspberry-pi-zero-2-w-headless-mode/), 12/01/2024, Albert Fit 
 * RPi Zero USB OTG (usb-ethernet device), [WS](https://forums.raspberrypi.com/viewtopic.php?t=221259), Raspberry Pi Forums, 
+* Setup a Raspberry Pi headless tutorial, [WS](https://www.reddit.com/answers/466d38d5-7d9f-44ac-8927-5fa52f5ec57c/?q=Setup%20a%20Raspberry%20Pi%20headless%20tutorial&source=PDP)
+* How to connect to a Raspberry Pi Zero to an Ubuntu laptop by USB?, [WS](https://superuser.com/questions/1150562/how-to-connect-to-a-raspberry-pi-zero-to-an-ubuntu-laptop-by-usb), StackExchange, Superuser,
 
 SSH - RPi Zero soft shut down
 * How to do a soft shutdown on headless Pi? [WS](https://forums.raspberrypi.com/viewtopic.php?t=306320), Raspberry Pi Forums, 
