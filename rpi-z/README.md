@@ -206,6 +206,14 @@ dtoverlay=dwc2
 
 Attempt 3
 * Failed so far :(
+* <todo: note, there are also duplicate empty ssh file as per RPi docs example. Also cmdline.txt which only contains; modules-load=dwc2,g_ether , and config.text which only contains on two seperte lines; [all] dtoverlay=dwc2 , this as boot directory files of same indicated put same in firmware directory, >
+```
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 8
+-rw-r--r-- 1 root root 26 Dec 20 13:25 cmdline.txt
+-rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
+-rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
+```
 * Created ssh file in /media/york-earwaker/bootfs host terminal cli $ touch ssh
 * Plug in USB A to Dell laptop for power and data to RPi Zero Micro USB B OTG port, wait a few minutes but can't ssh
 * There appears there might be an Ethernet problem with Ubuntu LTS 24.04.3 . Have seen various Ethernet issues reported online with 24.04.1 . Unclear if these apply to 24.04.3 . 
@@ -231,10 +239,21 @@ $ lsusb -t
 ```
 
 ### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
-<todo: try this, but will likely require changes to RPi OS config files, >
-* MicroSD Card Adapter in laptop
-* Navigate to rootfs/etc/wpa_supplicant found there an admin rights protected file wpa_supplicant.conf 
-* Opened as Administrator edited with with following with local respective values for country=, ssid=, psk=, 
+Attempt 1
+* Failure :(
+* <todo: try this, but will likely require changes to RPi OS config files, >
+* doing this in parallel testing for ssh
+
+* Unplug USB A from Dell laptop, RPi Zero powered down, hard power off
+* Put MicroSD Card Adapter, containing MiroSD Card with pre installed RPi OS, in laptop
+* Navigate to rootfs/etc/wpa_supplicant directory, found there an admin rights protected file wpa_supplicant.conf 
+* Opened as Administrator, file contained the following
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+```
+* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
+* Content of  with additions as below, 
 ```
 country=your_country_code
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -247,8 +266,12 @@ network={
     priority=1
 }
 ```
-* Can't see RPi Zero in WiFi Router Hub control panel, 
-* Can't see RPi Zero with nmcli connection show
+* Saved wpa_supplicant.conf file
+* Unmount partitions and pull MicroSd Card Adapter out of Dell laptop Ubuntu LTS 24.04.3,
+* Put MicroSd Card Adapter into RPi Zero 2 W 
+* Plug in USB A into Dell laptop to Power on RPi Zero 2 W
+* Can't see RPi Zero in WiFi Router Hub control panel, not detailed here
+* Can't see RPi Zero with nmcli connection show, as below
 ```
 $ nmcli connection show
 NAME                UUID                                  TYPE       DEVICE 
@@ -272,7 +295,7 @@ $ ping raspberrypi.local
 ping: raspberrypi.local: Name or service not known
 ```
 * Load Ethernet driver? $ sudo modprobe r8152 , don't think it did any thing, probs needs installing?
-* Can't see RPi Zero with $ usbip list -l, list only usual Dell laptop component parts on bus 001 
+* Can't see RPi Zero with $ usbip list -l, lists only usual Dell laptop component parts on bus 001 
 ```
 $ sudo modprobe r8152
 $ usbip list -l
