@@ -138,6 +138,7 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
 Attempt 2
+* Failure :(
 * <note: ssh file had already been created see heading >
 * Unplugged Micro USB B OTG data from RPi Zero, it was also supplying power from Dell laptop, had naively assumed only data
 * Shut down RPi Zero. Ensure ACT Led is not flashing, pull out Micro USB B power adapter plug to mains, Option 2 above, 
