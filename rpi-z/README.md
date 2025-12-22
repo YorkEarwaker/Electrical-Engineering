@@ -321,7 +321,7 @@ $ usbip list -l
 * Quite possibly RPi Zero requires other things to setup, likely also Ubuntu, but what?
 
 Attempt 2
-
+* Failure :(
 * Unplugged USB cable from Dell
 * Put MicroSD Card Adapter back into Dell laptop, 
 * Put wpa_supplicant.conf file in /bootfs directory
@@ -391,7 +391,7 @@ Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --
 * Might have failed first time due to faulty USB connection
 
 Attempt 3
-
+* Failure :(
 * Unplugged USB cable from Dell
 * Put MicroSD Card Adapter back into Dell laptop, 
 * Put wpa_supplicant.conf file in /bootfs directory
