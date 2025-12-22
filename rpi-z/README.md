@@ -34,11 +34,12 @@ Raspberry Pi
 ## Hardware
 
 Bill of materials, BoM
-* Raspberry Pi Zero, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi, acquired
+* Raspberry Pi Zero 2 W, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi, acquired
 * Power Supply, 12.75 Raspberry Pi, acquired
 * Micro SD Card, with RPi OS preinstalled, Raspberry Pi, acquired
-* Micro SD Card adapter, Raspberry Pi, acquired
-* SD Card cable, acquired
+* Micro SD Card Adapter, Raspberry Pi, acquired
+* Micro SD to SD Extension Cable, acquired
+* USB cable, acquired
 
 BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
@@ -139,7 +140,7 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
 Attempt 2
 * Failure :(
-* <note: ssh file had already been created see heading >
+* <note: ssh file had already been created see heading above, >
 * Unplugged Micro USB B OTG data from RPi Zero, it was also supplying power from Dell laptop, had naively assumed only data
 * Shut down RPi Zero. Ensure ACT Led is not flashing, pull out Micro USB B power adapter plug to mains, Option 2 above, 
 * <issue: may have broken RPi Zero due to power from both Micro USB B OTG from Dell and Micro USB B power adapter to mains, >
@@ -226,7 +227,7 @@ BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0
 lo                  04b471a3-29bf-4d19-8fc8-1e0190e7cd60  loopback   lo     
 Galaxy A14 Network  7d0e2e6d-34a0-41a7-b58f-5e18c49cc177  bluetooth  --  
 ```
-*
+* list usb as table
 ```
 $ lsusb -t
 /:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
@@ -238,6 +239,7 @@ $ lsusb -t
     |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
 /:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
 ```
+* After RPi Zero power off and place MicroSD Card Adapter into Dell laptop to view /bootfs directory ssh file, created above, is no longer there.
 
 ### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
 Attempt 1
@@ -318,6 +320,104 @@ $ usbip list -l
 * rebooted, not seemingly able to connect to RPi Zero, 
 * Quite possibly RPi Zero requires other things to setup, likely also Ubuntu, but what?
 
+Attempt 2
+
+* Unplugged USB cable from Dell
+* Put MicroSD Card Adapter back into Dell laptop, 
+* Put wpa_supplicant.conf file in /bootfs directory
+* $ touch wpa_supplicant.conf, creates the file 
+* Open in Text Editor add WiFi details
+* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
+* Content of file as below with placeholder values replaced with actual values, 
+```
+country=your_country_code
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+
+    ssid="Your_Wi-Fi_SSID"
+
+    psk="Your_Wi-Fi_Password"
+    key_mgmt=WPA-PSK
+    priority=1
+}
+```
+* Put MicroSD Card Adapter back into RPi Zero env
+* Plugged in USB cable to Dell laptop, RPi Zero ACT LED did not light green, not even flashing
+* Rebooted Dell Ubuntu 24.04.3 with USB cable plugged in, RPi Zero ACT LED did not light green, not even flashing 
+* Unplugged USB cable from Dell
+* Put MicroSD Card Adapter back into Dell laptop, moved to trash, wpa_supplicant.conf file from /bootfs directory
+* Put MicroSD Card Adapter back into RPi Zero env
+* Plugged in USB cable to Dell laptop, RPi Zero ACT LED did not light green, not even flashing
+* Unplugged USB cable from Dell
+* Unplugged USB cable from RPi Zero
+* Ejected MicroSD Card Adapter from RPi Zero env, 
+* Took out the MicroSD Card from the Adapter, replaced the MicroSD Card back into the Adapter
+* Plugged USB cable back to RPi Zero
+* Plugged USB cable back to Dell
+* RPi Zero ACT LED solid green, after initial flashing, 
+* But no joy
+```
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+
+$ usbip list -l
+ - busid 1-12 (0c45:6713)
+   Microdia : unknown product (0c45:6713)
+
+ - busid 1-4 (0cf3:e300)
+   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
+
+ - busid 1-7 (138a:0091)
+   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
+
+ - busid 1-9 (04f3:24a1)
+   Elan Microelectronics Corp. : unknown product (04f3:24a1)
+
+$ nmcli connection show
+NAME                UUID                                  TYPE       DEVICE 
+BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
+lo                  92afa887-aa67-4e0b-b77a-b6e41ffc920e  loopback   lo     
+Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --    
+```
+* Might have failed first time due to faulty USB connection
+
+Attempt 3
+
+* Unplugged USB cable from Dell
+* Put MicroSD Card Adapter back into Dell laptop, 
+* Put wpa_supplicant.conf file in /bootfs directory
+* $ touch wpa_supplicant.conf, creates the file 
+* Open in Text Editor add WiFi details
+* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
+* Content of file as below with placeholder values replaced with actual values, 
+```
+country=your_country_code
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+
+    ssid="Your_Wi-Fi_SSID"
+
+    psk="Your_Wi-Fi_Password"
+    key_mgmt=WPA-PSK
+    priority=1
+}
+```
+* Put MicroSD Card Adapter back into RPi Zero env
+* Plugged in USB cable to Dell laptop, RPi Zero ACT LED light solid green, after initial flashing
+* Hub Manager for local WiFi Router network, shows only 2 devices - Dell PC and Mobile Phone Galaxy A14 - connected to router via WiFi 5Ghz channel, 0 devices via 2.4GHz channel.
+* Likely issue locale country code setting for RPi OS, see 2019-06-20: in [WS](https://downloads.raspberrypi.com/raspios_lite_armhf/release_notes.txt), from [WS](https://forums.raspberrypi.com/viewtopic.php?t=391776)
+
 ## Environment Tests
 
 ### Test USB cable for data and power
@@ -382,7 +482,7 @@ Raspberry Pi Zero - datasheets, user guides
 * Raspberry Pi Zero Mechanical Drawing [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi
 * ...
 
-SSH - RPi Zero OTG USB Ethernet, 
+Headless - SSH, RPi Zero OTG USB Ethernet, 
 * How do I turn off the green LED on my RPI Zero 2 W? [WS](https://forums.raspberrypi.com/viewtopic.php?t=328550), Raspberry Pi Forums, 
 * How to boot up & start using raspberry pi using laptop as a monitor, [WS](https://raspberrypi.stackexchange.com/questions/84349/how-to-boot-up-start-using-raspberry-pi-using-laptop-as-a-monitor), StackExchange, Raspberry Pi, 
 * Add ssh and wpa_supplicant.conf Files, [WS](https://seengreat.com/wiki/123/raspberry-pi-zero-2-w?#toc6), SeenGreat, 
@@ -394,24 +494,50 @@ SSH - RPi Zero OTG USB Ethernet,
 * RPi Zero USB OTG (usb-ethernet device), [WS](https://forums.raspberrypi.com/viewtopic.php?t=221259), Raspberry Pi Forums, 
 * Setup a Raspberry Pi headless tutorial, [WS](https://www.reddit.com/answers/466d38d5-7d9f-44ac-8927-5fa52f5ec57c/?q=Setup%20a%20Raspberry%20Pi%20headless%20tutorial&source=PDP)
 * How to connect to a Raspberry Pi Zero to an Ubuntu laptop by USB?, [WS](https://superuser.com/questions/1150562/how-to-connect-to-a-raspberry-pi-zero-to-an-ubuntu-laptop-by-usb), StackExchange, Superuser,
+* wpa_supplicant.conf not applied on first boot — ssh file removed but Wi-Fi not configured (Pi Zero W), [WS](https://forums.raspberrypi.com/viewtopic.php?t=391776), Forums, Raspberry Pi, 
+* Headless start not working for Raspberry Pi Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=389951), Forums, Raspberry Pi,
+* 
 
-SSH - RPi Zero soft shut down
-* How to do a soft shutdown on headless Pi? [WS](https://forums.raspberrypi.com/viewtopic.php?t=306320), Raspberry Pi Forums, 
+Headless - SSH file location
+* Placing SSH File on New SDCard, [WS](https://forums.raspberrypi.com/viewtopic.php?t=314900), Forums, Raspberry Pi, 
+* "Put an empty 'ssh' file in /boot/" trick not working anymore [WS](https://raspberrypi.stackexchange.com/questions/98719/put-an-empty-ssh-file-in-boot-trick-not-working-anymore), StackExchange, Raspberry Pi, 
+* Enabling SSH by default on Raspbian Stretch [WS](https://raspberrypi.stackexchange.com/questions/73119/enabling-ssh-by-default-on-raspbian-stretch), StackExchange, Raspberry Pi, 
 
-Headless - RPi Zero hard shut down
+Headless - RPi Zero soft shut down, hard shut down
+* How to do a soft shutdown on headless Pi? [WS](https://forums.raspberrypi.com/viewtopic.php?t=306320), Forums, Raspberry Pi, 
 * Shutting down the Pi safely without SSH or a monitor?, [WS](https://raspberrypi.stackexchange.com/questions/59529/shutting-down-the-pi-safely-without-ssh-or-a-monitor), StackExchange, Raspberry Pi, 
+* Turning off power on a PI Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=215796), Forums, Raspberry Pi, 
 
 Headless - RPi Zero power on
 * Using Both PWR and USB in OTG Mode on the Pi Zero [WS](https://forums.raspberrypi.com/viewtopic.php?t=223891)
 
-Ethernet, connect via USB, ... 
-* ... to source
+SD Card, MicroSD card removal
+* Can I temporarily remove the SD card while my device is turned on?, [WS](https://raspberrypi.stackexchange.com/questions/3759/can-i-temporarily-remove-the-sd-card-while-my-device-is-turned-on), StackExchange, Raspberry Pi, 
 
 WiFi - Debian, RPi OS, Ubuntu
 * WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
 
+USB Ethernet - Ubuntu, RPi OS, debian, linux, 
+* How to set up an usb/ethernet interface in Linux? [WS](https://unix.stackexchange.com/questions/386162/how-to-set-up-an-usb-ethernet-interface-in-linux), StackExchange, Unix Linux
+* How to Share your USB Device in Ubuntu 24.04 over LAN, [WS](https://ubuntuhandbook.org/index.php/2024/09/share-usb-ubuntu-lan/), Ubuntu Handbook, **** Looks important generally, not sure it is relevant with USB RPi Zero connection to Dell laptop.
+* RTL8125 2.5GbE Ethernet port not working in Ubuntu 24.04, [WS](https://discourse.ubuntu.com/t/rtl8125-2-5gbe-ethernet-port-not-working-in-ubuntu-24-04/55551/1), Discourse, Ubuntu, 
+* No Network Connection with 24.04 and r8125 Ethernet, [WS](https://discourse.ubuntu.com/t/no-network-connection-with-24-04-and-r8125-ethernet/58589), Discourse, Ubuntu, 
+* ...
+
+USB OTG - Raspberry Pi 
+* STICKY: USB device not working on Raspberry Pi Zero, 1, 2, 3? Click here!, [WS](https://forums.raspberrypi.com/viewtopic.php?t=53832&sid=e1f95c7352ca64da9a75c5c7d0b71f87), Forums, Raspberry Pi, 
+* STICKY: USB Ethernet Gadget A Beginner's Guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=306121), Forums, Raspberry Pi, thagrol
+* Guides [GH](https://github.com/thagrol/Guides), GitHub, thagrol
+* STICKY: Bookworm, Point to Point Ethernet (inc g_ether), [WS](https://forums.raspberrypi.com/viewtopic.php?t=364247), GitHub, thagrol
+
+
+Ethernet, connect via USB, ... 
+* ... to source
+
 BlueTooth
 * ... to source
+
+### Projects
 
 Flash
 * Make a Pi Zero W Smart USB flash drive , [WS](https://magazine.raspberrypi.com/articles/pi-zero-w-smart-usb-flash-drive), Russell Barnes. 
@@ -423,29 +549,3 @@ Screen
 * Old laptop display (40pins)how to use as a raspberry pi 4 B display(15pins), [WS](https://forums.raspberrypi.com/viewtopic.php?t=277682), Forums, Raspberry Pi, 
 * Re-purposing old laptop LCD via Raspberry Pi, [WS](https://forums.raspberrypi.com/viewtopic.php?t=255727), Forums, Raspberry Pi, 
 * Using laptop screen with RPI, [WS](https://forums.raspberrypi.com/viewtopic.php?t=234270), Forums, Raspberry Pi, 
-
-Power down, power off, 
-* Turning off power on a PI Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=215796), Forums, Raspberry Pi, 
-
-SD Card, MicroSD card removal
-* Can I temporarily remove the SD card while my device is turned on?, [WS](https://raspberrypi.stackexchange.com/questions/3759/can-i-temporarily-remove-the-sd-card-while-my-device-is-turned-on), StackExchange, Raspberry Pi, 
-
-SSH file location
-* Placing SSH File on New SDCard, [WS](https://forums.raspberrypi.com/viewtopic.php?t=314900), Forums, Raspberry Pi, 
-* "Put an empty 'ssh' file in /boot/" trick not working anymore [WS](https://raspberrypi.stackexchange.com/questions/98719/put-an-empty-ssh-file-in-boot-trick-not-working-anymore), StackExchange, Raspberry Pi, 
-* Enabling SSH by default on Raspbian Stretch [WS](https://raspberrypi.stackexchange.com/questions/73119/enabling-ssh-by-default-on-raspbian-stretch), StackExchange, Raspberry Pi, 
-
-USB Ethernet - Ubuntu, RPi OS, debian, linux, 
-* How to set up an usb/ethernet interface in Linux? [WS](https://unix.stackexchange.com/questions/386162/how-to-set-up-an-usb-ethernet-interface-in-linux), StackExchange, Unix Linux
-* How to Share your USB Device in Ubuntu 24.04 over LAN, [WS](https://ubuntuhandbook.org/index.php/2024/09/share-usb-ubuntu-lan/), Ubuntu Handbook, **** Looks important generally, not sure it is relevant with USB RPi Zero connection to Dell laptop.
-* RTL8125 2.5GbE Ethernet port not working in Ubuntu 24.04, [WS](https://discourse.ubuntu.com/t/rtl8125-2-5gbe-ethernet-port-not-working-in-ubuntu-24-04/55551/1), Discourse, Ubuntu, 
-* No Network Connection with 24.04 and r8125 Ethernet, [WS](https://discourse.ubuntu.com/t/no-network-connection-with-24-04-and-r8125-ethernet/58589), Discourse, Ubuntu, 
-* ...
-
-USB OTG - Raspberry Pi 
-* STICKY: USB device not working on Raspberry Pi Zero, 1, 2, 3? Click here!, [WS](https://forums.raspberrypi.com/viewtopic.php?t=53832&sid=e1f95c7352ca64da9a75c5c7d0b71f87), Forums, Raspberry Pi, 
-
-
-
-
-
