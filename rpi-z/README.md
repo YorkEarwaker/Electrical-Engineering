@@ -115,7 +115,7 @@ Primary Sources
                 R  R    14 15
                 W  W     O  O
                 P  P  D  I  I
-                V  V  R  P  P
+                V  V  N  P  P
                 5  5  G  G  G
         ---------------------------------------------------------------------------
                 2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
@@ -124,9 +124,105 @@ Primary Sources
                 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
 ```
 
+### Prerequisites
+
+Serial communication tool, 
+* GNU Screen https://www.gnu.org/software/screen/
+* GNU Screen, User Manual, https://www.gnu.org/software/screen/manual/screen.html
+* Minicom https://salsa.debian.org/minicom-team/minicom 
+* Minicom, Ubuntu Introduction https://help.ubuntu.com/community/Minicom
+
+### Clean up, RPi OS on RPi MisroSD Card
+Removing things done to RPi OS from the first process. 
+* Remove from /bootfs/cmdline.txt
+```
+modules-load=dwc2,g_ether
+```
+* Remove from /bootfs/config.txt
+```
+[all] 
+dtoverlay=dwc2
+```
+* Move to trash /bootfs/wpa_supplicant.conf
+* Remove via cli /rootfs/boot/firmware/cmdline.txt
+* Remove via cli /rootfs/boot/firmware/config.txt
+```
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 8
+-rw-r--r-- 1 root root 26 Dec 20 13:25 cmdline.txt
+-rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
+-rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo rm cmdline.txt
+[sudo] password for york-earwaker: 
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 4
+-rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
+-rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo rm config.txt
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 0
+-rw-r--r-- 1 root root 0 Dec 18 15:41 ssh
+```
+* Retain /rootfs/boot/firmware/ssh, as per instructions in RPi Documentation
+* Forgot to remove wifi additional text from /rootfs/boot/etc/wpa_supplicant file here wpa_supplicant.conf
+
 ### Connect RPi Zero 2 W to RPi Debug Probe
+* Clean up, see above
+* Attach Micro USB B to RPi Debug Probe, 
+* Attach JST connector to RPi Debug Probe, see ascii diagram above
+* Attach UART and GND leads to RPi Zero GPIO pin, see ascii diagram above
+* Plugin mains Power to RPi Zero
+* Plugin USB A from RPi Debug Probe to Dell Ubuntu host
+* Find name of serial ports
+``` 
+$ sudo dmesg | grep tty
+[14643.777551] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+[15365.882091] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+```
+* list tree of USB devices
+```
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 002: Dev 007, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 002: Dev 007, If 1, Class=Communications, Driver=cdc_acm, 12M
+    |__ Port 002: Dev 007, If 2, Class=CDC Data, Driver=cdc_acm, 12M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+```
+* list USB devices
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 007: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+* 
+```
+$ usbip list -l
+ - busid 1-12 (0c45:6713)
+   Microdia : unknown product (0c45:6713)
 
+ - busid 1-2 (2e8a:000c)
+   unknown vendor : unknown product (2e8a:000c)
 
+ - busid 1-4 (0cf3:e300)
+   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
+
+ - busid 1-7 (138a:0091)
+   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
+
+ - busid 1-9 (04f3:24a1)
+   Elan Microelectronics Corp. : unknown product (04f3:24a1)
+```
 
 ## Output - headless to RPi Zero 2 W with USB cable
 First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
