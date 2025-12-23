@@ -87,6 +87,43 @@ Primary Sources
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 * Raspberry Pi 3-pin Debug Connector Specification, [WS](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, 
 
+```
+            _________
+      ------\ Micro /------      To Host          | ---------- | ----------- | ------------------------------ |
+     |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            |
+     |      |_______|      |                      | ---------- | ----------- | ------------------------------ |
+     |                     |                      | 1          | RX          | SC (Serial Clock)              |
+     |     Raspberry Pi    |                      | 2          | GND         | GND                            |
+     |     Debug Probe     |                      | 3          | TX          | SD (bidirectional serial data) |
+     |                     |     To Target        | ---------- | ----------- | ------------------------------ |
+     |    _____   _____    |     U = UART
+     |   |  U  | |  D  |   |     D = DEBUG
+      ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB
+          | | |   | | |    
+          1 2 3   1 2 3
+          | | |-------------|
+          |-(------------|  |
+            |---------|  |  |
+                      |  X  X
+                      |  T  R
+                      |      
+                      |  T  T
+                      |  R  R         
+                      |  A  A
+                      |  U  U
+                      |   
+                R  R    14 15
+                W  W     O  O
+                P  P  D  I  I
+                V  V  R  P  P
+                5  5  G  G  G
+        ---------------------------------------------------------------------------
+                2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
+                1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
+```
+
 ### Connect RPi Zero 2 W to RPi Debug Probe
 
 
