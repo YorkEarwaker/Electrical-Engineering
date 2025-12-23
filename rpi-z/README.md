@@ -1,6 +1,14 @@
 # Raspberry Pi Zero rpi-z
 
-Single board computer, 
+Single board computer SBC. 
+
+## Notes
+
+Please see
+* For directions on headless connection to RPi Zero 2 W with Raspberry Pi Debug Probe. Work in progress.
+* Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
+* The official Getting Started Raspberry Pi Documentation does not cover the use case described in the forum post.
+* For attempts at process see inline below heading; Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 
 ## Status
 
@@ -71,10 +79,34 @@ Warning! Will require to shift voltage down to 3V with 'bridge' device if
 * Voltage shift device takes 5V power from power rail 1 charge passes through shift device down shifted to 3V to power rail 2. Use resistors to RYO down shift power instead of COTS device?
 * RPi Pico MCU and other 3V devices take power for breadboard power rail 2.
 
-## Output
+## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
+Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe.
+* TBD
+
+Primary Sources
+* Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
+* Raspberry Pi 3-pin Debug Connector Specification, [WS](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, 
+
+### Connect RPi Zero 2 W to RPi Debug Probe
+
+
+
+## Output - headless to RPi Zero 2 W with USB cable
+First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
+* Failure :(
+* On the up side good learning loop to have pursued. 
+* However this level of effort is likely a barrier to entry for many.
+* See references heading below for many of the resources tried without success.
+
+Primary Sources
+* Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation, 
+
+Secondary Sources
+* Many online information, inclusive; tutorials, Raspberry Pi Forum, etc...
+* See References heading section below
 
 ### Create SSH file on SD Card
-Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi, docs
+Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi Documentation
 * Place RPi MicroSD Card with preinstalled RPi OS in MicroSD Card Adapter, 
 * Put MicroSD Card Adapter into laptop
 * Create ssh file as per instructions in link above.
@@ -471,15 +503,17 @@ AttributeError: type object 'Pin' has no attribute 'Out'
 
 Terms
 * USB On-The-Go, [WP](https://en.wikipedia.org/wiki/USB_On-The-Go), 
+* UART, 
 
-Raspberry Pi Zero - datasheets, user guides
-* Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi
-* Raspberry Pi Zero 2 W Product Brief, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi
-* Raspberry Pi Zero Pinout, [WS](https://forums.raspberrypi.com/viewtopic.php?t=378242), Raspberry Pi
+Raspberry Pi Zero - datasheets, user guides, documentation
+* Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation
+* Raspberry Pi Zero 2 W Product Brief, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero Pinout, [WS](https://forums.raspberrypi.com/viewtopic.php?t=378242), Raspberry Pi Forum
 * Raspberry Pi Zero Pinout, [WS](https://pinout.xyz/), xyz
-* Raspberry Pi Zero Schematic, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-reduced-schematics.pdf), Raspberry Pi
-* Raspberry Pi Zero Test Pads [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-test-pads.pdf), Raspberry Pi
-* Raspberry Pi Zero Mechanical Drawing [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi
+* Raspberry Pi Zero Schematic, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-reduced-schematics.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero Test Pads [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-test-pads.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero Mechanical Drawing [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi Datasheet
+* Raspberry Pi 3-pin Debug Connector Specification, [WS](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet
 * ...
 
 Headless - SSH, RPi Zero OTG USB Ethernet, 
