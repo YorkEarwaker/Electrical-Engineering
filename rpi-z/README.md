@@ -84,10 +84,24 @@ Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspb
 * TBD
 
 Primary Sources
-* Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
-* Raspberry Pi 3-pin Debug Connector Specification, [WS](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, 
+* Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, 
+* Raspberry Pi Debug Probe, Product Brief, [PDF](https://datasheets.raspberrypi.com/debug/raspberry-pi-debug-probe-product-brief.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Debug Probe, User Guide, [WS](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html), Raspberry Pi Documentation
 
+Secondary Sources
+* Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
+
+Context Diagram
 ```
+             RPi Zero 2 W                           RPi Debug Probe                                       Dell Ubuntu
+             -----------          Serial             -----------                 Serial                   -----------
+   PWR IN   |___    o o |       Connection          |___     ___|   OTG?       Connection                |___        |
+Micro USB B  ___|'  o o | GPIO ------------ UART JST ___|   |___ Micro USB B ------------- standard USB A ___|       |
+            |       o o |                           |           |                                        |           |
+             -----------                             -----------                                          -----------
+```
+Circuit Diagram
+```     
             _________
       ------\ Micro /------      To Host          | ---------- | ----------- | ------------------------------ |
      |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            |
@@ -125,14 +139,19 @@ Primary Sources
 ```
 
 ### Prerequisites
+Requirement for a serial communication program on Dell Ubuntu laptop to communicate via RPi Debug Probe, USB to UART connection, with RPi Zero 2 W . 
 
-Serial communication tool, 
-* GNU Screen https://www.gnu.org/software/screen/
-* GNU Screen, User Manual, https://www.gnu.org/software/screen/manual/screen.html
-* Minicom https://salsa.debian.org/minicom-team/minicom 
-* Minicom, Ubuntu Introduction https://help.ubuntu.com/community/Minicom
+Software - Serial communication tool, candidates
+* GNU Screen, org [WS](https://www.gnu.org/software/screen/), GNU
+* GNU Screen, User Manual, org [WS](https://www.gnu.org/software/screen/manual/screen.html), GNU
+* Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
+* Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
 
-### Clean up, RPi OS on RPi MisroSD Card
+Hardware - USB to UART cable connection
+* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for V3 to RPi Zero 2 W GPIO pin UART connection
+* A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to V3 .
+
+### Clean up, RPi OS on RPi MiroSD Card
 Removing things done to RPi OS from the first process. 
 * Remove from /bootfs/cmdline.txt
 ```
@@ -164,9 +183,15 @@ total 0
 -rw-r--r-- 1 root root 0 Dec 18 15:41 ssh
 ```
 * Retain /rootfs/boot/firmware/ssh, as per instructions in RPi Documentation
-* Forgot to remove wifi additional text from /rootfs/boot/etc/wpa_supplicant file here wpa_supplicant.conf
+* Edit /rootfs/etc/wpa_supplicant file wpa_supplicant.conf, to remove additional wifi config text, returns to original state of
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+```
 
 ### Connect RPi Zero 2 W to RPi Debug Probe
+Attempt 1
+* Success! :)
 * Clean up, see above
 * Attach Micro USB B to RPi Debug Probe, 
 * Attach JST connector to RPi Debug Probe, see ascii diagram above
@@ -223,6 +248,12 @@ $ usbip list -l
  - busid 1-9 (04f3:24a1)
    Elan Microelectronics Corp. : unknown product (04f3:24a1)
 ```
+* Unplug USB A from Dell Ubuntu, connection to RPi Debug Probe for a USB to UART connection to RPi Zero 2 W GPIO pins.
+* Unplug power supply unit PSU from mains socket with cable to Micro USB B PWR IN for RPi Zero 2 W 
+
+Attempt 2.
+* TBD
+* ...
 
 ## Output - headless to RPi Zero 2 W with USB cable
 First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
@@ -237,6 +268,20 @@ Primary Sources
 Secondary Sources
 * Many online information, inclusive; tutorials, Raspberry Pi Forum, etc...
 * See References heading section below
+
+Context Diagram
+```
+     RPi Zero 2 W                                                          Dell Ubuntu
+     -----------                      Power and Data                       -----------
+    |        ___|                                                         |___        |
+    |       |___ OTG Micro USB B ------------------------- standard USB A  ___|       |
+    |           |                                                         |           |
+     -----------                                                           -----------
+```
+Circuit Diagram
+``` 
+     N/A
+``` 
 
 ### Create SSH file on SD Card
 Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi Documentation
