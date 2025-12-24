@@ -103,8 +103,8 @@ Context Diagram
              -----------          Serial             -----------                Serial                   -----------
    PWR IN   |___    o o |       Connection          |___     ___|   OTG?      Connection                |___        |
 Micro USB B  ___|   o o | GPIO ------------ UART JST ___|   |___ Micro USB B ------------ standard USB A ___|       |
-            |       o o |                           |           |                                       |           |
-             -----------                             -----------                                         -----------
+ Src > Snk  |       o o |                           |           |         Sink < Power < Source         |           |
+             -----------         < Data >            -----------               < Data  >                 -----------
 ```
 Circuit Diagram
 ```     
@@ -120,7 +120,6 @@ Circuit Diagram
      |   |  U  | |  D  |   |     D = DEBUG
       ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry) 
           | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives . Host
-          1 2 3   1 2 3
           1 2 3   1 2 3
           | | |-------------|
           |-(------------|  |
@@ -280,11 +279,11 @@ Secondary Sources
 Context Diagram
 ```
      RPi Zero 2 W                                                          Dell Ubuntu
-     -----------                      Power and Data                       -----------
-    |        ___|                                                         |___        |
-    |       |___ OTG Micro USB B ------------------------- standard USB A  ___|       |
-    |           |                                                         |           |
-     -----------                                                           -----------
+     -----------                         USB x.xx                          -----------
+    |        ___|                          API                            |___        |
+    |       |___ OTG Micro USB B -------------------------- standard USB A ___|       |
+    |           |                  Sink < Power < Source                  |           |
+     -----------                        < Data  >                          -----------
 ```
 Circuit Diagram
 ``` 
