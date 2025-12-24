@@ -94,11 +94,11 @@ Secondary Sources
 Context Diagram
 ```
              RPi Zero 2 W                           RPi Debug Probe                                       Dell Ubuntu
-             -----------          Serial             -----------                 Serial                   -----------
-   PWR IN   |___    o o |       Connection          |___     ___|   OTG?       Connection                |___        |
-Micro USB B  ___|'  o o | GPIO ------------ UART JST ___|   |___ Micro USB B ------------- standard USB A ___|       |
-            |       o o |                           |           |                                        |           |
-             -----------                             -----------                                          -----------
+             -----------          Serial             -----------                Serial                   -----------
+   PWR IN   |___    o o |       Connection          |___     ___|   OTG?      Connection                |___        |
+Micro USB B  ___|   o o | GPIO ------------ UART JST ___|   |___ Micro USB B ------------ standard USB A ___|       |
+            |       o o |                           |           |                                       |           |
+             -----------                             -----------                                         -----------
 ```
 Circuit Diagram
 ```     
