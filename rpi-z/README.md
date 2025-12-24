@@ -110,19 +110,19 @@ Circuit Diagram
 ```     
             _________
       ------\ Micro /------   ʌ  To Host          | ---------- | ----------- | ------------------------------ |
-     |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            |
+     |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            | Colour  | Description
      |      |_______|      |                      | ---------- | ----------- | ------------------------------ |
-     |                     |  <  The Debug        | 1          | RX          | SC (Serial Clock)              |
-     |     Raspberry Pi    |     Host             | 2          | GND         | GND                            |
-     |     Debug Probe     |                      | 3          | TX          | SD (bidirectional serial data) |
+     |                     |  <  The Debug        | 1          | TX          | SC (Serial Clock)              | Orange  | TX/SC (Output from Probe)
+     |     Raspberry Pi    |     Host             | 2          | GND         | GND                            | Black   | GND   (Ground)
+     |     Debug Probe     |                      | 3          | RX          | SD (bidirectional serial data) | Yellow  | RX/SD (Input to Probe or I/O)
      |                     |  v To Target         | ---------- | ----------- | ------------------------------ |
      |    _____   _____    |     U = UART
      |   |  U  | |  D  |   |     D = DEBUG
       ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry) 
-          | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives . Host
+          | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives .
           1 2 3   1 2 3
-          | | |-------------|
-          |-(------------|  |
+          | | |----------|
+          |-(------------(--|
             |---------|  |  |
                       |  X  X
                       |  T  R
@@ -259,7 +259,10 @@ $ usbip list -l
 
 Attempt 2.
 * TBD
+* to add connection and power up things
 * ...
+* <todo: first read RPi Debug Probe documentation, >
+
 
 ## Output - headless to RPi Zero 2 W with USB cable
 First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
@@ -280,15 +283,15 @@ Context Diagram
 ```
      RPi Zero 2 W                                                          Dell Ubuntu
      -----------                         USB x.xx                          -----------
-    |        ___|                          API                            |___        |
-    |       |___ OTG Micro USB B -------------------------- standard USB A ___|       |
+    |        ___|    OTG                   API                            |___        |
+    |       |___  Micro USB B ----------------------------- standard USB A ___|       |
     |           |                  Sink < Power < Source                  |           |
      -----------                        < Data  >                          -----------
 ```
 Circuit Diagram
 ``` 
      N/A
-``` 
+```
 
 ### Create SSH file on SD Card
 Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi Documentation
