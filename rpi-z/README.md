@@ -18,13 +18,14 @@ TODO
 * <todo: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, >
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
-* <todo: consider, RYO voltage down shift device, resistors? research and test, >
+* <todo: consider, RYO voltage down shift device, resistors? research and test, for use with RPi Pico MCU powered by 5V RPi Zero SBC, >
 * <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt, from tutorial, source offical Raspberry Pi docs, >
 * <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cable RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
 * <todo: consider, RPi Zero as mountable flash device, see RPi Magaizine article in references below, >
 * <todo: consider, reuse old laptop screen as second dispaly for Dell and/or display for RPi Zero SBC, see references below for example, >
 * <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
 * <todo: consider, to setup RPi Zero correctly will have to purchase secondary BoM items, screen display, keyboard, and so on, >
+* <todo: consider, is there some way to make headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, >
 
 DONE
 * <done: consider, intent to commit>
@@ -93,7 +94,7 @@ Secondary Sources
 
 Context Diagram
 ```
-             RPi Zero 2 W                           RPi Debug Probe                                       Dell Ubuntu
+             RPi Zero 2 W                           RPi Debug Probe                                      Dell Ubuntu
              -----------          Serial             -----------                Serial                   -----------
    PWR IN   |___    o o |       Connection          |___     ___|   OTG?      Connection                |___        |
 Micro USB B  ___|   o o | GPIO ------------ UART JST ___|   |___ Micro USB B ------------ standard USB A ___|       |
@@ -258,6 +259,7 @@ Attempt 2.
 ## Output - headless to RPi Zero 2 W with USB cable
 First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
 * Failure :(
+* Based of past experience with RPi Pico MCU's connection to host via USB power and data, but not how RPi Zero works, shame
 * On the up side good learning loop to have pursued. 
 * However this level of effort is likely a barrier to entry for many.
 * See references heading below for many of the resources tried without success.
@@ -267,7 +269,7 @@ Primary Sources
 
 Secondary Sources
 * Many online information, inclusive; tutorials, Raspberry Pi Forum, etc...
-* See References heading section below
+* See References heading section below, many
 
 Context Diagram
 ```
