@@ -1,16 +1,16 @@
              
             _________
-      ------\ Micro /------      To Host          | ---------- | ----------- | ------------------------------ |
+      ------\ Micro /------   ʌ  To Host          | ---------- | ----------- | ------------------------------ |
      |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            |
      |      |_______|      |                      | ---------- | ----------- | ------------------------------ |
-     |                     |                      | 1          | RX          | SC (Serial Clock)              |
-     |     Raspberry Pi    |                      | 2          | GND         | GND                            |
+     |                     |  <  The Debug        | 1          | RX          | SC (Serial Clock)              |
+     |     Raspberry Pi    |     Host             | 2          | GND         | GND                            |
      |     Debug Probe     |                      | 3          | TX          | SD (bidirectional serial data) |
-     |                     |     To Target        | ---------- | ----------- | ------------------------------ |
+     |                     |  v To Target         | ---------- | ----------- | ------------------------------ |
      |    _____   _____    |     U = UART
      |   |  U  | |  D  |   |     D = DEBUG
-      ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB
-          | | |   | | |    
+      ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry) 
+          | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives . Host
           1 2 3   1 2 3
           
              
