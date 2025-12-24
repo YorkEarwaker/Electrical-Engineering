@@ -14,7 +14,7 @@ Please see
 
 TODO
 * <todo: consider, hello world project>
-* <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? >
+* <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? RPi OS on RPi Zero SBC, >
 * <todo: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, >
 * <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
@@ -33,6 +33,7 @@ DONE
 * <done: consider, bill of materials for RPi Zero, compelted offline BoM in spreadsheet circa £64 inclusive 'useful' extras, >
 * <done: consider, purchase of RPi Zero 2 W, and other items, completed, >
 * <done: consider, for future use, first pass at wpa_supplicat.conf file, a Debian configuration file for WiFi, see referrences below,  >
+* <done: consider, does the Micro USB B - OTG? - on the RPi Debug Probe device exhibit disconnection issue with the Linux Ubuntu LTS 24.04.3, Yes! likely same kernel issue, >
 
 ## Libs
 
@@ -42,13 +43,16 @@ Raspberry Pi
 
 ## Hardware
 
-Bill of materials, BoM
+Bill of materials, BoM, original
 * Raspberry Pi Zero 2 W, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi, acquired
 * Power Supply, 12.75 Raspberry Pi, acquired
 * Micro SD Card, with RPi OS preinstalled, Raspberry Pi, acquired
 * Micro SD Card Adapter, Raspberry Pi, acquired
 * Micro SD to SD Extension Cable, acquired
 * USB cable, acquired
+
+Bill of material, BoM +
+* USB to UART device, RPi Debug Probe, Raspberry Pi, acquired
 
 BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
@@ -88,6 +92,7 @@ Primary Sources
 * Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, 
 * Raspberry Pi Debug Probe, Product Brief, [PDF](https://datasheets.raspberrypi.com/debug/raspberry-pi-debug-probe-product-brief.pdf), Raspberry Pi Datasheet
 * Raspberry Pi Debug Probe, User Guide, [WS](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html), Raspberry Pi Documentation
+* Raspberry Pi Debug Probe, Firmware, [GH](https://github.com/raspberrypi/debugprobe), GitHub, Raspberry Pi, 
 
 Secondary Sources
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
@@ -149,8 +154,8 @@ Software - Serial communication tool, candidates
 * Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
 
 Hardware - USB to UART cable connection
-* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for V3 to RPi Zero 2 W GPIO pin UART connection
-* A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to V3 .
+* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for 3V to RPi Zero 2 W GPIO pin UART connection
+* A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
 
 ### Clean up, RPi OS on RPi MiroSD Card
 Removing things done to RPi OS from the first process. 
