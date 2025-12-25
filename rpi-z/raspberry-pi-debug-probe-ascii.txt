@@ -14,7 +14,7 @@ https://www.raspberrypi.com/documentaton/microcontrollers/debug-probe.html
      |    _____   _____    |     U = UART
      |   |  U  | |  D  |   |     D = DEBUG
       ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry) 
-          | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives . Host
+          | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives .
           1 2 3   1 2 3
           
              
