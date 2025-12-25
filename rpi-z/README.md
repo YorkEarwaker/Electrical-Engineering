@@ -89,7 +89,7 @@ Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspb
 * TBD
 
 Primary Sources
-* Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, 
+* Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, Error in pinout table
 * Raspberry Pi Debug Probe, Product Brief, [PDF](https://datasheets.raspberrypi.com/debug/raspberry-pi-debug-probe-product-brief.pdf), Raspberry Pi Datasheet
 * Raspberry Pi Debug Probe, User Guide, [WS](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html), Raspberry Pi Documentation
 * Raspberry Pi Debug Probe, Firmware, [GH](https://github.com/raspberrypi/debugprobe), GitHub, Raspberry Pi, 
@@ -259,9 +259,35 @@ $ usbip list -l
 
 Attempt 2.
 * TBD
-* to add connection and power up things
-* ...
 * <todo: first read RPi Debug Probe documentation, >
+* Added to /bootfs/config.txt
+```
+[all]
+enable_uart=1
+```
+* to add order of plugin and power up things done
+* Put MicroSD Card Adapter back into Extension cable in RPi Zero env
+* Plugin PSU to main socket, 
+* Wait a two or three minutes for ACT LED on RPi Zero go solid green
+* Plugin USB A, from RPi Debug Probe, to Dell Ubuntu, wait a bit so that things sync
+* 
+* ...
+* 
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 011: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ sudo dmesg | grep tty
+[106228.649804] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+[109166.299150] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+[112794.236145] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+```
 
 
 ## Output - headless to RPi Zero 2 W with USB cable
