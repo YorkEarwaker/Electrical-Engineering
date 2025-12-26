@@ -6,6 +6,7 @@ Inter device communication at a local systems level.
 
 ### TODO
 <todo: consider, what are the minimum requirements to start development, >
+<todo: consider, as a real world project, serial communication with a RPi Zero as 'headless' >
 
 ### DONE
 <done: consider, intent to commit>
