@@ -1,3 +1,8 @@
+       <TODO: Enter primary sources, references to verify correctness, completeness, soundness, and so on, >
+       
+       
+       Horizontal - Raspberry Pi Zero 2 W
+       <TODO: finished 1.0, keep under review for improvements, modifications, defects, >
 
         ---------------------------------------------------------------------------
       |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
