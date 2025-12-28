@@ -5,12 +5,12 @@ Inter device communication at a local systems level.
 ## Status
 
 ### TODO
-<todo: consider, what are the minimum requirements to start development, >
-<todo: consider, as a real world project, serial communication with a RPi Zero as 'headless' >
-<todo: consider, ethenet over usb, use RPi Zero as test bed, does RPi Zero have contraits that would disallow this? >
+* <todo: consider, what are the minimum requirements to start development, >
+* <todo: consider, as a real world project, serial communication with a RPi Zero as 'headless' >
+* <todo: consider, ethenet over usb, use RPi Zero as test bed, does RPi Zero have contraits that would disallow this? >
 
 ### DONE
-<done: consider, intent to commit>
+* <done: consider, intent to commit>
 
 ## Software
 
