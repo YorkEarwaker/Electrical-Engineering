@@ -35,7 +35,7 @@ Terms
 * Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class)
 * Universal Serial Bus USB, org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
 * USB Communication Device Class CDC (NCM), [WP](https://en.wikipedia.org/wiki/USB_communications_device_class)
-* USB SDC list, [WP](https://en.wikipedia.org/wiki/USB#Device_classes)
+* USB CDC list, [WP](https://en.wikipedia.org/wiki/USB#Device_classes)
 * ... 
 
 Documentation
