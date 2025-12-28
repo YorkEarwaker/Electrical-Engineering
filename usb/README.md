@@ -25,11 +25,15 @@ ARM IDE's - move to embedded?
 ## References
 
 Terms
-* USB org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
-
-USB Device class
-* CDC (NCM), 
+* Serial Communication, 
+* Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class)
+* Universal Serial Bus USB, org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
+* USB Communication Device Class CDC (NCM), [WP](https://en.wikipedia.org/wiki/USB_communications_device_class)
+* USB SDC list, [WP](https://en.wikipedia.org/wiki/USB#Device_classes)
 * ... 
+
+Documentation
+* Linux USB API, [WS](https://www.kernel.org/doc/html/v4.14/driver-api/usb/index.html), The Linux Kernel, 
 
 Ethernet over USB
 * How to set up an usb/ethernet interface in Linux? [WS](https://unix.stackexchange.com/questions/386162/how-to-set-up-an-usb-ethernet-interface-in-linux)
