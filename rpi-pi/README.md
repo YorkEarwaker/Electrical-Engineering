@@ -12,6 +12,7 @@ TODO
 * <todo: consider, testing the sku 19328 RPi Pico M micorcontroller product included in the Waveshare MicroPython learning kit, supplied by The Pi Hut, This microcontroller is not a W wireless, manufactured in CN, part of Waveshare Micropython Learning Kit, >
 * <todo: consider, cicuit diagram, fritzing diagrams for cicuit board designs, start with current solutions uploaded to GitHub, >
 * <todo: consider, data logger project CSV file for data storage to RPi Pico flash storage, likely not a good idea due to limitations of flash lifetime circa ~20k write/delete cycles, CSV storage better considered on addition of external SD Card storage component, Rpi Pico 2 W 32MBit (4MiB) Flash W25Q32RVXHJQ, see Pico 2 W schematic below. >
+* <todo: consider, ARM, Kiel MDK IDE, Pico projects, MCU development, embedded, >
 
 DONE
 * <done: intent to commit>
@@ -46,6 +47,7 @@ IDE
 * VSCode, C/C++/asm, MicroPython, works
 * VSCodium, C/C++/asm, MicroPython, evaluating for C/C++/asm for PRi Pico 2, Note_02
 * Arduino, [WS](https://www.arduino.cc/en/software), C/C++/Arduino, does not appear to support RP2030 i.e. RPi Pico 2, only RP2040 i.e. RPi Pico 1, uninstalled for now.
+* Kiel MDK, [WS](https://www.keil.arm.com/), Kiel, ARM, VS Code extension, embedded
 
 Tools
 * PuTTY, 0rg [WS](https://www.putty.org/), download [WS](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), use as serial monitor for RPi Pico 2 device, USB COM output, 
@@ -78,6 +80,10 @@ MicroPython
 * MicroPython, [WS](https://github.com/micropython/micropython), 
 * MicroPython, RP2 port, [WS](https://github.com/micropython/micropython/tree/master/ports/rp2)
 * ...
+
+Kiel ARM 
+* Raspberry Pi Pico, [WS](https://www.keil.arm.com/boards/raspberry-pi-raspberry-pi-pico-rev-3-4b0b750/projects/), Kiel, ARM, 2040
+* Raspberry Pi Pico W, [WS](https://www.keil.arm.com/boards/raspberry-pi-raspberry-pi-pico-w-rev-3-ebd9811/projects/), Kiel, ARM, 2040
 
 Books
 * Get Started with MicroPython on Raspberry Pi Pico, 2nd Edition, [GH](https://github.com/raspberrypipress/gsw-micropython-on-raspberry-pi-pico-2e),
