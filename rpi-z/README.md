@@ -58,6 +58,7 @@ BoM, To be considered --- to be purchased only if necessary, don't have one as i
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
 * Display (screen), 
 * Keyboard, 
+* 40 Pin Raspberry Pi PCB GPIO Quick Connect Clip, [WS](https://www.kickstarter.com/projects/flatmax/pcb-quick-connect-clip-40-pin-raspberry-pi-compati), looks very interesting! no solder
 
 Diagram of the eight main components on board the RPi Zero single board computer SBC. Larger than actual physical form factor.
 ```
