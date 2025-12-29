@@ -32,11 +32,28 @@ ARM IDE's - move to embedded?
 
 Terms
 * Serial Communication, 
-* Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class)
+
+Hardware - plug and cable standards
 * Universal Serial Bus USB, org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
 * USB Communication Device Class CDC (NCM), [WP](https://en.wikipedia.org/wiki/USB_communications_device_class)
 * USB CDC list, [WP](https://en.wikipedia.org/wiki/USB#Device_classes)
 * ... 
+
+Serial Standards - controller GPIO pins to target (peripheral device) GPIO pins, GPIO to USB, chipset to motherboard bus, 
+* Note, Yes Y No N, High H Medium M Low L, 
+* CAN 
+* Inter-Integrated Circuit I2C, OSI model; physical layer (Y, H), data link layer (Y, M), . embedded systems, also PC's, 
+* System Management Bus SMBus, OSI model; physical layer (Y, H), data link layer (Y, H), .stricter variant of I2C, use in PC bus, 
+* Serial Peripheral Interface SPI, OSI model; physical layer (Y, H), data link layer (Y, L), .
+* Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class), OSI model; physical layer (N, _), data link layer (Y, H), . 
+* Universal Synchronous Asynchronous Receiver Transmitter USART
+* ...
+
+Hardware other - USB to other hardware connector
+* RS 232
+* RS 422
+* RS 485
+* ...
 
 Documentation
 * Linux USB API, [WS](https://www.kernel.org/doc/html/v4.14/driver-api/usb/index.html), The Linux Kernel, 
