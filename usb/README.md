@@ -45,7 +45,7 @@ Serial Standards - controller GPIO pins to target (peripheral device) GPIO pins,
 * Mircowire, μWire, subset of SPI, half duplex, MicrowirePlus full duplex, 
 * System Management Bus SMBus, OSI model; physical layer (Y, H), data link layer (Y, H), .stricter variant of I2C, use in PC bus, 
 * Serial Peripheral Interface SPI, OSI model; physical layer (Y, H), data link layer (Y, L), . full duplex, 
-* Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class), OSI model; physical layer (N, _), data link layer (Y, H), . 
+* Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class), OSI model; physical layer (N, _), data link layer (Y, H), . chips may be; UART, dual UART DUART, quadruple UART QUART, octal UART OCTART, ... others? 
 * Universal Synchronous Asynchronous Receiver Transmitter USART
 * ...
 
