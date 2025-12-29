@@ -41,18 +41,22 @@ Hardware - plug and cable standards
 
 Serial Standards - controller GPIO pins to target (peripheral device) GPIO pins, GPIO to USB, chipset to motherboard bus, 
 * Note, Yes Y No N, High H Medium M Low L, 
-* CAN 
 * Inter-Integrated Circuit I2C, OSI model; physical layer (Y, H), data link layer (Y, M), . embedded systems, also PC's, 
+* Mircowire, μWire, subset of SPI, half duplex, MicrowirePlus full duplex, 
 * System Management Bus SMBus, OSI model; physical layer (Y, H), data link layer (Y, H), .stricter variant of I2C, use in PC bus, 
-* Serial Peripheral Interface SPI, OSI model; physical layer (Y, H), data link layer (Y, L), .
+* Serial Peripheral Interface SPI, OSI model; physical layer (Y, H), data link layer (Y, L), . full duplex, 
 * Universal Asynchronous Receiver Transmitter UART, [WP](https://en.wikipedia.org/wiki/USB_communications_device_class), OSI model; physical layer (N, _), data link layer (Y, H), . 
 * Universal Synchronous Asynchronous Receiver Transmitter USART
 * ...
 
 Hardware other - USB to other hardware connector
+* Controller Area Network CAN, automotive 
+* FireWire, 
+* JTAG, testing, 
+* Low Voltage Differential Signaling LVDS
 * RS 232
-* RS 422
-* RS 485
+* RS 422 , of particular interest?
+* RS 485, UART based, 
 * ...
 
 Documentation
@@ -61,4 +65,5 @@ Documentation
 Ethernet over USB
 * How to set up an usb/ethernet interface in Linux? [WS](https://unix.stackexchange.com/questions/386162/how-to-set-up-an-usb-ethernet-interface-in-linux)
 
-
+Microwire
+* National Semiconductor Microwire frame format, [WS](https://developer.arm.com/documentation/ddi0194/h/functional-overview/primecell-ssp-operation/national-semiconductor-microwire-frame-format), ARM, 
