@@ -88,6 +88,18 @@ Warning! Will require to shift voltage down to 3V with 'bridge' device if
 * Voltage shift device takes 5V power from power rail 1 charge passes through shift device down shifted to 3V to power rail 2. Use resistors to RYO down shift power instead of COTS device?
 * RPi Pico MCU and other 3V devices take power for breadboard power rail 2.
 
+## Software
+
+### Prerequisites
+Requirement for a serial communication program on Dell Ubuntu laptop to communicate via RPi Debug Probe, USB to UART connection, with RPi Zero 2 W . 
+
+Software - Serial communication tool, candidates
+* GNU Screen, [WP](https://en.wikipedia.org/wiki/GNU_Screen), org [WS](https://www.gnu.org/software/screen/), GNU
+* GNU Screen, User Manual, org [WS](https://www.gnu.org/software/screen/manual/screen.html), GNU
+* GNU Screen, Quick Reference, net [WS](https://aperiodic.net/screen/quick_reference), Aperiodic, like from WP page
+* Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
+* Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
+
 ## Output - headless to RPi Zero 2 W with USB tty to UART 
 Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB tty to UART 
 * TBD
@@ -199,13 +211,6 @@ Circuit Diagram - mains provides power, USB tty to UART 3V + mains power 5V
 ### Prerequisites
 Requirement for a serial communication program on Dell Ubuntu laptop to communicate via RPi Debug Probe, USB to UART connection, with RPi Zero 2 W . 
 
-Software - Serial communication tool, candidates
-* GNU Screen, [WP](https://en.wikipedia.org/wiki/GNU_Screen), org [WS](https://www.gnu.org/software/screen/), GNU
-* GNU Screen, User Manual, org [WS](https://www.gnu.org/software/screen/manual/screen.html), GNU
-* GNU Screen, Quick Reference, net [WS](https://aperiodic.net/screen/quick_reference), Aperiodic, like from WP page
-* Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
-* Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
-
 Hardware - USB to UART connection, one of the items below
 * USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
 * A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
@@ -274,13 +279,6 @@ Circuit Diagram
 
 ### Prerequisites
 Requirement for a serial communication program on Dell Ubuntu laptop to communicate via RPi Debug Probe, USB to UART connection, with RPi Zero 2 W . 
-
-Software - Serial communication tool, candidates
-* GNU Screen, [WP](https://en.wikipedia.org/wiki/GNU_Screen), org [WS](https://www.gnu.org/software/screen/), GNU
-* GNU Screen, User Manual, org [WS](https://www.gnu.org/software/screen/manual/screen.html), GNU
-* GNU Screen, Quick Reference, net [WS](https://aperiodic.net/screen/quick_reference), Aperiodic, like from WP page
-* Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
-* Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
 
 Hardware - 
 * Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for 3V to RPi Zero 2 W GPIO pin UART connection 
