@@ -8,7 +8,7 @@ Please see
 * For directions on headless connection to RPi Zero 2 W with 1) standard USB A to Micro USB B cable or 2) Raspberry Pi Debug Probe or 3) USB tty to UART cable. Work in progress.
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 * The official Getting Started Raspberry Pi Documentation does not cover the use case described in the forum post.
-* For attempts at process see inline below heading; Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
+* For attempts at process see inline below headings; Output - ...
 
 This should not be difficult; to communicate with RPi Zero headless. But it is in different use cases. This is a barrier to entry for use of the Raspberry Pi product range particularly its SBC's . Headless via standard USB A to Micro USB B cable must be the minimum use case in the Raspberry Pi Documentation. To date none of the three use cases above are officially documented.
 
