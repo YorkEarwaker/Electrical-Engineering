@@ -115,7 +115,7 @@ Context Diagram - USB provides power, USB tty to UART 3V + USB power 5V
             |       o o |                  Sink < Power < Source                |           |
              -----------                        < Data  >                        -----------
 ```
-USB provides power, USB tty to UART 3V + USB power 5V
+Circuit Diagram - USB provides power, USB tty to UART 3V + USB power 5V
 * Sub process one
 * Work in progress to finish
 ```     
