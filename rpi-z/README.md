@@ -5,10 +5,12 @@ Single board computer SBC.
 ## Notes
 
 Please see
-* For directions on headless connection to RPi Zero 2 W with Raspberry Pi Debug Probe. Work in progress.
+* For directions on headless connection to RPi Zero 2 W with Raspberry Pi Debug Probe or USB tty to UART cable. Work in progress.
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 * The official Getting Started Raspberry Pi Documentation does not cover the use case described in the forum post.
 * For attempts at process see inline below heading; Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
+
+This should not be difficult; to communicate with RPi Zero headless. But it is in different use cases. This is a barrier to entry for use of the Raspberry Pi product range particularly its SBC's .
 
 ## Status
 
@@ -51,8 +53,9 @@ Bill of materials, BoM, original
 * Micro SD to SD Extension Cable, acquired
 * USB cable, acquired
 
-Bill of material, BoM +
-* USB to UART device, RPi Debug Probe, Raspberry Pi, acquired
+Bill of material, BoM +, USB to UART device, 
+* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
+* USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, pending tbd
 
 BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
@@ -85,6 +88,129 @@ Warning! Will require to shift voltage down to 3V with 'bridge' device if
 * Voltage shift device takes 5V power from power rail 1 charge passes through shift device down shifted to 3V to power rail 2. Use resistors to RYO down shift power instead of COTS device?
 * RPi Pico MCU and other 3V devices take power for breadboard power rail 2.
 
+## Output - headless to RPi Zero 2 W with USB tty to UART 
+Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB tty to UART 
+* TBD
+* Two sub processes; firstly USB provides power, secondly mains provides power
+
+Context Diagram - USB provides power, USB tty to UART 3V + USB power 5V
+* Sub process one
+```
+             RPi Zero 2 W                                                        Dell Ubuntu
+             -----------                         Serial                          -----------
+            |       o o |                      Connection                       |___        |
+            |       o o | GPIO ---------------------------------- standard USB A ___|       |
+            |       o o |                  Sink < Power < Source                |           |
+             -----------                        < Data  >                        -----------
+```
+USB provides power, USB tty to UART 3V + USB power 5V
+* Sub process one
+* Work in progress to finish
+```     
+            _________
+           -\       /-        ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
+          | | USB A | |                           | Pin Number | UART Signal | Colour  | Description                    |
+          | |_______| |                           | ---------- | ----------- | ---------------------------------------- |
+          |           |       <  The USB          | 1          | TX          | Orange? | TX/SC (Output from Probe)?
+          |           |          Plub             | 2          | GND         | Black?  | GND   (Ground)?
+          |           |                           | 3          | RX          | Yellow? | RX/SD (Input to Probe or I/O)?
+          |           |       v To Target         | 4          | PWR         | Red     | 5V
+          |           |          UART             | ---------- | ----------- | --------|------------------------------- |
+          |           |          
+           --|     |--  
+             |     |           <  The USB cable
+              |||||            <  The USB wires
+             1 2 3 4            
+             | | | | 
+        
+        S
+                      |  |  |
+                      |  X  X
+                      |  T  R
+                      |      
+                      |  T  T
+                      |  R  R         
+                      |  A  A
+                      |  U  U
+                      |   
+                R  R    14 15
+                W  W     O  O
+                P  P  D  I  I
+                V  V  N  P  P
+                5  5  G  G  G
+        ---------------------------------------------------------------------------
+                2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
+                1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
+```
+Context Diagram - mains provides power, USB tty to UART 3V + mains power 5V
+* Sub process two
+```
+             RPi Zero 2 W                                                        Dell Ubuntu
+             -----------                         Serial                          -----------
+   PWR IN   |___    o o |                      Connection                       |___        |
+Micro USB B  ___|   o o | GPIO ---------------------------------- standard USB A ___|       |
+ Src > Snk  |       o o |                                                       |           |
+             -----------                        < Data  >                        -----------
+```
+Circuit Diagram - mains provides power, USB tty to UART 3V + mains power 5V
+* Sub process two
+* Work in progress to finish
+```     
+            _________
+           -\       /-        ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
+          | | USB A | |                           | Pin Number | UART Signal | Colour  | Description                    |
+          | |_______| |                           | ---------- | ----------- | ---------------------------------------- |
+          |           |       <  The USB          | 1          | TX          | Orange? | TX/SC (Output from Probe)?
+          |           |          Plug             | 2          | GND         | Black?  | GND   (Ground)?
+          |           |                           | 3          | RX          | Yellow? | RX/SD (Input to Probe or I/O)?
+          |           |       v To Target         | 4          | PWR         | Red     | 5V
+          |           |          UART             | ---------- | ----------- | --------|------------------------------- |
+          |           |          
+           --|     |--  
+             |     |           <  The USB cable
+              |||||            <  The USB wires
+             1 2 3 4            
+             | | | | 
+        
+        
+                      |  |  |
+                      |  X  X
+                      |  T  R
+                      |      
+                      |  T  T
+                      |  R  R         
+                      |  A  A
+                      |  U  U
+                      |   
+                R  R    14 15
+                W  W     O  O
+                P  P  D  I  I
+                V  V  N  P  P
+                5  5  G  G  G
+        ---------------------------------------------------------------------------
+                2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
+      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
+                1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
+```
+
+### Prerequisites
+Requirement for a serial communication program on Dell Ubuntu laptop to communicate via RPi Debug Probe, USB to UART connection, with RPi Zero 2 W . 
+
+Software - Serial communication tool, candidates
+* GNU Screen, [WP](https://en.wikipedia.org/wiki/GNU_Screen), org [WS](https://www.gnu.org/software/screen/), GNU
+* GNU Screen, User Manual, org [WS](https://www.gnu.org/software/screen/manual/screen.html), GNU
+* GNU Screen, Quick Reference, net [WS](https://aperiodic.net/screen/quick_reference), Aperiodic, like from WP page
+* Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
+* Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
+
+Hardware - USB to UART connection, one of the items below
+* USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
+* A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
+
+
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe.
 * TBD
@@ -95,7 +221,6 @@ Primary Sources
 * Raspberry Pi Debug Probe, User Guide, [WS](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html), Raspberry Pi Documentation
 * Raspberry Pi Debug Probe, Firmware, [GH](https://github.com/raspberrypi/debugprobe), GitHub, Raspberry Pi, 
 * USB org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
-
 
 Secondary Sources
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
@@ -151,14 +276,15 @@ Circuit Diagram
 Requirement for a serial communication program on Dell Ubuntu laptop to communicate via RPi Debug Probe, USB to UART connection, with RPi Zero 2 W . 
 
 Software - Serial communication tool, candidates
-* GNU Screen, org [WS](https://www.gnu.org/software/screen/), GNU
+* GNU Screen, [WP](https://en.wikipedia.org/wiki/GNU_Screen), org [WS](https://www.gnu.org/software/screen/), GNU
 * GNU Screen, User Manual, org [WS](https://www.gnu.org/software/screen/manual/screen.html), GNU
+* GNU Screen, Quick Reference, net [WS](https://aperiodic.net/screen/quick_reference), Aperiodic, like from WP page
 * Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
 * Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
 
-Hardware - USB to UART cable connection
-* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for 3V to RPi Zero 2 W GPIO pin UART connection
-* A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
+Hardware - 
+* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for 3V to RPi Zero 2 W GPIO pin UART connection 
+* A N Other debug probe of a similar nature, intermediary between host and RPi Zero
 
 ### Clean up, RPi OS on RPi MiroSD Card
 Removing things done to RPi OS from the first process. 
@@ -308,7 +434,7 @@ Secondary Sources
 * Many online information, inclusive; tutorials, Raspberry Pi Forum, etc...
 * See References heading section below, many
 
-Context Diagram
+Context Diagram - serial communication over Universal Serial Bus USB
 ```
      RPi Zero 2 W                                                          Dell Ubuntu
      -----------                         USB x.xx                          -----------
@@ -767,6 +893,9 @@ SD Card, MicroSD card removal
 
 WiFi - Debian, RPi OS, Ubuntu
 * WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
+
+UART
+* Attaching to a Raspberry Pi's Serial Console (UART) for debugging, [WS](https://www.jeffgeerling.com/blog/2021/attaching-raspberry-pis-serial-console-uart-debugging), 1 October 2021
 
 USB Ethernet - Ubuntu, RPi OS, debian, linux, 
 * How to set up an usb/ethernet interface in Linux? [WS](https://unix.stackexchange.com/questions/386162/how-to-set-up-an-usb-ethernet-interface-in-linux), StackExchange, Unix Linux

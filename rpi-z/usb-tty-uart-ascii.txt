@@ -1,0 +1,17 @@
+* Work in progress to finish
+```     
+            _________
+           -\       /-        ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
+          | | USB A | |                           | Pin Number | UART Signal | Colour  | Description                    |
+          | |_______| |                           | ---------- | ----------- | ---------------------------------------- |
+          |           |       <  The USB          | 1          | TX          | Orange? | TX/SC (Output from Probe)?
+          |           |          Plug             | 2          | GND         | Black?  | GND   (Ground)?
+          |           |                           | 3          | RX          | Yellow? | RX/SD (Input to Probe or I/O)?
+          |           |       v To Target         | 4          | PWR         | Red     | 5V
+          |           |          UART             | ---------- | ----------- | --------|------------------------------- |
+          |           |          
+           --|     |--  
+             |     |           <  The USB cable
+              |||||            <  The USB wires
+             1 2 3 4            
+             | | | |            
