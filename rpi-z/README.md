@@ -215,6 +215,9 @@ Hardware - USB to UART connection, one of the items below
 * USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
 * A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
 
+### Connect RPi Zero 2 W to USB tty serial cable
+* Scenario one/Scenario twoS
+TBD
 
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe.
@@ -283,10 +286,6 @@ Requirement for a serial communication program on Dell Ubuntu laptop to communic
 Hardware - 
 * Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for 3V to RPi Zero 2 W GPIO pin UART connection 
 * A N Other debug probe of a similar nature, intermediary between host and RPi Zero
-
-### Connect RPi Zero 2 W to USB tty serial cable
-* Scenario one/Scenario twoS
-TBD
 
 ### Clean up, RPi OS on RPi MiroSD Card
 Removing things done to RPi OS from the first process. 
