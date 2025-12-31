@@ -476,7 +476,7 @@ Raspbian GNU/Linux 12 raspberrypi ttyS0
 raspberrypi login: 
 
 ```
-
+* Pressed x on terminal window to kill process. Which also terminate /dev/ttyACM0 serial port. Have to unplug and plug back in RPi Debug Probe to get new serial port /dev/ttyACM0 .
 
 
 ## Output - headless to RPi Zero 2 W with USB cable
