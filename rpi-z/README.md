@@ -37,12 +37,6 @@ DONE
 * <done: consider, for future use, first pass at wpa_supplicat.conf file, a Debian configuration file for WiFi, see referrences below,  >
 * <done: consider, does the Micro USB B - OTG? - on the RPi Debug Probe device exhibit disconnection issue with the Linux Ubuntu LTS 24.04.3, Yes! likely same kernel issue, >
 
-## Libs
-
-Raspberry Pi
-* raspberry-gcc10.2.1-r2, SYS GCC for Windows x32 bit Platforms,[WS](https://sysprogs.com/getfile/2076/raspberry-gcc10.2.1-r2.exe/)
-* raspberry64-gcc10.2.1, SYS GCC for Windows x64 bit Platforms, [WS](https://sysprogs.com/getfile/1804/raspberry64-gcc10.2.1.exe)
-
 ## Hardware
 
 Bill of materials, BoM, original
@@ -56,6 +50,7 @@ Bill of materials, BoM, original
 Bill of material, BoM +, USB to UART device, 
 * Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
 * USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, pending tbd
+* USB TTL, CP2102 UART INTERFACE BOARD, [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, treat as USB to TTL Serial Cable equivalent? 
 
 BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
@@ -99,6 +94,13 @@ Software - Serial communication tool, candidates
 * GNU Screen, Quick Reference, net [WS](https://aperiodic.net/screen/quick_reference), Aperiodic, like from WP page
 * Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
 * Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
+
+### Libs
+
+Raspberry Pi
+* raspberry-gcc10.2.1-r2, SYS GCC for Windows x32 bit Platforms,[WS](https://sysprogs.com/getfile/2076/raspberry-gcc10.2.1-r2.exe/)
+* raspberry64-gcc10.2.1, SYS GCC for Windows x64 bit Platforms, [WS](https://sysprogs.com/getfile/1804/raspberry64-gcc10.2.1.exe)
+
 
 ## Output - headless to RPi Zero 2 W with USB TTL to UART 
 Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART 
