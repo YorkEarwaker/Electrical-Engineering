@@ -4,15 +4,15 @@
             |       |         ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
             | USB A |                             | Pin Number | UART Signal | Colour  | Description                    |
            -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
-          |           |       <  The USB          | 1          | TX          | Green   | TX    (Output of USB port)     |
-          |           |          Plug             | 2          | GND         | Black   | GND   (Ground)                 |
-          |           |                           | 3          | RX          | White   | RX    (Input to USB port)      |
-          |           |       v To Target         | 4          | PWR         | Red     | PWR   (5V power)               |
-          |           |          UART             | ---------- | ----------- | --------|------------------------------- |
-          |           |          
-           --|     |--  
+           |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
+           |         |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
+           |         |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
+           |         |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
+           |         |           UART             | ---------- | ----------- | --------|------------------------------- |
+            ---------             
+             |     |   
              |     |           <  The USB cable
-              |||||            <  The USB wires
+              |||||            <  The USB jumper wires
              1 2 3 4            
              | | | |            
              
