@@ -119,14 +119,14 @@ Circuit Diagram - USB provides power, USB tty to UART 3V + USB power 5V
 * Sub process one
 * Work in progress to finish
 ```     
-            _________
-           -\       /-        ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
-          | | USB A | |                           | Pin Number | UART Signal | Colour  | Description                    |
-          | |_______| |                           | ---------- | ----------- | ---------------------------------------- |
-          |           |       <  The USB          | 1          | TX          | Orange? | TX/SC (Output from Probe)?
-          |           |          Plub             | 2          | GND         | Black?  | GND   (Ground)?
-          |           |                           | 3          | RX          | Yellow? | RX/SD (Input to Probe or I/O)?
-          |           |       v To Target         | 4          | PWR         | Red     | 5V
+             _______
+            |       |         ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
+            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    |
+           -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
+          |           |       <  The USB          | 1          | TX          | Green   | TX    (Output of USB port)     |
+          |           |          Plug             | 2          | GND         | Black   | GND   (Ground)                 |
+          |           |                           | 3          | RX          | White   | RX    (Input to USB port)      |
+          |           |       v To Target         | 4          | PWR         | Red     | PWR   (5V power)               |
           |           |          UART             | ---------- | ----------- | --------|------------------------------- |
           |           |          
            --|     |--  
@@ -170,14 +170,14 @@ Circuit Diagram - mains provides power, USB tty to UART 3V + mains power 5V
 * Sub process two
 * Work in progress to finish
 ```     
-            _________
-           -\       /-        ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
-          | | USB A | |                           | Pin Number | UART Signal | Colour  | Description                    |
-          | |_______| |                           | ---------- | ----------- | ---------------------------------------- |
-          |           |       <  The USB          | 1          | TX          | Orange? | TX/SC (Output from Probe)?
-          |           |          Plug             | 2          | GND         | Black?  | GND   (Ground)?
-          |           |                           | 3          | RX          | Yellow? | RX/SD (Input to Probe or I/O)?
-          |           |       v To Target         | 4          | PWR         | Red     | 5V
+             _______
+            |       |         ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
+            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    |
+           -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
+          |           |       <  The USB          | 1          | TX          | Green   | TX    (Output of USB port)     |
+          |           |          Plug             | 2          | GND         | Black   | GND   (Ground)                 |
+          |           |                           | 3          | RX          | White   | RX    (Input to USB port)      |
+          |           |       v To Target         | 4          | PWR         | Red     | PWR   (5V power)               |
           |           |          UART             | ---------- | ----------- | --------|------------------------------- |
           |           |          
            --|     |--  
