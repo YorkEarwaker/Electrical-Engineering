@@ -5,7 +5,7 @@ Single board computer SBC.
 ## Notes
 
 Please see
-* For directions on headless connection to RPi Zero 2 W with 1) standard USB A to Micro USB B cable or 2) Raspberry Pi Debug Probe or 3) USB tty to UART cable. Work in progress.
+* For directions on headless connection to RPi Zero 2 W with 1) standard USB A to Micro USB B cable or 2) Raspberry Pi Debug Probe or 3) USB TTL to UART cable. Work in progress.
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 * The official Getting Started Raspberry Pi Documentation does not cover the use case described in the forum post.
 * For attempts at process see inline below headings; Output - headless to RPi Zero 2 W with ...
@@ -51,7 +51,7 @@ Bill of materials, BoM, original
 * Micro SD Card, with RPi OS preinstalled, Raspberry Pi, acquired
 * Micro SD Card Adapter, Raspberry Pi, acquired
 * Micro SD to SD Extension Cable, acquired
-* USB cable, acquired
+* USB cable, standard USB A to Micro USB B, acquired
 
 Bill of material, BoM +, USB to UART device, 
 * Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
@@ -100,12 +100,12 @@ Software - Serial communication tool, candidates
 * Minicom, org [WS](https://salsa.debian.org/minicom-team/minicom), Salsa, Debian, 
 * Minicom, Ubuntu Introduction, com [WS](https://help.ubuntu.com/community/Minicom), Ubuntu
 
-## Output - headless to RPi Zero 2 W with USB tty to UART 
-Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB tty to UART 
+## Output - headless to RPi Zero 2 W with USB TTL to UART 
+Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART 
 * TBD
 * Two sub processes; firstly USB provides power, secondly mains provides power
 
-Context Diagram - USB provides power, USB tty to UART 3V + USB power 5V
+Context Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
 ```
              RPi Zero 2 W                                                        Dell Ubuntu
@@ -115,7 +115,7 @@ Context Diagram - USB provides power, USB tty to UART 3V + USB power 5V
             |       o o |                  Sink < Power < Source                |           |
              -----------                        < Data  >                        -----------
 ```
-Circuit Diagram - USB provides power, USB tty to UART 3V + USB power 5V
+Circuit Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
 * Work in progress to finish
 ```     
@@ -156,7 +156,7 @@ Circuit Diagram - USB provides power, USB tty to UART 3V + USB power 5V
       |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
                 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
 ```
-Context Diagram - mains provides power, USB tty to UART 3V + mains power 5V
+Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
 ```
              RPi Zero 2 W                                                        Dell Ubuntu
@@ -166,7 +166,7 @@ Micro USB B  ___|   o o | GPIO ---------------------------------- standard USB A
  Src > Snk  |       o o |                                                       |           |
              -----------                        < Data  >                        -----------
 ```
-Circuit Diagram - mains provides power, USB tty to UART 3V + mains power 5V
+Circuit Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
 * Work in progress to finish
 ```     
@@ -209,13 +209,13 @@ Circuit Diagram - mains provides power, USB tty to UART 3V + mains power 5V
 ```
 
 ### Prerequisites
-Requirement for a serial communication program on Dell Ubuntu laptop to communicate via USB tty serial cable, USB to UART connection, with RPi Zero 2 W . 
+Requirement for a serial communication program on Dell Ubuntu laptop to communicate via USB TTL serial cable, USB to UART connection, with RPi Zero 2 W . 
 
 Hardware - USB to UART connection, one of the items below
 * USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
 * A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
 
-### Connect RPi Zero 2 W to USB tty serial cable
+### Connect RPi Zero 2 W to USB TTL serial cable
 * Scenario one/Scenario twoS
 TBD
 
