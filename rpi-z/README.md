@@ -426,7 +426,7 @@ $ sudo screen /dev/ttyACM0 115200
 ```
 * Connected to empty screen shell
 * typed pi, then pressed return key
-* After which I has presented with some login prompts as below.
+* After which presented with some login prompts as below.
 * Can't seem to get login credentials correct. 
 ```
 Login timed
