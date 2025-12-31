@@ -389,37 +389,94 @@ $ usbip list -l
 * Unplug USB A from Dell Ubuntu, connection to RPi Debug Probe for a USB to UART connection to RPi Zero 2 W GPIO pins.
 * Unplug power supply unit PSU from mains socket with cable to Micro USB B PWR IN for RPi Zero 2 W 
 
+### Login from Dell Ubuntu host to RPi Zero 2 W via RPi Debug Probe with UART serial connection
 Attempt 2.
-* TBD
-* <todo: first read RPi Debug Probe documentation, >
+* Success! of sorts, but no cigar. RPi OS login credentials issues
+* <todo: first read RPi Debug Probe documentation, work in progress>
 * Added to /bootfs/config.txt
 ```
 [all]
 enable_uart=1
 ```
-* to add order of plugin and power up things done
 * Put MicroSD Card Adapter back into Extension cable in RPi Zero env
+* Plugin jumper wires to RPi Zero, see above circuit diagram
+* Plugin USB A, from RPi Debug Probe, to Dell Ubuntu, 
 * Plugin PSU to main socket, 
 * Wait a two or three minutes for ACT LED on RPi Zero go solid green
-* Plugin USB A, from RPi Debug Probe, to Dell Ubuntu, wait a bit so that things sync
-* 
-* ...
-* 
+* Open Terminal cli in Ubuntu Gnome
+* See if RPi Debug Probe is recognized as a device on the USB bus
 ```
 $ lsusb
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
-Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
 Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
 Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
-Bus 001 Device 011: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
+Bus 001 Device 006: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 008: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-
-$ sudo dmesg | grep tty
-[106228.649804] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
-[109166.299150] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
-[112794.236145] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
 ```
+* Find name of serial ports
+```
+$ sudo dmesg | grep -i tty
+[67346.152493] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+```
+* Make serial connection request with serial port and baud rate to GNU Screen
+```
+$ sudo screen /dev/ttyACM0 115200
+```
+* Connected to empty screen shell
+* typed pi, then pressed return key
+* After which I has presented with some login prompts as below.
+* Can't seem to get login credentials correct. 
+```
+Login timed
+Raspbian GNU/Linux 12 raspberrypi ttyS0
+
+raspberrypi login: pi
+Password:
+
+Login incorrect
+raspberrypi login: pi
+Password:
+
+Login incorrect
+raspberrypi login: pi
+Password:
+Login timed
+Raspbian GNU/Linux 12 raspberrypi ttyS0
+
+raspberrypi login: pi
+Password:
+
+Login incorrect
+raspberrypi login:
+Password:
+
+Login incorrect
+raspberrypi login: raspb
+Login timed
+Raspbian GNU/Linux 12 raspberrypi ttyS0
+
+raspberrypi login: raspberrypi
+Password:
+
+Login incorrect
+raspberrypi login: raspberrypi
+Password:
+
+Login incorrect
+raspberrypi login: pi
+Password:
+
+Login incorrect
+raspberrypi login:
+Login time
+Raspbian GNU/Linux 12 raspberrypi ttyS0
+
+raspberrypi login: 
+
+```
+
 
 
 ## Output - headless to RPi Zero 2 W with USB cable
