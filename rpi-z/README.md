@@ -399,12 +399,12 @@ Attempt 2.
 enable_uart=1
 ```
 * Put MicroSD Card Adapter back into Extension cable in RPi Zero env
-* Plugin jumper wires to RPi Zero, see above circuit diagram
+* Plugin jumper wires to RPi Zero GPIO, see above circuit diagram above.
 * Plugin USB A, from RPi Debug Probe, to Dell Ubuntu, 
 * Plugin PSU to main socket, 
 * Wait a two or three minutes for ACT LED on RPi Zero go solid green
 * Open Terminal cli in Ubuntu Gnome
-* See if RPi Debug Probe is recognized as a device on the USB bus
+* See if RPi Debug Probe is recognized as a device on the USB bus. It is.
 ```
 $ lsusb
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
@@ -415,7 +415,7 @@ Bus 001 Device 006: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprin
 Bus 001 Device 008: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
-* Find name of serial ports
+* Find name of serial ports. Its there.
 ```
 $ sudo dmesg | grep -i tty
 [67346.152493] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
