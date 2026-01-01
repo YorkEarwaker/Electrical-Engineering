@@ -226,7 +226,8 @@ TBD
 
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe.
-* TBD
+* Success! :)
+* Could not have been achieved without the help of the RPi Forum Team. [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836)
 
 Primary Sources
 * Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet, Error in pinout table
@@ -394,8 +395,7 @@ $ usbip list -l
 
 ### Login from Dell Ubuntu host to RPi Zero 2 W via RPi Debug Probe with UART serial connection
 Attempt 2.
-* Success! of sorts, but no cigar. RPi OS login credentials issues
-* <todo: first read RPi Debug Probe documentation, work in progress>
+* Success! :)
 * Added to /bootfs/config.txt
 ```
 [all]
@@ -416,13 +416,13 @@ Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetoo
 Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
 Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 001 Device 006: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
-Bus 001 Device 008: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
+Bus 001 Device 009: ID 2e8a:000c Raspberry Pi Debug Probe (CMSIS-DAP)
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 * Find name of serial ports. Its there.
 ```
 $ sudo dmesg | grep -i tty
-[67346.152493] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
+[132519.801811] cdc_acm 1-2:1.1: ttyACM0: USB ACM device
 ```
 * Make serial connection request with serial port and baud rate to GNU Screen
 ```
@@ -476,8 +476,29 @@ armhf
 zero-first-contact@raspberrypi:~$ getconf LONG_BIT
 32
 ```
-* Update the exit from GNU Screen gracefully not as below.
-* Pressed x on terminal window to kill process. Which also terminate /dev/ttyACM0 serial port. Have to unplug and plug back in RPi Debug Probe to get new serial port /dev/ttyACM0 .
+* In a separate terminal cli on Dell Ubunutu host find the session id, of GNU Screen
+```
+$ sudo screen -list
+There is a screen on:
+	34451.pts-2.york-earwaker-XPS-15-9560	(01/01/2026 12:30:10 PM)	(Attached)
+1 Socket in /run/screen/S-root.
+```
+* Shutting down RPi Zero gracefully, for the first time!
+```
+$ sudo shutdown -h now
+
+Broadcast message from root@raspberrypi on pts/0 (Sat 2024-07-06 02:48:57 BST):
+
+The system will power off now!
+
+zero-first-contact@raspberrypi:~$ [ 5362.946387] reboot: Power down
+
+```
+* Shutting down GNU Screen gracefully, using session id 
+```
+TBD
+```
+* Update the exit from GNU Screen gracefully WIP - pulled out USB A before completing this. Next time.
 
 
 ## Output - headless to RPi Zero 2 W with USB cable
