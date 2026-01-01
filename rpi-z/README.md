@@ -50,7 +50,7 @@ Bill of materials, BoM, original
 
 Bill of material, BoM +, USB to UART device, 
 * Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
-* USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, pending tbd
+* USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, or equivalent [WS](https://www.aliexpress.com/item/1005007103101747.html), pending tbd
 * USB TTL, CP2102 UART INTERFACE BOARD, [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, treat as USB to TTL Serial Cable equivalent? 
 
 BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
@@ -236,7 +236,7 @@ Primary Sources
 * Raspberry Pi Debug Probe, Firmware, [GH](https://github.com/raspberrypi/debugprobe), GitHub, Raspberry Pi, 
 * USB org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
 
-Secondary Sources
+Secondary Sources - troubleshooting help
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 
 Context Diagram
