@@ -36,13 +36,14 @@ DONE
 * <done: consider, purchase of RPi Zero 2 W, and other items, completed, >
 * <done: consider, for future use, first pass at wpa_supplicat.conf file, a Debian configuration file for WiFi, see referrences below,  >
 * <done: consider, does the Micro USB B - OTG? - on the RPi Debug Probe device exhibit disconnection issue with the Linux Ubuntu LTS 24.04.3, Yes! likely same kernel issue, >
+* <done: consider, request login credentials from The Pi Hut for the Micro SD Card with RPi OS pre installed, email sent 2026-01-01, >
 
 ## Hardware
 
 Bill of materials, BoM, original
 * Raspberry Pi Zero 2 W, [WS](https://www.raspberrypi.com/products/raspberry-pi-zero/), Raspberry Pi, acquired
 * Power Supply, 12.75 Raspberry Pi, acquired
-* Micro SD Card, with RPi OS preinstalled, Raspberry Pi, acquired
+* Micro SD Card, with RPi OS preinstalled, [WS](https://thepihut.com/products/noobs-preinstalled-sd-card?variant=20649315598398), Raspberry Pi, acquired
 * Micro SD Card Adapter, Raspberry Pi, acquired
 * Micro SD to SD Extension Cable, acquired
 * USB cable, standard USB A to Micro USB B, acquired
@@ -215,6 +216,8 @@ Requirement for a serial communication program on Dell Ubuntu laptop to communic
 
 Hardware - USB to UART connection, one of the items below
 * USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
+* PL2303 PL2303HX/PL2303TA USB To RS232 TTL Converter Adapter Module with Dust-proof Cover PL2303HX for arduino download cable, [WS](https://www.aliexpress.com/item/1005007103101747.html), Aliexpress, appears Raspberry Pi compatible, appears the same product as The Pi Hut but lower cost. 
+* The PL2303 PL2303HX/PL2303TA integration cards can be bought stand alone. datasheet [PDF](https://www.puntoflotante.net/PL2303.pdf)
 * A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
 
 ### Connect RPi Zero 2 W to USB TTL serial cable
@@ -910,13 +913,15 @@ Terms
 
 Raspberry Pi Zero - datasheets, user guides, documentation
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation
-* Raspberry Pi Zero 2 W Product Brief, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero 2 W Product Brief, [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-product-brief.pdf), Raspberry Pi Datasheet
 * Raspberry Pi Zero Pinout, [WS](https://forums.raspberrypi.com/viewtopic.php?t=378242), Raspberry Pi Forum
 * Raspberry Pi Zero Pinout, [WS](https://pinout.xyz/), xyz
-* Raspberry Pi Zero Schematic, [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-reduced-schematics.pdf), Raspberry Pi Datasheet
-* Raspberry Pi Zero Test Pads [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-test-pads.pdf), Raspberry Pi Datasheet
-* Raspberry Pi Zero Mechanical Drawing [WS](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi Datasheet
-* Raspberry Pi 3-pin Debug Connector Specification, [WS](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero Schematic, [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-reduced-schematics.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero Test Pads [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-test-pads.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Zero Mechanical Drawing [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi Datasheet
+* Raspberry Pi A2-Class Micro SD Card Product Brief [PDF](https://datasheets.raspberrypi.com/sd-card/sd-card-product-brief.pdf), Raspberry Pi Datasheet
+* Raspberry Pi SD Cards and the Raspberry Pi Bumper: your new favourite accessories [WS](https://www.raspberrypi.com/news/sd-cards-and-bumper/), News, Raspberry Pi
+* Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet
 * ...
 
 Headless - SSH, RPi Zero OTG USB Ethernet, 
