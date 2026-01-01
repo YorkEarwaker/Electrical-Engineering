@@ -401,6 +401,7 @@ Attempt 2.
 [all]
 enable_uart=1
 ```
+* Create /bootfs/userconf.txt file as per RPi docs headless instructions, configure user manually [WS](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-a-user)
 * Put MicroSD Card Adapter back into Extension cable in RPi Zero env
 * Plugin jumper wires to RPi Zero GPIO, see above circuit diagram above.
 * Plugin USB A, from RPi Debug Probe, to Dell Ubuntu, 
@@ -428,57 +429,54 @@ $ sudo dmesg | grep -i tty
 $ sudo screen /dev/ttyACM0 115200
 ```
 * Connected to empty screen shell
-* typed pi, then pressed return key
-* After which presented with some login prompts as below.
-* Can't seem to get login credentials correct. 
+* typed user-name into empty screen, then pressed return key
+* A password prompt appears, typed user-password, the pressed return key
+* Login Success!
 ```
-Login timed
-Raspbian GNU/Linux 12 raspberrypi ttyS0
+zero-first-contact
+Password: 
+Linux raspberrypi 6.6.31+rpt-rpi-v7 #1 SMP Raspbian 1:6.6.31-1+rpt1 (2024-05-29) armv7l
 
-raspberrypi login: pi
-Password:
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
 
-Login incorrect
-raspberrypi login: pi
-Password:
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Jul  6 01:20:08 BST 2024 on tty1
+zero-first-contact@raspberrypi:~$ 
 
-Login incorrect
-raspberrypi login: pi
-Password:
-Login timed
-Raspbian GNU/Linux 12 raspberrypi ttyS0
+zero-first-contact@raspberrypi:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Raspbian
+Description:    Raspbian GNU/Linux 12 (bookworm)
+Release:        12
+Codename:       bookworm
 
-raspberrypi login: pi
-Password:
-
-Login incorrect
-raspberrypi login:
-Password:
-
-Login incorrect
-raspberrypi login: raspb
-Login timed
-Raspbian GNU/Linux 12 raspberrypi ttyS0
-
-raspberrypi login: raspberrypi
-Password:
-
-Login incorrect
-raspberrypi login: raspberrypi
-Password:
-
-Login incorrect
-raspberrypi login: pi
-Password:
-
-Login incorrect
-raspberrypi login:
-Login time
-Raspbian GNU/Linux 12 raspberrypi ttyS0
-
-raspberrypi login: 
-
+zero-first-contact@raspberrypi:~$ cat /etc/os-release
+PRETTY_NAME="Raspbian GNU/Linux 12 (bookworm)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
 ```
++ MicroSD card with pre installed RPi OS, The RPi OS is 32-bit and not 64-bit as advertised.
+```
+zero-first-contact@raspberrypi:~$ uname -m
+armv7l
+
+zero-first-contact@raspberrypi:~$ dpkg-architecture --query DEB_HOST_ARCH
+armhf
+
+zero-first-contact@raspberrypi:~$ getconf LONG_BIT
+32
+```
+* Update the exit from GNU Screen gracefully not as below.
 * Pressed x on terminal window to kill process. Which also terminate /dev/ttyACM0 serial port. Have to unplug and plug back in RPi Debug Probe to get new serial port /dev/ttyACM0 .
 
 
