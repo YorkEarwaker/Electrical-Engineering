@@ -48,10 +48,10 @@ Bill of materials, BoM, original
 * Micro SD to SD Extension Cable, acquired
 * USB cable, standard USB A to Micro USB B, acquired
 
-Bill of material, BoM +, USB to UART device, 
-* Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
-* USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, or equivalent [WS](https://www.aliexpress.com/item/1005007103101747.html), pending tbd
-* USB TTL, CP2102 UART INTERFACE BOARD, [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, treat as USB to TTL Serial Cable equivalent? 
+Bill of material, BoM +, USB to UART device, interface boards
+* Raspberry Pi Debug Probe (RP2404), com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
+* USB to TTL Serial Cable for Raspberry Pi (PL2303TA) [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, or equivalent [WS](https://www.aliexpress.com/item/1005007103101747.html), pending tbd
+* USB TTL, CP2102 UART Interface Board, [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, treat as USB to TTL Serial Cable equivalent? 
 
 BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
 * HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
@@ -103,10 +103,23 @@ Raspberry Pi
 * raspberry64-gcc10.2.1, SYS GCC for Windows x64 bit Platforms, [WS](https://sysprogs.com/getfile/1804/raspberry64-gcc10.2.1.exe)
 
 
-## Output - headless to RPi Zero 2 W with USB TTL to UART 
-Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART 
+## Output - headless to RPi Zero 2 W with USB TTL to UART
+Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART interface board. USB to serial conversion may also support, RS232, ... 
 * TBD
 * Two sub processes; firstly USB provides power, secondly mains provides power
+
+Primary Sources - serial bridge chip, USB to serial conversion
+* PL2303 chip, [PDF](https://www.puntoflotante.net/PL2303.pdf), datasheet
+* PL2303GS, <todo: is this specifically Arduino compatible? >
+* PL2303HX, 
+* PL2303TA, <todo: is this specifically RPi compatible? >
+* CP2102, [PDF](https://www.farnell.com/datasheets/4020550.pdf), <todo: source datasheet from manufacturer>
+* CH340, 
+* CH340C, [PDF](https://www.farnell.com/cad/4020551.pdf), <todo: source datasheet from manufacturer>
+* <todo; other datasheets for other serial bridge chip sets to be sourced for other interface boards, ... >
+
+Secondary Sources
+* ...
 
 Context Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
@@ -122,9 +135,13 @@ Circuit Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
 * Work in progress to finish
 ```     
+Interface board with or without a cable or casing
+to one or more of; USB A, Micro USB B, USB C, ...
+                                                  Chip set. PL2303, CP2102, ... others
+                                                  Software. ?
              _______
             |       |         ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
-            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    |
+            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    | 
            -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
            |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
            |         |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
@@ -133,10 +150,10 @@ Circuit Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
            |         |           UART             | ---------- | ----------- | --------|------------------------------- |
             ---------             
              |     |   
-             |     |           <  The USB cable
-              |||||            <  The USB jumper wires
+             |     |           <  The device cable
+              |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
-             | | | |  
+             | | | |            
         
         
                       |  |  |
@@ -173,9 +190,13 @@ Circuit Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
 * Work in progress to finish
 ```     
+Interface board with or without a cable or casing
+to one or more of; USB A, Micro USB B, USB C, ...
+                                                  Chip set. PL2303, CP2102, ... others
+                                                  Software. ?
              _______
             |       |         ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
-            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    |
+            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    | 
            -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
            |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
            |         |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
@@ -184,10 +205,10 @@ Circuit Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
            |         |           UART             | ---------- | ----------- | --------|------------------------------- |
             ---------             
              |     |   
-             |     |           <  The USB cable
-              |||||            <  The USB jumper wires
+             |     |           <  The device cable
+              |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
-             | | | |   
+             | | | |            
         
         
                       |  |  |
@@ -217,7 +238,7 @@ Requirement for a serial communication program on Dell Ubuntu laptop to communic
 Hardware - USB to UART connection, one of the items below
 * USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
 * PL2303 PL2303HX/PL2303TA USB To RS232 TTL Converter Adapter Module with Dust-proof Cover PL2303HX for arduino download cable, [WS](https://www.aliexpress.com/item/1005007103101747.html), Aliexpress, appears Raspberry Pi compatible, appears the same product as The Pi Hut but lower cost. 
-* The PL2303 PL2303HX/PL2303TA integration cards can be bought stand alone. datasheet [PDF](https://www.puntoflotante.net/PL2303.pdf)
+* The PL2303 PL2303HX/PL2303TA integration cards can be bought stand alone.PL2303 USB UART Module (USB-A)
 * A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
 
 ### Connect RPi Zero 2 W to USB TTL serial cable
@@ -225,7 +246,7 @@ Hardware - USB to UART connection, one of the items below
 TBD
 
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
-Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe.
+Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe interface board.
 * Success! :)
 * Could not have been achieved without the help of the RPi Forum Team. [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836)
 
@@ -249,7 +270,11 @@ Micro USB B  ___|   o o | GPIO ------------ UART JST ___|   |___ Micro USB B ---
              -----------         < Data >            -----------               < Data  >                 -----------
 ```
 Circuit Diagram
-```     
+```
+Interface board in a casing to 
+Micro USB B
+                                                  Chip set. RP2040
+                                                  Software. Picoprobe
             _________
       ------\ Micro /------   ʌ  To Host          | ---------- | ----------- | ------------------------------ |
      |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            | Colour  | Description
@@ -258,10 +283,10 @@ Circuit Diagram
      |     Raspberry Pi    |     Host             | 2          | GND         | GND                            | Black   | GND   (Ground)
      |     Debug Probe     |                      | 3          | RX          | SD (bidirectional serial data) | Yellow  | RX/SD (Input to Probe or I/O)
      |                     |  v To Target         | ---------- | ----------- | ------------------------------ |
-     |    _____   _____    |     U = UART
-     |   |  U  | |  D  |   |     D = DEBUG
-      ---      ---       ---     1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry) 
-          | | |   | | |          or SM03B-SRSS-TB (side entry) types, or compatible alternatives .
+     |    _____   _____    |     U = UART, D = DEBUG SWD
+     |   |  U  | |  D  |   |  <  1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry)
+      ---      ---       ---     or SM03B-SRSS-TB (side entry) types, or compatible alternatives . 
+          | | |   | | |       <  The (serial UART/debug SWD) jumper wires, 
           1 2 3   1 2 3
           | | |----------|
           |-(------------(--|
@@ -957,7 +982,7 @@ Headless - SSH, RPi Zero OTG USB Ethernet,
 * How to connect to a Raspberry Pi Zero to an Ubuntu laptop by USB?, [WS](https://superuser.com/questions/1150562/how-to-connect-to-a-raspberry-pi-zero-to-an-ubuntu-laptop-by-usb), StackExchange, Superuser,
 * wpa_supplicant.conf not applied on first boot — ssh file removed but Wi-Fi not configured (Pi Zero W), [WS](https://forums.raspberrypi.com/viewtopic.php?t=391776), Forums, Raspberry Pi, 
 * Headless start not working for Raspberry Pi Zero W, [WS](https://forums.raspberrypi.com/viewtopic.php?t=389951), Forums, Raspberry Pi,
-* 
+* Setup a Raspberry Pi for headless use with USB serial console, [WS](https://www.tal.org/tutorials/setup-raspberry-pi-headless-use-usb-serial-console), TalOrg
 
 Headless - SSH file location
 * Placing SSH File on New SDCard, [WS](https://forums.raspberrypi.com/viewtopic.php?t=314900), Forums, Raspberry Pi, 
