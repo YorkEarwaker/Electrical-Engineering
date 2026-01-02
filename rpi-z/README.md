@@ -187,6 +187,23 @@ Circuit Diagram - Safety circuit,
 * Work in progress to finish
 ```
 TBD
+                
+                                                                 ʌ To the circuit board, the USB plug to host USB port
+                   |          < 5V, the circuit board PWR jumper wire, 5V from host
+             . . . 4            
+                   | PWR in this scenario            
+                   |  
+   Safety circuit--|  
+   here to stop             
+   reverse polirity   
+   & over voltage              
+   TBD-------------|   
+                   |   
+                   |   
+                 . 4    
+                   |          < 5V, the safety circuit PWR jumper wire, 5V to target 
+                              v To the Raspberry Pi Zero GPIO, the target
+                              
 ```
 Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
