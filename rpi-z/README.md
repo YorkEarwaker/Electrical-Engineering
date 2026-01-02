@@ -188,7 +188,7 @@ Circuit Diagram - Safety circuit,
 ```
 TBD
                 
-                                                                 ʌ To the circuit board, the USB plug to host USB port
+                                                                ʌ To the circuit board, the USB plug to host USB port
                    |          < 5V, the circuit board PWR jumper wire, 5V from host
              . . . 4            
                    | PWR in this scenario            
