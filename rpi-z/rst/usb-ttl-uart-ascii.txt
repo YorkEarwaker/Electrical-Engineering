@@ -1,0 +1,23 @@
+
+```     
+Interface board with or without a cable or casing
+to one or more of; USB A, Micro USB B, USB C, ...
+                                                  Chip set. PL2303, CP2102, ... others
+                                                  Software. ?
+             _______
+            |       |         ʌ  To Host          | ---------- | ----------- | --------|------------------------------- |
+            | USB A |                             | Pin Number | UART Signal | Colour  | Description                    | 
+           -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
+           |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
+           |         |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
+           |         |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
+           |         |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
+           |         |           UART             | ---------- | ----------- | --------|------------------------------- |
+            ---------             
+             |     |   
+             |     |           <  The device cable
+              |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
+             1 2 3 4            
+             | | | |            
+             
+``` 
