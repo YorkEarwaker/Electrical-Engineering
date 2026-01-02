@@ -32,6 +32,7 @@ ARM IDE's - move to embedded?
 
 Terms
 * Serial Communication, 
+* Ethernet over USB, [WP](https://en.wikipedia.org/wiki/Ethernet_over_USB)
 
 Hardware - plug and cable standards
 * Universal Serial Bus USB, org, [WS](https://www.usb.org/), USB Implementers Forum, Inc., USB specifications, 
