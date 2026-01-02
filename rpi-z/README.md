@@ -107,6 +107,8 @@ Raspberry Pi
 Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART interface board. USB to serial conversion may also support, RS232, ... 
 * TBD
 * Two sub processes; firstly USB provides power, secondly mains provides power
+* Some interface boards will have six (6) or more pins
+* The example circuit diagram shows an interface board with four (4) pins
 
 Primary Sources - serial bridge chip, USB to serial conversion
 * PL2303 chip, [PDF](https://www.puntoflotante.net/PL2303.pdf), datasheet
@@ -153,18 +155,18 @@ to one or more of; USB A, Micro USB B, USB C, ...
              |     |           <  The device cable
               |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
-             | | | |            
-        
-        
-                      |  |  |
-                      |  X  X
-                      |  T  R
-                      |      
-                      |  T  T
-                      |  R  R         
-                      |  A  A
-                      |  U  U
-                      |   
+             | | | | PWR in this scenario            
+             |-(-(-(--------|
+               | |-(-----|  |       
+               |---(--|  |  |
+                   |  |  X  X
+   Safety circuit--|  |  T  R
+   here to stop       |      
+   reverse polirity   |  T  T
+   & over voltage     |  R  R         
+   TBD-------------|  |  A  A
+                   |  |  U  U
+                   |  |   
                 R  R    14 15
                 W  W     O  O
                 P  P  D  I  I
@@ -175,6 +177,16 @@ to one or more of; USB A, Micro USB B, USB C, ...
       |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
       |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
                 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
+```
+Circuit Diagram - Safety circuit, 
+* <todo; consider, reverse polarity protection, Schottky diod rated 2A, or MOFSET based protection circuit, >
+* <todo; consider, voltage ragulator and over voltage, low drop out (LDO) regulator, or buckly regulator, transient voltage surpressor TVS diode, >
+* <todo; consider, prevent overcurrent damage, 2.5A to 3A amp fuse, smothing capacitors 100μF 10μF, crowbar circuit, >
+* <todo: consider, other electical charge protection measures, tbd ... >
+* Sub process one
+* Work in progress to finish
+```
+TBD
 ```
 Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
@@ -188,7 +200,6 @@ Micro USB B  ___|   o o | GPIO ---------------------------------- standard USB A
 ```
 Circuit Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
-* Work in progress to finish
 ```     
 Interface board with or without a cable or casing
 to one or more of; USB A, Micro USB B, USB C, ...
@@ -208,10 +219,10 @@ to one or more of; USB A, Micro USB B, USB C, ...
              |     |           <  The device cable
               |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
-             | | | |            
-        
-        
-                      |  |  |
+             | | | | PWR N/A in this scenario            
+             |-(-(----------|
+               | |-------|  |       
+               |------|  |  |
                       |  X  X
                       |  T  R
                       |      
