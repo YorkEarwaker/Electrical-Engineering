@@ -271,8 +271,9 @@ Hardware - USB to UART connection, one of the items below
 * A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
 
 ### Connect RPi Zero 2 W to USB TTL serial cable
-* Scenario one/Scenario twoS
-TBD
+* Scenario one/Scenario two
+* Scenario two. Identical in concept and likely mostly similar in execution to RPi Debug Probe
+* TBD
 
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe interface board.
