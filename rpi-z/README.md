@@ -48,16 +48,18 @@ Bill of materials, BoM, original
 * Micro SD to SD Extension Cable, acquired
 * USB cable, standard USB A to Micro USB B, acquired
 
-Bill of material, BoM +, USB to UART device, interface boards
-* Raspberry Pi Debug Probe (RP2404), com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
-* USB to TTL Serial Cable for Raspberry Pi (PL2303TA) [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, or equivalent [WS](https://www.aliexpress.com/item/1005007103101747.html), pending tbd
-* USB TTL, CP2102 UART Interface Board, [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, treat as USB to TTL Serial Cable equivalent? 
+Bill of material, BoM +, USB to TTL serial communication device, UART, USB to TTL serial interface board, interface boards with serial bridge chip onboard
+* Raspberry Pi Debug Probe, (RP2404), com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
+* USB to TTL Serial Cable for Raspberry Pi, (PL2303TA), [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, or equivalent (PL2303TA/PL2303HX) [WS](https://www.aliexpress.com/item/1005007103101747.html), pending tbd
+* USB TTL, CP2102 UART Interface Board, (CP2102), [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, 
 
-BoM, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one
-* HDMI cable, with Mini HDMI plug to display (screen) socket plug, 
-* Display (screen), 
-* Keyboard, 
-* 40 Pin Raspberry Pi PCB GPIO Quick Connect Clip, [WS](https://www.kickstarter.com/projects/flatmax/pcb-quick-connect-clip-40-pin-raspberry-pi-compati), looks very interesting! no solder
+Bill of material, BoM +, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one for other purposes
+* HDMI cable, Mini HDMI plug to HDMI plug, connect RPi Zero Mini HDMI socket to display (screen) HDMI socket, acquired
+* Display (screen), pending tbd, will have to meet broader requirements than this project
+* Keyboard, pending tbd, will have to meet broader requirements than this project
+
+Bill of material, BoM +, To be considered --- helper tech
+* 40 Pin Raspberry Pi PCB GPIO Quick Connect Clip, [WS](https://www.kickstarter.com/projects/flatmax/pcb-quick-connect-clip-40-pin-raspberry-pi-compati), looks very interesting! no solder RPi SBC's prototyping, pending tbd,
 
 Diagram of the eight main components on board the RPi Zero single board computer SBC. Larger than actual physical form factor.
 ```
@@ -111,13 +113,13 @@ Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TT
 * The example circuit diagram shows an interface board with four (4) pins
 
 Primary Sources - serial bridge chip, USB to serial conversion
-* PL2303 chip, [PDF](https://www.puntoflotante.net/PL2303.pdf), datasheet
+* PL2303, [PDF](https://www.puntoflotante.net/PL2303.pdf), datasheet, <todo: source datasheet from manufacturer>
 * PL2303GS, <todo: is this specifically Arduino compatible? >
 * PL2303HX, 
 * PL2303TA, <todo: is this specifically RPi compatible? >
-* CP2102, [PDF](https://www.farnell.com/datasheets/4020550.pdf), <todo: source datasheet from manufacturer>
+* CP2102, [PDF](https://www.farnell.com/datasheets/4020550.pdf), datasheet, <todo: source datasheet from manufacturer>
 * CH340, 
-* CH340C, [PDF](https://www.farnell.com/cad/4020551.pdf), <todo: source datasheet from manufacturer>
+* CH340C, [PDF](https://www.farnell.com/cad/4020551.pdf), datasheet, <todo: source datasheet from manufacturer>
 * <todo; other datasheets for other serial bridge chip sets to be sourced for other interface boards, ... >
 
 Secondary Sources
@@ -135,7 +137,7 @@ Context Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 ```
 Circuit Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
-* Work in progress to finish
+* Work in progress to finish, safety circuit dependency
 ```     
 Interface board with or without a cable or casing
 to one or more of; USB A, Micro USB B, USB C, ...
@@ -194,7 +196,7 @@ TBD
                    |  
    Safety circuit--|  
    here to stop             
-   reverse polirity   
+   reverse polirity    <todo: safety circuit diagram here, see candidate componenets above, wip >
    & over voltage              
    TBD-------------|   
                    |   
