@@ -109,17 +109,20 @@ Raspberry Pi
 Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART interface board. USB to serial conversion may also support, RS232, ... 
 * TBD
 * Two sub processes; firstly USB provides power, secondly mains provides power
+* Interface boards have serial bridge chip onboard
+* Chips listed may have greater capability in addition to capability as Serial bridge chips 
 * Some interface boards will have six (6) or more pins
 * The example circuit diagram shows an interface board with four (4) pins
 
 Primary Sources - serial bridge chip, USB to serial conversion
-* PL2303, [PDF](https://www.puntoflotante.net/PL2303.pdf), datasheet, <todo: source datasheet from manufacturer>
+* RP2404, PDF, Raspberry Pi, datasheet, <todo: source datasheet from manufacturer>
+* PL2303, [PDF](https://www.puntoflotante.net/PL2303.pdf), , datasheet, <todo: source datasheet from manufacturer>
 * PL2303GS, <todo: is this specifically Arduino compatible? >
 * PL2303HX, 
 * PL2303TA, <todo: is this specifically RPi compatible? >
-* CP2102, [PDF](https://www.farnell.com/datasheets/4020550.pdf), datasheet, <todo: source datasheet from manufacturer>
+* CP2102, [PDF](https://www.farnell.com/datasheets/4020550.pdf), , datasheet, <todo: source datasheet from manufacturer>
 * CH340, 
-* CH340C, [PDF](https://www.farnell.com/cad/4020551.pdf), datasheet, <todo: source datasheet from manufacturer>
+* CH340C, [PDF](https://www.farnell.com/cad/4020551.pdf), , datasheet, <todo: source datasheet from manufacturer>
 * <todo; other datasheets for other serial bridge chip sets to be sourced for other interface boards, ... >
 
 Secondary Sources
