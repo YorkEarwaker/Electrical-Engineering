@@ -50,7 +50,6 @@ Bill of materials, BoM, original
 
 Bill of material, BoM +, USB to TTL serial communication device, UART, USB to TTL serial interface board, interface boards with serial bridge chip onboard
 * Raspberry Pi Debug Probe, (RP2404), com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
-* USB to TTL Serial Cable for Raspberry Pi, (PL2303TA), [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, or equivalent (PL2303TA/PL2303HX) [WS](https://www.aliexpress.com/item/1005007103101747.html), pending tbd
 * USB TTL, CP2102 UART Interface Board, (CP2102), [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, 
 
 Bill of material, BoM +, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one for other purposes
@@ -113,6 +112,7 @@ Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TT
 * Chips listed may have greater capability in addition to capability as Serial bridge chips 
 * Some interface boards will have six (6) or more pins
 * The example circuit diagram shows an interface board with four (4) pins
+* Integration (interface) boards can be bought as stand alone units. That is without cable and jumper wires and casing, which have to be purchased separately. But offer greater component reuse if used for no solder prototyping.
 
 Primary Sources - serial bridge chip, USB to serial conversion
 * RP2404, PDF, Raspberry Pi, datasheet, <todo: source datasheet from manufacturer>
@@ -267,11 +267,12 @@ to one or more of; USB A, Micro USB B, USB C, ...
 ### Prerequisites
 Requirement for a serial communication program on Dell Ubuntu laptop to communicate via USB TTL serial cable, USB to UART connection, with RPi Zero 2 W . 
 
-Hardware - USB to UART connection, one of the items below
-* USB to TTL Serial Cable for Raspberry Pi [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
+Hardware - USB to UART serial communication device, examples one of the items below
+* USB to TTL Serial Cable for Raspberry Pi (PL2303TA) [WS](https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi), The Pi Hut, 
 * PL2303 PL2303HX/PL2303TA USB To RS232 TTL Converter Adapter Module with Dust-proof Cover PL2303HX for arduino download cable, [WS](https://www.aliexpress.com/item/1005007103101747.html), Aliexpress, appears Raspberry Pi compatible, appears the same product as The Pi Hut but lower cost. 
-* The PL2303 PL2303HX/PL2303TA integration cards can be bought stand alone.PL2303 USB UART Module (USB-A)
-* A N Other cable or device for USB to UART connectivity, Caution! requires 3V to RPi Zero 2 W via GPIO pin UART connection, so likely have to use resistors and a bread board to pull down to 3V .
+* The PL2303 PL2303HX/PL2303TA integration (interface) boards, stand alone. PL2303 USB UART Module (USB-A)
+* USB TTL, CP2102 UART Interface Board, (CP2102), [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, 
+* A N Other cable or device for USB to UART connectivity, Caution! requires TX/RX 3V3 to RPi Zero 2 W via GPIO pin UART connection, otherwise likely have to use resistors and a bread board to pull down to 3V3, many serial communication integration boards are TX/RX 3V3 .
 
 ### Connect RPi Zero 2 W to USB TTL serial cable
 * Scenario one/Scenario two
