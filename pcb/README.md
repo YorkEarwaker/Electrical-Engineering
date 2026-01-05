@@ -98,13 +98,18 @@ PCB - component kinds, materials
 * ...
 
 Kind - electrical connector
-* JST connector, [WP](https://en.wikipedia.org/wiki/JST_connector), com [WS](https://www.jst-mfg.com/product/)
-* ...
+* JST connector, [WP](https://en.wikipedia.org/wiki/JST_connector), com [WS](https://www.jst-mfg.com/product/) 
+* Jumper, [WP](https://en.wikipedia.org/wiki/Jumper_(computing)), 
+* Jumper block , 
+* Jumper shunt, 
 
 Kind - of what? semiconductor, superconductor
 * Field effect transistors FETs
 * Metal oxide semiconductor field effect transistor MOSFETs, 
 * Tunnel field effect transistors TFETs, see Silicene, 
+
+Kind - of chip, integrated circuit in silicon
+* Bridge chip, e.g. USB to UART, ...
 
 Kind? - semiconductor device - diode, transistor, ...
 * kind, diode
@@ -118,6 +123,9 @@ Periodic table
 * silicon, semiconductor, integrated circuits, solar cells, 
 * lead, soldering
 * ...
+
+News Papers - components
+* How To Identify Components on Printed Circuit Boards, [WS](https://www.axcontrol.com/blog/2021/how-to-identify-components-on-printed-circuit-boards/06/07/), 2021 July 06, AX Control, Inc.
 
 News Papers - soldering
 * Introduction to Soldering Wires on Circuit Boards, [WS](https://morepcb.com/how-to-solder-wire-on-circuit-board/), MorePCB, 
