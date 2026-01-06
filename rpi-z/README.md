@@ -50,7 +50,7 @@ Bill of materials, BoM, original
 
 Bill of material, BoM +, USB to TTL serial communication device, UART, USB to TTL serial interface board, interface boards with serial bridge chip onboard
 * Raspberry Pi Debug Probe, (RP2404), com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, acquired
-* USB TTL, CP2102 UART Interface Board, (CP2102), [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, acquired, 
+* USB TTL, CP2102 UART Interface Board, (CP2102), [WS](https://cpc.farnell.com/sb-components/sku24797/usb-ttl-cp2102-uart-interface/dp/SC20242), CPC Farnell, SD Components [WS](https://shop.sb-components.co.uk/products/usb-ttl), acquired, 
 
 Bill of material, BoM +, To be considered --- to be purchased only if necessary, don't have one as intent was use headless from start, but may have to buy one for other purposes
 * HDMI cable, Mini HDMI plug to HDMI plug, connect RPi Zero Mini HDMI socket to display (screen) HDMI socket, acquired
@@ -120,7 +120,7 @@ Primary Sources - serial bridge chip, USB to serial conversion
 * PL2303GS, <todo: is this specifically Arduino compatible? >
 * PL2303HX, 
 * PL2303TA, <todo: is this specifically RPi compatible? >
-* CP2102, [PDF](https://www.farnell.com/datasheets/4020550.pdf), , datasheet, <todo: source datasheet from manufacturer>
+* CP2102, board [PDF](https://www.farnell.com/datasheets/4020550.pdf), bridge chip Silicon Laboratories [PDF](https://cdn.sparkfun.com/assets/c/7/7/b/f/cp2102.pdf), Silicon Laboratories CP2102/9 [PDF](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf), datasheet, 
 * CH340, 
 * CH340C, [PDF](https://www.farnell.com/cad/4020551.pdf), , datasheet, <todo: source datasheet from manufacturer>
 * <todo; other datasheets for other serial bridge chip sets to be sourced for other interface boards, ... >
@@ -988,6 +988,12 @@ AttributeError: type object 'Pin' has no attribute 'Out'
 Terms
 * USB On-The-Go, [WP](https://en.wikipedia.org/wiki/USB_On-The-Go), 
 * UART, 
+
+Circuit boards
+* Bridge chip, 
+* Jumper, [WP](https://en.wikipedia.org/wiki/Jumper_(computing)), 
+* Jumper block , 
+* Jumper shunt, 
 
 Raspberry Pi Zero - datasheets, user guides, documentation
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation
