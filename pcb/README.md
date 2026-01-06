@@ -102,6 +102,7 @@ Kind - electrical connector
 * Jumper, [WP](https://en.wikipedia.org/wiki/Jumper_(computing)), 
 * Jumper block , 
 * Jumper shunt, 
+* SPDT (Single Pole Double Throw) switch, jumper
 
 Kind - of what? semiconductor, superconductor
 * Field effect transistors FETs
@@ -126,6 +127,12 @@ Periodic table
 
 News Papers - components
 * How To Identify Components on Printed Circuit Boards, [WS](https://www.axcontrol.com/blog/2021/how-to-identify-components-on-printed-circuit-boards/06/07/), 2021 July 06, AX Control, Inc.
+
+News Papers - jumpers
+* FAQ: What can Printed Circuit Board (PCB) jumpers do?, [WS](https://www.componentscorp.com/pcb-jumpers-faq.html), 2016 February 29, 
+* Navigating the Challenges of Jumper Wire Work, [WS](https://www.circuitrework.com/blogs/165.html), Circuit Technology Centre, 
+* What is a PCB Jumper in a Circuit Board?, [WS](https://www.fscircuits.com/pcb-jumper/), FS Circuits, 
+* ...
 
 News Papers - soldering
 * Introduction to Soldering Wires on Circuit Boards, [WS](https://morepcb.com/how-to-solder-wire-on-circuit-board/), MorePCB, 
