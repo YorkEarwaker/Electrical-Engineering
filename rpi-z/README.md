@@ -279,6 +279,71 @@ Hardware - USB to UART serial communication device, examples one of the items be
 * Scenario two. Identical in concept and likely mostly similar in execution to RPi Debug Probe
 * TBD
 
+
+Scenario One (1) 
+* TBD
+
+Scenario Two (2)
+* Success! :)
+
+``` 
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 008: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+
+``` 
+$ sudo dmesg | grep -i tty
+[sudo] password for york-earwaker: 
+[29139.966128] usb 1-2: cp210x converter now attached to ttyUSB0
+[29163.876803] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
+[29181.313053] usb 1-2: cp210x converter now attached to ttyUSB0
+[29306.171881] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
+[29328.868968] usb 1-2: cp210x converter now attached to ttyUSB0
+```
+
+``` 
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 002: Dev 008, If 0, Class=Vendor Specific Class, Driver=cp210x, 12M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+```
+
+``` 
+$ usbip list -l
+ - busid 1-12 (0c45:6713)
+   Microdia : unknown product (0c45:6713)
+
+ - busid 1-2 (10c4:ea60)
+   Silicon Labs : CP210x UART Bridge (10c4:ea60)
+
+ - busid 1-4 (0cf3:e300)
+   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
+
+ - busid 1-7 (138a:0091)
+   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
+
+ - busid 1-9 (04f3:24a1)
+   Elan Microelectronics Corp. : unknown product (04f3:24a1)
+```
+
+```
+$  sudo screen /dev/ttyUSB0 115200
+```
+
+
+
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe interface board.
 * Success! :)
