@@ -297,7 +297,8 @@ Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 001 Device 008: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
-
+* The USB cable USB A to host Dell Ubuntu had come lose twice and reinserted fully a couple of times. In other words the USB A to host was inserted three times.
+* The last listed was the serial connection used to contact the RPi Zero RPi OS.
 ``` 
 $ sudo dmesg | grep -i tty
 [sudo] password for york-earwaker: 
