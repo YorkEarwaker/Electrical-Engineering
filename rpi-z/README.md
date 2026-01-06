@@ -343,7 +343,26 @@ $ usbip list -l
 $  sudo screen /dev/ttyUSB0 115200
 ```
 
+``` 
+zero-first-contact
+Password: 
+Linux raspberrypi 6.6.31+rpt-rpi-v7 #1 SMP Raspbian 1:6.6.31-1+rpt1 (2024-05-29) armv7l
 
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Jul  6 02:49:12 BST 2024 on tty1
+zero-first-contact@raspberrypi:~$ sudo shutdown -h now
+
+Broadcast message from root@raspberrypi on pts/0 (Sat 2024-07-06 03:47:23 BST):
+
+The system will power off now!
+
+[ 3522.515842] reboot: Power down 
+```
 
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe interface board.
