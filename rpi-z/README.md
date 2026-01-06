@@ -285,6 +285,7 @@ Scenario One (1)
 
 Scenario Two (2)
 * Success! :)
+* Could not have been done without the help of the RPi Forum Team, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2356894#p2356894), images of contact
 
 ``` 
 $ lsusb
