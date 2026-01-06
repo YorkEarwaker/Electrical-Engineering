@@ -282,9 +282,11 @@ Hardware - USB to UART serial communication device, examples one of the items be
 
 Scenario One (1) 
 * TBD
+* Sub process one aka scenario one
 
 Scenario Two (2)
 * Success! :)
+* Sub process two aka scenario two
 * Could not have been done without the help of the RPi Forum Team, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2356894#p2356894), images of contact
 
 ``` 
