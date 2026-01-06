@@ -363,6 +363,38 @@ The system will power off now!
 
 [ 3522.515842] reboot: Power down 
 ```
+* In a separate Terminal cli on Dell Ubuntu
+``` 
+$ sudo screen -list
+There is a screen on:
+	12442.pts-2.york-earwaker-XPS-15-9560	(01/06/2026 05:19:49 PM)	(Attached)
+1 Socket in /run/screen/S-root.
+
+$ sudo screen -XS 12442 quit
+
+$ sudo screen -list
+No Sockets found in /run/screen/S-root.
+
+```
+* In the terminal in which the screen session connection was made to RPi Zero RPi OS
+* The GNU Screen session terminated gracefully
+``` 
+$ sudo screen /dev/ttyUSB0 115200
+[sudo] password for york-earwaker: 
+[screen is terminating]
+
+$ 
+```
+* The serial connection is still present due to stopping GNU Screen gracefully.
+* There for another connection could be made if the RPi Zero had not be shut down.
+``` 
+$ sudo dmesg | grep -i tty
+[29139.966128] usb 1-2: cp210x converter now attached to ttyUSB0
+[29163.876803] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
+[29181.313053] usb 1-2: cp210x converter now attached to ttyUSB0
+[29306.171881] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
+[29328.868968] usb 1-2: cp210x converter now attached to ttyUSB0
+```
 
 ## Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe
 Second Process. Attempting to connect to the RPi Zero 2 W 'headless. Using Raspberry Pi Debug Probe interface board.
