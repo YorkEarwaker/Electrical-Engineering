@@ -276,7 +276,7 @@ Hardware - USB to UART serial communication device, examples one of the items be
 
 ### Connect RPi Zero 2 W to USB TTL serial cable
 * Scenario one/Scenario two
-* Scenario two. Identical in concept and likely mostly similar in execution to RPi Debug Probe
+* Scenario two. Identical in concept and mostly similar in execution to RPi Debug Probe [WS](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z#output---headless-to-rpi-zero-2-w-with-raspberry-pi-debug-probe), 
 * TBD
 
 
