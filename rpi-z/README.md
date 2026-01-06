@@ -386,7 +386,8 @@ $ sudo screen /dev/ttyUSB0 115200
 $ 
 ```
 * The serial connection is still present due to stopping GNU Screen gracefully.
-* There for another connection could be made if the RPi Zero had not be shut down.
+* Therefore another connection could have been made if the RPi Zero had not be shut down.
+* <todo: consider, graceful GNU Screen session termination then reconnection to RPi Zero RPi OS, >
 ``` 
 $ sudo dmesg | grep -i tty
 [29139.966128] usb 1-2: cp210x converter now attached to ttyUSB0
