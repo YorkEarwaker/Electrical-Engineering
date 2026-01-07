@@ -1124,10 +1124,23 @@ Raspberry Pi Zero - datasheets, user guides, documentation
 * Raspberry Pi Zero Schematic, [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-reduced-schematics.pdf), Raspberry Pi Datasheet
 * Raspberry Pi Zero Test Pads [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-test-pads.pdf), Raspberry Pi Datasheet
 * Raspberry Pi Zero Mechanical Drawing [PDF](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf), Raspberry Pi Datasheet
-* Raspberry Pi A2-Class Micro SD Card Product Brief [PDF](https://datasheets.raspberrypi.com/sd-card/sd-card-product-brief.pdf), Raspberry Pi Datasheet
+* Raspberry Pi A2-Class Micro SD Card Product Brief [PDF](https://datasheets.raspberrypi.com/sd-card/sd-card-product-brief.pdf), [WS](https://www.raspberrypi.com/products/sd-cards/), Raspberry Pi Datasheet
+* Micro SD Card, Application Performance Class, [WS](https://www.sdcard.org/developers/sd-standard-overview/application-performance-class/), SD Association, A2/A1
 * Raspberry Pi SD Cards and the Raspberry Pi Bumper: your new favourite accessories [WS](https://www.raspberrypi.com/news/sd-cards-and-bumper/), News, Raspberry Pi
 * Raspberry Pi 3-pin Debug Connector Specification, [PDF](https://datasheets.raspberrypi.com/debug/debug-connector-specification.pdf), Raspberry Pi Datasheet
+* Raspberry Pi Product Information Portal, [WS](https://pip.raspberrypi.com/), Raspberry Pi PIP Portal
+* Raspberry Pi Imager [WS](https://www.raspberrypi.com/software/), flash RPi OS application, 
+
+SD Cards - Command Queuing (CQ) or Application Performance Class (A1/A2) optimizations appear unsupported for RPi Zero 2 W, 
+* Raspberry Pi Zero 2 W maximum SD card capacity, [WS](https://raspberrypi.stackexchange.com/questions/147757/raspberry-pi-zero-2-w-maximum-sd-card-capacity), StackExchange, Raspberry Pi
+* Should I get A1 or A2 spec'd Micro SD card for my phone? { closed } [WS](https://android.stackexchange.com/questions/214545/should-i-get-a1-or-a2-specd-micro-sd-card-for-my-phone), StackExchange, Android 
 * ...
+
+WiFi - Debian, RPi OS, Ubuntu
+* WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
+
+### Tutorials
+* might be some value in these, but it was hard to find while starting to find a headless solution
 
 Headless - SSH, RPi Zero OTG USB Ethernet, 
 * How do I turn off the green LED on my RPI Zero 2 W? [WS](https://forums.raspberrypi.com/viewtopic.php?t=328550), Raspberry Pi Forums, 
@@ -1160,9 +1173,6 @@ Headless - RPi Zero power on
 
 SD Card, MicroSD card removal
 * Can I temporarily remove the SD card while my device is turned on?, [WS](https://raspberrypi.stackexchange.com/questions/3759/can-i-temporarily-remove-the-sd-card-while-my-device-is-turned-on), StackExchange, Raspberry Pi, 
-
-WiFi - Debian, RPi OS, Ubuntu
-* WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
 
 UART
 * Attaching to a Raspberry Pi's Serial Console (UART) for debugging, [WS](https://www.jeffgeerling.com/blog/2021/attaching-raspberry-pis-serial-console-uart-debugging), 1 October 2021
