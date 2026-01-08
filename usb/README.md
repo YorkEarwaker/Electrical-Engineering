@@ -68,3 +68,6 @@ Ethernet over USB
 
 Microwire
 * National Semiconductor Microwire frame format, [WS](https://developer.arm.com/documentation/ddi0194/h/functional-overview/primecell-ssp-operation/national-semiconductor-microwire-frame-format), ARM, 
+
+UART
+* Lesson 9: UART, [WS](http://www.simplyembedded.org/tutorials/msp430-uart/), Simply Embedded, 
