@@ -1119,11 +1119,13 @@ Install the RPi Imager software to flash Micro SD Cards with OS images OSI
 $ sudo snap install rpi-imager
 [sudo] password for york-earwaker: 
 rpi-imager 1.9.3 from Dave Jones (waveform) installed
+
 $ rpi-imager --version
 Gtk-Message: 16:18:26.732: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
 Qt: Session management error: Could not open network socket
 rpi-imager version 1.9.3
 Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
+
 ```
 
 
@@ -1155,7 +1157,7 @@ Raspberry Pi Zero - datasheets, user guides, documentation
 * Raspberry Pi Product Information Portal, [WS](https://pip.raspberrypi.com/), Raspberry Pi PIP Portal
 
 Raspberry Pi Imager - flash OS to SD Card, OS; RPi OS Trixie, Ubuntu Core 24, ...
-* Raspberry Pi Imager [WS](https://www.raspberrypi.com/software/), Ubuntu snap [WS](https://snapcraft.io/install/rpi-imager/ubuntu), install Imager, to be able to flash RPi OS/Ubuntu Core 24/... to Micro SD Cards, 
+* Raspberry Pi Imager, code [GH](https://github.com/raspberrypi/rpi-imager), [WS](https://www.raspberrypi.com/software/), Ubuntu snap [WS](https://snapcraft.io/install/rpi-imager/ubuntu), install Imager, to be able to flash RPi OS/Ubuntu Core 24/... to Micro SD Cards, 
 * Ubuntu, How to create an Ubuntu Server SDcard for Raspberry Pi, [WS](https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-overview), Ubuntu, Raspberry Pi Imager
 * Ubuntu, Install Ubuntu on a Raspberry Pi, [WS](https://ubuntu.com/download/raspberry-pi), Ubuntu, Raspberry Pi Imager
 * Ubuntu, Raspberry Pi Foundation Raspberry Pi Zero 2, Development board system certified with Ubuntu, [WS](https://ubuntu.com/certified/202201-29909), Ubuntu, IoT, 
