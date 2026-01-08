@@ -132,6 +132,8 @@ News Papers - jumpers
 * FAQ: What can Printed Circuit Board (PCB) jumpers do?, [WS](https://www.componentscorp.com/pcb-jumpers-faq.html), 2016 February 29, 
 * Navigating the Challenges of Jumper Wire Work, [WS](https://www.circuitrework.com/blogs/165.html), Circuit Technology Centre, 
 * What is a PCB Jumper in a Circuit Board?, [WS](https://www.fscircuits.com/pcb-jumper/), FS Circuits, 
+* How are "jumpers" used?, [WS](https://electronics.stackexchange.com/questions/74259/how-are-jumpers-used), Electronics, StackExchange, 
+* 
 * ...
 
 News Papers - soldering
