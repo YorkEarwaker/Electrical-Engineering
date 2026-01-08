@@ -203,11 +203,11 @@ TBD
    & over voltage              
    TBD-------------|   
                    |   
-                   |   
-                 . 4    
-                   |          < 5V, the safety circuit PWR jumper wire, 5V to target 
-                              v To the Raspberry Pi Zero GPIO, the target
-                              
+                 | |   
+                 2 4    
+                 | |            v To the Raspberry Pi Zero GPIO, the target
+    5V|--------- |-|            < 5V, GPIO pins connected directly to 5V net, RPi Zero device, 
+
 ```
 Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
@@ -1132,12 +1132,24 @@ Raspberry Pi Zero - datasheets, user guides, documentation
 * Raspberry Pi Imager [WS](https://www.raspberrypi.com/software/), flash RPi OS application, 
 
 SD Cards - Command Queuing (CQ) or Application Performance Class (A1/A2) optimizations appear unsupported for RPi Zero 2 W, 
+* Testing class A2 SD cards with Command Queueing on Pi 5, [WS](https://forums.raspberrypi.com/viewtopic.php?t=367459), Raspberry Pi Forum, 
 * Raspberry Pi Zero 2 W maximum SD card capacity, [WS](https://raspberrypi.stackexchange.com/questions/147757/raspberry-pi-zero-2-w-maximum-sd-card-capacity), StackExchange, Raspberry Pi
 * Should I get A1 or A2 spec'd Micro SD card for my phone? { closed } [WS](https://android.stackexchange.com/questions/214545/should-i-get-a1-or-a2-specd-micro-sd-card-for-my-phone), StackExchange, Android 
 * ...
 
 WiFi - Debian, RPi OS, Ubuntu
 * WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
+
+Safety circuit - 5V power * to * GPIO pins
+* rPI Zero W 5 V output, [WS](https://raspberrypi.stackexchange.com/questions/69120/rpi-zero-w-5-v-output), StackExchange, Raspberry Pi, 
+* Power your Raspberry Pi: expert advice for a supply, [WS](https://magazine.raspberrypi.com/articles/power-supply), 2017, Russell Barnes, Raspberry Pi Magazine, 
+* Can I power a Pi through a 5V pin?, [WS](https://raspberrypi.stackexchange.com/questions/73126/can-i-power-a-pi-through-a-5v-pin), StackExchange, Raspberry Pi, 
+* Re: RPi B+ test pads [WS](https://forums.raspberrypi.com/viewtopic.php?f=28&t=89522&p=628505&hilit=pp1#p628505), Raspberry Pi Forum, 
+* Powering Rpi Zero from 5V gpio pin, [WS](https://forums.raspberrypi.com/viewtopic.php?t=286257), Raspberry Pi Forum, 
+* Powering a Pi5 from GPIO, [WS](https://www.reddit.com/r/cyberDeck/comments/1ds8pea/powering_a_pi5_from_gpio/), Reddit, CyberDeck, 
+* Switching Raspberry Pi 5V with GPIO pin [WS](https://electronics.stackexchange.com/questions/665716/switching-raspberry-pi-5v-with-gpio-pin), StackExchange, Electrical Engineering, 
+* Can I power the Raspberry Pi Zero W through GPIO the same way as with a Pi 3?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=285282), Raspberry Pi Forum, 
+* ...
 
 ### Tutorials
 * might be some value in these, but it was hard to find while starting to find a headless solution
