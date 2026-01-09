@@ -1158,9 +1158,23 @@ Raspberry Pi Zero - datasheets, user guides, documentation
 
 Raspberry Pi Imager - flash OS to SD Card, OS; RPi OS Trixie, Ubuntu Core 24, ...
 * Raspberry Pi Imager, code [GH](https://github.com/raspberrypi/rpi-imager), [WS](https://www.raspberrypi.com/software/), Ubuntu snap [WS](https://snapcraft.io/install/rpi-imager/ubuntu), install Imager, to be able to flash RPi OS/Ubuntu Core 24/... to Micro SD Cards, 
+* A new Raspberry Pi Imager, [WS](https://www.raspberrypi.com/news/a-new-raspberry-pi-imager/), 24 November 2025, Tom Dewey, v 2.x
 * Ubuntu, How to create an Ubuntu Server SDcard for Raspberry Pi, [WS](https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-overview), Ubuntu, Raspberry Pi Imager
 * Ubuntu, Install Ubuntu on a Raspberry Pi, [WS](https://ubuntu.com/download/raspberry-pi), Ubuntu, Raspberry Pi Imager
+* Ubuntu, Use Raspberry Pi Imager, [WS](https://documentation.ubuntu.com/core/tutorials/try-pre-built-images/use-raspberry-pi-imager/), Ubuntu core, Docs, Raspberry Pi Imager
+
+Ubuntu OS
+* Raspberry Pi, [WS](https://wiki.ubuntu.com/ARM/RaspberryPi), Ubuntu, wiki
 * Ubuntu, Raspberry Pi Foundation Raspberry Pi Zero 2, Development board system certified with Ubuntu, [WS](https://ubuntu.com/certified/202201-29909), Ubuntu, IoT, 
+* Ubuntu, Testing Platforms, [WS](https://documentation.ubuntu.com/core/reference/testing-platforms/), Ubuntu core, Docs, 
+
+Ubuntu OS - tutorials, still relevant?
+* Ubuntu Core & Raspberry Pi Zero 2 W, [WS](https://askubuntu.com/questions/1384864/ubuntu-core-raspberry-pi-zero-2-w), 2 January 2022, Ask Ubuntu
+* Install 64 bit OS on Raspberry Pi zero 2 W, [WS](http://qengineering.eu/install-64-os-on-raspberry-pi-zero-2.html), 14 February 2022, Q Engineering
+
+Raspberry Pi OS
+* Trixie — the new version of Raspberry Pi OS, [WS](https://www.raspberrypi.com/news/trixie-the-new-version-of-raspberry-pi-os/), 2 October 2025, Simon Long
+* Raspberry Pi OS downloads, [WS](https://www.raspberrypi.com/software/operating-systems/) 
 
 SD Cards - Command Queuing (CQ) or Application Performance Class (A1/A2) optimizations appear unsupported for RPi Zero 2 W, 
 * Testing class A2 SD cards with Command Queueing on Pi 5, [WS](https://forums.raspberrypi.com/viewtopic.php?t=367459), Raspberry Pi Forum, 
