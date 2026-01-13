@@ -1112,7 +1112,7 @@ AttributeError: type object 'Pin' has no attribute 'Out'
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
 * RPi OS Desktop Trixie
-* Ubuntu Core 24
+* Ubuntu Core 24, may have to be Core 22
 
 Install the RPi Imager software to flash Micro SD Cards with OS images OSI
 ```
@@ -1128,6 +1128,33 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 
 ```
 
+RPi OS Lite Trixie
+* Success! :)
+* first use of RPi Imager, 
+* write RPi OS image (IOS) to Micro SD Card, A1, 
+* <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, >
+```
+Raspberry Pi Imager v1.9.3
+
+Raspberry Pi Device
+Raspberry Pi Zero 2 W
+
+Operating System
+Local file retrieved 9 01 2026 19:39:56
+2025-12-04-raspios-trixie-arm64-lite.img.xz
+downloaded from
+https://www.raspberrypi.com/software/operating-systems/
+
+File passes SHA256 checksum, after download before selection in a seperate process, 
+
+Storage
+A1 Micro SD Card. 
+Internal SD card reader - 31.3 GB
+Mounted as /media/york-earwaker/0403-0201
+
+OS Customisation
+Fully customised
+```
 
 
 ## References
@@ -1167,6 +1194,7 @@ Ubuntu OS
 * Raspberry Pi, [WS](https://wiki.ubuntu.com/ARM/RaspberryPi), Ubuntu, wiki
 * Ubuntu, Raspberry Pi Foundation Raspberry Pi Zero 2, Development board system certified with Ubuntu, [WS](https://ubuntu.com/certified/202201-29909), Ubuntu, IoT, 
 * Ubuntu, Testing Platforms, [WS](https://documentation.ubuntu.com/core/reference/testing-platforms/), Ubuntu core, Docs, 
+* Ubuntu, How to SHA256 Sum, [WS](https://help.ubuntu.com/community/HowToSHA256SUM), Community, 
 
 Ubuntu OS - tutorials, still relevant?
 * Ubuntu Core & Raspberry Pi Zero 2 W, [WS](https://askubuntu.com/questions/1384864/ubuntu-core-raspberry-pi-zero-2-w), 2 January 2022, Ask Ubuntu
