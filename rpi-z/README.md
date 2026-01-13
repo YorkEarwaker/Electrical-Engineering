@@ -700,7 +700,7 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 ### RPi OS Lite Trixie
 * Success! :)
 * first use of RPi Imager, 
-* write RPi OS image (IOS) to Micro SD Card, A1, 
+* write RPi OS image (OSI) to Micro SD Card, A1, 
 * <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, >
 ```
 Raspberry Pi Imager v1.9.3
@@ -724,6 +724,8 @@ Mounted as /media/york-earwaker/0403-0201
 OS Customisation
 Fully customised
 ```
+* Put card into RPi Zero 2 W env, SD Extension Cable, 
+* Mains plugged in, two or three minutes, steady green light ACT LED .
 
 The make serial connection,
 * Failure :( 
