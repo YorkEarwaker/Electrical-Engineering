@@ -676,7 +676,7 @@ TBD?
 ## Output - Create OS image for use on RPi Zero 2 W
 * Partial success, TBD
 * <done: consider, Optionally configure OS during the flash installation process to Micro SD Card >
-* <todo: consider, add [all] enable_uart=1 >
+* <todo: consider, add [all] enable_uart=1 to config.txt to enable contacto over serial bridge chip device, like rpi debug probe or usb ttl serial device, >
 
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
