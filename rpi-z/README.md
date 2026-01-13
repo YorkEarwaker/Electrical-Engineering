@@ -1156,6 +1156,35 @@ OS Customisation
 Fully customised
 ```
 
+In a terminal cli window get serial connected devices, 
+```
+$ sudo dmesg | grep -i tty
+[    0.010746] ACPI: SSDT 0x000000007855AE40 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
+[    0.192610] printk: legacy console [tty0] enabled
+[    8.405071] Bluetooth: RFCOMM TTY layer initialized
+[ 8769.860369] usb 1-2: cp210x converter now attached to ttyUSB0
+```
+The make serial connection,
+* Failure :( 
+* Likely due to fact that uart had not been added to end of config.txt beforehand.
+```
+$ sudo screen /dev/ttyUSB0 115200
+```
+
+In a separate terminal cli window 
+```
+$ sudo screen -list
+[sudo] password for york-earwaker: 
+There is a screen on:
+	13109.pts-2.york-earwaker-XPS-15-9560	(01/13/2026 04:11:27 PM)	(Attached)
+1 Socket in /run/screen/S-root.
+york-earwaker@york-earwaker-XPS-15-9560:~$ sudo screen -XS 13109 quit
+```
+In the original terminal cli after separate terminal cli quits screen.
+```
+$ sudo screen /dev/ttyUSB0 115200
+[screen is terminating]
+```
 
 ## References
 
