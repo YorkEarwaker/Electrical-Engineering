@@ -474,44 +474,6 @@ Hardware -
 * Raspberry Pi Debug Probe, com [WS](https://www.raspberrypi.com/products/debug-probe/), Raspberry Pi, built in resistors for 3V to RPi Zero 2 W GPIO pin UART connection 
 * A N Other debug probe of a similar nature, intermediary between host and RPi Zero
 
-### Clean up, RPi OS on RPi MiroSD Card
-Removing things done to RPi OS from the first process. 
-* Remove from /bootfs/cmdline.txt
-```
-modules-load=dwc2,g_ether
-```
-* Remove from /bootfs/config.txt
-```
-[all] 
-dtoverlay=dwc2
-```
-* Move to trash /bootfs/wpa_supplicant.conf
-* Remove via cli /rootfs/boot/firmware/cmdline.txt
-* Remove via cli /rootfs/boot/firmware/config.txt
-```
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
-total 8
--rw-r--r-- 1 root root 26 Dec 20 13:25 cmdline.txt
--rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
--rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo rm cmdline.txt
-[sudo] password for york-earwaker: 
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
-total 4
--rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
--rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo rm config.txt
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
-total 0
--rw-r--r-- 1 root root 0 Dec 18 15:41 ssh
-```
-* Retain /rootfs/boot/firmware/ssh, as per instructions in RPi Documentation
-* Edit /rootfs/etc/wpa_supplicant file wpa_supplicant.conf, to remove additional wifi config text, returns to original state of
-```
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-```
-
 ### Connect RPi Zero 2 W to RPi Debug Probe
 Attempt 1
 * Success! :)
@@ -713,7 +675,8 @@ TBD?
 
 ## Output - Create OS image for use on RPi Zero 2 W
 * Partial success, TBD
-* Optionally configure OS during the flash installation process to Micro SD Card
+* <done: consider, Optionally configure OS during the flash installation process to Micro SD Card >
+* <todo: consider, add [all] enable_uart=1 >
 
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
@@ -988,8 +951,10 @@ Screen
 * to connect from Dell Ubuntu to RPi Zero 2 W, RPi OS 32bit Bookworm, pre installed, A2 MicroSD Card, Raspberry Pi
 * But good learning :) 
 * <todo: consider, thinning out some of the tutorials and append to this section, append to Appendix 01? or create Appendix 02? >
+* Clean up, RPi OS on RPi MiroSD Card, below after changes made during Output - headless to RPi Zero 2 W with USB cable - first connection attempts
+* Both are moot as these first attempts were unsuccessful!
 
-Output - headless to RPi Zero 2 W with USB cable
+### Output - headless to RPi Zero 2 W with USB cable - first connection attempts
 * First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
 * Failure :(
 * Based of past experience with RPi Pico MCU's connection to host via USB power and data, but not how RPi Zero works, shame
@@ -1442,3 +1407,41 @@ network={
 * Plugged in USB cable to Dell laptop, RPi Zero ACT LED light solid green, after initial flashing
 * Hub Manager for local WiFi Router network, shows only 2 devices - Dell PC and Mobile Phone Galaxy A14 - connected to router via WiFi 5Ghz channel, 0 devices via 2.4GHz channel.
 * Likely issue locale country code setting for RPi OS, see 2019-06-20: in [WS](https://downloads.raspberrypi.com/raspios_lite_armhf/release_notes.txt), from [WS](https://forums.raspberrypi.com/viewtopic.php?t=391776)
+
+### Clean up, RPi OS on RPi MiroSD Card
+Removing things done to RPi OS from the first process. 
+* Remove from /bootfs/cmdline.txt
+```
+modules-load=dwc2,g_ether
+```
+* Remove from /bootfs/config.txt
+```
+[all] 
+dtoverlay=dwc2
+```
+* Move to trash /bootfs/wpa_supplicant.conf
+* Remove via cli /rootfs/boot/firmware/cmdline.txt
+* Remove via cli /rootfs/boot/firmware/config.txt
+```
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 8
+-rw-r--r-- 1 root root 26 Dec 20 13:25 cmdline.txt
+-rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
+-rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo rm cmdline.txt
+[sudo] password for york-earwaker: 
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 4
+-rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
+-rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo rm config.txt
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+total 0
+-rw-r--r-- 1 root root 0 Dec 18 15:41 ssh
+```
+* Retain /rootfs/boot/firmware/ssh, as per instructions in RPi Documentation
+* Edit /rootfs/etc/wpa_supplicant file wpa_supplicant.conf, to remove additional wifi config text, returns to original state of
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+```
