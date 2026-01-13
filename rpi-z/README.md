@@ -684,11 +684,9 @@ TBD
 
 ## Output - headless to RPi Zero 2 W with USB cable
 First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
-* Failure :(
-* Based of past experience with RPi Pico MCU's connection to host via USB power and data, but not how RPi Zero works, shame
-* On the up side good learning loop to have pursued. 
-* However this level of effort is likely a barrier to entry for many.
-* See references heading below for many of the resources tried without success.
+* TBD, 
+* <todo: consider, other things to try, >
+* See first attempts at Appendix 01, 
 
 Primary Sources
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation, 
@@ -710,403 +708,11 @@ Circuit Diagram
 ``` 
      N/A
 ```
+TBD?
 
-### Create SSH file on SD Card
-Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi Documentation
-* Place RPi MicroSD Card with preinstalled RPi OS in MicroSD Card Adapter, 
-* Put MicroSD Card Adapter into laptop
-* Create ssh file as per instructions in link above.
-```
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo touch ssh
-[sudo] password for york-earwaker: 
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ dir
-ssh
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls
-ssh
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
-total 0
--rw-r--r-- 1 root root 0 Dec 18 15:41 ssh
-```
-
-### Headless, power on RPi Zero
-Success! 
-* Put SD Card into RPi Zero, using an extension cable for easier access and to improve life of micro SD Card and RPi Zero
-* Put power adapter micro USB into PWR IN USB slot
-* Plugged in 12.75 Raspberry Pi Power adapter into mains
-* ACT Led, green light flashed on and off for a while, assuming during RPi OS boot sequence,
-* ACT Led, green light is permanently on after a while
-* probably a mistake without having made necessary changes to SD card RPi OS changes first, unlikely ssh file creation was not sufficient see above, 
-
-### Headless, connect to RPi Zero from Dell laptop, USB cable
-Attempt 1
-* Failed :(
-* <todo: tried this, but encountering difficulties, no first contact yet,  >
-* <issue; had not set up the RPi Zero correctly beforehand, so failure >
-* <issue; bad to use both usb OTG to host usb A and usb pwr in, so might have fired RPi Zero, oh dear, >
-* RPi Zero powered from mains with micro USB PWR IN port, see previous heading Headless, power on RPi Zero .
-* RPi Zero on, ACT Led solid green great, no flashing good as flashing Led can indicate issues, 
-* Plug in USB cable (data and power), Dell A standard type USB port, RPi Zero micro USB port, Pi Hut website reports cable compatible with Zero and carries data, 
-* On Dell host, attempted ssh connection via terminal cli; , but no contact
-``` 
-$ ssh pi@raspberrypi 
-$ ssh pi@raspberrypi raspberry
-$ ssh pi@raspberrypi.local
-$ ssh pi@raspberrypi.local raspberry
-```
-* Restarted Dell laptop with USB cable attached
-* On Dell host, attempted ssh connection via terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
-* On Dell host, attempted via terminal cli $ nm-connection-editor instruction but Network Connection window did not list RPi Zero, likely as necessary Ethernet config had not been done on RPi Zero beforehand, did list local WiFi router, and Bluetooth mobile phone, 
-* Can't access RPi OS file system, so can't shut it down gracefully, powering off,
-* Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
-* Option 2. unplug RPi Zero from mains will likely also harm SD card file system, mitigate buy new micro SD Card
-* Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? But dangerous to do while the RPi Zero is powered on and might lead to worse damage to actual RPI Zero. Investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
-* Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be done to make contact with RPi OS on RPi Zero, 
-* Option 5. keep RPi Zero powered on and purchase keyboard and display. Investigate if RPi Zero needs to have these plugged in before booting to have these devices recognized, probably not.
-* Option 6. short GPIO pins, which ones? Also will likely cause damage to SD card file system and likely damage RPi Zero too.
-* Option 7. USB On-The-Go adapter, already used micro USB B from peripheral RPi Zero to standard USB A host Dell, so addition of an adapter only overhead, micro USB B to peripheral to standard USB A host is another approach
-
-Dell Ubuntu does not seem to see RPi Zero 2 W. 
-```
-$ lsusb
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
-Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
-Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
-Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-```
-
-Attempt 2
-* Failure :(
-* <note: ssh file had already been created see heading above, >
-* Unplugged Micro USB B OTG data from RPi Zero, it was also supplying power from Dell laptop, had naively assumed only data
-* Shut down RPi Zero. Ensure ACT Led is not flashing, pull out Micro USB B power adapter plug to mains, Option 2 above, 
-* <issue: may have broken RPi Zero due to power from both Micro USB B OTG from Dell and Micro USB B power adapter to mains, >
-* Retrieve MicroSD Card from RPi Zero. In this instance eject the MicroSD Card Adapter it from the reader slot at the end of MicroSD Card cable ribbon.
-* Put MicroSD Card Adapter containing MicroSD Card into Dell laptop, two file system partitions are mounted; bootfs, rootfs
-* Open bootfs partition
-* Open cmdline.txt enter modules-load=dwc2,g_ether after rootwait, save cmdline.txt
-```
-console=serial0,115200 console=tty1 root=PARTUUID=f35edfdd-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_ether quiet splash plymouth.ignore-serial-consoles
-```
-* Open config.txt enter under heading \[all\] dtoverlay=dwc2 , save config.txt
-```
-# For more options and information see
-# http://rptl.io/configtxt
-# Some settings may impact device functionality. See link above for details
-
-# Uncomment some or all of these to enable the optional hardware interfaces
-#dtparam=i2c_arm=on
-#dtparam=i2s=on
-#dtparam=spi=on
-
-# Enable audio (loads snd_bcm2835)
-dtparam=audio=on
-
-# Additional overlays and parameters are documented
-# /boot/firmware/overlays/README
-
-# Automatically load overlays for detected cameras
-camera_auto_detect=1
-
-# Automatically load overlays for detected DSI displays
-display_auto_detect=1
-
-# Automatically load initramfs files, if found
-auto_initramfs=1
-
-# Enable DRM VC4 V3D driver
-dtoverlay=vc4-kms-v3d
-max_framebuffers=2
-
-# Don't have the firmware create an initial video= setting in cmdline.txt.
-# Use the kernel's default instead.
-disable_fw_kms_setup=1
-
-# Disable compensation for displays with overscan
-disable_overscan=1
-
-# Run as fast as firmware / board allows
-arm_boost=1
-
-[cm4]
-# Enable host mode on the 2711 built-in XHCI USB controller.
-# This line should be removed if the legacy DWC2 controller is required
-# (e.g. for USB device mode) or if USB support is not required.
-otg_mode=1
-
-[cm5]
-dtoverlay=dwc2,dr_mode=host
-
-[all]
-dtoverlay=dwc2
-```
-* Plug in USB B OTG plug for power and data
-* Attempt ssh in host terminal cli $ ssh pi@raspberrypi raspberry and combinations but no luck
-
-Attempt 3
-* Failed so far :(
-* <todo: note, there are also duplicate empty ssh file as per RPi docs example. Also cmdline.txt which only contains; modules-load=dwc2,g_ether , and config.text which only contains on two seperte lines; [all] dtoverlay=dwc2 , this as boot directory files of same indicated put same in firmware directory, >
-```
-york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
-total 8
--rw-r--r-- 1 root root 26 Dec 20 13:25 cmdline.txt
--rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
--rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
-```
-* Created ssh file in /media/york-earwaker/bootfs host terminal cli $ touch ssh
-* Plug in USB A to Dell laptop for power and data to RPi Zero Micro USB B OTG port, wait a few minutes but can't ssh
-* There appears there might be an Ethernet problem with Ubuntu LTS 24.04.3 . Have seen various Ethernet issues reported online with 24.04.1 . Unclear if these apply to 24.04.3 . 
-* Can't see USB Ethernet/Netchip Ethernet in Setting>Networks panel.
-```
-$ nmcli connection show
-NAME                UUID                                  TYPE       DEVICE 
-BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
-lo                  04b471a3-29bf-4d19-8fc8-1e0190e7cd60  loopback   lo     
-Galaxy A14 Network  7d0e2e6d-34a0-41a7-b58f-5e18c49cc177  bluetooth  --  
-```
-* list usb as table
-```
-$ lsusb -t
-/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
-    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
-    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
-    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
-    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
-    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
-    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
-/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
-```
-* After RPi Zero power off and place MicroSD Card Adapter into Dell laptop to view /bootfs directory ssh file, created above, is no longer there.
-
-### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
-Attempt 1
-* Failure :(
-* <todo: try this, but will likely require changes to RPi OS config files, >
-* doing this in parallel testing for ssh
-
-* Unplug USB A from Dell laptop, RPi Zero powered down, hard power off
-* Put MicroSD Card Adapter, containing MiroSD Card with pre installed RPi OS, in laptop
-* Navigate to rootfs/etc/wpa_supplicant directory, found there an admin rights protected file wpa_supplicant.conf 
-* Opened as Administrator, file contained the following
-```
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-```
-* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
-* Content of  with additions as below, 
-```
-country=your_country_code
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-    ssid="Your_Wi-Fi_SSID"
-    psk="Your_Wi-Fi_Password"
-    key_mgmt=WPA-PSK
-    priority=1
-}
-```
-* Saved wpa_supplicant.conf file
-* Unmount partitions and pull MicroSd Card Adapter out of Dell laptop Ubuntu LTS 24.04.3,
-* Put MicroSd Card Adapter into RPi Zero 2 W 
-* Plug in USB A into Dell laptop to Power on RPi Zero 2 W
-* Can't see RPi Zero in WiFi Router Hub control panel, not detailed here
-* Can't see RPi Zero with nmcli connection show, as below
-```
-$ nmcli connection show
-NAME                UUID                                  TYPE       DEVICE 
-BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
-lo                  9500dc08-d067-48d8-899f-ca89bbfa4cde  loopback   lo     
-Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --
-```
-* Can't see RPi Zero with lsusb
-```
-$ lsusb
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
-Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
-Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
-Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-```
-* Can't see RPi Zero with ping
-```
-$ ping raspberrypi.local
-ping: raspberrypi.local: Name or service not known
-```
-* Load Ethernet driver? $ sudo modprobe r8152 , don't think it did any thing, probs needs installing?
-* Can't see RPi Zero with $ usbip list -l, lists only usual Dell laptop component parts on bus 001 
-```
-$ sudo modprobe r8152
-$ usbip list -l
- - busid 1-12 (0c45:6713)
-   Microdia : unknown product (0c45:6713)
-
- - busid 1-4 (0cf3:e300)
-   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
-
- - busid 1-7 (138a:0091)
-   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
-
- - busid 1-9 (04f3:24a1)
-   Elan Microelectronics Corp. : unknown product (04f3:24a1)
-```
-* Install latest Ubuntu updates
-* $ sudo apt update 
-* $ sudo apt full-upgrade
-* rebooted, not seemingly able to connect to RPi Zero, 
-* Quite possibly RPi Zero requires other things to setup, likely also Ubuntu, but what?
-
-Attempt 2
-* Failure :(
-* Unplugged USB cable from Dell
-* Put MicroSD Card Adapter back into Dell laptop, 
-* Put wpa_supplicant.conf file in /bootfs directory
-* $ touch wpa_supplicant.conf, creates the file 
-* Open in Text Editor add WiFi details
-* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
-* Content of file as below with placeholder values replaced with actual values, 
-```
-country=your_country_code
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-
-    ssid="Your_Wi-Fi_SSID"
-
-    psk="Your_Wi-Fi_Password"
-    key_mgmt=WPA-PSK
-    priority=1
-}
-```
-* Put MicroSD Card Adapter back into RPi Zero env
-* Plugged in USB cable to Dell laptop, RPi Zero ACT LED did not light green, not even flashing
-* Rebooted Dell Ubuntu 24.04.3 with USB cable plugged in, RPi Zero ACT LED did not light green, not even flashing 
-* Unplugged USB cable from Dell
-* Put MicroSD Card Adapter back into Dell laptop, moved to trash, wpa_supplicant.conf file from /bootfs directory
-* Put MicroSD Card Adapter back into RPi Zero env
-* Plugged in USB cable to Dell laptop, RPi Zero ACT LED did not light green, not even flashing
-* Unplugged USB cable from Dell
-* Unplugged USB cable from RPi Zero
-* Ejected MicroSD Card Adapter from RPi Zero env, 
-* Took out the MicroSD Card from the Adapter, replaced the MicroSD Card back into the Adapter
-* Plugged USB cable back to RPi Zero
-* Plugged USB cable back to Dell
-* RPi Zero ACT LED solid green, after initial flashing, 
-* But no joy
-```
-$ lsusb -t
-/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
-    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
-    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
-    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
-    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
-    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
-    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
-/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
-
-$ usbip list -l
- - busid 1-12 (0c45:6713)
-   Microdia : unknown product (0c45:6713)
-
- - busid 1-4 (0cf3:e300)
-   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
-
- - busid 1-7 (138a:0091)
-   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
-
- - busid 1-9 (04f3:24a1)
-   Elan Microelectronics Corp. : unknown product (04f3:24a1)
-
-$ nmcli connection show
-NAME                UUID                                  TYPE       DEVICE 
-BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
-lo                  92afa887-aa67-4e0b-b77a-b6e41ffc920e  loopback   lo     
-Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --    
-```
-* Might have failed first time due to faulty USB connection
-
-Attempt 3
-* Failure :(
-* Unplugged USB cable from Dell
-* Put MicroSD Card Adapter back into Dell laptop, 
-* Put wpa_supplicant.conf file in /bootfs directory
-* $ touch wpa_supplicant.conf, creates the file 
-* Open in Text Editor add WiFi details
-* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
-* Content of file as below with placeholder values replaced with actual values, 
-```
-country=your_country_code
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-
-    ssid="Your_Wi-Fi_SSID"
-
-    psk="Your_Wi-Fi_Password"
-    key_mgmt=WPA-PSK
-    priority=1
-}
-```
-* Put MicroSD Card Adapter back into RPi Zero env
-* Plugged in USB cable to Dell laptop, RPi Zero ACT LED light solid green, after initial flashing
-* Hub Manager for local WiFi Router network, shows only 2 devices - Dell PC and Mobile Phone Galaxy A14 - connected to router via WiFi 5Ghz channel, 0 devices via 2.4GHz channel.
-* Likely issue locale country code setting for RPi OS, see 2019-06-20: in [WS](https://downloads.raspberrypi.com/raspios_lite_armhf/release_notes.txt), from [WS](https://forums.raspberrypi.com/viewtopic.php?t=391776)
-
-## Environment Tests
-
-### Test USB cable for data and power
-Success! :)
-* cable 3 should work with RPi Zero 2 W SBC in the OTG Micro USB B socket, data and power
-
-Cable addition
-* cable 1; USB A (male) to USB A (male) , 1.5 m
-* cable 2; USB A (female) to Micro USB B (male), 10? cm
-* cable 3 = cable 1 + cable 2; USB A (male) to Micro USB B (male)
-
-Test 
-* Plug cable 1 and cable 2 together; cable 3 = cable 1 USB A (male) to cable 2 USB A (female) 
-* Plug cable 3 Micro USB B (male) to RPi Pico 2 W
-* Plug cable 3 USB A (male) to Dell Laptop Ubuntu LTS 24.04.3, The laptop is powered on
-* Note. the LED had previously been turned off on the RPi Pico 2 W, 
-* So the LED is does not light up when the Micro USB B end of cable 3 is plugged into the Pico MCU Micro USB B socket.
-* Open Thonny IDE, Thonny recognizes RPi Pico 2 W MCU, 
-```
-MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
-Type "help()" for more information.
->>> 
-MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
-Type "help()" for more information.
->>>
-```
-* Write MicroPython code in Thonny Shell window to execute in RPi Pico 2 W MCU environment. 
-* Mpy code is shown below to; turn Pico LED light on. 
-```
->>> from machine import Pin
->>> led = Pin("LED", Pin.OUT)
->>> led.on()
->>> 
-```
-* RPi Pico 2 W LED is turned on solid green
-* Note. code is shown with developer input errors for completeness
-```
->>> from machine import Pin
->>> led = Pin("LED", Pin.Out)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: type object 'Pin' has no attribute 'Out'
->>> led = Pin("LED", Pin.OUT)
->>> led.on
-<bound_method>
->>> led.on()
->>> 
-```
 
 ## Output - Create OS image for use on RPi Zero 2 W
-* TBD
+* Partial success, TBD
 * Optionally configure OS during the flash installation process to Micro SD Card
 
 Candidate OSI's to install first attempts
@@ -1185,6 +791,56 @@ In the original terminal cli after separate terminal cli quits screen.
 $ sudo screen /dev/ttyUSB0 115200
 [screen is terminating]
 ```
+
+## Environment Tests
+
+### Test USB cable for data and power
+Success! :)
+* cable 3 should work with RPi Zero 2 W SBC in the OTG Micro USB B socket, data and power
+
+Cable addition
+* cable 1; USB A (male) to USB A (male) , 1.5 m
+* cable 2; USB A (female) to Micro USB B (male), 10? cm
+* cable 3 = cable 1 + cable 2; USB A (male) to Micro USB B (male)
+
+Test 
+* Plug cable 1 and cable 2 together; cable 3 = cable 1 USB A (male) to cable 2 USB A (female) 
+* Plug cable 3 Micro USB B (male) to RPi Pico 2 W
+* Plug cable 3 USB A (male) to Dell Laptop Ubuntu LTS 24.04.3, The laptop is powered on
+* Note. the LED had previously been turned off on the RPi Pico 2 W, 
+* So the LED is does not light up when the Micro USB B end of cable 3 is plugged into the Pico MCU Micro USB B socket.
+* Open Thonny IDE, Thonny recognizes RPi Pico 2 W MCU, 
+```
+MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
+Type "help()" for more information.
+>>> 
+MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
+Type "help()" for more information.
+>>>
+```
+* Write MicroPython code in Thonny Shell window to execute in RPi Pico 2 W MCU environment. 
+* Mpy code is shown below to; turn Pico LED light on. 
+```
+>>> from machine import Pin
+>>> led = Pin("LED", Pin.OUT)
+>>> led.on()
+>>> 
+```
+* RPi Pico 2 W LED is turned on solid green
+* Note. code is shown with developer input errors for completeness
+```
+>>> from machine import Pin
+>>> led = Pin("LED", Pin.Out)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: type object 'Pin' has no attribute 'Out'
+>>> led = Pin("LED", Pin.OUT)
+>>> led.on
+<bound_method>
+>>> led.on()
+>>> 
+```
+
 
 ## References
 
@@ -1326,3 +982,463 @@ Screen
 * Old laptop display (40pins)how to use as a raspberry pi 4 B display(15pins), [WS](https://forums.raspberrypi.com/viewtopic.php?t=277682), Forums, Raspberry Pi, 
 * Re-purposing old laptop LCD via Raspberry Pi, [WS](https://forums.raspberrypi.com/viewtopic.php?t=255727), Forums, Raspberry Pi, 
 * Using laptop screen with RPI, [WS](https://forums.raspberrypi.com/viewtopic.php?t=234270), Forums, Raspberry Pi, 
+
+## Appendix 01 - First connection attempts, various,
+* Failure :( 
+* to connect from Dell Ubuntu to RPi Zero 2 W, RPi OS 32bit Bookworm, pre installed, A2 MicroSD Card, Raspberry Pi
+* But good learning :) 
+* <todo: consider, thinning out some of the tutorials and append to this section, append to Appendix 01? or create Appendix 02? >
+
+Output - headless to RPi Zero 2 W with USB cable
+* First Process. Attempting to connect to the RPi Zero 2 W 'headless' with USB cable. Using RPi documentation, RPi Forum, Online tutorials. 
+* Failure :(
+* Based of past experience with RPi Pico MCU's connection to host via USB power and data, but not how RPi Zero works, shame
+* On the up side good learning loop to have pursued. 
+* However this level of effort is likely a barrier to entry for many.
+* See references heading below for many of the resources tried without success.
+
+Primary Sources
+* Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation, 
+
+Secondary Sources
+* Many online information, inclusive; tutorials, Raspberry Pi Forum, etc...
+* See References heading section below, many
+
+### Create SSH file on SD Card
+Remote Access, Enable the SSH server, [WS](ttps://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-ssh-server), Raspberry Pi Documentation
+* Place RPi MicroSD Card with preinstalled RPi OS in MicroSD Card Adapter, 
+* Put MicroSD Card Adapter into laptop
+* Create ssh file as per instructions in link above.
+```
+
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ sudo touch ssh
+
+[sudo] password for york-earwaker: 
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ dir
+
+ssh
+
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls
+ssh
+
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+
+total 0
+-rw-r--r-- 1 root root 0 Dec 18 15:41 ssh
+```
+
+### Headless, power on RPi Zero
+Success! 
+* Put SD Card into RPi Zero, using an extension cable for easier access and to improve life of micro SD Card and RPi Zero
+* Put power adapter micro USB into PWR IN USB slot
+* Plugged in 12.75 Raspberry Pi Power adapter into mains
+* ACT Led, green light flashed on and off for a while, assuming during RPi OS boot sequence,
+* ACT Led, green light is permanently on after a while
+* probably a mistake without having made necessary changes to SD card RPi OS changes first, unlikely ssh file creation was not sufficient see above, 
+
+### Headless, connect to RPi Zero from Dell laptop, USB cable
+Attempt 1
+* Failed :(
+* <todo: tried this, but encountering difficulties, no first contact yet,  >
+* <issue; had not set up the RPi Zero correctly beforehand, so failure >
+* <issue; bad to use both usb OTG to host usb A and usb pwr in, so might have fired RPi Zero, oh dear, >
+* RPi Zero powered from mains with micro USB PWR IN port, see previous heading Headless, power on RPi Zero .
+* RPi Zero on, ACT Led solid green great, no flashing good as flashing Led can indicate issues, 
+* Plug in USB cable (data and power), Dell A standard type USB port, RPi Zero micro USB port, Pi Hut website reports cable compatible with Zero and carries data, 
+* On Dell host, attempted ssh connection via terminal cli; , but no contact
+``` 
+$ ssh pi@raspberrypi 
+
+$ ssh pi@raspberrypi raspberry
+$ ssh pi@raspberrypi.local
+$ ssh pi@raspberrypi.local raspberry
+
+```
+* Restarted Dell laptop with USB cable attached
+* On Dell host, attempted ssh connection via terminal cli $ ssh instructions again but no contact after Dell Ubuntu reboot, 
+* On Dell host, attempted via terminal cli $ nm-connection-editor instruction but Network Connection window did not list RPi Zero, likely as necessary Ethernet config had not been done on RPi Zero beforehand, did list local WiFi router, and Bluetooth mobile phone, 
+* Can't access RPi OS file system, so can't shut it down gracefully, powering off,
+* Option 1. remove SD card and make changes likely harms SD card file system, and changes likely won't be recognized until reboot anyway, which currently can't be done gracefully
+* Option 2. unplug RPi Zero from mains will likely also harm SD card file system, mitigate buy new micro SD Card
+* Option 3. add power down button to RPi Zero GPIO pins for equivalent of hard shut down on PC by holding down power button? But dangerous to do while the RPi Zero is powered on and might lead to worse damage to actual RPI Zero. Investigate if this is possible may be less harmful than; removing SD card (option 1), pulling the plug (option 2) 
+* Option 4. explore Dell Ubuntu LTS 24.04.3 via Gnome desktop or terminal cli, what might be done to make contact with RPi OS on RPi Zero, 
+* Option 5. keep RPi Zero powered on and purchase keyboard and display. Investigate if RPi Zero needs to have these plugged in before booting to have these devices recognized, probably not.
+* Option 6. short GPIO pins, which ones? Also will likely cause damage to SD card file system and likely damage RPi Zero too.
+* Option 7. USB On-The-Go adapter, already used micro USB B from peripheral RPi Zero to standard USB A host Dell, so addition of an adapter only overhead, micro USB B to peripheral to standard USB A host is another approach
+
+Dell Ubuntu does not seem to see RPi Zero 2 W. 
+```
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+
+Attempt 2
+* Failure :(
+* <note: ssh file had already been created see heading above, >
+* Unplugged Micro USB B OTG data from RPi Zero, it was also supplying power from Dell laptop, had naively assumed only data
+* Shut down RPi Zero. Ensure ACT Led is not flashing, pull out Micro USB B power adapter plug to mains, Option 2 above, 
+* <issue: may have broken RPi Zero due to power from both Micro USB B OTG from Dell and Micro USB B power adapter to mains, >
+* Retrieve MicroSD Card from RPi Zero. In this instance eject the MicroSD Card Adapter it from the reader slot at the end of MicroSD Card cable ribbon.
+* Put MicroSD Card Adapter containing MicroSD Card into Dell laptop, two file system partitions are mounted; bootfs, rootfs
+* Open bootfs partition
+* Open cmdline.txt enter modules-load=dwc2,g_ether after rootwait, save cmdline.txt
+```
+console=serial0,115200 console=tty1 root=PARTUUID=f35edfdd-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_ether quiet splash plymouth.ignore-serial-consoles
+
+```
+* Open config.txt enter under heading \[all\] dtoverlay=dwc2 , save config.txt
+```
+
+# For more options and information see
+
+# http://rptl.io/configtxt
+# Some settings may impact device functionality. See link above for details
+
+
+# Uncomment some or all of these to enable the optional hardware interfaces
+#dtparam=i2c_arm=on
+#dtparam=i2s=on
+
+#dtparam=spi=on
+
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+
+# Additional overlays and parameters are documented
+
+# /boot/firmware/overlays/README
+
+
+# Automatically load overlays for detected cameras
+camera_auto_detect=1
+
+
+# Automatically load overlays for detected DSI displays
+display_auto_detect=1
+
+
+# Automatically load initramfs files, if found
+auto_initramfs=1
+
+
+# Enable DRM VC4 V3D driver
+dtoverlay=vc4-kms-v3d
+
+max_framebuffers=2
+
+# Don't have the firmware create an initial video= setting in cmdline.txt.
+
+# Use the kernel's default instead.
+disable_fw_kms_setup=1
+
+
+# Disable compensation for displays with overscan
+disable_overscan=1
+
+
+
+# Run as fast as firmware / board allows
+
+arm_boost=1
+
+
+[cm4]
+
+# Enable host mode on the 2711 built-in XHCI USB controller.
+# This line should be removed if the legacy DWC2 controller is required
+
+# (e.g. for USB device mode) or if USB support is not required.
+
+otg_mode=1
+
+
+[cm5]
+
+dtoverlay=dwc2,dr_mode=host
+
+
+[all]
+
+dtoverlay=dwc2
+```
+* Plug in USB B OTG plug for power and data
+* Attempt ssh in host terminal cli $ ssh pi@raspberrypi raspberry and combinations but no luck
+
+Attempt 3
+* Failed so far :(
+* <todo: note, there are also duplicate empty ssh file as per RPi docs example. Also cmdline.txt which only contains; modules-load=dwc2,g_ether , and config.text which only contains on two seperte lines; [all] dtoverlay=dwc2 , this as boot directory files of same indicated put same in firmware directory, >
+```
+york-earwaker@york-earwaker-XPS-15-9560:/media/york-earwaker/rootfs/boot/firmware$ ls -l
+
+total 8
+
+-rw-r--r-- 1 root root 26 Dec 20 13:25 cmdline.txt
+
+-rw-r--r-- 1 root root 21 Dec 20 13:26 config.txt
+-rw-r--r-- 1 root root  0 Dec 18 15:41 ssh
+
+```
+* Created ssh file in /media/york-earwaker/bootfs host terminal cli $ touch ssh
+* Plug in USB A to Dell laptop for power and data to RPi Zero Micro USB B OTG port, wait a few minutes but can't ssh
+* There appears there might be an Ethernet problem with Ubuntu LTS 24.04.3 . Have seen various Ethernet issues reported online with 24.04.1 . Unclear if these apply to 24.04.3 . 
+* Can't see USB Ethernet/Netchip Ethernet in Setting>Networks panel.
+```
+$ nmcli connection show
+NAME                UUID                                  TYPE       DEVICE 
+BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
+lo                  04b471a3-29bf-4d19-8fc8-1e0190e7cd60  loopback   lo     
+Galaxy A14 Network  7d0e2e6d-34a0-41a7-b58f-5e18c49cc177  bluetooth  --  
+```
+* list usb as table
+```
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+```
+* After RPi Zero power off and place MicroSD Card Adapter into Dell laptop to view /bootfs directory ssh file, created above, is no longer there.
+
+### Headless, connect to RPi Zero 2 W from Dell laptop, Wifi
+Attempt 1
+* Failure :(
+* <todo: try this, but will likely require changes to RPi OS config files, >
+* doing this in parallel testing for ssh
+
+* Unplug USB A from Dell laptop, RPi Zero powered down, hard power off
+* Put MicroSD Card Adapter, containing MiroSD Card with pre installed RPi OS, in laptop
+* Navigate to rootfs/etc/wpa_supplicant directory, found there an admin rights protected file wpa_supplicant.conf 
+* Opened as Administrator, file contained the following
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+```
+* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
+* Content of  with additions as below, 
+```
+
+country=your_country_code
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+
+update_config=1
+
+
+network={
+
+    ssid="Your_Wi-Fi_SSID"
+    psk="Your_Wi-Fi_Password"
+
+    key_mgmt=WPA-PSK
+
+    priority=1
+}
+
+```
+* Saved wpa_supplicant.conf file
+* Unmount partitions and pull MicroSd Card Adapter out of Dell laptop Ubuntu LTS 24.04.3,
+* Put MicroSd Card Adapter into RPi Zero 2 W 
+* Plug in USB A into Dell laptop to Power on RPi Zero 2 W
+* Can't see RPi Zero in WiFi Router Hub control panel, not detailed here
+* Can't see RPi Zero with nmcli connection show, as below
+```
+$ nmcli connection show
+
+NAME                UUID                                  TYPE       DEVICE 
+
+BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
+lo                  9500dc08-d067-48d8-899f-ca89bbfa4cde  loopback   lo     
+
+Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --
+
+```
+* Can't see RPi Zero with lsusb
+```
+
+$ lsusb
+
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+* Can't see RPi Zero with ping
+```
+$ ping raspberrypi.local
+ping: raspberrypi.local: Name or service not known
+
+```
+* Load Ethernet driver? $ sudo modprobe r8152 , don't think it did any thing, probs needs installing?
+* Can't see RPi Zero with $ usbip list -l, lists only usual Dell laptop component parts on bus 001 
+```
+
+$ sudo modprobe r8152
+$ usbip list -l
+
+ - busid 1-12 (0c45:6713)
+
+   Microdia : unknown product (0c45:6713)
+
+
+ - busid 1-4 (0cf3:e300)
+
+   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
+
+ - busid 1-7 (138a:0091)
+
+   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
+
+
+ - busid 1-9 (04f3:24a1)
+
+   Elan Microelectronics Corp. : unknown product (04f3:24a1)
+
+```
+* Install latest Ubuntu updates
+* $ sudo apt update 
+* $ sudo apt full-upgrade
+* rebooted, not seemingly able to connect to RPi Zero, 
+* Quite possibly RPi Zero requires other things to setup, likely also Ubuntu, but what?
+
+Attempt 2
+* Failure :(
+* Unplugged USB cable from Dell
+* Put MicroSD Card Adapter back into Dell laptop, 
+* Put wpa_supplicant.conf file in /bootfs directory
+* $ touch wpa_supplicant.conf, creates the file 
+* Open in Text Editor add WiFi details
+* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
+* Content of file as below with placeholder values replaced with actual values, 
+```
+
+country=your_country_code
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+
+    ssid="Your_Wi-Fi_SSID"
+
+    psk="Your_Wi-Fi_Password"
+    key_mgmt=WPA-PSK
+    priority=1
+}
+```
+* Put MicroSD Card Adapter back into RPi Zero env
+* Plugged in USB cable to Dell laptop, RPi Zero ACT LED did not light green, not even flashing
+* Rebooted Dell Ubuntu 24.04.3 with USB cable plugged in, RPi Zero ACT LED did not light green, not even flashing 
+* Unplugged USB cable from Dell
+* Put MicroSD Card Adapter back into Dell laptop, moved to trash, wpa_supplicant.conf file from /bootfs directory
+* Put MicroSD Card Adapter back into RPi Zero env
+* Plugged in USB cable to Dell laptop, RPi Zero ACT LED did not light green, not even flashing
+* Unplugged USB cable from Dell
+* Unplugged USB cable from RPi Zero
+* Ejected MicroSD Card Adapter from RPi Zero env, 
+* Took out the MicroSD Card from the Adapter, replaced the MicroSD Card back into the Adapter
+* Plugged USB cable back to RPi Zero
+* Plugged USB cable back to Dell
+* RPi Zero ACT LED solid green, after initial flashing, 
+* But no joy
+```
+$ lsusb -t
+
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+
+
+
+$ usbip list -l
+ - busid 1-12 (0c45:6713)
+
+   Microdia : unknown product (0c45:6713)
+
+
+ - busid 1-4 (0cf3:e300)
+
+   Qualcomm Atheros Communications : QCA61x4 Bluetooth 4.0 (0cf3:e300)
+
+
+ - busid 1-7 (138a:0091)
+
+   Validity Sensors, Inc. : VFS7552 Touch Fingerprint Sensor (138a:0091)
+
+
+
+ - busid 1-9 (04f3:24a1)
+   Elan Microelectronics Corp. : unknown product (04f3:24a1)
+
+
+
+$ nmcli connection show
+NAME                UUID                                  TYPE       DEVICE 
+
+BT-2QAFZ5           da27f6e8-a9c4-412e-ba5d-c4afffb0edbe  wifi       wlp2s0 
+
+lo                  92afa887-aa67-4e0b-b77a-b6e41ffc920e  loopback   lo     
+Galaxy A14 Network  a897e654-7ea7-4d9e-b130-5d4f226e8d5e  bluetooth  --    
+
+```
+* Might have failed first time due to faulty USB connection
+
+Attempt 3
+* Failure :(
+* Unplugged USB cable from Dell
+* Put MicroSD Card Adapter back into Dell laptop, 
+* Put wpa_supplicant.conf file in /bootfs directory
+* $ touch wpa_supplicant.conf, creates the file 
+* Open in Text Editor add WiFi details
+* Edit wpa_supplicant.conf file with with local respective values for country=, ssid=, psk=, 
+* Content of file as below with placeholder values replaced with actual values, 
+```
+
+country=your_country_code
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+
+update_config=1
+
+
+network={
+
+
+    ssid="Your_Wi-Fi_SSID"
+
+
+    psk="Your_Wi-Fi_Password"
+
+    key_mgmt=WPA-PSK
+
+    priority=1
+}
+
+```
+* Put MicroSD Card Adapter back into RPi Zero env
+* Plugged in USB cable to Dell laptop, RPi Zero ACT LED light solid green, after initial flashing
+* Hub Manager for local WiFi Router network, shows only 2 devices - Dell PC and Mobile Phone Galaxy A14 - connected to router via WiFi 5Ghz channel, 0 devices via 2.4GHz channel.
+* Likely issue locale country code setting for RPi OS, see 2019-06-20: in [WS](https://downloads.raspberrypi.com/raspios_lite_armhf/release_notes.txt), from [WS](https://forums.raspberrypi.com/viewtopic.php?t=391776)
