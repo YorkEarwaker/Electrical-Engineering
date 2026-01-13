@@ -1,4 +1,4 @@
-# Home appliances hap
+# Home appliance hap
 
 Increase welfare, reduce harm, 
 
