@@ -697,7 +697,7 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 
 ```
 
-RPi OS Lite Trixie
+### RPi OS Lite Trixie
 * Success! :)
 * first use of RPi Imager, 
 * write RPi OS image (IOS) to Micro SD Card, A1, 
@@ -725,7 +725,10 @@ OS Customisation
 Fully customised
 ```
 
-In a terminal cli window get serial connected devices, 
+The make serial connection,
+* Failure :( 
+* Plug in USB TTL device to Dell Ubuntu host USB A, 
+* In a terminal cli window get serial connected devices, 
 ```
 $ sudo dmesg | grep -i tty
 [    0.010746] ACPI: SSDT 0x000000007855AE40 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
@@ -733,13 +736,10 @@ $ sudo dmesg | grep -i tty
 [    8.405071] Bluetooth: RFCOMM TTY layer initialized
 [ 8769.860369] usb 1-2: cp210x converter now attached to ttyUSB0
 ```
-The make serial connection,
-* Failure :( 
-* Likely due to fact that uart had not been added to end of config.txt beforehand.
+* Likely due to fact that enable_uart=1 had not been added to end of config.txt beforehand. try again with it added.
 ```
 $ sudo screen /dev/ttyUSB0 115200
 ```
-
 In a separate terminal cli window 
 ```
 $ sudo screen -list
