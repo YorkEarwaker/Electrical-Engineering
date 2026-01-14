@@ -724,32 +724,151 @@ Mounted as /media/york-earwaker/0403-0201
 OS Customisation
 Fully customised
 ```
-* Put card into RPi Zero 2 W env, SD Extension Cable, 
+* Added to /bootfs/config.txt
+```
+[all]
+enable_uart=1
+
+```
+* Take card from Dell Ubuntu
+* Put card into RPi Zero 2 W env, SD Extension Cable in this case, 
+* Plug in USB TTL device to Dell Ubuntu host USB A, 
 * Mains plugged in, two or three minutes, steady green light ACT LED .
 
-The make serial connection,
-* Failure :( 
-* Plug in USB TTL device to Dell Ubuntu host USB A, 
+Make serial connection, USB TTL to UART
+* Success! :)
+* In a terminal cli window get usb devices, 
+```
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 002: Dev 006, If 0, Class=Vendor Specific Class, Driver=cp210x, 12M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ lsusb -d 10c4:ea60
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+
+$ lsusb -s 001:006
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+
+
+$ lsusb -s 001:006 -v
+
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Couldn't open device, some information will be missing
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               1.10
+  bDeviceClass            0 [unknown]
+  bDeviceSubClass         0 [unknown]
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x10c4 Silicon Labs
+  idProduct          0xea60 CP210x UART Bridge
+  bcdDevice            1.00
+  iManufacturer           1 Silicon Labs
+  iProduct                2 CP2102 USB to UART Bridge Controller
+  iSerial                 3 0001
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0020
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass      0 [unknown]
+      bInterfaceProtocol      0 
+      iInterface              2 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+
+```
+
 * In a terminal cli window get serial connected devices, 
 ```
 $ sudo dmesg | grep -i tty
-[    0.010746] ACPI: SSDT 0x000000007855AE40 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
-[    0.192610] printk: legacy console [tty0] enabled
-[    8.405071] Bluetooth: RFCOMM TTY layer initialized
-[ 8769.860369] usb 1-2: cp210x converter now attached to ttyUSB0
+[sudo] password for york-earwaker: 
+[    0.010361] ACPI: SSDT 0x000000007855AE40 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
+[    0.192054] printk: legacy console [tty0] enabled
+[    8.512078] Bluetooth: RFCOMM TTY layer initialized
+[ 1816.408470] usb 1-2: cp210x converter now attached to ttyUSB0
+
 ```
-* Likely due to fact that enable_uart=1 had not been added to end of config.txt beforehand. try again with it added.
+* Open serial connection with screen
 ```
 $ sudo screen /dev/ttyUSB0 115200
 ```
-In a separate terminal cli window 
+* In a separate terminal cli window, list screen instances, 
 ```
 $ sudo screen -list
-[sudo] password for york-earwaker: 
 There is a screen on:
-	13109.pts-2.york-earwaker-XPS-15-9560	(01/13/2026 04:11:27 PM)	(Attached)
+	8417.pts-2.york-earwaker-XPS-15-9560	(01/14/2026 10:33:48 AM)	(Attached)
 1 Socket in /run/screen/S-root.
-york-earwaker@york-earwaker-XPS-15-9560:~$ sudo screen -XS 13109 quit
+```
+* Enter user id into empty screen with no prompt
+* Enter password into password prompt
+* Press Return
+```
+york-earwaker
+Password: 
+Linux raspberrypi 6.12.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1 (2025-09-16) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+york-earwaker@raspberrypi:~$ 
+```
+* quit the screen instance, 
+```
+$ sudo screen -XS 8417 quit
 ```
 In the original terminal cli after separate terminal cli quits screen.
 ```
