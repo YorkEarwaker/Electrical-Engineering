@@ -675,7 +675,8 @@ TBD?
 ## Output - Create OS image for use on RPi Zero 2 W
 * Partial success, TBD
 * <done: consider, Optionally configure OS during the flash installation process to Micro SD Card >
-* <todo: consider, add [all] enable_uart=1 to config.txt to enable contacto over serial bridge chip device, like rpi debug probe or usb ttl serial device, >
+* <done: consider, add [all] enable_uart=1 to config.txt to enable contacto over serial bridge chip device, like rpi debug probe or usb ttl serial device, RPi OS Lite Trixie, >
+* <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, question asked in RPi Forum 14 January 2026, >
 
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
@@ -699,7 +700,6 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 * Success! :)
 * first use of RPi Imager, 
 * write RPi OS image (OSI) to Micro SD Card, A1, 
-* <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, >
 ```
 Raspberry Pi Imager v1.9.3
 
