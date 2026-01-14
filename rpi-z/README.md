@@ -914,6 +914,9 @@ In the original terminal cli after separate terminal cli quits screen.
 ```
 $ sudo screen /dev/ttyUSB0 115200
 [screen is terminating]
+
+$ sudo screen -list
+No Sockets found in /run/screen/S-root.
 ```
 * USB TTL serial communication bridge device still present due to graceful gnu screen process quit.
 ```
