@@ -681,7 +681,7 @@ Primary Sources
 * TBC
 
 Secondary Sources
-Re: Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2358391#p2358391), Wed Jan 14, 2026 11:16 am, Raspberry Pi Forum, request for help re WiFi and SSH
+* Re: Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2358391#p2358391), Wed Jan 14, 2026 11:16 am, Raspberry Pi Forum, request for help re WiFi and SSH
 
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
