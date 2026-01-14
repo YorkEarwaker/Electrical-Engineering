@@ -653,8 +653,7 @@ Primary Sources
 * Getting started, [WS](https://www.raspberrypi.com/documentation/computers/getting-started.html), Raspberry Pi Documentation, 
 
 Secondary Sources
-* Many online information, inclusive; tutorials, Raspberry Pi Forum, etc...
-* See References heading section below, many
+* Re: Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2358391#p2356519), Sat Jan 03, 2026 9:55 pm, Raspberry Pi Forum, attempt this proposed solution in link, 
 
 Context Diagram - serial communication over Universal Serial Bus USB
 ```
@@ -904,7 +903,8 @@ Broadcast message from root@raspberrypi on pts/0 (Thu 2025-12-04 18:57:31 GMT):
 The system will power off now!
 
 york-earwaker@raspberrypi:~$ 
-                                                                                reboot: Power down 
+                                                                                
+reboot: Power down 
 ```
 * quit the screen instance, 
 ```
