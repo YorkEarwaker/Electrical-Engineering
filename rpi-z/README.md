@@ -677,6 +677,12 @@ TBD?
 * <done: consider, add [all] enable_uart=1 to config.txt to enable contacto over serial bridge chip device, like rpi debug probe or usb ttl serial device, RPi OS Lite Trixie, >
 * <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, question asked in RPi Forum 14 January 2026, >
 
+Primary Sources
+* TBC
+
+Secondary Sources
+Re: Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2358391#p2358391), Wed Jan 14, 2026 11:16 am, Raspberry Pi Forum, request for help re WiFi and SSH
+
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
 * RPi OS Desktop Trixie
