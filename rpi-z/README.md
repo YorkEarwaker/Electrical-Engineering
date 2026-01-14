@@ -477,7 +477,6 @@ Hardware -
 ### Connect RPi Zero 2 W to RPi Debug Probe
 Attempt 1
 * Success! :)
-* Clean up, see above
 * Attach Micro USB B to RPi Debug Probe, 
 * Attach JST connector to RPi Debug Probe, see ascii diagram above
 * Attach UART and GND leads to RPi Zero GPIO pin, see ascii diagram above
@@ -686,7 +685,6 @@ Candidate OSI's to install first attempts
 Install the RPi Imager software to flash Micro SD Cards with OS images OSI
 ```
 $ sudo snap install rpi-imager
-[sudo] password for york-earwaker: 
 rpi-imager 1.9.3 from Dave Jones (waveform) installed
 
 $ rpi-imager --version
@@ -724,6 +722,7 @@ Mounted as /media/york-earwaker/0403-0201
 OS Customisation
 Fully customised
 ```
+* To allow UART connection to RPi Zero 2 W
 * Added to /bootfs/config.txt
 ```
 [all]
@@ -865,6 +864,35 @@ individual files in /usr/share/doc/*/copyright.
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 york-earwaker@raspberrypi:~$ 
+```
+* Query the RPi OS instance
+```
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Debian
+Description:    Debian GNU/Linux 13 (trixie)
+Release:        13
+Codename:       trixie
+
+$ cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.2
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+
+$ uname -m
+aarch64
+$ dpkg-architecture --query DEB_HOST_ARCH
+arm64
+$ getconf LONG_BIT
+64
 ```
 * quit the screen instance, 
 ```
