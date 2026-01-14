@@ -894,6 +894,18 @@ arm64
 $ getconf LONG_BIT
 64
 ```
+* gracefully shut down RPi Zero 2 W from terminal cli
+* Green ACT LED is off
+```
+$ sudo shutdown -h now
+
+Broadcast message from root@raspberrypi on pts/0 (Thu 2025-12-04 18:57:31 GMT):
+
+The system will power off now!
+
+york-earwaker@raspberrypi:~$ 
+                                                                                reboot: Power down 
+```
 * quit the screen instance, 
 ```
 $ sudo screen -XS 8417 quit
@@ -902,6 +914,42 @@ In the original terminal cli after separate terminal cli quits screen.
 ```
 $ sudo screen /dev/ttyUSB0 115200
 [screen is terminating]
+```
+* USB TTL serial communication bridge device still present due to graceful gnu screen process quit.
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ sudo dmesg | grep -i tty
+[    0.010361] ACPI: SSDT 0x000000007855AE40 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
+[    0.192054] printk: legacy console [tty0] enabled
+[    8.512078] Bluetooth: RFCOMM TTY layer initialized
+[ 1816.408470] usb 1-2: cp210x converter now attached to ttyUSB0
+```
+* Unplug USB A to Dell Ubuntu host from USB TTL serial
+* CP2102 UART Bridge red PWR LED is off.
+* Dell Ubuntu reports USB device CP2102 is disconnected and no longer reported as  Bus 001 Device 006
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ sudo dmesg | grep -i tty
+[    0.010361] ACPI: SSDT 0x000000007855AE40 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
+[    0.192054] printk: legacy console [tty0] enabled
+[    8.512078] Bluetooth: RFCOMM TTY layer initialized
+[ 1816.408470] usb 1-2: cp210x converter now attached to ttyUSB0
+[ 6793.849051] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
 ```
 
 ## Environment Tests
