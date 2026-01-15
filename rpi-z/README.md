@@ -725,8 +725,6 @@ Raspberry Pi Zero 2 W
 Operating System
 2025-12-04-raspios-trixie-arm64-lite.img.xz
 
-File passes SHA256 checksum, after download before selection in a seperate process, 
-
 Storage
 A1 Micro SD Card. 
 Internal SD card reader - 31.3 GB
@@ -973,6 +971,7 @@ $ sudo dmesg | grep -i tty
 
 ### Ubuntu Core 24
 * TBD?
+* This process is likely to be a lot more involved, and may not be resolved in short order
 
 Get, download, Ubuntu Core 24, 64bit, raspi
 * https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi 
@@ -995,10 +994,35 @@ Raspberry Pi Zero 2 W
 Operating System
 ubuntu-core-24-arm64+raspi.img.xz
 
+Storage
+A1 Micro SD Card. 
+Internal SD card reader - 31.3 GB
+Mounted as /media/york-earwaker/0403-0201
 
+OS Customisation
+Fully customised
+```
+* Ubuntu Core 24 has only a single partition on newly formatted and installed MicroSD Card, A1, 
+```
+ubuntu-seed
+```
+* The /ubuntu-seed/config.txt file already contained enable_uart=1, so no need to add it, 
+```
+# Enable the serial pins
+enable_uart=1
+```
+<todo: make a serial connection, and things below not yet achieved, >
+* Take card from Dell Ubuntu
+* Put card into RPi Zero 2 W env, SD Extension Cable in this case, 
+* Plug in USB TTL device to Dell Ubuntu host USB A, 
+* Mains plugged in, two or three minutes, steady green light ACT LED .
 
+Make serial connection, USB TTL to UART
+* TBD
+* In a terminal cli window get usb devices, 
 ```
 
+```
 
 
 
