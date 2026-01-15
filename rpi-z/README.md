@@ -674,7 +674,7 @@ TBD?
 ## Output - Create OS image for use on RPi Zero 2 W
 * Partial success, TBD
 * <done: consider, Optionally configure OS during the flash installation process to Micro SD Card >
-* <done: consider, add [all] enable_uart=1 to config.txt to enable contacto over serial bridge chip device, like rpi debug probe or usb ttl serial device, RPi OS Lite Trixie, >
+* <done: consider, add [all] enable_uart=1 to config.txt to enable contact over serial bridge chip device, like rpi debug probe or usb ttl serial device, RPi OS Lite Trixie, >
 * <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, question asked in RPi Forum 14 January 2026, >
 
 Primary Sources
@@ -727,6 +727,7 @@ Mounted as /media/york-earwaker/0403-0201
 OS Customisation
 Fully customised
 ```
+* After installation is completed, remove and reinsert the MicroSD Card to add configuration key values
 * To allow UART connection to RPi Zero 2 W
 * Added to /bootfs/config.txt
 ```
