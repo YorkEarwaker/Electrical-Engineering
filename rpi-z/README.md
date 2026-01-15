@@ -706,7 +706,7 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 
 Get, download, RPi OS Lite Trixie, 64bit, 
 * https://www.raspberrypi.com/software/operating-systems/
-* Local file retrieved 8 01 2026 18:08:49
+* Local file retrieved 9 01 2026 19:39:56
 
 Check SHA256 hash
 ```
@@ -976,7 +976,7 @@ $ sudo dmesg | grep -i tty
 
 Get, download, Ubuntu Core 24, 64bit, raspi
 * https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi 
-* retrieved; 
+* Local file retrieved 8 01 2026 18:08:49
 
 Check SHA256 hash
 ```
@@ -993,6 +993,9 @@ Raspberry Pi Device
 Raspberry Pi Zero 2 W
 
 Operating System
+ubuntu-core-24-arm64+raspi.img.xz
+
+
 
 ```
 
