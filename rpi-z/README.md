@@ -703,8 +703,19 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 
 ### RPi OS Lite Trixie
 * Success! :)
+
+Get, download, RPi OS Lite Trixie, 64bit, 
+* https://www.raspberrypi.com/software/operating-systems/
+* Local file retrieved 8 01 2026 18:08:49
+
+Check SHA256 hash
+```
+$ echo "681a775e20b53a9e4c7341d748a5a8cdc822039d8c67c1fd6ca35927abbe6290 *2025-12-04-raspios-trixie-arm64-lite.img.xz" | shasum -a 256 --check
+2025-12-04-raspios-trixie-arm64-lite.img.xz: OK
+```
+
 * first use of RPi Imager, 
-* write RPi OS image (OSI) to Micro SD Card, A1, 
+* write RPi OS Lite Trixie image (OSI) to Micro SD Card, A1, 
 ```
 Raspberry Pi Imager v1.9.3
 
@@ -712,10 +723,7 @@ Raspberry Pi Device
 Raspberry Pi Zero 2 W
 
 Operating System
-Local file retrieved 9 01 2026 19:39:56
 2025-12-04-raspios-trixie-arm64-lite.img.xz
-downloaded from
-https://www.raspberrypi.com/software/operating-systems/
 
 File passes SHA256 checksum, after download before selection in a seperate process, 
 
@@ -961,6 +969,35 @@ $ sudo dmesg | grep -i tty
 [ 1816.408470] usb 1-2: cp210x converter now attached to ttyUSB0
 [ 6793.849051] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
 ```
+
+
+### Ubuntu Core 24
+* TBD?
+
+Get, download, Ubuntu Core 24, 64bit, raspi
+* https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi 
+* retrieved; 
+
+Check SHA256 hash
+```
+$ echo "f8e1c4882e7bb0b9357dd41789f94ea6f9ad7caa50ce7a16b32a1e628f591c74 *ubuntu-core-24-arm64+raspi.img.xz" | shasum -a 256 --check
+ubuntu-core-24-arm64+raspi.img.xz: OK
+```
+
+* second use of RPi Imager, 
+* write Ubuntu Core 24 OS image (OSI) to Micro SD Card, A1, 
+```
+Raspberry Pi Imager v1.9.3
+
+Raspberry Pi Device
+Raspberry Pi Zero 2 W
+
+Operating System
+
+```
+
+
+
 
 ## Environment Tests
 
