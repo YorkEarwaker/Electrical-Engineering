@@ -683,6 +683,10 @@ Primary Sources
 Secondary Sources
 * Re: Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?p=2358391#p2358391), Wed Jan 14, 2026 11:16 am, Raspberry Pi Forum, request for help re WiFi and SSH
 
+After OS installation onto MicroSD Card. For steps requiring serial connection, to OS running on RPI Zero 2 W, circuit diagram and discussion, either of the approaches in links inline below should work
+* Output - headless to RPi Zero 2 W with USB TTL to UART, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z#output---headless-to-rpi-zero-2-w-with-usb-ttl-to-uart)
+* Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z#output---headless-to-rpi-zero-2-w-with-raspberry-pi-debug-probe)
+
 Candidate OSI's to install first attempts
 * RPi OS Lite Trixie
 * RPi OS Desktop Trixie
@@ -705,7 +709,7 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 * Success! :)
 
 Get, download, RPi OS Lite Trixie, 64bit, 
-* https://www.raspberrypi.com/software/operating-systems/
+* Raspberry Pi OS downloads [WS](https://www.raspberrypi.com/software/operating-systems/), Raspberry Pi, software
 * Local file retrieved 9 01 2026 19:39:56
 
 Check SHA256 hash
@@ -974,7 +978,7 @@ $ sudo dmesg | grep -i tty
 * This process is likely to be a lot more involved, and may not be resolved in short order
 
 Get, download, Ubuntu Core 24, 64bit, raspi
-* https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi 
+* Thank you for downloading Ubuntu Core 24 for Raspberry Pi, com [WS](https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi), Ubuntu, download
 * Local file retrieved 8 01 2026 18:08:49
 
 Check SHA256 hash
