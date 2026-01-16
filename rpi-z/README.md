@@ -1028,7 +1028,8 @@ enable_uart=1
 * The green ACT LED blinked once or twice and then went out.
 
 Make serial connection, USB TTL to UART
-* Success! :) to date, wip
+* Success! :) 
+* <done: consider, make a serial connection, > 
 * In a terminal cli window get usb devices, 
 ```
 $ lsusb -t
@@ -1136,8 +1137,12 @@ There is a screen on:
 1 Socket in /run/screen/S-root.
 
 ```
-* configure Ubuntu Core via cli interface over serial connection, wip
-* <todo: make a serial connection, and things below not yet achieved, >
+* Blank screen cli, press return? twice? wait two min? <test: in actuality entered UID then PWD but don't think they were needed, no UID or PWD characters were shown on the screen window, >
+
+Configure Ubuntu Core
+* TBD? 
+* <todo: consider, configure Ubuntu Core via cli interface over serial connection, wip >
+* ...
 
 
 
