@@ -972,10 +972,15 @@ $ sudo dmesg | grep -i tty
 [ 6793.849051] cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0
 ```
 
-
 ### Ubuntu Core 24
 * TBD?
 * This process is likely to be a lot more involved, and may not be resolved in short order
+
+Prerequisites
+* Ubuntu One Account [WS](https://login.ubuntu.com/), Ubuntu, login to existing account, or create one, to add SSH keys
+* Use Ubuntu One SSH [WS](https://documentation.ubuntu.com/core/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh/#), Ubuntu, docs, follow instructions on how to create SSH keys
+* SSH/OpenSSH/Keys [WS](https://help.ubuntu.com/community/SSH/OpenSSH/Keys), Ubuntu, docs, help, more detail on Ubuntu One SSH formats and usage, 
+* How to Use ssh-keygen to Generate a New SSH Key? [WS](https://www.ssh.com/academy/ssh/keygen) SSH 
 
 Get, download, Ubuntu Core 24, 64bit, raspi
 * Thank you for downloading Ubuntu Core 24 for Raspberry Pi, com [WS](https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi), Ubuntu, download
@@ -1015,18 +1020,124 @@ ubuntu-seed
 # Enable the serial pins
 enable_uart=1
 ```
-<todo: make a serial connection, and things below not yet achieved, >
+
 * Take card from Dell Ubuntu
 * Put card into RPi Zero 2 W env, SD Extension Cable in this case, 
 * Plug in USB TTL device to Dell Ubuntu host USB A, 
-* Mains plugged in, two or three minutes, steady green light ACT LED .
+* Mains plugged in, two or three minutes, steady green light ACT LED was not shown.
+* The green ACT LED blinked once or twice and then went out.
 
 Make serial connection, USB TTL to UART
-* TBD
+* Success! :) to date, wip
 * In a terminal cli window get usb devices, 
 ```
+$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 002: Dev 006, If 0, Class=Vendor Specific Class, Driver=cp210x, 12M
+    |__ Port 004: Dev 002, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 004: Dev 002, If 1, Class=Wireless, Driver=btusb, 12M
+    |__ Port 007: Dev 003, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+    |__ Port 009: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 012: Dev 005, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ lsusb -d 10c4:ea60
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+
+$ lsusb -s 001:006
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+
+$ lsusb -s 001:006 -v
+
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Couldn't open device, some information will be missing
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               1.10
+  bDeviceClass            0 [unknown]
+  bDeviceSubClass         0 [unknown]
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x10c4 Silicon Labs
+  idProduct          0xea60 CP210x UART Bridge
+  bcdDevice            1.00
+  iManufacturer           1 Silicon Labs
+  iProduct                2 CP2102 USB to UART Bridge Controller
+  iSerial                 3 0001
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0020
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass      0 [unknown]
+      bInterfaceProtocol      0 
+      iInterface              2 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+```
+* In a terminal cli window get serial connected devices, 
+```
+$ sudo dmesg | grep -i tty
+[23144.736428] usb 1-2: cp210x converter now attached to ttyUSB0
 
 ```
+* Open serial connection with screen
+```
+$ sudo screen /dev/ttyUSB0 115200
+```
+* In a separate terminal cli window, list screen instances, 
+```
+$ sudo screen -list
+ 
+There is a screen on:
+	10537.pts-2.york-earwaker-XPS-15-9560	(01/16/2026 01:38:49 PM)	(Attached)
+1 Socket in /run/screen/S-root.
+
+```
+* configure Ubuntu Core via cli interface over serial connection, wip
+* <todo: make a serial connection, and things below not yet achieved, >
 
 
 
@@ -1138,6 +1249,10 @@ Ubuntu Core 24 - RPi Zero 2 W
 
 WiFi - Debian, RPi OS, Ubuntu
 * WiFi, wpa_supplicant file, [WS](https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant) , debian, 
+
+RPi Zero 2 W - LED ACT
+* Pi Zero status LED meaning, [WS](https://forums.raspberrypi.com/viewtopic.php?t=216095), 16 Jun 2018, Raspberry Pi Forum
+* 
 
 Safety circuit - 5V power * to * GPIO pins
 * rPI Zero W 5 V output, [WS](https://raspberrypi.stackexchange.com/questions/69120/rpi-zero-w-5-v-output), StackExchange, Raspberry Pi, 
