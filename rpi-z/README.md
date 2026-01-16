@@ -1137,7 +1137,8 @@ There is a screen on:
 1 Socket in /run/screen/S-root.
 
 ```
-* Blank gnu screen cli, press return? twice? wait two min? <test: in actuality entered UID then PWD but don't think they were needed, no UID or PWD characters were shown on the screen window, needs further clarification on specific tasks required, >
+* Blank gnu screen cli, press return? twice? wait two min? 
+* <todo: consider, test . in actuality entered UID then PWD but don't think they were needed, the UID and PWD characters were NOT shown on the screen window, needs further clarification on specific tasks required, >
 * Eventually cli ascii Ubuntu configuration options displayed, in gnu screen window.
 
 Configure Ubuntu Core
@@ -1169,6 +1170,9 @@ Configure Ubuntu Core
                                                                               
                                  [ OK         ]    
 ```
+* Shut down serial gnu screen session gracefully, 
+* Disconnected USB A from host Dell Ubuntu, unplugged target RPi Zero 2 W .
+* Start again next week, Mon 19 Jan 2026 or thereabout, 
 * ...
 
 
