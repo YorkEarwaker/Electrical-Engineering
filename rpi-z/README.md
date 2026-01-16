@@ -1173,7 +1173,7 @@ Configure Ubuntu Core
                                  [ OK         ]    
 ```
 * Shut down serial gnu screen session gracefully, 
-* Disconnected USB A from host Dell Ubuntu, unplugged target RPi Zero 2 W .
+* Disconnected USB A from host Dell Ubuntu, unplugged target RPi Zero 2 W from mains.
 * Start again next week, Mon 19 Jan 2026 or thereabout, 
 * ...
 
