@@ -1137,11 +1137,38 @@ There is a screen on:
 1 Socket in /run/screen/S-root.
 
 ```
-* Blank screen cli, press return? twice? wait two min? <test: in actuality entered UID then PWD but don't think they were needed, no UID or PWD characters were shown on the screen window, >
+* Blank gnu screen cli, press return? twice? wait two min? <test: in actuality entered UID then PWD but don't think they were needed, no UID or PWD characters were shown on the screen window, needs further clarification on specific tasks required, >
+* Eventually cli ascii Ubuntu configuration options displayed, in gnu screen window.
 
 Configure Ubuntu Core
 * TBD? 
 * <todo: consider, configure Ubuntu Core via cli interface over serial connection, wip >
+* First configuration page,
+```
+================================================================================
+  Ubuntu Core                                                                 
+================================================================================
+  Configure the network and setup an administrator account on this all-snap   
+  Ubuntu Core system.                                                         
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                 [ OK         ]    
+```
 * ...
 
 
