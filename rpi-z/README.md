@@ -1010,7 +1010,9 @@ Mounted as /media/york-earwaker/0403-0201
 
 OS Customisation
 Fully customised
+Values left over from first use. These were left more or less unchanged. It does not seem as though these values had any effect for Ubuntu Core 24 OS image install.
 ```
+* <todo: consider, confirm RPi Imager config values have no effect on Ubuntu Core install, cynically? they seemed only partially effective on RPi OS Trixie install. But likely not used at all on Ubuntu Core install. >
 * Ubuntu Core 24 has only a single partition on newly formatted and installed MicroSD Card, A1, 
 ```
 ubuntu-seed
