@@ -134,9 +134,9 @@ Context Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 ```                                   
              RPi Zero 2 W                             USB TTL to UART device                                   Dell Ubuntu
              -----------             Serial                -----------                Serial                   -----------
-            |       o o |          Connection         UART|o       ___| Some        Connection                |___        |
-            |       o o | GPIO ----------------------  PIN|o  SBC |___  USB ------------------- standard USB A ___|       |
-            |       o o |      Sink < Power < Source   OUT|o          | A/B/C   Sink < Power < Source         |           |
+            |       o o |          Connection        UART |o       ___| Some        Connection                |___        |
+            |       o o | GPIO ---------------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
+            |       o o |      Sink < Power < Source  OUT |o          | A/B/C   Sink < Power < Source         |           |
              -----------            < Data >               -----------               < Data  >                 -----------
                                                       Serial Bridge Chip SBC
 ```
@@ -217,9 +217,9 @@ Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 ```                                   
              RPi Zero 2 W                       USB TTL to UART device                                   Dell Ubuntu
              -----------          Serial             -----------                Serial                   -----------
-   PWR IN   |___    o o |       Connection      UART|o       ___| Some        Connection                |___        |
-Micro USB B  ___|   o o | GPIO ----------------  PIN|o  SBC |___  USB ------------------- standard USB A ___|       |
- Src > Snk  |       o o |                        OUT|o          | A/B/C   Sink < Power < Source         |           |
+   PWR IN   |___    o o |       Connection     UART |o       ___| Some        Connection                |___        |
+Micro USB B  ___|   o o | GPIO ---------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
+ Src > Snk  |       o o |                       OUT |o          | A/B/C   Sink < Power < Source         |           |
              -----------         < Data >            -----------               < Data                   -----------
                                                 Serial Bridge Chip SBC
 ```
