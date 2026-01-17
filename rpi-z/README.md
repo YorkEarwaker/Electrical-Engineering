@@ -438,8 +438,8 @@ Circuit Diagram
 Raspberry Pi Debug Probe
 Interface board in a casing to 
 Micro USB B
-                                                  Chip set. RP2040
-                                                  Software. Picoprobe
+                                                        Chip set. RP2040
+                                                        Software. Picoprobe
                   _________
             ------\ Micro /------   ʌ  To Host          | ---------- | ----------- | ------------------------------ |
            |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            | Colour  | Description
