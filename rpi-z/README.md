@@ -156,12 +156,12 @@ to one or more of; USB A, Micro USB B, USB C, ...
            |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
 Serial     |   ___   |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
 Bridge  >  |  |SBC|  |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
-Chip       |   ---   |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
-           |         |           UART             | ---------- | ----------- | --------|------------------------------- |
-Pin Out >  | o o o o |            
+Chip       |   ---   |                            | 4          | PWR         | Red     | 5V 500mA  (Power)              |
+           |         |        v  To Target        | ---------- | ----------- | --------|------------------------------- |
+Pin Out >  | o o o o |           UART 
             ---------  
-             |     |           <  The device cable
-              |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
+             |     |          <  The device cable
+              |||||           <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
              | | | | PWR in this scenario            
              |-(-(-(--------|
@@ -239,12 +239,12 @@ to one or more of; USB A, Micro USB B, USB C, ...
            |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
 Serial     |   ___   |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
 Bridge  >  |  |SBC|  |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
-Chip       |   ---   |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
-           |         |           UART             | ---------- | ----------- | --------|------------------------------- |
-Pin Out >  | o o o o |            
+Chip       |   ---   |                            | 4          | PWR         | Red     | 5V 500mA  (Power)              |
+           |         |        v  To Target        | ---------- | ----------- | --------|------------------------------- |
+Pin Out >  | o o o o |           UART 
             ---------  
-             |     |           <  The device cable
-              |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
+             |     |          <  The device cable
+              |||||           <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
              | | | | PWR N/A in this scenario            
              |-(-(----------|
