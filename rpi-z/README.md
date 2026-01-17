@@ -554,6 +554,17 @@ Attempt 2.
 enable_uart=1
 ```
 * Create /bootfs/userconf.txt file as per RPi docs headless instructions, configure user manually [WS](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-a-user)
+```
+Synopsis of userconf.txt, usage
+Create file then add username and password as per RPi Docs instructions.
+/bootfs/userconf.txt
+In cli terminal
+
+$ touch userconf.txt
+
+Open file userconf.txt and enter your-user-name:password, on a single line.
+The password must be generated with OpenSSL as per instructions in link above.
+```
 * Put MicroSD Card Adapter back into Extension cable in RPi Zero env
 * Plugin jumper wires to RPi Zero GPIO, see above circuit diagram above.
 * Plugin USB A, from RPi Debug Probe, to Dell Ubuntu, 
