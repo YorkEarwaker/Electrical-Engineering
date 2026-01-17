@@ -18,7 +18,6 @@ TODO
 * <todo: consider, hello world project>
 * <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? RPi OS on RPi Zero SBC, >
 * <todo: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, >
-* <todo: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, >
 * <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, for use with RPi Pico MCU powered by 5V RPi Zero SBC, >
 * <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt, from tutorial, source offical Raspberry Pi docs, >
@@ -28,6 +27,7 @@ TODO
 * <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
 * <todo: consider, to setup RPi Zero correctly will have to purchase secondary BoM items, screen display, keyboard, and so on, >
 * <todo: consider, is there some way to make headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, >
+* <todo: consider, ascii art, in stand alone files to reflect changes made here. >
 
 DONE
 * <done: consider, intent to commit>
@@ -37,6 +37,7 @@ DONE
 * <done: consider, for future use, first pass at wpa_supplicat.conf file, a Debian configuration file for WiFi, see referrences below,  >
 * <done: consider, does the Micro USB B - OTG? - on the RPi Debug Probe device exhibit disconnection issue with the Linux Ubuntu LTS 24.04.3, Yes! likely same kernel issue, >
 * <done: consider, request login credentials from The Pi Hut for the Micro SD Card with RPi OS pre installed, email sent 2026-01-01, >
+* <done: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, wip>
 
 ## Hardware
 
@@ -63,8 +64,8 @@ Bill of material, BoM +, To be considered --- helper tech
 Diagram of the eight main components on board the RPi Zero single board computer SBC. Larger than actual physical form factor.
 ```
         ---------------------------------------------------------------------------
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O       ___|_
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          | 
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o       ___|_
       |  ____________                              GPIO                         |   | |
       |  \           |        _________________                                =| C |C|
       |  >   Micro   |       |       SOC       |    _____________              =| a |S|
@@ -130,18 +131,20 @@ Secondary Sources
 
 Context Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
-```
-             RPi Zero 2 W                                                        Dell Ubuntu
-             -----------                         Serial                          -----------
-            |       o o |                      Connection                       |___        |
-            |       o o | GPIO ---------------------------------- standard USB A ___|       |
-            |       o o |                  Sink < Power < Source                |           |
-             -----------                        < Data  >                        -----------
+```                                   
+             RPi Zero 2 W                             USB TTL to UART device                                   Dell Ubuntu
+             -----------             Serial                -----------                Serial                   -----------
+            |       o o |          Connection         UART|o       ___| Some        Connection                |___        |
+            |       o o | GPIO ----------------------  PIN|o  SBC |___  USB ------------------- standard USB A ___|       |
+            |       o o |      Sink < Power < Source   OUT|o          | A/B/C   Sink < Power < Source         |           |
+             -----------            < Data >               -----------               < Data  >                 -----------
+                                                      Serial Bridge Chip SBC
 ```
 Circuit Diagram - USB provides power, USB TTL to UART 3V + USB power 5V
 * Sub process one
 * Work in progress to finish, safety circuit dependency
 ```     
+USB TTL to UART device
 Interface board with or without a cable or casing
 to one or more of; USB A, Micro USB B, USB C, ...
                                                   Chip set. PL2303, CP2102, ... others
@@ -151,12 +154,12 @@ to one or more of; USB A, Micro USB B, USB C, ...
             | USB A |                             | Pin Number | UART Signal | Colour  | Description                    | 
            -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
            |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
-           |         |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
-           |         |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
-           |         |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
+Serial     |   ___   |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
+Bridge  >  |  |SBC|  |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
+Chip       |   ---   |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
            |         |           UART             | ---------- | ----------- | --------|------------------------------- |
-            ---------             
-             |     |   
+Pin Out >  | o o o o |            
+            ---------  
              |     |           <  The device cable
               |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
@@ -179,8 +182,8 @@ to one or more of; USB A, Micro USB B, USB C, ...
                 5  5  G  G  G
         ---------------------------------------------------------------------------
                 2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          | 
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          |
                 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
 ```
 Circuit Diagram - Safety circuit, 
@@ -211,17 +214,20 @@ TBD
 ```
 Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
+```                                   
+             RPi Zero 2 W                       USB TTL to UART device                                   Dell Ubuntu
+             -----------          Serial             -----------                Serial                   -----------
+   PWR IN   |___    o o |       Connection      UART|o       ___| Some        Connection                |___        |
+Micro USB B  ___|   o o | GPIO ----------------  PIN|o  SBC |___  USB ------------------- standard USB A ___|       |
+ Src > Snk  |       o o |                        OUT|o          | A/B/C   Sink < Power < Source         |           |
+             -----------         < Data >            -----------               < Data                   -----------
+                                                Serial Bridge Chip SBC
 ```
-             RPi Zero 2 W                                                        Dell Ubuntu
-             -----------                         Serial                          -----------
-   PWR IN   |___    o o |                      Connection                       |___        |
-Micro USB B  ___|   o o | GPIO ---------------------------------- standard USB A ___|       |
- Src > Snk  |       o o |                                                       |           |
-             -----------                        < Data  >                        -----------
-```
+
 Circuit Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
 * Sub process two
 ```     
+USB TTL to UART device
 Interface board with or without a cable or casing
 to one or more of; USB A, Micro USB B, USB C, ...
                                                   Chip set. PL2303, CP2102, ... others
@@ -231,12 +237,12 @@ to one or more of; USB A, Micro USB B, USB C, ...
             | USB A |                             | Pin Number | UART Signal | Colour  | Description                    | 
            -|_______|-                            | ---------- | ----------- | ---------------------------------------- |
            |         |        <  The USB          | 1          | TX          | Green   | 3V3 logic (Output of USB port) |
-           |         |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
-           |         |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
-           |         |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
+Serial     |   ___   |           Plug             | 2          | GND         | Black   | GND       (Ground)             |
+Bridge  >  |  |SBC|  |                            | 3          | RX          | White   | 3V3 logic (Input to USB port)  |
+Chip       |   ---   |        v To Target         | 4          | PWR         | Red     | 5V 500mA  (Power)              |
            |         |           UART             | ---------- | ----------- | --------|------------------------------- |
-            ---------             
-             |     |   
+Pin Out >  | o o o o |            
+            ---------  
              |     |           <  The device cable
               |||||            <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
@@ -259,8 +265,8 @@ to one or more of; USB A, Micro USB B, USB C, ...
                 5  5  G  G  G
         ---------------------------------------------------------------------------
                 2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          | 
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          |
                 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
 ```
 
@@ -418,35 +424,39 @@ Secondary Sources - troubleshooting help
 
 Context Diagram
 ```
-             RPi Zero 2 W                           RPi Debug Probe                                      Dell Ubuntu
+             RPi Zero 2 W                          RPi Debug Probe                                       Dell Ubuntu
              -----------          Serial             -----------                Serial                   -----------
    PWR IN   |___    o o |       Connection          |___     ___|   OTG?      Connection                |___        |
-Micro USB B  ___|   o o | GPIO ------------ UART JST ___|   |___ Micro USB B ------------ standard USB A ___|       |
+Micro USB B  ___|   o o | GPIO ------------ UART JST ___|SBC|___ Micro USB B ------------ standard USB A ___|       |
  Src > Snk  |       o o |                           |           |         Sink < Power < Source         |           |
              -----------         < Data >            -----------               < Data  >                 -----------
+                                                 Serial Bridge Chip SBC
 ```
+
 Circuit Diagram
 ```
+Raspberry Pi Debug Probe
 Interface board in a casing to 
 Micro USB B
                                                   Chip set. RP2040
                                                   Software. Picoprobe
-            _________
-      ------\ Micro /------   ʌ  To Host          | ---------- | ----------- | ------------------------------ |
-     |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            | Colour  | Description
-     |      |_______|      |                      | ---------- | ----------- | ------------------------------ |
-     |                     |  <  The Debug        | 1          | TX          | SC (Serial Clock)              | Orange  | TX/SC (Output from Probe)
-     |     Raspberry Pi    |     Host             | 2          | GND         | GND                            | Black   | GND   (Ground)
-     |     Debug Probe     |                      | 3          | RX          | SD (bidirectional serial data) | Yellow  | RX/SD (Input to Probe or I/O)
-     |                     |  v To Target         | ---------- | ----------- | ------------------------------ |
-     |    _____   _____    |     U = UART, D = DEBUG SWD
-     |   |  U  | |  D  |   |  <  1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry)
-      ---      ---       ---     or SM03B-SRSS-TB (side entry) types, or compatible alternatives . 
-          | | |   | | |       <  The (serial UART/debug SWD) jumper wires, 
-          1 2 3   1 2 3
-          | | |----------|
-          |-(------------(--|
-            |---------|  |  |
+                  _________
+            ------\ Micro /------   ʌ  To Host          | ---------- | ----------- | ------------------------------ |
+           |      | USB B |      |                      | Pin Number | UART Signal | Serial Debug Signal            | Colour  | Description
+           |      |_______|      |                      | ---------- | ----------- | ------------------------------ |
+Serial     |         ___         |  <  The Debug        | 1          | TX          | SC (Serial Clock)              | Orange  | TX/SC (Output from Probe)
+Bridge  >  |        |SBC|        |     Host             | 2          | GND         | GND                            | Black   | GND   (Ground)
+Chip       |         ---         |                      | 3          | RX          | SD (bidirectional serial data) | Yellow  | RX/SD (Input to Probe or I/O)
+           |                     |  v  To Target        | ---------- | ----------- | ------------------------------ |
+           |    _____   _____    |     U = UART, D = DEBUG SWD
+           |   |  U  | |  D  |   |  <  1.0mm pitch 3-pin JST ‘SH’ connector either BM03B-SRSS-TB (top entry)
+            ---      ---       ---     or SM03B-SRSS-TB (side entry) types, or compatible alternatives . 
+                | | |   | | |       <  The (serial UART/debug SWD) jumper wires, 
+                1 2 3   1 2 3
+                | | |
+                | | |----|
+                |-(------(--|
+                  |---|  |  |
                       |  X  X
                       |  T  R
                       |      
@@ -462,8 +472,8 @@ Micro USB B
                 5  5  G  G  G
         ---------------------------------------------------------------------------
                 2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40            Raspberry Pi Zero GPIO
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          | 
-      |         O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O  O          |
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          | 
+      |         o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o          |
                 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 
 ```
 
