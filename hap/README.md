@@ -18,7 +18,7 @@ Terms
 
 Molecules produced by burning natural gas, indoor air quality IAQ
 * Carbon Monoxide, CO [WP](https://en.wikipedia.org/wiki/Carbon_monoxide), burning, health, contributes to tropospheric ozone a global warming gas and health hazard, increases global warming potential as it decreases hydorxil (OH) radicals which necessary for breakdown of other global warming gases, so prolongs lifetime of greenhouse gases, so increases global warming potential
-* Methan, CHO4 [](), leakage, production to consumption, global warming gas
+* Methane, CH4 [WP](https://en.wikipedia.org/wiki/Methane), leakage, production to consumption, global warming gas
 * Benzene, , [](), leakage, from production to consumption, health, carcinogenic, carcinogen, 
 * Carbon Dioxide, CO2, [](), burning, health, a global warming gas
 * Water, H2O, [](),  burning, health, damp conditions encourage black mold, as water vapor a global warming gas
