@@ -9,9 +9,11 @@ Use cases
 * Cooking, first class, focus on this in first instance, requires (magnetic) metal cookware, 
 * Heating?, air
 * Heating, housing, 
-* Heating, water, not for cooking,
+* Heating, water, bathing, not for cooking,
 * Lighting
 * ...
+
+Fossil fuel grid independent, no dependency of fossil fuel grid, 
 
 ## Status
 TODO
