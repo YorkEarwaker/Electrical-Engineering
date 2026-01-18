@@ -34,13 +34,22 @@ Terms
 * Induction cooking [WP](https://en.wikipedia.org/wiki/Induction_cooking), 
 * Induction lamp [WP](https://en.wikipedia.org/wiki/Induction_lamp), electrodeless lamp, 
 
+Usage scenarios - 
+* CombiZone, 
+* Flex Induction Zone, 
+
 Physics
 * Electromagnetism, [WP]()
 * Magnets, [WP]()
- 
 
 Metals
 * Metal, 
 * Carbon Steel
 * Copper, 
 * ...
+
+COTS examples
+* Double Flex Induction Hob
+* Bosch PWP611BB5B
+* Neff T66FHX4L0:
+* TPB Tech Invisible Induction Hob
