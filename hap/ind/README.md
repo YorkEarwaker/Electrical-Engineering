@@ -20,7 +20,7 @@ TODO
 * <todo: consider name change, >
 * <todo: consider, hob power supply, 3–10 kW, research COTS products for same, >
 * <todo: consider, power efficiency, reduce power consumption, >
-* <todo: consider, ideal for resilliency, not grid dependent, attach a battery or other power supply like solar wind, with appropriate electrical saftey circuits, emergency management response, climate refugee camps, damaged infrastructure natural disaster, damaged infrastructure conflict zones, >
+* <todo: consider, portable induction hob, ideal for resilliency, not grid dependent, attach a battery or other power supply like solar wind, with appropriate electrical saftey circuits, emergency management response, climate refugee camps, damaged infrastructure natural disaster, damaged infrastructure conflict zones, >
 * <todo: consider, research induction heating, >
 * <todo: consider, research electrodeless lamp, probs not as efficient as LED or similar?, what is most effective low power consumption lighting option, >
 
@@ -49,7 +49,14 @@ Metals
 * ...
 
 COTS examples
-* Double Flex Induction Hob
+* Double Flex Induction Hob, [WS](https://ifdesign.com/en/winner-ranking/project/double-flex-induction-hob/312391), 
+* Induction Hobs: the quicker and safer option. [WS](https://www.bosch-home.co.uk/bosch-innovations/cooking-with-induction), Bosch, 
+* Induction Hobs [WS](https://www.ikea.com/gb/en/cat/induction-hobs-20813/), IKEA, 
 * Bosch PWP611BB5B
 * Neff T66FHX4L0:
 * TPB Tech Invisible Induction Hob
+
+Projects - 
+* DIY Induction Stove, [WS](https://www.instructables.com/DIY-Induction-Stove/), Instructables, 
+* <todo: consider, find more project guides for diy iduction hobs, asap, >
+* ...
