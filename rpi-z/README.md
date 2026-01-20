@@ -1003,6 +1003,26 @@ Prerequisites
 * SSH/OpenSSH/Keys [WS](https://help.ubuntu.com/community/SSH/OpenSSH/Keys), Ubuntu, docs, help, more detail on Ubuntu One SSH formats and usage, 
 * How to Use ssh-keygen to Generate a New SSH Key? [WS](https://www.ssh.com/academy/ssh/keygen) SSH 
 
+SSH, 
+* generate SSH key, see 'Use Ubuntu One SSH' and 'SSH/OpenSSH/Keys'
+* before importing the SSH key in Ubuntu One SSH, change the SSH key comment
+* change the SSH key comment, default comment is < username >@< host > to help identify the key use case, comment is for key identification purposes, not used as part of ssh login, comment is a human readable identifier for the key, < username >@< host > is metadata and not used in theykeys cryptographic generation or fingerprint calculation, 
+```
+$ ssh-keygen -c -C "citizen-developer@rpi-0-2-w-ubuntu-core-24" -f ~/.ssh/id_ubuntucore
+Enter passphrase: 
+Old comment: york-earwaker@york-earwaker-XPS-15-9560
+Comment 'citizen-developer@rpi-0-2-w-ubuntu-core-24' applied
+
+```
+* After importing the SSH key the following was displayed on the Ubuntu One SSH key web page
+```
+The following key was added to your account: citizen-developer@rpi-0-2-w-ubuntu-core-24
+
+SSH keys
+
+citizen-developer@rpi-0-2-w-ubuntu-core-24
+```
+
 Get, download, Ubuntu Core 24, 64bit, raspi
 * Thank you for downloading Ubuntu Core 24 for Raspberry Pi, com [WS](https://ubuntu.com/download/raspberry-pi/thank-you?version=24&architecture=core-24-arm64+raspi), Ubuntu, download
 * Local file retrieved 8 01 2026 18:08:49
@@ -1289,7 +1309,14 @@ Ubuntu OS
 * Ubuntu, Testing Platforms, [WS](https://documentation.ubuntu.com/core/reference/testing-platforms/), Ubuntu core, Docs, 
 * Ubuntu, How to SHA256 Sum, [WS](https://help.ubuntu.com/community/HowToSHA256SUM), Community, 
 
-Ubuntu OS - tutorials, still relevant?
+SSH - OpenSSH, Ubuntu One 
+* How do I change my private key passphrase? [WS](https://serverfault.com/questions/50775/how-do-i-change-my-private-key-passphrase), StackExchange, ServerFault, 
+* How do I remove the passphrase for the SSH key without having to create a new key? [WS](https://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke), 
+* How To: Change Passphrase for SSH Private Key [WS](https://www.unixtutorial.org/changing-passphrase-to-your-ssh-private-key/) Unix Tutorials, 
+* What significance does the user/host at the end of an SSH public key file hold? , [WS](https://serverfault.com/questions/743548/what-significance-does-the-user-host-at-the-end-of-an-ssh-public-key-file-hold), StackExchange, ServerFault, 
+* How can I change the comment field of an RSA key (SSH)? [WS](https://superuser.com/questions/361764/how-can-i-change-the-comment-field-of-an-rsa-key-ssh), 
+
+Ubun OS - tutorials, still relevant?
 * Ubuntu Core & Raspberry Pi Zero 2 W, [WS](https://askubuntu.com/questions/1384864/ubuntu-core-raspberry-pi-zero-2-w), 2 January 2022, Ask Ubuntu
 * Install 64 bit OS on Raspberry Pi zero 2 W, [WS](http://qengineering.eu/install-64-os-on-raspberry-pi-zero-2.html), 14 February 2022, Q Engineering
 
