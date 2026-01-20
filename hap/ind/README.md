@@ -38,11 +38,16 @@ Usage scenarios -
 * CombiZone, 
 * Flex Induction Zone, 
 
-Physics
-* AC Current [WP]() though coils to produce induction, industry standard, 
-* Electromagnetism, [WP]()
+Physics - 
+* Alternating Current AC []() though coils to produce induction, industry standard, 
+* Choke, [WP](https://en.wikipedia.org/wiki/Choke_(electronics)), a type of inductor, block higher frequency AC, pass lower frequency AC, pass direct current DC, 
+* Electromagnetism, []()
 * Eddy Currents []() alternate method to induction, 
-* Magnets, [WP]()
+* Inductance, henries H, 
+* Inductor, coils of wire wrapped around a core, coil geometry, air cored - wires wrapped around a hollow tube, iron cored - wires wrapped around a ferromagnetic material, 
+* Interference, electromagnetic, EMI 
+* Interference, radio frequency, RFI 
+* Magnets, []()
 
 Metals
 * Metal, 
