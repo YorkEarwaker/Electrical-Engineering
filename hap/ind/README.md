@@ -39,7 +39,9 @@ Usage scenarios -
 * Flex Induction Zone, 
 
 Physics
+* AC Current [WP]() though coils to produce induction, industry standard, 
 * Electromagnetism, [WP]()
+* Eddy Currents []() alternate method to induction, 
 * Magnets, [WP]()
 
 Metals
