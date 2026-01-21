@@ -21,7 +21,7 @@ TODO
 * <todo: consider, hob power supply, 3–10 kW, research COTS products for same, >
 * <todo: consider, power efficiency, reduce power consumption, >
 * <todo: consider, portable induction hob, ideal for resilliency, not grid dependent, attach a battery or other power supply like solar wind, with appropriate electrical saftey circuits, emergency management response, climate refugee camps, damaged infrastructure natural disaster, damaged infrastructure conflict zones, >
-* <todo: consider, research induction heating, >
+* <todo: consider, research induction heating, large portion of UK residential natural gas use 2024, large portion of UK total natural gas use 2024,  >
 * <todo: consider, research electrodeless lamp, probs not as efficient as LED or similar?, what is most effective low power consumption lighting option, >
 
 DONE
@@ -33,6 +33,13 @@ Terms
 * Induction, [WP](https://en.wikipedia.org/wiki/Electromagnetic_induction), Electromagnetic induction, 
 * Induction cooking [WP](https://en.wikipedia.org/wiki/Induction_cooking), 
 * Induction lamp [WP](https://en.wikipedia.org/wiki/Induction_lamp), electrodeless lamp, 
+
+Reports
+* Natural gas supply, UK, [WS](https://www.iea.org/countries/united-kingdom/natural-gas), IEA, UK, circa natural gas consumption 60% 2024 residential, cooking 
+* The social dimensions of moving away from gas cookers and hobs: challenges and opportunities in transition to low-carbon cooking, [WS](https://ukerc.ac.uk/publications/the-social-dimensions-of-moving-away-from-gas-cookers-and-hobs-challenges-and-opportunities-in-transition-to-low-carbon-cooking/), 27 May 2020, UKERC, Rihab Khalid, Chris Foulds
+
+News Papers - Energy usage
+* Cooking up a storm? What will it take to decarbonise UK’s heat for low-carbon cooking, [WS](https://ukerc.ac.uk/news/cooking-up-a-storm-what-will-it-take-to-decarbonise-uks-heat-for-low-carbon-cooking/), 24 June 2020, UKERC, Rihab Khalid, 
 
 Usage scenarios - 
 * CombiZone, 
@@ -64,6 +71,6 @@ COTS examples
 * TPB Tech Invisible Induction Hob
 
 Projects - 
-* DIY Induction Stove, [WS](https://www.instructables.com/DIY-Induction-Stove/), Instructables, 
-* <todo: consider, find more project guides for diy iduction hobs, asap, >
+* DIY Induction Stove, [WS](https://www.instructables.com/DIY-Induction-Stove/), Instructables, a fun project but not likely realistic for mass production, 
+* <todo: consider, find more project guides for diy iduction hobs, asap, alternating current, iron cored, air cored, >
 * ...
