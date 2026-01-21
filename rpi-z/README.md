@@ -1182,7 +1182,10 @@ Configure Ubuntu Core
 * Several other pages are presented for configuration entry
 * <todo: provide some descriptions and outstanding issues, questions, >
 * <todo: provide some other connection and configuration detials, >
-* ...
+* Ends with SSH enabled Ubuntu Core 24 , 
+
+SSH into Ubuntu Core 24
+* Success! :)
 * from SSH connection cli terminal window
 * From a third cli terminal window, ssh to Ubuntu OS on RPi Zero 2 W.
 ```
