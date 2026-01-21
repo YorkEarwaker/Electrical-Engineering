@@ -693,10 +693,11 @@ TBD?
 
 
 ## Output - Create OS image for use on RPi Zero 2 W
-* Partial success, TBD
+* Partial success, wip
 * <done: consider, Optionally configure OS during the flash installation process to Micro SD Card >
-* <done: consider, add [all] enable_uart=1 to config.txt to enable contact over serial bridge chip device, like rpi debug probe or usb ttl serial device, RPi OS Lite Trixie, >
-* <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Zero 2 W, question asked in RPi Forum 14 January 2026, >
+* <done: consider, add [all] enable_uart=1 to config.txt to enable contact over serial bridge chip device, like rpi debug probe or usb ttl serial device, RPi Lite Trixie OS, >
+* <todo: consider, connect over SSH and WiFi from Dell Ubuntu host to RPi Lite Trixie OS on RPi Zero 2 W, question asked in RPi Forum 14 January 2026, >
+* <done: consider, connect over SSH and WiFi from Dell Ubuntu host to Ubuntu Core 24 OS on RPi Zero 2 W,  >
 
 Primary Sources
 * TBC
@@ -709,9 +710,9 @@ After OS installation onto MicroSD Card. For steps requiring serial connection, 
 * Output - headless to RPi Zero 2 W with Raspberry Pi Debug Probe, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z#output---headless-to-rpi-zero-2-w-with-raspberry-pi-debug-probe)
 
 Candidate OSI's to install first attempts
-* RPi OS Lite Trixie
-* RPi OS Desktop Trixie
-* Ubuntu Core 24, may have to be Core 22
+* RPi OS Lite Trixie, first iteration success
+* RPi OS Desktop Trixie, tbd
+* Ubuntu Core 24, first iteration success
 
 Install the RPi Imager software to flash Micro SD Cards with OS images OSI
 ```
@@ -994,8 +995,10 @@ $ sudo dmesg | grep -i tty
 ```
 
 ### Ubuntu Core 24
-* TBD?
+* Success! :)
 * This process is likely to be a lot more involved, and may not be resolved in short order
+* Made contact via Ubuntu Core 24 instance on RPi Zero 2 W.
+* 90%? 
 
 Prerequisites
 * Ubuntu One Account [WS](https://login.ubuntu.com/), Ubuntu, login to existing account, or create one, to add SSH keys
@@ -1003,10 +1006,10 @@ Prerequisites
 * SSH/OpenSSH/Keys [WS](https://help.ubuntu.com/community/SSH/OpenSSH/Keys), Ubuntu, docs, help, more detail on Ubuntu One SSH formats and usage, 
 * How to Use ssh-keygen to Generate a New SSH Key? [WS](https://www.ssh.com/academy/ssh/keygen) SSH 
 
-SSH, 
+SSH, - used in configuration of OS when first booted 
 * generate SSH key, see 'Use Ubuntu One SSH' and 'SSH/OpenSSH/Keys'
 * before importing the SSH key in Ubuntu One SSH, change the SSH key comment
-* change the SSH key comment, default comment is < username >@< host > to help identify the key use case, comment is for key identification purposes, not used as part of ssh login, comment is a human readable identifier for the key, < username >@< host > is metadata and not used in theykeys cryptographic generation or fingerprint calculation, 
+* change the SSH key comment, default comment is < username >@< host > to help identify the key use case, comment is for key identification purposes, not used as part of ssh login, comment is a human readable identifier for the key, < username >@< host > is metadata and not used in the keys cryptographic generation or fingerprint calculation, 
 ```
 $ ssh-keygen -c -C "citizen-developer@rpi-0-2-w-ubuntu-core-24" -f ~/.ssh/id_ubuntucore
 Enter passphrase: 
@@ -1053,7 +1056,8 @@ OS Customisation
 Fully customised
 Values left over from first use. These were left more or less unchanged. It does not seem as though these values had any effect for Ubuntu Core 24 OS image install.
 ```
-* <todo: consider, confirm RPi Imager config values have no effect on Ubuntu Core install, cynically? they seemed only partially effective on RPi OS Trixie install. But likely not used at all on Ubuntu Core install. >
+* <todo: consider, confirm RPi Imager config values have no effect on Ubuntu Core install, cynically? they seemed only partially effective on RPi OS Trixie install. 
+But likely not used at all on Ubuntu Core install. >
 * Ubuntu Core 24 has only a single partition on newly formatted and installed MicroSD Card, A1, 
 ```
 ubuntu-seed
@@ -1181,12 +1185,13 @@ There is a screen on:
 
 ```
 * Blank gnu screen cli, press return? twice? wait two min? 
-* <todo: consider, test . in actuality entered UID then PWD but don't think they were needed, the UID and PWD characters were NOT shown on the screen window, needs further clarification on specific tasks required, >
+* <done: consider, test . in actuality entered UID then PWD but don't think they were needed, the UID and PWD characters were NOT shown on the screen window, needs further clarification on specific tasks required, in second attempt pressed return key twice, once may have been sufficient, likely one single return key would be needed tbd?, >
+* <done: consider, configure Ubuntu Core via cli interface over serial connection, wip, requires ironing out of some wrinkles but 90% there? >
 * Eventually cli ascii Ubuntu configuration options displayed, in gnu screen window.
 
 Configure Ubuntu Core
-* TBD? 
-* <todo: consider, configure Ubuntu Core via cli interface over serial connection, wip >
+* Success! :)
+* 90%+ . Some outstanding concerns to clarify, ideal best set of task steps, 
 * First configuration page,
 ```
 ================================================================================
@@ -1213,11 +1218,135 @@ Configure Ubuntu Core
                                                                               
                                  [ OK         ]    
 ```
-* Shut down serial gnu screen session gracefully, 
-* Disconnected USB A from host Dell Ubuntu, unplugged target RPi Zero 2 W from mains.
-* Start again next week, Mon 19 Jan 2026 or thereabout, 
 * ...
+* Several other pages are presented for configuration entry
+* <todo: provide some descriptions and outstanding issues, questions, >
+* <todo: provide some other connection and configuration detials, >
+* ...
+* <todo: consider, calrify statements, clarify cli window task, consistent cli window naming, >
+* from SSH connection cli terminal window
+* From a third cli terminal window, ssh to Ubuntu OS on RPi Zero 2 W.
+```
+$ ssh yorkearwaker@192.168.1.216
+The authenticity of host '192.168.1.216 (192.168.1.216)' can't be established.
+ED25519 key fingerprint is SHA256:CXPlZpQ1KhmexXF7Vik8BpypBE4TciMWstjvO3qbUhk.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.1.216' (ED25519) to the list of known hosts.
 
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Welcome to Ubuntu Core 24
+
+* Documentation: https://ubuntu.com/core/docs
+
+This is a pre-built Ubuntu Core image. Pre-built images are ideal for
+exploration as you develop your own custom Ubuntu Core image.
+
+To learn how to create your custom Ubuntu Core image, see our guide:
+
+* Getting Started: https://ubuntu.com/core/docs/get-started
+
+In this image, why not create an IoT web-kiosk. First, connect a
+screen, then run:
+
+   snap install ubuntu-frame wpe-webkit-mir-kiosk
+   snap set wpe-webkit-mir-kiosk url=https://ubuntu.com/core
+
+For more ideas, visit:
+
+* First steps: https://ubuntu.com/core/docs/first-steps
+yorkearwaker@localhost:~$ 
+```
+* from SSH connection cli terminal window
+* Query OS regarding version, bit size, architecture, ...
+```
+yorkearwaker@localhost:~$ lsb_release -a
+-bash: lsb_release: command not found
+
+yorkearwaker@localhost:~$ cat /etc/os-release
+NAME="Ubuntu Core"
+VERSION="24"
+ID=ubuntu-core
+PRETTY_NAME="Ubuntu Core 24"
+VERSION_ID="24"
+HOME_URL="https://snapcraft.io/"
+BUG_REPORT_URL="https://bugs.launchpad.net/snappy/"
+
+$ hostnamectl
+   Static hostname: (unset)                         
+Transient hostname: localhost
+         Icon name: computer
+        Machine ID: c10d229ece794a13b3c54dceb4646669
+           Boot ID: 612f003984c845a68e5e11bc4339d680
+  Operating System: Ubuntu Core 24                  
+            Kernel: Linux 6.8.0-1043-raspi
+      Architecture: arm64
+
+yorkearwaker@localhost:~$ uname -m
+aarch64
+
+yorkearwaker@localhost$ dpkg-architecture --query DEB_HOST_ARCH
+-bash: dpkg-architecture: command not found
+
+yorkearwaker@localhost:~$ getconf LONG_BIT
+64
+```
+* from SSH connection cli terminal window
+* gracefully shut down/power down RPi Zero 2 W, 
+```
+yorkearwaker@localhost:~$ sudo shutdown -h now
+
+Broadcast message from root@localhost on pts/1 (Tue 2026-01-20 15:19:06 UTC):
+
+The system will power off now!
+
+client_loop: send disconnect: Broken pipe
+york-earwaker@york-earwaker-XPS-15-9560:~$ 
+```
+* from USB TTL UART connection cli terminal window
+* In second? cli window, 
+```
+Personalize your account at https://login.ubuntu.com.
+[ 3117.309421] (sd-umoun[2071]: Failed to unmount /run/shutdown/mounts/f6aafb86c2c57db9: Device or resource busy
+[ 3117.347740] (sd-remou[2072]: Failed to remount '/run/shutdown/mounts/a494a4d0bdbe165b' read-only: Device or resource busy
+[ 3117.367215] (sd-umoun[2073]: Failed to unmount /run/shutdown/mounts/a494a4d0bdbe165b: Device or resource busy
+[ 3117.410659] shutdown[1]: Could not detach loopback /dev/loop1: Device or resource busy
+[ 3117.419450] shutdown[1]: Unable to finalize remaining file systems, loop devices, ignoring.
+[ 3117.449232] reboot: Power down
+```
+* from host cli terminal window, admin cli
+* in first? cli window
+* terminate gnu screen session
+```
+$ sudo screen -XS 33579 quit
+```
+* from host cli terminal window, USB TTL to UART cli
+* In second? cli window
+```
+$ sudo screen /dev/ttyUSB0 115200
+[sudo] password for york-earwaker: 
+[screen is terminating]
+```
+* from host cli terminal window, admin cli
+* in first? cli window
+```
+$ sudo screen -list
+No Sockets found in /run/screen/S-root.
+```
+* from host cli terminal window, admin cli
+* in first? cli window - nothing was returned.
+```
+$ sudo dmesg | grep -i tty
+```
+* Pull out USB A from USB TTL to UART serial bridge chip board.
+* Unplug RPi Zero 2 W, 
+* Concern the ubuntu core 24 system did not finish setup process
 
 
 ## Environment Tests
