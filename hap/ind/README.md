@@ -13,7 +13,12 @@ Use cases
 * Lighting
 * ...
 
-Fossil fuel grid independent, no dependency of fossil fuel grid, 
+Benefits
+* Fossil fuel grid independent, no dependency of fossil fuel grid, 
+* Improved Air Quality Index AQI, residential air quality, long term health benefits from improved air quality in the home,
+* Lower green house gas emissions
+* Increased resiliency in cases of; energy shocks, physical infrastructure damage, 
+* Coupled with individual or home or cooperative (or larger collective) level clean green energy generation and storage, solar PV, wind, green hydrogen, biomass?, 
 
 ## Status
 TODO
@@ -23,6 +28,7 @@ TODO
 * <todo: consider, portable induction hob, ideal for resilliency, not grid dependent, attach a battery or other power supply like solar wind, with appropriate electrical saftey circuits, emergency management response, climate refugee camps, damaged infrastructure natural disaster, damaged infrastructure conflict zones, >
 * <todo: consider, research induction heating, large portion of UK residential natural gas use 2024, large portion of UK total natural gas use 2024,  >
 * <todo: consider, research electrodeless lamp, probs not as efficient as LED or similar?, what is most effective low power consumption lighting option, >
+* <todo: consider, research induction cooking for wok, raised, recessed, frame, other geometry, >
 
 DONE
 * <done: consdier, intent to commit, >
@@ -35,7 +41,7 @@ Terms
 * Induction lamp [WP](https://en.wikipedia.org/wiki/Induction_lamp), electrodeless lamp, 
 
 Reports
-* Natural gas supply, UK, [WS](https://www.iea.org/countries/united-kingdom/natural-gas), IEA, UK, circa natural gas consumption 60% 2024 residential, cooking 
+* Natural gas supply, UK, [WS](https://www.iea.org/countries/united-kingdom/natural-gas), IEA, UK, circa natural gas consumption 60% 2024 residential, of which home heating major portion of that, cooking a smaller portion but with much greater health benefits in terms of 
 * The social dimensions of moving away from gas cookers and hobs: challenges and opportunities in transition to low-carbon cooking, [WS](https://ukerc.ac.uk/publications/the-social-dimensions-of-moving-away-from-gas-cookers-and-hobs-challenges-and-opportunities-in-transition-to-low-carbon-cooking/), 27 May 2020, UKERC, Rihab Khalid, Chris Foulds
 
 News Papers - Energy usage
