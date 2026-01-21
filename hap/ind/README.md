@@ -7,9 +7,9 @@ Electromagnetic Induction,
 
 Use cases
 * Cooking, first class, focus on this in first instance, requires (magnetic) metal cookware, 
-* Heating?, air
-* Heating, housing, 
-* Heating, water, bathing, not for cooking,
+* Heating?, air, - Q. What is overlap with an air purifier, 
+* Heating, housing, - radiators, underfloor? other? 
+* Heating, water, - bathing, not for cooking,
 * Lighting
 * ...
 
