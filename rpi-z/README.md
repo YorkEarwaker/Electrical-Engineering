@@ -1151,7 +1151,9 @@ There is a screen on:
 
 Configure Ubuntu Core
 * Success! :)
-* 90%+ . Some outstanding concerns to clarify, ideal best set of task steps, 
+* 90%+ . Some outstanding concerns to clarify, 
+* <todo: consider, enumerate ideal best set of task steps to configure Ubuntu Core 24 in this manner, via USB TTL UART serial connection, >
+* <todo: consider, alternate configuration with username and password signon via USB TTL UART, for UID/PWD behaviour similar to RPi OS Lite Trixie, >
 * First configuration page,
 ```
 ================================================================================
