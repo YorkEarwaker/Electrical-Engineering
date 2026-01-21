@@ -1009,7 +1009,8 @@ Prerequisites
 SSH, - used in configuration of OS when first booted 
 * generate SSH key, see 'Use Ubuntu One SSH' and 'SSH/OpenSSH/Keys'
 * before importing the SSH key in Ubuntu One SSH, change the SSH key comment
-* change the SSH key comment, default comment is < username >@< host > to help identify the key use case, comment is for key identification purposes, not used as part of ssh login, comment is a human readable identifier for the key, < username >@< host > is metadata and not used in the keys cryptographic generation or fingerprint calculation, 
+* change the SSH key comment, default comment is < username >@< host > to help identify the key use case, comment is for key identification purposes, not used as part of ssh login, comment is a human readable identifier for the key, < username >@< host > is metadata and not used in the keys cryptographic generation or fingerprint calculation, the comment may be any string and need not follow the default < username >@< host > format, 
+* <todo: consider, what if any are the character constraints for the comment string?  UTF-8? >
 ```
 $ ssh-keygen -c -C "citizen-developer@rpi-0-2-w-ubuntu-core-24" -f ~/.ssh/id_ubuntucore
 Enter passphrase: 
@@ -1054,10 +1055,12 @@ Mounted as /media/york-earwaker/0403-0201
 
 OS Customisation
 Fully customised
-Values left over from first use. These were left more or less unchanged. It does not seem as though these values had any effect for Ubuntu Core 24 OS image install.
+Values left over from first use. These were left more or less unchanged. 
+It does not seem as though these values had any effect for Ubuntu Core 24 OS image install.
 ```
-* <todo: consider, confirm RPi Imager config values have no effect on Ubuntu Core install, cynically? they seemed only partially effective on RPi OS Trixie install. 
-But likely not used at all on Ubuntu Core install. >
+* <todo: consider, confirm RPi Imager config values have no effect on Ubuntu Core install, cynically? 
+As an asside they seemed only partially effective on RPi OS Trixie install for Imager v1.9.3 . 
+But likely not used at all on Ubuntu Core 24 install. >
 * Ubuntu Core 24 has only a single partition on newly formatted and installed MicroSD Card, A1, 
 ```
 ubuntu-seed
@@ -1067,7 +1070,6 @@ ubuntu-seed
 # Enable the serial pins
 enable_uart=1
 ```
-
 * Take card from Dell Ubuntu
 * Put card into RPi Zero 2 W env, SD Extension Cable in this case, 
 * Plug in USB TTL device to Dell Ubuntu host USB A, 
@@ -1077,8 +1079,23 @@ enable_uart=1
 Make serial connection, USB TTL to UART
 * Success! :) 
 * <done: consider, make a serial connection, > 
+* <todo: consider, calrify statements, clarify cli window task, consistent cli window naming, >
 * In a terminal cli window get usb devices, 
 ```
+
+$ sudo dmesg | grep -i tty
+[sudo] password for york-earwaker: 
+[28477.843947] usb 1-2: cp210x converter now attached to ttyUSB0
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
 $ lsusb -t
 /:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M
     |__ Port 002: Dev 006, If 0, Class=Vendor Specific Class, Driver=cp210x, 12M
@@ -1090,80 +1107,23 @@ $ lsusb -t
     |__ Port 012: Dev 005, If 1, Class=Video, Driver=uvcvideo, 480M
 /:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/8p, 5000M
 
-$ lsusb
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
-Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
-Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
-Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
-Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
-$ lsusb -d 10c4:ea60
-Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+$ sudo screen -list
+No Sockets found in /run/screen/S-root.
+```
+* In second cli terminial - to start serial connection to RPi Zero 2 W and configure Ubuntu Core 24
+```
+$ sudo screen /dev/ttyUSB0 115200
+```
+* In first cli terminal find screen session id
+```
+york-earwaker@york-earwaker-XPS-15-9560:~$ sudo screen -list
+[sudo] password for york-earwaker: 
+There is a screen on:
+	33579.pts-2.york-earwaker-XPS-15-9560	(01/20/2026 02:32:55 PM)	(Attached)
+1 Socket in /run/screen/S-root.
+york-earwaker@york-earwaker-XPS-15-9560:~$ 
 
-$ lsusb -s 001:006
-Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
-
-$ lsusb -s 001:006 -v
-
-Bus 001 Device 006: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
-Couldn't open device, some information will be missing
-Device Descriptor:
-  bLength                18
-  bDescriptorType         1
-  bcdUSB               1.10
-  bDeviceClass            0 [unknown]
-  bDeviceSubClass         0 [unknown]
-  bDeviceProtocol         0 
-  bMaxPacketSize0        64
-  idVendor           0x10c4 Silicon Labs
-  idProduct          0xea60 CP210x UART Bridge
-  bcdDevice            1.00
-  iManufacturer           1 Silicon Labs
-  iProduct                2 CP2102 USB to UART Bridge Controller
-  iSerial                 3 0001
-  bNumConfigurations      1
-  Configuration Descriptor:
-    bLength                 9
-    bDescriptorType         2
-    wTotalLength       0x0020
-    bNumInterfaces          1
-    bConfigurationValue     1
-    iConfiguration          0 
-    bmAttributes         0x80
-      (Bus Powered)
-    MaxPower              100mA
-    Interface Descriptor:
-      bLength                 9
-      bDescriptorType         4
-      bInterfaceNumber        0
-      bAlternateSetting       0
-      bNumEndpoints           2
-      bInterfaceClass       255 Vendor Specific Class
-      bInterfaceSubClass      0 [unknown]
-      bInterfaceProtocol      0 
-      iInterface              2 
-      Endpoint Descriptor:
-        bLength                 7
-        bDescriptorType         5
-        bEndpointAddress     0x81  EP 1 IN
-        bmAttributes            2
-          Transfer Type            Bulk
-          Synch Type               None
-          Usage Type               Data
-        wMaxPacketSize     0x0040  1x 64 bytes
-        bInterval               0
-      Endpoint Descriptor:
-        bLength                 7
-        bDescriptorType         5
-        bEndpointAddress     0x01  EP 1 OUT
-        bmAttributes            2
-          Transfer Type            Bulk
-          Synch Type               None
-          Usage Type               Data
-        wMaxPacketSize     0x0040  1x 64 bytes
-        bInterval               0
 ```
 * In a terminal cli window get serial connected devices, 
 ```
@@ -1223,7 +1183,6 @@ Configure Ubuntu Core
 * <todo: provide some descriptions and outstanding issues, questions, >
 * <todo: provide some other connection and configuration detials, >
 * ...
-* <todo: consider, calrify statements, clarify cli window task, consistent cli window naming, >
 * from SSH connection cli terminal window
 * From a third cli terminal window, ssh to Ubuntu OS on RPi Zero 2 W.
 ```
