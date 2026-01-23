@@ -15,13 +15,14 @@ DONE
 ## Hardware
 
 Mobile phones
-* https://pine64.org/devices/pinephone/
+* Pine64, [WS](https://pine64.org/devices/pinephone/)
 * <todo: others to source, >
 
 ## Software
 
 Mobile OS
-* https://ubports.com/
+* UB Ports, [WS](https://ubports.com/), Ubuntu
+* Post Markets OS, [WS](https://postmarketos.org/), ?
 * <todo: others to source, >
 
 ## References
