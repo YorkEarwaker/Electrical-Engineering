@@ -30,3 +30,5 @@ Terms
 * Mobile phone,
 * Tablet
 
+News Papers - linux for phones
+* How does the Ubuntu Phone OS relate to the Android OS? [WS](https://android.stackexchange.com/questions/37160/how-does-the-ubuntu-phone-os-relate-to-the-android-os), 8 January 2013, StackExchange, Android Enthusiasts, 
