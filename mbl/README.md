@@ -5,6 +5,7 @@ Phone, Tablet,
 ## Status
 TODO
 * <todo: consider, name change to project, more generic, ? not sure, place holder, >
+* <todo: consider, first project, ryo mobile phone? >
 * <todo: consider, phone SW like Ubuntu, what are the options, https://ubports.com/, other linux phone operating system distro's research, >
 * <todo: consider, phone HW like Pine64, what are the options, https://pine64.org/, other phone hardware to research, >
 
