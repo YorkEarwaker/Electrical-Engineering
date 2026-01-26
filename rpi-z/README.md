@@ -107,7 +107,7 @@ Raspberry Pi
 
 ## Output - headless to RPi Zero 2 W with USB TTL to UART
 Third Process. Attempting to connect to the RPi Zero 2 W 'headless. Using USB TTL to UART interface board. USB to serial conversion may also support, RS232, ... 
-* TBD
+* Partial success! :) 50% 
 * Two sub processes; firstly USB provides power, secondly mains provides power
 * Interface boards have serial bridge chip onboard
 * Chips listed may have greater capability in addition to capability as Serial bridge chips 
