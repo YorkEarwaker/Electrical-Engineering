@@ -15,6 +15,9 @@ Assumption
 * MS Win 10 was end of life and out of support and patching
 * Target operating systems on RPi Zero 2 W both Debian based distros; RaspiOS Lite Trixie, Ubuntu Core 24, 
 * Integration on Dell Ubuntu Laptop to RPi Zero 2 W might has less hurdles as both use Debian Linux distros, 
+* RPi Pico 2 W, or other Pico MCU, are not properly supported by Bosch for BMV080 
+* RPi Pico 2 W, or other Pico MCU, are not adequately specked for use with Bosch BMV080
+* Intent, as progress is made on C/C++ code for BMV080 on RPi Zero 2 W try and cross compile too for RPi Pico 2 W, or other Pico MCU .
 * ...
 
 ## Status
@@ -28,5 +31,5 @@ DONE
 
 Terms
 * Aerosol, 
-
+* ...
 
