@@ -8,7 +8,7 @@ Bosch Sensortec Community BSC
 * Post on BSC regarding full integration of BMV080 with RPi universe, [WS](https://community.bosch-sensortec.com/mems-sensors-forum-jrmujtaw/post/bmv080---raspberry-pi-what-are-the-issues-that-prevent-full-integration-dHQvd8Fa2dvcmKb)
 
 Raspberry Pi Forum RPF
-* Post on RPF regarding Rapberry Pi SDK capability maturity gap, [WS](https://forums.raspberrypi.com/viewtopic.php?t=391035)
+* Post on RPF regarding Raspberry Pi SDK capability maturity gap, [WS](https://forums.raspberrypi.com/viewtopic.php?t=391035)
 
 ## Status
 TODO
@@ -40,7 +40,7 @@ DONE
 
 Bosch
 * BMV080 SDK download, [WS](https://www.bosch-sensortec.com/software-tools/double-opt-in-forms/sdk-v11-2.html) 
-* Bosch sensor(tec) comminity, [WS](https://community.bosch-sensortec.com/), 
+* Bosch sensor(tec) community, [WS](https://community.bosch-sensortec.com/), 
 * Supported platforms, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/software_tools/software/bmv080_1/supported_platforms/bmv080_binary_size_information.pdf)
 
 Raspberry Pi
@@ -55,7 +55,7 @@ IDE
 * VS Code with Arduino CLI, 
 
 Build
-* CMake, Windows x64 [GH](https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1-windows-x86_64.msi/), Bosche code, Raspbery Pi
+* CMake, Windows x64 [GH](https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1-windows-x86_64.msi/), Bosche code, Raspberry Pi
 * PlatformIO, Bosch code, everything else not Raspberry Pi, 
 
 Language 
