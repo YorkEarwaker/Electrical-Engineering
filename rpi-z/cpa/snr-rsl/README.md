@@ -6,6 +6,7 @@
 See also
 * RPi Pico; Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, recognized on Pico I2C bus
 * RPi Pico; Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut research, C/C++ 
+* Air purifier, [WS](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/hap/arp), particulate matter sensor as component part of /arp project
 
 ## Notes
 
@@ -23,9 +24,29 @@ Assumption
 ## Status
 TODO
 * <todo: consider, review SparkFun code base, for SparkFun breakout board BMV080, >
+* <todo: consider, other similar particulate matter sensors from other vendors, >
+* <todo: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, >
 
 DONE
 * <done: consider, intent to commit, >
+
+## Hardware
+
+Sensor - BMV080, Bosch
+* Particulate matter sensor BMV080, [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
+* Datasheet, [WS](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
+* Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
+
+Device - SparkFun breakout board using BMV080, 
+* SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic) [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), SparkFun,
+* Schematic, [WS](https://docs.sparkfun.com/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080/assets/board_files/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080_v10_Schematic.pdf), SparkFun
+* Hookup Guide, [WS](https://docs.sparkfun.com/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080/introduction/#), SparkFun
+
+Device - TBD thing using BMV080
+* <todo: evaluaate other BMV080 candidate devices, >
+
+Sensor - tbd
+* ...
 
 ## References
 
