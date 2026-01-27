@@ -31,5 +31,42 @@ DONE
 
 Terms
 * Aerosol, 
+* CO, carbon monoxide
+* PM, particulate matter
+* VOCs, volatile organic compounds
+* VSCs, volatile sulfer compounds
+
+VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, 
+* Photochemical smog, toxic smog, 
+* Ground ozone O3, 
+* SOA, secondary organic aerosols
+* Halocarbons, CFC's, banned under the Montreal Protocol 1987, due to depletion of and hole in stratospheric ozone layer, 
+* Butane 
+* Propane [WP](https://en.wikipedia.org/wiki/Propane)
+* Toluene
+* Ethylbenzene
+* Xylene (p-xylene, o-xylene)
+* Styrene
+* Chlorobenzene
 * ...
+
+VSCs - industrial? mainly?
+* ...
+
+Papers
+* Global emissions of VOCs from compressed aerosol products. [WS](https://online.ucpress.edu/elementa/article/9/1/00177/116770/Global-emissions-of-VOCs-from-compressed-aerosol) 2021. Yeoman, AM, Lewis, AC., Elementa: Science of Anthropocene 9(1). [DOI](https://doi.org/10.1525/elementa.2020.20.00177)
+
+News Papers - VOCs
+* Consumer aerosol products overtake cars as source of dangerous smog in UK, [WS](https://ncas.ac.uk/consumer-aerosol-products-overtake-cars-as-source-of-dangerous-smog-in-uk/), 27 April 2025, National Centre for Atmospheric Science, UK, 
+* Effect Of Photochemical Smog, [WS](https://www.sciencing.com/effect-of-photochemical-smog-12328963), 24 March 2022 (updated), Mike Charmaine, Sciencing, 
+* ...
+
+News Papers - BMV080
+* Sensors Converge 2025: Bosch boosts ecosystem around BMV080 particulate matter sensor, [WS](https://www.bosch-sensortec.com/news/sensors-converge-2025-bosch-boosts-ecosystem-around-bmv080-particulate-matter-sensor.html), Plug-and-play platforms simplify and accelerate development with Bosch environmental sensors
+
+
+
+
+
+
 
