@@ -36,6 +36,8 @@ Connection scenarios
 * Third possible connection direct to BMV080 sensor?; FPC 13-pin 0.33mm Connector? Using Bosch SDK directly? TBD.
 
 ### I2C
+* Wifi connection to UI Device for MVP. Not PoC.
+* Qwiic or I2C pin out should require no changes to code base?
 
 Context Diagram -  RPi Z GPIO I2C to BMV080 breakout board Qwiic 
 ```                                   
