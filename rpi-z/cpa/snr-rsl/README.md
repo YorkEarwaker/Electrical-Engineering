@@ -30,6 +30,50 @@ TODO
 DONE
 * <done: consider, intent to commit, >
 
+## Overview
+Connection scenarios
+* Two main connection scenarios to BMV080 breakout board; I2C, SPI . Using Sparkfun Arduino code base reconfigured for RPi Z.
+* Third possible connection direct to BMV080 sensor?; FPC 13-pin 0.33mm Connector? Using Bosch SDK directly? TBD.
+
+### I2C
+
+Context Diagram -  RPi Z GPIO I2C to BMV080 breakout board Qwiic 
+```                                   
+            BMV080 Breakout                                  RPi Zero 2 W                                       UI Device (mobile, tablet, laptop, ...)
+             -----------                Serial                -----------                      Wifi               -----------
+            |        ___|             Connection         I2C |o       ___| PWR IN           Connection           |___        |
+            |       |___  Qwiic ------------------------ PIN |o      |___  Micro USB B                            ___|       |
+            |           |         Sink < Power < Source  OUT |o          | Sink < Source                         |           |
+             -----------               < Data >               -----------                    < Data  >            -----------
+                                                        GPIO   
+```
+
+Circuit Diagram
+``` 
+     TBC
+```
+
+Context Diagram - RPi Z GPIO I2C to BMV080 breakout board I2C pin out
+```                                   
+            BMV080 Breakout                                  RPi Zero 2 W                                       UI Device (mobile, tablet, laptop, ...)
+             -----------                Serial                -----------                      Wifi               -----------
+            |       o o | I2C         Connection         I2C |o       ___| PWR IN           Connection           |___        |
+            |       o o | PIN -------------------------- PIN |o      |___  Micro USB B                            ___|       |
+            |       o o | OUT     Sink < Power < Source  OUT |o          | Sink < Source                         |           |
+             -----------               < Data >               -----------                    < Data  >            -----------
+                                                        GPIO   
+```
+
+Circuit Diagram
+``` 
+     TBC
+```
+### SPI
+Similar to I2C . Unclear if SparkFun Arduino code supports this. If not will have to write SPI connection code in C. TBD
+
+### FPC
+Very different from either I2C or SPI and may not be viable for PoC. Consider if there are any advantages for a MVP? 
+
 ## Hardware
 
 Sensor - BMV080, Bosch
