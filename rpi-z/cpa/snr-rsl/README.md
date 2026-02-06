@@ -36,18 +36,19 @@ Connection scenarios
 * Third possible connection direct to BMV080 sensor?; FPC 13-pin 0.33mm Connector? Using Bosch SDK directly? TBD.
 
 ### I2C
+* I2C is default connection mode for breakout board?
 * Wifi connection to UI Device for MVP. Not PoC.
 * Qwiic or I2C pin out should require no changes to code base?
 
 Context Diagram -  RPi Z GPIO I2C to BMV080 breakout board Qwiic 
 ```                                   
             BMV080 Breakout                                  RPi Zero 2 W                                       UI Device (mobile, tablet, laptop, ...)
-             -----------                Serial                -----------                      Wifi               -----------
-            |        ___|             Connection         I2C |o       ___| PWR IN           Connection           |___        |
-            |       |___  Qwiic ------------------------ PIN |o      |___  Micro USB B                            ___|       |
-            |           |         Sink < Power < Source  OUT |o          | Sink < Source                         |           |
+             -----------                 I2C                  -----------                      Wifi               -----------
+            |        ___|             Connection         I2C |o o     ___| PWR IN           Connection           |           |
+            |       |___  Qwiic ----------------------- GPIO |o o    |___  Micro USB B                           |           |
+            |           |         Sink < Power < Source      |o o        | Sink < Source                         |           |
              -----------               < Data >               -----------                    < Data  >            -----------
-                                                        GPIO   
+                                                               
 ```
 
 Circuit Diagram
@@ -58,12 +59,36 @@ Circuit Diagram
 Context Diagram - RPi Z GPIO I2C to BMV080 breakout board I2C pin out
 ```                                   
             BMV080 Breakout                                  RPi Zero 2 W                                       UI Device (mobile, tablet, laptop, ...)
-             -----------                Serial                -----------                      Wifi               -----------
-            |       o o | I2C         Connection         I2C |o       ___| PWR IN           Connection           |___        |
-            |       o o | PIN -------------------------- PIN |o      |___  Micro USB B                            ___|       |
-            |       o o | OUT     Sink < Power < Source  OUT |o          | Sink < Source                         |           |
+             -----------                 I2C                  -----------                      Wifi               -----------
+            |         o | I2C         Connection         I2C |o o     ___| PWR IN           Connection           |           |
+            |         o | PIN ------------------------- GPIO |o o    |___  Micro USB B                           |           |
+            |         o | OUT     Sink < Power < Source      |o o        | Sink < Source                         |           |
              -----------               < Data >               -----------                    < Data  >            -----------
-                                                        GPIO   
+                                                            
+```
+
+Circuit Diagram
+``` 
+     TBC
+```
+
+Context Diagram - Development environment, RPi Z 2 W and BMV080 breakout board, 
+* Assume will need some serial communication with headless RPi Z from Laptop for development over UART
+* RPi Z running headless OS, either RPi Trixie Lite or Ubuntu Core 24
+* I2C to I2C context is shown but same would apply for I2C to Qwiic context
+* The Bosch SDK and other code using it executes on the RPi Zero 2 W
+* <todo: consider, reviewed once development has started and make changes accordingly, wip >
+```                                   
+            BMV080 Breakout                                  RPi Zero 2 W                         USB TTL to UART device                                   Dev Box
+             -----------                 I2C                  ------------          Serial             -----------                Serial                   -----------
+            |         o | I2C         Connection         I2C |o o      o o| UART  Connection     UART |o       ___| Some        Connection                |___        |
+            |         o | PIN ------------------------- GPIO |o o  __  o o| GPIO ---------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
+            |         o | OUT     Sink < Power < Source      |o o |  | o o|                       OUT |o          | A/B/C   Sink < Power < Source         |           |
+             -----------               < Data >               ----    ----         < Data >            -----------               < Data >                  -----------
+                                                                  Sink                            Serial Bridge Chip SBC
+                                                                                                                                                 ʌ   PWR IN Micro USB B         
+                                                                 Source
+                                                                
 ```
 
 Circuit Diagram
