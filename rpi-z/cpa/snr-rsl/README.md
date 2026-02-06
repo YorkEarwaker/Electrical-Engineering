@@ -72,14 +72,28 @@ Circuit Diagram
      TBC
 ```
 
-Context Diagram - Development environment, RPi Z 2 W and BMV080 breakout board, 
-* Assume will need some serial communication with headless RPi Z from Laptop for development over UART
+### SPI
+Similar to I2C . Unclear if SparkFun Arduino code supports this. If not will have to write SPI connection code in C. TBD
+
+### FPC
+Very different from either I2C or SPI and may not be viable for PoC. Consider if there are any advantages for a MVP? 
+
+### Development environment
+Two scenarios
+* Dev env box UART serial bridge to RPi Z 2 W
+* Dev env box SSH over Wifi to RPi Z 2 W
+
+Assumptions - both scenarios
+* Assume requirement for some serial communication with headless RPi Z from Laptop for development over UART serial bridge
 * RPi Z running headless OS, either RPi Trixie Lite or Ubuntu Core 24
-* I2C to I2C context is shown but same would apply for I2C to Qwiic context
-* The Bosch SDK and other code using it executes on the RPi Zero 2 W
+* The Bosch SDK and other code using it executes on the RPi Zero 2 W to interact with BMV080 sensor on breakout board,
+
+Context Diagram - Dev env box UART serial bridge to RPi Z 2 W
+* I2C to I2C context is shown 
+* Likely identical or similar for contexts; I2C to Qwiic, SPI to SPI, SPI to Qwiic
 * <todo: consider, reviewed once development has started and make changes accordingly, wip >
 ```                                   
-            BMV080 Breakout                                  RPi Zero 2 W                         USB TTL to UART device                                   Dev Box
+            BMV080 Breakout                                  RPi Zero 2 W                         USB TTL to UART device                                   Dev env box
              -----------                 I2C                  ------------          Serial             -----------                Serial                   -----------
             |         o | I2C         Connection         I2C |o o      o o| UART  Connection     UART |o       ___| Some        Connection                |___        |
             |         o | PIN ------------------------- GPIO |o o  __  o o| GPIO ---------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
@@ -95,11 +109,20 @@ Circuit Diagram
 ``` 
      TBC
 ```
-### SPI
-Similar to I2C . Unclear if SparkFun Arduino code supports this. If not will have to write SPI connection code in C. TBD
 
-### FPC
-Very different from either I2C or SPI and may not be viable for PoC. Consider if there are any advantages for a MVP? 
+Context Diagram - Dev env box SSH over Wifi to RPi Z 2 W
+* ? context is shown 
+* Likely identical or similar for contexts; ?
+* <todo: consider, reviewed once development has started and make changes accordingly, wip >
+```                                   
+     TBC
+                                                                
+```
+
+Circuit Diagram
+``` 
+     TBC
+```
 
 ## Hardware
 
