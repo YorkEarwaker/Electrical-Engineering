@@ -220,7 +220,7 @@ Context Diagram - mains provides power, USB TTL to UART 3V + mains power 5V
    PWR IN   |___    o o |       Connection     UART |o       ___| Some        Connection                |___        |
 Micro USB B  ___|   o o | GPIO ---------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
  Src > Snk  |       o o |                       OUT |o          | A/B/C   Sink < Power < Source         |           |
-             -----------         < Data >            -----------               < Data                   -----------
+             -----------         < Data >            -----------               < Data >                  -----------
                                                 Serial Bridge Chip SBC
 ```
 
