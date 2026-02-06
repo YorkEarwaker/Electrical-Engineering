@@ -87,6 +87,9 @@ Assumptions - both scenarios
 * Assume requirement for some serial communication with headless RPi Z from Laptop for development over UART serial bridge
 * RPi Z running headless OS, either RPi Trixie Lite or Ubuntu Core 24
 * The Bosch SDK and other code using it executes on the RPi Zero 2 W to interact with BMV080 sensor on breakout board,
+* Development is carried out on Dev env box in this instance Dell Ubuntu laptop
+* Code is cross compiled by tool chain on Dev env box and compiled files deployed to RPi Z 2 W
+* Once the dev env and dev ops are working for deployment to RPi Z 2 W create scripts delta for other platforms RPi Pico in the first instance
 
 Context Diagram - Dev env box UART serial bridge to RPi Z 2 W
 * I2C to I2C context is shown 
@@ -111,7 +114,7 @@ Circuit Diagram
 ```
 
 Context Diagram - Dev env box SSH over Wifi to RPi Z 2 W
-* ? context is shown 
+* Ubuntu Core 24 context is shown 
 * Likely identical or similar for contexts; ?
 * <todo: consider, reviewed once development has started and make changes accordingly, wip >
 ```                                   
