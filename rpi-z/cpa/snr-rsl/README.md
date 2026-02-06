@@ -86,7 +86,7 @@ Context Diagram - Development environment, RPi Z 2 W and BMV080 breakout board,
             |         o | OUT     Sink < Power < Source      |o o |  | o o|                       OUT |o          | A/B/C   Sink < Power < Source         |           |
              -----------               < Data >               ----    ----         < Data >            -----------               < Data >                  -----------
                                                                   Sink                            Serial Bridge Chip SBC
-                                                                                                                                                 ʌ   PWR IN Micro USB B         
+                                                                   ^   PWR IN Micro USB B         
                                                                  Source
                                                                 
 ```
