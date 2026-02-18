@@ -160,6 +160,13 @@ Particulate matter - lists, catalogs,
 * Emissions analytics, [WS](https://www.emissionsanalytics.com/list-of-standards), list of standards, automotive, overlap with other sectors?
 * <todo: others to source, for other contexts, >
 
+### Tools
+
+Spectrometer - aerosols
+* To use as benchmark tests for aerosol sensors, comparisons, 
+* LAP 322 Aerosol Spectrometer, [WS](https://www.topas-gmbh.de/en/products/particle-measurement/product/lap-322), TOPAS, for analysis of particle size distributions and particle number concentrations in aerosols, monochrome light, referenced in Bosch BMV080 technical specification statement
+* <todo: other of a similar type to source, >
+
 ## References
 
 Terms
