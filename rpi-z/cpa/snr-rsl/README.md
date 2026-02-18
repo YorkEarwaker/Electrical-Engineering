@@ -131,7 +131,8 @@ Circuit Diagram
 
 Sensor - BMV080, Bosch
 * Particulate matter sensor BMV080, [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
-* Datasheet, [WS](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
+* Datasheet, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
+* Technical Specification Statement, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/application_notes_1/bst-bmv080-an002.pdf), Bosch
 * Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
 
 Device - SparkFun breakout board using BMV080, 
@@ -145,12 +146,29 @@ Device - TBD thing using BMV080
 Sensor - tbd
 * ...
 
+### Test
+
+Particulate matter - standardized test materials 
+* Some sample test materials and methods partly sourced from Bosch BMV080 sensor documentation, other found in search results on topic, 
+* ISO 12103-1:2024, Road vehicles — Test contaminants for filter evaluation, Part 1: Arizona test dust, [WS](https://www.iso.org/standard/85949.html), ISO, Arizona Road Dust, four to five grades of test dust; A1 Ultrafine, A2 Fine, A3 Medium, A4 Course, sometimes also A5 Course. natural and synthetic can behave differently,
+* ISO 16000-9:2024, Indoor air, Part 9: Determination of the emission of volatile organic compounds from samples of building products and furnishing — Emission test chamber method, [WS](https://www.iso.org/standard/79022.html), ISO, volatile organic compounds VOCs in indoor air, "incense smoke", 
+* CSN EN 16738 Emission safety of combustible air fresheners - Test methods, [WS](https://www.en-standard.eu/csn-en-16738-emission-safety-of-combustible-air-fresheners-test-methods/),  determining combustible air fresheners in indoor air, 
+* EN 16739 methodology for assessing test results, 
+* <todo: others to source, which are relevant for this AGW sensor project, which scenarios to prioritise, >
+
+Particulate matter - lists, catalogs, 
+* Emissions analytics, [WS](https://www.emissionsanalytics.com/list-of-standards), list of standards, automotive, overlap with other sectors?
+* <todo: others to source, for other contexts, >
+
 ## References
 
 Terms
 * Aerosol, 
-* CO, carbon monoxide
 * PM, particulate matter
+
+Particulate matter - kinds
+* CO, carbon monoxide
+* PAHs, polycyclic aromatic hydrocarbons
 * VOCs, volatile organic compounds
 * VSCs, volatile sulfer compounds
 
