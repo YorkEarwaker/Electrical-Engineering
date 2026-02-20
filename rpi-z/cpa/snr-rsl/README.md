@@ -134,7 +134,7 @@ Sensor - BMV080, Bosch
 * Datasheet, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
 * Technical Specification Statement, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/application_notes_1/bst-bmv080-an002.pdf), Bosch, readings
 * Shipment & Packaging Details, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/shipment_and_packaging_details/bst-bmv080-sp000.pdf), Bosch, bulk purchase of sensors
-* Integration Guidelines, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/handling_soldering_mounting_instructions/bst-bmv080-hs000.pdf), Bosch, integration to host PCB, mounting PCB host device enclosure on surface (wall, table, ... ), 
+* Integration Guidelines, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/handling_soldering_mounting_instructions/bst-bmv080-hs000.pdf), Bosch, integration to host PCB, mounting PCB host device enclosure on surface (wall, table, ... ), sensor power consumption & circuits, 
 * CAD file, [STP](https://www.bosch-sensortec.com/media/boschsensortec/downloads/cad_files/bst-bmv080-cad.zip), Bosch, zip file containing a SETP/STP 3D CAD drawing of sensor
 * Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
 
