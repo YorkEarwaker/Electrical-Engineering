@@ -135,6 +135,7 @@ Sensor - BMV080, Bosch
 * Technical Specification Statement, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/application_notes_1/bst-bmv080-an002.pdf), Bosch, readings
 * Shipment & Packaging Details, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/shipment_and_packaging_details/bst-bmv080-sp000.pdf), Bosch, bulk purchase of sensors
 * Integration Guidelines, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/handling_soldering_mounting_instructions/bst-bmv080-hs000.pdf), Bosch, integration to host PCB
+* CAD file, [STP](https://www.bosch-sensortec.com/media/boschsensortec/downloads/cad_files/bst-bmv080-cad.zip), Bosch, zip file containing a SETP/STP 3D CAD drawing of sensor
 * Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
 
 Device - SparkFun breakout board using BMV080, 
@@ -169,6 +170,10 @@ Spectrometer - aerosols
 * To use as benchmark tests for aerosol sensors, comparisons, 
 * LAP 322 Aerosol Spectrometer, [WS](https://www.topas-gmbh.de/en/products/particle-measurement/product/lap-322), TOPAS, for analysis of particle size distributions and particle number concentrations in aerosols, monochrome light, referenced in Bosch BMV080 technical specification statement
 * <todo: other of a similar type to source, >
+
+CAD file reader - sensor, PCB, other, 
+* FreeCAD, 3D, linux, step/stp files, 
+* LibreCAD, 2D, linux, 
 
 ## References
 
