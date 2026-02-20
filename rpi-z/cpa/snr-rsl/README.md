@@ -132,7 +132,9 @@ Circuit Diagram
 Sensor - BMV080, Bosch
 * Particulate matter sensor BMV080, [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
 * Datasheet, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
-* Technical Specification Statement, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/application_notes_1/bst-bmv080-an002.pdf), Bosch
+* Technical Specification Statement, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/application_notes_1/bst-bmv080-an002.pdf), Bosch, readings
+* Shipment & Packaging Details, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/shipment_and_packaging_details/bst-bmv080-sp000.pdf), Bosch, bulk purchase of sensors
+* Integration Guidelines, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/handling_soldering_mounting_instructions/bst-bmv080-hs000.pdf), Bosch, integration to host PCB
 * Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
 
 Device - SparkFun breakout board using BMV080, 
@@ -144,6 +146,7 @@ Device - TBD thing using BMV080
 * <todo: evaluaate other BMV080 candidate devices, >
 
 Sensor - tbd
+* <todo: other particlate matter sensors, other manufacturer options, >
 * ...
 
 ### Test
@@ -171,13 +174,14 @@ Spectrometer - aerosols
 
 Terms
 * Aerosol, 
+* AQI, air quality indices 
 * PM, particulate matter
 
 Particulate matter - kinds
 * CO, carbon monoxide
 * PAHs, polycyclic aromatic hydrocarbons
 * VOCs, volatile organic compounds
-* VSCs, volatile sulfer compounds
+* VSCs, volatile sulfur compounds
 
 VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, 
 * Photochemical smog, toxic smog, 
