@@ -130,6 +130,7 @@ Circuit Diagram
 ## Hardware
 
 ### Target
+The Raspberry Pi Zero 2 W in the first instance. Once this toolchain is setup and stable compile also for Raspberry Pi Pico family. 
 
 * <todo: find source and link, >
 * Raspberry Pi Zero 2 W is powered by the RP3A0 system-in-package (SiP), which integrates the Broadcom BCM2710A1 system-on-chip (SoC).  This SoC features a quad-core 64-bit ARM Cortex-A53 processor clocked at 1GHz
