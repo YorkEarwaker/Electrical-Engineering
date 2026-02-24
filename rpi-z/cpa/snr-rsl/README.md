@@ -44,11 +44,11 @@ Context Diagram -  RPi Z GPIO I2C to BMV080 breakout board Qwiic
 ```                                   
             BMV080 Breakout                                  RPi Zero 2 W                                       UI Device (mobile, tablet, laptop, ...)
              -----------                 I2C                  -----------                      Wifi               -----------
-            |        ___|             Connection         I2C |o o     ___| PWR IN           Connection           |           |
-            |       |___  Qwiic ----------------------- GPIO |o o    |___  Micro USB B                           |           |
-            |           |         Sink < Power < Source      |o o        | Sink < Source                         |           |
+            |  ---   ___|             Connection         I2C |o o     ___| PWR IN           Connection           |           |
+            | |BMV| |___  Qwiic ----------------------- GPIO |o o    |___  Micro USB B                           |           |
+            |  ---      |         Sink < Power < Source      |o o        | Sink < Source                         |           |
              -----------               < Data >               -----------                    < Data  >            -----------
-                                                               
+           BMV080 Sensor BMV                                      
 ```
 
 Circuit Diagram
@@ -60,11 +60,11 @@ Context Diagram - RPi Z GPIO I2C to BMV080 breakout board I2C pin out
 ```                                   
             BMV080 Breakout                                  RPi Zero 2 W                                       UI Device (mobile, tablet, laptop, ...)
              -----------                 I2C                  -----------                      Wifi               -----------
-            |         o | I2C         Connection         I2C |o o     ___| PWR IN           Connection           |           |
-            |         o | PIN ------------------------- GPIO |o o    |___  Micro USB B                           |           |
-            |         o | OUT     Sink < Power < Source      |o o        | Sink < Source                         |           |
+            |  ---    o | I2C         Connection         I2C |o o     ___| PWR IN           Connection           |           |
+            | |BMV|   o | PIN ------------------------- GPIO |o o    |___  Micro USB B                           |           |
+            |  ---    o | OUT     Sink < Power < Source      |o o        | Sink < Source                         |           |
              -----------               < Data >               -----------                    < Data  >            -----------
-                                                            
+           BMV080 Sensor BMV                                                                                                  
 ```
 
 Circuit Diagram
@@ -98,11 +98,11 @@ Context Diagram - Dev env box UART serial bridge to RPi Z 2 W
 ```                                   
             BMV080 Breakout                                  RPi Zero 2 W                         USB TTL to UART device                                   Dev env box
              -----------                 I2C                  ------------          Serial             -----------                Serial                   -----------
-            |         o | I2C         Connection         I2C |o o      o o| UART  Connection     UART |o       ___| Some        Connection                |___        |
-            |         o | PIN ------------------------- GPIO |o o  __  o o| GPIO ---------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
-            |         o | OUT     Sink < Power < Source      |o o |  | o o|                       OUT |o          | A/B/C   Sink < Power < Source         |           |
+            |  ---    o | I2C         Connection         I2C |o o      o o| UART  Connection     UART |o       ___| Some        Connection                |___        |
+            | |BMV|   o | PIN ------------------------- GPIO |o o  __  o o| GPIO ---------------- PIN |o  SBC |___  USB ------------------- standard USB A ___|       |
+            |  ---    o | OUT     Sink < Power < Source      |o o |  | o o|                       OUT |o          | A/B/C   Sink < Power < Source         |           |
              -----------               < Data >               ----    ----         < Data >            -----------               < Data >                  -----------
-                                                                  Sink                            Serial Bridge Chip SBC
+           BMV080 Sensor BMV                                      Sink                            Serial Bridge Chip SBC
                                                                    ^   PWR IN Micro USB B         
                                                                  Source
                                                                 
@@ -193,6 +193,7 @@ Spectrometer - aerosols
 
 ### Toolchain
 * ? tbd, compiler, linker, ... cross compilation? ARM? GCC? 
+* BMV080 SDK v11.2.0 
 
 ### CAD
 CAD file reader - sensor, PCB, other, 
