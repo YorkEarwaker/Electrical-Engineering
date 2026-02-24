@@ -129,6 +129,16 @@ Circuit Diagram
 
 ## Hardware
 
+### Target
+
+* <todo: find source and link, >
+* Raspberry Pi Zero 2 W is powered by the RP3A0 system-in-package (SiP), which integrates the Broadcom BCM2710A1 system-on-chip (SoC).  This SoC features a quad-core 64-bit ARM Cortex-A53 processor clocked at 1GHz
+* Raspberry Pi Pico 2 W is powered by the RP2350 microcontroller chip, which features dual Arm Cortex-M33 processors running at up to 150 MHz
+* Raspberry Pi Pico 2 W RP2350 also supports an optional dual-core RISC-V Hazard3 architecture
+* Raspberry Pi Pico W features the RP2040 microcontroller chip, which is a dual-core Arm Cortex-M0+ processor running at up to 133 MHz
+
+### Sensor
+
 Sensor - BMV080, Bosch
 * Particulate matter sensor BMV080, [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
 * Datasheet, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
@@ -137,6 +147,7 @@ Sensor - BMV080, Bosch
 * Integration Guidelines, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/handling_soldering_mounting_instructions/bst-bmv080-hs000.pdf), Bosch, integration to host PCB, mounting PCB host device enclosure on surface (wall, table, ... ), sensor power consumption & circuits, 
 * CAD file, [STP](https://www.bosch-sensortec.com/media/boschsensortec/downloads/cad_files/bst-bmv080-cad.zip), Bosch, zip file containing a SETP/STP 3D CAD drawing of sensor
 * Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
+* Bosch Sensortec GmbH [GH](https://github.com/BoschSensortec), Bosch, GitHub, 
 
 Device - SparkFun breakout board using BMV080, 
 * SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic) [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), SparkFun,
