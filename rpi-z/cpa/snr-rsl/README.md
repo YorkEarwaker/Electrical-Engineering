@@ -182,6 +182,19 @@ Spectrometer - aerosols
 * LAP 322 Aerosol Spectrometer, [WS](https://www.topas-gmbh.de/en/products/particle-measurement/product/lap-322), TOPAS, for analysis of particle size distributions and particle number concentrations in aerosols, monochrome light, referenced in Bosch BMV080 technical specification statement
 * <todo: other of a similar type to source, >
 
+## Software
+
+### IDE
+* ? terminal cli?
+* ? C/C++ IDE tbd
+
+### Build
+* CMake
+
+### Toolchain
+* ? tbd, compiler, linker, ... cross compilation? ARM? GCC? 
+
+### CAD
 CAD file reader - sensor, PCB, other, 
 * FreeCAD, 3D, linux, step/stp files, 
 * LibreCAD, 2D, linux, 
