@@ -25,8 +25,8 @@ Assumption
 TODO
 * <todo: consider, review SparkFun code base, for SparkFun breakout board BMV080, >
 * <todo: consider, other similar particulate matter sensors from other vendors, >
-* <todo: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, >
-* <todo: consider, how to set up cross compilation dev env on Ubuntu laptop for build and deploy to RPi Zero 2 W, >
+* <todo: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, for RPi OS Trixi Lite, for Ubutnu Core 24, >
+* <todo: consider, source documentation on how to set up cross compilation dev env on Ubuntu laptop for build and deploy to RPi Zero 2 W, >
 * <todo: consider, set up C/C++ dev env for Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, hello world. >
 * <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
 * <todo: consider, updating headless OS's full update, RPi OS Trixi Lite, Ubutnu Core 24, test hellow world, test first contact BMV080 over I2C >
