@@ -146,6 +146,7 @@ The Raspberry Pi Zero 2 W in the first instance. Once this toolchain is setup an
 
 Sensor - BMV080, Bosch
 * Particulate matter sensor BMV080, [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
+* BMV080 Software, [WS](https://www.bosch-sensortec.com/software-tools/software/previous-sdk-bmv-080-versions/), SDK versions and licenses, bmv080 driver, for download
 * Datasheet, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf), Bosch
 * Technical Specification Statement, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/application_notes_1/bst-bmv080-an002.pdf), Bosch, readings
 * Shipment & Packaging Details, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/shipment_and_packaging_details/bst-bmv080-sp000.pdf), Bosch, bulk purchase of sensors
@@ -283,6 +284,8 @@ News Papers - VOCs
 News Papers - BMV080
 * Sensors Converge 2025: Bosch boosts ecosystem around BMV080 particulate matter sensor, [WS](https://www.bosch-sensortec.com/news/sensors-converge-2025-bosch-boosts-ecosystem-around-bmv080-particulate-matter-sensor.html), Plug-and-play platforms simplify and accelerate development with Bosch environmental sensors
 
+News Papers - RPi toolchains, cross compile on Ubuntu 24
+* Raspberry Pi toolchains, [GH](https://github.com/raspberrypi/tools), deprecated, but might include interesting nuggets, 
 
 
 
