@@ -26,6 +26,9 @@ TODO
 * <todo: consider, review SparkFun code base, for SparkFun breakout board BMV080, >
 * <todo: consider, other similar particulate matter sensors from other vendors, >
 * <todo: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, >
+* <todo: consider, set up C/C++ dev env for Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, hello world. >
+* <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
+* <todo: consider, updating headless OS's full update, RPi OS Trixi Lite, Ubutnu Core 24, test hellow world, test first contact BMV080 over I2C >
 
 DONE
 * <done: consider, intent to commit, >
@@ -148,7 +151,7 @@ Sensor - BMV080, Bosch
 * Integration Guidelines, [PDF](https://www.bosch-sensortec.com/media/boschsensortec/downloads/handling_soldering_mounting_instructions/bst-bmv080-hs000.pdf), Bosch, integration to host PCB, mounting PCB host device enclosure on surface (wall, table, ... ), sensor power consumption & circuits, 
 * CAD file, [STP](https://www.bosch-sensortec.com/media/boschsensortec/downloads/cad_files/bst-bmv080-cad.zip), Bosch, zip file containing a SETP/STP 3D CAD drawing of sensor
 * Bosch Sensortec Community [WS](https://community.bosch-sensortec.com/), Bosch
-* Bosch Sensortec GmbH [GH](https://github.com/BoschSensortec), Bosch, GitHub, 
+* Bosch Sensortec GmbH [GH](https://github.com/BoschSensortec), Bosch, GitHub, note does not seem to have a BMV080 repository, <todo: review content of other repositories, >
 
 Device - SparkFun breakout board using BMV080, 
 * SparkFun Air Quality PM1/PM2.5/PM10 Sensor - BMV080 (Qwiic) [WS](https://www.sparkfun.com/sparkfun-air-quality-pm1-pm2-5-pm10-sensor-bmv080-qwiic.html), SparkFun,
@@ -178,23 +181,39 @@ Particulate matter - lists, catalogs,
 
 ### Tools
 
-Spectrometer - aerosols
+Spectrometer - aerosols, 
+* <info: not for PoC, possibly for MVP, >
 * To use as benchmark tests for aerosol sensors, comparisons, 
 * LAP 322 Aerosol Spectrometer, [WS](https://www.topas-gmbh.de/en/products/particle-measurement/product/lap-322), TOPAS, for analysis of particle size distributions and particle number concentrations in aerosols, monochrome light, referenced in Bosch BMV080 technical specification statement
-* <todo: other of a similar type to source, >
+* <todo: consider, other spectrometer device of a similar type to source, catalog of candidate devices, >
 
 ## Software
 
 ### IDE
-* ? terminal cli?
+* ? none. terminal cli and scripting, <info: use in first instance, hello world . >
+* ? text editor with code highlighting, <todo: determine which is best to use for Ubuntu Linux, >
 * ? C/C++ IDE tbd
 
 ### Build
-* CMake
+* CMake, target Raspberry Pi, use terminal cli and scripting CMake etc, <info: use in first instance >
+* PlatformIO, all targets except Raspberry Pi and BST application board, <todo: explore at a later date >
 
 ### Toolchain
 * ? tbd, compiler, linker, ... cross compilation? ARM? GCC? 
 * BMV080 SDK v11.2.0 
+* ? C/C++ version 
+
+### Dev Env
+Copy BMV080 SDK files to development environment. Files to be copied to the software project. 
+* See section 3.8.2.2 Copy library and head file, from bst-bmv080-hs000.pdf 'Integration Guidelines' Bosch docs . 
+
+Static libraries for respective platform
+* lib_bmv080.a
+* lib_postProcessor.a
+
+Header files
+* bmv080.h
+* bmv080_defs.h
 
 ### CAD
 CAD file reader - sensor, PCB, other, 
