@@ -26,6 +26,7 @@ TODO
 * <todo: consider, review SparkFun code base, for SparkFun breakout board BMV080, >
 * <todo: consider, other similar particulate matter sensors from other vendors, >
 * <todo: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, >
+* <todo: consider, how to set up cross compilation dev env on Ubuntu laptop for build and deploy to RPi Zero 2 W, >
 * <todo: consider, set up C/C++ dev env for Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, hello world. >
 * <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
 * <todo: consider, updating headless OS's full update, RPi OS Trixi Lite, Ubutnu Core 24, test hellow world, test first contact BMV080 over I2C >
@@ -204,7 +205,10 @@ Spectrometer - aerosols,
 * ? C/C++ version 
 
 ### Dev Env
-Copy BMV080 SDK files to development environment. Files to be copied to the software project. 
+<todo: consider putting this in the development environment section above? probs not? >
+
+#### Copy BMV080 SDK files to dev env
+Library and header files to be copied to the software project. 
 * See section 3.8.2.2 Copy library and head file, from bst-bmv080-hs000.pdf 'Integration Guidelines' Bosch docs . 
 
 Static libraries for respective platform
@@ -214,6 +218,24 @@ Static libraries for respective platform
 Header files
 * bmv080.h
 * bmv080_defs.h
+
+#### Copy BMV080 example code to dev env
+Example code files to be copied to the software project. 
+* see section 3.8.2.3 Port API example, from bst-bmv080-hs000.pdf 'Integration Guidelines' Bosch docs .
+
+Port example code, C code file
+* bmv080_eample.c
+
+Port example code, Header file
+* bmv080_eample.h
+
+Implement Callback function
+* see also, section 5.2.1.4 Callbacks, from bst-bmv080-ds000.pdf 'Datasheet' Bosch docs.
+* refer to combridge.c, for communication bridge I2C/SPI code, RPI Zero contact over jumper wires to breakout board for BMV080 sensor platform initiation
+* refer to main.co, for entry function bmv080, after BMV080 sensor platform initiation
+
+Compile code and deploy to RPi Zero
+* CMake build to compile code for RPi SBU and RPi MCU devices
 
 ### CAD
 CAD file reader - sensor, PCB, other, 
