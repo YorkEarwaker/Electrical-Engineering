@@ -284,8 +284,12 @@ News Papers - VOCs
 News Papers - BMV080
 * Sensors Converge 2025: Bosch boosts ecosystem around BMV080 particulate matter sensor, [WS](https://www.bosch-sensortec.com/news/sensors-converge-2025-bosch-boosts-ecosystem-around-bmv080-particulate-matter-sensor.html), Plug-and-play platforms simplify and accelerate development with Bosch environmental sensors
 
-News Papers - RPi toolchains, cross compile on Ubuntu 24
+News Papers - RPi toolchains, cross compile on Ubuntu 24 for RPi Zero 2 W
 * Raspberry Pi toolchains, [GH](https://github.com/raspberrypi/tools), deprecated, but might include interesting nuggets, 
+* Cross compile for Raspberry Pi Zero from Ubuntu? [WS](https://raspberrypi.stackexchange.com/questions/103737/cross-compile-for-raspberry-pi-zero-from-ubuntu), 19 September 2019, Stack Exchange, 
+* Trying to cross-complie for Raspberry Pi Zero 2 w, [WS](https://forums.raspberrypi.com/viewtopic.php?t=376138), 3 Sep 2024, RPi Forums, 
+* How to Cross-Compile for Raspberry Pi on Ubuntu Linux in 5 Steps, [WS](https://deardevices.com/2019/04/18/how-to-crosscompile-raspi/), 18 April 2019, Dear Devices, 
+* 
 
 
 
