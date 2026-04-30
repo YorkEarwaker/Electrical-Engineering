@@ -4,8 +4,9 @@ Single board computer SBC.
 
 ## Notes
 
-Please see
-* For directions on headless connection to RPi Zero 2 W with 1) standard USB A to Micro USB B cable or 2) Raspberry Pi Debug Probe or 3) USB TTL to UART cable. Work in progress.
+Headless access - achieved, wip
+* Success!
+* For directions on headless connection to RPi Zero 2 W with 1) standard USB A to Micro USB B cable or 2) Raspberry Pi Debug Probe or 3) USB TTL to UART cable. refinement tbc.
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 * The official Getting Started Raspberry Pi Documentation does not cover the use case described in the forum post.
 * For attempts at process see inline below headings; Output - headless to RPi Zero 2 W with ...
@@ -17,15 +18,12 @@ This should not be difficult; to communicate with RPi Zero headless. But it is i
 TODO
 * <todo: consider, hello world project>
 * <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? RPi OS on RPi Zero SBC, >
-* <todo: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, >
-* <todo: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, for use with RPi Pico MCU powered by 5V RPi Zero SBC, >
 * <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt, from tutorial, source offical Raspberry Pi docs, >
 * <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cable RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
 * <todo: consider, RPi Zero as mountable flash device, see RPi Magaizine article in references below, >
 * <todo: consider, reuse old laptop screen as second dispaly for Dell and/or display for RPi Zero SBC, see references below for example, >
 * <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
-* <todo: consider, to setup RPi Zero correctly will have to purchase secondary BoM items, screen display, keyboard, and so on, >
 * <todo: consider, is there some way to make headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, >
 * <todo: consider, ascii art, in stand alone files to reflect changes made here. >
 
@@ -38,6 +36,9 @@ DONE
 * <done: consider, does the Micro USB B - OTG? - on the RPi Debug Probe device exhibit disconnection issue with the Linux Ubuntu LTS 24.04.3, Yes! likely same kernel issue, >
 * <done: consider, request login credentials from The Pi Hut for the Micro SD Card with RPi OS pre installed, email sent 2026-01-01, >
 * <done: consider, ascii art, RPi Zero , GPIO pinout diagram and table with pin descriptors, for inclusion in code file comment headers for circuit diagrams, wip>
+* <done: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, wip >
+* <done: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, many online tutorials didn't seem to work, has been achieved in part see next item below, wip >
+* <done: consider, to setup RPi Zero correctly will have to purchase secondary BoM items, screen display, keyboard, and so on, not necessary headless coms achived via; cable with serial bridge chip device to Rpi 0, use of ssh over local LAN wifi to RPi 0, wip >
 
 ## Hardware
 
