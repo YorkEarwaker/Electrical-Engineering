@@ -25,7 +25,6 @@ Assumption
 TODO
 * <todo: consider, review SparkFun code base, for SparkFun breakout board BMV080, >
 * <todo: consider, other similar particulate matter sensors from other vendors, >
-* <todo: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, for RPi OS Trixi Lite, for Ubutnu Core 24, >
 * <todo: consider, source documentation on how to set up cross compilation dev env on Ubuntu laptop for build and deploy to RPi Zero 2 W, >
 * <todo: consider, set up C/C++ dev env for Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, hello world. >
 * <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
@@ -33,6 +32,7 @@ TODO
 
 DONE
 * <done: consider, intent to commit, >
+* <done: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, for RPi OS Trixi Lite, for Ubutnu Core 24, >
 
 ## Overview
 Connection scenarios
