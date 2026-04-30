@@ -1,10 +1,10 @@
 # Aerosol sensor rsl (mpy)
 
-Aerosol, molecules, particulate matter, air quality control, . The consequence of phase change. The likelyhood of wetbulb events increases. In a warming planet more seven percent more water vapor will be held in the atmosphere for each degree of warming. In a warming planet more volatile substance will evaporate. In a warming planet more fires wild and urban will occure and so more particulate matter. Area burned will at least double for every degree of warming. The water vapor will compbine with other volative vapor and particulate matter and gases. Each water droplet a miniature testtube in the sky heated by the Earths radiative energy and catalysed by the Suns radiative energy. In one giant chemical experiment in the sky. Each water droplet in the atmosphere also a miniature petri dish in the sky. The chemistry will interact with microorganisms in one giant biological experiment in the sky. Which will interact with the chemistry and biology in oceans and on land and cryosphere. So the atmopheric water droplets as micro testtube and micro petri dish interacting with the macro testtube and macro petri dish of the oceans. And so on with meso ecosystem niches and on. And the increased heat will speed chemical and biochemical molecular interactive process. In one giant biospheric and geospheric experment in Earths global systems of systems.
+Aerosol, molecules, particulate matter, air quality control, . The consequence of phase change. The likelihood of wetbulb events increases. In a warming planet more seven percent more water vapor will be held in the atmosphere for each degree of warming. In a warming planet more volatile substance will evaporate. In a warming planet more fires wild and urban will occur and so more particulate matter. Area burned will at least double for every degree of warming. The water vapor will combine with other volative vapor and particulate matter and gases. Each water droplet a miniature testtube in the sky heated by the Earths radiative energy and catalysed by the Suns radiative energy. In one giant chemical experiment in the sky. Each water droplet in the atmosphere also a miniature petri dish in the sky. The chemistry will interact with microorganisms in one giant biological experiment in the sky. Which will interact with the chemistry and biology in oceans and on land and cryosphere. So the atmospheric water droplets as micro testtube and micro petri dish interacting with the macro testtube and macro petri dish of the oceans. And so on with meso ecosystem niches and on. And the increased heat will speed chemical and biochemical molecular interactive process. In one giant biospheric and geospheric experiment in Earths global systems of systems.
 
 So sensors are needed to measure the aerosol things to at least know what is out there and where an in what concentrations and for how long and with what other things to be able to start to think of how to mitigate the possible consequences. CFC's and the hole in the ozone as one example.
 
-Global health consequences. Not least with the possibility of novel microorganisms and the possiblity of global pandemics. Notwithstanding all of the other geospheric and biospheric consequences.
+Global health consequences. Not least with the possibility of novel microorganisms and the possibility of global pandemics. Notwithstanding all of the other geospheric and biospheric consequences.
 
 	"The global burden of disease associated with air pollution exposure exacts
 	a massive toll on human health worldwide: exposure to air pollution is estimated
@@ -14,7 +14,9 @@ Global health consequences. Not least with the possibility of novel microorganis
 	and air pollution is now recognized as the single biggest environmental threat to
 	human health." - WHO 2021
 	
-See also Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut analysis and design, 
+See also
+* RPi Pico 2 W MCU, Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut analysis and design, 
+* RPi Zero 2 W SBC, Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z/cpa/snr-rsl), third attempt
 
 ## Status
 TODO
