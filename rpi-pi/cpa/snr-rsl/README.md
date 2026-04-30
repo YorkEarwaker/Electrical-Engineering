@@ -1,6 +1,8 @@
 # Aerosol sensor rsl (cpa)
 
-See also Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, 
+See also 
+* RPi Pico 2 W MCU, Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, 
+* RPi Zero 2 W SBC, Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-z/cpa/snr-rsl), third attempt
 
 ## Notes
 
