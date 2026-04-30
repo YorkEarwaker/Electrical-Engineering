@@ -6,7 +6,8 @@
 See also
 * RPi Pico 2 W MCU, Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, recognized on Pico I2C bus
 * RPi Pico 2 W MCU, Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut research, C/C++ 
-* Air purifier, [WS](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/hap/arp), particulate matter sensor as component part of /arp project
+* Air purifier, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/hap/arp), particulate matter sensor as component part of /arp project
+* SSH, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W
 
 ## Notes
 
