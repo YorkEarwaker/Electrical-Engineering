@@ -2,10 +2,13 @@
 
 Single board computer SBC. 
 
+See also
+* SSH, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W
+
 ## Notes
 
 Headless access - achieved, wip
-* Success!
+* Success! <todo: consider, put this in appendix now? >
 * For directions on headless connection to RPi Zero 2 W with 1) standard USB A to Micro USB B cable or 2) Raspberry Pi Debug Probe or 3) USB TTL to UART cable. refinement tbc.
 * Headless, RPi Zero 2 W, configuration & connection guide, [WS](https://forums.raspberrypi.com/viewtopic.php?t=394836), Raspberry Pi Forums
 * The official Getting Started Raspberry Pi Documentation does not cover the use case described in the forum post.
