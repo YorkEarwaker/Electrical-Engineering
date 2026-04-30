@@ -3,7 +3,7 @@
 Single board computer SBC. 
 
 See also
-* SSH, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W
+* SSH, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W, different for RPi Trixie and Ubuntu Core 24 .
 
 ## Notes
 
