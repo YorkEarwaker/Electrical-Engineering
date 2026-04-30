@@ -250,7 +250,7 @@ Pin Out >  | o o o o |           UART
              |     |          <  The device cable
               |||||           <  The (serial UART) jumper wires, may be coloured differently from pinout table example
              1 2 3 4            
-             | | | | PWR N/A in this scenario            
+             | | | |-- PWR N/A in this scenario            
              |-(-(----------|
                | |-------|  |       
                |------|  |  |
