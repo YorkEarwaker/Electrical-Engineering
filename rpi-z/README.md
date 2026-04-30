@@ -29,7 +29,7 @@ TODO
 * <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
 * <todo: consider, is there some way to make headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, >
 * <todo: consider, ascii art, in stand alone files to reflect changes made here. >
-* <todo: consider, purchase second RPi Zero, form/format tdc, for networking use cases of varouse kinds, AGW project use cases, >
+* <todo: consider, purchase second RPi Zero, form/format tdc, for networking use cases of varouse kinds, AGW project use cases, i.e. security examples, to setup pseudo bad actor/criminal test network, others tbd, >
 
 DONE
 * <done: consider, intent to commit>
