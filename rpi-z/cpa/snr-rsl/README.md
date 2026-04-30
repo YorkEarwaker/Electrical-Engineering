@@ -4,8 +4,8 @@
 * First attempt with single board computer RPi Zero 2 W.
 
 See also
-* RPi Pico; Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, recognized on Pico I2C bus
-* RPi Pico; Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut research, C/C++ 
+* RPi Pico 2 W MCU, Aerosol sensor rsl (mpy) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/mpy/snr-rsl), first cut research, start of bare bones MicroPython driver, recognized on Pico I2C bus
+* RPi Pico 2 W MCU, Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut research, C/C++ 
 * Air purifier, [WS](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/hap/arp), particulate matter sensor as component part of /arp project
 
 ## Notes
@@ -29,6 +29,7 @@ TODO
 * <todo: consider, set up C/C++ dev env for Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, hello world. >
 * <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
 * <todo: consider, updating headless OS's full update, RPi OS Trixi Lite, Ubutnu Core 24, test hellow world, test first contact BMV080 over I2C >
+* <todo: consider, new MicroSD card for Ubuntu Core 26, or wait till 26_04_1 ? for BMV080 deployment >
 
 DONE
 * <done: consider, intent to commit, >
