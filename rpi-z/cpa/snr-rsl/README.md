@@ -29,7 +29,7 @@ TODO
 * <todo: consider, set up C/C++ dev env for Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, hello world. >
 * <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
 * <todo: consider, updating headless OS's full update, RPi OS Trixi Lite, Ubutnu Core 24, test hellow world, test first contact BMV080 over I2C >
-* <todo: consider, new MicroSD card for Ubuntu Core 26, or wait till 26_04_1 ? for BMV080 deployment >
+* <todo: consider, new MicroSD card for Ubuntu Core 26, likley wait till 26_04_1, for project code for BMV080 deploymened to RPi Zero 2 W,  >
 
 DONE
 * <done: consider, intent to commit, >
