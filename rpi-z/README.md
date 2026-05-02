@@ -30,6 +30,7 @@ TODO
 * <todo: consider, is there some way to make headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, >
 * <todo: consider, ascii art, in stand alone files to reflect changes made here. >
 * <todo: consider, purchase second RPi Zero, form/format tdc, for networking use cases of varouse kinds, AGW project use cases, i.e. security examples, to setup pseudo bad actor/criminal test network, others tbd, >
+* <todo: consider, create Ubuntu Server MicroSD Card, is 26 'Resolute Racoon' release '23 April 2026' the best candidate to use. 26 RR might be just to start evaluation of new release, can it be installed headless, i.e. without UI? probs yes, use for serial testing as below and ssh see elsewhere, as candidate deployment OS for embedded SBC, try RPi-Z in first instance, >
 
 DONE
 * <done: consider, intent to commit>
