@@ -3,7 +3,8 @@
 Single board computer SBC. 
 
 See also
-* SSH, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W, different for RPi Trixie and Ubuntu Core 24 .
+* Networks repo, /ssh, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W, different for RPi Trixie and Ubuntu Core 24 .
+* Coding-Practice repo, /ubuntu/cdw/ , notes development workflow for Ubuntu Core, and example instance for deployment to RPi Zero, 
 
 ## Notes
 
@@ -20,17 +21,18 @@ This should not be difficult; to communicate with RPi Zero headless. But it is i
 
 TODO
 * <todo: consider, hello world project>
-* <todo: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? RPi OS on RPi Zero SBC, >
 * <todo: consider, RYO voltage down shift device, resistors? research and test, for use with RPi Pico MCU powered by 5V RPi Zero SBC, >
-* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt, from tutorial, source offical Raspberry Pi docs, >
-* <todo: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cable RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, >
+* <todo: consider, investigate Ethernet connection to RPi Zero to Dell laptop, low order of priority, as serial coms over USB serial bridge ship device and ssh over wifi coms already achieved. Find AGW use case for Ethernet connection between SBC devices likely a product management end user need issue, or for business case development/manufactruing/operations/servicing. Must likely be via USB cable , probs requires eathernet enable SBC, or ethernet breakout board as RPi Zero has no ethernet RJ45 onboard, and/or an ethernet 'dongle' from Dell Ubuntu USB port as Dell Ubuntu XPS 15 has no onboard ethernet RJ45 socket, attempt serial coms via Dell USB to RPi USB first instance, Then consider networking ethernet over USB, wired networking not wireless networking,  >
 * <todo: consider, RPi Zero as mountable flash device, see RPi Magaizine article in references below, >
 * <todo: consider, reuse old laptop screen as second dispaly for Dell and/or display for RPi Zero SBC, see references below for example, >
 * <todo: consider, investigate scavange old laptop keyboard as standalone keyboard, probs more difficult than screen dispaly reuse? >
-* <todo: consider, is there some way to make headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, >
+* <todo: consider, is there some way to make serial coms with headless RPi Zero work with USB cable work?, or is this just impossible? see heading; Output - headless to RPi Zero 2 W with USB cable, likely re prerequisit understanding for ethernet coms between rpi zero and Dell XPS 15 utilising usb in some way, context switching between ethernet coms and 'serial' coms would be interesting use case, >
 * <todo: consider, ascii art, in stand alone files to reflect changes made here. >
 * <todo: consider, purchase second RPi Zero, form/format tdc, for networking use cases of varouse kinds, AGW project use cases, i.e. security examples, to setup pseudo bad actor/criminal test network, others tbd, >
-* <todo: consider, create Ubuntu Server MicroSD Card, is 26 'Resolute Racoon' release '23 April 2026' the best candidate to use. 26 RR might be just to start evaluation of new release, can it be installed headless, i.e. without UI? probs yes, use for serial testing as below and ssh see elsewhere, as candidate deployment OS for embedded SBC, try RPi-Z in first instance, >
+* <todo: consider, create Ubuntu Server MicroSD Card, is 26 'Resolute Racoon' release '23 April 2026' the best candidate to use. 26 RR might be just to start evaluation of new release, use for serial testing as below and ssh see elsewhere, as candidate deployment OS for embedded SBC, try RPi-Z in first instance, >
+* <todo: consider, move the serial coms networking parts here to networking repo, which is 3-5-2026 most of the content here. > 
+* <todo: consider, Ubuntu Core OS 'hello world' snap, deployed to RPi Zero, high order of priority, do this first, dependent on dev workflow see Coding-Practice repo ubuntu project, >
+* <todo: consider, RPi Trixie Lite 'hello world' app, deployed to RPi Zero hardware, high order of priority, >
 
 DONE
 * <done: consider, intent to commit>
@@ -44,6 +46,11 @@ DONE
 * <done: consider, use as platform for Bosch Particlate Sensor for C code application sensor particulate value readings, wip >
 * <done: consider, list prerequisits for headless RPi Zero access of various sorts, setup before powering on, ssh file, WiFi wpa_supplicant.conf, Ethernet USB On-The-Go, Bluetooth, other, and so on, many online tutorials didn't seem to work, has been achieved in part see next item below, wip >
 * <done: consider, to setup RPi Zero correctly will have to purchase secondary BoM items, screen display, keyboard, and so on, not necessary headless coms achived via; cable with serial bridge chip device to Rpi 0, use of ssh over local LAN wifi to RPi 0, wip >
+* <done: consider, investigate Ethernet connection to RPi Zero, first order of priority, On-The-Go cable RPi Zero type micro USB B  peripheral Dell laptop standard USB A acts as host, seemed not to work, buy anther cable, probs not, likely RPI Zero config issue, in Ubuntu desktop open bootfs add modules-load=dwc2,g_ether after rootwait in cmdline.txt and add dtoverlay=dwc2 under all section in config.txt, from tutorial, source offical Raspberry Pi docs, . This route was a red herring from online 'tutorial' sites. Serial connection RPi Zero was achieved via serial bridge chip, see below. >
+* <done: consider, investigate Ethernet connection to RPi Zero, first order of priority, USB cable RPi Zero type micro B USB peripheral Dell laptop USB C acts as host, . Will have to be via USB cable likely as Dell Ubuntu has no RJ45 socket, probs requires eathernet enable SBC, or ethernet breakout board as RPi Zero has no ethernet onboard, Serial connection RPi Zero was achieved via serial bridge chip, see below>
+* <done: consider, test USB device disconnection issue with RPi OS and RPi Pico, does RPi OS endlessly increment USB device number as Ubuntu does? RPi OS on RPi Zero SBC, . Not needed as it appears to be a Linux kernel issue defect so will likely affect all Linux distros, . No bandwidth at the moment to carry out this specific verification. Keep in mind as a rainy day project. Do all Linux distro's suffer from this issue? >
+* <done: consider, can it be installed headless, i.e. without UI? probs yes, . Yes appears to be default installation method according to Ubuntu Server docs, Great! >
+
 
 ## Hardware
 
