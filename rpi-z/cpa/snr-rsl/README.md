@@ -315,7 +315,6 @@ Docs - Hazard Information Profiles HIP
 * HIP CH0400, Asphyxiant Gases, [WS](https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0400), UNDRR, IUPAC
 * ...
 
-
 News Papers - VOCs - must contain carbon
 * Consumer aerosol products overtake cars as source of dangerous smog in UK, [WS](https://ncas.ac.uk/consumer-aerosol-products-overtake-cars-as-source-of-dangerous-smog-in-uk/), 27 April 2025, National Centre for Atmospheric Science, UK, 
 * Effect Of Photochemical Smog, [WS](https://www.sciencing.com/effect-of-photochemical-smog-12328963), 24 March 2022 (updated), Mike Charmaine, Sciencing, 
