@@ -268,7 +268,7 @@ CAD file reader - sensor, PCB, other,
 Terms
 * Aerosol, 
 * AQI, air quality indices 
-* PM, particulate matter, a type of aerosol
+* PM, particulate matter, dust size kind of aerosol, pollen, pollution, ...
 
 Aerosol gases - kinds
 * CO, carbon monoxide
