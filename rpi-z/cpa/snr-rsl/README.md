@@ -258,7 +258,7 @@ Particulate matter - kinds
 * VOCs, volatile organic compounds
 * VSCs, volatile sulfur compounds
 
-VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, 
+VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by definition must have a carbon backbone to be classified an organic compound, 
 * Photochemical smog, toxic smog, 
 * Ground ozone O3, 
 * SOA, secondary organic aerosols
@@ -272,15 +272,18 @@ VOCs - propellants, compressed aerosols, vehicle exhausts, other sources,
 * Chlorobenzene
 * ...
 
-VSCs - industrial? mainly?
+VSCs - mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry? sewage? 
+* Hydrogen Sulphide, H2S [WP](https://en.wikipedia.org/wiki/Hydrogen_sulfide), rotten egg smell, by definition cannot be a VOC as it does not contain carbon, 
 * ...
 
 Papers
 * Global emissions of VOCs from compressed aerosol products. [WS](https://online.ucpress.edu/elementa/article/9/1/00177/116770/Global-emissions-of-VOCs-from-compressed-aerosol) 2021. Yeoman, AM, Lewis, AC., Elementa: Science of Anthropocene 9(1). [DOI](https://doi.org/10.1525/elementa.2020.20.00177)
 
-News Papers - VOCs
+News Papers - VOCs - must contain carbon
 * Consumer aerosol products overtake cars as source of dangerous smog in UK, [WS](https://ncas.ac.uk/consumer-aerosol-products-overtake-cars-as-source-of-dangerous-smog-in-uk/), 27 April 2025, National Centre for Atmospheric Science, UK, 
 * Effect Of Photochemical Smog, [WS](https://www.sciencing.com/effect-of-photochemical-smog-12328963), 24 March 2022 (updated), Mike Charmaine, Sciencing, 
+
+News Papers - VSCs - 
 * ‘I couldn’t breathe’: the sinister spread of France’s killer seaweed, [WS](https://www.theguardian.com/news/2026/may/12/i-couldnt-breathe-the-sinister-spread-of-frances-killer-seaweed), 12 May 2026, Marta Zaraska, The Guardian, After a series of deaths on the beaches of Brittany, one bereaved family set out to prove the foul-smelling bloom was to blame
 * ...
 
