@@ -276,7 +276,7 @@ Aerosol gases - kinds
 * VOCs, volatile organic compounds
 * VSCs, volatile sulfur compounds
 
-VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by definition must have a carbon backbone to be classified an organic compound, 
+VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by definition must have a carbon backbone to be classified an organic compound,
 * Photochemical smog, toxic smog, 
 * Ground ozone O3, 
 * SOA, secondary organic aerosols
@@ -290,8 +290,12 @@ VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by def
 * Chlorobenzene
 * ...
 
-VSCs - mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry? sewage? 
+VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respiratory damage, pulmonary edema, mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry, sewage, small like rotten egg or garlic or rotten cabbage, 
 * Hydrogen Sulphide, H2S [WP](https://en.wikipedia.org/wiki/Hydrogen_sulfide), rotten egg smell, by definition cannot be a VOC as it does not contain carbon, 
+* Methanethiol MT
+* Dimethyl sulphide DMS
+* Dimethyl disulphide DMDS
+* Dimethyl trisulphide DMTS
 * ...
 
 Papers
