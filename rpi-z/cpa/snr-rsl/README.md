@@ -281,6 +281,7 @@ Papers
 News Papers - VOCs
 * Consumer aerosol products overtake cars as source of dangerous smog in UK, [WS](https://ncas.ac.uk/consumer-aerosol-products-overtake-cars-as-source-of-dangerous-smog-in-uk/), 27 April 2025, National Centre for Atmospheric Science, UK, 
 * Effect Of Photochemical Smog, [WS](https://www.sciencing.com/effect-of-photochemical-smog-12328963), 24 March 2022 (updated), Mike Charmaine, Sciencing, 
+* ‘I couldn’t breathe’: the sinister spread of France’s killer seaweed, [WS](https://www.theguardian.com/news/2026/may/12/i-couldnt-breathe-the-sinister-spread-of-frances-killer-seaweed), 12 May 2026, Marta Zaraska, The Guardian, After a series of deaths on the beaches of Brittany, one bereaved family set out to prove the foul-smelling bloom was to blame
 * ...
 
 News Papers - BMV080
