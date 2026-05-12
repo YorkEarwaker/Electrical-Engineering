@@ -163,25 +163,25 @@ Device - SparkFun breakout board using BMV080,
 * Hookup Guide, [WS](https://docs.sparkfun.com/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080/introduction/#), SparkFun
 
 Device - TBD thing using BMV080
-* <todo: evaluaate other BMV080 candidate devices, >
+* <todo: evaluate other BMV080 candidate devices, >
 
 Sensor - BME680, Bosch - 
 * Gas sensor [WS](https://www.bosch-sensortec.com/en/products/environmental-sensors/gas-sensors/bme680)
 
 Device - TBD thing using BME680
-* <todo: evaluaate other BME680 candidate devices, >
+* <todo: evaluate other BME680 candidate devices, >
 
 Sensor - BME688, Bosch - 
 * Gas sensor BME688 [WS](https://www.bosch-sensortec.com/en/products/environmental-sensors/gas-sensors/bme688), 
 
 Device - TBD thing using BME688
-* <todo: evaluaate other BME688 candidate devices, >
+* <todo: evaluate other BME688 candidate devices, >
 
 Sensor - BME690, Bosch - high condensation use cases, 
 * Gas sensor BME690 [WS](https://www.bosch-sensortec.com/en/products/environmental-sensors/gas-sensors/bme690), VOCs, VSCs, other gases
 
 Device - TBD thing using BME690
-* <todo: evaluaate other BME690 candidate devices, >
+* <todo: evaluate other BME690 candidate devices, >
 
 Sensor - tbd
 * <todo: other particlate matter sensors, other manufacturer options, >
