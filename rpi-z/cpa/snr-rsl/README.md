@@ -31,10 +31,15 @@ TODO
 * <todo: consider, set up C/C++ dev env for BMV080 software project on Dell Ubuntu laptop for cross compiling to RPi Zero 2 W, first contact with BMV080 over I2C. >
 * <todo: consider, updating headless OS's full update, RPi OS Trixi Lite, Ubutnu Core 24, test hellow world, test first contact BMV080 over I2C >
 * <todo: consider, new MicroSD card for Ubuntu Core 26, likley wait till 26_04_1, for project code for BMV080 deploymened to RPi Zero 2 W,  >
+* <todo: consider, new project biosensors for whole cell detection pathegen detection bacterial detection, see paper below, or combine and retain here? >
+* <todo: consider, new project gas sensors, see candidates from Bosch below, or combine and retain here? >
+* <todo: consider, each specific sensor should have its own project, >
 
 DONE
 * <done: consider, intent to commit, >
 * <done: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, for RPi OS Trixi Lite, for Ubutnu Core 24, >
+* <done: consider, first pass gas sensors from Bosch, need to look into other manufacturers too, >
+* ...
 
 ## Overview
 Connection scenarios
@@ -145,6 +150,8 @@ The Raspberry Pi Zero 2 W in the first instance. Once this toolchain is setup an
 * Raspberry Pi Pico W features the RP2040 microcontroller chip, which is a dual-core Arm Cortex-M0+ processor running at up to 133 MHz
 
 ### Sensor
+Variety of particulate matter sensors or gas sensors depending on use case.
+* some use cases might demand both particulate matter sensors and gas senors and possibly others
 
 Sensor - BMV080, Bosch
 * Particulate matter sensor BMV080, [WS](https://www.bosch-sensortec.com/products/environmental-sensors/particulate-matter-sensor/bmv080/), Bosch, 
@@ -166,7 +173,7 @@ Device - TBD thing using BMV080
 * <todo: evaluate other BMV080 candidate devices, >
 
 Sensor - BME680, Bosch - 
-* Gas sensor [WS](https://www.bosch-sensortec.com/en/products/environmental-sensors/gas-sensors/bme680)
+* Gas sensor BME680 [WS](https://www.bosch-sensortec.com/en/products/environmental-sensors/gas-sensors/bme680)
 
 Device - TBD thing using BME680
 * <todo: evaluate other BME680 candidate devices, >
@@ -268,7 +275,7 @@ CAD file reader - sensor, PCB, other,
 Terms
 * Aerosol, 
 * AQI, air quality indices 
-* PM, particulate matter, dust size kind of aerosol, pollen, pollution, ...
+* PM, particulate matter, dust size kind of aerosol, pollen, pollution, vehicle exhausts, fire smoke particles, fungal spores?, bacteria? ...
 
 Aerosol gases - kinds
 * CO, carbon monoxide
@@ -290,7 +297,7 @@ VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by def
 * Chlorobenzene
 * ...
 
-VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respiratory damage, pulmonary edema, mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry, sewage, pulp paper mills, waste treatment plants, smell like rotten egg or garlic or rotten cabbage, 
+VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respiratory damage, pulmonary edema, mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry, sewage, pulp paper mills, waste treatment plants, volcanic gases, smell like rotten egg or garlic or rotten cabbage, 
 * Hydrogen Sulphide, H2S [WP](https://en.wikipedia.org/wiki/Hydrogen_sulfide), rotten egg smell, by definition cannot be a VOC as it does not contain carbon, 
 * Methanethiol MT
 * Dimethyl sulphide DMS
@@ -300,6 +307,14 @@ VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respir
 
 Papers
 * Global emissions of VOCs from compressed aerosol products. [WS](https://online.ucpress.edu/elementa/article/9/1/00177/116770/Global-emissions-of-VOCs-from-compressed-aerosol) 2021. Yeoman, AM, Lewis, AC., Elementa: Science of Anthropocene 9(1). [DOI](https://doi.org/10.1525/elementa.2020.20.00177)
+* Biosensors for Whole-Cell Bacterial Detection, [WS](https://journals.asm.org/doi/10.1128/cmr.00120-13), 2014, Ahmed A, Rushworth JV, Hirst NA, Millner PA.2014. Clin Microbiol Rev 27:. [DOI](https://doi.org/10.1128/cmr.00120-13) <todo: consider, move to seperate project, /snr-bio, >
+* ... 
+
+Docs - Hazard Information Profiles HIP
+* HIP CH0300, Toxic Gases, [WS](https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0300), UNDRR, IUPAC
+* HIP CH0400, Asphyxiant Gases, [WS](https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0400), UNDRR, IUPAC
+* ...
+
 
 News Papers - VOCs - must contain carbon
 * Consumer aerosol products overtake cars as source of dangerous smog in UK, [WS](https://ncas.ac.uk/consumer-aerosol-products-overtake-cars-as-source-of-dangerous-smog-in-uk/), 27 April 2025, National Centre for Atmospheric Science, UK, 
