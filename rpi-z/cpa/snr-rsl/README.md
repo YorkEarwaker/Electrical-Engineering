@@ -290,7 +290,7 @@ VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by def
 * Chlorobenzene
 * ...
 
-VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respiratory damage, pulmonary edema, mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry, sewage, small like rotten egg or garlic or rotten cabbage, 
+VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respiratory damage, pulmonary edema, mercaptans, sulphides, disulphides, ..., industrial and environmental contexts, rotting seaweed blooms sometimes due to nitrogen fertilizer or animal feed pollution, slurry, sewage, smell like rotten egg or garlic or rotten cabbage, 
 * Hydrogen Sulphide, H2S [WP](https://en.wikipedia.org/wiki/Hydrogen_sulfide), rotten egg smell, by definition cannot be a VOC as it does not contain carbon, 
 * Methanethiol MT
 * Dimethyl sulphide DMS
