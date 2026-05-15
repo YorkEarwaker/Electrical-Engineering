@@ -279,6 +279,8 @@ Terms
 
 Aerosol gases - kinds
 * CO, carbon monoxide
+* HABs, harmful algal blooms, create ecology for SRBs, and oxygen depletion of water and mass aquatic life die off, 
+* SRBs, sulphate reducing bacteria, produce VSCs which can be harmful to land animals like humans
 * PAHs, polycyclic aromatic hydrocarbons
 * VOCs, volatile organic compounds
 * VSCs, volatile sulfur compounds
@@ -308,6 +310,7 @@ VSCs - lethal to humans, disrupting cellular respiration, acute toxicity, respir
 Papers
 * Global emissions of VOCs from compressed aerosol products. [WS](https://online.ucpress.edu/elementa/article/9/1/00177/116770/Global-emissions-of-VOCs-from-compressed-aerosol) 2021. Yeoman, AM, Lewis, AC., Elementa: Science of Anthropocene 9(1). [DOI](https://doi.org/10.1525/elementa.2020.20.00177)
 * Biosensors for Whole-Cell Bacterial Detection, [WS](https://journals.asm.org/doi/10.1128/cmr.00120-13), 2014, Ahmed A, Rushworth JV, Hirst NA, Millner PA.2014. Clin Microbiol Rev 27:. [DOI](https://doi.org/10.1128/cmr.00120-13) <todo: consider, move to seperate project, /snr-bio, >
+* Warming and freshening coastal waters impact harmful algal bloom frequency in high latitudes. [WS](https://www.nature.com/articles/s43247-025-02421-y), 2025, Silva, E., Counillon, F., Brajard, J. et al., Commun Earth Environ 6, 445 (2025). [DOI](https://doi.org/10.1038/s43247-025-02421-y), likely release of VSC's in decomposition
 * ... 
 
 Docs - Hazard Information Profiles HIP
