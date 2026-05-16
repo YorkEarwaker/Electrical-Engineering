@@ -280,7 +280,7 @@ Terms
 Aerosol gases - kinds
 * CO, carbon monoxide
 * HABs, harmful algal blooms, create ecology for SRBs, and oxygen depletion of water and mass aquatic life die off, 
-* SRBs, sulphate reducing bacteria, produce VSCs which can be harmful to land animals like humans
+* SRBs, sulphate reducing bacteria, anaerobic digestion of HABs in oxygen depleted conditions, produce VSCs which can be harmful to land animals like humans
 * PAHs, polycyclic aromatic hydrocarbons
 * VOCs, volatile organic compounds
 * VSCs, volatile sulfur compounds
