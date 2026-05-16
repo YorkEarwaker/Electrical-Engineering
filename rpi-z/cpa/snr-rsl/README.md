@@ -279,11 +279,13 @@ Terms
 
 Aerosol gases - kinds
 * CO, carbon monoxide
-* HABs, harmful algal blooms, create ecology for SRBs, and oxygen depletion of water and mass aquatic life die off, 
-* SRBs, sulphate reducing bacteria, anaerobic digestion of HABs in oxygen depleted conditions, produce VSCs which can be harmful to land animals like humans
 * PAHs, polycyclic aromatic hydrocarbons
 * VOCs, volatile organic compounds
 * VSCs, volatile sulfur compounds
+
+Mechanisms
+* HABs, harmful algal blooms, create ecology for SRBs, and oxygen depletion of water and mass aquatic life die off, 
+* SRBs, sulphate reducing bacteria, anaerobic digestion of HABs in oxygen depleted conditions, produce VSCs which can be harmful to land animals like humans
 
 VOCs - propellants, compressed aerosols, vehicle exhausts, other sources, by definition must have a carbon backbone to be classified an organic compound,
 * Photochemical smog, toxic smog, 
