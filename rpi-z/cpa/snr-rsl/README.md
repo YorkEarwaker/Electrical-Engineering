@@ -8,6 +8,7 @@ See also
 * RPi Pico 2 W MCU, Aerosol sensor rsl (cpa) [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/rpi-pi/cpa/snr-rsl), first cut research, C/C++ 
 * Air purifier, [GH](https://github.com/YorkEarwaker/Electrical-Engineering/tree/main/hap/arp), particulate matter sensor as component part of /arp project
 * SSH, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W
+* ubn-em, [GH](https://github.com/YorkEarwaker/Coding-Practice/tree/main/workflows/ubn-em), for ubuntu core for embedded workflow/pipeline and toolchain
 
 ## Notes
 
@@ -34,12 +35,12 @@ TODO
 * <todo: consider, new project biosensors for whole cell detection pathegen detection bacterial detection, see paper below, or combine and retain here? >
 * <todo: consider, new project gas sensors, see candidates from Bosch below, or combine and retain here? >
 * <todo: consider, each specific sensor should have its own project, >
-* <todo: consider, seperate project for ubuntu core tool chain and devSecOps in preparation for this project, >
 
 DONE
 * <done: consider, intent to commit, >
 * <done: consider, updating first and second attempts with RPi Pico with link to this third attempt with RPi Zero 2 W, for RPi OS Trixi Lite, for Ubutnu Core 24, >
 * <done: consider, first pass gas sensors from Bosch, need to look into other manufacturers too, >
+* <done: consider, seperate project for ubuntu core tool chain and devSecOps in preparation for this project, see Coding-Practice/workflows/ubn-em >
 * ...
 
 ## Overview
