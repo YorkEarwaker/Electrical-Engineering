@@ -34,6 +34,7 @@ TODO
 * <todo: consider, new project biosensors for whole cell detection pathegen detection bacterial detection, see paper below, or combine and retain here? >
 * <todo: consider, new project gas sensors, see candidates from Bosch below, or combine and retain here? >
 * <todo: consider, each specific sensor should have its own project, >
+* <todo: consider, seperate project for ubuntu core tool chain and devSecOps in preparation for this project, >
 
 DONE
 * <done: consider, intent to commit, >
