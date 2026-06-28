@@ -19,8 +19,8 @@ Objectives
 
 ## Status
 TODO
-* <todo: consider, review polar breeze aria breeze and try and replicate a similar system as open source hardware, >
-* <todo: consider, Thomas Berger, engineer Manchester? maker of polar breeze air cooler? >
+* <todo: consider, reserch "Mini Air Cooler” or “Evaporative Personal Fan, polar breeze aria breeze (scam?) and try and replicate a similar system as open source hardware, white label rebranding?, cheap goods from CN other locals, >
+* <todo: consider, Thomas Berger, engineer Manchester? maker of polar breeze air cooler? scam? >
 * <todo: consider, find alternatives to evaporators for high humidity high air temperature events, >
 
 DONE
@@ -28,7 +28,7 @@ DONE
 
 ## Hardware
 
-Products - air cooler, evaporator
+Products - air cooler, evaporator, personal humidifier, desktop fan, scam?
 * <todo: considr, confirm all these items are evaportors, >
 * Polar Breeze, portable air cooler, co.uk [WS](https://polar-breeze.co.uk/), USB power low wattage (7W–10W), no compressor, no refrigerants, <todo: consider, first order of priority, due to low power usage, >
 * Aria Breeze, net [WS](https://airabreeze.net/) com [WS](https://www.airabreezecooler.com/), portable air cooler
@@ -53,5 +53,8 @@ Weather
 * Humidity, 
 * Wet bulb event,
 
-News Papers - comparisons
+News Papers - evaporator, comparisons, scams?
+* Glacier Breeze AC Review: Scam Alert or Legit Portable Air Cooler?, [WS](https://malwaretips.com/blogs/glacier-breeze-ac-review-scam/), 26 June 2025, Thomas Orsolya, MalWareTips
 * Polar Breeze Portable Air Cooler Reviews & Alternatives, [WS](https://evapolar.com/blogs/blog/polar-breeze-portable-air-cooler-reviews-alternatives)
+* I Tested the Polar Breeze Portable Air Cooler and Here’s Why It’s a Game-Changer for Summer! [WS](https://heartswellco.com/polar-breeze-portable-air-cooler/)
+* ...
