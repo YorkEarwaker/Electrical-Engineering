@@ -16,6 +16,7 @@ Lines of inquiry
 
 Objectives
 * Cheap energy efficient air cooling systems.
+* Not to replicate drop shipping scams 
 
 ## Status
 TODO
@@ -30,6 +31,7 @@ DONE
 
 Products - air cooler, evaporator, personal humidifier, desktop fan, scam?
 * <todo: considr, confirm all these items are evaportors, >
+* Glacier Breeze, scam? are all these also the same scam? 
 * Polar Breeze, portable air cooler, co.uk [WS](https://polar-breeze.co.uk/), USB power low wattage (7W–10W), no compressor, no refrigerants, <todo: consider, first order of priority, due to low power usage, >
 * Aria Breeze, net [WS](https://airabreeze.net/) com [WS](https://www.airabreezecooler.com/), portable air cooler
 * evaCHILL
@@ -43,8 +45,9 @@ Products - core body temperature cooler
 
 ## References
 
+Parts - air cooling
 * Compressor, 
-* Evaporator, only works in low humidity events, see wet bulb see dew point
+* Evaporator, only works in low humidity events, see wet bulb see dew point, not an air conditioner unit, 
 * Refrigerator, 
 * ...
 
@@ -53,8 +56,11 @@ Weather
 * Humidity, 
 * Wet bulb event,
 
-News Papers - evaporator, comparisons, scams?
+Mass produced - product scams
+* Drop Shipping [WP](https://en.wikipedia.org/wiki/Drop_shipping)
+
+News Papers - evaporator, comparisons, drop shipping, scams?
 * Glacier Breeze AC Review: Scam Alert or Legit Portable Air Cooler?, [WS](https://malwaretips.com/blogs/glacier-breeze-ac-review-scam/), 26 June 2025, Thomas Orsolya, MalWareTips
-* Polar Breeze Portable Air Cooler Reviews & Alternatives, [WS](https://evapolar.com/blogs/blog/polar-breeze-portable-air-cooler-reviews-alternatives)
-* I Tested the Polar Breeze Portable Air Cooler and Here’s Why It’s a Game-Changer for Summer! [WS](https://heartswellco.com/polar-breeze-portable-air-cooler/)
+* Polar Breeze Portable Air Cooler Reviews & Alternatives, [WS](https://evapolar.com/blogs/blog/polar-breeze-portable-air-cooler-reviews-alternatives), scam?
+* I Tested the Polar Breeze Portable Air Cooler and Here’s Why It’s a Game-Changer for Summer! [WS](https://heartswellco.com/polar-breeze-portable-air-cooler/), scam? 
 * ...
