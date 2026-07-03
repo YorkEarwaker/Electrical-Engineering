@@ -18,6 +18,9 @@ Lines of inquiry
 
 Objectives
 * Cheap energy efficient air cooling systems.
+* Air cooling in climate refugee camps
+
+Assumptions
 * Not to replicate drop shipping scams 
 
 ## Status
