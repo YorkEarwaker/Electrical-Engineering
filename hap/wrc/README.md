@@ -1,3 +1,3 @@
-# Water cooler wrc
+# Water cooling wrc
 
 <stub: consider, content here, >
