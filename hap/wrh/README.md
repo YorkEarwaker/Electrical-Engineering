@@ -15,9 +15,9 @@ Small portable heat pumps.
 
 ## Status
 TODO
-<todo: consider, tee shirt sizing, S M L units, for different use cases, >
-<todo: consider, who to use with tents, or other shanty favela accomodation, >
-<todo: consider, hot water for sterilization of medical equipment? >
+* <todo: consider, tee shirt sizing, S M L units, for different use cases, >
+* <todo: consider, who to use with tents, or other shanty favela accomodation, >
+* <todo: consider, hot water for sterilization of medical equipment? >
 
 DONE
 * <done: consider, intent to commit>
