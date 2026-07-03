@@ -13,6 +13,8 @@ Lines of inquiry
 * Satellite spacecraft temperature regulating systems for use as air cooling systems on Earth. 
 * Aerospace thermal engineering
 * High humidity options, where evaporation cannot work, 
+* physics and chemistry; heat and work related, radioactive energy (environment), other?
+* biology; body temperature, safe operating limits, 
 
 Objectives
 * Cheap energy efficient air cooling systems.
@@ -20,19 +22,25 @@ Objectives
 
 ## Status
 TODO
-* <todo: consider, reserch "Mini Air Cooler” or “Evaporative Personal Fan, polar breeze aria breeze (scam?) and try and replicate a similar system as open source hardware, white label rebranding?, cheap goods from CN other locals, >
+* <todo: consider, reserch "Mini Air Cooler” or “Evaporative Personal Fan, polar breeze aria breeze (scam?) and try and replicate a similar system as open source hardware, white label rebranding?, cheap goods from CN other locals, probs just a scam but confirm one way or the other, found via youtube viral advertising when Brave browser temporarily stopped blocking adds, >
 * <todo: consider, Thomas Berger, engineer Manchester? maker of polar breeze air cooler? scam? >
 * <todo: consider, find alternatives to evaporators for high humidity high air temperature events, >
+* <todo: consider, heat pumps, what other related things, >
 
 DONE
 * <done: consider, intent to commit>
 
 ## Hardware
 
+Products - core body temperature cooler
+* Polar Breeze, net [WS](https://www.polarbreeze.net/), Thermal Rehab Machine, lower body temperature, e.g. heat stroke, 
+
+### Scam? - drop shipping, viral advertising
+
 Products - air cooler, evaporator, personal humidifier, desktop fan, scam?
 * <todo: considr, confirm all these items are evaportors, >
 * Glacier Breeze, scam? are all these also the same scam? 
-* Polar Breeze, portable air cooler, co.uk [WS](https://polar-breeze.co.uk/), USB power low wattage (7W–10W), no compressor, no refrigerants, <todo: consider, first order of priority, due to low power usage, >
+* Polar Breeze, portable air cooler, co.uk [WS](https://polar-breeze.co.uk/), USB power low wattage (7W–10W), no compressor, no refrigerants, <todo: consider, first order of priority, due to low power usage, probs don't waist effort if it seems as though it may be a scam, >
 * Aria Breeze, net [WS](https://airabreeze.net/) com [WS](https://www.airabreezecooler.com/), portable air cooler
 * evaCHILL
 * Hecca Baseus
@@ -40,24 +48,26 @@ Products - air cooler, evaporator, personal humidifier, desktop fan, scam?
 * evaSMART
 * ...
 
-Products - core body temperature cooler
-* Polar Breeze, net [WS](https://www.polarbreeze.net/), Thermal Rehab Machine, lower body temperature, e.g. heat stroke, 
-
 ## References
 
-Parts - air cooling
+Parts - component, air cooling
 * Compressor, 
 * Evaporator, only works in low humidity events, see wet bulb see dew point, not an air conditioner unit, 
-* Refrigerator, 
+* Refrigerator, refrigerant, 
 * ...
+
+Whole - system, air cooling
+* Heat pump, [WP](https://en.wikipedia.org/wiki/Heat_pump), air to air
 
 Weather 
 * Dew point, 
 * Humidity, 
 * Wet bulb event,
+* Temperature, 
 
-Mass produced - product scams
+Product scams - to avoid this at all costs
 * Drop Shipping [WP](https://en.wikipedia.org/wiki/Drop_shipping)
+* Vital advertising , via social media, youtube, instagram, facebook, ...
 
 News Papers - evaporator, comparisons, drop shipping, scams?
 * Glacier Breeze AC Review: Scam Alert or Legit Portable Air Cooler?, [WS](https://malwaretips.com/blogs/glacier-breeze-ac-review-scam/), 26 June 2025, Thomas Orsolya, MalWareTips
