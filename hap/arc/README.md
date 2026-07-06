@@ -15,8 +15,6 @@ See also
 Not traditional air conditioning systems, which are far too energy inefficient and bulky. 
 
 Lines of inquiry 
-* Satellite spacecraft temperature regulating systems for use as air cooling systems on Earth. 
-* Aerospace thermal engineering
 * High humidity options, where evaporation cannot work, 
 * physics and chemistry; heat and work related, radioactive energy (environment), other?
 * biology; body temperature, safe operating limits, 
@@ -30,13 +28,13 @@ Assumptions
 
 ## Status
 TODO
-* <todo: consider, reserch "Mini Air Cooler” or “Evaporative Personal Fan, polar breeze aria breeze (scam?) and try and replicate a similar system as open source hardware, white label rebranding?, cheap goods from CN other locals, probs just a scam but confirm one way or the other, found via youtube viral advertising when Brave browser temporarily stopped blocking adds, >
-* <todo: consider, Thomas Berger, engineer Manchester? maker of polar breeze air cooler? scam? >
 * <todo: consider, find alternatives to evaporators for high humidity high air temperature events, >
 * <todo: consider, heat pumps, what other related things, >
 
 DONE
 * <done: consider, intent to commit>
+* <done: consider, reserch "Mini Air Cooler” or “Evaporative Personal Fan, polar breeze aria breeze (scam?) and try and replicate a similar system as open source hardware, white label rebranding?, cheap goods from CN other locals, probs just a scam but confirm one way or the other, found via youtube viral advertising when Brave browser temporarily stopped blocking adds, some all of this is likely a viral advertising/marketing drop shipping scam, >
+* <done: consider, Thomas Berger, engineer Manchester? maker of polar breeze air cooler? scam? taken from viral advertising on youtube, ignore for now, investigate only if time allows, >
 
 ## Hardware
 
