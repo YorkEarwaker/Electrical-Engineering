@@ -8,6 +8,7 @@ See also
 * Air heating, arh
 * Water cooling, wrc
 * Water heating, wrh
+* Hybrid power, battery, bty
 * Hybrid power, condenser, cdr
 * Hybrid power, heat pump, htp
 
