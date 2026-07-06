@@ -3,8 +3,13 @@
 On a heating planet we need air cooling systems.
 
 See also
-* Air purification
-* Air heating
+* Air purification, arp
+* Air cooling, arc
+* Air heating, arh
+* Water cooling, wrc
+* Water heating, wrh
+* Hybrid power, condenser, cdr
+* Hybrid power, heat pump, htp
 
 ## Notes
 Not traditional air conditioning systems, which are far too energy inefficient and bulky. 
