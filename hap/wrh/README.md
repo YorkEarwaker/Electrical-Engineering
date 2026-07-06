@@ -3,15 +3,24 @@
 Hot water for bathing and cleaning. 
 
 See also
-* Air cooling
-* Air heating
-* Air purification
-* Hybrid power
+* Air purification, arp
+* Air cooling, arc
+* Air heating, arh
+* Water cooling, wrc
+* Water heating, wrh
+* Hybrid power, battery, bty
+* Hybrid power, condenser, cdr
+* Hybrid power, heat pump, htp
 
 ## Notes
 
 Small portable heat pumps.
 * hot water in climate refugee camps.
+* Heat pump, air to water, heat transfer
+* Solar, 
+
+Objectives
+* climate refugee camps
 
 ## Status
 TODO
@@ -24,5 +33,4 @@ DONE
 
 ## References
 
-* Heat pump, air to water
-* other
+* tbd
