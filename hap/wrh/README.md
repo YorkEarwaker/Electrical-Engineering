@@ -21,6 +21,7 @@ Small portable heat pumps.
 
 Objectives
 * climate refugee camps
+* energy independence
 
 ## Status
 TODO
