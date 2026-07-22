@@ -4,7 +4,7 @@ Single board computer SBC.
 
 See also
 * Networks repo, /ssh, [GH](https://github.com/YorkEarwaker/Networks/tree/main/ssh), for secure login to OS on RPi Zero 2 W, different for RPi Trixie and Ubuntu Core 24 .
-* Coding-Practice repo, /ubuntu/cdw/ , notes development workflow for Ubuntu Core, and example instance for deployment to RPi Zero, 
+* Coding-Practice repo, /workflows/ubn-em , notes on development workflow for Ubuntu Core, and example instance for deployment to RPi Zero, 
 
 ## Notes
 
@@ -748,9 +748,10 @@ Get, download, RPi OS Lite Trixie, 64bit,
 * Local file retrieved 9 01 2026 19:39:56
 
 Check SHA256 hash
+* copy and past the sha256 hash to the cli from the  RPi OS download page as part of the first argument to the echo command example below
 ```
-$ echo "681a775e20b53a9e4c7341d748a5a8cdc822039d8c67c1fd6ca35927abbe6290 *2025-12-04-raspios-trixie-arm64-lite.img.xz" | shasum -a 256 --check
-2025-12-04-raspios-trixie-arm64-lite.img.xz: OK
+$ echo "acff736ca7945e3b305f07cda4abdb870910e12634991da69783611756e381b3 2026-06-18-raspios-trixie-arm64-lite.img.xz" | sha256sum --check
+2026-06-18-raspios-trixie-arm64-lite.img.xz: OK
 ```
 
 * first use of RPi Imager, 
