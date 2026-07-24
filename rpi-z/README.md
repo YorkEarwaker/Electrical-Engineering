@@ -742,6 +742,8 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 
 ### RPi OS Lite Trixie
 * Success! :)
+* Lowest barrier to entry OS for rapid application development RAD and research and development RnD for AGW project
+* <todo: consider, what are the use cased other than RAD and RnD for AGW project that is what prod env uses >
 
 Get, download, RPi OS Lite Trixie, 64bit, 
 * Raspberry Pi OS downloads [WS](https://www.raspberrypi.com/software/operating-systems/), Raspberry Pi, software
@@ -814,7 +816,7 @@ york-earwaker:$6$FCrXHkHAuVVGYIF4$yM.5o2O.oEbGz7z3Wk5Tcan31Y3N3njbAzOkx7L2pBWa6e
 ```
 * Enable ssh on the RPi Z 2 W
 * Create a empty file called 'ssh' in the /bootfs partition /bootfs/ssh 
-* <todo: consider, creating section with connection via ssh over the serival bridge chip device, >
+* <todo: consider, creating section with connection via ssh over the serival bridge chip device, or ssh over usb cable, but usb cable must be proven first with rpi, link to Networks/ssh or subproject thereof, >
 ```
 $ touch ssh
 ```
