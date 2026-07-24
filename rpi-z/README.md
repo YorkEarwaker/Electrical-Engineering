@@ -784,12 +784,12 @@ Fully customised
 enable_uart=1
 
 ```
-* Set user name and password with OpenSSL and /bootfs/userconfig.txt
-* Create /boots/userconfig.txt file
+* Set user name and password with OpenSSL and /bootfs/userconf.txt
+* Create /boots/userconf.txt file
 * Open a terminal command line interface cli in the /bootfs/ partition
 * Create file using touch
 ```
-$ touch userconfig.txt
+$ touch userconf.txt
 ```
 * Generate OpenSSL password, 
 * the format is, echo 'yourpassword' | openssl passwd -6 -stdin
@@ -798,7 +798,7 @@ $ touch userconfig.txt
 $ echo 'raspberrypi' | openssl passwd -6 -stdin
 $6$FCrXHkHAuVVGYIF4$yM.5o2O.oEbGz7z3Wk5Tcan31Y3N3njbAzOkx7L2pBWa6eZd/QO4z8AkIl0Ea9VVw.zz3XJyecwY13aaLn67C/
 ```
-* Open the newly created /bootfs/userconfig.txt file
+* Open the newly created /bootfs/userconf.txt file
 * the format is, your-username:openssl-generated-password
 * Username Rules: Must start with a lowercase letter and contain only lowercase letters, digits, and hyphens
 * Enter the user-name into the file
