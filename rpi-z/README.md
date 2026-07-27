@@ -744,6 +744,7 @@ Repository: https://downloads.raspberrypi.org/os_list_imagingutility_v4.json
 * Success! :)
 * Lowest barrier to entry OS for rapid application development RAD and research and development RnD for AGW project
 * <todo: consider, what are the use cased other than RAD and RnD for AGW project that is what prod env uses >
+* <todo: consider, how to harden RPi OS Trixi for deployment as prod env, dependent on use case, >
 
 Get, download, RPi OS Lite Trixie, 64bit, 
 * Raspberry Pi OS downloads [WS](https://www.raspberrypi.com/software/operating-systems/), Raspberry Pi, software
@@ -1052,6 +1053,8 @@ $ sudo dmesg | grep -i tty
 * This process is likely to be a lot more involved, and may not be resolved in short order
 * Made contact via Ubuntu Core 24 instance on RPi Zero 2 W.
 * 90%? 
+* <todo: consider, Ubuntu Core/Server/Desktop, hardware infterface accelerator snap, Embedded rpi component /erc-uos?, GPIO libs, other embedded libs, and the like for RPi SBC's, other SBC manufacturers tbd which require seperate evaulation project Arduino? /esa? , for example Ubuntu Core likely does not have libraries for I2C SPI CAN for use on RPi SBC GPIO, >
+* <todo: consider, Ubuntu Core/Server/Desktop, applications accelerator snap, AGW apps component /aac-uos?, AGW libs, dependent on use case, likely built on top of /erc-uos for use with RPi SBC family, >
 
 Prerequisites
 * Ubuntu One Account [WS](https://login.ubuntu.com/), Ubuntu, login to existing account, or create one, to add SSH keys
