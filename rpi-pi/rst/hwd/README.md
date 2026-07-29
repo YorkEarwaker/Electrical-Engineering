@@ -1,4 +1,4 @@
-# hello world hwd (rst)
+# Hello world hwd (rst)
 
 First Rust project for RPi Pico.
 

@@ -524,7 +524,7 @@ def i2c_inst(bus, scl, sda, freq):
         return sensor_i2c
         
     except Exception as e:
-        print(f'SPI, initialisation exception: {e}'.format(e) )
+        print(f'I2C, initialisation exception: {e}'.format(e) )
 
 # create an I2C instance to communicate with the sensor
 sensor_i2c = i2c_inst(i2c_bus,

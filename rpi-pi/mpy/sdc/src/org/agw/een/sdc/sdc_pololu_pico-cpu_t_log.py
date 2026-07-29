@@ -306,6 +306,7 @@
 # additional suplimental pinout information for GP10, GP11, GP12, GP13, is elieded from now to simplify diagram
 # therefore UART and I2C interface information is not shown. This may change in later itterations of the diagram
 # as requirements change.
+# 
 
 # #
 # import libraries for use in this programme

@@ -52,5 +52,5 @@ News Papers - rust projects, RPi Pico
 * Rust on RP2350, [WS](https://www.raspberrypi.com/news/rust-on-rp2350/), 6 Sep 2024, Ashley Whittaker, News, Raspberry Pi, 
 
 
-
-
+Learning - RPi Rust
+* Raspberry Pi Bare Bones Rust, [WS](https://wiki.osdev.org/Raspberry_Pi_Bare_Bones_Rust), OSDev org, 

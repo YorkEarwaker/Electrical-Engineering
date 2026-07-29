@@ -31,6 +31,7 @@
 # https://docs.python.org/3/library/os.html
 # https://docs.python.org/3/library/functions.html#open # modes,
 # https://docs.python.org/3/tutorial/inputoutput.html#tut-files
+# https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 #
 # RPi, Quick reference for the RP2
 # https://docs.micropython.org/en/latest/rp2/quickref.html
@@ -437,7 +438,8 @@ def list_directory_structure(path):
     except Exception as e:
         print(f'os, list directory exception: {e}'.format(e) )
 
-list_directory_structure(sd_os_path)
+# List the directory to show any existing files
+list_directory_structure(sd_os_path) # debug
 
 # #
 # File io operations
@@ -462,22 +464,23 @@ def file_io_operations(path):
         # create a new file on the sd card, create a new file only if it does not already exist
         if (not file_found):
             with open(path, 'x') as log_file:
+                print(f'file: new created, {log_file}'.format(log_file))
                 pass
-                #read_data = log_file.read()
-        file_found = check_file_exists(path)
+        
+        check_file_size(path) # debug
         
         # crUd
         # update/write to the new file on the sd card, write turncates the file
         with open (path, 'w') as log_file:
             log_file.write('first line\n')
             log_file.write('second line\n')
-
+        
         # cRud
         # read from the new file on the sd card
         with open (path, 'r') as log_file:
             all_content = log_file.read()
             print(f'file content: {all_content}'.format(all_content))
-
+            
         # crUd
         # update/write to the new file on the sd card, append does not truncate the file
         with open (path, 'a') as log_file:
@@ -501,51 +504,115 @@ def file_io_operations(path):
         with open (path, 'r') as log_file:
             all_content = log_file.read()
             print(f'file content: {all_content}'.format(all_content))
-
+            
     except Exception as e:
         print(f'file io, exception: {e}'.format(e) )
-                
-    check_file_exists(path)
-
+            
+    check_file_exists(path) # debug, returns True
+    check_file_size(path) # debug, 27 unicode chars
+    delete_file(path)
+    
 # #
-# check if the file exisists, has already been created
+# Delete a file 
+# 
+def delete_file(path):
+    
+    try:
+        # delete the file,
+        os.remove(path)
+        file_found = check_file_exists(path) # debug
+        if (not file_found): # debug
+            print(f'file deleted os.remove: {not file_found}'.format(not file_found) ) # debug
+        
+    except Exception as e:
+        print(f'file delete os.remove, exception: {e}'.format(e) )
+    
+# #
+# check if the file exists, has already been created
 # 
 def check_file_exists(path):
     
+    #<todo: consider, other mechanisms to achieve file existance check>
+    #file_check = os.path.exists(path) # does not seem to be available in MicroPython
+    #file_check = os.stat(path) # need to better understand how to use this for file exists function
+    #print(f'os, path exsist to file: {file_check}'.format(file_check) )
+       
+    try:
+        with open (path, 'r') as the_file:
+            #the_file.close()
+            pass
         
-        #file_check = os.path.exists(path) # does not seem to be available in MicroPython
-        #file_check = os.stat(path) # need to better understand how to use this for file exists function
-        #print(f'os, path exsist to file: {file_check}'.format(file_check) )
+        file_found = True
+    
+    except Exception as e:
+        file_found = False
+        print(f'file access, exception: {e}'.format(e) )
+
+    print(f'file exists: {file_found}'.format(file_found) )
+    return file_found
+
+# #
+# Check the size of the file as length of content as string.
+# <todo: consider returning length? or is the point the debug statement? different use cases? >
+def check_file_size(path):
         
         try:
-            with open (path, 'r') as f:
-                pass
-            file_found = True
-            #os.stat(path)
-            #return True
+            
+            # cRud
+            # read from the new file on the sd card
+            with open (path, 'r') as log_file:
+                file_content = log_file.read()
+                print(f'file size: {len(file_content)} unicode chars'.format(len(file_content))) # debug
+                
         except Exception as e:
-            file_found = False
-            print(f'file access, exception: {e}'.format(e) )
-        
-        print(f'file exists: {file_found}'.format(file_found) )
-        return file_found
+            print(f'string length, exception: {e}'.format(e) )
+
 
 # do some crud operations with file in sd card
 file_io_operations(file_path)
 
-# list the contents of the directory in which the file is located
-list_directory_structure(sd_os_path)
-
-# delete the file,
-# <todo: consider breaking this into a seperate def function >
-os.remove(file_path)
-
 # show the file has been deleted by listing the contents of the directory in which the file was located,
 # the file name can no longer be seen
-list_directory_structure(sd_os_path)
+list_directory_structure(sd_os_path) # debug
+
+# #
+# sucsess
+#
+# >>> %Run -c $EDITOR_CONTENT
+# 
+# MPY: soft reboot
+# sd_card_spi: SPI(1, baudrate=1000000, polarity=0, phase=0, bits=8, sck=10, mosi=11, miso=12)
+# micro sd card: <SDCard object at 20010c20>
+# sys vol info: ['System Volume Information']
+# file access, exception: [Errno 2] ENOENT
+# file exists: False
+# file: new created, <io.TextIOWrapper 20011800>
+# file size: 0 unicode chars
+# file content: first line
+# second line
+# 
+# file content: first line
+# second line
+# third line
+# 
+# file content: 1st line
+# 2nd line
+# 3rd line
+# 
+# file exists: True
+# file size: 27 unicode chars
+# file access, exception: [Errno 2] ENOENT
+# file exists: False
+# file deleted os.remove: True
+# sys vol info: ['System Volume Information']
 
 
-
+# #
+# unsucsessful
+#
+# bug (defect) fix
+# 
+# write, solution uplug USB RPi Pico from host, remove sd card from module, replace sd into module, plugin USB RPi Pico into host, 
 
 
 

@@ -316,25 +316,31 @@
 from machine import Pin, I2C, RTC
 from time import sleep
 #import snr_bme280_dvr as BME280 # snr_bme280_dvr, must be present on Rpi Pico as file download
-import org.agw.een.snr.snr_bme280_dvr as BME280 # driver installed in RPi Pico micropython
+from org.agw.een.snr import snr_bme280_dvr as BME280 # driver installed in RPi Pico micropython
 
 # #
 # define values; clock pin, serial data pin, clock frequency
-scl_pin = Pin(19) # GP19, I2C1 scl
-sda_pin = Pin(18) # GP18, I2C1 sda
+i2c_bus_snr = 1 # 0 or 1
+i2c_scl_pin_snr = Pin(19) # GP19, I2C1 scl
+i2c_sda_pin_snr = Pin(18) # GP18, I2C1 sda
 #clock_freq = 400_000 # 400kHz
-clock_freq = 1000 # 1kHz
+i2c_clock_freq_snr = 1000 # 1kHz
 
 # #
 # Initialise I2C communication
 #i2C = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=1000)
-i2c = I2C(1, scl=scl_pin, sda=sda_pin, freq=clock_freq) # 
+sensor_i2c = I2C(i2c_bus_snr, scl=i2c_scl_pin_snr, sda=i2c_sda_pin_snr, freq=i2c_clock_freq_snr) # 
 #print('i2c object: {}'.format(i2c)) # debug, I2C configuration values
 
 # # Debug only
 # scan for devices at the RPi pins on the I2C hardware bus, should return [119]
-#dvcs = i2c.scan() # scan for devices
-#print('devices: {}'.format(dvcs)) # debug, I2C devices found
+dvcs = sensor_i2c.scan() # scan for devices
+print('devices: {}'.format(dvcs)) # debug, I2C devices found
+ 
+# #
+# Initialise BME280 sensor
+bme = BME280.BME280(i2c=sensor_i2c)
+#print('bme initialised: {}'.format(bme)) # debug
 
 # #
 # create a Real Time Clock instance, to use to get the current date and time
@@ -356,18 +362,13 @@ while True:
         print('current date & time: {}'.format(dt_tm)) # debug, date and time
         
         # #
-        # Initialise BME280 sensor
-        bme = BME280.BME280(i2c=i2c)
-        #print('bme initialised: {}'.format(bme)) # debug
-        
-        # #
         # Read sensor data
         tempC = bme.temperature
         #print('bme.temperature(): {}'.format(tempC)) # debug
         hum = bme.humidity
         #print('bme.humidity(): {}'.format(hum)) # debug
         pres = bme.pressure
-        #print('bme.humidity(): {}'.format(pres)) # debug
+        #print('bme.pressure(): {}'.format(pres)) # debug
         
         # #
         # Convert temperature to fahrenheit
@@ -376,7 +377,7 @@ while True:
         #print('tempF: {}'.format(tempF)) # debug
         
         # #
-        # Print sensor readings
+        # Print sensor readings to shell
         print('Temperature: ', tempC)
         print('Temperature: ', tempF)
         print('Humidity: ', hum)

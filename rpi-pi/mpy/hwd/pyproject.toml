@@ -1,3 +1,12 @@
+#[build-system]
+#requires = ["hatchling >= 1.14.1"]
+#build-backend = "hatchling.build"
+
+# not tested
+[build-system]
+requires = ["hatch >= 1.14.1"]
+build-backend = "hatch.build"
+
 [project]
 name = "hwd_example_package_Citizen_Developer"
 version = "0.0.1"
