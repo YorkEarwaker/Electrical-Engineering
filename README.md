@@ -38,7 +38,8 @@ TODO
 * <todo: consider, rpi-pico, solar panel and rechargeable battery, power generation, power supply, >
 
 DONE
-* <done: intent to commit>
+* <done: consider, intent to commit>
+* <done; consider, link remote electrical-engineering /een repo to local git, reconciliation with remote repo /een, add things to .gitignore  >
 
 ## Funding
 

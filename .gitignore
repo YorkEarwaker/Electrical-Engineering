@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# dev env isolation
+venv
+build
+
+# project folders
+downloads
+
+# specific project files and directories
+rpi-z/ssh
