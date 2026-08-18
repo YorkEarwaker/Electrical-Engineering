@@ -47,13 +47,14 @@ Context diagram - device connector detail
 Barrel pin/pin/jack
 
         Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
- 
-        AC OUT -----------------------> Circuit -------------------------> DC IN 
-        
+         
                      __               |         |             ______     |       Phone
 Socket   |:|       =|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
                                       | Adapter |                        |       Laptop
                                       |         |                                 ...           
+
+        AC OUT -----------------------> Circuit -------------------------> DC IN 
+
 ```
 
 Calculations
