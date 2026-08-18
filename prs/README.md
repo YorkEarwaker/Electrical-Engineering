@@ -40,6 +40,18 @@ Mains AC --------> AC/DC --------> DC Device
                   Adapter
 ```
 
+Calculations
+```
+AC Voltage / sqrt(2) = DC Voltage
+
+230 / √2 ≈ 162.63, EU
+240 / √2 ≈ 169.71, UK reality?, nominally 230
+120 / √2 =  84.85, US
+
+Supply frequency 50Hz/60Hz
+```
+
+
 Circuit diagram
 ```
 TBC
@@ -51,7 +63,7 @@ Electrical terms
 * Alternating current
 * Direct current
 * Direct current (pulsed)
-* ...
+* Mains electricity by country, [WP](https://en.wikipedia.org/wiki/Mains_electricity_by_country)
 
 Metric
 * Ampere, Amp, [WP](https://en.wikipedia.org/wiki/Ampere), si unit amps, A
