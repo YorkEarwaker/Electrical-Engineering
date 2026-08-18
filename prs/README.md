@@ -42,13 +42,15 @@ Mains AC --------> AC/DC --------> DC Device
 
 Calculations
 ```
+Theoretical voltage
 AC Voltage / sqrt(2) = DC Voltage
-
 230 / √2 ≈ 162.63, EU
 240 / √2 ≈ 169.71, UK reality?, nominally 230
 120 / √2 =  84.85, US
 
-Supply frequency 50Hz/60Hz
+Supply frequency 
+50Hz/60Hz
+
 ```
 
 
