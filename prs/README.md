@@ -46,15 +46,14 @@ Context diagram - device connector detail
 ```
 Barrel pin/pin/jack
 
-  Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
-  Socket
+        Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
  
-  AC OUT                                                              DC IN 
+        AC OUT                                                             DC IN 
         
-               __               |         |               ______    |       Phone?
-    |:|      =|__| ------------ |  AC/DC  | -------------(_____(⚬)  |  (⚬)  Monitor
-                                | Adapter |                         |       Laptop
-                                |         |
+                     __               |         |             ______     |       Phone
+Socket    |⋮|      ☰|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
+                                      | Adapter |                        |       Laptop
+                                      |         |                              ...           
 ```
 
 Calculations
@@ -95,6 +94,9 @@ Products
 * AC Adapter [WP](https://en.wikipedia.org/wiki/AC_adapter)
 * Linear adapter
 * Switched mode power supply smps [WP](https://en.wikipedia.org/wiki/AC_adapter)
+
+Components - consider part of larger bom
+* Coaxial power connector [WP](https://en.wikipedia.org/wiki/Coaxial_power_connector)
 
 News Papers - tutorials, AC 2 DC, build an adapter
 * How to Build Your Own AC/DC Power Adapter, [WP](https://ourpastimes.com/sudoku.html), Our Pastimes, 12  April 2017, John Papiewski, 
