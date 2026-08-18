@@ -36,7 +36,8 @@ DONE
 
 Context diagram
 ```
-Mains AC --------> AC/DC Adaptor --------> DC Device
+Mains AC --------> AC/DC --------> DC Device
+                  Adaptor
 ```
 
 Circuit diagram
@@ -62,10 +63,13 @@ Products
 * Linear adapter
 * Switched mode power supply smps [WP](https://en.wikipedia.org/wiki/AC_adapter)
 
-News Papers - tutorials, build an adapter
+News Papers - tutorials, AC 2 DC, build an adapter
 * How to Build Your Own AC/DC Power Adapter, [WP](https://ourpastimes.com/sudoku.html), Our Pastimes, 12  April 2017, John Papiewski, 
 * AC Power Design in 7 Steps, [WP](https://www.fsp-group.com/en/knowledge-tec-23.html), 22 10 2020
 * AC to DC Conversion, [WP](https://www.instructables.com/AC-to-DC-Conversion/), Instructables
+* How to Convert AC to DC, [WP](https://www.wikihow.com/Convert-AC-to-DC), 7 September 2024, Jesse Kuhlman, Hunter Rising, wikiHow, 
 
 News Papers - tutorials, repair an adapter
 * Notes on the Troubleshooting and Repair of AC Adapters, Power Supplies, and Battery Packs, and - Other Related Information, [WP](https://www.repairfaq.org/sam/aapsfaq.htm), Version 1.19 (14-Jan-13), Samuel M. Goldwasser, 
+
+
