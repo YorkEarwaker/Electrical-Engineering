@@ -51,9 +51,9 @@ Barrel pin/pin/jack
         AC OUT                                                             DC IN 
         
                      __               |         |             ______     |       Phone
-Socket    |⋮|      ⋮|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
+Socket   |:|       =|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
                                       | Adapter |                        |       Laptop
-                                      |         |                              ...           
+                                      |         |                                 ...           
 ```
 
 Calculations
