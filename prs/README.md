@@ -34,10 +34,27 @@ DONE
 
 ## Output
 
-Context diagram
+Context diagram - current flow
 ```
 Mains AC --------> AC/DC --------> DC Device
                   Adapter
+```
+
+Context diagram - device connector detail
+* AC OUT  (out of mains source); UK three pin plug
+* DC IN  (into the device sink); Coaxial power connector 'pin'; outer diameter OD, inner diameter ID, central pin diameter CPD, length L
+```
+Barrel pin/pin/jack
+
+  Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
+  Socket
+ 
+  AC OUT                                                              DC IN 
+        
+               __               |         |               ______    |       Phone?
+    |:|      =|__| ------------ |  AC/DC  | -------------(_____(⚬)  |  (⚬)  Monitor
+                                | Adapter |                         |       Laptop
+                                |         |
 ```
 
 Calculations
@@ -54,10 +71,12 @@ Supply frequency
 ```
 
 
-Circuit diagram
+Circuit diagram - AC/DC adapter
 ```
 TBC
 ```
+
+
 
 ## References
 
