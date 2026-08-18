@@ -32,6 +32,18 @@ DONE
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, 7800 series 5 to 24 volts, e.g. 7805 5V, 
 
+## Output
+
+Context diagram
+```
+Mains AC --------> AC/DC Adaptor --------> DC Device
+```
+
+Circuit diagram
+```
+TBC
+```
+
 ## References
 
 Electrical terms
@@ -46,11 +58,14 @@ Metric
 * Voltage, Volts, [WP](https://en.wikipedia.org/wiki/Voltage), si unit volts, V
 
 Products
-* AC Adaptor [WP](https://en.wikipedia.org/wiki/AC_adapter)
-* Linear adaptor
+* AC Adapter [WP](https://en.wikipedia.org/wiki/AC_adapter)
+* Linear adapter
 * Switched mode power supply smps [WP](https://en.wikipedia.org/wiki/AC_adapter)
 
-News Papers - tutorials
+News Papers - tutorials, build an adapter
 * How to Build Your Own AC/DC Power Adapter, [WP](https://ourpastimes.com/sudoku.html), Our Pastimes, 12  April 2017, John Papiewski, 
 * AC Power Design in 7 Steps, [WP](https://www.fsp-group.com/en/knowledge-tec-23.html), 22 10 2020
 * AC to DC Conversion, [WP](https://www.instructables.com/AC-to-DC-Conversion/), Instructables
+
+News Papers - tutorials, repair an adapter
+* Notes on the Troubleshooting and Repair of AC Adapters, Power Supplies, and Battery Packs, and - Other Related Information, [WP](https://www.repairfaq.org/sam/aapsfaq.htm), Version 1.19 (14-Jan-13), Samuel M. Goldwasser, 
