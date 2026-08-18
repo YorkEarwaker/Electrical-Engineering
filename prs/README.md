@@ -5,7 +5,7 @@ Comverting current, alternating current, dirct current, pulsed direct current,
 ## Notes
 
 Objectives
-* build an ac/dc adaptor
+* build an ac/dc adapter
 * ...
 
 ## Status
@@ -37,7 +37,7 @@ DONE
 Context diagram
 ```
 Mains AC --------> AC/DC --------> DC Device
-                  Adaptor
+                  Adapter
 ```
 
 Circuit diagram
