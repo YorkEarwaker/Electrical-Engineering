@@ -48,7 +48,7 @@ Barrel pin/pin/jack
 
         Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
  
-        AC OUT                                                             DC IN 
+        AC OUT -----------------------> Circuit -------------------------> DC IN 
         
                      __               |         |             ______     |       Phone
 Socket   |:|       =|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
