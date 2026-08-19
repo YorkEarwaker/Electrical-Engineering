@@ -91,11 +91,17 @@ Supply frequency
 
 Circuit diagram - AC/DC adapter
 * Circuit conversion process steps high level
-* Voltage Transformation, change voltage up or down to required level
-* Rectification, diodes convert alternating current to direct current 
-* Filtering and Regulation, 
+* Voltage Transformation, transformer, to change voltage up or down to required level
+* Rectification, diodes, to convert alternating current to pulsed direct current 
+* Filtering and Regulation, capacitors and voltage regulators,to smooth output and maintain stable dc output voltage
 ```
-TBC
+Bread board - RnD, no solder
+Perf Board - PoC, solder
+Printed Circuit Board - Product, circuit certification
+
+  Wire in ---> Transformer ---> Diodes ---> Capacitors & Voltage Regulators ---> Wire out
+
+
 ```
 
 
