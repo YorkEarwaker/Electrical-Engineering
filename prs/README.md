@@ -16,7 +16,7 @@ TODO
 DONE
 * <done: consider, intent to commit>
 
-## BoM
+## BoM - circuit
 
 * Banana jack, black
 * Banana jack, red
@@ -27,10 +27,20 @@ DONE
 * AC line cord
 * #6 hardware
 * heat shrink tubbing
-* heat gun/hair drier
 * Rectifier, full wave bridge rectifier
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, 7800 series 5 to 24 volts, e.g. 7805 5V, 
+
+## BoM - tools
+* Heat gun/hair drier, for heat shrink tubbing
+* Micrometer, [](), metrology, barrel pin measurements
+* Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks
+* Vernier scale caliper, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements
+
+## Tool suppliers
+* Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/)
+* Metrology Quality Services [WP](https://mqs.co.uk/)
+* ...
 
 ## Output
 
@@ -75,12 +85,20 @@ Context diagram - coaxial power connector - plugs and recepticals
               Source                Sink
 ```
 
-Polarity
+Polarity - plug pin
+* Warning! Inverted polarity plugs can damage equipment devices when plugged in
+* Checking polairity, tbc
+* Outer contact, aka; barrel, sleeve, ring . Inner contact, aka; tip, .
 * <todo: consider, research this further, find source for reference >
 ```
+          barrel                   tip
               OD                    ID
-                        Polarity
+                    Usual Polarity
               (-)---------(• -------(+)
+
+                 Inverted Polarity
+              (+)---------(• -------(-)
+
 ```
 
 Calculations
@@ -133,7 +151,15 @@ Products
 
 Components - consider part of larger bom
 * Coaxial power connector [WP](https://en.wikipedia.org/wiki/Coaxial_power_connector)
+* DC connector [WP](https://en.wikipedia.org/wiki/DC_connector)
+* Extra low voltage [](), rated at of below 120VDC
+* AC power plugs and sockets,
 
+Standards - dc connectors, barrel pins, plugs
+* EIAJ Japan
+* DIN Germany
+* JSBP, some laptops
+ 
 News Papers - tutorials, AC 2 DC, build an adapter
 * How to Build Your Own AC/DC Power Adapter, [WP](https://ourpastimes.com/sudoku.html), Our Pastimes, 12  April 2017, John Papiewski, 
 * AC Power Design in 7 Steps, [WP](https://www.fsp-group.com/en/knowledge-tec-23.html), 22 10 2020
