@@ -61,8 +61,8 @@ Context diagram - coaxial power connector - plugs and recepticals
 * Coaxial power connector 'pin'; outer diameter OD, inner diameter ID, central pin diameter CPD, length L
 * <todo; consider, source difinitive reference to metal alloy tubing and rod, brass niclel plated? stainless steel? >
 ```
-              Pin                   Pin
-              Plug                  Receptical
+              Pin male              Socket female
+              Plug                  Receptical, jack
 
               DC OUT                DC IN
            _________
@@ -73,6 +73,14 @@ Context diagram - coaxial power connector - plugs and recepticals
 
               Power                 Power
               Source                Sink
+```
+
+Polarity
+* <todo: consider, research this further, find source for reference >
+```
+              OD                    ID
+                        Polarity
+              (-)---------(• -------(+)
 ```
 
 Calculations
