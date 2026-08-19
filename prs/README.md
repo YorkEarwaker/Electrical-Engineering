@@ -40,12 +40,10 @@ Mains AC --------> AC/DC --------> DC Device
                   Adapter
 ```
 
-Context diagram - device connector detail
+Context diagram - adapter connector detail
 * AC OUT  (out of mains source); UK three pin plug
-* DC IN  (into the device sink); Coaxial power connector 'pin'; outer diameter OD, inner diameter ID, central pin diameter CPD, length L
+* DC IN  (into the device sink); Coaxial power connector plug 'pin'
 ```
-Barrel pin/pin/jack
-
         Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
          
                      __               |         |             ______     |       Phone
@@ -53,8 +51,28 @@ Socket   |:|       =|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·
                                       | Adapter |                        |       Laptop
                                       |         |                                 ...           
 
-        AC OUT -----------------------> Circuit -------------------------> DC IN 
+        AC OUT ---> AC IN ------------>  AC/DC -------------- DC OUT ---> DC IN 
+                                       Conversion
+```
 
+Context diagram - coaxial power connector - plugs and recepticals
+* barrel connector, concentric barrel connector, tip connector, barrel pin, pin tip, jack
+* metal tubing outer diameter OD inner diameter ID, metal rod central pin diameter CPD
+* Coaxial power connector 'pin'; outer diameter OD, inner diameter ID, central pin diameter CPD, length L
+* <todo; consider, source difinitive reference to metal alloy tubing and rod, brass niclel plated? stainless steel? >
+```
+              Pin                   Pin
+              Plug                  Receptical
+
+              DC OUT                DC IN
+           _________
+ ---------(________(•)          |    (•)
+
+              AC/DC Adaptor         DC Device
+              Provider              Consumer 
+
+              Power                 Power
+              Source                Sink
 ```
 
 Calculations
@@ -72,10 +90,13 @@ Supply frequency
 
 
 Circuit diagram - AC/DC adapter
+* Circuit conversion process steps high level
+* Voltage Transformation, change voltage up or down to required level
+* Rectification, diodes convert alternating current to direct current 
+* Filtering and Regulation, 
 ```
 TBC
 ```
-
 
 
 ## References
