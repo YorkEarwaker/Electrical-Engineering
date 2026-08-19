@@ -25,17 +25,21 @@ DONE
 * Perf board
 * 22 guage insulated wire
 * AC line cord
-* #6 hardware
+* #6 hardware, what is this???
 * heat shrink tubbing
 * Rectifier, full wave bridge rectifier
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, 7800 series 5 to 24 volts, e.g. 7805 5V, 
 
 ## BoM - tools
-* Heat gun/hair drier, for heat shrink tubbing
-* Micrometer, [](), metrology, barrel pin measurements
-* Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks
-* Vernier scale caliper, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements
+* Heat gun/hair drier, for heat shrink tubbing, RnD?, PoC, 
+* Multimeter, electric charge testing, RnD, PoC, Prod
+* Micrometer, [](), metrology, barrel pin measurements, nice to have?
+* Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC,
+* Soldering iron, PoC
+* Solder, PoC
+* Soldering mat, PoC
+* Vernier scale caliper, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
 
 ## Tool suppliers
 * Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/)
