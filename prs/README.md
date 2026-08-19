@@ -22,21 +22,27 @@ DONE
 * Banana jack, red
 * Capacitors, various
 * Filter capacitor
-* Perf board
+* Perf board, PoC
 * 22 guage insulated wire
 * AC line cord
 * #6 hardware, what is this???
-* heat shrink tubbing
+* heat shrink tubbing, PoC
 * Rectifier, full wave bridge rectifier
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, 7800 series 5 to 24 volts, e.g. 7805 5V, 
 
+## BoM circuit - additional
+* EIAJ_05, Philmore 214, Mating Jack: Philmore # 214, 265 & 365 or Equivalent
+* EIAJ_05, CUI Inc. PJ-025, Mating Jack: ???
+* EIAJ_05, Farnell, others
+
 ## BoM - tools
 * Heat gun/hair drier, for heat shrink tubbing, RnD?, PoC, 
-* Multimeter, electric charge testing, RnD, PoC, Prod
+* Multimeter, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons
 * Micrometer, [](), metrology, barrel pin measurements, nice to have?
-* Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC,
+* Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
 * Soldering iron, PoC
+* helping hands, likely KOTTO LED Magnifying Third Hand Soldering Station, 
 * Solder, PoC
 * Soldering mat, PoC
 * Vernier scale caliper, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
@@ -58,15 +64,15 @@ Context diagram - adapter connector detail
 * AC OUT  (out of mains source); UK three pin plug
 * DC IN  (into the device sink); Coaxial power connector plug 'pin'
 ```
-        Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
+         Mains ---> Plug ---> Cable ----> Brick ----> Cable ---> Pin ---> Device
          
-                     __               |         |             ______     |       Phone
-Socket   |:|       =|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
-                                      | Adapter |                        |       Laptop
-                                      |         |                                 ...           
+             |        __                                       ______     |       Phone
+Socket   |:| |      =|__| ------------ |  AC/DC  | -----------(_____(·)   |  (·)  Monitor
+             |                         | Adapter |                        |       Laptop
+                                                                                   ...           
 
-        AC OUT ---> AC IN ------------>  AC/DC -------------- DC OUT ---> DC IN 
-                                       Conversion
+         AC OUT ---> AC IN ------------>  AC/DC -------------- DC OUT ---> DC IN 
+                                        Conversion
 ```
 
 Context diagram - coaxial power connector - plugs and recepticals
@@ -160,9 +166,11 @@ Components - consider part of larger bom
 * AC power plugs and sockets,
 
 Standards - dc connectors, barrel pins, plugs
+* IEC 60130-10
 * EIAJ Japan
 * DIN Germany
 * JSBP, some laptops
+* ...
  
 News Papers - tutorials, AC 2 DC, build an adapter
 * How to Build Your Own AC/DC Power Adapter, [WP](https://ourpastimes.com/sudoku.html), Our Pastimes, 12  April 2017, John Papiewski, 
