@@ -8,16 +8,18 @@ Objectives
 * build an ac/dc adapter, learning
 * build ac/dc adaptor for 24MP55HQ-P monitor, reuse
 * build skils capabilities for heat pump project, upskilling
+* switching power supply, advanced, next steps,
 
 ## Status
 TODO
 * <todo: consider, finalise BoM to raise purchase order of component parts >
 * <todo: consider, require a multimeter for this project, find options>
+* <todo: consider, break items out into general keep here, ac/dc adapter project for monitor sub-project, switching power supply sub-project, >
 
 DONE
 * <done: consider, intent to commit>
 
-## BoM - circuit
+## BoM - circuit 
 
 * Banana jack, black
 * Banana jack, red
@@ -30,7 +32,8 @@ DONE
 * heat shrink tubbing, PoC
 * Rectifier, full wave bridge rectifier
 * Transformer, step down, a few volts higher than needed, 
-* Voltage regulator, 7800 series 5 to 24 volts, e.g. 7805 5V, 
+* Voltage regulator, [WP](https://en.wikipedia.org/wiki/Voltage_regulator), linear, switching
+* Linear regulator, 7800 series [WP](https://en.wikipedia.org/wiki/78xx), 5 to 24 volts, e.g. 7805 5V, aka L78xx, LM78xx, MC78xx, . 78xx positive, 79xx negative, so 7824 + 7905 = 19V 
 
 ## BoM circuit - additional - specifically for LG 24MP55HQ-P monitor
 * EIAJ_05, Philmore 214, Mating Jack: Philmore # 214, 265 & 365 or Equivalent
@@ -166,12 +169,13 @@ Electrical terms
 * Alternating current
 * Direct current
 * Direct current (pulsed)
+* Electric current, [WP](https://en.wikipedia.org/wiki/Electric_current), si unit ampere
 * Mains electricity by country, [WP](https://en.wikipedia.org/wiki/Mains_electricity_by_country)
 
-Metric
+Metrology - si units
 * Ampere, Amp, [WP](https://en.wikipedia.org/wiki/Ampere), si unit amps, A
-* Electric current, [WP](https://en.wikipedia.org/wiki/Electric_current), si unit ampere
 * Voltage, Volts, [WP](https://en.wikipedia.org/wiki/Voltage), si unit volts, V
+* Watt?, necessary for this project calculations?
 
 Products
 * AC Adapter [WP](https://en.wikipedia.org/wiki/AC_adapter)
