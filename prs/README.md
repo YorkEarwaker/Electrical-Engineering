@@ -5,8 +5,9 @@ Comverting current, alternating current, dirct current, pulsed direct current,
 ## Notes
 
 Objectives
-* build an ac/dc adapter
-* ...
+* build an ac/dc adapter, learning
+* build ac/dc adaptor for 24MP55HQ-P monitor, reuse
+* build skils capabilities for heat pump project, upskilling
 
 ## Status
 TODO
@@ -31,26 +32,42 @@ DONE
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, 7800 series 5 to 24 volts, e.g. 7805 5V, 
 
-## BoM circuit - additional
+## BoM circuit - additional - specifically for LG 24MP55HQ-P monitor
 * EIAJ_05, Philmore 214, Mating Jack: Philmore # 214, 265 & 365 or Equivalent
 * EIAJ_05, CUI Inc. PJ-025, Mating Jack: ???
 * EIAJ_05, Farnell, others
+* <todo: consider, new normal addition plugs jacks, >
 
 ## BoM - tools
-* Heat gun/hair drier, for heat shrink tubbing, RnD?, PoC, 
-* Multimeter, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons
+* Heat gun/hair drier, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
+* Multimeter, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons, rationale; cost, high metrology capability, 
+* Multimeter, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6275/6341/72902/
 * Micrometer, [](), metrology, barrel pin measurements, nice to have?
 * Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
 * Soldering iron, PoC
-* helping hands, likely KOTTO LED Magnifying Third Hand Soldering Station, 
+* helping hands, likely KOTTO LED Magnifying Third Hand Soldering Station, rationale; quality, cost bracket, 
+* pcb board holder, likely not now, tbd depending of commitment going forward
 * Solder, PoC
 * Soldering mat, PoC
 * Vernier scale caliper, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
 
 ## Tool suppliers
-* Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/)
-* Metrology Quality Services [WP](https://mqs.co.uk/)
-* ...
+* Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/), metrology, pin gauges
+* Metrology Quality Services [WP](https://mqs.co.uk/), metrology, pin gauges, circa £18 per set, 6 x 18 = 108? is this necesarry for this project? not for ac/dc adaptor but for monitor element for which ac/dc is neceaary in first place
+* Telonic Instruments, [](), multimeter, Brymen BM809s, circa £210.00 (including 20% VAT), logging cable £40.80 (including 20% VAT), 
+* Farnell (CPC Farnell), electrical components circa £100?, Pomona probes & clips circa £100?, 
+* RS Components, see Farnell
+* Mouser, see Farnell
+* Ubuy? KOTTO LED Magnifying Third Hand Soldering Station, circa £44
+
+Total cost everything: circa £603?, likely cut; BM869s extras, helping hands, other? 
+Totao cost BM869s elec components; £300?
+
+## Libs
+
+Brymen BM869s - is the cable nesecarry at this point? 
+* Sigrok, python native driver for BM869s
+* hid, roll your own scripts, access USB HID device cable interface, more powerfull than driver?
 
 ## Output
 
