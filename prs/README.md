@@ -23,7 +23,7 @@ TODO
 
 DONE
 * <done: consider, intent to commit>
-* <todo: consider, require a multimeter for this project, find options, likely Brymen BM869s >
+* <done: consider, require a multimeter for this project, find options, likely Brymen BM869s >
 
 ## BoM - circuit 
 
