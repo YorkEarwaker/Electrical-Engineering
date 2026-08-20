@@ -18,12 +18,12 @@ Projcet type
 ## Status
 TODO
 * <todo: consider, finalise BoM to raise purchase order of component parts >
-* <todo: consider, require a multimeter for this project, find options>
 * <todo: consider, break items out into general keep here, ac/dc adapter project for monitor sub-project, switching power supply sub-project, >
-* <todo: consider, two liner ac/dc adapter projects, RnD hello world 5V, RnD & PoC monitor 19V>
+* <todo: consider, two linear ac/dc adapter projects, first RnD hello world 5V, second RnD & PoC monitor 19V >
 
 DONE
 * <done: consider, intent to commit>
+* <todo: consider, require a multimeter for this project, find options, likely Brymen BM869s >
 
 ## BoM - circuit 
 
