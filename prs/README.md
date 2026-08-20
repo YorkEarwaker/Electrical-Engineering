@@ -10,12 +10,17 @@ Objectives
 * build skils capabilities for heat pump project, upskilling
 * switching power supply, advanced, next steps,
 
+Projcet type
+* RnD, bread board, no solder
+* PoC, perf board, solder
+* Prod, printed circuit board, circuit certification
+
 ## Status
 TODO
 * <todo: consider, finalise BoM to raise purchase order of component parts >
 * <todo: consider, require a multimeter for this project, find options>
 * <todo: consider, break items out into general keep here, ac/dc adapter project for monitor sub-project, switching power supply sub-project, >
-* <todo: consider, two liner ac/dc adapter projects, hello world 5V, monitor 19V>
+* <todo: consider, two liner ac/dc adapter projects, RnD hello world 5V, RnD & PoC monitor 19V>
 
 DONE
 * <done: consider, intent to commit>
