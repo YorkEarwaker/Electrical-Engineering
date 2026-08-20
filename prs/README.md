@@ -165,6 +165,8 @@ Printed Circuit Board - Product, circuit certification
 
 ## References
 
+Power Enginnering, [WP](https://en.wikipedia.org/wiki/Power_engineering), subfield of electrical enginneering
+
 Electrical terms
 * Alternating current
 * Direct current
