@@ -5,8 +5,8 @@ Comverting current, alternating current, dirct current, pulsed direct current,
 ## Notes
 
 Objectives
-* build an ac/dc adapter, learning
-* build ac/dc adaptor for 24MP55HQ-P monitor, reuse
+* build an ac/dc adapter 5V, learning
+* build ac/dc adaptor 19V for 24MP55HQ-P monitor, reuse
 * build skils capabilities for heat pump project, upskilling
 * switching power supply, advanced, next steps,
 
@@ -15,6 +15,7 @@ TODO
 * <todo: consider, finalise BoM to raise purchase order of component parts >
 * <todo: consider, require a multimeter for this project, find options>
 * <todo: consider, break items out into general keep here, ac/dc adapter project for monitor sub-project, switching power supply sub-project, >
+* <todo: consider, two liner ac/dc adapter projects, hello world 5V, monitor 19V>
 
 DONE
 * <done: consider, intent to commit>
