@@ -12,8 +12,11 @@ Objectives
 * RnD, no solder, bread board construction
 * PoC, solder, perf board construction
 
-Status
+## Status
 TODO
 * <todo: consider, aslo a Prod printed circuit board construction as objective >
 * <todo: consider, move content here from parent readme as necessary, >
 
+## References
+
+* Linear power supply
