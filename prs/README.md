@@ -168,6 +168,18 @@ Printed Circuit Board - Product, circuit certification
 
 ```
 
+Linear power adapter
+```
+tbc
+       ╲
+    	╳
+       ╱
+```
+
+Switching power adapter
+```
+tbc
+```
 
 ## References
 
@@ -202,7 +214,11 @@ Standards - dc connectors, barrel pins, plugs
 * DIN Germany
 * JSBP, some laptops
 * ...
- 
+
+Text character symbols
+* Box drawing characters, [WP](https://en.wikipedia.org/wiki/Box-drawing_characters), 
+* ...
+
 News Papers - tutorials, AC 2 DC, build an adapter
 * How to Build Your Own AC/DC Power Adapter, [WP](https://ourpastimes.com/sudoku.html), Our Pastimes, 12  April 2017, John Papiewski, 
 * AC Power Design in 7 Steps, [WP](https://www.fsp-group.com/en/knowledge-tec-23.html), 22 10 2020
