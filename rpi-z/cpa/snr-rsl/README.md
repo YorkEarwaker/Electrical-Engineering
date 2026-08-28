@@ -192,9 +192,28 @@ Sensor - BME690, Bosch - high condensation use cases,
 Device - TBD thing using BME690
 * <todo: evaluate other BME690 candidate devices, >
 
-Sensor - tbd
-* <todo: other particlate matter sensors, other manufacturer options, >
+Sensor - SCD41, Sensirion - CO2, 5,000 ppm 
+* <todo: other co2 sensors, other manufacturer options, >
 * ...
+
+Device - SCD41 CO2 Sensor Breakout (Carbon Dioxide/Temperature/Humidity), Pimoroni
+* <todo: other co2 sensors, other manufacturer options, >
+* ...
+
+Sensor - SCD43, Sensirion - CO2, 400-10,000 ppm, Building compliance (ASHRAE, Title 24, WELL) 
+* <todo: other co2 sensors, other manufacturer options, >
+* ...
+
+Device - TBD thing using SCD43, 
+* <todo: evaluate other SCD43 candidate devices, >
+
+Sensor - SCD53, Sensirion - CO2, sensor delivery Q4 2026, industrial grade, 400 - 10,000 ppm
+* <todo: other co2 sensors, other manufacturer options, >
+* ...
+
+Device - TBD thing using SCD53, device expected Q1/Q2 2027
+* <todo: evaluate other SCD53 candidate devices, >
+
 
 ### Test
 
