@@ -214,6 +214,8 @@ Sensor - SCD53, Sensirion - CO2, sensor delivery Q4 2026, industrial grade, 400 
 Device - TBD thing using SCD53, device expected Q1/Q2 2027
 * <todo: evaluate other SCD53 candidate devices, >
 
+Sensor - STCC4, Sensirion - CO2, tiny wearable, 
+
 Sensor - TBD CO carbon monixide
 
 ### Test
