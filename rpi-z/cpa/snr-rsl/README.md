@@ -200,7 +200,7 @@ Device - SCD41 CO2 Sensor Breakout (Carbon Dioxide/Temperature/Humidity), Pimoro
 * <todo: other co2 sensors, other manufacturer options, >
 * ...
 
-Sensor - SCD43, Sensirion - CO2, 400-10,000 ppm, Building compliance (ASHRAE, Title 24, WELL) 
+Sensor - SCD43, Sensirion - CO2, 400-5,000 ppm, Building compliance (ASHRAE, Title 24, WELL) 
 * <todo: other co2 sensors, other manufacturer options, >
 * ...
 
@@ -214,6 +214,7 @@ Sensor - SCD53, Sensirion - CO2, sensor delivery Q4 2026, industrial grade, 400 
 Device - TBD thing using SCD53, device expected Q1/Q2 2027
 * <todo: evaluate other SCD53 candidate devices, >
 
+Sensor - TBD CO carbon monixide
 
 ### Test
 
