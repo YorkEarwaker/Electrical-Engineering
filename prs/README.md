@@ -62,9 +62,9 @@ DONE
 
 ## Tool suppliers
 * Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/), metrology, pin gauges
-* Metrology Quality Services [WP](https://mqs.co.uk/), metrology, pin gauges, circa £18 per set, 6 x 18 = 108? is this necesarry for this project? not for ac/dc adaptor but for monitor element for which ac/dc is neceaary in first place
-* Telonic Instruments, [](), multimeter, Brymen BM809s, circa £210.00 (including 20% VAT), logging cable £40.80 (including 20% VAT), 
-* Farnell (CPC Farnell), electrical components circa £100?, Pomona probes & clips circa £100?, 
+* Metrology Quality Services [WS](https://mqs.co.uk/), metrology, pin gauges, circa £18 per set, 6 x 18 = 108? is this necesarry for this project? not for ac/dc adaptor but for monitor element for which ac/dc is neceaary in first place
+* Telonic Instruments, [WS](https://telonic.co.uk/), multimeter, Brymen BM809s, circa £210.00 (including 20% VAT), logging cable £40.80 (including 20% VAT), 
+* Farnell (CPC Farnell), [WS](https://uk.farnell.com/), electrical components circa £100?, Pomona probes & clips circa £100?, 
 * RS Components, see Farnell
 * Mouser, see Farnell
 * Ubuy? KOTTO LED Magnifying Third Hand Soldering Station, circa £44
