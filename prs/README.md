@@ -85,9 +85,13 @@ DONE
 * Ubuy? KOTTO LED Magnifying Third Hand Soldering Station, circa £44
 
 Total cost 
-* everything: circa £603? closer to £700, likely cut; BM869s extras, helping hands, other? 
-* BM869s and electrical components; circa £350? likely way forward RnD no solder
-* Helping hands (optional), soldering mat, solder iron, other solder stuff cleaning holder, perf board, heat gun, ; circa £250? total guess, dig out previuse work on this, likely way forward PoC solder
+* everything: circa £2000? closer to £2500, likely cut; bench testing development kit all in? 
+* Brymen BM869s purchsed, now owned, 
+* Which bench dev test tools absolutley necessary, need more research, get some advice, 
+* Electrical components; circa £80? linear adapter only, likely way forward RnD no solder
+* Electrical components; circa £130? switching adapter only, PoC, pcb, RnD no solder impossible? 
+* Helping hands (optional), ?
+* Soldering mat, solder iron, other solder stuff cleaning holder, perf board, heat gun, ; circa £250? total guess, dig out previuse work on this, likely way forward PoC solder
 
 ## Libs
 
