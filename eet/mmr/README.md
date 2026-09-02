@@ -39,12 +39,14 @@ Metrology - things a multimeter might measure
 * Resistance, R, Ω, ohms, ohmmeter, LCR meter
 * Current, I, A, amps, ammeter, steady or average current, DC circuits, RMS values, AC circuits, from French intensité de courant (current intensity)
 * Current, i, A, amps, ammeter, instantanious current varying over time, 
-* Temperature, T, thermometer, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, 
+* Temperature, t (or θ), C, thermometer, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celcius
 * Capacitance, C, ?, LCR meter
 * Inductance, L, ? LCR meter
 * Wattage?, W, watts, 
-* Thermodynamic temperature, K, kelvins, internal kinetic energy of a system of particles, absolute scale no negatives, absolute zero, K = C + 273.15, temperature to energy a change in thermal energy of exactly 1.380640 x 10^(-23) is a change of one kelvin, Boltzmann constant, 
-* Heat energy, therms, <todo: consider, relation to temperature, also work, >
+* Thermodynamic temperature, T, K, kelvins, average internal kinetic energy of a system of particles, absolute scale no negatives, absolute zero, K = °C + 273.15, T = t + 273.15, with T in K and t in °C, temperature to energy a change in thermal energy of exactly 1.380640 x 10^(-23) is a change of one kelvin, Boltzmann constant,
+* Heat energy, J, joules, <todo: consider, relation to temperature, also work, >
+* Kinetic energy, J, joules, 
+* Time t, s, seconds, clock?, τ (tau) sometimes, but in physics equations time variable is t, 
 
 Equations - algorithems
 * Ohms law,
