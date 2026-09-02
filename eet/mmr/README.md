@@ -53,9 +53,9 @@ Metrology - things a multimeter might measure
 * Current, i, A, amps, ammeter, instantanious current varying over time, 
 * Temperature, t (or θ), C, celsius, thermometer, thermocouple, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celsius
 * Capacitance, C, F, farad, LCR meter
-* Conductance, ?, S, siemens, 
-* Decibels, ?, ?, ?, in circuitry, not sound
-* Frequency, ? ?, hertz, 
+* Conductance, G, S, siemens, 
+* Decibels, ?(no standard var letter), dB, decibles, in circuitry, not sound, the ratio of two power levels, the ratio of two voltage or current levels, voltage or current ratio; dB = 20 ("$\cdot$") "$\log_{10}$" ("$V_{1}", "$V_{2}")
+* Frequency, f, Hz, hertz, 
 * Inductance, L, H, henry, LCR meter
 * Wattage?, W, watts, 
 * Thermodynamic temperature, T, K, kelvins, average internal kinetic energy of a system of particles, absolute scale no negatives, absolute zero, K = °C + 273.15, T = t + 273.15, with T in K and t in °C, temperature to energy a change in thermal energy of exactly 1.380640 x 10^(-23) is a change of one kelvin, Boltzmann constant,
