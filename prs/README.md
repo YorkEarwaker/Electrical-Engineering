@@ -48,17 +48,30 @@ DONE
 * <todo: consider, new normal addition plugs jacks, >
 
 ## BoM - tools
-* Heat gun/hair drier, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
-* Multimeter, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons, rationale; cost, high metrology capability, 
-* Multimeter, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/
-* Micrometer, [](), metrology, barrel pin measurements, nice to have?
-* Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
-* Soldering iron, PoC
-* helping hands, likely KOTTO LED Magnifying Third Hand Soldering Station, rationale; quality, cost bracket, 
-* pcb board holder, likely not now, tbd depending of commitment going forward
-* Solder, PoC
-* Soldering mat, PoC
-* Vernier scale caliper, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
+* KiCad 8, laptop design, Schematic + PCB layout + Gerber export., Free
+* Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
+* Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons, rationale; cost, high metrology capability, 
+* Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
+* Clamp meter, installation, Brymen BM089, ~£130, for heat pump project, not necessary for bench work, must have for installation work 
+* MFT (IR/Zs/RCD/3φ), installation, MI3125BT, ~£570, for heat pump project not necessary for bench work, must have for installation work
+* Oscilloscope, bench, Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
+* Bench power supply, bench, Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
+* Functon generator, bench, Rigol DG1022Z ~£250, necessary?, Signal generation for testing, 
+* LCR meter, bench, DE-5000, LCR / ESR / inductance, £90
+* SLogic16U3, bench, Protocol debugging, £60
+* ESD mat and strap + magnification + fume, bench, Practical bench hygiene, ~£85
+* Pin guages, bench, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
+* Vernier scale caliper,bench, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
+* Micrometer, bench, [](), metrology, barrel pin measurements, nice to have?
+* Soldering iron, bench, Hakko FX-888DX, Soldering, £125
+* YIHUA 995D+, Hot air rework, £89, necessary?
+* helping hands, bench, likely KOTTO LED Magnifying Third Hand Soldering Station, rationale; quality, cost bracket, 
+* pcb board holder, bench, likely not now, tbd depending of commitment going forward
+* Solder, bench, PoC
+* Soldering mat, bench, PoC
+* SMD assembly, Stencil + squeegee + paste + toaster oven + temp controller + tweezers + flux + IPA	~£120
+* Prototyping, Breadboard + perfboard, £10
+* Inspection, Stereo microscope (AmScope T340T), £100
 
 ## Tool suppliers
 * Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/), metrology, pin gauges
