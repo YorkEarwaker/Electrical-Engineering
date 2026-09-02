@@ -7,12 +7,16 @@ Measuring electrical values, testing cuircuits,
 Objectives
 * Understanding how to use a multimeter
 * Evaluate Brymen BM869s for different use cases,
+* Fist use case likely building a linear ac/dc adaptor power supply, 
 
 Use Cases
 * pcb testing,
 * circuit testing,
 * sbc, mcu testing
 * device testing
+
+Assumptions
+* in search of a multipass, but that is another story entirely, <todo: consider, delete the completely eronous message into the void>
 
 ## Status
 TODO
@@ -39,9 +43,9 @@ Metrology - things a multimeter might measure
 * Resistance, R, Ω, ohms, ohmmeter, LCR meter
 * Current, I, A, amps, ammeter, steady or average current, DC circuits, RMS values, AC circuits, from French intensité de courant (current intensity)
 * Current, i, A, amps, ammeter, instantanious current varying over time, 
-* Temperature, t (or θ), C, thermometer, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celcius
-* Capacitance, C, ?, LCR meter
-* Inductance, L, ? LCR meter
+* Temperature, t (or θ), C, celsius, thermometer, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celsius
+* Capacitance, C, F, farad, LCR meter
+* Inductance, L, H, henry, LCR meter
 * Wattage?, W, watts, 
 * Thermodynamic temperature, T, K, kelvins, average internal kinetic energy of a system of particles, absolute scale no negatives, absolute zero, K = °C + 273.15, T = t + 273.15, with T in K and t in °C, temperature to energy a change in thermal energy of exactly 1.380640 x 10^(-23) is a change of one kelvin, Boltzmann constant,
 * Heat energy, J, joules, <todo: consider, relation to temperature, also work, >
