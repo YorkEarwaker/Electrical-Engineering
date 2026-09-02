@@ -55,7 +55,9 @@ DONE
 * Clamp meter, installation, Brymen BM089, ~£130, for heat pump project, not necessary for bench work, must have for installation work 
 * MFT (IR/Zs/RCD/3φ), installation, MI3125BT, ~£570, for heat pump project not necessary for bench work, must have for installation work
 * Oscilloscope, bench, Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
-* Bench power supply, bench, Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
+* Bench power supply, bench, source, Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
+* DC load, bench, sink, Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
+* DC load, bench, sink, QX-100, ~£80, will do the job? 
 * Functon generator, bench, Rigol DG1022Z ~£250, necessary?, Signal generation for testing, 
 * LCR meter, bench, DE-5000, LCR / ESR / inductance, £90
 * SLogic16U3, bench, Protocol debugging, £60
