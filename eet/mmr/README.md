@@ -54,7 +54,7 @@ Metrology - things a multimeter might measure
 * Temperature, t (or θ), C, celsius, thermometer, thermocouple, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celsius
 * Capacitance, C, F, farad, LCR meter
 * Conductance, G, S, siemens, 
-* Decibels, ?(no standard var letter), dB, decibles, in circuitry, not sound, the ratio of two power levels, the ratio of two voltage or current levels, voltage or current ratio; dB = 20 "$\cdot$" "$\log_{10}$" ("$V_{1}$", "$V_{2}$") 
+* Decibels, ?(no standard var letter), dB, decibles, in circuitry, not sound, the ratio of two power levels, the ratio of two voltage or current levels, voltage or current ratio; dB = 20 "$\cdot$" "$\log_{20}$" ("$V_{1}$", "$V_{2}$") , power ratio; dB = 10 "$\cdot$" "$\log_{10}$" ("$P_{1}$", "$P_{2}$")
 * Frequency, f, Hz, hertz, 
 * Inductance, L, H, henry, LCR meter
 * Wattage?, W, watts, 
