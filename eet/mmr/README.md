@@ -28,9 +28,17 @@ DONE
 * <done: consider, intent to commit>
 
 ## Safety
+* <todo: consider, better title than Safety, >
 
 Docs
-* Brymen BM869s User's Manual, [WS](https://www.manualslib.com/products/Brymen-Bm869s-8912205.html)
+* Brymen BM869s User's Manual, [WS](https://www.manualslib.com/products/Brymen-Bm869s-8912205.html), CAT IV, CAT III, CAT II, 
+
+CENELEC Directives - specifications, standards, regulation
+* EU, Low voltage directive (LVD) 2006/95/EC, BM869s manual
+* EU, Low voltage directive (LVD) 2014/35/EU on 20 April 2016, [WP](https://en.wikipedia.org/wiki/Low_Voltage_Directive)
+* EU, Electromagnetic compatibility (EMC) directive 2004/108/EC, BM869s manual
+* EU, Electromagnetic compatibility (EMC) directive 2014/30/EU on 20 April 2016, [WS](https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards/electromagnetic-compatibility-emc_en)
+* UK, The Electrical Equipment (Safety) Regulations 2016, [WS](https://www.legislation.gov.uk/uksi/2016/1101/contents)
 
 ## References
 
@@ -52,7 +60,13 @@ Metrology - things a multimeter might measure
 * Kinetic energy, J, joules, 
 * Time t, s, seconds, clock?, τ (tau) sometimes, but in physics equations time variable is t, 
 
+Constants
+* Boltzmann's constant, 
+
 Equations - algorithems
 * Ohms law,
+* LC resonance formula, 
 * ...
 
+Electronics online
+* Electronics club [WS](https://electronicsclub.info/)
