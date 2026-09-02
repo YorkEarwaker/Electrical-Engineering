@@ -1,13 +1,13 @@
 # Multimeter mmr
 
-Measuring electrical values, testing cuircuits, 
+Measuring electrical values, testing circuits, 
 
-## Motes
+## Notes
 
 Objectives
-* Understanding how to use a multimeter
+* Understanding how to use a multimeter, learning by doing, also rtfms/rtms/rtm
 * Evaluate Brymen BM869s for different use cases,
-* Fist use case likely building a linear ac/dc adaptor power supply, 
+* First use case likely building a linear ac/dc adaptor power supply, 
 
 Use Cases
 * pcb testing,
@@ -16,7 +16,7 @@ Use Cases
 * device testing
 
 Assumptions
-* in search of a multipass, but that is another story entirely, <todo: consider, delete the completely eronous message into the void>
+* multimeter in search of a multipass, but that is another story entirely, <todo: consider, delete the completely eronous message into the void>
 
 ## Status
 TODO
