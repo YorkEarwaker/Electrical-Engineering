@@ -35,7 +35,7 @@ Docs
 
 CENELEC Directives - specifications, standards, regulation
 * EU, Low voltage directive (LVD) 2006/95/EC, BM869s manual
-* EU, Low voltage directive (LVD) 2014/35/EU on 20 April 2016, [WP](https://en.wikipedia.org/wiki/Low_Voltage_Directive)
+* EU, Low voltage directive (LVD) 2014/35/EU on 20 April 2016, [WS](https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/low-voltage-directive-lvd_en), [WP](https://en.wikipedia.org/wiki/Low_Voltage_Directive)
 * EU, Electromagnetic compatibility (EMC) directive 2004/108/EC, BM869s manual
 * EU, Electromagnetic compatibility (EMC) directive 2014/30/EU on 20 April 2016, [WS](https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards/electromagnetic-compatibility-emc_en)
 * UK, The Electrical Equipment (Safety) Regulations 2016, [WS](https://www.legislation.gov.uk/uksi/2016/1101/contents)
@@ -51,8 +51,11 @@ Metrology - things a multimeter might measure
 * Resistance, R, Ω, ohms, ohmmeter, LCR meter
 * Current, I, A, amps, ammeter, steady or average current, DC circuits, RMS values, AC circuits, from French intensité de courant (current intensity)
 * Current, i, A, amps, ammeter, instantanious current varying over time, 
-* Temperature, t (or θ), C, celsius, thermometer, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celsius
+* Temperature, t (or θ), C, celsius, thermometer, thermocouple, °C celsius/centigrade,°F fahrenheit, °C = (°F - 32) x 5/9, F = C + 32 x 1.8, when time t is used UK OCR use θ (theta) for temperature in Celsius
 * Capacitance, C, F, farad, LCR meter
+* Conductance, ?, S, siemens, 
+* Decibels, ?, ?, ?, in circuitry, not sound
+* Frequency, ? ?, hertz, 
 * Inductance, L, H, henry, LCR meter
 * Wattage?, W, watts, 
 * Thermodynamic temperature, T, K, kelvins, average internal kinetic energy of a system of particles, absolute scale no negatives, absolute zero, K = °C + 273.15, T = t + 273.15, with T in K and t in °C, temperature to energy a change in thermal energy of exactly 1.380640 x 10^(-23) is a change of one kelvin, Boltzmann constant,
