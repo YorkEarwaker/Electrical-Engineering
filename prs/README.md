@@ -50,7 +50,7 @@ DONE
 ## BoM - tools
 * Heat gun/hair drier, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons, rationale; cost, high metrology capability, 
-* Multimeter, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6275/6341/72902/
+* Multimeter, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/
 * Micrometer, [](), metrology, barrel pin measurements, nice to have?
 * Pin guages, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
 * Soldering iron, PoC
