@@ -96,7 +96,7 @@ DONE
 * Separate power and signal wires, power wires bundle and other bundles of signal cables, power wires to one side of board signal wires to other side of board
 * Trim bare wires flush, avoid wire tails hanging free, bare copper, wire wrap tails,
 
-## Bom - tools 3D priting, encasements, mechancical parts, 
+## BoM - tools 3D priting, encasements, mechancical parts, 
 * tbd ..
 
 ## BoM - tools soldering station, smd, through hole, 
