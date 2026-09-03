@@ -83,9 +83,16 @@ DONE
 * foam tape (3m vhb, others, ...), heavier parts, not for heat generating component parts,
 * cable ties, velcro cable straps, wire bundling
 * wire loom/cable channel (flat plastic raceway, ~10-15mm wide) along board edge for main power runs,
+* 30 AWG wire-wrap wire (spool)
 * acrlyic board, aluminium board, mdf board, 3mm, to which to mount breadboards and perfboards
 * breadboard with mounting holes, to take M2/M3 nylon standoffs
 * perboard, 
+
+## Workflow no solder - no shorts
+* Isnuation, heat shrink all wire joints, krapton tape or heat shrink over individual wires that pass near other components
+* Barriers, separate power section and signal section on dev build board, cardboard, acrylic, 3d printed divider, 
+* Separate power and signal wires, power wires bundle and other bundles of signal cables, power wires to one side of board signal wires to other side of board
+* Trim bare wires flush, avoid wire tails hanging free, bare copper, wire wrap tails,
 
 ## Bom - tools 3D priting, encasements, mechancical parts, 
 * tbd ..
@@ -276,4 +283,6 @@ News Papers - tutorials, AC 2 DC, build an adapter
 News Papers - tutorials, repair an adapter
 * Notes on the Troubleshooting and Repair of AC Adapters, Power Supplies, and Battery Packs, and - Other Related Information, [WP](https://www.repairfaq.org/sam/aapsfaq.htm), Version 1.19 (14-Jan-13), Samuel M. Goldwasser, 
 
-
+News Papers - no solder higher current 
+* Permanent Solderless Breadboard Example, [WS](https://runtimemicro.com/construction/permanent-solderless-breadboard-projects), 26 July 2016, update 17 December 2025, Runtime Micro
+* <todo: consider, find other examples, >
