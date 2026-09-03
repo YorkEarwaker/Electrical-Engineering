@@ -27,7 +27,7 @@ DONE
 * <done: consider, intent to commit>
 * <done: consider, require a multimeter for this project, find options, likely Brymen BM869s >
 
-## BoM - circuit 
+## BoM - circuit first cut, adapter component candidate high level
 * Banana jack, black
 * Banana jack, red
 * Capacitors, various
@@ -48,13 +48,13 @@ DONE
 * EIAJ_05, Farnell, others
 * <todo: consider, new normal addition plugs jacks, >
 
-## BoM - tools circuit design, circuit simulation
+## BoM - tools circuit design, circuit simulation, electrical engineering
 * KiCad 8, design, laptop, Schematic + PCB layout + Gerber export., Free
 * DesignSpark PCB, design, laptop
 * Eagle, design, laptop
 * Micro-Cap, simulation, laptop?, circuit virtual testing and component validation, before purchase order of components, validate physical assembly before the event 
 
-## BoM - tools bench, circuit build, dev, test, QA, 
+## BoM - tools bench, circuit build, dev, test, QA, electrical engineering
 * Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons, rationale; cost, high metrology capability, 
 * Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
@@ -90,7 +90,7 @@ DONE
 * breadboard with mounting holes, to take M2/M3 nylon standoffs
 * perboard, 
 
-## Workflow no solder - no shorts
+## Workflow no solder - no shorts, safety humans, safety equipment
 * Isnuation, heat shrink all wire joints, krapton tape or heat shrink over individual wires that pass near other components
 * Barriers, separate power section and signal section on dev build board, cardboard, acrylic, 3d printed divider, 
 * Separate power and signal wires, power wires bundle and other bundles of signal cables, power wires to one side of board signal wires to other side of board
@@ -99,7 +99,7 @@ DONE
 ## Bom - tools 3D priting, encasements, mechancical parts, 
 * tbd ..
 
-## BoM - tools soldering station, smd
+## BoM - tools soldering station, smd, through hole, 
 * Soldering iron, bench, Hakko FX-888DX, Soldering, £125
 * YIHUA 995D+, Hot air rework, £89, necessary?
 * helping hands, bench, likely KOTTO LED Magnifying Third Hand Soldering Station, rationale; quality, cost bracket, 
