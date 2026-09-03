@@ -66,6 +66,8 @@ DONE
 * LCR meter, bench, DE-5000, LCR / ESR / inductance, £90
 * SLogic16U3, bench, Protocol debugging, £60
 * ESD mat and strap + magnification + fume, bench, Practical bench hygiene, ~£85
+
+## BoM - tools metrology, mechanical engineering
 * Pin guages, bench, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
 * Vernier scale caliper,bench, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
 * Micrometer, bench, [](), metrology, barrel pin measurements, nice to have?
