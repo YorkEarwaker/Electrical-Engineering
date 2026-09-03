@@ -20,13 +20,13 @@ TODO
 * <todo: consider, finalise BoM to raise purchase order of component parts >
 * <todo: consider, break items out into general keep here, ac/dc adapter project for monitor sub-project, switching power supply sub-project, >
 * <todo: consider, two linear ac/dc adapter projects, first RnD hello world 5V, second RnD & PoC monitor 19V >
+* <todo: consider, itterative approach to assembling bench development and testing tools, requires some upfront research on cohsive and interoperable bench elecronic tools, otherwise risk not interoperable issues, jasper like end to end testing for example, >
 
 DONE
 * <done: consider, intent to commit>
 * <done: consider, require a multimeter for this project, find options, likely Brymen BM869s >
 
 ## BoM - circuit 
-
 * Banana jack, black
 * Banana jack, red
 * Capacitors, various
@@ -47,13 +47,16 @@ DONE
 * EIAJ_05, Farnell, others
 * <todo: consider, new normal addition plugs jacks, >
 
-## BoM - tools
-* KiCad 8, laptop design, Schematic + PCB layout + Gerber export., Free
+## BoM - tools circuit design, circuit simulation
+* KiCad 8, design, laptop, Schematic + PCB layout + Gerber export., Free
+* DesignSpark PCB, design, laptop
+* Eagle, design, laptop
+* Micro-Cap, simulation, laptop?, circuit virtual testing and component validation, before purchase order of components, validate physical assembly before the event 
+
+## BoM - tools bench, circuit build, dev, test, QA, 
 * Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB896s and some add ons, rationale; cost, high metrology capability, 
 * Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
-* Clamp meter, installation, Brymen BM089, ~£130, for heat pump project, not necessary for bench work, must have for installation work 
-* MFT (IR/Zs/RCD/3φ), installation, MI3125BT, ~£570, for heat pump project not necessary for bench work, must have for installation work
 * Oscilloscope, bench, Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
 * Bench power supply, bench, source, Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
 * DC load, bench, sink, Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
@@ -65,15 +68,42 @@ DONE
 * Pin guages, bench, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
 * Vernier scale caliper,bench, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
 * Micrometer, bench, [](), metrology, barrel pin measurements, nice to have?
+
+## BoM - tools no solder, devices that require higher currents, where plastic breadboard might melt,  
+* Screw terminal blocks (0.1″ pitch), power distribution, motor/relay wiring, plug into perfboard or standalone; 10–30 A per terminal;
+* Snap-action wiring blocks (DF-15), quick splicing free-hanging wires, no crimping, reusable, rated 16 A; temporary power connections
+* Binding posts / banana jacks, bench testing, power injection, Industrial-style, high current (15–30 A), very secure
+* Crimp connectors + terminal strips, semi-permanent builds, crimp onto wire, insert into terminal block; no solder at either end
+* Wire wrap, permanent?, gas-tight connections, 30 AWG, rated well beyond 24 V;
+* nylon standoffs (M2 or #2-56), insulate breaboard or other items from short circuit 
+* nylon nuts + standoffs, perboard, drill holes in corners of perfboard, 
+* IC sockets, dip chips, swap chips and no harm to build, 
+* blue tack, double sided tap, resistors, capacitors, small IC's
+* foam tape (3m vhb, others, ...), heavier parts, not for heat generating component parts,
+* cable ties, velcro cable straps, wire bundling
+* wire loom/cable channel (flat plastic raceway, ~10-15mm wide) along board edge for main power runs,
+* acrlyic board, aluminium board, mdf board, 3mm, to which to mount breadboards and perfboards
+* breadboard with mounting holes, to take M2/M3 nylon standoffs
+* perboard, 
+
+## Bom - tools 3D priting, encasements, mechancical parts, 
+* tbd ..
+
+## BoM - tools soldering station, smd
 * Soldering iron, bench, Hakko FX-888DX, Soldering, £125
 * YIHUA 995D+, Hot air rework, £89, necessary?
 * helping hands, bench, likely KOTTO LED Magnifying Third Hand Soldering Station, rationale; quality, cost bracket, 
-* pcb board holder, bench, likely not now, tbd depending of commitment going forward
-* Solder, bench, PoC
+* pcb board holder, bench, likely not now, tbd depending of commitment going forward* Solder, bench, PoC
 * Soldering mat, bench, PoC
 * SMD assembly, Stencil + squeegee + paste + toaster oven + temp controller + tweezers + flux + IPA	~£120
 * Prototyping, Breadboard + perfboard, £10
-* Inspection, Stereo microscope (AmScope T340T), £100
+* Stereo microscope, bench, inspection, (AmScope T340T), £100, solder joins, poor contact, bridging, ... 
+* Thermal camera, bench, inspection, solder joins, heat spots, ...
+
+## BoM - tools installation, building codes, saftey, 
+* Clamp meter, installation, Brymen BM089, ~£130, for heat pump project, not necessary for bench work, must have for installation work 
+* MFT (IR/Zs/RCD/3φ), installation, MI3125BT, ~£570, for heat pump project not necessary for bench work, must have for installation work 
+* ...
 
 ## Tool suppliers
 * Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/), metrology, pin gauges
@@ -85,12 +115,13 @@ DONE
 * Ubuy? KOTTO LED Magnifying Third Hand Soldering Station, circa £44
 
 Total cost 
-* everything: circa £2000? closer to £2500, likely cut; bench testing development kit all in? 
+* everything: circa £2k? closer to £2.5k-3k?, bench development and testing kit all in? 
 * Brymen BM869s purchsed, now owned, 
 * Which bench dev test tools absolutley necessary, need more research, get some advice, 
 * Electrical components; circa £80? linear adapter only, likely way forward RnD no solder
 * Electrical components; circa £130? switching adapter only, PoC, pcb, RnD no solder impossible? 
-* Helping hands (optional), ?
+* Helping hands (optional), ? keep seperate from magnifying lens + stand? likely as pcb holder would require magnification capability too
+* Magnifying lens + stand necessary! and/or magnifying head set too? which to prioritise?
 * Soldering mat, solder iron, other solder stuff cleaning holder, perf board, heat gun, ; circa £250? total guess, dig out previuse work on this, likely way forward PoC solder
 
 ## Libs
@@ -171,7 +202,6 @@ Supply frequency
 
 ```
 
-
 Circuit diagram - AC/DC adapter
 * Circuit conversion process steps high level
 * Voltage Transformation, transformer, to change voltage up or down to required level
@@ -187,17 +217,14 @@ Printed Circuit Board - Product, circuit certification
 
 ```
 
-Linear power adapter
+Circuit diagram - Linear power adapter
 ```
-tbc
-       ╲
-    	╳
-       ╱
+tbc - see relevant sub project 
 ```
 
-Switching power adapter
+Circuit diagram - Switching power adapter
 ```
-tbc
+tbc - see relevant sub project
 ```
 
 ## References
@@ -226,6 +253,7 @@ Components - consider part of larger bom
 * DC connector [WP](https://en.wikipedia.org/wiki/DC_connector)
 * Extra low voltage [](), rated at of below 120VDC
 * AC power plugs and sockets,
+* Surface mount device SMD, chips, SOC's, 
 
 Standards - dc connectors, barrel pins, plugs
 * IEC 60130-10
