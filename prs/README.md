@@ -57,7 +57,7 @@ DONE
 ## BoM - tools bench, circuit build, dev, test, QA, electrical engineering
 * Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB869s and some add ons, rationale; cost, high metrology capability, 
-* Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second K-type thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
+* Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second 'type-K temperature bead probe Bkp60' thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
 * Oscilloscope, bench, Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
 * Bench power supply, bench, source, Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
 * DC load, bench, sink, Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
@@ -127,7 +127,8 @@ DONE
 Total cost 
 * everything: circa £2k? closer to £2.5k-3k?, bench development and testing kit all in? 
 * Brymen BM869s multimeter, purchsed, now owned, 
-* Brymen BM869s extras, purchased, now owned; BU-86X USB Interface Kit, Brymen BKB32 Adapter for third party, Brymen BMH-01 Magnetic Hanger, others tbc
+* Brymen BM869s extras, purchased, now owned; BU-86X USB Interface Kit, Brymen BKB32 Adapter for third party probes, Brymen BMH-01 Magnetic Hanger, others tbc
+* Brymen BM869s extras, pending, not owned, second type-K temperature bead probe Bkp60, Pomona 6235 & 5325A test probes, second Brymen BKB32 Adapter for third party probes, 
 * Which bench dev test tools absolutley necessary, need more research, get some advice, 
 * Electrical components; circa £80? linear adapter only, likely way forward RnD no solder
 * Electrical components; circa £130? switching adapter only, PoC, pcb, RnD no solder impossible? 
