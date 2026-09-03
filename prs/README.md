@@ -20,7 +20,8 @@ TODO
 * <todo: consider, finalise BoM to raise purchase order of component parts >
 * <todo: consider, break items out into general keep here, ac/dc adapter project for monitor sub-project, switching power supply sub-project, >
 * <todo: consider, two linear ac/dc adapter projects, first RnD hello world 5V, second RnD & PoC monitor 19V >
-* <todo: consider, itterative approach to assembling bench development and testing tools, requires some upfront research on cohsive and interoperable bench elecronic tools, otherwise risk not interoperable issues, jasper like end to end testing for example, >
+* <todo: consider, itterative approach to assembling bench development and testing tools, requires some upfront research on cohsive and interoperable bench elecronic tools, otherwise risk not interoperable issues, jasper like end to end testing for example, consider no solcer first, >
+* <todo: consider, no solder setups higher current higher voltage, research into current safty and use in prototyping poc necessary, no solder setups, avoid short cicuites, and so on current is important metric Ampres, nylon bolts standoffs for perfboard and breadboard, wire guards, heat shrink wrap, ... >
 
 DONE
 * <done: consider, intent to commit>
