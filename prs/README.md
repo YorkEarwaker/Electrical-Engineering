@@ -27,7 +27,9 @@ DONE
 * <done: consider, intent to commit>
 * <done: consider, require a multimeter for this project, find options, likely Brymen BM869s >
 
-## BoM - circuit first cut, adapter component candidate high level
+## Bill of Materials BoM
+
+### BoM - circuit first cut, adapter component candidate high level
 * Banana jack, black
 * Banana jack, red
 * Capacitors, various
@@ -42,19 +44,19 @@ DONE
 * Voltage regulator, [WP](https://en.wikipedia.org/wiki/Voltage_regulator), linear, switching
 * Linear regulator, 7800 series [WP](https://en.wikipedia.org/wiki/78xx), 5 to 24 volts, e.g. 7805 5V, aka L78xx, LM78xx, MC78xx, . 78xx positive, 79xx negative, so 7824 + 7905 = 19V 
 
-## BoM circuit - additional - specifically for LG 24MP55HQ-P monitor
+### BoM circuit - additional - specifically for LG 24MP55HQ-P monitor
 * EIAJ_05, Philmore 214, Mating Jack: Philmore # 214, 265 & 365 or Equivalent
 * EIAJ_05, CUI Inc. PJ-025, Mating Jack: ???
 * EIAJ_05, Farnell, others
 * <todo: consider, new normal addition plugs jacks, >
 
-## BoM - tools circuit design, circuit simulation, electrical engineering
+### BoM - tools circuit design, circuit simulation, electrical engineering
 * KiCad 8, design, laptop, Schematic + PCB layout + Gerber export., Free
 * DesignSpark PCB, design, laptop
 * Eagle, design, laptop
 * Micro-Cap, simulation, laptop?, circuit virtual testing and component validation, before purchase order of components, validate physical assembly before the event 
 
-## BoM - tools bench, circuit build, dev, test, QA, electrical engineering
+### BoM - tools bench, circuit build, dev, test, QA, electrical engineering
 * Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB869s and some add ons, rationale; cost, high metrology capability, 
 * Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second 'type-K temperature bead probe Bkp60' thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
@@ -67,12 +69,12 @@ DONE
 * SLogic16U3, bench, Protocol debugging, £60
 * ESD mat and strap + magnification + fume, bench, Practical bench hygiene, ~£85
 
-## BoM - tools metrology, mechanical engineering
+### BoM - tools metrology, mechanical engineering
 * Pin guages, bench, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
 * Vernier scale caliper,bench, [WP](https://en.wikipedia.org/wiki/Vernier_scale), metrology, barrel pin measurements, nice to have?
 * Micrometer, bench, [](), metrology, barrel pin measurements, nice to have?
 
-## BoM - tools no solder, devices that require higher currents, where plastic breadboard might melt,  
+### BoM - tools no solder, devices that require higher currents, where plastic breadboard might melt,  
 * Screw terminal blocks (0.1″ pitch), power distribution, motor/relay wiring, plug into perfboard or standalone; 10–30 A per terminal;
 * Snap-action wiring blocks (DF-15), quick splicing free-hanging wires, no crimping, reusable, rated 16 A; temporary power connections
 * Binding posts / banana jacks, bench testing, power injection, Industrial-style, high current (15–30 A), very secure
@@ -90,16 +92,10 @@ DONE
 * breadboard with mounting holes, to take M2/M3 nylon standoffs
 * perboard, 
 
-## Workflow no solder - no shorts, safety humans, safety equipment
-* Isnuation, heat shrink all wire joints, krapton tape or heat shrink over individual wires that pass near other components
-* Barriers, separate power section and signal section on dev build board, cardboard, acrylic, 3d printed divider, 
-* Separate power and signal wires, power wires bundle and other bundles of signal cables, power wires to one side of board signal wires to other side of board
-* Trim bare wires flush, avoid wire tails hanging free, bare copper, wire wrap tails,
-
-## BoM - tools 3D priting, encasements, mechancical parts, 
+### BoM - tools 3D priting, encasements, mechancical parts, 
 * tbd ..
 
-## BoM - tools soldering station, smd, through hole, 
+### BoM - tools soldering station, smd, through hole, 
 * Soldering iron, bench, Hakko FX-888DX, Soldering, £125
 * YIHUA 995D+, Hot air rework, £89, necessary?
 * helping hands, bench, likely KOTTO LED Magnifying Third Hand Soldering Station, rationale; quality, cost bracket, 
@@ -110,12 +106,12 @@ DONE
 * Stereo microscope, bench, inspection, (AmScope T340T), £100, solder joins, poor contact, bridging, ... 
 * Thermal camera, bench, inspection, solder joins, heat spots, ...
 
-## BoM - tools installation, building codes, saftey, 
+### BoM - tools installation, building codes, saftey, 
 * Clamp meter, installation, Brymen BM089, ~£130, for heat pump project, not necessary for bench work, must have for installation work 
 * MFT (IR/Zs/RCD/3φ), installation, MI3125BT, ~£570, for heat pump project not necessary for bench work, must have for installation work 
 * ...
 
-## Tool suppliers
+### Tool suppliers
 * Engineering & Guage Ltd [WS](https://www.engineering-gauge.co.uk/), metrology, pin gauges
 * Metrology Quality Services [WS](https://mqs.co.uk/), metrology, pin gauges, circa £18 per set, 6 x 18 = 108? is this necesarry for this project? not for ac/dc adaptor but for monitor element for which ac/dc is neceaary in first place
 * Telonic Instruments, [WS](https://telonic.co.uk/), multimeter, Brymen BM869s, circa £210.00 (including 20% VAT), logging cable £40.80 (including 20% VAT), 
@@ -135,6 +131,15 @@ Total cost
 * Helping hands (optional), ? keep seperate from magnifying lens + stand? likely as pcb holder would require magnification capability too
 * Magnifying lens + stand necessary! and/or magnifying head set too? which to prioritise?
 * Soldering mat, solder iron, other solder stuff cleaning holder, perf board, heat gun, ; circa £250? total guess, dig out previuse work on this, likely way forward PoC solder
+
+## Workflow process method
+Safty first, 
+
+### Workflow no solder - no shorts, safety humans, safety equipment
+* Isnuation, heat shrink all wire joints, krapton tape or heat shrink over individual wires that pass near other components
+* Barriers, separate power section and signal section on dev build board, cardboard, acrylic, 3d printed divider, 
+* Separate power and signal wires, power wires bundle and other bundles of signal cables, power wires to one side of board signal wires to other side of board
+* Trim bare wires flush, avoid wire tails hanging free, bare copper, wire wrap tails,
 
 ## Libs
 
