@@ -20,7 +20,7 @@ DONE
 
 ## BoM cuicuit components
 
-* Transistor, x1, nominal uk 240 VAC, 
+* Transistor, x1, nominal uk 240 VAC, nominal eu 230 VAC, some eu nations 220 VAC, actual variability 207-253 VAC range, 
 * Diodes, x5, are 1N4001, 1N4004, 1N4007 suitable for uk? 
 * Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
 * 78XX voltage regulator, x1, likely 7805 V5
