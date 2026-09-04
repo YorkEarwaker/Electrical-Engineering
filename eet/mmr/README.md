@@ -40,6 +40,15 @@ CENELEC Directives - specifications, standards, regulation
 * EU, Electromagnetic compatibility (EMC) directive 2014/30/EU on 20 April 2016, [WS](https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards/electromagnetic-compatibility-emc_en)
 * UK, The Electrical Equipment (Safety) Regulations 2016, [WS](https://www.legislation.gov.uk/uksi/2016/1101/contents)
 
+Standards
+* IEC 61010 [WP](https://en.wikipedia.org/wiki/IEC_61010), Safety requirements for electrical equipment for measurement, control, and laboratory use
+* IEC 60050 [WP](https://en.wikipedia.org/wiki/International_Electrotechnical_Vocabulary), International Electrotechnical Vocabulary (IEV)
+* IEC Electropedia [WS](https://www.electropedia.org/), online electronics vocabulary encylopedia
+
+Multimeter symbols
+* Multimeter Symbols, Buttons, Dials, and Display, [WS](https://www.fluke.com/en-gb/learn/blog/digital-multimeters/multimeter-dial-button-jacks-display), Fluke
+* ...
+
 ## References
 
 * Multimeter [WP](https://en.wikipedia.org/wiki/Multimeter), 
@@ -73,3 +82,4 @@ Equations - algorithems
 
 Electronics online
 * Electronics club [WS](https://electronicsclub.info/)
+* Runtime Micro, [WS](https://runtimemicro.com/home), permanent solderless bread projects, 
