@@ -8,9 +8,10 @@ First attempt at an linear ac/dc power adapter 'hello world' simple example.
 
 Objectives
 * Basic electronic engineering, learning
-* Build toward V19 for monitor, skills, capabilities
+* Build toward modern linear adapter for monitor, skills, capabilities
 * Learn to use multimeter, learning
 * Learn to Use a bench PSU for safety, to avoid direct mains power.
+* Learn about galvanic separation, output is electrically separated from mains.
 
 ## Status
 TODO
