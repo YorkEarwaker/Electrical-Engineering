@@ -1,6 +1,6 @@
-# Linear power supply 19 Volts lps-19V
+# Linear power supply brick lps-brk
 
-Research and development RnD project, Proof of concept PoC project
+Use of surface mount device packages for; rectifier diodes, regulator IC, passives, and so on. Research and development RnD project, Proof of concept PoC project
 
 stub
 
@@ -9,6 +9,11 @@ stub
 Second attempt at a linear ac/dc adapter specifically tailored to a monitor LG 24MP55MQ-P .
 
 Objectives
+* Learn about modern components for a linear power supply
+* Surface mounted device SMD packages
+* Create a linear power supply for a monitor.
+
+Itterations
 * RnD, no solder, bread board construction
 * PoC, solder, perf board construction
 
