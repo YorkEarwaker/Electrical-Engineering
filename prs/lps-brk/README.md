@@ -28,4 +28,15 @@ Surface mount components
 
 ## References
 
+Terms
 * Linear power supply
+* Power supply unit, computers
+
+Standards - specification, technical
+* IEC 62700: DC Power supply for notebook computer, [WP](https://en.wikipedia.org/wiki/IEC_62700), 2014, proprietary, not open
+* IEEE 1823-2015, Universal Power Adapter for Mobile Devices (UPAMD), [WP](https://en.wikipedia.org/wiki/Universal_Power_Adapter_for_Mobile_Devices), not yet adopted by the industry?, e-automotive interest? 
+* ATX advanced technology extended, [WP](https://en.wikipedia.org/wiki/ATX), computer psu, de facto standard, intel, 
+
+Regulation - directives, law
+* ...
+
