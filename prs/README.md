@@ -62,7 +62,7 @@ DONE
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB869s and some add ons, rationale; cost, high metrology capability, 
 * Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second 'type-K temperature bead probe Bkp60' thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
 * Oscilloscope, bench, Rigol or Siglent, e.g. Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
-* Bench power supply, bench, source, Rigol or Siglent, e.g. Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
+* Bench power supply, bench, source, Rigol or Siglent, e.g. Rigol DP832, ~£295, Siglent SPD3303X(-E), ~£312 ~£429, necessary, Clean, current-limited, multi-rail DC power, for heat pump
 * DC load, bench, sink, Rigol or Siglent, e.g. Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
 * DC load, bench, sink, QX-100, ~£80, will do the job? 
 * Functon generator, bench, Rigol or Siglent, Rigol DG1022Z ~£250, necessary?, Signal generation for testing, 
