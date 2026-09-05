@@ -31,16 +31,23 @@ DONE
 ### BoM V5 @ 1A dc output, circuit components
 Core set of components for bare bones build
 
-* Transistor, x1, 9V - 12V 1A
+* Transformer, x1, 9V - 12V 1A, drop down transformer
 * Diodes, x5, are 1N4001, 1N4004, 1N4007 suitable for uk? 
 * Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
-* 78XX voltage regulator, x1, likely 7805 V5
+* Voltage regulator 78XX, x1, likely 7805 V5
 * Wire, guage tbd
 
 ### BoM V19 @ 1.7A dc output, circuit components
 
+* Transformer, x1 18V - 25V 3A, drop down transformer
+* Diodes, x5 
+* Capacitors, x4 
+* Voltage regulator, 78XX
+* Voltage regularor, 79XX
+* Wire, guage tbd
 
 ## Calculations
+* <todo: consider, find source for all the calculation that have to be made.>
 
 ```
 rectified DC = ~1.414 x AC RMS voltate
@@ -56,8 +63,12 @@ tbd
 
 ## References
 
+Terms
 * AC RMS
 * EMS
+
+?
+* Galvanic separation
 
 Tutorials - instructions, 
 * AC to DC Conversion, [WS](https://www.instructables.com/AC-to-DC-Conversion/), Instructables, brmarcum
