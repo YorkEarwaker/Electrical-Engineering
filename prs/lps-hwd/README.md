@@ -74,6 +74,7 @@ Tutorials - instructions,
 * AC to DC Conversion, [WS](https://www.instructables.com/AC-to-DC-Conversion/), Instructables, brmarcum
 * AC-DC Regulator Kit Instructions, [WS](https://www.mitchelectronics.co.uk/resources/ac-dc-kit-instructions), Mitchel Electronics Ltd
 * How to Convert AC to DC [WS](https://www.wikihow.com/Convert-AC-to-DC), wikiHow
+* How to Build a DC Linear Power Supply [WS](https://www.build-electronic-circuits.com/linear-power-supply/), 12 July  2023, Omar Muñoz Urias, build electronic circuits
 * ...
 
 News Papers - UK, EU mains
