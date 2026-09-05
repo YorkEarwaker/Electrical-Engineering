@@ -22,6 +22,7 @@ TODO
 * <todo: consider, two linear ac/dc adapter projects, first RnD hello world 5V, second RnD & PoC monitor 19V >
 * <todo: consider, itterative approach to assembling bench development and testing tools, requires some upfront research on cohsive and interoperable bench elecronic tools, otherwise risk not interoperable issues, jasper like end to end testing for example, consider no solcer first, >
 * <todo: consider, no solder setups higher current higher voltage, research into current safty and use in prototyping poc necessary, no solder setups, avoid short cicuites, and so on current is important metric Ampres, nylon bolts standoffs for perfboard and breadboard, wire guards, heat shrink wrap, ... >
+* <todo: consider, bench tools, psu, oscilloscope, dc loader, ..., Rigol and Siglent, both CN, appear to be at the right price point and capability for prototyping bench, Siglent overall appears a little better? SCIP, LAN, USB, ... >
 
 DONE
 * <done: consider, intent to commit>
@@ -30,8 +31,8 @@ DONE
 ## Bill of Materials BoM
 
 ### BoM - circuit first cut, adapter component candidate high level
-* Banana jack, black
-* Banana jack, red
+* Banana jack, black, necessary?
+* Banana jack, red, necessary?
 * Capacitors, various
 * Filter capacitor
 * Perf board, PoC
@@ -39,7 +40,7 @@ DONE
 * AC line cord
 * #6 hardware, what is this???
 * heat shrink tubbing, PoC
-* Rectifier, full wave bridge rectifier
+* Rectifier, full wave bridge rectifier, diodes component package, 
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, [WP](https://en.wikipedia.org/wiki/Voltage_regulator), linear, switching
 * Linear regulator, 7800 series [WP](https://en.wikipedia.org/wiki/78xx), 5 to 24 volts, e.g. 7805 5V, aka L78xx, LM78xx, MC78xx, . 78xx positive, 79xx negative, so 7824 + 7905 = 19V 
@@ -60,11 +61,11 @@ DONE
 * Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB869s and some add ons, rationale; cost, high metrology capability, 
 * Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second 'type-K temperature bead probe Bkp60' thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
-* Oscilloscope, bench, Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
-* Bench power supply, bench, source, Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
-* DC load, bench, sink, Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
+* Oscilloscope, bench, Rigol or Siglent, e.g. Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
+* Bench power supply, bench, source, Rigol or Siglent, e.g. Rigol DP832, ~£295, necessary, Clean, current-limited, multi-rail DC power, for heat pump
+* DC load, bench, sink, Rigol or Siglent, e.g. Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
 * DC load, bench, sink, QX-100, ~£80, will do the job? 
-* Functon generator, bench, Rigol DG1022Z ~£250, necessary?, Signal generation for testing, 
+* Functon generator, bench, Rigol or Siglent, Rigol DG1022Z ~£250, necessary?, Signal generation for testing, 
 * LCR meter, bench, DE-5000, LCR / ESR / inductance, £90
 * SLogic16U3, bench, Protocol debugging, £60
 * ESD mat and strap + magnification + fume, bench, Practical bench hygiene, ~£85
@@ -125,7 +126,9 @@ Total cost
 * Brymen BM869s multimeter, purchsed, now owned, 
 * Brymen BM869s extras, purchased, now owned; BU-86X USB Interface Kit, Brymen BKB32 Adapter for third party probes, Brymen BMH-01 Magnetic Hanger, others tbc
 * Brymen BM869s extras, pending, not owned, second type-K temperature bead probe Bkp60, Pomona 6235 & 5325A test probes, second Brymen BKB32 Adapter for third party probes, 
-* Which bench dev test tools absolutley necessary, need more research, get some advice, 
+* Bench dev test tools, Class C, Rigol and Siglent CN appear to be good enough maker/prototyping, Siglent possibly better all round? need to qualify this? 
+* Bench dev test tools, Class C, which are absolutley necessary, need more research, get some advice, 
+* Bench dev test tools, Class C only, delta Class B software standard, delta Class A hardware trigger standard, Class B and Class A order much more expensive unafordable at this time due to quality of product, standards delta is not the main diffirentiator quality is,
 * Electrical components; circa £80? linear adapter only, likely way forward RnD no solder
 * Electrical components; circa £130? switching adapter only, PoC, pcb, RnD no solder impossible? 
 * Helping hands (optional), ? keep seperate from magnifying lens + stand? likely as pcb holder would require magnification capability too
