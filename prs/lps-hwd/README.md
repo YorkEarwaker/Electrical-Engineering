@@ -42,9 +42,11 @@ Materials
 * Diodes, x5, 14000 series (1A), 1N4001 (50V, 1A), 1N4004, 1N4007, x4 for full wave bridge rectifier, x1 for reversed current protection Schottky prefferred over silicon diode
 * Capacitors (electrolytic), x2 , x1 2200 µF input bulk (smoothing), 100 µF output bulk (transient), bulk energy storage, frequency ripple
 * Capacitors (ceramic MLCC), x2 , x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (or 100 nF) output bypass (high frequency HF), high bypass, regulator stability 
-* Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
 * Voltage regulator 78XX, x1, likely 7805 V5, is LM337-19 a drop in replacement to 7805?
 * Wire, guage tbd
+
+Ignore - workings out, <todo; consider, delete when no longer needed, >
+* Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
 
 ### BoM V19 @ 1.7A dc output, circuit components
 
@@ -82,6 +84,21 @@ rectified DC = ~1.414 x AC RMS voltate
 ```
 
 ## Output
+* Development and testing environments, 
+
+### Rules, development, testing, 
+* Critical Rule: 230VAC stays off board. Never put 230VAC on a breadboard or perfboard. Breadboard contacts are not rated for 230VAC. Breadboard/perfboard, creepage distance is insufficient, shock and fire hazard with loose connection at mains voltage
+
+Two options are
+* Critical Rule: 230VAC stays off board. Bench power supply unit PSU, Mains Front End Module. Safest. More contol. 
+* Critical Rule: 230VAC stays off board. Bespoke build, Mains Front End Module. Least ripple.
+
+Context diagram - high level galvanic isolation
+```
+     Mains Front End Module -------------> Project Board Module
+         Mains isloation                   Project 1, 12VAC (~17V peak), V5 @ 1A, comfortably within breadboard & perfboard voltage limits
+           240V/230V                       Project 2, 18VAC (~25.5 peak), V19 @ 1.7A, remains within breadboard & perfboard voltage limits
+```
 
 Circuit diagram
 ```
