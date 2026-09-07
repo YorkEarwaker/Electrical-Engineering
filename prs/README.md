@@ -234,7 +234,8 @@ Printed Circuit Board - Product, circuit certification
 
   Wire in ---> Transformer ---> Diodes ---> Capacitors & Voltage Regulators ---> Wire out
 
-
+    AC          drop down       bridge      smoothing                               DC 
+                               rectifier    stability
 ```
 
 Circuit diagram - Linear power adapter
