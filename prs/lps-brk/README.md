@@ -26,6 +26,16 @@ TODO
 Surface mount components 
 * Still requires a drop down transformer?, which are the most up to date?
 
+### BoM V5
+
+smd's
+* Bridge rectifier, BKL406 (4A, 600V) or KBP206(2A, 600V), one component containing all four diodes
+
+### BoM v19
+
+smd's
+* Bridge rectifier, KBP306 (3A, 600V), one component containing all four diodes
+
 ## References
 
 Terms

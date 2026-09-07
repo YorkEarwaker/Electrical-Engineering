@@ -29,22 +29,49 @@ DONE
 *  nominal uk 240 VAC, nominal eu 230 VAC, some eu nations 220 VAC, actual variability 207-253 VAC range, 
 
 ### BoM V5 @ 1A dc output, circuit components
-Core set of components for bare bones build
 
-* Transformer, x1, 9V - 12V 1A, drop down transformer
-* Diodes, x5, are 1N4001, 1N4004, 1N4007 suitable for uk? 
+Assumptions
+* After rectification require ~7-8V DC for 5V DC output
+* 12 x 1.414 = 16.968 ~17 DC
+* 1A / (2 x 100 Hz x 2200 µF) ≈ 2.3V peak to peak, ripple check
+* 5V + 2V = 7V dropout requirement
+* 15.6V - 2.3V = 13.3V minimum input, above the 7V dropout threshold
+
+Materials
+* Transformer, x1, 9V - 12V, drop down transformer
+* Diodes, x5, 14000 series (1A), 1N4001 (50V, 1A), 1N4004, 1N4007, x4 for full wave bridge rectifier, x1 for reversed current protection Schottky prefferred over silicon diode
+* Capacitors (electrolytic), x2 , x1 2200 µF input bulk (smoothing), 100 µF output bulk (transient), bulk energy storage, frequency ripple
+* Capacitors (ceramic MLCC), x2 , x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (or 100 nF) output bypass (high frequency HF), high bypass, regulator stability 
 * Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
-* Voltage regulator 78XX, x1, likely 7805 V5
+* Voltage regulator 78XX, x1, likely 7805 V5, is LM337-19 a drop in replacement to 7805?
 * Wire, guage tbd
 
 ### BoM V19 @ 1.7A dc output, circuit components
 
-* Transformer, x1 18V - 25V 3A, drop down transformer
-* Diodes, x5 
-* Capacitors, x4 
-* Voltage regulator, 78XX
-* Voltage regularor, 79XX
+Assumptions
+* After rectification require ~22-23V DC for 19V DC output
+* 18 * 1.414 = 25.452 ~25.5 DC
+* 1.7A / (2 x 100 Hz x 4700 µF) ≈ 1.8V peak to peak, ripple check 
+* 19V + 2V = 21V dropout requirement
+* 24.1V - 1.8V = 22.3V minimum input
+* 1.7A / (2 x 100 Hz x 10,000 µF) ≈ 0.85 peak to peak, ripple check, 
+* 24.1V - 0.85V = 23.25V minimum input, with ripple drop to 0.85V, more margin
+
+Materials
+* Transformer, x1 15V - 18V, drop down transformer
+* Diodes, x5 1N5400 series (3A), 1N5817 (?,?) ,  x4 for full wave bridge rectifier, x1 for reversed current protection
+* Capacitors (electrolytic), x2, x1 4700 µF (or 10,000 µF) input bulk (smoothing), x1 220 µF (or 47 µF) output bulk (transient),  bulk energy storage, frequency ripple
+* Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability 
+* Voltage regulator (fixed), 78XX
+* Voltage regularor (fixed), 79XX
 * Wire, guage tbd
+* Heatsink, x2? , one for each regulator? 
+
+## BoM expanded
+Additoinal things to consider outside bare bones
+
+Materials
+* Voltage regulator (adjustible), LM317 or LM337, requires a sixth diode place on the ADJ pin
 
 ## Calculations
 * <todo: consider, find source for all the calculation that have to be made.>
@@ -69,6 +96,8 @@ Terms
 
 ?
 * Galvanic separation
+* Power supply unit, bench
+* Power supply unit, computer [WP](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
 
 Tutorials - instructions, 
 * AC to DC Conversion, [WS](https://www.instructables.com/AC-to-DC-Conversion/), Instructables, brmarcum
