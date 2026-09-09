@@ -63,7 +63,7 @@ Assumptions
 
 Materials
 * Transformer, x1 15V - 18V, drop down transformer
-* Diodes, x5 1N5400 series (3A), 1N5817 (?,?) ,  x4 for full wave bridge rectifier, x1 for reversed current protection
+* Diodes, x5 1N5400 series, 1N5819 (40V, 1A), 1N5822 (40V, 3A), 1N5408 (1000V, 3A), x4 for full wave bridge rectifier, x1 for reversed current protection, SB340 drop in equivalent for 1N5822, SS34 SMC (SMD) version of 1N5822, - what is a freewheeling diode?
 * Capacitors (electrolytic), x2, x1 4700 µF (or 10,000 µF) input bulk (smoothing), x1 220 µF (or 47 µF) output bulk (transient),  bulk energy storage, frequency ripple
 * Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability 
 * Voltage regulator (fixed) 78XX, LM7819, 19V if one can be sourced,  or  LM7818, 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
