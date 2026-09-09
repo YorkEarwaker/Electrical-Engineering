@@ -24,6 +24,7 @@ TODO
 
 DONE
 * <done: consider, intent to commit>
+* <todo: consider, reformulate the numbers below based on 1.6A, likely fine but must be done, completed and sufficient head room remained nonetheless after recalculation, >
 
 ## Bill of Materials BoM
 *  nominal uk 240 VAC, nominal eu 230 VAC, some eu nations 220 VAC, actual variability 207-253 VAC range, 
@@ -40,16 +41,16 @@ Assumptions
 Materials
 * Transformer, x1, 9V - 12V, drop down transformer
 * Diodes, x5, 14000 series (1A), 1N4001 (50V, 1A), 1N4004, 1N4007, x4 for full wave bridge rectifier, x1 for reversed current protection Schottky prefferred over silicon diode
-* Capacitors (electrolytic), x2 , x1 2200 µF input bulk (smoothing), 100 µF output bulk (transient), bulk energy storage, frequency ripple
-* Capacitors (ceramic MLCC), x2 , x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (or 100 nF) output bypass (high frequency HF), high bypass, regulator stability 
-* Voltage regulator 78XX, x1, likely 7805 V5, is LM337-19 a drop in replacement to 7805?
+* Capacitors (electrolytic), x2, x1 2200 µF input bulk (smoothing), 100 µF output bulk (transient), bulk energy storage, frequency ripple
+* Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (or 100 nF) output bypass (high frequency HF), high bypass, regulator stability 
+* Voltage regulator (fixed) 78XX, x1 LM7805, V5, is LM337-19 a drop in replacement to 7805
 * Wire, guage tbd
 
 Ignore - workings out, <todo; consider, delete when no longer needed, >
 * Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
 
 ### BoM V19 @ 1.6A dc output, circuit components
-* <todo: consider, reformulate the numbers below based on 1.6A, likely fine but must be done>
+* <todo: consider, verify the transformer and rectifier diodes can handle 1.6A withoug overheating, >
 
 Assumptions
 * After rectification require ~22-23V DC for 19V DC output
@@ -65,16 +66,16 @@ Materials
 * Diodes, x5 1N5400 series (3A), 1N5817 (?,?) ,  x4 for full wave bridge rectifier, x1 for reversed current protection
 * Capacitors (electrolytic), x2, x1 4700 µF (or 10,000 µF) input bulk (smoothing), x1 220 µF (or 47 µF) output bulk (transient),  bulk energy storage, frequency ripple
 * Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability 
-* Voltage regulator (fixed), 78XX
-* Voltage regularor (fixed), 79XX
+* Voltage regulator (fixed) 78XX, LM7818, 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
 * Wire, guage tbd
-* Heatsink, x2? , one for each regulator? 
+* Heatsink, x1, 
 
 ## BoM expanded
 Additoinal things to consider outside bare bones
 
 Materials
 * Voltage regulator (adjustible), LM317 or LM337, requires a sixth diode place on the ADJ pin
+* Heatsink, x1, 
 
 ## Calculations
 * <todo: consider, find source for all the calculation that have to be made.>

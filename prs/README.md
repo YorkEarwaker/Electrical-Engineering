@@ -43,7 +43,7 @@ DONE
 * Rectifier, full wave bridge rectifier, diodes component package, 
 * Transformer, step down, a few volts higher than needed, 
 * Voltage regulator, [WP](https://en.wikipedia.org/wiki/Voltage_regulator), linear, switching
-* Linear regulator, 7800 series [WP](https://en.wikipedia.org/wiki/78xx), 5 to 24 volts, e.g. 7805 5V, aka L78xx, LM78xx, MC78xx, . 78xx positive, 79xx negative, so 7824 + 7905 = 19V 
+* Linear regulator, 7800 series [WP](https://en.wikipedia.org/wiki/78xx), 5 to 24 volts, e.g. 7805 5V, aka L78xx, LM78xx, MC78xx, . 78xx positive, 79xx negative, for irregular voltages diode boost
 
 ### BoM circuit - additional - specifically for LG 24MP55HQ-P monitor
 * EIAJ_05, Philmore 214, Mating Jack: Philmore # 214, 265 & 365 or Equivalent
