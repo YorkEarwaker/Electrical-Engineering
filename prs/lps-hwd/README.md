@@ -43,7 +43,7 @@ Materials
 * Diodes, x5, 14000 series (1A), 1N4001 (50V, 1A), 1N4004, 1N4007, x4 for full wave bridge rectifier, x1 for reversed current protection Schottky prefferred over silicon diode
 * Capacitors (electrolytic), x2, x1 2200 µF input bulk (smoothing), 100 µF output bulk (transient), bulk energy storage, frequency ripple
 * Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (or 100 nF) output bypass (high frequency HF), high bypass, regulator stability 
-* Voltage regulator (fixed) 78XX, x1 LM7805, V5, is LM337-19 a drop in replacement to 7805
+* Voltage regulator (fixed) 78XX, x1 LM7805, V5, 
 * Wire, guage tbd
 
 Ignore - workings out, <todo; consider, delete when no longer needed, >
@@ -66,7 +66,7 @@ Materials
 * Diodes, x5 1N5400 series (3A), 1N5817 (?,?) ,  x4 for full wave bridge rectifier, x1 for reversed current protection
 * Capacitors (electrolytic), x2, x1 4700 µF (or 10,000 µF) input bulk (smoothing), x1 220 µF (or 47 µF) output bulk (transient),  bulk energy storage, frequency ripple
 * Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability 
-* Voltage regulator (fixed) 78XX, LM7818, 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
+* Voltage regulator (fixed) 78XX, LM7819, 19V if one can be sourced,  or  LM7818, 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
 * Wire, guage tbd
 * Heatsink, x1, 
 
