@@ -16,7 +16,7 @@ Objectives
 ## Status
 TODO
 * <todo: consider, BoM for V5 @ !A ac/dc conversion, core experience for creating a power adapter >
-* <todo: consider, BoM for V19 @ 1.7A ac/dc conversion, will require different component tollerances due to higher voltage and current requirements >
+* <todo: consider, BoM for V19 @ 1.6A ac/dc conversion, will require different component tollerances due to higher voltage and current requirements >
 * <todo: consider, double component purchase, x1 for breadboard RnD, x1 for perboard, >
 * <todo: consider, warning / disclaimer, working with mains electricity is extremely dangeouse, mains electricity can cause death or injury or loss of property. These are just notes to self not a recomendation for hobbist/maker projects. Always consider safety first. Comply with local safety regulatons and standards. Do not use this source as a guide it may lead to harm to persons or property and you do so at your own risk. >
 * <todo: consider, peronal rider, this is a personal learning source, I am not a qualified electritian or electronics engineer or power engineer or mechanical engineer. Just tryig to learn as a means to better understanding of the world.  Bottom line, you or someone else may die or be permanently injured working with mains electricity and electrical components. There is a risk of; electricution, fire, explosion of component parts, . Safety first, in all instances. >
@@ -48,16 +48,17 @@ Materials
 Ignore - workings out, <todo; consider, delete when no longer needed, >
 * Capacitors, x4, are 2 220-470uF electrolytic, 2 100nF ceramic disc suitable for uk?
 
-### BoM V19 @ 1.7A dc output, circuit components
+### BoM V19 @ 1.6A dc output, circuit components
+* <todo: consider, reformulate the numbers below based on 1.6A, likely fine but must be done>
 
 Assumptions
 * After rectification require ~22-23V DC for 19V DC output
 * 18 * 1.414 = 25.452 ~25.5 DC
-* 1.7A / (2 x 100 Hz x 4700 µF) ≈ 1.8V peak to peak, ripple check 
+* 1.6A / (2 x 100 Hz x 4700 µF) ≈ 1.7V peak to peak, ripple check 
 * 19V + 2V = 21V dropout requirement
-* 24.1V - 1.8V = 22.3V minimum input
-* 1.7A / (2 x 100 Hz x 10,000 µF) ≈ 0.85 peak to peak, ripple check, 
-* 24.1V - 0.85V = 23.25V minimum input, with ripple drop to 0.85V, more margin
+* 24.1V - 1.7V = 22.4V minimum input
+* 1.6A / (2 x 100 Hz x 10,000 µF) ≈ 0.8V peak to peak, ripple check, 
+* 24.1V - 0.8V = 23.3V minimum input, with ripple drop to 0.8V, more margin
 
 Materials
 * Transformer, x1 15V - 18V, drop down transformer
@@ -95,9 +96,10 @@ Two options are
 
 Context diagram - high level galvanic isolation
 ```
-     Mains Front End Module -------------> Project Board Module
-         Mains isloation                   Project 1, 12VAC (~17V peak), V5 @ 1A, comfortably within breadboard & perfboard voltage limits
-           240V/230V                       Project 2, 18VAC (~25.5 peak), V19 @ 1.7A, remains within breadboard & perfboard voltage limits
+     Mains ----> Front End Module ----> Project Board Module
+                 Mains isloation        Project 1, 12VAC (~17V peak), V5 @ 1A, comfortably within breadboard & perfboard voltage limits
+                 240VAC or 230VAC       Project 2, 18VAC (~25.5 peak), V19 @ 1.6A, remains within breadboard & perfboard voltage limits
+                                        Project N, ...
 ```
 
 Circuit diagram
