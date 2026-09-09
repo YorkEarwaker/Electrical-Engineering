@@ -74,7 +74,7 @@ Materials
 Additoinal things to consider outside bare bones
 
 Materials
-* Voltage regulator (adjustible), LM317 or LM337, requires a sixth diode place on the ADJ pin
+* Voltage regulator (adjustible), LM317, requires a sixth diode place on the ADJ pin, note LM337 is a negative version
 * Heatsink, x1, 
 
 ## Calculations
