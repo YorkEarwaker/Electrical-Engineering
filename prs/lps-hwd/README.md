@@ -88,7 +88,10 @@ $P = V \times I$
 
 Total heat produced, where t is time, V is voltage, I is current, P is power, E is energy, E as Energy is total heat in Joules
 
-$\begin{align} E &= P \times t &= V \times I \times t \end{align}$
+$\begin{align}
+E &= P \times t \\
+  &= V \times I \times t
+\end{align}$
 
 Winding Losses, current squared x resistance
 
