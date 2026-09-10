@@ -80,7 +80,13 @@ Materials
 ## Calculations
 * <todo: consider, find source for all the calculation that have to be made.>
 
-rectified DC = ~1.414 x AC RMS voltage
+Rectified DC = ~1.414 x AC RMS voltage, sqrt(2) ~1.414, peak voltage, <todo: consider, is this capacitor filtered rectifier? true? confirm>
+
+$V_{\text{DC}} \approx \sqrt{2} \times V_{\text{RMS}} \approx V_{\text{peak}}$
+
+Average DC output of an unfiltered full-wave rectifier, <todo: consider, true? confirm>
+
+$V_{\text{DC}} \approx {0.9} \times V_{\text{RMS}}$
 
 Electrical power which becomes heat, P is power, V is voltage, I is current, Power is rate of heat generated in Watts
 
