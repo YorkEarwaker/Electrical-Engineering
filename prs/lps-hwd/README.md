@@ -121,8 +121,21 @@ Context diagram - high level galvanic isolation
 
 Circuit diagram
 ```
-tbd
+                🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻
+                │                 │
+                │                 ●
+ ~ 🭻🭻🭻🭻🭻    🭻🭻🭻🭻│               ⟋   ⟍
+        )││(               D3 □       □  D1
+ AC     )││(                ⟋           ⟍           
+        )││(           ┌──●               ●────────────────────
+ ~ 🭻🭻🭻🭻🭻)││(🭻🭻🭻🭻       │    ⟍           ⟋
+                │      │   D2 □       □  D4
+                │      │        ⟍   ⟋             
+                │      │          ●
+                │🭻🭻🭻🭻🭻🭻│🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻│
+                       │🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻🭻
 ```
+
 
 ## References
 
@@ -145,3 +158,16 @@ Tutorials - instructions,
 News Papers - UK, EU mains
 * What are the differences between 220VAC, 230VAC and 240VAC Mains Supplies and what voltage equipment should I use? [WS](https://www.se.com/uk/en/faqs/FA144717/)
 * Mains voltage in the UK and the EU – and what it means for guitar amps, [WS](https://www.ampworks.co.uk/myth-busters/mains-voltages-in-the-uk-and-the-eu-and-what-it-means-for-guitar-amps/), 8 July 2020, rowan, Keld Ampworks, guitar amps
+
+Symbols
+* box drawing, [WS](https://www.w3.org/TR/xml-entity-names/023.html), W3Schools
+* box drawing characters, [WP](https://en.wikipedia.org/wiki/Box-drawing_characters)
+* geometric shapes, [WP](https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block))
+* ascii arrows, [WS](Unicode / ASCII arrows in 8 directions?), Stack Overflow
+* dingbats, [WP](https://en.wikipedia.org/wiki/Dingbat)
+* Glossary of mathematical symbols [WP](https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols)
+* Miscellaneous Technical [WP](https://en.wikipedia.org/wiki/Miscellaneous_Technical)
+* Miscellaneous Symbols A [WP](https://en.wikipedia.org/wiki/Miscellaneous_Mathematical_Symbols-A)
+* Miscellanious Symbols B [WP](https://en.wikipedia.org/wiki/Miscellaneous_Mathematical_Symbols-B)
+* Arrow Symbols [WP](https://en.wikipedia.org/wiki/Arrow_(symbol))
+* Are there unicode symbols for entering basic electrical symbols from multimeter? [WS](https://stackoverflow.com/questions/74578021/are-there-unicode-symbols-for-entering-basic-electrical-symbols-from-multimeter), Stack Overflow
