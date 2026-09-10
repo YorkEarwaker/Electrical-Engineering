@@ -89,6 +89,7 @@ E = P x t = V x I x t, total heat produced, where t is time, V is voltage, I is 
 
 I$$^{2}$$ x R, current squared x resistance, Winding Losses
 ```
+I$$^{2}$$ x R
 
 ## Output
 * Development and testing environments, 
