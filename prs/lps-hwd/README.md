@@ -82,9 +82,12 @@ Materials
 
 ```
 rectified DC = ~1.414 x AC RMS voltage
+
 P = V x I, electrical power which becomes heat, P is power, V is voltage, I is current, Power is rate of heat generated in Watts
+
 E = P x t = V x I x t, total heat produced, where t is time, V is voltage, I is current, P is power, E is energy, E as Energy is total heat in Joules
-I$^{2}$ x R, current squared x resistance, Winding Losses
+
+I$$^{2}$$ x R, current squared x resistance, Winding Losses
 ```
 
 ## Output
