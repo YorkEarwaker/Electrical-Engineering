@@ -64,7 +64,7 @@ Assumptions
 Materials
 * Transformer, x1 15V - 18V 2.0A/2.5A, drop down transformer
 * Diodes, x5 1N5400 series, 1N5819 (40V, 1A), 1N5822 (40V, 3A), 1N5408 (1000V, 3A), x4 for full wave bridge rectifier, x1 for reversed current protection, SB340 drop in equivalent for 1N5822, SS34 SMC (SMD) version of 1N5822, - what is a freewheeling diode?
-* Capacitors (electrolytic), x2, x1 2200 µF/4700 µF 35V rating (or 10,000 µF) input bulk (smoothing), x1 220 µF (or 47 µF) output bulk (transient),  bulk energy storage, frequency ripple
+* Capacitors (electrolytic), x2, x2 4700 µF 35V rating or 1x 10,000 µF input bulk (smoothing), x1 220 µF output bulk (transient),  bulk energy storage, frequency ripple
 * Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability 
 * Voltage regulator (fixed) 78XX, LM7819, 19V if one can be sourced,  or  LM7818, 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
 * Wire, guage tbd
@@ -74,8 +74,10 @@ Materials
 Additoinal things to consider outside bare bones
 
 Materials
-* Voltage regulator (adjustible), LM317, requires a sixth diode place on the ADJ pin, note LM337 is a negative version
+* Voltage regulator (adjustible), LM317 or LM339, requires a sixth diode place on the ADJ pin, note LM337 is a negative version
 * Heatsink, x1, 
+* x2 2200 µF input bulk (smoothing), testing alternative, tight and circuit may fail but interesting to test
+* x1 47 µF output bulk (transient), probs not adiquate but likely minimum 
 
 ## Calculations
 * <todo: consider, find source for all the calculation that have to be made.>
@@ -96,16 +98,25 @@ Total heat produced, where t is time, V is voltage, I is current, P is power, E 
 
 $E = P \times t = V \times I \times t$
 
-Voltage drop, large heat dissipation for a linear device
-
-$P_{\text{dissipated}} = (V_{\text{in}} - V_{\text{out}}) \times I_{\text{load}}$
-
-$P_{\text{dissipated}} \approx (24V - 19V) \times 1.6A =  8W$
-
 Winding Losses, current squared x resistance
 
 $I^{2} \times R$
 
+Capacitor input bulk smoothing, sizing formula for full wave 50Hz UK mains, where; C required capacitance in Farads, I maximum load current in Amperes,  f = mains supply frequency 100 Hz ripple frequency full wave, DeltaV allowable peak-to-peak ripple voltage in Volts
+
+$C = I \div (2 \times f \times \delta V)$
+
+Application, for 50Hz full wave rectifier, discharge time between peaks is circa 10ms (1/100Hz). For a requirement of 1V ripple (DeltaV = 1) at 2A load, is calculated
+
+$C = 2 / (2 \times 50 \times 1) = 0.02 Farads (20,000 µF)$
+
+Regulator voltage drop, large heat dissipation for a linear device
+
+$P_{\text{dissipated}} = (V_{\text{in}} - V_{\text{out}}) \times I_{\text{load}}$
+
+Application
+
+$P_{\text{dissipated}} \approx (24V - 19V) \times 1.6A =  8W$
 
 ## Output
 * Development and testing environments, 
@@ -182,3 +193,6 @@ Symbols
 * Miscellanious Symbols B [WP](https://en.wikipedia.org/wiki/Miscellaneous_Mathematical_Symbols-B)
 * Arrow Symbols [WP](https://en.wikipedia.org/wiki/Arrow_(symbol))
 * Are there unicode symbols for entering basic electrical symbols from multimeter? [WS](https://stackoverflow.com/questions/74578021/are-there-unicode-symbols-for-entering-basic-electrical-symbols-from-multimeter), Stack Overflow
+
+LaTeX
+* Essential LaTeX Commands for Mathematics Courses [WS](https://www.pcc.edu/instructional-support/accessibility/mathscience/latex/), Portland Community College
