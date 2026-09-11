@@ -21,6 +21,9 @@ TODO
 * <todo: consider, warning / disclaimer, working with mains electricity is extremely dangeouse, mains electricity can cause death or injury or loss of property. These are just notes to self not a recomendation for hobbist/maker projects. Always consider safety first. Comply with local safety regulatons and standards. Do not use this source as a guide it may lead to harm to persons or property and you do so at your own risk. >
 * <todo: consider, peronal rider, this is a personal learning source, I am not a qualified electritian or electronics engineer or power engineer or mechanical engineer. Just tryig to learn as a means to better understanding of the world.  Bottom line, you or someone else may die or be permanently injured working with mains electricity and electrical components. There is a risk of; electricution, fire, explosion of component parts, . Safety first, in all instances. >
 * <todo: consider, use of power supply unit psu instead of direct mains power for saftey, >
+* <todo: consider, circuit simulation tool, Ngspice GSpiceUI NutMeg Qucs-S linux native, or LTSpice MS Win/MacOS but requires wine for linux, select for evaluation, >
+* <todo: consider, BoM tools similar KiBom? ... >
+* <todo: consider, KiCad for circuit design of pcb as learning intro to tool, export options xml? to GitHub, >
 
 DONE
 * <done: consider, intent to commit>
@@ -64,9 +67,9 @@ Assumptions
 Materials
 * Transformer, x1 15V - 18V 2.0A/2.5A, drop down transformer
 * Diodes, x5 1N5400 series, 1N5819 (40V, 1A), 1N5822 (40V, 3A), 1N5408 (1000V, 3A), x4 for full wave bridge rectifier, x1 for reversed current protection, SB340 drop in equivalent for 1N5822, SS34 SMC (SMD) version of 1N5822, - what is a freewheeling diode?
-* Capacitors (electrolytic), x2, x2 4700 µF 35V rating or 1x 10,000 µF input bulk (smoothing), x1 220 µF output bulk (transient),  bulk energy storage, frequency ripple
-* Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability 
-* Voltage regulator (fixed) 78XX, LM7819, 19V if one can be sourced,  or  LM7818, 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
+* Capacitors (electrolytic), x2, x2 4700 µF 35V rating or 1x 10,000 µF input bulk (smoothing), x1 220 µF output bulk (transient),  bulk energy storage, frequency ripple, 35V is ~45% margin over 24V peak, electrolytic (105 C)
+* Capacitors (ceramic MLCC), x2, x1 0.33 µF (or 100 nF) input bypass (stability), x1 0.1 µF (100 nF),  high bypass, regulator stability , MLCC (X7R, 50V)
+* Voltage regulator (fixed) 78XX, LM7819 (1A), 19V if one can be sourced, or LM7818 (1A), 18V, with diode boost, x2 1N4007 diodes in series between the ground pin and actual ground, less accurate than an adujustable regulator, 
 * Wire, guage tbd
 * Heatsink, x1, 
 
@@ -74,7 +77,8 @@ Materials
 Additoinal things to consider outside bare bones
 
 Materials
-* Voltage regulator (adjustible), LM317 or LM339, requires a sixth diode place on the ADJ pin, note LM337 is a negative version
+* Voltage regulator (adjustible), LM317 (1.2-37V, 1.5A) 0.1A short below 1.6A req, LM350 (1.2-33V, 3A), LM338 (1.2-33V, 5A), LT3082 (0-38.5V, 200mA), LT3081 (1.5A) 0.1A short below 1.6A req, requires a sixth diode place on the ADJ pin, note LM337 is a negative version
+* Voltage regulator (fixed), L7819 (ST) (1.5A), 
 * Heatsink, x1, 
 * x2 2200 µF input bulk (smoothing), testing alternative, tight and circuit may fail but interesting to test
 * x1 47 µF output bulk (transient), probs not adiquate but likely minimum 
@@ -104,7 +108,7 @@ $I^{2} \times R$
 
 Capacitor input bulk smoothing, sizing formula for full wave 50Hz UK mains, where; C required capacitance in Farads, I maximum load current in Amperes,  f = mains supply frequency 100 Hz ripple frequency full wave, DeltaV allowable peak-to-peak ripple voltage in Volts
 
-$C = I \div (2 \times f \times \delta V)$
+$C = I \div (2 \times f \times \Delta V)$
 
 Application, for 50Hz full wave rectifier, discharge time between peaks is circa 10ms (1/100Hz). For a requirement of 1V ripple (DeltaV = 1) at 2A load, is calculated
 
@@ -117,6 +121,12 @@ $P_{\text{dissipated}} = (V_{\text{in}} - V_{\text{out}}) \times I_{\text{load}}
 Application
 
 $P_{\text{dissipated}} \approx (24V - 19V) \times 1.6A =  8W$
+
+Resistors, calculation for values for resisitor
+
+$V_{\text{out}} = 1.25 \times (1 + R2 \div R1)$
+
+<todo; consider, complete application steps for R1 and R2, and valicatoin step, >
 
 ## Output
 * Development and testing environments, 
