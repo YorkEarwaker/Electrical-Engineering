@@ -21,8 +21,8 @@ TODO
 * <todo: consider, warning / disclaimer, working with mains electricity is extremely dangeouse, mains electricity can cause death or injury or loss of property. These are just notes to self not a recomendation for hobbist/maker projects. Always consider safety first. Comply with local safety regulatons and standards. Do not use this source as a guide it may lead to harm to persons or property and you do so at your own risk. >
 * <todo: consider, peronal rider, this is a personal learning source, I am not a qualified electritian or electronics engineer or power engineer or mechanical engineer. Just tryig to learn as a means to better understanding of the world.  Bottom line, you or someone else may die or be permanently injured working with mains electricity and electrical components. There is a risk of; electricution, fire, explosion of component parts, . Safety first, in all instances. >
 * <todo: consider, use of power supply unit psu instead of direct mains power for saftey, >
-* <todo: consider, circuit simulation tool, Ngspice GSpiceUI NutMeg Qucs-S linux native, or LTSpice MS Win/MacOS but requires wine for linux, select for evaluation, >
-* <todo: consider, BoM tools similar KiBom? ... >
+* <todo: consider, circuit simulation tool,*Ngspice GSpiceUI NutMeg *Qucs-S linux native, and Xyce, KtechLab linux native, or LTSpice MS Win/MacOS but requires wine for linux, select for evaluation, >
+* <todo: consider, BoM tools similar, KiBoM plugin, JBoM pluging, bom3csv.xsl plugin, JLCPCB BOM Plugin, Pcbnew BOM export  >
 * <todo: consider, KiCad for circuit design of pcb as learning intro to tool, export options xml? to GitHub, >
 
 DONE
@@ -146,7 +146,7 @@ Context diagram - high level galvanic isolation
                                         Project N, ...
 ```
 
-Circuit diagram
+Circuit diagram - 5V @ 1A
 * the ascii distorts when displyed in GitHub due to unusual Unicode characters . The ascii below is purposely 'out of alignment' in the raw to try to overcome GitHub rendering distortion of not often used character sets. 
 * <todo; consider, find alternative characters to stop rendering distortion, difficult for 45 deg edges, replace diode squares with DN ltters, replace 'mathematical falling/rising diagonal' with forward back slash, replace unicode froun C1 with something else, replace black circle with zero 0 or cap O >
 ```
@@ -168,6 +168,11 @@ Circuit diagram
      Drop down                  Diodes
 ```
 
+Circuit diagram - 19V @ 1.6A
+* requires addition of resistors for adjustable regulator
+```
+tbd, excuse to try other options for unicode chars that don't deform ascii 'art' in GitHub render, 
+```
 
 ## References
 
