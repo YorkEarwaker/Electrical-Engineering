@@ -120,6 +120,8 @@ Context diagram - high level galvanic isolation
 ```
 
 Circuit diagram
+* the ascii distorts when displyed in GitHub due to unusual Unicode characters . The ascii below is purposely 'out of alignment' in the raw to try to overcome GitHub rendering distortion of not often used character sets. 
+* <todo; consider, find alternative characters to stop rendering distortion, difficult for 45 deg edges, replace diode squares with DN ltters, replace 'mathematical falling/rising diagonal' with forward back slash, replace unicode froun C1 with something else, replace black circle with zero 0 or cap O >
 ```
                 ___________________
                 |                 |
@@ -135,8 +137,8 @@ Circuit diagram
                 |______|__________|                  |         |           |            |           
                        |_____________________________●_________●___________●____________●____ - neg ⎓
                                                                                     
-                               Rectifier         Capacitor  Capacitor   Regulator    Capacitor
-                                Diodes
+    Transformer                Rectifier         Capacitor  Capacitor   Regulator    Capacitor
+     Drop down                  Diodes
 ```
 
 
