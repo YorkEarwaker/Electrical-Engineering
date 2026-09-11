@@ -98,9 +98,9 @@ $E = P \times t = V \times I \times t$
 
 Voltage drop, large heat dissipation for a linear device
 
-$P_(\text{dissipated)} = (V_(\text(in)) \minus V_(\text(out))) \times I_(\text{load})$
+$P_(\text{dissipated}) = (V_(\text{in}) - V_(\text{out})) \times I_(\text{load})$
 
-$P_(\text{dissipated)} \approx (24V \minus 19V) \times 1.6A =  8W$
+$P_(\text{dissipated}) \approx (24V - 19V) \times 1.6A =  8W$
 
 Winding Losses, current squared x resistance
 
