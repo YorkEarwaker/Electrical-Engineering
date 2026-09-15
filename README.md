@@ -46,11 +46,12 @@ DONE
 Crowd funding?
 * Crowd Supply, [WS](https://www.crowdsupply.com/), 56 countries, 
 
-## Libraries
+## Libs
 
 Tools - circuit boards, breadbords, pcb design
 * fritzing, electronics made easy, [WS](https://fritzing.org/), open source hardware, manufacture professional PCB's
 * Virtial Breadboard, [WS](https://www.virtualbreadboard.com/), Bread2Board, 
+* KiCad, pcb design
 
 Tools - additive manufacturing
 * Autodesk, Tinkercad, [WS](https://www.tinkercad.com/), cad, 3D design, open source? <todo: source other 3D design tools, >
@@ -105,12 +106,16 @@ Linguistics
 Books
 * The Art of Electronics [WS](https://artofelectronics.net/), <todo: evaluate, old text, is there a current state alternative? >
 * Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics. <todo: evaluate, old text, is there a current state alternative? >
-* ...
+* Make: Electronics, Charles Platt
+* Electricity DeMystified, Stan Gibilisco
 
 Publishers
 * I/O Press, [WS](https://www.iopress.info/index.php) IoT, physical computing, embeded systems, C/C++, CPython, MicroPython, Linux, Raspberry Pi, Raspberry Pico, ...
 * I Programmer, [WS](https://www.i-programmer.info/), programming, I/O Press online
 * IoT Programmer, [WS](https://iot-programmer.com/), internet of things, I/O Press online
+
+Papers - tools
+* Operation, Care and Maintenance and Advanced Troubleshooting for the Skilled Trades, [PDF](https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/556/7/Multimeters-101-Basic-Operation-Care-and-Maintenance-and-Advanced-Troubleshooting-for-the-Skilled-Trades-1550680593.pdf), Brent Pfifer, AN ADAPTATION OF TRADES ACCESS COMMON CORE LINE E: ELECTRICAL FUNDAMENTALS COMPETENCY E-4: USE OF MULTI-METERS
 
 Forums
 * EDA Board, com, [WS](https://www.edaboard.com/)
