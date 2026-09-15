@@ -181,6 +181,14 @@ Terms
 * AC RMS
 * EMS
 
+Components
+* Diodes
+* Capacitors
+* Regulators
+* Resistors
+* Transformers 
+* Toroidal inductors and transformers, [WP](https://en.wikipedia.org/wiki/Toroidal_inductors_and_transformers) 
+
 ?
 * Galvanic separation
 * Power supply unit, bench
