@@ -114,9 +114,6 @@ Publishers
 * I Programmer, [WS](https://www.i-programmer.info/), programming, I/O Press online
 * IoT Programmer, [WS](https://iot-programmer.com/), internet of things, I/O Press online
 
-Papers - tools
-* Operation, Care and Maintenance and Advanced Troubleshooting for the Skilled Trades, [PDF](https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/556/7/Multimeters-101-Basic-Operation-Care-and-Maintenance-and-Advanced-Troubleshooting-for-the-Skilled-Trades-1550680593.pdf), Brent Pfifer, AN ADAPTATION OF TRADES ACCESS COMMON CORE LINE E: ELECTRICAL FUNDAMENTALS COMPETENCY E-4: USE OF MULTI-METERS
-
 Forums
 * EDA Board, com, [WS](https://www.edaboard.com/)
 
