@@ -76,7 +76,8 @@ Constants
 * Boltzmann's constant, 
 
 SI Units
-* Farrads, microfarads µF $10^{-6}$, nanofarads nF $10^{-9}$,  picofarads pF $10^{-12}$, 1 µF = 1,000 nF, 1,000,000 pF
+* Farrads, Farad 1F, millifarads mF $10^{-3}$, microfarads µF $10^{-6}$, nanofarads nF $10^{-9}$,  picofarads pF $10^{-12}$, femtofarad $10^{-15}$, 1 mF = 1,000 µF, 1 µF = 1,000 nF = 1,000,000 pF
+* ...
 
 Equations - algorithems
 * Ohms law,
