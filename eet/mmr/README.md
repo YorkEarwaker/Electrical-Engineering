@@ -76,7 +76,7 @@ Constants
 * Boltzmann's constant, 
 
 SI Units
-* Farrads, microfarads µF $10^-{6}$, nanofarads nf $10^-{9}$,  picofarads pf $10^-{12}$,
+* Farrads, microfarads µF $10^{-6}$, nanofarads nf $10^{-9}$,  picofarads pf $10^{-12}$,
 
 Equations - algorithems
 * Ohms law,
