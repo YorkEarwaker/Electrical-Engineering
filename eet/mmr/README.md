@@ -85,7 +85,7 @@ Electronics online
 * Runtime Micro, [WS](https://runtimemicro.com/home), permanent solderless bread projects, 
 
 Manuals - tools
-* Operation, Care and Maintenance and Advanced Troubleshooting for the Skilled Trades, [PDF](https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/556/7/Multimeters-101-Basic-Operation-Care-and-Maintenance-and-Advanced-Troubleshooting-for-the-Skilled-Trades-1550680593.pdf), Brent Pfifer, AN ADAPTATION OF TRADES ACCESS COMMON CORE LINE E: ELECTRICAL FUNDAMENTALS COMPETENCY E-4: USE OF MULTI-METERS
+* Operation, Care and Maintenance and Advanced Troubleshooting for the Skilled Trades,  [WS](https://ecampusontario.pressbooks.pub/multimeters101/), [PDF](https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/556/7/Multimeters-101-Basic-Operation-Care-and-Maintenance-and-Advanced-Troubleshooting-for-the-Skilled-Trades-1550680593.pdf), Brent Pfifer, AN ADAPTATION OF TRADES ACCESS COMMON CORE LINE E: ELECTRICAL FUNDAMENTALS COMPETENCY E-4: USE OF MULTI-METERS
 
 Books
 * Electricity DeMYSTified, Stan Gibilisco 
