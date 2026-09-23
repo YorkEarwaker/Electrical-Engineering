@@ -199,8 +199,8 @@ Components
 * Transformers 
 * Toroidal inductors and transformers, [WP](https://en.wikipedia.org/wiki/Toroidal_inductors_and_transformers) 
 
-?
-* Galvanic separation
+Safety
+* Galvanic isolation, [WS](https://en.wikipedia.org/wiki/Galvanic_isolation), galvanic separation
 * Power supply unit, bench
 * Power supply unit, computer [WP](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
 
