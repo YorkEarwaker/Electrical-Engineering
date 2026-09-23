@@ -196,11 +196,12 @@ Components
 * Capacitors
 * Regulators
 * Resistors
-* Transformers 
+* Transformers, step down, 
 * Toroidal inductors and transformers, [WP](https://en.wikipedia.org/wiki/Toroidal_inductors_and_transformers) 
 
 Safety
-* Galvanic isolation, [WS](https://en.wikipedia.org/wiki/Galvanic_isolation), galvanic separation
+* Galvanic isolation, [WP](https://en.wikipedia.org/wiki/Galvanic_isolation), galvanic separation
+* Transformer, isolation, [WP](https://en.wikipedia.org/wiki/Isolation_transformer), 
 * Power supply unit, bench
 * Power supply unit, computer [WP](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
 
