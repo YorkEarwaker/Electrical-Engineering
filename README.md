@@ -104,10 +104,11 @@ Linguistics
 * Sol, Star Trek 
 
 Books
-* The Art of Electronics [WS](https://artofelectronics.net/), <todo: evaluate, old text, is there a current state alternative? >
-* Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics. <todo: evaluate, old text, is there a current state alternative? >
-* Make: Electronics, Charles Platt
-* Electricity DeMystified, Stan Gibilisco
+* The Art of Electronics [WS](https://artofelectronics.net/), advanced, <todo: evaluate, old text, is there a current state alternative? >
+* Learning the Art of Electronics, A Hands-On Lab Course, [WS](https://learningtheartofelectronics.com/), companion to The Art of Electronics, advanced, <todo: evaluate, old text, is there a current state alternative? >
+* Make: Electronics, Charles Platt, introductory, hands on projects, learning by doing, 
+* Electricity DeMystified, Stan Gibilisco, introductory, circuite design,  
+* The Electron, A Biography, Brian Clegg, 2026, introductory, popular science, 
 
 Publishers
 * I/O Press, [WS](https://www.iopress.info/index.php) IoT, physical computing, embeded systems, C/C++, CPython, MicroPython, Linux, Raspberry Pi, Raspberry Pico, ...
