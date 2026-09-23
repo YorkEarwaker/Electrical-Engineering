@@ -136,8 +136,11 @@ $V_{\text{out}} = 1.25 \times (1 + R2 \div R1)$
 * Critical Rule: 230VAC stays off board. Never put 230VAC on a breadboard or perfboard. Breadboard contacts are not rated for 230VAC. Breadboard/perfboard, creepage distance is insufficient, shock and fire hazard with loose connection at mains voltage
 
 Two options are
-* Critical Rule: 230VAC stays off board. Bench power supply unit PSU, Mains Front End Module. Safest. More contol. 
+* Critical Rule: 230VAC stays off board. COTS, Bench power supply unit PSU, Mains Front End Module. Safest. More contol. 
 * Critical Rule: 230VAC stays off board. Bespoke build, Mains Front End Module. Least ripple.
+* Critical Rule: 230VAC stays off board. COTS, Consumer electronics, CE device, linear or switching adaptor power supply, brick, providing dc current, so only dev/test of dc actives and passives 
+* <todo: consider, how best to use wall wart for same, providing dc current, so dev/test only of dc side actives and passives, >
+* <todo: consider, COTS version of bespoke build mains front end module for galvanic separation, >
 
 Context diagram - high level galvanic isolation
 ```
@@ -145,6 +148,13 @@ Context diagram - high level galvanic isolation
                  Mains isloation        Project 1, 12VAC (~17V peak), V5 @ 1A, comfortably within breadboard & perfboard voltage limits
                  240VAC or 230VAC       Project 2, 18VAC (~25.5 peak), V19 @ 1.6A, remains within breadboard & perfboard voltage limits
                                         Project N, ...
+```
+
+Circuit diagram - Front end module, bespoke build
+* Move this at some point to its own project 
+* Build once use many times, stand alone system for mains separation, avoid spikes, etc, 
+```
+tbd, 
 ```
 
 Circuit diagram - 5V @ 1A
