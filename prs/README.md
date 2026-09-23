@@ -60,7 +60,7 @@ DONE
 ### BoM - tools bench, circuit build, dev, test, QA, electrical engineering
 * Heat gun/hair drier, bench, for heat shrink tubbing, RnD?, PoC, rationale; useful, cost 
 * Multimeter, bench, electric charge testing, RnD, PoC, Prod, likely Brymen MB869s and some add ons, rationale; cost, high metrology capability, 
-* Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second 'type-K temperature bead probe Bkp60' thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905
+* Multimeter, bench, Brymen extras; BU-86X USB Interface Kit, second 'type-K temperature bead probe Bkp60' thermocouple air temp and tech temp, Brymen BKB32 Adapter for third party standard mini-plug, Brymen BMH-01 Magnetic Hanger todo check not bundled first, Pomona 6235 and 5325A sbc/mcu/pcb 10A 5V/12V/24V, also consider other use cases Pomona  6275/6341/72902/ 72902 + 72905, 72902 (Micro) and 72906 (Mini) SMD Grabbers
 * Oscilloscope, bench, Rigol or Siglent, e.g. Rigol DS1054Z, ~£250, nice to have, for sbc/mcu/pcb and linear adapter project other projects wavefrom 
 * Bench power supply, bench, source, Rigol or Siglent, e.g. Rigol DP832, ~£295, Siglent SPD3303X(-E), ~£312 ~£429, necessary, Clean, current-limited, multi-rail DC power, for heat pump
 * DC load, bench, sink, Rigol or Siglent, e.g. Rigol DL3021. ~£378, expensive option, switching adapter, really necessary such a high spec?
@@ -69,6 +69,9 @@ DONE
 * LCR meter, bench, DE-5000, LCR / ESR / inductance, £90
 * SLogic16U3, bench, Protocol debugging, £60
 * ESD mat and strap + magnification + fume, bench, Practical bench hygiene, ~£85
+* Neon test light, 
+* Component tester, budget tester only ~£20-£30, not bench at this point ~£200-£300 is the component dead, what is the component, 
+* socket circuit tester, on/off, beeping, red light circuit is on, 
 
 ### BoM - tools metrology, mechanical engineering
 * Pin guages, bench, [](), metrology, barrel pin measurements, recpticales, jacks, RnD?, PoC, likely 6mm to 1mm or parts of
@@ -92,6 +95,9 @@ DONE
 * acrlyic board, aluminium board, mdf board, 3mm, to which to mount breadboards and perfboards
 * breadboard with mounting holes, to take M2/M3 nylon standoffs
 * perboard, 
+* wire 22 guage, board, solid core copper, no solder
+* wire 22 guage, , wire strands copper, solder, no solder
+* wire ?? guage, mains?
 
 ### BoM - tools 3D priting, encasements, mechancical parts, 
 * tbd ..
@@ -124,15 +130,20 @@ DONE
 Total cost 
 * everything: circa £2k? closer to £2.5k-3k?, bench development and testing kit all in? 
 * Brymen BM869s multimeter, purchsed, now owned, 
-* Brymen BM869s extras, purchased, now owned; BU-86X USB Interface Kit, Brymen BKB32 Adapter for third party probes, Brymen BMH-01 Magnetic Hanger, others tbc
-* Brymen BM869s extras, pending, not owned, second type-K temperature bead probe Bkp60, Pomona 6235 & 5325A test probes, second Brymen BKB32 Adapter for third party probes, 
+* Brymen BM869s extras, purchased, now owned; BU-86X USB Interface Kit, Brymen BKB32 Adapter for third party probes, Brymen BMH-01 Magnetic Hanger, Pomona 6235 & 5325A test probes,  others tbc
+* Brymen BM869s extras, pending, not owned, second type-K temperature bead probe Bkp60, second Brymen BKB32 Adapter for third party probes, 
 * Bench dev test tools, Class C, Rigol and Siglent CN appear to be good enough maker/prototyping, Siglent possibly better all round? need to qualify this? 
 * Bench dev test tools, Class C, which are absolutley necessary, need more research, get some advice, 
 * Bench dev test tools, Class C only, delta Class B software standard, delta Class A hardware trigger standard, Class B and Class A order much more expensive unafordable at this time due to quality of product, standards delta is not the main diffirentiator quality is,
-* Electrical components; circa £80? linear adapter only, likely way forward RnD no solder
-* Electrical components; circa £130? switching adapter only, PoC, pcb, RnD no solder impossible? 
+* Electrical components; purchased, male barrel pins x2 plug low voltage 2A EIAJ_05 equivalent, <info: confirmed, the LG 24MP55HQ-P monitor dc power input female jack is EIAJ V,  >
+* Electrical components; purchased, power entry conn c13 10A 250VAC, power inlet iec fused pcb mount, <info: into board project from front end module>
+* Electrical components: purchased, aligator/crocodile test lead set 60V 5A 
+* Electrical components; circa £100? linear adapter only, likely way forward RnD no solder
+* Electrical components; circa £150? switching adapter only, PoC, pcb, RnD no solder impossible? 
+* Perf board samples, purchased, x4 kinds <todo: consider, list sample kinds bought, list sample kinds pending to be bought, sample of every kind to assess for different project kinds, >
 * Helping hands (optional), ? keep seperate from magnifying lens + stand? likely as pcb holder would require magnification capability too
 * Magnifying lens + stand necessary! and/or magnifying head set too? which to prioritise?
+* Adjustable lamp, consider clamp and/or stand, 
 * Soldering mat, solder iron, other solder stuff cleaning holder, perf board, heat gun, ; circa £250? total guess, dig out previuse work on this, likely way forward PoC solder
 
 ## Workflow process method
