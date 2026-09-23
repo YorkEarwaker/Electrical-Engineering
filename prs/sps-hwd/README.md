@@ -20,3 +20,6 @@ TODO
 ## References
 
 * Switching mode power supply
+
+Components - smd
+* power semiconductor, power device, power ic, 
