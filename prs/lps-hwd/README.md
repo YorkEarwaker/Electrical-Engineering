@@ -204,12 +204,16 @@ Components
 * Power supply unit, bench
 * Power supply unit, computer [WP](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
 
-Tutorials - instructions, 
+Tutorials - instructions, adaptor build
 * AC to DC Conversion, [WS](https://www.instructables.com/AC-to-DC-Conversion/), Instructables, brmarcum
 * AC-DC Regulator Kit Instructions, [WS](https://www.mitchelectronics.co.uk/resources/ac-dc-kit-instructions), Mitchel Electronics Ltd
 * How to Convert AC to DC [WS](https://www.wikihow.com/Convert-AC-to-DC), wikiHow
 * How to Build a DC Linear Power Supply [WS](https://www.build-electronic-circuits.com/linear-power-supply/), 12 July  2023, Omar Muñoz Urias, build electronic circuits
-* ...
+
+Tutorial - components
+* AC vs DC: The difference between alternating and direct current, [WS](https://www.build-electronic-circuits.com/difference-ac-vs-dc/), 29 January 2020, Øyvind Nydal Dahl
+* Rectifier Diode: Guide to Functionality and Circuits, [WS](https://www.build-electronic-circuits.com/rectifier-diode/), 28 March 2023, Omar Muñoz Urias
+* ..
 
 News Papers - UK, EU mains
 * What are the differences between 220VAC, 230VAC and 240VAC Mains Supplies and what voltage equipment should I use? [WS](https://www.se.com/uk/en/faqs/FA144717/)
