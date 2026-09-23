@@ -19,7 +19,7 @@ TODO
 * <todo: consider, BoM for V19 @ 1.6A ac/dc conversion, will require different component tollerances due to higher voltage and current requirements >
 * <todo: consider, double component purchase, x1 for breadboard RnD, x1 for perboard, >
 * <todo: consider, warning / disclaimer, working with mains electricity is extremely dangeouse, mains electricity can cause death or injury or loss of property. These are just notes to self not a recomendation for hobbist/maker projects. Always consider safety first. Comply with local safety regulatons and standards. Do not use this source as a guide it may lead to harm to persons or property and you do so at your own risk. >
-* <todo: consider, peronal rider, this is a personal learning source, I am not a qualified electritian or electronics engineer or power engineer or mechanical engineer. Just tryig to learn as a means to better understanding of the world.  Bottom line, you or someone else may die or be permanently injured working with mains electricity and electrical components. There is a risk of; electricution, fire, explosion of component parts, . Safety first, in all instances. >
+* <todo: consider, peronal rider, this is a personal learning source, I am not a qualified electritian or electronics engineer or power engineer or mechanical engineer. Just tryig to learn as a means to better understanding of the world.  Bottom line, you or someone else may die or be permanently injured working with mains electricity and electrical components. There is a risk of; electricution, fire, explosion of component parts, cardiac arrest, ... . Safety first, in all instances. >
 * <todo: consider, use of power supply unit psu instead of direct mains power for saftey, >
 * <todo: consider, circuit simulation tool,*Ngspice GSpiceUI NutMeg *Qucs-S linux native, and Xyce, KtechLab linux native, or LTSpice MS Win/MacOS but requires wine for linux, select for evaluation, >
 * <todo: consider, BoM tools similar, KiBoM plugin, JBoM pluging, bom3csv.xsl plugin, JLCPCB BOM Plugin, Pcbnew BOM export  >
@@ -183,6 +183,7 @@ Circuit diagram - 19V @ 1.6A
 * requires addition of resistors for adjustable regulator
 ```
 tbd, excuse to try other options for unicode chars that don't deform ascii 'art' in GitHub render, 
+consider circuit LaTeX see coding practice clx project for research on same
 ```
 
 ## References
@@ -201,7 +202,10 @@ Components
 
 Safety
 * Galvanic isolation, [WP](https://en.wikipedia.org/wiki/Galvanic_isolation), galvanic separation
+* Residual currnet device RCD, [WP](https://en.wikipedia.org/wiki/Residual-current_device), residual current device rcd, residual current circuit breaker rccb, residual current circuit breaker with overcurrent protection RCBO, ground fault circuit interrupter GFCI breaker,  
 * Transformer, isolation, [WP](https://en.wikipedia.org/wiki/Isolation_transformer), 
+* Automatic disconnection of supply ads, 
+* Circuit breaker, overcurrent control, miniature circuit breaker MCB
 * Power supply unit, bench
 * Power supply unit, computer [WP](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
 
