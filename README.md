@@ -10,6 +10,7 @@ See also,
 * Autonomous meteorological network amn, Climate Model repository sub project, [GH](https://github.com/YorkEarwaker/Climate-Model/tree/main/amn)
 * Hybrid power hpr, top level project [GH](https://github.com/YorkEarwaker/Hybrid-Power)
 * Operating System, top level project [GH](https://github.com/YorkEarwaker/Operating-System)
+* Ciriuit LaTeX, [GH](https://github.com/YorkEarwaker/Coding-Practice/tree/main/clx), LaTeX circuit diagrams, electrical engineering circuits
 
 ## Goals & Objectives
 
