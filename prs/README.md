@@ -3,7 +3,7 @@
 Comverting current, alternating current, dirct current, pulsed direct current, 
 
 See also
-* circuit LaTeX clx [GH](https://github.com/YorkEarwaker/Coding-Practice/tree/main/clx)
+* circuit LaTeX clx [GH](https://github.com/YorkEarwaker/Coding-Practice/tree/main/ltx/cix)
 
 ## Notes
 
