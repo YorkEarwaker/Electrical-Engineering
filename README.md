@@ -11,6 +11,7 @@ See also,
 * Hybrid power hpr, top level project [GH](https://github.com/YorkEarwaker/Hybrid-Power)
 * Operating System, top level project [GH](https://github.com/YorkEarwaker/Operating-System)
 * Ciriuit LaTeX, [GH](https://github.com/YorkEarwaker/Coding-Practice/tree/main/clx), LaTeX circuit diagrams, electrical engineering circuits
+* cheese test
 
 ## Goals & Objectives
 
