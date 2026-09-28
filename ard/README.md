@@ -1,14 +1,24 @@
 # Arduino ard
 
-Do an Arduino project, sensor?
+Do an Arduino project, likely CAN FD + DDS + Ethernet for TMS prototyping. 
 
-stub
+See Also
+* DDS, 
+* NCS, 
+* UMS, 
+* other? 
 
 ## Notes
 
 Objectives
 * A SBC MCU platform for AGW project
 * Assess for future use for AGW and elsewhere
+
+Use Case
+* Networked control system, 
+* Distributed data service,
+* Tactical microgird system, 
+* ...
 
 ## Status
 TODO
