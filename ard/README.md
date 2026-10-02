@@ -5,7 +5,7 @@ Do an Arduino project, likely CAN FD + DDS + Ethernet for TMS prototyping.
 See Also
 * Data Distribution Service DDS, application, [WS](https://github.com/YorkEarwaker/Application/tree/main/dds) 
 * Networked control system NCS, networks, [WS](https://github.com/YorkEarwaker/Networks/tree/main/ncs)
-* Tactical microgrid standard TMS, hybrid-power, [WS](https://github.com/YorkEarwaker/Hybrid-Power/tree/main/mgd/tms) 
+* Tactical microgrid TMG, hybrid-power, [WS](https://github.com/YorkEarwaker/Hybrid-Power/tree/main/mgd/tmg) 
 * other? 
 
 ## Notes
@@ -17,7 +17,7 @@ Objectives
 Use Case
 * Device control system with networked control system, 
 * Device interpoerability with data distribution service,
-* Device composability with tactical microgird system, 
+* Device composability with tactical microgird system of systems, 
 * ...
 
 ## Status
